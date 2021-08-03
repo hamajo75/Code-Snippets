@@ -1,0 +1,3 @@
+/media/PC_Sync/Projects/C and C++/C++ Snippets/template_cmake/build/CMakeFiles/rebuild_cache.dir
+/media/PC_Sync/Projects/C and C++/C++ Snippets/template_cmake/build/CMakeFiles/main.dir
+/media/PC_Sync/Projects/C and C++/C++ Snippets/template_cmake/build/CMakeFiles/edit_cache.dir

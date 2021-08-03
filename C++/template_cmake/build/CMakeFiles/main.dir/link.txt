@@ -1,0 +1,1 @@
+/usr/bin/c++ -Werror -Wall -Wextra -pedantic CMakeFiles/main.dir/main.cc.o -o main  -lpthread 
