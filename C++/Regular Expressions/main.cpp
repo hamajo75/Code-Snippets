@@ -44,20 +44,22 @@ void ParsePostalCode() {
 }
 //-------------------------------------------------------------------------------
 void ParseAddress() {
-  std::regex address_RE(R"((\/\/.*)\/(.*))");
+  std::regex address_RE(R"((?:\/\/)?([0-9.:a-z]*)\/(.*\/?.*))");
   std::smatch matches;  // matched strings go here
 
-  std::string address {"//52.157.151.140:5671/wps_default"};
+  std::string address {"0.0.0.0:5671/wps_default"};
 
   if (std::regex_match(address, matches, address_RE)) {
     std::cout << "address matched\n";
     std::cout << matches[1] << "\n";
     std::cout << matches[2] << "\n";
+  } else {
+    std::cout << "Not matched\n";
   }
 }
 //-------------------------------------------------------------------------------
 int main() {
-  ParsePostalCode();
+  // ParsePostalCode();
   ParseAddress();
 
   return 0;
