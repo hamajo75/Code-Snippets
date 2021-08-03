@@ -1,2 +1,3 @@
-# CPP-Snippets
-C++  Code Snippets
+# Code-Snippets
+
+Collection of code snippted for various languages.
