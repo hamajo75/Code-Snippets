@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+C++/Sandbox/GenericMessage/main.cpp
+C++/Sandbox/GenericMessage/makefile
+C++/Sandbox/Workplace/main.cpp
+C++/Sandbox/Workplace/makefile
