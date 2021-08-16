@@ -1,0 +1,2914 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-03-31 Wed 06:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Microcontrollers</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="shortcut icon" href="/public_html/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/html-export.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/hideshow.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/code.css">
+
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "0em",
+        "HTML-CSS": {
+             scale: 110,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div style = "text-align: right; margin-top: 5px">
+   <a accesskey="h" href="" style="font: 20px arial,helvetica,clean,sans-serif"></a>
+   <a accesskey="H" href="https://joesanmarzano.duckdns.org/public_html/" style="font: 20px arial,helvetica,clean,sans-serif;margin: 30px;"> HOME </a>
+</div><div id="content">
+<h1 class="title">Microcontrollers</h1>
+
+<div id="outline-container-org7eddb8b" class="outline-2">
+<h2 id="org7eddb8b">Links</h2>
+<div class="outline-text-2" id="text-org7eddb8b">
+<ul class="org-ul">
+<li>List of Microcontrollers: <a href="https://en.wikipedia.org/wiki/List_of_common_microcontrollers">https://en.wikipedia.org/wiki/List_of_common_microcontrollers</a></li>
+</ul>
+</div>
+<div id="outline-container-org0a64607" class="outline-3">
+<h3 id="org0a64607">GNU Linker</h3>
+<div class="outline-text-3" id="text-org0a64607">
+<ul class="org-ul">
+<li><a href="https://sourceware.org/binutils/docs/ld/index.html">GNU Linker Manual</a></li>
+<li><a href="http://www.scoberlin.de/content/media/http/informatik/gcc_docs/ld_toc.html">Using ld</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org66d9101" class="outline-2">
+<h2 id="org66d9101">General</h2>
+<div class="outline-text-2" id="text-org66d9101">
+</div>
+<div id="outline-container-org9e9382d" class="outline-3">
+<h3 id="org9e9382d">CPU Core</h3>
+<div class="outline-text-3" id="text-org9e9382d">
+<p>
+The CPU runs a cyclic process, normally executed in parallel through an instruction pipeline.
+</p>
+
+<p>
+<b>Instruction cycle</b> <br />
+Fetch - Decode - Execute.
+</p>
+
+<ol class="org-ol">
+<li>Fetch :: Get the next instruction from memory (pointed to by the Program Counter) and load
+it into the Instruction Register (IR).
+After fetching the next instruction, the PC points to the next instruction.</li>
+<li>Decode :: The value in the IR (the instruction to be executed) is decoded. The decoder
+gives finds the address of the corresponding microprogram, how many operands are
+needed and where to find them.</li>
+<li>Execute :: Execute the microprogram.</li>
+</ol>
+</div>
+
+<div id="outline-container-org1a54817" class="outline-4">
+<h4 id="org1a54817">Control Unit</h4>
+<div class="outline-text-4" id="text-org1a54817">
+<p>
+Controls the sequence of the instruction processing. The Decoder interprets the current 
+instruction. 
+</p>
+
+<p>
+Handles POR, Interrupts, Errors, all sorts of signals.
+</p>
+
+<p>
+Generates all necessary signals (controlling internal and external components)
+needed for the execution of the current instruction.
+</p>
+
+<p>
+The main registers are :
+</p>
+<ul class="org-ul">
+<li>Control Register</li>
+<li>Program Counter (Instruction Pointer)</li>
+<li>Stack Register</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga420d33" class="outline-4">
+<h4 id="orga420d33">Address Unit</h4>
+<div class="outline-text-4" id="text-orga420d33">
+<p>
+Calculates the address of instructions and operands in the memory. 
+</p>
+</div>
+</div>
+<div id="outline-container-org7312e6d" class="outline-4">
+<h4 id="org7312e6d">Execution Unit</h4>
+<div class="outline-text-4" id="text-org7312e6d">
+<p>
+Executes arithmetic and logical operations. 
+</p>
+</div>
+</div>
+<div id="outline-container-orgc68f9c6" class="outline-4">
+<h4 id="orgc68f9c6">Registers</h4>
+<div class="outline-text-4" id="text-orgc68f9c6">
+<ul class="org-ul">
+<li>Program Counter (Instruction Pointer)
+Points to the next instruction to be executed.</li>
+<li>Instruction Register
+Contains the machine code of the current instruction to be executed.</li>
+<li>Control Register
+Control execution of instructions: e.g. Interrupt Enable, User Mode.</li>
+<li>Status Register
+Information about the result of ALU operations.</li>
+<li>General Purpose Register</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcc4f6d1" class="outline-4">
+<h4 id="orgcc4f6d1">Microcode</h4>
+<div class="outline-text-4" id="text-orgcc4f6d1">
+<p>
+For every machine code instruction (Assembler level code) there is a microprogram stored
+the control memory. 
+</p>
+</div>
+</div>
+<div id="outline-container-org0b77e6f" class="outline-4">
+<h4 id="org0b77e6f">Clock Generation</h4>
+<div class="outline-text-4" id="text-org0b77e6f">
+<p>
+In the simplest case a Schmitt-Trigger with an RC-circuit).
+Normally an external crystal is used to stabilize the clock. 
+To generate higher frequencies PLLs are used to multiply the crystal frequency.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org5e0af14" class="outline-3">
+<h3 id="org5e0af14">Memory</h3>
+<div class="outline-text-3" id="text-org5e0af14">
+<p>
+There might be CPU internal memory (at least RAM) and external memory.
+</p>
+<ul class="org-ul">
+<li>RAM</li>
+<li>Flash
+<ul class="org-ul">
+<li>SPI, QSPI, Hyper</li>
+</ul></li>
+<li>EEPROM</li>
+<li>SDCARD</li>
+<li>DMA</li>
+</ul>
+
+<p>
+It's important to know from which memory you can execute code. 
+</p>
+<dl class="org-dl">
+<dt>Execute in place (XIP)</dt><dd>Execute programs directly from long term memory (e.g. NOR-flash) without 
+loading it to RAM before (code shadowing).</dd>
+</dl>
+</div>
+
+<div id="outline-container-org41221a6" class="outline-4">
+<h4 id="org41221a6">Flash Memory</h4>
+<div class="outline-text-4" id="text-org41221a6">
+<p>
+A flash write can only switch a bit from 1 to 0. Flash erase sets all bits to 1.
+This is why an erase is always needed before a write operation can be performed. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga62b60b" class="outline-3">
+<h3 id="orga62b60b">Pins</h3>
+<div class="outline-text-3" id="text-orga62b60b">
+<p>
+Most pins can perform different functions. You can see the different possible
+functions in the Pin Description table or in the Pin Diagram of the User Manual, e.g. 
+<code>P0[0]/RD1/TXD3/SDA1</code>.
+</p>
+
+<ul class="org-ul">
+<li><code>P0[0]</code> - General purpose digital I/O</li>
+<li><code>RD1</code>   - CAN1 receiver input I</li>
+<li><code>TXD3</code>  - Transmitter output for UART3 O</li>
+<li><code>SDA1</code>  - I2C data I/O</li>
+</ul>
+
+<p>
+Somehow the desired function has to be selected e.g. via a pin select register
+(PINSEL). 
+</p>
+
+<ul class="org-ul">
+<li>PINSEL
+Set pins in a Port to specific function</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb2422ac" class="outline-3">
+<h3 id="orgb2422ac">Internal Bus Systems</h3>
+<div class="outline-text-3" id="text-orgb2422ac">
+<p>
+System Bus: Address-, Data- and Control-Bus.
+</p>
+
+<p>
+There is always a Data Bus (8-bit, 32-bit, 64-bit) for exchanging data between different
+parts of the system. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6a8a27d" class="outline-3">
+<h3 id="org6a8a27d">Interrupts</h3>
+<div class="outline-text-3" id="text-org6a8a27d">
+<p>
+<b>When do interrupts occur?</b>
+</p>
+
+<p>
+interrupt sources, hardware and software interrupts
+</p>
+
+<p>
+There are physical interrupt lines (hardware interrupts) that can trigger an interrupt, either
+which a change of signal edge or level. 
+Interrupt input lines can be enabled/disabled in the Interrupt Mask Register.
+</p>
+
+<p>
+Software interrupts, exceptions, 
+</p>
+
+<p>
+interrupts triggered by interrupt flag
+interrupts triggered as long as the interrupt condition is present
+</p>
+
+<p>
+<b>What happens when an interrupt is triggered?</b>
+</p>
+
+<p>
+When an interrupt occurs an interrupt service routine is executed. 
+The corresponding code can be found at the interrupt vector, i.e. the address of the IRS. 
+Every interrupt source has it's own interrupt vector. 
+An example is the reset vector which points to the first instruction that is executed after a reset.
+</p>
+
+<p>
+The interrupt vectors, i.e. the addresses of the IRS's are read from a table (Interrupt
+Vector Table IVT) normally located in RAM (can also be hardwired).
+</p>
+
+<p>
+A currently executing interrupt routine can be interrupted by another interrupt
+with higher priority, so interrupts can be nested.
+</p>
+
+<p>
+External Interrupts
+GPIO pin interrupts: rising, falling edge
+</p>
+</div>
+
+<div id="outline-container-orga923e5b" class="outline-4">
+<h4 id="orga923e5b">Interrupt Priority</h4>
+<div class="outline-text-4" id="text-orga923e5b">
+<p>
+Normally 0 has the highest priority (Cortex-M). 
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgeecee1c" class="outline-3">
+<h3 id="orgeecee1c">Timers</h3>
+<div class="outline-text-3" id="text-orgeecee1c">
+<ul class="org-ul">
+<li>Gerneral Purpose Timers
+time or count events
+polling or interrupt</li>
+<li>Watchdog Timer
+Resets the chip if not periodically reloaded after the specified time \(t_w\), i.e. 
+in every loop or block of code that accedes \(t_w\) you have to feed the 
+watchdog.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd579ff1" class="outline-3">
+<h3 id="orgd579ff1">Boot</h3>
+<div class="outline-text-3" id="text-orgd579ff1">
+<dl class="org-dl">
+<dt>XIP</dt><dd>Execute In Place: Execute a program directly from external storage rather than copying
+the code to the RAM first.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgcc43841" class="outline-3">
+<h3 id="orgcc43841">Manual</h3>
+<div class="outline-text-3" id="text-orgcc43841">
+<p>
+Important information found in the User Manual:
+</p>
+<ul class="org-ul">
+<li>Pins and their functions
+<ul class="org-ul">
+<li>Digital Pins</li>
+<li>Analog Pins</li>
+</ul></li>
+<li>Memory</li>
+<li>Clocking
+clock dividers</li>
+<li>Interfaces (USB, CAN, SPI, I2C)</li>
+<li>Timers</li>
+<li>Interrupts</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5a081b4" class="outline-3">
+<h3 id="org5a081b4">Debugging</h3>
+<div class="outline-text-3" id="text-org5a081b4">
+<p>
+JTAGs Debug Access allows for viewing and modifying registers, memory, 
+system state etc. You can also set breakpoints and do variable inspection.
+</p>
+
+<p>
+Using JTAG Pins:
+</p>
+<ul class="org-ul">
+<li>TCK (Test Clock)</li>
+<li>TMS (Test Mode Select)</li>
+<li>TDO (Test Data Out)</li>
+<li>TRST (Test Reset)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6a79e14" class="outline-3">
+<h3 id="org6a79e14">The Build Process</h3>
+<div class="outline-text-3" id="text-org6a79e14">
+<p>
+<a href="../Computer Science/Programming.html#org9da8eb7">The Build Process</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org527e11b" class="outline-2">
+<h2 id="org527e11b">ARM Cortex M Architecture</h2>
+<div class="outline-text-2" id="text-org527e11b">
+</div>
+<div id="outline-container-orgffab31a" class="outline-3">
+<h3 id="orgffab31a">General</h3>
+<div class="outline-text-3" id="text-orgffab31a">
+<ul class="org-ul">
+<li>RISC</li>
+<li>3 address code: <code>ADD r0, r1, r2  ;r0: r1 + r2</code></li>
+</ul>
+
+<p>
+Register:
+</p>
+<ul class="org-ul">
+<li>13 Universal Registers: r0&#x2026;r12</li>
+<li><code>LR</code>: Save return address when calling a subroutine.</li>
+<li><code>XPSR</code>: Status Register (Flags: Overflow, Zero, etc.)</li>
+</ul>
+
+<p>
+CPU execution modes:
+</p>
+<ul class="org-ul">
+<li>User Mode</li>
+<li>IRQ Mode: entered when external Interrupt occurs</li>
+<li>FRQ Mode: fast interrupt requests</li>
+<li>Supervisor Mode (SVC): Reset, Software Interrupt</li>
+<li>Hypervisor Mode (HYP)</li>
+<li>Undefined Instruction Exception (UND): unknown instruction</li>
+<li>Abort Mode</li>
+</ul>
+
+<p>
+Thumb Instruction Set:
+</p>
+<ul class="org-ul">
+<li>improve code density using 16 bit commands</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1a6485b" class="outline-3">
+<h3 id="org1a6485b">Memory System</h3>
+<div class="outline-text-3" id="text-org1a6485b">
+<p>
+Out of order execution
+</p>
+</div>
+<div id="outline-container-org0400a67" class="outline-4">
+<h4 id="org0400a67">Memory barriers <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h4>
+<div class="outline-text-4" id="text-org0400a67">
+<p>
+Memory access transfers might have a different order than in the program code.
+</p>
+
+<p>
+3 instructions:
+</p>
+<ul class="org-ul">
+<li><code>__DMB()</code> : Data Memory Barrier - Force all memory accesses to complete before new memory access.</li>
+<li><code>__DSB()</code> : Data Synchronization Barrier - Force all memory accesses to complete before new instruction.</li>
+<li><code>__ISB()</code> : Instruction Synchronization Barrier - Flush pipeline and force all previous instructions to complete before new instruction.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org437f402" class="outline-3">
+<h3 id="org437f402">SysTick Timer</h3>
+<div class="outline-text-3" id="text-org437f402">
+<p>
+24 bit down counter (Hardware) counting down from an init value with the system clock.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc81a4e4" class="outline-3">
+<h3 id="orgc81a4e4">CMSIS (Cortex μC Software Interface Standard)</h3>
+<div class="outline-text-3" id="text-orgc81a4e4">
+<p>
+Goal: Hardware Abstraction and Portability
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org95dfc37" class="outline-2">
+<h2 id="org95dfc37">ATmega32</h2>
+<div class="outline-text-2" id="text-org95dfc37">
+<ul class="org-ul">
+<li>8 bit Harvard architecture</li>
+<li>32KB Flash, 1KB EEPROM, 2KB RAM</li>
+</ul>
+</div>
+
+<div id="outline-container-orga93d6e0" class="outline-3">
+<h3 id="orga93d6e0">Interrupts</h3>
+<div class="outline-text-3" id="text-orga93d6e0">
+<p>
+The IVT is located at the beginning of the flash memory. 
+For an ISR to be called those conditions must hold
+</p>
+<ol class="org-ol">
+<li>Global Interrupt Enable Bit must be set in the control register <code>SREG</code>.</li>
+<li>Individual Interrupt Source Enabled Bit must be set.</li>
+<li>Interrupt source condition must be met.</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-c"><span class="org-function-name">ISR</span>(INT0_vect)
+{
+   <span class="org-comment-delimiter">//</span><span class="org-comment">do something</span>
+}
+</pre>
+</div>
+
+<p>
+<code>interrupt.h</code>
+</p>
+<ul class="org-ul">
+<li><code>cli()</code>  clear global interrupt (clear global interrupt flag in SREG)</li>
+<li><code>sei()</code>  set Global Interrupt Enable</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7dd59d0" class="outline-2">
+<h2 id="org7dd59d0">Atmel Studio</h2>
+<div class="outline-text-2" id="text-org7dd59d0">
+</div>
+<div id="outline-container-org18ab397" class="outline-3">
+<h3 id="org18ab397">Hardware</h3>
+<div class="outline-text-3" id="text-org18ab397">
+<ul class="org-ul">
+<li>ATMega32</li>
+<li>Programmer
+AVRISP mkII</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga8d720f" class="outline-3">
+<h3 id="orga8d720f">Connection</h3>
+<div class="outline-text-3" id="text-orga8d720f">
+<p>
+How to set up the connection:
+<a href="https://www.youtube.com/watch?v=iTTZUpzAjKc">https://www.youtube.com/watch?v=iTTZUpzAjKc</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org692ff41" class="outline-2">
+<h2 id="org692ff41">Bibliography</h2>
+<div class="outline-text-2" id="text-org692ff41">
+<p>
+<h1 class='org-ref-bib-h1'>Bibliography</h1>
+<ul class='org-ref-bib'><li><a id="i.MXRT1050.Ref.Manual">[i.MXRT1050.Ref.Manual]</a> <a name="i.MXRT1050.Ref.Manual"></a>i.MX RT1050 Processor Reference Manual, (2019).</li>
+</ul>
+</p>
+</div>
+</div>
+<div id="outline-container-org6ffd522" class="outline-2">
+<h2 id="org6ffd522">Displays</h2>
+<div class="outline-text-2" id="text-org6ffd522">
+<ul class="org-ul">
+<li>Smooth sequences require at least 24 frames/second.</li>
+</ul>
+</div>
+
+<div id="outline-container-org5eb4a6e" class="outline-3">
+<h3 id="org5eb4a6e">Graphic Memory and Buffers</h3>
+<div class="outline-text-3" id="text-org5eb4a6e">
+<ul class="org-ul">
+<li>Framebuffer : stores all pixel data (e.g. 16 bits / pixel)</li>
+<li>Soucre : feeds pixel data (camera)</li>
+<li>Sink   : grabs pixel data (display)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org956e107" class="outline-3">
+<h3 id="org956e107">Technologies</h3>
+<div class="outline-text-3" id="text-org956e107">
+</div>
+<div id="outline-container-org8dbe3c1" class="outline-4">
+<h4 id="org8dbe3c1">CRT (Cathode-Ray tubes)</h4>
+<div class="outline-text-4" id="text-org8dbe3c1">
+<ul class="org-ul">
+<li>Electron beam hits a phosphorescent screen.</li>
+<li>High energy consumption.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb7a5950" class="outline-4">
+<h4 id="orgb7a5950">Plasma panels</h4>
+<div class="outline-text-4" id="text-orgb7a5950">
+<ul class="org-ul">
+<li>Gas cell in plasma state.
+<ul class="org-ul">
+<li>Medium energy consumption.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0ec7db3" class="outline-4">
+<h4 id="org0ec7db3">LCD (Liquid crystal displays) panels</h4>
+<div class="outline-text-4" id="text-org0ec7db3">
+<ul class="org-ul">
+<li>Use thin film transistors (TFT) to block light.</li>
+<li>Liquid crystals are arranged due to an electic
+field.</li>
+<li>Do not emit light, so they depend on backlight.</li>
+<li>3 color cells (RGB) constitute a pixel.</li>
+<li>Low energy consumption.</li>
+<li>TN (Twisted nematic)</li>
+<li>IPS (In-plane switching): better viewing angle and color.</li>
+</ul>
+
+<p>
+The display is renewed line by line with about 60Hz.
+</p>
+</div>
+</div>
+<div id="outline-container-orga2e3c1c" class="outline-4">
+<h4 id="orga2e3c1c">OLED (Organic light emitting diodes) technology</h4>
+<div class="outline-text-4" id="text-orga2e3c1c">
+<ul class="org-ul">
+<li>Use carbon based organic compounds to emit light.</li>
+<li>Flexible surfaces possible.</li>
+<li>Large viewing angle.</li>
+<li>Very high contrast.</li>
+<li>Low energy consumption.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org472251c" class="outline-4">
+<h4 id="org472251c">EPD (Electrophoretic Displays) - E-Ink</h4>
+<div class="outline-text-4" id="text-org472251c">
+<ul class="org-ul">
+<li>Black &amp; white charged particles (e.g. 
+positive for black, negative for white) attracted
+by electric field.</li>
+<li>Particles stay in place when the electric field is 
+removed.</li>
+<li>slow</li>
+<li>Very low power consumption (only changes).</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeab57a7" class="outline-3">
+<h3 id="orgeab57a7">Touch Screens</h3>
+<div class="outline-text-3" id="text-orgeab57a7">
+<p>
+Glass:
+potassium nitrate
+</p>
+</div>
+
+<div id="outline-container-orgc56602e" class="outline-4">
+<h4 id="orgc56602e">Capacitive Touch (PCAP - Projected Capacitive Touch)</h4>
+<div class="outline-text-4" id="text-orgc56602e">
+<ul class="org-ul">
+<li>2 isolated layers top columns &amp; bottom rows (Driver &amp; Receiver Electrodes).</li>
+<li>The voltage of each column is measured.</li>
+<li>When a finger touches the screen the capacitance 
+between the two layers is changed.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org66d27bb" class="outline-4">
+<h4 id="org66d27bb">Resistive Touch</h4>
+<div class="outline-text-4" id="text-org66d27bb">
+<ul class="org-ul">
+<li>Already invented in the 70s.</li>
+<li>1 resistive &amp; 1 conductive layer
+separated by spacers dots. When touched we get a 
+voltage divider.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org5574e29" class="outline-2">
+<h2 id="org5574e29">ESP32</h2>
+<div class="outline-text-2" id="text-org5574e29">
+</div>
+<div id="outline-container-org1feb434" class="outline-3">
+<h3 id="org1feb434">Features</h3>
+<div class="outline-text-3" id="text-org1feb434">
+<ul class="org-ul">
+<li>Dual core</li>
+</ul>
+
+<p>
+Block Diagram
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/ESP32/STM32 Block Diagram.png" alt="STM32 Block Diagram.png" />
+</p>
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-orgc7d5a12" class="outline-4">
+<h4 id="orgc7d5a12">ESP-IDF FreeRTOS</h4>
+<div class="outline-text-4" id="text-orgc7d5a12">
+<p>
+(modified vanilla FreeRTOS)
+</p>
+
+<p>
+Arduino IDE
+Board Package
+</p>
+<ul class="org-ul">
+<li><code>FreeRTOSConfig.h</code> contains definitions for FreeRTOS.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org437d48b" class="outline-2">
+<h2 id="org437d48b">GNU Arm Embedded Toolchain</h2>
+<div class="outline-text-2" id="text-org437d48b">
+<ul class="org-ul">
+<li>gcc</li>
+<li>binutils: <code>ld</code> (GNU linker), <code>as</code> (GNU assembler), <code>objdump</code>, etc.</li>
+<li>gdb</li>
+</ul>
+</div>
+
+<div id="outline-container-org6d584f5" class="outline-3">
+<h3 id="org6d584f5">GNU Linker (<code>ld</code>)</h3>
+<div class="outline-text-3" id="text-org6d584f5">
+<p>
+<a href="../Computer Science/Programming.html#org9da8eb7">The Build Process</a>
+</p>
+
+<p>
+The linker combines multiple object files into one output binary file.
+Each object file has a
+</p>
+<ul class="org-ul">
+<li>list of <i>input sections</i></li>
+<li><i>symbol table</i></li>
+</ul>
+
+<p>
+Each section has a name and a size.
+Sections can be
+</p>
+<ul class="org-ul">
+<li>loadable</li>
+<li>allocatable</li>
+</ul>
+
+<p>
+Example: Definition of sections
+</p>
+<pre class="example">
+SECTIONS
+{
+  . = 0x10000;           /* '.' location counter, starting with 0  */
+  .text : { *(.text) }   /* output section '.text' code should be loaded at 0x10000 */
+  . = 0x8000000;
+  .data : { *(.data) }   /* data should start at 0x8000000 */
+  .bss : { *(.bss) }
+}
+</pre>
+
+<p>
+Comments:
+</p>
+<ul class="org-ul">
+<li><code>{ *(.text) }</code> lists the names of the input sections placed into the output section (<code>.text</code>)</li>
+</ul>
+
+<p>
+Types of output sections:
+</p>
+<ul class="org-ul">
+<li><code>.text</code>   : code</li>
+<li><code>.rodata</code> : read-only data</li>
+<li><code>.data</code>   : read-write initialized data</li>
+<li><code>.bss</code>    : read-write zero initialized data</li>
+</ul>
+
+<p>
+List of Commands:
+</p>
+<ul class="org-ul">
+<li>MEMORY               : Define memory regions</li>
+<li>INCLUDE "file.ld"</li>
+<li>SECTIONS{}</li>
+<li>ENTRY(symbol)</li>
+<li>FILL(b)</li>
+<li>KEEP()</li>
+</ul>
+
+<p>
+Example: Memory regions
+</p>
+<pre class="example">
+MEMORY
+{
+  /* Define each memory region */
+  MEMORY_REGION_BL (rx) : ORIGIN = _BL_START_ADDRESS, LENGTH = _BL_LENGTH 
+  MEMORY_REGION (rx)    : ORIGIN = _FW_START_ADDRESS, LENGTH = _FW_LENGTH 
+
+  SRAM_DTC (rwx)    : ORIGIN = 0x20000000, LENGTH = 0x20000
+  SRAM_ITC (rwx)    : ORIGIN = 0x0,        LENGTH = 0x50000
+  SRAM_OC (rwx)     : ORIGIN = 0x20200000, LENGTH = 0x10000   /* min. necessary for ROM Code*/
+  BOARD_SDRAM (rwx) : ORIGIN = 0x80000000, LENGTH = 0x2000000 /* 32M bytes (alias RAM4)  */  
+}
+</pre>
+
+<p>
+Include files into a section
+</p>
+<pre class="example">
+*(.text*)
+*(.rodata*)
+*system_MIMXRT1052.o      /* Use '*' in front for the path */
+</pre>
+
+<p>
+Exclude files from a section
+</p>
+<pre class="example">
+*(EXCLUDE_FILE( *.file1.o *.file2.o  ) .text* .rdata*)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2c9e95a" class="outline-2">
+<h2 id="org2c9e95a">Keil</h2>
+<div class="outline-text-2" id="text-org2c9e95a">
+</div>
+<div id="outline-container-org162c958" class="outline-3">
+<h3 id="org162c958">Scatter Files</h3>
+<div class="outline-text-3" id="text-org162c958">
+<ul class="org-ul">
+<li><a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.kui0101a/armlink_babddhbf.htm">http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.kui0101a/armlink_babddhbf.htm</a></li>
+<li><a href="http://www.keil.com/support/man/docs/armlink/armlink_pge1362065968963.htm">http://www.keil.com/support/man/docs/armlink/armlink_pge1362065968963.htm</a></li>
+</ul>
+
+<p>
+A scatter file (memory regions are scattered in memory) defines (at least partly) the 
+memory layout of the controller. This information is used by the linker to put together
+an image. 
+So you can define memory regions and tell the linker to allocate objects 
+in those regions. It also creates region related symbols when used in the source code.
+</p>
+
+<p>
+Example:<br />
+Defines a RAM region starting at address <code>0x10000000</code> with size <code>0x4000</code>.
+Note that the loading of the code from the non volatile memory (e.g. Flash)
+will be done automatically. Compiler and Linker will add code to do that on 
+startup. In the map file you'll see corresponding <code>.text</code> sections of type
+CODE. 
+</p>
+
+<pre class="example">
+Map File Entry:
+Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+0x10000000   0x00000520   Code   RO          164    .text               bl_dispatch.o
+
+Scatter File Entry:
+RW_IRAM2 0x10000000 0x00004000	{	; RW data
+	main.o (+RO)
+	timer.o (+RO)
+	mycode.o (+RO)
+	memory.o (*)
+}
+</pre>
+
+<p>
+Load region (LR)
+Execution region (ER)
+</p>
+</div>
+</div>
+<div id="outline-container-org6fb4179" class="outline-3">
+<h3 id="org6fb4179">Memory Map Files</h3>
+<div class="outline-text-3" id="text-org6fb4179">
+<p>
+The linker creates an <i>image</i> 
+</p>
+
+
+<ul class="org-ul">
+<li>Symbol Table (functions, globals)</li>
+</ul>
+<pre class="example">
+Symbol Name       Value        Ov Type        Size  Object(Section)
+main_loop         0x10000521   Thumb Code     26    bl_main_loop.o(.text)
+global_mem_pntr   0x2007c300   Data           4     memory.o(.data)
+</pre>
+
+<ul class="org-ul">
+<li>Section Cross References</li>
+</ul>
+<pre class="example">
+bl_main.o(.text) refers to bl_main_loop.o(.text) for main_loop
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf8fb5ba" class="outline-2">
+<h2 id="orgf8fb5ba">LCD</h2>
+</div>
+<div id="outline-container-org282a20c" class="outline-2">
+<h2 id="org282a20c">LPC176x (Cortex-M3)</h2>
+<div class="outline-text-2" id="text-org282a20c">
+<ul class="org-ul">
+<li><a href="../../../../../../../Science/Technology/Electronics/Computer Architecture/Microcontroller/LPC176x/UM_LPC17xx.pdf">UM_LPC17xx.pdf</a></li>
+<li><a href="../../../../../../../Science/Technology/Electronics/Computer Architecture/Microcontroller/LPC176x/DS_LPC176x.pdf">DS_LPC176x.pdf</a></li>
+</ul>
+</div>
+
+<div id="outline-container-orge5f8ff7" class="outline-3">
+<h3 id="orge5f8ff7">Pins</h3>
+<div class="outline-text-3" id="text-orge5f8ff7">
+<p>
+PINSEL register
+</p>
+</div>
+</div>
+
+<div id="outline-container-org815f672" class="outline-3">
+<h3 id="org815f672">I2C</h3>
+<div class="outline-text-3" id="text-org815f672">
+<p>
+There are 26 Bus states defined.The controller always starts clock stretching 
+after a state change, so you have to stop clock stretching (set SI=0) actively
+either in the interrupt handler or periodically via polling.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org996c052" class="outline-3">
+<h3 id="org996c052">Timers</h3>
+<div class="outline-text-3" id="text-org996c052">
+<ul class="org-ul">
+<li>4 32-bit general purpose timers</li>
+<li>watchdog timer</li>
+<li>repetitive interrupt timer</li>
+<li>system tick timer</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org6b4b69b" class="outline-2">
+<h2 id="org6b4b69b">LPC178x (Cortex-M3)</h2>
+<div class="outline-text-2" id="text-org6b4b69b">
+<ul class="org-ul">
+<li><a href="../../../../../../../Science/Technology/Electronics/Computer Architecture/Microcontroller/LPC1788/LPC1788 User Manual.pdf">LPC1788 User Manual.pdf</a></li>
+<li><a href="../../../../../../../Science/Technology/Electronics/Computer Architecture/Microcontroller/LPC1788/LPC1788 Data Sheet.pdf">LPC1788 Data Sheet.pdf</a></li>
+</ul>
+
+<p>
+Features:
+</p>
+<ul class="org-ul">
+<li>LCD controller
+24 data lines, pixel coded data, dedicated DMA controller</li>
+</ul>
+</div>
+
+<div id="outline-container-org31784b0" class="outline-3">
+<h3 id="org31784b0">USB</h3>
+<div class="outline-text-3" id="text-org31784b0">
+<p>
+Keil files:
+</p>
+<ul class="org-ul">
+<li>usbhw.c</li>
+<li>usbuser.c
+<ul class="org-ul">
+<li><p>
+Endpoint event callbacks
+</p>
+
+<p>
+Example:
+</p>
+<div class="org-src-container">
+<pre class="src src-c"><span class="org-comment-delimiter">/* </span><span class="org-comment">USB Endpoint Events Callback Pointers </span><span class="org-comment-delimiter">*/</span>
+<span class="org-type">void</span> (*_CONST USB_P_EP[16]) (<span class="org-type">dword</span> <span class="org-variable-name">event</span>) =
+{
+  USB_EndPoint0,
+  USB_EndPoint1,
+  USB_EndPoint2,
+  <span class="org-constant">NULL</span>,
+<span class="org-preprocessor">#if</span> HAS_JAVA
+  USB_EndPoint4,
+<span class="org-preprocessor">#else</span>
+  <span class="org-constant">NULL</span>,
+<span class="org-preprocessor">#endif</span>
+  <span class="org-constant">NULL</span>,
+  <span class="org-constant">NULL</span>,
+<span class="org-preprocessor">#if</span> HAS_JAVA
+  USB_EndPoint7,
+<span class="org-preprocessor">#else</span>
+  <span class="org-constant">NULL</span>,
+<span class="org-preprocessor">#endif</span>
+  <span class="org-constant">NULL</span>,
+  <span class="org-constant">NULL</span>,
+  <span class="org-constant">NULL</span>,
+  <span class="org-constant">NULL</span>,
+  <span class="org-constant">NULL</span>,
+  <span class="org-constant">NULL</span>,
+  <span class="org-constant">NULL</span>,
+  <span class="org-constant">NULL</span>
+};    
+</pre>
+</div></li>
+</ul></li>
+<li>usbcore.c</li>
+<li>usbdesc.c
+USB descriptors
+<ul class="org-ul">
+<li>HID class</li>
+<li>interfaces</li>
+<li>USB_ConfigDescriptor</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgafcdc99" class="outline-3">
+<h3 id="orgafcdc99">UART</h3>
+<div class="outline-text-3" id="text-orgafcdc99">
+<p>
+Interrups
+</p>
+<ul class="org-ul">
+<li>read UnIIR register, otherwise interrupt will be repeated</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0a74dab" class="outline-3">
+<h3 id="org0a74dab">Interrupts</h3>
+<div class="outline-text-3" id="text-org0a74dab">
+<pre class="example">
+; Vector Table Mapped to Address 0 at Reset
+
+					 AREA    RESET, DATA, READONLY
+					 EXPORT  __Vectors
+
+__Vectors       DCD     __initial_sp              ; Top of Stack
+					 DCD     Reset_Handler             ; Reset Handler
+					 DCD     NMI_Handler               ; NMI Handler
+					 DCD     HardFault_Handler         ; Hard Fault Handler
+					 DCD     MemManage_Handler         ; MPU Fault Handler
+					 DCD     BusFault_Handler          ; Bus Fault Handler
+					 DCD     UsageFault_Handler        ; Usage Fault Handler
+					 DCD     0                         ; Reserved
+					 DCD     0                         ; Reserved
+					 DCD     0                         ; Reserved
+					 DCD     0                         ; Reserved
+					 DCD     SVC_Handler               ; SVCall Handler
+					 DCD     DebugMon_Handler          ; Debug Monitor Handler
+					 DCD     0                         ; Reserved
+					 DCD     PendSV_Handler            ; PendSV Handler
+					 DCD     SysTick_Handler           ; SysTick Handler
+
+					 ; External Interrupts
+					 DCD     WDT_IRQHandler            ; 16: Watchdog Timer
+					 DCD     TIMER0_IRQHandler         ; 17: Timer0
+					 DCD     TIMER1_IRQHandler         ; 18: Timer1
+					 DCD     TIMER2_IRQHandler         ; 19: Timer2
+					 DCD     TIMER3_IRQHandler         ; 20: Timer3
+					 DCD     UART0_IRQHandler          ; 21: UART0
+					 DCD     UART1_IRQHandler          ; 22: UART1
+					 DCD     UART2_IRQHandler          ; 23: UART2
+					 DCD     UART3_IRQHandler          ; 24: UART3
+					 DCD     PWM1_IRQHandler           ; 25: PWM1
+					 DCD     I2C0_IRQHandler           ; 26: I2C0
+					 DCD     I2C1_IRQHandler           ; 27: I2C1
+					 DCD     I2C2_IRQHandler           ; 28: I2C2
+					 DCD     SPIFI_IRQHandler          ; 29: SPIFI
+					 DCD     SSP0_IRQHandler           ; 30: SSP0
+					 DCD     SSP1_IRQHandler           ; 31: SSP1
+					 DCD     PLL0_IRQHandler           ; 32: PLL0 Lock (Main PLL)
+					 DCD     RTC_IRQHandler            ; 33: Real Time Clock
+					 DCD     EINT0_IRQHandler          ; 34: External Interrupt 0
+					 DCD     EINT1_IRQHandler          ; 35: External Interrupt 1
+					 DCD     EINT2_IRQHandler          ; 36: External Interrupt 2
+					 DCD     EINT3_IRQHandler          ; 37: External Interrupt 3
+					 DCD     ADC_IRQHandler            ; 38: A/D Converter
+					 DCD     BOD_IRQHandler            ; 39: Brown-Out Detect
+					 DCD     USB_IRQHandler            ; 40: USB
+					 DCD     CAN_IRQHandler            ; 41: CAN
+					 DCD     DMA_IRQHandler            ; 42: General Purpose DMA
+					 DCD     I2S_IRQHandler            ; 43: I2S
+					 DCD     ENET_IRQHandler           ; 44: Ethernet
+					 DCD     MCI_IRQHandler            ; 45: SD/MMC card I/F
+					 DCD     MCPWM_IRQHandler          ; 46: Motor Control PWM
+					 DCD     QEI_IRQHandler            ; 47: Quadrature Encoder Interface
+					 DCD     PLL1_IRQHandler           ; 48: PLL1 Lock (USB PLL)
+				DCD		USBActivity_IRQHandler    ; 49: USB Activity interrupt to wakeup
+				DCD		CANActivity_IRQHandler    ; 50: CAN Activity interrupt to wakeup
+				DCD		UART4_IRQHandler          ; 51: UART4
+				DCD		SSP2_IRQHandler           ; 52: SSP2
+				DCD		LCD_IRQHandler            ; 53: LCD
+				DCD		GPIO_IRQHandler           ; 54: GPIO
+				DCD		PWM0_IRQHandler           ; 55: PWM0
+				DCD		EEPROM_IRQHandler         ; 56: EEPROM
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org148f187" class="outline-2">
+<h2 id="org148f187">LPC2148 (ARM 7)</h2>
+<div class="outline-text-2" id="text-org148f187">
+</div>
+<div id="outline-container-org67675c4" class="outline-3">
+<h3 id="org67675c4">Memory</h3>
+</div>
+<div id="outline-container-org4cf2229" class="outline-3">
+<h3 id="org4cf2229">GPIO Pins</h3>
+<div class="outline-text-3" id="text-org4cf2229">
+<ul class="org-ul">
+<li>2 32-bit GPIO ports</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd5af6bd" class="outline-3">
+<h3 id="orgd5af6bd">Interrupts</h3>
+</div>
+<div id="outline-container-org3c4d59d" class="outline-3">
+<h3 id="org3c4d59d">Analog Pins</h3>
+<div class="outline-text-3" id="text-org3c4d59d">
+</div>
+<div id="outline-container-org372f82c" class="outline-4">
+<h4 id="org372f82c">ADC</h4>
+<div class="outline-text-4" id="text-org372f82c">
+<p>
+Measure voltage
+</p>
+</div>
+</div>
+<div id="outline-container-org83310cd" class="outline-4">
+<h4 id="org83310cd">DAC</h4>
+</div>
+<div id="outline-container-orgf18a0c1" class="outline-4">
+<h4 id="orgf18a0c1">PWM</h4>
+</div>
+</div>
+<div id="outline-container-org9d9f77a" class="outline-3">
+<h3 id="org9d9f77a">Generate Signals</h3>
+<div class="outline-text-3" id="text-org9d9f77a">
+<p>
+with certain timing, e.g. serial, I2C
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4fcc2b2" class="outline-3">
+<h3 id="org4fcc2b2">Communication</h3>
+<div class="outline-text-3" id="text-org4fcc2b2">
+</div>
+<div id="outline-container-orgb1aa2c3" class="outline-4">
+<h4 id="orgb1aa2c3">UART0, UART1</h4>
+</div>
+<div id="outline-container-orgf17a70f" class="outline-4">
+<h4 id="orgf17a70f">USB</h4>
+</div>
+<div id="outline-container-org1fa50e7" class="outline-4">
+<h4 id="org1fa50e7">I2C</h4>
+</div>
+<div id="outline-container-orgfd9ef37" class="outline-4">
+<h4 id="orgfd9ef37">SPI</h4>
+</div>
+</div>
+
+<div id="outline-container-org80496e0" class="outline-3">
+<h3 id="org80496e0">Timer</h3>
+<div class="outline-text-3" id="text-org80496e0">
+</div>
+<div id="outline-container-org5271135" class="outline-4">
+<h4 id="org5271135">RTC</h4>
+</div>
+</div>
+
+<div id="outline-container-org42768d1" class="outline-3">
+<h3 id="org42768d1">How to deploy the hex file?</h3>
+<div class="outline-text-3" id="text-org42768d1">
+<p>
+<a href="../../../../../../../Projects/Keil/Olimex LPC2148 Development Board/Documents/ReadMe.html">Olimex-ReadMe</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org757bfed" class="outline-2">
+<h2 id="org757bfed">Measurement</h2>
+<div class="outline-text-2" id="text-org757bfed">
+</div>
+<div id="outline-container-org8fe40e5" class="outline-3">
+<h3 id="org8fe40e5">Intronix-LogicPort</h3>
+<div class="outline-text-3" id="text-org8fe40e5">
+<ul class="org-ul">
+<li><a href="http://www.pctestinstruments.com/index.htm">http://www.pctestinstruments.com/index.htm</a></li>
+<li>Intronix Model LA1034 LogicPort Logic Analyzer</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcf453a8" class="outline-3">
+<h3 id="orgcf453a8">Saleae Logic</h3>
+<div class="outline-text-3" id="text-orgcf453a8">
+<ul class="org-ul">
+<li><a href="https://www.saleae.com/">https://www.saleae.com/</a></li>
+<li>Can be uses with <code>PulseView</code> program.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org974f4ce" class="outline-3">
+<h3 id="org974f4ce">Kingst</h3>
+<div class="outline-text-3" id="text-org974f4ce">
+<ul class="org-ul">
+<li><a href="http://www.qdkingst.com/en/products">http://www.qdkingst.com/en/products</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd48e28e" class="outline-3">
+<h3 id="orgd48e28e">Digilent</h3>
+<div class="outline-text-3" id="text-orgd48e28e">
+<ul class="org-ul">
+<li><a href="https://reference.digilentinc.com/">https://reference.digilentinc.com/</a></li>
+</ul>
+<p>
+Digilent Analog Discovery 2
+</p>
+</div>
+</div>
+<div id="outline-container-org4b792bb" class="outline-3">
+<h3 id="org4b792bb">PulseView Program</h3>
+</div>
+</div>
+<div id="outline-container-orgbf689e9" class="outline-2">
+<h2 id="orgbf689e9">NXP - iMXRT (Cortex-M7)</h2>
+<div class="outline-text-2" id="text-orgbf689e9">
+</div>
+<div id="outline-container-orgb2b27eb" class="outline-3">
+<h3 id="orgb2b27eb">Features</h3>
+<div class="outline-text-3" id="text-orgb2b27eb">
+<ul class="org-ul">
+<li>528 / 600 MHz (Industrial / Consumer Application)</li>
+<li>Tightly coupled memory (Data &amp; Instructions) <br />
+(32KB L1 - I-cache &amp; D-cache)</li>
+<li>512 KB RAM: shared between OCRAM + DTCRAM + ITCRAM</li>
+<li>32 MB external Memory Controller (SEMC - e.g. SDRAM)</li>
+<li>Quad SPI Controller (FlexSPI - e.g. NOR Flash)</li>
+<li>Timers &amp; PWM
+<ul class="org-ul">
+<li>2 General Programmable Timers (GPT)</li>
+<li>4 Periodical Interrupt Timers (PIT)</li>
+<li>4 Quad Timers (QTimer)</li>
+<li>4 Flex PWMs</li>
+<li>4 Quadrature Encoder/Decoders</li>
+</ul></li>
+<li>Display Interface</li>
+<li>Audio</li>
+<li>Generic 2D Graphics Engine (Pixel Pipeline PXP)
+<ul class="org-ul">
+<li>Scaling</li>
+<li>Color Space Conversion (CSC)</li>
+<li>Rotation/Flip (90°, 180°, 270°)</li>
+</ul></li>
+<li>Camera sensors</li>
+<li>On the fly QSPI-Flash decryption</li>
+<li>1.5 K eFuse OTP</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9155656" class="outline-3">
+<h3 id="org9155656">1020/1050 Evaluation Board</h3>
+<div class="outline-text-3" id="text-org9155656">
+<p>
+1020:
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/iMXRT/iMXRT1020 Evaluation Board.PNG" alt="iMXRT1020 Evaluation Board.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+1050:
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/iMXRT/iMXRT1050 Evaluation Board.PNG" alt="iMXRT1050 Evaluation Board.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+Boot Mode Select Switch (SW7)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">SW7-1</th>
+<th scope="col" class="org-left">SW7-2</th>
+<th scope="col" class="org-left">SW7-3</th>
+<th scope="col" class="org-left">SW7-4</th>
+<th scope="col" class="org-left">Boot Device</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">down</td>
+<td class="org-left">down</td>
+<td class="org-left">down</td>
+<td class="org-left">down</td>
+<td class="org-left">Internal Boot</td>
+</tr>
+
+<tr>
+<td class="org-left">down</td>
+<td class="org-left">up</td>
+<td class="org-left">up</td>
+<td class="org-left">down</td>
+<td class="org-left">Hyper Flash</td>
+</tr>
+
+<tr>
+<td class="org-left">down</td>
+<td class="org-left">down</td>
+<td class="org-left">up</td>
+<td class="org-left">down</td>
+<td class="org-left">QSPI Flash</td>
+</tr>
+
+<tr>
+<td class="org-left">up</td>
+<td class="org-left">down</td>
+<td class="org-left">up</td>
+<td class="org-left">down</td>
+<td class="org-left">SD Card</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Power Supply Settings (J1)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">J1</th>
+<th scope="col" class="org-left">Power Supply</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1-2</td>
+<td class="org-left">DC IN: 5V</td>
+</tr>
+
+<tr>
+<td class="org-right">3-4</td>
+<td class="org-left">USB OTG (J9)</td>
+</tr>
+
+<tr>
+<td class="org-right">5-6</td>
+<td class="org-left">Debug USB (J28)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org0b542b0" class="outline-4">
+<h4 id="org0b542b0">Using QSPI NOR-Flash instead of Hyperflash</h4>
+<div class="outline-text-4" id="text-org0b542b0">
+<p>
+Per default a Hyperflash is used. Some resistors have to be removed 
+in order to use the QSPI NOR-Flash (see <code>MIMXRT1050 EVK Board Hardware User’s Guide</code>).
+</p>
+
+<p>
+When using the QSPI NOR-Flash the sample projects have to be modified:
+</p>
+<ul class="org-ul">
+<li>select a different driver (<code>MIMXRT1050-EVK_IS25WP064A.cfx</code>)</li>
+<li>change <code>boot_hdr</code> in <code>evkbimxrt1050_flexspi_nor_config.c</code></li>
+</ul>
+
+<p>
+<code>evkbimxrt1050_flexspi_nor_config.c</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-c"><span class="org-comment-delimiter">/*</span>
+<span class="org-comment"> * Copyright 2017 NXP</span>
+<span class="org-comment"> * All rights reserved.</span>
+<span class="org-comment"> *</span>
+<span class="org-comment"> * SPDX-License-Identifier: BSD-3-Clause</span>
+<span class="org-comment"> </span><span class="org-comment-delimiter">*/</span>
+
+<span class="org-preprocessor">#include</span> <span class="org-string">"evkbimxrt1050_flexspi_nor_config.h"</span>
+
+<span class="org-comment-delimiter">/* </span><span class="org-comment">Component ID definition, used by tools. </span><span class="org-comment-delimiter">*/</span>
+<span class="org-preprocessor">#if</span><span class="org-negation-char"><span class="org-preprocessor">n</span></span><span class="org-preprocessor">def</span> FSL_COMPONENT_ID
+<span class="org-preprocessor">#define</span> <span class="org-variable-name">FSL_COMPONENT_ID</span> <span class="org-string">"platform.drivers.xip_board"</span>
+<span class="org-preprocessor">#endif</span>
+
+<span class="org-comment-delimiter">/*******************************************************************************</span>
+<span class="org-comment"> * Code</span>
+<span class="org-comment"> *****************************************************************************</span><span class="org-comment-delimiter">*/</span>
+<span class="org-preprocessor">#if</span> <span class="org-preprocessor">defined</span>(XIP_BOOT_HEADER_ENABLE) &amp;&amp; (XIP_BOOT_HEADER_ENABLE == 1)
+<span class="org-preprocessor">#if</span> <span class="org-preprocessor">defined</span>(__CC_ARM) || <span class="org-preprocessor">defined</span>(__ARMCC_VERSION) || <span class="org-preprocessor">defined</span>(__GNUC__)
+<span class="org-keyword">__attribute__</span>((section(<span class="org-string">".boot_hdr.conf"</span>)))
+<span class="org-preprocessor">#elif</span> <span class="org-preprocessor">defined</span>(__ICCARM__)
+<span class="org-preprocessor">#pragma</span> location = <span class="org-string">".boot_hdr.conf"</span>
+<span class="org-preprocessor">#endif</span>
+
+<span class="org-comment-delimiter">//</span><span class="org-comment">const flexspi_nor_config_t hyperflash_config = {</span>
+<span class="org-comment-delimiter">//    </span><span class="org-comment">.memConfig =</span>
+<span class="org-comment-delimiter">//        </span><span class="org-comment">{</span>
+<span class="org-comment-delimiter">//            </span><span class="org-comment">.tag = FLEXSPI_CFG_BLK_TAG,</span>
+<span class="org-comment-delimiter">//            </span><span class="org-comment">.version = FLEXSPI_CFG_BLK_VERSION,</span>
+<span class="org-comment-delimiter">//            </span><span class="org-comment">.readSampleClkSrc = kFlexSPIReadSampleClk_ExternalInputFromDqsPad,</span>
+<span class="org-comment-delimiter">//            </span><span class="org-comment">.csHoldTime = 3u,</span>
+<span class="org-comment-delimiter">//            </span><span class="org-comment">.csSetupTime = 3u,</span>
+<span class="org-comment-delimiter">//            </span><span class="org-comment">.columnAddressWidth = 3u,</span>
+<span class="org-comment-delimiter">//            </span><span class="org-comment">// Enable DDR mode, Wordaddassable, Safe configuration, Differential clock</span>
+<span class="org-comment-delimiter">//            </span><span class="org-comment">.controllerMiscOption =</span>
+<span class="org-comment-delimiter">//                </span><span class="org-comment">(1u &lt;&lt; kFlexSpiMiscOffset_DdrModeEnable) | (1u &lt;&lt; kFlexSpiMiscOffset_WordAddressableEnable) |</span>
+<span class="org-comment-delimiter">//                </span><span class="org-comment">(1u &lt;&lt; kFlexSpiMiscOffset_SafeConfigFreqEnable) | (1u &lt;&lt; kFlexSpiMiscOffset_DiffClkEnable),</span>
+<span class="org-comment-delimiter">//            </span><span class="org-comment">.sflashPadType = kSerialFlash_8Pads,</span>
+<span class="org-comment-delimiter">//            </span><span class="org-comment">.serialClkFreq = kFlexSpiSerialClk_133MHz,</span>
+<span class="org-comment-delimiter">//            </span><span class="org-comment">.sflashA1Size = 64u * 1024u * 1024u,</span>
+<span class="org-comment-delimiter">//            </span><span class="org-comment">.dataValidTime = {16u, 16u},</span>
+<span class="org-comment-delimiter">//            </span><span class="org-comment">.lookupTable =</span>
+<span class="org-comment-delimiter">//                </span><span class="org-comment">{</span>
+<span class="org-comment-delimiter">//                    </span><span class="org-comment">// Read LUTs</span>
+<span class="org-comment-delimiter">//                    </span><span class="org-comment">FLEXSPI_LUT_SEQ(CMD_DDR, FLEXSPI_8PAD, 0xA0, RADDR_DDR, FLEXSPI_8PAD, 0x18),</span>
+<span class="org-comment-delimiter">//                    </span><span class="org-comment">FLEXSPI_LUT_SEQ(CADDR_DDR, FLEXSPI_8PAD, 0x10, DUMMY_DDR, FLEXSPI_8PAD, 0x06),</span>
+<span class="org-comment-delimiter">//                    </span><span class="org-comment">FLEXSPI_LUT_SEQ(READ_DDR, FLEXSPI_8PAD, 0x04, STOP, FLEXSPI_1PAD, 0x0),</span>
+<span class="org-comment-delimiter">//                </span><span class="org-comment">},</span>
+<span class="org-comment-delimiter">//        </span><span class="org-comment">},</span>
+<span class="org-comment-delimiter">//    </span><span class="org-comment">.pageSize = 512u,</span>
+<span class="org-comment-delimiter">//    </span><span class="org-comment">.sectorSize = 256u * 1024u,</span>
+<span class="org-comment-delimiter">//    </span><span class="org-comment">.blockSize = 256u * 1024u,</span>
+<span class="org-comment-delimiter">//    </span><span class="org-comment">.isUniformBlockSize = true,</span>
+<span class="org-comment-delimiter">//</span><span class="org-comment">};</span>
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">this code is placed by the linker at the beginning of the external flash (e.g. 0x60000000)</span>
+<span class="org-keyword">const</span> <span class="org-type">flexspi_nor_config_t</span> <span class="org-variable-name">qspiflash_config</span> = {
+    .memConfig =
+        {
+            .tag = FLEXSPI_CFG_BLK_TAG,
+            .version = FLEXSPI_CFG_BLK_VERSION,
+<span class="org-comment-delimiter">//            </span><span class="org-comment">.readSampleClkSrc = kFlexSPIReadSampleClk_LoopbackFromDqsPad,</span>
+            .readSampleClkSrc = kFlexSPIReadSampleClk_LoopbackInternally,
+            .csHoldTime = 3u,
+            .csSetupTime = 3u,
+            .sflashPadType = kSerialFlash_4Pads,
+<span class="org-comment-delimiter">//            </span><span class="org-comment">.serialClkFreq = kFlexSpiSerialClk_100MHz,</span>
+         .serialClkFreq = kFlexSpiSerialClk_133MHz,
+
+
+            .sflashA1Size = 8u * 1024u * 1024u,
+
+
+            .lookupTable =
+                {
+                    <span class="org-comment-delimiter">// </span><span class="org-comment">Read LUTs</span>
+                    FLEXSPI_LUT_SEQ(CMD_SDR, FLEXSPI_1PAD, 0xEB, RADDR_SDR, FLEXSPI_4PAD, 0x18),
+                    FLEXSPI_LUT_SEQ(DUMMY_SDR, FLEXSPI_4PAD, 0x06, READ_SDR, FLEXSPI_4PAD, 0x04),
+                },
+        },
+    .pageSize = 256u,
+    .sectorSize = 4u * 1024u,
+    .blockSize = 256u * 1024u,
+    .isUniformBlockSize = <span class="org-constant">false</span>,
+};
+<span class="org-preprocessor">#endif</span> <span class="org-comment-delimiter">/* </span><span class="org-comment">XIP_BOOT_HEADER_ENABLE </span><span class="org-comment-delimiter">*/</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1438208" class="outline-4">
+<h4 id="org1438208">Arduino Interface</h4>
+<div class="outline-text-4" id="text-org1438208">
+<div class="picture">
+<p>
+<img src="resources/iMXRT/Arduino_Interface_J22.PNG" alt="Arduino_Interface_J22.PNG" />
+<img src="resources/iMXRT/Arduino_Interface_J23.PNG" alt="Arduino_Interface_J23.PNG" />
+<img src="resources/iMXRT/Arduino_Interface_J24.PNG" alt="Arduino_Interface_J24.PNG" />
+<img src="resources/iMXRT/Arduino_Interface_J25.PNG" alt="Arduino_Interface_J25.PNG" />
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org00fd3ea" class="outline-4">
+<h4 id="org00fd3ea">Boot Options</h4>
+<div class="outline-text-4" id="text-org00fd3ea">
+<p>
+1050:
+</p>
+<ul class="org-ul">
+<li>SW7-3 ON : Boot with Serial Downloader (Sometimes necessary for erasing Flash)</li>
+<li>SW3, SW4 : Reset Buttons</li>
+<li>SW8      : For development (GPIO5-00)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0076dc3" class="outline-3">
+<h3 id="org0076dc3">Boot</h3>
+<div class="outline-text-3" id="text-org0076dc3">
+<p>
+<code>BT_FUSE_SEL</code>
+</p>
+<ul class="org-ul">
+<li>1: Boot options are controlled by the eFUSEs.</li>
+<li>0: Boot options may be overwritten using GPIO pins.</li>
+</ul>
+</div>
+
+<div id="outline-container-org92d8cb9" class="outline-4">
+<h4 id="org92d8cb9">eFUSE Configuration</h4>
+<div class="outline-text-4" id="text-org92d8cb9">
+<p>
+Many configurations can be controlled with OTP Fuse bits.
+</p>
+<ul class="org-ul">
+<li>Behavior of the Boot ROM. 
+<ul class="org-ul">
+<li>Boot device selection.</li>
+</ul></li>
+</ul>
+
+<p>
+<b>OTP Memory</b>
+The OTP memory is structured in Banks and Words.
+The addresses in the Fuses refer to the offsets of the Bank/Word registers to be 
+found in the memory map of the OCOTP. 
+Example:
+</p>
+<pre class="example">
+0x460[7:0], bit 4 is BT_FUSE_SEL
+</pre>
+
+
+<p>
+<code>0x460</code> is the offset of the register <code>HW_OCOTP_CFG5</code> which has Address 0x06.
+This address has to be put into register <code>HW_OCOTP_CTRL</code> (<code>OCOTP-&gt;CTRL</code>). 
+</p>
+
+<p>
+<b>Write Fuses</b> <br />
+Chapter 23(RM): On-Chip OTP Controller (<code>OCOTP-&gt;CTRL</code>)
+</p>
+</div>
+</div>
+<div id="outline-container-org136cf8f" class="outline-4">
+<h4 id="org136cf8f">System Boot</h4>
+<div class="outline-text-4" id="text-org136cf8f">
+<p>
+After reset the ARM core starts executing from the boot ROM. 
+The boot process is configured with:
+</p>
+
+<ul class="org-ul">
+<li>BOOT_MODE[1:0] register</li>
+<li>eFUSEs and/or GPIO settings</li>
+</ul>
+
+<p>
+The boot ROM code can also handle downloads of programs via USB 
+or LPUART1 (Serial Downloader).  
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">BOOT_MODE[1:0]</th>
+<th scope="col" class="org-left">Boot from</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">00</td>
+<td class="org-left">Fuses</td>
+<td class="org-left">same as Internal but GPIO Override is ignored</td>
+</tr>
+
+<tr>
+<td class="org-right">01</td>
+<td class="org-left">Serial Downloader</td>
+<td class="org-left">download image from PC</td>
+</tr>
+
+<tr>
+<td class="org-right">10</td>
+<td class="org-left">Internal</td>
+<td class="org-left">boot image from boot device, configured with Fuses and GPIO</td>
+</tr>
+
+<tr>
+<td class="org-right">11</td>
+<td class="org-left">Reserved</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-orgcbde166" class="outline-5">
+<h5 id="orgcbde166">Internal Boot</h5>
+<div class="outline-text-5" id="text-orgcbde166">
+<p>
+BOOT_CFG1[7:4] eFUSEs control the selection of the external boot device. 
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">BOOT_CFG1[7:4]</th>
+<th scope="col" class="org-left">Boot device</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0000</td>
+<td class="org-left">serial NOR flash via FlexSPI</td>
+</tr>
+
+<tr>
+<td class="org-right">01xx</td>
+<td class="org-left">SD BOOT via uSDHC</td>
+</tr>
+
+<tr>
+<td class="org-right">10xx</td>
+<td class="org-left">eMMC/MMC boot via uSDHC</td>
+</tr>
+
+<tr>
+<td class="org-right">0001</td>
+<td class="org-left">parallel NOR flash via SEMC</td>
+</tr>
+
+<tr>
+<td class="org-right">11xx</td>
+<td class="org-left">serial NAND via FlexSPI</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-orgdc2f4d6" class="outline-6">
+<h6 id="orgdc2f4d6">Boot from NOR Flash via FlexSPI</h6>
+<div class="outline-text-6" id="text-orgdc2f4d6">
+<p>
+The boot ROM will boot the image at address 0x60000000. 
+</p>
+
+<p>
+The very first thing is the boot header configuring the NOR Flash (.boot_hdr.conf).
+</p>
+</div>
+</div>
+<div id="outline-container-org21a68a9" class="outline-6">
+<h6 id="org21a68a9">Generating a bootable image</h6>
+<div class="outline-text-6" id="text-org21a68a9">
+<p>
+<a href="https://community.nxp.com/docs/DOC-341317">https://community.nxp.com/docs/DOC-341317</a>
+</p>
+
+<p>
+Bootable image:
+</p>
+<ul class="org-ul">
+<li>FlexSPI Configuration Block</li>
+<li>Image Vector Table</li>
+<li>Boot Data</li>
+<li>Device Configuration Data</li>
+<li>Program Image</li>
+</ul>
+
+<p>
+Image Vector Table
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/iMXRT/ImageVectoriMXRT_Table.PNG" alt="ImageVectoriMXRT_Table.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+See
+</p>
+<ul class="org-ul">
+<li>fsl_flexspi_nor_boot.c
+<ul class="org-ul">
+<li>section .boot_hdr.conf</li>
+</ul></li>
+<li>evkbimxrt1050_flexspi_nor_config.c</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2f726a3" class="outline-3">
+<h3 id="org2f726a3">CMSIS (Cortex Microcontroller Software Interface Standard)</h3>
+<div class="outline-text-3" id="text-org2f726a3">
+<p>
+Common interface for programming Cortex-M controllers.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org64ceef5" class="outline-3">
+<h3 id="org64ceef5">Debugging</h3>
+<div class="outline-text-3" id="text-org64ceef5">
+<p>
+Hardware:
+</p>
+<ul class="org-ul">
+<li>ARMKEIL ULINK2 (350 EUR)</li>
+<li>Segger J-Link (300 EUR)</li>
+<li>PEMicro Multilink Universal (200 EUR)</li>
+<li>NXP LPC-Link2 (20 EUR)</li>
+</ul>
+</div>
+<div id="outline-container-orge0bb7c8" class="outline-4">
+<h4 id="orge0bb7c8">Segger J-Link Base</h4>
+<div class="outline-text-4" id="text-orge0bb7c8">
+<p>
+<a href="https://wiki.segger.com/i.MXRT1050">https://wiki.segger.com/i.MXRT1050</a>
+</p>
+
+<p>
+Change the entry in <code>C:\Program Files (x86)\SEGGER\JLink\JLinkDevices.xml</code> from Hyperflash to QSPI-Flash.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org86b3c8b" class="outline-4">
+<h4 id="org86b3c8b">Debugging Issues</h4>
+<div class="outline-text-4" id="text-org86b3c8b">
+<ul class="org-ul">
+<li>Debugger fucks up</li>
+<li>Download not possible
+(in this case a reboot with ROM-mode helps).</li>
+<li>Cannot Step into a function (but Breakpoint works)</li>
+</ul>
+
+<p>
+Possible causes for problems:
+</p>
+<ul class="org-ul">
+<li>chip boots in ROM mode (e.g. short between GPIO_AD_B0_04 and GPIO_AD_B0_05)</li>
+<li>chip resets due to sensitivity on SWD pins (TMS, TCK) - or something else
+<ul class="org-ul">
+<li>same thing happens with a simple blinky program</li>
+</ul></li>
+<li>jtag not correctly connected (e.g. por - gnd)</li>
+<li>Supply only via USB, Problem when BL is turned on - seems better with Adapter</li>
+<li>POR only doesn't always solve a boot problem, you have to power cycle the device</li>
+<li>FW hangs in an IRQ Handler (repeatedly triggered, e.g. by an error flag)</li>
+</ul>
+
+<p>
+Screenshots see here:
+<a href="Images Demmel/iMXRT1050 Debugging Problems">iMXRT1050 Debugging Problems</a>
+</p>
+
+<p>
+Observations:
+</p>
+<ul class="org-ul">
+<li>The debug problems are caused by a chip reset (can be seen on the Osci).</li>
+<li>Same happens with a simple blinky sample.</li>
+<li>The program runs stable without debugger.</li>
+<li>EVKB-Board works stable with 20pin connector.</li>
+<li>EVKB-Board is also instable when only TMS and TCK are connected.</li>
+</ul>
+
+<p>
+Conclusion:
+</p>
+<ul class="org-ul">
+<li>The debug signals (TMS and/or TCK) somehow cause the chip to reset.</li>
+</ul>
+
+<pre class="example">
+LPC-LINK2 - CMSIS-DAP connected to SWD: TMS- and TCK-pins.
+very sensitive
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org30c762b" class="outline-3">
+<h3 id="org30c762b">Internal bus systems</h3>
+<div class="outline-text-3" id="text-org30c762b">
+<ul class="org-ul">
+<li>APB (Advanced Peripheral Bus)</li>
+<li>AHB (Advanced High-performance Bus)</li>
+<li>IP Bus (AIPS, ARM IP Bus)</li>
+<li>AXI (Advanced eXtensible Interface)</li>
+<li>AMBA (Advanced Microcontroller Bus Architecture)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6f8525a" class="outline-3">
+<h3 id="org6f8525a">IO</h3>
+<div class="outline-text-3" id="text-org6f8525a">
+<p>
+The <code>IOMUX</code> Controller enables the IC to share one pad to several functional blocks.
+</p>
+<ul class="org-ul">
+<li>Up to 8 muxing options (<code>ALT modes</code>)</li>
+</ul>
+
+<p>
+Driver: <code>fsl_iomuxc.c</code>
+</p>
+<ul class="org-ul">
+<li><code>IOMUXC_SetPinMux()</code></li>
+<li><code>IOMUXC_SetPinConfig()</code></li>
+</ul>
+</div>
+
+<div id="outline-container-org1768244" class="outline-4">
+<h4 id="org1768244">GPIO pins</h4>
+<div class="outline-text-4" id="text-org1768244">
+<p>
+Driver: <code>fsl_gpio.c</code>
+</p>
+<ul class="org-ul">
+<li><code>GPIO_PinInit()</code></li>
+<li><code>GPIO_PinWrite()</code></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org771579b" class="outline-3">
+<h3 id="org771579b">MCUXpressoIDE</h3>
+<div class="outline-text-3" id="text-org771579b">
+<ul class="org-ul">
+<li>Download <code>SDK_2.5.1_EVKB-IMXRT1050</code> and drag it to MXUXpresso</li>
+<li>CMSIS-DAP (Cortex Microcontroller Software Interface Standard - Debug Access Port)</li>
+</ul>
+</div>
+<div id="outline-container-org8192ca6" class="outline-4">
+<h4 id="org8192ca6">Pragmas etc</h4>
+<div class="outline-text-4" id="text-org8192ca6">
+<ul class="org-ul">
+<li><code>__STATIC_INLINE</code></li>
+<li><code>__attribute__ ((used, section(".isr_vector")))</code></li>
+</ul>
+</div>
+<div id="outline-container-orgcd73400" class="outline-5">
+<h5 id="orgcd73400">Move Functions to RAM</h5>
+<div class="outline-text-5" id="text-orgcd73400">
+<div class="org-src-container">
+<pre class="src src-c"><span class="org-preprocessor">#include</span> <span class="org-string">&lt;cr_section_macros.h&gt;</span>
+
+<span class="org-function-name">__RAMFUNC</span>(SRAM_ITC)
+<span class="org-type">void</span> <span class="org-function-name">myfun_in_ram</span>()
+{}
+</pre>
+</div>
+
+<p>
+In MCUXpresso you can also use linkscripts to put complete modules into ram:
+</p>
+<pre class="example">
+&lt;#if memory.name=="SRAM_ITC"&gt;
+
+*flexspi_hyper_flash_ops.o(.text*)
+*flexspi_nor_flash_ops.o(.text*)
+*fsl_flexspi.o(.text*)
+
+&lt;/#if&gt;
+</pre>
+<p>
+Note that they have to be in a folder <code>linkerscripts</code> directly in the project
+folder.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org6b737bf" class="outline-4">
+<h4 id="org6b737bf">C Libraries used</h4>
+<div class="outline-text-4" id="text-org6b737bf">
+<ul class="org-ul">
+<li><code>Newlib</code> : GNU C/C++ Library</li>
+<li><code>NewlibNano</code></li>
+<li><code>Redlib</code> : very small (not GNU C library)</li>
+</ul>
+
+<p>
+How to change the library?
+</p>
+<ul class="org-ul">
+<li>with "Managed Linker Scripts" : Quickstart Panel -&gt; Quick Settings -&gt; Set library/header type</li>
+</ul>
+
+<p>
+when using custom Linker Scripts:
+</p>
+<ul class="org-ul">
+<li>MCU C Compiler -&gt; Miscellaneous -&gt; Library headers</li>
+<li>MCU Assembler -&gt; Architecture &amp; Headers</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8e21603" class="outline-3">
+<h3 id="org8e21603">Memory</h3>
+<div class="outline-text-3" id="text-org8e21603">
+</div>
+<div id="outline-container-org46f6e69" class="outline-4">
+<h4 id="org46f6e69">How to organize memory?</h4>
+<div class="outline-text-4" id="text-org46f6e69">
+<ul class="org-ul">
+<li>Place Critical code (ISRs) in ITCM.</li>
+<li>LCD buffer to OCRAM.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org108e2e4" class="outline-4">
+<h4 id="org108e2e4">Internal RAM</h4>
+<div class="outline-text-4" id="text-org108e2e4">
+<ul class="org-ul">
+<li>FlexRAM: Configurable RAM array <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.</li>
+
+<li>Size: 512KB</li>
+<li>can act as: DTC-RAM, ITC-RAM and OC-RAM (On Chip RAM), sharable</li>
+<li>3 power domains can be assigned</li>
+</ul>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/iMXRT/FlexRAM.PNG" alt="FlexRAM.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+The config MUX can be configured via FUSE (chapter 21, Fusemap, UM) or IOMUXC_PGR_GPR17 (10.4.18, UM).
+Default config is FUSE 0b0000: 
+</p>
+<ul class="org-ul">
+<li>OCRAM : 256 kB</li>
+<li>DTCM  : 128 kB</li>
+<li>ITCM  : 128 kB</li>
+</ul>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/iMXRT/RAM_Addresses.PNG" alt="RAM_Addresses.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+Registers:
+</p>
+<ul class="org-ul">
+<li><code>_PGR_GPR17</code> : Configure memory distribution between DTC- ITC- and OC-RAM</li>
+<li><code>IOMUXC_PGR_GPR16</code> : Enable/Disable DTCM and ITCM, Use Fuse or FLEXRAM_BANK_CFG</li>
+<li><code>IOMUXC_PGR_GPR14</code> : Total Size Configuration</li>
+</ul>
+
+<p>
+Notes:
+</p>
+<ul class="org-ul">
+<li>Total Size Configuration <code>IOMUXC_PGR_GPR14</code> (less possibilities) might conflict with the settings in <code>IOMUXC_PGR_GPR17</code>.</li>
+</ul>
+
+<p>
+Interrupts:
+</p>
+<ul class="org-ul">
+<li><code>FLEXRAM_IRQn</code></li>
+</ul>
+</div>
+
+<div id="outline-container-org05754f2" class="outline-5">
+<h5 id="org05754f2">L1 Cache</h5>
+<div class="outline-text-5" id="text-org05754f2">
+<p>
+See: Application Note <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/iMXRT/L1_Cache.PNG" alt="L1_Cache.PNG" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org40e11d8" class="outline-4">
+<h4 id="org40e11d8">External Flash</h4>
+<div class="outline-text-4" id="text-org40e11d8">
+<p>
+start Address: 0x6000 0000
+</p>
+</div>
+<div id="outline-container-org2df6dc5" class="outline-5">
+<h5 id="org2df6dc5">FlexSPI Controller</h5>
+<div class="outline-text-5" id="text-org2df6dc5">
+<p>
+Connect serial NOR-, NAND-Flash modules, HyperFlash, HyperRAM and FPGA devices.
+</p>
+
+<ul class="org-ul">
+<li>2 SPI channels, max. 4 devices</li>
+<li>single, dual, quad, octal mode data transfer</li>
+<li>Sequence Engine (LUT table)</li>
+<li>Controlled via either AHB Bus (64bit) or IPS Bus (32bit)</li>
+</ul>
+</div>
+
+<div id="outline-container-orga077817" class="outline-6">
+<h6 id="orga077817">Programmable Sequence Engine</h6>
+<div class="outline-text-6" id="text-orga077817">
+<p>
+The LUT contains n sequences consisting of up to 8 instructions 
+sequentially executed.
+The FlexSPI controller will fetch a sequence from the LUT memory by index
+and generate a flash transaction on the SPI interface. 
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/iMXRT/LUT.PNG" alt="LUT.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+FlexSPI instruction in the LUT:
+</p>
+
+<pre class="example">
+FLEXSPI_LUT_SEQ(cmd0, pad0, op0, cmd1, pad1, op1)
+</pre>
+
+
+<p>
+We have twice: commands, pads and operands. This is e.g. the row <code>Instr1 | Instr0</code> in the above picture.
+</p>
+
+<p>
+Typical entry in the LUT-Table in C-code:
+</p>
+<div class="org-src-container">
+<pre class="src src-c"><span class="org-comment-delimiter">// </span><span class="org-comment">4 entries can be written per Sequence: 4 * idx + 0,1,2,3</span>
+[4 * SEQ_IDX_READ_NORMAL]     = FLEXSPI_LUT_SEQ(kFLEXSPI_Command_SDR,       kFLEXSPI_1PAD, 0x03,  <span class="org-comment-delimiter">// </span><span class="org-comment">cmd0,pad0,op0</span>
+                                                kFLEXSPI_Command_RADDR_SDR, kFLEXSPI_1PAD, 0x18), <span class="org-comment-delimiter">// </span><span class="org-comment">cmd1</span>
+[4 * SEQ_IDX_READ_NORMAL + 1] = FLEXSPI_LUT_SEQ(kFLEXSPI_Command_READ_SDR,  kFLEXSPI_1PAD, 0x04,  <span class="org-comment-delimiter">// </span><span class="org-comment">cmd2</span>
+                                                kFLEXSPI_Command_STOP,      kFLEXSPI_1PAD, 0),    <span class="org-comment-delimiter">// </span><span class="org-comment">cmd3</span>
+
+</pre>
+</div>
+
+<p>
+NAND-flash instruction Example:
+</p>
+<ul class="org-ul">
+<li>SDR-Mode</li>
+<li>Data transfer via DI- and DO-pins (<code>kFLEXSPI_1PAD</code>).</li>
+</ul>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/iMXRT/NAND Flash Instruction.PNG" alt="NAND Flash Instruction.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+The corresponding LUT-Table entry should look like this:
+</p>
+<div class="org-src-container">
+<pre class="src src-c"><span class="org-comment-delimiter">// </span><span class="org-comment">4 entries can be written per Sequence: 4 * idx + 0,1,2,3</span>
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">flash command: 0x13 (Page Data Read)</span>
+[4 * SEQ_IDX_READ_NORMAL]     = FLEXSPI_LUT_SEQ(kFLEXSPI_Command_SDR,       kFLEXSPI_1PAD, 0x03,  <span class="org-comment-delimiter">// </span><span class="org-comment">cmd0</span>
+<span class="org-comment-delimiter">// </span><span class="org-comment">8 Dummy Clocks</span>
+                                                kFLEXSPI_Command_RADDR_SDR, kFLEXSPI_1PAD, 0x18), <span class="org-comment-delimiter">// </span><span class="org-comment">cmd1</span>
+<span class="org-comment-delimiter">// </span><span class="org-comment">Page Address [15:0]</span>
+[4 * SEQ_IDX_READ_NORMAL + 1] = FLEXSPI_LUT_SEQ(kFLEXSPI_Command_READ_SDR,  kFLEXSPI_1PAD, 0x04,  <span class="org-comment-delimiter">// </span><span class="org-comment">cmd2</span>
+                                                kFLEXSPI_Command_STOP,      kFLEXSPI_1PAD, 0),    <span class="org-comment-delimiter">// </span><span class="org-comment">cmd3</span>
+
+</pre>
+</div>
+
+
+<p>
+CMD definition of FLEXSPI, use to form LUT instruction:
+</p>
+<div class="org-src-container">
+<pre class="src src-c"><span class="org-comment-delimiter">/*</span><span class="org-comment">! @brief CMD definition of FLEXSPI, use to form LUT instruction. </span><span class="org-comment-delimiter">*/</span>
+<span class="org-keyword">enum</span> <span class="org-type">_flexspi_command</span>
+{
+    <span class="org-variable-name">kFLEXSPI_Command_STOP</span> = 0x00U,           <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Stop execution, deassert CS. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_SDR</span> = 0x01U,            <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit Command code to Flash, using SDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_RADDR_SDR</span> = 0x02U,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit Row Address to Flash, using SDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_CADDR_SDR</span> = 0x03U,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit Column Address to Flash, using SDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_MODE1_SDR</span> = 0x04U,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit 1-bit Mode bits to Flash, using SDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_MODE2_SDR</span> = 0x05U,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit 2-bit Mode bits to Flash, using SDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_MODE4_SDR</span> = 0x06U,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit 4-bit Mode bits to Flash, using SDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_MODE8_SDR</span> = 0x07U,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit 8-bit Mode bits to Flash, using SDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_WRITE_SDR</span> = 0x08U,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit Programming Data to Flash, using SDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_READ_SDR</span> = 0x09U,       <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Receive Read Data from Flash, using SDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_LEARN_SDR</span> = 0x0AU,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Receive Read Data or Preamble bit from Flash, SDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_DATSZ_SDR</span> = 0x0BU,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit Read/Program Data size (byte) to Flash, SDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_DUMMY_SDR</span> = 0x0CU,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Leave data lines undriven by FlexSPI controller.</span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_DUMMY_RWDS_SDR</span> = 0x0DU, <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Leave data lines undriven by FlexSPI controller,</span>
+<span class="org-comment">                                                  dummy cycles decided by RWDS. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_DDR</span> = 0x21U,            <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit Command code to Flash, using DDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_RADDR_DDR</span> = 0x22U,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit Row Address to Flash, using DDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_CADDR_DDR</span> = 0x23U,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit Column Address to Flash, using DDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_MODE1_DDR</span> = 0x24U,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit 1-bit Mode bits to Flash, using DDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_MODE2_DDR</span> = 0x25U,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit 2-bit Mode bits to Flash, using DDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_MODE4_DDR</span> = 0x26U,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit 4-bit Mode bits to Flash, using DDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_MODE8_DDR</span> = 0x27U,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit 8-bit Mode bits to Flash, using DDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_WRITE_DDR</span> = 0x28U,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit Programming Data to Flash, using DDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_READ_DDR</span> = 0x29U,       <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Receive Read Data from Flash, using DDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_LEARN_DDR</span> = 0x2AU,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Receive Read Data or Preamble bit from Flash, DDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_DATSZ_DDR</span> = 0x2BU,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit Read/Program Data size (byte) to Flash, DDR mode. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_DUMMY_DDR</span> = 0x2CU,      <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Leave data lines undriven by FlexSPI controller.</span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_DUMMY_RWDS_DDR</span> = 0x2DU, <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Leave data lines undriven by FlexSPI controller,</span>
+<span class="org-comment">                                               dummy cycles decided by RWDS. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_Command_JUMP_ON_CS</span> = 0x1FU,     <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Stop execution, deassert CS and save operand[7:0] as the</span>
+<span class="org-comment">                                               instruction start pointer for next sequence </span><span class="org-comment-delimiter">*/</span>
+};
+</pre>
+</div>
+
+<p>
+PAD definition:
+</p>
+<div class="org-src-container">
+<pre class="src src-c"><span class="org-comment-delimiter">/*</span><span class="org-comment">! @brief pad definition of FLEXSPI, use to form LUT instruction. </span><span class="org-comment-delimiter">*/</span>
+<span class="org-keyword">enum</span> <span class="org-type">_flexspi_pad</span>
+{
+    <span class="org-variable-name">kFLEXSPI_1PAD</span> = 0x00U, <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit command/address and transmit/receive data only through DATA0/DATA1. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_2PAD</span> = 0x01U, <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit command/address and transmit/receive data only through DATA[1:0]. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_4PAD</span> = 0x02U, <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit command/address and transmit/receive data only through DATA[3:0]. </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-variable-name">kFLEXSPI_8PAD</span> = 0x03U, <span class="org-comment-delimiter">/*</span><span class="org-comment">!&lt; Transmit command/address and transmit/receive data only through DATA[7:0]. </span><span class="org-comment-delimiter">*/</span>
+};
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3f77633" class="outline-6">
+<h6 id="org3f77633">Debugging</h6>
+<div class="outline-text-6" id="text-org3f77633">
+<p>
+Wildfire i.MX RT1052 EVK Pro Board 
+</p>
+
+<ul class="org-ul">
+<li>FLEXSPI_SS0  : pin B51</li>
+<li>FLEXSPI_CLK  : pin B53</li>
+
+<li>FLEXSPI_D0_A : pin B55</li>
+<li>FLEXSPI_D1_A : pin B57</li>
+<li>FLEXSPI_D2_A : pin B59</li>
+<li>FLEXSPI_D3_A : pin B61</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org61f7b53" class="outline-4">
+<h4 id="org61f7b53">MPU (Memory Protection Unit)</h4>
+<div class="outline-text-4" id="text-org61f7b53">
+<p>
+Divides the memory map into up to 16 memory regions.
+</p>
+<ul class="org-ul">
+<li>16 protected regions</li>
+<li>overlapping, ascending region priority: (15 highest priority)</li>
+<li>access permissions: access permission bits, TEX, C, B, AP, XN</li>
+<li>memory attributes</li>
+</ul>
+
+<p>
+MPU Region Attribute and Size Register (MPU_RASR)
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/iMXRT/MPU_RASR.PNG" alt="MPU_RASR.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+C-Code for configuring a region
+</p>
+<div class="org-src-container">
+<pre class="src src-c">MPU-&gt;RBAR = ARM_MPU_RBAR(4, 0x80000000U);
+<span class="org-comment-delimiter">//                                           </span><span class="org-comment">TEX,  Shareable,  Cachable,   Bufferable</span>
+MPU-&gt;RASR = ARM_MPU_RASR(0, ARM_MPU_AP_FULL, 0,    0,          0,          0,          0, ARM_MPU_REGION_SIZE_128MB);
+</pre>
+</div>
+
+<p>
+Memory Types:
+</p>
+<ul class="org-ul">
+<li><code>Normal</code> : Re-order transactions for efficiency.</li>
+<li><code>Device and Strongly-ordered</code> : Preserve transaction order.</li>
+<li><code>Sherable</code> : Data synchronization between multiple bus masters. Strongly ordered is always shareable.</li>
+<li><code>Execute Never (XN)</code> : Prevents instruction accesses.</li>
+</ul>
+
+<p>
+Region Attributes
+</p>
+<ul class="org-ul">
+<li>TEX[2:0], C, B together indicate the memory type</li>
+<li>S : shareable (ignored for strongly ordered regions)</li>
+<li>AP[2:0] : access privilege (No, R/W, R only)</li>
+<li>XN : Execute Never</li>
+</ul>
+
+<p>
+<code>TEX, C, B</code>
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/iMXRT/MPU_Region_Attributes.png" alt="MPU_Region_Attributes.png" />
+</p>
+</div>
+
+</div>
+<p>
+<code>AP[2:0]</code>
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/iMXRT/MPU_AP.PNG" alt="MPU_AP.PNG" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb697753" class="outline-3">
+<h3 id="orgb697753">USB Stack (Freescale)</h3>
+<div class="outline-text-3" id="text-orgb697753">
+<ul class="org-ul">
+<li>How to create a composite device?
+Should be done in the device descriptors. see: <code>usb_device_descriptor.c</code> 
+If everything is correct, the device will be recognized by windows.</li>
+<li>How to add a WinUSB device?
+Is a Bulk device, see descriptor.</li>
+
+<li>Enumeration Process
+Is done via Endpoint 0 (reserved for control). 
+<ul class="org-ul">
+<li>USB_DeviceGetDescriptor()</li>
+</ul></li>
+</ul>
+
+<p>
+<code>USB_DeviceInit</code>
+</p>
+
+<p>
+<code>USB_DeviceControlPipeInit</code>  
+</p>
+
+<p>
+<code>USB_DeviceConfigureEndpointStatus</code>
+</p>
+
+
+<p>
+<code>USB_DeviceCallback</code>
+Callback function to be notified when device status has changed.
+</p>
+
+<p>
+Init the endpoint with 2 datastructures:
+</p>
+<pre class="example">
+USB_DeviceInitEndpoint(handle, &amp;epInitStruct, &amp;epCallback);
+</pre>
+
+<p>
+usb_device_endpoint_callback_struct_t epCallback;
+</p>
+
+<p>
+When data is sent to the device we land in:
+</p>
+<pre class="example">
+USB_OTG1_IRQHandler -&gt; USB_DeviceEhciIsrFunction
+</pre>
+
+
+<p>
+<code>USB_DeviceClockInit</code>
+<code>USB_DeviceSetEndpointConfiguration</code>
+</p>
+
+<p>
+<code>USB_DeviceIsrEnable</code>
+USBHS_IRQS { USB_OTG1_IRQn, USB_OTG2_IRQn }
+<code>USB_OTG1_IRQHandler</code>
+</p>
+</div>
+
+<div id="outline-container-org857f684" class="outline-4">
+<h4 id="org857f684">Initialization</h4>
+<div class="outline-text-4" id="text-org857f684">
+<p>
+Typically done in a function called <code>USB_DeviceApplicationInit</code>. 
+</p>
+
+<ul class="org-ul">
+<li><code>USB_DeviceClockInit()</code></li>
+<li><code>USB_DeviceInit(...,USB_DeviceCallback,...)</code></li>
+<li><code>USB_DeviceIsrEnable()</code></li>
+<li><code>USB_DeviceRun()</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd66e54f" class="outline-4">
+<h4 id="orgd66e54f">USB Device Callback Work Flow</h4>
+<div class="outline-text-4" id="text-orgd66e54f">
+<p>
+<code>USB_DeviceInit()</code> registers a global device callback function. The following events can be processed:
+</p>
+<ul class="org-ul">
+<li><code>kUsbDeviceEventBusReset</code>
+<code>USB_DeviceControlPipeInit(handle)</code></li>
+<li><code>kUsbDeviceEventSetConfiguration</code>
+The host sends a set configuration request. Initialize all Endpoints.</li>
+<li><code>kUsbDeviceEventSetInterface</code></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgad6a226" class="outline-4">
+<h4 id="orgad6a226">Send and receive data</h4>
+<div class="outline-text-4" id="text-orgad6a226">
+<p>
+You need to set up the correct endpoint callback functions.
+</p>
+
+<p>
+There are certain buffers for receiving data from the host.
+</p>
+
+<p>
+<code>USB_DeviceGetClassReceiveBuffer</code>
+The function will be called (from <code>usb_device_ch9.c</code>) when the device receives a setup packet to
+get the buffer for storing the incoming data. 
+</p>
+
+<p>
+<code>USB_DeviceProcessClassRequest</code>
+Here the received data is passed in the buffer argument.
+</p>
+
+<p>
+<code>hid_user.c</code> connects to the corresponding queues.
+</p>
+
+<pre class="example">
+USB_EndPoint0 -&gt; HID_SetReport -&gt; commio_RxData
+</pre>
+
+
+<p>
+The endpoints are callback functions <code>USB_EndPoint0(dword event)</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-c"><span class="org-comment-delimiter">/* </span><span class="org-comment">USB Endpoint Events Callback Pointers </span><span class="org-comment-delimiter">*/</span>
+<span class="org-type">void</span> (*_CONST USB_P_EP[16]) (<span class="org-type">dword</span> <span class="org-variable-name">event</span>) =
+{
+   USB_EndPoint0,
+   USB_EndPoint1,
+   USB_EndPoint2,
+   <span class="org-constant">NULL</span>,
+<span class="org-preprocessor">#if</span> HAS_JAVA
+   USB_EndPoint4,
+<span class="org-preprocessor">#else</span>
+   <span class="org-constant">NULL</span>,
+<span class="org-preprocessor">#endif</span>
+   <span class="org-constant">NULL</span>,
+   <span class="org-constant">NULL</span>,
+<span class="org-preprocessor">#if</span> HAS_JAVA
+   USB_EndPoint7,
+<span class="org-preprocessor">#else</span>
+   <span class="org-constant">NULL</span>,
+<span class="org-preprocessor">#endif</span>
+   <span class="org-constant">NULL</span>,
+   <span class="org-constant">NULL</span>,
+   <span class="org-constant">NULL</span>,
+   <span class="org-constant">NULL</span>,
+   <span class="org-constant">NULL</span>,
+   <span class="org-constant">NULL</span>,
+   <span class="org-constant">NULL</span>,
+   <span class="org-constant">NULL</span>
+};
+</pre>
+</div>
+
+<p>
+The data is passed
+</p>
+
+<p>
+SetupPacket
+EP0Buf
+</p>
+
+
+<pre class="example">
+USB_DeviceTransfer -&gt; deviceHandle-&gt;epCallback()
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge967637" class="outline-3">
+<h3 id="orge967637">Timers</h3>
+<div class="outline-text-3" id="text-orge967637">
+<ul class="org-ul">
+<li>2 General Programmable Timers (GPT)
+<ul class="org-ul">
+<li>32-bit up counter with 12-bit pre-scaler, rising/falling edge</li>
+</ul></li>
+<li>4 Periodical Interrupt Timers (PIT)
+<ul class="org-ul">
+<li>32 bit counter with modulus count, clock division, etc.</li>
+</ul></li>
+<li>4 Quad Timers (TMR)</li>
+<li>4 Flex PWMs
+<ul class="org-ul">
+<li>control single half bridge power stage</li>
+</ul></li>
+<li>4 Quadrature Encoder/Decoders 
+<ul class="org-ul">
+<li>interface for position/speed sensors</li>
+</ul></li>
+<li>4 Watchdog Timers (WDOG1/WDOG2/RTWDOG/WDOG3)</li>
+</ul>
+</div>
+
+<div id="outline-container-orgbd09376" class="outline-4">
+<h4 id="orgbd09376">Periodic Interrupt Timer (PIT)</h4>
+<div class="outline-text-4" id="text-orgbd09376">
+<div class="org-src-container">
+<pre class="src src-c"><span class="org-type">void</span> <span class="org-function-name">initJavaTimer</span>(<span class="org-type">void</span>)
+{
+    <span class="org-type">pit_config_t</span> <span class="org-variable-name">pitConfig</span>;            <span class="org-comment-delimiter">/* </span><span class="org-comment">Structure of initialize PIT </span><span class="org-comment-delimiter">*/</span>
+    PIT_GetDefaultConfig(&amp;pitConfig);  <span class="org-comment-delimiter">/* </span><span class="org-comment">pitConfig.enableRunInDebug = false;</span><span class="org-comment-delimiter">*/</span>
+    PIT_Init(PIT, &amp;pitConfig);         <span class="org-comment-delimiter">/* </span><span class="org-comment">Init pit module </span><span class="org-comment-delimiter">*/</span>
+
+    PIT_SetTimerPeriod( PIT,
+                  kPIT_Chnl_0,
+                  MSEC_TO_COUNT(1U, CLOCK_GetFreq(kCLOCK_PerClk)) - 1); <span class="org-comment-delimiter">/* </span><span class="org-comment">Set timer period for channel 0 </span><span class="org-comment-delimiter">*/</span>
+    PIT_EnableInterrupts(PIT, kPIT_Chnl_0, kPIT_TimerInterruptEnable);           <span class="org-comment-delimiter">/* </span><span class="org-comment">Enable timer interrupts for channel 0 </span><span class="org-comment-delimiter">*/</span>
+
+    <span class="org-comment-delimiter">//</span><span class="org-comment">EnableIRQ(PIT_IRQ_ID);           /* Enable at the NVIC */</span>
+
+    NVIC_EnableIRQ(PIT_IRQn);
+    NVIC_SetPriority(PIT_IRQn, SYSTEM_TICK_TIMER_PRIORITY);
+    PIT_StartTimer(PIT, kPIT_Chnl_0);
+}
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">Interrupt Service Routine</span>
+<span class="org-type">void</span> <span class="org-function-name">PIT_IRQHandler</span>(<span class="org-type">void</span>)
+{
+   <span class="org-comment-delimiter">/* </span><span class="org-comment">Clear interrupt flag.</span><span class="org-comment-delimiter">*/</span>
+    PIT_ClearStatusFlags(PIT, kPIT_Chnl_0, kPIT_TimerFlag);
+    __DSB();
+
+   <span class="org-comment-delimiter">// </span><span class="org-comment">update system time (in ms)</span>
+   systemTimeMs += (1000 / SYSTEM_TIME_TICK);
+
+   <span class="org-comment-delimiter">//</span><span class="org-comment">call timer callback, if registered</span>
+   <span class="org-keyword">if</span> (pTimerCallback != <span class="org-constant">NULL</span>)
+      (*pTimerCallback)();
+
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org16a9c1d" class="outline-3">
+<h3 id="org16a9c1d">etc</h3>
+<div class="outline-text-3" id="text-org16a9c1d">
+<p>
+ARM IP Bus (AIPS)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf499ee6" class="outline-2">
+<h2 id="orgf499ee6">Programming Microcontrollers</h2>
+<div class="outline-text-2" id="text-orgf499ee6">
+<p>
+<a href="../Computer Science/Programming.html#org1fa9a89">Programming::Embedded</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf22a77c" class="outline-2">
+<h2 id="orgf22a77c">STM32 MP1</h2>
+<div class="outline-text-2" id="text-orgf22a77c">
+<ul class="org-ul">
+<li>Cortex A7 (Dual Core @ 800 MHz)</li>
+<li>Cortex M2 (209 MHz)</li>
+<li>3D GPU Open GL</li>
+<li>Eval-Board: <code>STM32MP157C-DK2</code></li>
+</ul>
+</div>
+
+<div id="outline-container-org765f73f" class="outline-3">
+<h3 id="org765f73f">Linux</h3>
+<div class="outline-text-3" id="text-org765f73f">
+<ul class="org-ul">
+<li><b>OpenSTLinux</b> Distribution from ST (<code>stm32mp1-openstlinux</code>)</li>
+<li>Yocto Project</li>
+<li>STM32CubeProgrammer</li>
+</ul>
+</div>
+
+<div id="outline-container-org26bb996" class="outline-4">
+<h4 id="org26bb996">OpenSTLinux Distribution</h4>
+<div class="outline-text-4" id="text-org26bb996">
+</div>
+<div id="outline-container-orge4524c2" class="outline-5">
+<h5 id="orge4524c2">Starter Package</h5>
+</div>
+<div id="outline-container-org05145a0" class="outline-5">
+<h5 id="org05145a0">Developer Package</h5>
+</div>
+<div id="outline-container-orgb23695f" class="outline-5">
+<h5 id="orgb23695f">Distribution Package</h5>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org05f25c0" class="outline-3">
+<h3 id="org05f25c0">Links</h3>
+<div class="outline-text-3" id="text-org05f25c0">
+<ul class="org-ul">
+<li><a href="../Computer Science/Linux.html#orgd4208c1">Linux::Embedded Linux Training (Bootlin)</a></li>
+
+<li><a href="https://wiki.st.com/stm32mpu/wiki/Getting_started">Getting Started</a></li>
+<li><a href="https://www.st.com/content/st_com/en/support/learning/stm32-education/stm32-online-training/stm32mp1-online-training.html">Online Training MPU</a></li>
+
+<li><a href="https://medium.com/@BradenSunwold/how-to-set-up-stm32mp1-with-qt-part-1-7576eec8f1fe">How to Set Up STM32MP1 with qt</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">See: ARM Cortex-M Programming Guide to Memory Barrier Instructions.pdf</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">Chapter 30 in [<a href="#i.MXRT1050.Ref.Manual">i.MXRT1050.Ref.Manual</a>]</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">Using the i.MXRT L1 Cache - Document Number: AN12042</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Created: 2021-03-31 Wed 06:00</p>
+</div>
+</body>
+</html>

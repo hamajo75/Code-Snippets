@@ -1,0 +1,3 @@
+_A_,- first replacement -,myReplaceFunction1,myReplaceFilter1
+_B_,- second replacement -,myReplaceFunction2,*.txt
+_C_,- third replacement -,myReplaceFunction3,myReplaceFilter3

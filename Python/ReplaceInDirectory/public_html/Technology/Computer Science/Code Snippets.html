@@ -1,0 +1,2553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-03-31 Wed 06:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Code Snippets</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="shortcut icon" href="/public_html/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/html-export.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/hideshow.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/code.css">
+
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div style = "text-align: right; margin-top: 5px">
+   <a accesskey="h" href="" style="font: 20px arial,helvetica,clean,sans-serif"></a>
+   <a accesskey="H" href="https://joesanmarzano.duckdns.org/public_html/" style="font: 20px arial,helvetica,clean,sans-serif;margin: 30px;"> HOME </a>
+</div><div id="content">
+<h1 class="title">Code Snippets</h1>
+
+<div id="outline-container-org4f40a75" class="outline-2">
+<h2 id="org4f40a75">C/C++</h2>
+<div class="outline-text-2" id="text-org4f40a75">
+</div>
+<div id="outline-container-org406bbf8" class="outline-3">
+<h3 id="org406bbf8">Data Structures</h3>
+<div class="outline-text-3" id="text-org406bbf8">
+</div>
+<div id="outline-container-orgc96c93b" class="outline-4">
+<h4 id="orgc96c93b">STL Structures</h4>
+<div class="outline-text-4" id="text-orgc96c93b">
+</div>
+<div id="outline-container-org4f30359" class="outline-5">
+<h5 id="org4f30359">Vector</h5>
+<div class="outline-text-5" id="text-org4f30359">
+<p>
+ <a href="http://tpcg.io/HyWqDb" target="_blank">Vector Example (split String)</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-cpp">
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;iostream&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;vector&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;sstream&gt;</span>
+
+<span class="org-constant">std</span>::<span class="org-type">vector</span>&lt;<span class="org-constant">std</span>::<span class="org-type">string</span>&gt; <span class="org-function-name">splitString</span>(<span class="org-keyword">const</span> <span class="org-constant">std</span>::<span class="org-type">string</span>&amp; <span class="org-variable-name">s</span>, <span class="org-type">char</span> <span class="org-variable-name">delimiter</span>)
+{
+   <span class="org-constant">std</span>::<span class="org-type">vector</span>&lt;<span class="org-constant">std</span>::<span class="org-type">string</span>&gt; <span class="org-variable-name">tokens</span>;
+   <span class="org-constant">std</span>::<span class="org-type">string</span> <span class="org-variable-name">token</span>;
+   <span class="org-constant">std</span>::<span class="org-type">istringstream</span> <span class="org-variable-name">tokenStream</span>(s);
+   <span class="org-keyword">while</span> (<span class="org-constant">std</span>::getline(tokenStream, token, delimiter))
+   {
+      tokens.push_back(token);
+   }
+   <span class="org-keyword">return</span> tokens;
+}
+
+<span class="org-type">int</span> <span class="org-function-name">main</span>()
+{
+    <span class="org-comment-delimiter">// </span><span class="org-comment">vector of string</span>
+    <span class="org-constant">std</span>::<span class="org-type">vector</span> &lt;<span class="org-constant">std</span>::<span class="org-type">string</span>&gt; <span class="org-variable-name">Record</span>;
+
+    <span class="org-comment-delimiter">// </span><span class="org-comment">push to back of vector</span>
+    Record.push_back(<span class="org-string">"DummyString"</span>);
+
+    <span class="org-comment-delimiter">// </span><span class="org-comment">global Matrix containing CSV-Data</span>
+    <span class="org-comment-delimiter">// </span><span class="org-comment">vector of vector of string</span>
+    <span class="org-constant">std</span>::<span class="org-type">vector</span> &lt;<span class="org-constant">std</span>::<span class="org-type">vector</span> &lt;<span class="org-constant">std</span>::<span class="org-type">string</span>&gt; &gt; <span class="org-variable-name">gCSV_Data</span>;
+
+    <span class="org-comment-delimiter">// </span><span class="org-comment">clear structure</span>
+    gCSV_Data.empty();
+
+    <span class="org-comment-delimiter">// </span><span class="org-comment">push line from txt-file into vector, split at DELIMITER</span>
+    <span class="org-type">char</span> <span class="org-variable-name">DELIMITER</span> = <span class="org-string">';'</span>;
+    gCSV_Data.push_back(splitString(<span class="org-string">"Dummy;String"</span>, DELIMITER));
+}
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org95eebcc" class="outline-6">
+<h6 id="org95eebcc">std::vector Get pointer to start of vector</h6>
+<div class="outline-text-6" id="text-org95eebcc">
+<div class="org-src-container">
+<pre class="src src-cpp">
+<span class="org-constant">std</span>::<span class="org-type">vector</span>&lt;byte&gt; <span class="org-variable-name">my_vector</span>;
+(<span class="org-type">byte</span>*)&amp;my_vector.front()
+
+</pre>
+</div>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2018-09-25 Tue&gt;</span></span>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org679136c" class="outline-5">
+<h5 id="org679136c">List</h5>
+<div class="outline-text-5" id="text-org679136c">
+<p>
+Like Vector BUT no access to indexed elements mylist[i] not possible !
+</p>
+</div>
+</div>
+<div id="outline-container-org731a7e9" class="outline-5">
+<h5 id="org731a7e9">Map (Dictionary)</h5>
+<div class="outline-text-5" id="text-org731a7e9">
+<p>
+#include &lt;map&gt;
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="org-constant">std</span>::<span class="org-type">map</span>&lt;UnicodeString, UnicodeString&gt;    <span class="org-variable-name">FJavaFileNames</span>;
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">add elements</span>
+FJavaFileNames[<span class="org-string">"some Key"</span>] = <span class="org-string">"some Value"</span>;
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">get value for Key</span>
+<span class="org-type">UnicodeString</span> <span class="org-variable-name">Value</span> = FJavaFileName[<span class="org-string">"some Key"</span>];
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">delete everything</span>
+FJavaFileName.clear();
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0a7e96e" class="outline-5">
+<h5 id="org0a7e96e">Pairs</h5>
+<div class="outline-text-5" id="text-org0a7e96e">
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="org-comment-delimiter">// </span><span class="org-comment">make_pair example</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;utility&gt;</span>      <span class="org-comment-delimiter">// </span><span class="org-comment">std::pair</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;iostream&gt;</span>     <span class="org-comment-delimiter">// </span><span class="org-comment">std::cout</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;string&gt;</span>
+
+<span class="org-type">int</span> <span class="org-function-name">main</span> () {
+   <span class="org-constant">std</span>::<span class="org-type">pair</span> &lt;<span class="org-type">bool</span>, <span class="org-constant">std</span>::string&gt; <span class="org-variable-name">myPair</span>;
+
+   myPair = <span class="org-constant">std</span>::make_pair (<span class="org-constant">false</span>, <span class="org-string">"value of 'false'"</span>);
+
+   <span class="org-constant">std</span>::cout &lt;&lt; <span class="org-string">"myPair: &lt;"</span> &lt;&lt; myPair.first &lt;&lt; <span class="org-string">", "</span> &lt;&lt; myPair.second &lt;&lt; <span class="org-string">"&gt;\n"</span>;
+
+   <span class="org-keyword">return</span> 0;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org56f7a85" class="outline-5">
+<h5 id="org56f7a85">std::function</h5>
+<div class="outline-text-5" id="text-org56f7a85">
+<p>
+Function Wrapper
+</p>
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="org-preprocessor">#include</span> <span class="org-string">&lt;functional&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;iostream&gt;</span>
+
+<span class="org-keyword">struct</span> <span class="org-type">Foo</span> {
+    <span class="org-function-name">Foo</span>(<span class="org-type">int</span> <span class="org-variable-name">num</span>) : num_(num) {}
+    <span class="org-type">void</span> <span class="org-function-name">print_add</span>(<span class="org-type">int</span> <span class="org-variable-name">i</span>) <span class="org-keyword">const</span> { <span class="org-constant">std</span>::cout &lt;&lt; num_+i &lt;&lt; <span class="org-string">'\n'</span>; }
+    <span class="org-type">int</span> <span class="org-variable-name">num_</span>;
+};
+
+<span class="org-type">void</span> <span class="org-function-name">print_num</span>(<span class="org-type">int</span> <span class="org-variable-name">i</span>)
+{
+    <span class="org-constant">std</span>::cout &lt;&lt; i &lt;&lt; <span class="org-string">'\n'</span>;
+}
+
+<span class="org-type">int</span> <span class="org-function-name">main</span>()
+{
+    <span class="org-comment-delimiter">// </span><span class="org-comment">store a free function</span>
+    <span class="org-constant">std</span>::<span class="org-type">function</span>&lt;<span class="org-type">void</span>(<span class="org-type">int</span>)&gt; <span class="org-variable-name">f_display</span> = print_num;
+    f_display(-9);
+
+    <span class="org-comment-delimiter">// </span><span class="org-comment">store a lambda</span>
+    <span class="org-constant">std</span>::<span class="org-type">function</span>&lt;<span class="org-type">void</span>()&gt; <span class="org-variable-name">f_display_42</span> = []() { print_num(42); };
+    f_display_42();
+
+    <span class="org-comment-delimiter">// </span><span class="org-comment">store the result of a call to std::bind</span>
+    <span class="org-constant">std</span>::<span class="org-type">function</span>&lt;<span class="org-type">void</span>()&gt; <span class="org-variable-name">f_display_31337</span> = <span class="org-constant">std</span>::bind(print_num, 31337);
+    f_display_31337();
+
+    <span class="org-comment-delimiter">// </span><span class="org-comment">store a call to a member function</span>
+    <span class="org-constant">std</span>::<span class="org-type">function</span>&lt;<span class="org-type">void</span>(<span class="org-keyword">const</span> <span class="org-type">Foo</span>&amp;, <span class="org-type">int</span>)&gt; <span class="org-variable-name">f_add_display</span> = &amp;<span class="org-constant">Foo</span>::print_add;
+    <span class="org-type">Foo</span> <span class="org-variable-name">foo</span>(314159);
+    f_add_display(foo, 1);
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org0961161" class="outline-4">
+<h4 id="org0961161">typedef</h4>
+<div class="outline-text-4" id="text-org0961161">
+<p>
+ <a href="http://tpcg.io/DQ2DqL" target="_blank">typedef</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-c"><span class="org-preprocessor">#include</span> <span class="org-string">&lt;iostream&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;vector&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;sstream&gt;</span>
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">Type: struct account</span>
+<span class="org-keyword">struct</span> <span class="org-type">account</span> {
+     <span class="org-type">int</span> <span class="org-variable-name">account_number</span>;
+     <span class="org-type">char</span> <span class="org-variable-name">first_name</span>[50];
+     <span class="org-type">char</span> <span class="org-variable-name">last_name</span>[50];
+     <span class="org-type">float</span> <span class="org-variable-name">balance</span>;
+};
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">if you don't want to write "struct"</span>
+<span class="org-comment-delimiter">// </span><span class="org-comment">make an alias for type "struct account"</span>
+<span class="org-keyword">typedef</span> <span class="org-keyword">struct</span> <span class="org-type">account</span> <span class="org-type">account_t</span>;
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">here we define a new type "account2"</span>
+<span class="org-keyword">typedef</span> <span class="org-keyword">struct</span> <span class="org-type">account2_t</span> {
+     <span class="org-type">int</span> <span class="org-variable-name">account_number</span>;
+     <span class="org-type">char</span> <span class="org-variable-name">first_name</span>[50];
+     <span class="org-type">char</span> <span class="org-variable-name">last_name</span>[50];
+     <span class="org-type">float</span> <span class="org-variable-name">balance</span>;
+};
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">alias for an unnamed type (no forward declaration)</span>
+<span class="org-keyword">typedef</span> <span class="org-keyword">struct</span> {
+     <span class="org-type">int</span> <span class="org-variable-name">account_number</span>;
+     <span class="org-type">char</span> <span class="org-variable-name">first_name</span>[50];
+     <span class="org-type">char</span> <span class="org-variable-name">last_name</span>[50];
+     <span class="org-type">float</span> <span class="org-variable-name">balance</span>;
+} <span class="org-type">account3_t</span>;
+
+<span class="org-type">int</span> <span class="org-function-name">main</span>()
+{
+    <span class="org-keyword">struct</span> <span class="org-type">account</span> <span class="org-variable-name">my_account</span> = {666, <span class="org-string">"Giovanni"</span>, <span class="org-string">"San Marzano"</span>, 0.3};
+    std::cout &lt;&lt; my_account.last_name &lt;&lt; <span class="org-string">"\n"</span>;
+
+    <span class="org-type">account_t</span> <span class="org-variable-name">my_other_account</span> = {666, <span class="org-string">"Franz"</span>, <span class="org-string">"Feingeist"</span>, 0.3};
+    std::cout &lt;&lt; my_other_account.last_name &lt;&lt; <span class="org-string">"\n"</span>;
+
+    <span class="org-type">account2_t</span> <span class="org-variable-name">my_account2</span> = {666, <span class="org-string">"Sepp"</span>, <span class="org-string">"Wuxacher"</span>, 0.3};
+    std::cout &lt;&lt; my_account2.last_name &lt;&lt; <span class="org-string">"\n"</span>;
+
+    <span class="org-type">account3_t</span> <span class="org-variable-name">my_account3</span> = {666, <span class="org-string">"Federico"</span>, <span class="org-string">"Malbona"</span>, 0.3};
+    std::cout &lt;&lt; my_account3.last_name &lt;&lt; <span class="org-string">"\n"</span>;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org42bb03f" class="outline-4">
+<h4 id="org42bb03f">Smart Pointers&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Show">Show</span></span></h4>
+<div class="outline-text-4" id="text-org42bb03f">
+<p>
+ <a href="http://tpcg.io/jTLAeyFi" target="_blank">Smart Pointers</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr"> 1: </span><span class="org-preprocessor">#include</span> <span class="org-string">&lt;iostream&gt;</span>
+<span class="linenr"> 2: </span><span class="org-preprocessor">#include</span> <span class="org-string">&lt;string&gt;</span>
+<span class="linenr"> 3: </span><span class="org-preprocessor">#include</span> <span class="org-string">&lt;memory&gt;</span>
+<span class="linenr"> 4: </span><span class="org-comment-delimiter">//</span><span class="org-comment">-------------------------------------------------------------------------------</span>
+<span class="linenr"> 5: </span><span class="org-keyword">class</span> <span class="org-type">MyStruct</span>{
+<span class="linenr"> 6: </span><span class="org-keyword">private</span>: 
+<span class="linenr"> 7: </span>   <span class="org-constant">std</span>::<span class="org-type">string</span> <span class="org-variable-name">msg</span>; 
+<span class="linenr"> 8: </span>
+<span class="linenr"> 9: </span><span class="org-keyword">public</span>:  
+<span class="linenr">10: </span>   <span class="org-function-name">MyStruct</span>(<span class="org-constant">std</span>::<span class="org-type">string</span> <span class="org-variable-name">msg</span>) {
+<span class="linenr">11: </span>      <span class="org-constant">std</span>::cout &lt;&lt; <span class="org-string">"Create "</span>&lt;&lt; msg &lt;&lt; <span class="org-string">"\n"</span>;
+<span class="linenr">12: </span>      <span class="org-keyword">this</span>-&gt;msg = msg;
+<span class="linenr">13: </span>   }
+<span class="linenr">14: </span>   ~<span class="org-function-name">MyStruct</span>() {<span class="org-constant">std</span>::cout &lt;&lt; <span class="org-string">"Destroy "</span> &lt;&lt; <span class="org-keyword">this</span>-&gt;msg &lt;&lt; <span class="org-string">"\n"</span>;}
+<span class="linenr">15: </span>   <span class="org-type">void</span> <span class="org-function-name">myFun</span>(){<span class="org-constant">std</span>::cout &lt;&lt; <span class="org-string">"Doing Fun Stuff\n"</span>;}
+<span class="linenr">16: </span>
+<span class="linenr">17: </span>};
+<span class="linenr">18: </span><span class="org-comment-delimiter">// </span><span class="org-comment">TODO: move unique_ptr around (into function, return from function)</span>
+<span class="linenr">19: </span><span class="org-comment-delimiter">//</span><span class="org-comment">-------------------------------------------------------------------------------</span>
+<span class="linenr">20: </span><span class="org-type">int</span> <span class="org-function-name">main</span>(<span class="org-type">int</span> <span class="org-variable-name">argc</span>, <span class="org-keyword">const</span> <span class="org-type">char</span>* <span class="org-variable-name">argv</span>[])
+<span class="linenr">21: </span>{
+<span class="linenr">22: </span>   <span class="org-constant">std</span>::<span class="org-type">unique_ptr</span>&lt;<span class="org-type">MyStruct</span>&gt; <span class="org-variable-name">u_ptr2</span>;
+<span class="linenr">23: </span>   <span class="org-comment-delimiter">// </span><span class="org-comment">std::shared_ptr&lt;MyStruct&gt; s_ptr2;</span>
+<span class="linenr">24: </span>   <span class="org-constant">std</span>::<span class="org-type">weak_ptr</span>&lt;<span class="org-type">MyStruct</span>&gt; <span class="org-variable-name">w_ptr</span>; <span class="org-comment-delimiter">// </span><span class="org-comment">don't take ownership, refcount not increased</span>
+<span class="linenr">25: </span>   {
+<span class="linenr">26: </span>      <span class="org-constant">std</span>::<span class="org-type">unique_ptr</span>&lt;<span class="org-type">MyStruct</span>&gt; <span class="org-variable-name">u_ptr</span> = <span class="org-constant">std</span>::make_unique&lt;<span class="org-type">MyStruct</span>&gt;(<span class="org-string">"unique"</span>);
+<span class="linenr">27: </span>      u_ptr-&gt;myFun();
+<span class="linenr">28: </span>
+<span class="linenr">29: </span>      u_ptr2 = <span class="org-constant">std</span>::move(u_ptr); 
+<span class="linenr">30: </span>
+<span class="linenr">31: </span>      <span class="org-constant">std</span>::<span class="org-type">shared_ptr</span>&lt;<span class="org-type">MyStruct</span>&gt; <span class="org-variable-name">s_ptr</span> = <span class="org-constant">std</span>::make_shared&lt;<span class="org-type">MyStruct</span>&gt;(<span class="org-string">"shared"</span>); 
+<span class="linenr">32: </span>
+<span class="linenr">33: </span>      <span class="org-comment-delimiter">// </span><span class="org-comment">s_ptr2 = s_ptr;</span>
+<span class="linenr">34: </span>      w_ptr = s_ptr;
+<span class="linenr">35: </span>   }
+<span class="linenr">36: </span>
+<span class="linenr">37: </span>   <span class="org-constant">std</span>::cout &lt;&lt; <span class="org-string">"some code here\n"</span>;
+<span class="linenr">38: </span>
+<span class="linenr">39: </span>   <span class="org-keyword">return</span> 0;   
+<span class="linenr">40: </span>}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org732159f" class="outline-4">
+<h4 id="org732159f">const Correctness&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Show">Show</span></span></h4>
+<div class="outline-text-4" id="text-org732159f">
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr"> 1: </span><span class="org-preprocessor">#include</span> <span class="org-string">&lt;iostream&gt;</span>
+<span class="linenr"> 2: </span><span class="org-preprocessor">#include</span> <span class="org-string">&lt;string.h&gt;</span>
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span><span class="org-keyword">class</span> <span class="org-type">Entity</span>
+<span class="linenr"> 5: </span>{
+<span class="linenr"> 6: </span><span class="org-keyword">private</span>:
+<span class="linenr"> 7: </span>   <span class="org-type">int</span> <span class="org-variable-name">m_X</span>;
+<span class="linenr"> 8: </span>   <span class="org-type">int</span>* <span class="org-variable-name">m_Y</span>;   
+<span class="linenr"> 9: </span>   <span class="org-keyword">mutable</span> <span class="org-type">int</span> <span class="org-variable-name">var</span> = 1; <span class="org-comment-delimiter">// </span><span class="org-comment">allow the const getX() function to change this variable</span>
+<span class="linenr">10: </span><span class="org-keyword">public</span>:
+<span class="linenr">11: </span>   <span class="org-function-name">Entity</span>(<span class="org-type">int</span> <span class="org-variable-name">x</span>, <span class="org-type">int</span>* <span class="org-variable-name">y</span>)
+<span class="linenr">12: </span>   {
+<span class="linenr">13: </span>      m_X = x;
+<span class="linenr">14: </span>      m_Y = y;
+<span class="linenr">15: </span>   }
+<span class="linenr">16: </span>
+<span class="linenr">17: </span>   <span class="org-type">int</span> <span class="org-function-name">getX</span>() <span class="org-keyword">const</span>     <span class="org-comment-delimiter">// </span><span class="org-comment">inside a class, this method cannot change the member</span>
+<span class="linenr">18: </span>   {
+<span class="linenr">19: </span>      var = 2;
+<span class="linenr">20: </span>      <span class="org-keyword">return</span> m_X;
+<span class="linenr">21: </span>   }  
+<span class="linenr">22: </span>   <span class="org-type">int</span>* <span class="org-function-name">getY</span>() <span class="org-keyword">const</span> <span class="org-comment-delimiter">// </span><span class="org-comment">return a const pointer to something that is const and this method cannot change the pointer</span>
+<span class="linenr">23: </span>   {
+<span class="linenr">24: </span>      <span class="org-keyword">return</span> m_Y;
+<span class="linenr">25: </span>   }
+<span class="linenr">26: </span>   <span class="org-type">void</span> <span class="org-function-name">setY</span>(<span class="org-type">int</span>* <span class="org-variable-name">y</span>)
+<span class="linenr">27: </span>   {
+<span class="linenr">28: </span>
+<span class="linenr">29: </span>   }
+<span class="linenr">30: </span>   <span class="org-type">void</span> <span class="org-function-name">setX</span>(<span class="org-type">int</span> <span class="org-variable-name">x</span>)
+<span class="linenr">31: </span>   {
+<span class="linenr">32: </span>
+<span class="linenr">33: </span>   }
+<span class="linenr">34: </span>};
+<span class="linenr">35: </span><span class="org-comment-delimiter">//</span><span class="org-comment">-------------------------------------------------------------------------------</span>
+<span class="linenr">36: </span><span class="org-type">void</span> <span class="org-function-name">PrintEntity</span>(<span class="org-keyword">const</span> <span class="org-type">Entity</span>&amp; <span class="org-variable-name">e</span>)      <span class="org-comment-delimiter">// </span><span class="org-comment">to use the const reference (to avoid copying) getX() has to be const otherwise there is a compile error</span>
+<span class="linenr">37: </span>{
+<span class="linenr">38: </span>   <span class="org-comment-delimiter">//</span><span class="org-comment">e = nullptr;</span>
+<span class="linenr">39: </span>   <span class="org-constant">std</span>::cout &lt;&lt; <span class="org-string">"Entity: "</span> &lt;&lt; e.getX() &lt;&lt; <span class="org-string">"\n"</span>;
+<span class="linenr">40: </span>}
+<span class="linenr">41: </span><span class="org-comment-delimiter">//</span><span class="org-comment">-------------------------------------------------------------------------------</span>
+<span class="linenr">42: </span><span class="org-type">int</span> <span class="org-function-name">main</span>(<span class="org-type">int</span> <span class="org-variable-name">argc</span>, <span class="org-keyword">const</span> <span class="org-type">char</span>* <span class="org-variable-name">argv</span>[])
+<span class="linenr">43: </span>{
+<span class="linenr">44: </span>   <span class="org-type">int</span> <span class="org-variable-name">i</span> = 0;
+<span class="linenr">45: </span>   <span class="org-type">int</span> <span class="org-variable-name">u</span> = 1;
+<span class="linenr">46: </span>   <span class="org-keyword">const</span> <span class="org-type">Entity</span> <span class="org-variable-name">e</span>(1, &amp;i);
+<span class="linenr">47: </span>
+<span class="linenr">48: </span>   <span class="org-comment-delimiter">//</span><span class="org-comment">e.setX(1);</span>
+<span class="linenr">49: </span>   <span class="org-comment-delimiter">//</span><span class="org-comment">e.setY(&amp;u);</span>
+<span class="linenr">50: </span>   *e.getY() = 2;
+<span class="linenr">51: </span>   <span class="org-constant">std</span>::cout &lt;&lt; i;
+<span class="linenr">52: </span>
+<span class="linenr">53: </span>   <span class="org-keyword">const</span> <span class="org-type">int</span> <span class="org-variable-name">MAX_NR_OF_CHARS</span> = 1;
+<span class="linenr">54: </span>   <span class="org-comment-delimiter">// </span><span class="org-comment">MAX_NR_OF_CHARS = 2;       // compile error</span>
+<span class="linenr">55: </span>
+<span class="linenr">56: </span>   <span class="org-comment-delimiter">// </span><span class="org-comment">int* p_int = new int;</span>
+<span class="linenr">57: </span>   <span class="org-keyword">const</span> <span class="org-type">int</span>* <span class="org-variable-name">p_int</span> = &amp;MAX_NR_OF_CHARS;   <span class="org-comment-delimiter">// </span><span class="org-comment">ptr to const int</span>
+<span class="linenr">58: </span>   <span class="org-comment-delimiter">//</span><span class="org-comment">*p_int = 2;</span>
+<span class="linenr">59: </span>   <span class="org-comment-delimiter">// </span><span class="org-comment">p_int = (int*)&amp;MAX_NR_OF_CHARS;     // this compiles</span>
+<span class="linenr">60: </span>
+<span class="linenr">61: </span>   <span class="org-type">int</span>* <span class="org-keyword">const</span> <span class="org-variable-name">p_int2</span> = <span class="org-keyword">new</span> <span class="org-type">int</span>;     <span class="org-comment-delimiter">// </span><span class="org-comment">const ptr to int</span>
+<span class="linenr">62: </span>   <span class="org-comment-delimiter">// </span><span class="org-comment">p_int2++;                  // compile error</span>
+<span class="linenr">63: </span>   *p_int2 =  3;                 <span class="org-comment-delimiter">// </span><span class="org-comment">thats ok, only the pointer is const</span>
+<span class="linenr">64: </span>
+<span class="linenr">65: </span>   <span class="org-keyword">return</span> 0;
+<span class="linenr">66: </span>}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga25070e" class="outline-4">
+<h4 id="orga25070e">Move Semantics&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Show">Show</span></span></h4>
+</div>
+</div>
+
+
+<div id="outline-container-org26c3a36" class="outline-3">
+<h3 id="org26c3a36">Classes</h3>
+<div class="outline-text-3" id="text-org26c3a36">
+</div>
+<div id="outline-container-orgaf4db68" class="outline-4">
+<h4 id="orgaf4db68">Inheritance and virtual functions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Show">Show</span></span></h4>
+<div class="outline-text-4" id="text-orgaf4db68">
+</div>
+<div id="outline-container-org55a144d" class="outline-5">
+<h5 id="org55a144d">Virtual Functions</h5>
+<div class="outline-text-5" id="text-org55a144d">
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr"> 1: </span><span class="org-preprocessor">#include</span> <span class="org-string">&lt;iostream&gt;</span>
+<span class="linenr"> 2: </span><span class="org-preprocessor">#include</span> <span class="org-string">&lt;string.h&gt;</span>
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span><span class="org-keyword">class</span> <span class="org-type">Entity</span>
+<span class="linenr"> 5: </span>{
+<span class="linenr"> 6: </span><span class="org-keyword">public</span>:
+<span class="linenr"> 7: </span>   <span class="org-type">float</span> <span class="org-variable-name">X</span>, <span class="org-variable-name">Y</span>;
+<span class="linenr"> 8: </span>
+<span class="linenr"> 9: </span>   <span class="org-keyword">virtual</span> <span class="org-constant">std</span>::<span class="org-type">string</span> <span class="org-function-name">GetName</span>() <span class="org-keyword">const</span> { <span class="org-keyword">return</span> <span class="org-string">"Entity"</span>; }
+<span class="linenr">10: </span>
+<span class="linenr">11: </span>   <span class="org-type">void</span> <span class="org-function-name">Move</span>()
+<span class="linenr">12: </span>   {} 
+<span class="linenr">13: </span>};
+<span class="linenr">14: </span>
+<span class="linenr">15: </span><span class="org-keyword">class</span> <span class="org-type">Player</span> : <span class="org-keyword">public</span> <span class="org-type">Entity</span>
+<span class="linenr">16: </span>{
+<span class="linenr">17: </span><span class="org-keyword">private</span>:
+<span class="linenr">18: </span>   <span class="org-constant">std</span>::<span class="org-type">string</span> <span class="org-variable-name">Name</span>;
+<span class="linenr">19: </span><span class="org-keyword">public</span>:
+<span class="linenr">20: </span>   <span class="org-function-name">Player</span>(<span class="org-keyword">const</span> <span class="org-constant">std</span>::<span class="org-type">string</span>&amp; <span class="org-variable-name">name</span>)
+<span class="linenr">21: </span>      : Name(name) {}
+<span class="linenr">22: </span>
+<span class="linenr">23: </span>
+<span class="linenr">24: </span>   <span class="org-constant">std</span>::<span class="org-type">string</span> <span class="org-function-name">GetName</span>() <span class="org-keyword">const</span> <span class="org-keyword">override</span> { <span class="org-keyword">return</span> Name; }    <span class="org-comment-delimiter">// </span><span class="org-comment">good style to use the override keyword</span>
+<span class="linenr">25: </span>};
+<span class="linenr">26: </span>
+<span class="linenr">27: </span><span class="org-comment-delimiter">//</span><span class="org-comment">-------------------------------------------------------------------------------</span>
+<span class="linenr">28: </span><span class="org-type">void</span> <span class="org-function-name">PrintName</span>(<span class="org-type">Entity</span>* <span class="org-variable-name">e</span>)
+<span class="linenr">29: </span>{
+<span class="linenr">30: </span>   <span class="org-constant">std</span>::cout &lt;&lt; e-&gt;GetName() &lt;&lt; <span class="org-string">"\n"</span>;
+<span class="linenr">31: </span>}  
+<span class="linenr">32: </span><span class="org-comment-delimiter">//</span><span class="org-comment">-------------------------------------------------------------------------------</span>
+<span class="linenr">33: </span><span class="org-type">void</span> <span class="org-function-name">PrintName</span>(<span class="org-type">Entity</span> <span class="org-variable-name">e</span>)
+<span class="linenr">34: </span>{
+<span class="linenr">35: </span>   <span class="org-constant">std</span>::cout &lt;&lt; e.GetName() &lt;&lt; <span class="org-string">"\n"</span>;
+<span class="linenr">36: </span>}  
+<span class="linenr">37: </span><span class="org-comment-delimiter">//</span><span class="org-comment">-------------------------------------------------------------------------------</span>
+<span class="linenr">38: </span><span class="org-type">int</span> <span class="org-function-name">main</span>(<span class="org-type">int</span> <span class="org-variable-name">argc</span>, <span class="org-keyword">const</span> <span class="org-type">char</span>* <span class="org-variable-name">argv</span>[])
+<span class="linenr">39: </span>{
+<span class="linenr">40: </span>   <span class="org-type">Entity</span>* <span class="org-variable-name">e</span> = <span class="org-keyword">new</span> <span class="org-type">Entity</span>();
+<span class="linenr">41: </span>   <span class="org-constant">std</span>::cout &lt;&lt; e-&gt;GetName() &lt;&lt; <span class="org-string">"\n"</span>;
+<span class="linenr">42: </span>   e-&gt;Move();
+<span class="linenr">43: </span>
+<span class="linenr">44: </span>   <span class="org-type">Player</span>* <span class="org-variable-name">p</span> = <span class="org-keyword">new</span> <span class="org-type">Player</span>(<span class="org-string">"Joe"</span>);
+<span class="linenr">45: </span>   <span class="org-constant">std</span>::cout &lt;&lt; p-&gt;GetName() &lt;&lt; <span class="org-string">"\n"</span>;
+<span class="linenr">46: </span>
+<span class="linenr">47: </span>   <span class="org-type">Entity</span>* <span class="org-variable-name">e2</span> = p;
+<span class="linenr">48: </span>   <span class="org-constant">std</span>::cout &lt;&lt; e2-&gt;GetName() &lt;&lt; <span class="org-string">"\n"</span>; <span class="org-comment-delimiter">// </span><span class="org-comment">prints Entity though ent point to a Player object</span>
+<span class="linenr">49: </span>   PrintName(p);
+<span class="linenr">50: </span>
+<span class="linenr">51: </span>   <span class="org-type">Player</span> <span class="org-variable-name">p2</span>(<span class="org-string">"Sepp"</span>);
+<span class="linenr">52: </span>   PrintName(p2);       <span class="org-comment-delimiter">// </span><span class="org-comment">without ptr or reference no polymorphism</span>
+<span class="linenr">53: </span>   PrintName(&amp;p2);         <span class="org-comment-delimiter">// </span><span class="org-comment">like this it works</span>
+<span class="linenr">54: </span>
+<span class="linenr">55: </span>   <span class="org-type">Entity</span> <span class="org-variable-name">e3</span>;
+<span class="linenr">56: </span>   PrintName(e3);
+<span class="linenr">57: </span>
+<span class="linenr">58: </span>   <span class="org-comment-delimiter">//</span><span class="org-comment">Entity e4();       </span>
+<span class="linenr">59: </span>   <span class="org-comment-delimiter">//</span><span class="org-comment">PrintName(e4);        // NOT working: the above actually declares a function (most vexing parse - problem)</span>
+<span class="linenr">60: </span>
+<span class="linenr">61: </span>   <span class="org-keyword">return</span> 0;
+<span class="linenr">62: </span>
+<span class="linenr">63: </span>}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd9da88f" class="outline-5">
+<h5 id="orgd9da88f">Virtual Destructor</h5>
+<div class="outline-text-5" id="text-orgd9da88f">
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="linenr"> 1: </span><span class="org-preprocessor">#include</span> <span class="org-string">&lt;iostream&gt;</span>
+<span class="linenr"> 2: </span><span class="org-preprocessor">#include</span> <span class="org-string">&lt;string.h&gt;</span>
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span><span class="org-keyword">class</span> <span class="org-type">Instrument</span>
+<span class="linenr"> 5: </span>{
+<span class="linenr"> 6: </span><span class="org-keyword">public</span>:
+<span class="linenr"> 7: </span>   <span class="org-function-name">Instrument</span>()
+<span class="linenr"> 8: </span>   {
+<span class="linenr"> 9: </span>      <span class="org-constant">std</span>::cout &lt;&lt; <span class="org-string">"Instrument Constructor\n"</span>;
+<span class="linenr">10: </span>   }
+<span class="linenr">11: </span>   <span class="org-keyword">virtual</span> ~<span class="org-function-name">Instrument</span>()
+<span class="linenr">12: </span>   {
+<span class="linenr">13: </span>      <span class="org-constant">std</span>::cout &lt;&lt; <span class="org-string">"Instrument Destructor\n"</span>;
+<span class="linenr">14: </span>   }
+<span class="linenr">15: </span>   <span class="org-keyword">virtual</span> <span class="org-type">void</span> <span class="org-function-name">makeSound</span>() <span class="org-keyword">const</span>
+<span class="linenr">16: </span>   {
+<span class="linenr">17: </span>      <span class="org-constant">std</span>::cout &lt;&lt; <span class="org-string">"Instrument sound\n"</span>;
+<span class="linenr">18: </span>   }
+<span class="linenr">19: </span>};
+<span class="linenr">20: </span>
+<span class="linenr">21: </span><span class="org-keyword">class</span> <span class="org-type">ElectricGuitar</span> : <span class="org-keyword">public</span> <span class="org-type">Instrument</span>
+<span class="linenr">22: </span>{
+<span class="linenr">23: </span><span class="org-keyword">public</span>:  
+<span class="linenr">24: </span>   <span class="org-function-name">ElectricGuitar</span>()
+<span class="linenr">25: </span>   {
+<span class="linenr">26: </span>      <span class="org-constant">std</span>::cout &lt;&lt; <span class="org-string">"ElectricGuitar Constructor\n"</span>;
+<span class="linenr">27: </span>   }
+<span class="linenr">28: </span>   ~<span class="org-function-name">ElectricGuitar</span>()
+<span class="linenr">29: </span>   {
+<span class="linenr">30: </span>      <span class="org-constant">std</span>::cout &lt;&lt; <span class="org-string">"ElectricGuitar Destructor\n"</span>;
+<span class="linenr">31: </span>   }
+<span class="linenr">32: </span>   <span class="org-keyword">virtual</span> <span class="org-type">void</span> <span class="org-function-name">makeSound</span>() <span class="org-keyword">const</span> <span class="org-keyword">override</span>
+<span class="linenr">33: </span>   {
+<span class="linenr">34: </span>      <span class="org-constant">std</span>::cout &lt;&lt; <span class="org-string">"Ratatatata\n"</span>;
+<span class="linenr">35: </span>   }
+<span class="linenr">36: </span>};
+<span class="linenr">37: </span><span class="org-comment-delimiter">//</span><span class="org-comment">-------------------------------------------------------------------------------</span>
+<span class="linenr">38: </span><span class="org-type">void</span> <span class="org-function-name">playInstrument</span>(<span class="org-type">Instrument</span>* <span class="org-variable-name">Instrument</span>)
+<span class="linenr">39: </span>{
+<span class="linenr">40: </span>   Instrument-&gt;makeSound();
+<span class="linenr">41: </span>}
+<span class="linenr">42: </span><span class="org-comment-delimiter">//</span><span class="org-comment">-------------------------------------------------------------------------------</span>
+<span class="linenr">43: </span><span class="org-type">void</span> <span class="org-function-name">playInstrument</span>(<span class="org-keyword">const</span> <span class="org-type">Instrument</span>&amp; <span class="org-variable-name">Instrument</span>)
+<span class="linenr">44: </span>{
+<span class="linenr">45: </span>   Instrument.makeSound();
+<span class="linenr">46: </span>}
+<span class="linenr">47: </span><span class="org-comment-delimiter">//</span><span class="org-comment">-------------------------------------------------------------------------------</span>
+<span class="linenr">48: </span><span class="org-type">int</span> <span class="org-function-name">main</span>(<span class="org-type">int</span> <span class="org-variable-name">argc</span>, <span class="org-keyword">const</span> <span class="org-type">char</span>* <span class="org-variable-name">argv</span>[])
+<span class="linenr">49: </span>{
+<span class="linenr">50: </span>   <span class="org-type">Instrument</span>* <span class="org-variable-name">instrument</span> = <span class="org-keyword">new</span> <span class="org-type">Instrument</span>{};
+<span class="linenr">51: </span>   <span class="org-keyword">delete</span> instrument;
+<span class="linenr">52: </span>
+<span class="linenr">53: </span>   <span class="org-comment-delimiter">// </span><span class="org-comment">base constructor, then derived constructor is called</span>
+<span class="linenr">54: </span>   <span class="org-type">ElectricGuitar</span>* <span class="org-variable-name">elecGuitar</span> = <span class="org-keyword">new</span> <span class="org-type">ElectricGuitar</span>{};
+<span class="linenr">55: </span>   <span class="org-comment-delimiter">// </span><span class="org-comment">dericed destructor, then base destructor is called</span>
+<span class="linenr">56: </span>   <span class="org-keyword">delete</span> elecGuitar; 
+<span class="linenr">57: </span>
+<span class="linenr">58: </span>   <span class="org-comment-delimiter">// </span><span class="org-comment">now we mix things: remove the virtual before the destructor</span>
+<span class="linenr">59: </span>   <span class="org-type">Instrument</span>* <span class="org-variable-name">instrument2</span> = <span class="org-keyword">new</span> <span class="org-type">ElectricGuitar</span>{};
+<span class="linenr">60: </span>   <span class="org-comment-delimiter">// </span><span class="org-comment">!! only the base constructor is called, if not virtual !!</span>
+<span class="linenr">61: </span>   <span class="org-keyword">delete</span> instrument2;
+<span class="linenr">62: </span>
+<span class="linenr">63: </span>   <span class="org-constant">std</span>::cout &lt;&lt; <span class="org-string">"\n"</span>;
+<span class="linenr">64: </span>   <span class="org-keyword">return</span> 0;   
+<span class="linenr">65: </span>}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org017cbe7" class="outline-3">
+<h3 id="org017cbe7">Buffer</h3>
+<div class="outline-text-3" id="text-org017cbe7">
+<p>
+Ring Buffer. See <a href="Programming.html#org698e215">Programming.org</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="org-preprocessor">#define</span> <span class="org-variable-name">BUFFER_FAIL</span>     0
+<span class="org-preprocessor">#define</span> <span class="org-variable-name">BUFFER_SUCCESS</span>  1
+
+<span class="org-preprocessor">#define</span> <span class="org-variable-name">BUFFER_SIZE</span> 16 <span class="org-comment-delimiter">// </span><span class="org-comment">muss 2^n betragen (8, 16, 32, 64 ...)</span>
+<span class="org-preprocessor">#define</span> <span class="org-variable-name">BUFFER_MASK</span> (BUFFER_SIZE-1) <span class="org-comment-delimiter">// </span><span class="org-comment">Klammern auf keinen Fall vergessen</span>
+
+<span class="org-keyword">struct</span> <span class="org-type">Buffer</span> {
+  <span class="org-type">uint8_t</span> <span class="org-variable-name">data</span>[BUFFER_SIZE];
+  <span class="org-type">uint8_t</span> <span class="org-variable-name">read</span>; <span class="org-comment-delimiter">// </span><span class="org-comment">zeigt auf das Feld mit dem &#228;ltesten Inhalt</span>
+  <span class="org-type">uint8_t</span> <span class="org-variable-name">write</span>; <span class="org-comment-delimiter">// </span><span class="org-comment">zeigt immer auf leeres Feld</span>
+} <span class="org-variable-name">buffer</span> = {{}, 0, 0};
+
+<span class="org-comment-delimiter">//</span>
+<span class="org-comment-delimiter">// </span><span class="org-comment">Stellt 1 Byte in den Ringbuffer</span>
+<span class="org-comment-delimiter">//</span>
+<span class="org-comment-delimiter">// </span><span class="org-comment">Returns:</span>
+<span class="org-comment-delimiter">//     </span><span class="org-comment">BUFFER_FAIL       der Ringbuffer ist voll. Es kann kein weiteres Byte </span>
+<span class="org-comment-delimiter">//                       </span><span class="org-comment">gespeichert werden</span>
+<span class="org-comment-delimiter">//     </span><span class="org-comment">BUFFER_SUCCESS    das Byte wurde gespeichert</span>
+<span class="org-comment-delimiter">//</span>
+<span class="org-type">uint8_t</span> <span class="org-function-name">BufferIn</span>(<span class="org-type">uint8_t</span> <span class="org-variable-name">byte</span>)
+{
+  <span class="org-type">uint8_t</span> <span class="org-variable-name">next</span> = ((buffer.write + 1) &amp; BUFFER_MASK);
+
+  <span class="org-keyword">if</span> (buffer.read == next)
+    <span class="org-keyword">return</span> BUFFER_FAIL; <span class="org-comment-delimiter">// </span><span class="org-comment">voll</span>
+
+  buffer.data[buffer.write] = byte;
+  <span class="org-comment-delimiter">// </span><span class="org-comment">buffer.data[buffer.write &amp; BUFFER_MASK] = byte; // absolut Sicher</span>
+  buffer.write = next;
+
+  <span class="org-keyword">return</span> BUFFER_SUCCESS;
+}
+
+<span class="org-comment-delimiter">//</span>
+<span class="org-comment-delimiter">// </span><span class="org-comment">Holt 1 Byte aus dem Ringbuffer, sofern mindestens eines abholbereit ist</span>
+<span class="org-comment-delimiter">//</span>
+<span class="org-comment-delimiter">// </span><span class="org-comment">Returns:</span>
+<span class="org-comment-delimiter">//     </span><span class="org-comment">BUFFER_FAIL       der Ringbuffer ist leer. Es kann kein Byte geliefert </span>
+<span class="org-comment-delimiter">//                       </span><span class="org-comment">werden.</span>
+<span class="org-comment-delimiter">//     </span><span class="org-comment">BUFFER_SUCCESS    1 Byte wurde geliefert</span>
+<span class="org-comment-delimiter">//</span>
+<span class="org-type">uint8_t</span> <span class="org-function-name">BufferOut</span>(<span class="org-type">uint8_t</span> *<span class="org-variable-name">pByte</span>)
+{
+  <span class="org-keyword">if</span> (buffer.read == buffer.write)
+    <span class="org-keyword">return</span> BUFFER_FAIL;
+
+  *pByte = buffer.data[buffer.read];
+
+  buffer.read = (buffer.read+1) &amp; BUFFER_MASK;
+
+  <span class="org-keyword">return</span> BUFFER_SUCCESS;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org53481e9" class="outline-3">
+<h3 id="org53481e9">I/O</h3>
+<div class="outline-text-3" id="text-org53481e9">
+</div>
+<div id="outline-container-org26012c5" class="outline-4">
+<h4 id="org26012c5">Debug</h4>
+<div class="outline-text-4" id="text-org26012c5">
+<p>
+OutputDebugString(L"Hello Joe");
+</p>
+</div>
+</div>
+<div id="outline-container-org6085d04" class="outline-4">
+<h4 id="org6085d04">Streams</h4>
+<div class="outline-text-4" id="text-org6085d04">
+</div>
+<div id="outline-container-org48b6b4e" class="outline-5">
+<h5 id="org48b6b4e">Formatting output</h5>
+<div class="outline-text-5" id="text-org48b6b4e">
+<p>
+ <a href="http://tpcg.io/T1rT26l3" target="_blank">Formatting Output</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="org-preprocessor">#include</span> <span class="org-string">&lt;iostream&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;iomanip&gt;</span>      <span class="org-comment-delimiter">// </span><span class="org-comment">setfill, setw, (parametric manipulators)</span>
+
+<span class="org-keyword">using</span> <span class="org-keyword">namespace</span> <span class="org-constant">std</span>;
+
+<span class="org-type">int</span> <span class="org-function-name">main</span>()
+{
+   <span class="org-comment-delimiter">// </span><span class="org-comment">output integers    </span>
+   cout &lt;&lt; <span class="org-string">"Integer: "</span> &lt;&lt; hex &lt;&lt; 1234 &lt;&lt; <span class="org-string">" "</span> &lt;&lt; oct &lt;&lt; 1234 &lt;&lt;  endl; 
+
+   cout &lt;&lt; <span class="org-string">"Integer: 0x"</span> &lt;&lt; hex &lt;&lt; setfill(<span class="org-string">'0'</span>) &lt;&lt; setw(5) &lt;&lt; 1234 &lt;&lt; endl; 
+
+   <span class="org-comment-delimiter">// </span><span class="org-comment">output floats</span>
+   <span class="org-keyword">constexpr</span> <span class="org-type">double</span>  <span class="org-variable-name">d</span> = 123.456;
+   cout.precision(3);
+   cout &lt;&lt; <span class="org-string">"Float: "</span> &lt;&lt; scientific &lt;&lt; d &lt;&lt; <span class="org-string">" "</span> 
+                     &lt;&lt; fixed      &lt;&lt; d &lt;&lt;  endl; 
+
+   <span class="org-keyword">return</span> 0;
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org2b93ecd" class="outline-4">
+<h4 id="org2b93ecd">File I/O</h4>
+<div class="outline-text-4" id="text-org2b93ecd">
+</div>
+<div id="outline-container-org2b0e205" class="outline-5">
+<h5 id="org2b0e205">Read whole File into StringStream</h5>
+<div class="outline-text-5" id="text-org2b0e205">
+<div class="org-src-container">
+<pre class="src src-cpp">
+<span class="org-preprocessor">#include</span><span class="org-string">&lt;.h&gt;</span>
+
+<span class="org-type">ifream</span> <span class="org-variable-name">CSV_File</span>;   <span class="org-comment-delimiter">// </span><span class="org-comment">input file stream</span>
+<span class="org-type">stringstream</span> <span class="org-variable-name">FileBuffer</span>;
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">open CVS file</span>
+CSV_File.open(FileName);
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">read whole file</span>
+FileBuffer &lt;&lt; CSV_File.rdbuf();
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">linewise loop through string FileBuffer</span>
+<span class="org-keyword">while</span> (getline(FileBuffer, DummyString, <span class="org-string">'\n'</span>))
+{
+   gCSV_Data.push_back(split_String(DummyString, DELEMITER));
+}
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5744aad" class="outline-5">
+<h5 id="org5744aad">Save Struct to Binary File</h5>
+<div class="outline-text-5" id="text-org5744aad">
+<p>
+Header
+n-Struct blocks.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="org-constant">std</span>::<span class="org-type">ofstream</span> <span class="org-function-name">file</span> (project_file_name.c_str(), <span class="org-constant">std</span>::<span class="org-constant">ofstream</span>::binary);
+
+<span class="org-keyword">if</span> (file)
+{
+
+   <span class="org-comment-delimiter">// </span><span class="org-comment">write header</span>
+   <span class="org-type">project_info_header_t</span> <span class="org-variable-name">project_header</span>;
+   <span class="org-comment-delimiter">// </span><span class="org-comment">copy chars from wide string</span>
+   wcsncpy(project_header.project_name, FProjectName.c_str(), MAXNAME);    
+
+   project_header.version = 0;
+   project_header.nr_of_entries = n;
+   file.write((<span class="org-type">char</span>*)&amp;project_header, <span class="org-keyword">sizeof</span>(project_info_header_t));
+
+   <span class="org-comment-delimiter">// </span><span class="org-comment">add file entries</span>
+   <span class="org-keyword">for</span> (<span class="org-type">unsigned</span> <span class="org-type">int</span> <span class="org-variable-name">i</span> = 0; i &lt; FJavaSourceFiles.size(); i++)
+   {
+      <span class="org-type">project_file_info_t</span> <span class="org-variable-name">project_file_info</span>;
+
+      <span class="org-comment-delimiter">// </span><span class="org-comment">write info to struct</span>
+      <span class="org-comment-delimiter">// </span><span class="org-comment">copy chars from wide string</span>
+      wcsncpy(project_file_info.filename, FJavaSourceFiles[i].Name.c_str(), MAXPATH);    
+
+
+      <span class="org-comment-delimiter">// </span><span class="org-comment">write struct to file</span>
+      file.write((<span class="org-type">char</span>*)&amp;project_file_info, <span class="org-keyword">sizeof</span>(project_file_info_t));
+   }
+
+   file.close();
+}
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc1d9b06" class="outline-4">
+<h4 id="orgc1d9b06">CMD Line</h4>
+<div class="outline-text-4" id="text-orgc1d9b06">
+</div>
+<div id="outline-container-orga71d7c0" class="outline-5">
+<h5 id="orga71d7c0">Start external program and catch output</h5>
+<div class="outline-text-5" id="text-orga71d7c0">
+<div class="org-src-container">
+<pre class="src src-cpp">
+<span class="org-comment-delimiter">/** </span><span class="org-comment">\brief Execute Command with cmd.exe and retrieve output</span>
+<span class="org-comment">*/</span>
+<span class="org-type">bool</span> <span class="org-function-name">ExecuteDosCommand</span>(<span class="org-type">UnicodeString</span> <span class="org-variable-name">command</span>,  <span class="org-type">UnicodeString</span> &amp;<span class="org-variable-name">output</span>)
+{
+   <span class="org-comment-delimiter">// </span><span class="org-comment">this structure provides security settings for CreatePipe()</span>
+   <span class="org-type">SECURITY_ATTRIBUTES</span> <span class="org-variable-name">sa</span>;
+   ZeroMemory(&amp;sa,<span class="org-keyword">sizeof</span>(SECURITY_ATTRIBUTES));  <span class="org-comment-delimiter">// </span><span class="org-comment">fills a block of memory with zeros</span>
+   sa.nLength=<span class="org-keyword">sizeof</span>(SECURITY_ATTRIBUTES);
+   sa.bInheritHandle=<span class="org-constant">true</span>;
+   sa.lpSecurityDescriptor=<span class="org-constant">NULL</span>;
+
+   <span class="org-comment-delimiter">// </span><span class="org-comment">create a pipe to catch output</span>
+   <span class="org-type">HANDLE</span> <span class="org-variable-name">ReadPipeHandle</span>;
+   <span class="org-type">HANDLE</span> <span class="org-variable-name">WritePipeHandle</span>;       <span class="org-comment-delimiter">// </span><span class="org-comment">not used here</span>
+
+   <span class="org-keyword">if</span>(<span class="org-negation-char">!</span>CreatePipe(&amp;ReadPipeHandle, &amp;WritePipeHandle, &amp;sa, 0))
+   {
+      <span class="org-keyword">return</span> <span class="org-constant">false</span>;
+   }
+
+   <span class="org-comment-delimiter">// </span><span class="org-comment">Specifies the window station, desktop, standard handles, and</span>
+   <span class="org-comment-delimiter">// </span><span class="org-comment">appearance of the main window for a process at creation time.</span>
+   <span class="org-type">STARTUPINFO</span> <span class="org-variable-name">si</span>;
+   ZeroMemory(&amp;si,<span class="org-keyword">sizeof</span>(STARTUPINFO));   <span class="org-comment-delimiter">// </span><span class="org-comment">fills a block of memory with zeros</span>
+   si.cb=<span class="org-keyword">sizeof</span>(STARTUPINFO);
+   si.dwFlags=STARTF_USESHOWWINDOW|STARTF_USESTDHANDLES;
+   si.wShowWindow=SW_HIDE;                <span class="org-comment-delimiter">// </span><span class="org-comment">hide cmd.exe</span>
+   si.hStdOutput=WritePipeHandle;         <span class="org-comment-delimiter">// </span><span class="org-comment">redirect command output to Pipe</span>
+<span class="org-comment-delimiter">//   </span><span class="org-comment">si.hStdError=WritePipeHandle;</span>
+
+   <span class="org-comment-delimiter">// </span><span class="org-comment">Contains information for CreateProcess</span>
+   <span class="org-type">PROCESS_INFORMATION</span> <span class="org-variable-name">pi</span>;
+   ZeroMemory(&amp;pi,<span class="org-keyword">sizeof</span>(PROCESS_INFORMATION));
+
+   <span class="org-comment-delimiter">// </span><span class="org-comment">get cmd.exe</span>
+   <span class="org-type">wchar_t</span> <span class="org-variable-name">cmd</span>[MAX_PATH];
+
+   <span class="org-comment-delimiter">// </span><span class="org-comment">- Uses environment paths to search for a file</span>
+   _wsearchenv(L<span class="org-string">"CMD.EXE"</span>, L<span class="org-string">"PATH"</span>, cmd);
+
+   <span class="org-comment-delimiter">// </span><span class="org-comment">cmd.exe has to be called with /c to pass command</span>
+   command.printf(L<span class="org-string">"/c %s"</span>, command.c_str());
+
+   <span class="org-keyword">if</span>(<span class="org-negation-char">!</span>CreateProcess(cmd,
+                     command.c_str(),
+                     <span class="org-constant">NULL</span>, <span class="org-constant">NULL</span>, <span class="org-constant">true</span>,
+                     0,
+                     <span class="org-constant">NULL</span>, <span class="org-constant">NULL</span>,
+                     &amp;si, &amp;pi))
+   {
+      <span class="org-keyword">return</span> <span class="org-constant">false</span>;
+   }
+
+   <span class="org-type">char</span> <span class="org-variable-name">Data</span>[1024];
+   <span class="org-keyword">for</span> (;;)
+   {
+      <span class="org-type">DWORD</span> <span class="org-variable-name">BytesRead</span>;
+      <span class="org-type">DWORD</span> <span class="org-variable-name">TotalBytes</span>;
+      <span class="org-type">DWORD</span> <span class="org-variable-name">BytesLeft</span>;
+
+      <span class="org-keyword">if</span>(<span class="org-negation-char">!</span>PeekNamedPipe(ReadPipeHandle,Data,<span class="org-keyword">sizeof</span>(Data),&amp;BytesRead, &amp;TotalBytes,&amp;BytesLeft))
+      {
+         <span class="org-keyword">return</span> <span class="org-constant">false</span>;
+      }
+
+      <span class="org-keyword">if</span>(BytesRead)
+      {
+         <span class="org-keyword">if</span>(<span class="org-negation-char">!</span>ReadFile(ReadPipeHandle,Data,<span class="org-keyword">sizeof</span>(Data)-1,&amp;BytesRead,<span class="org-constant">NULL</span>))
+         {
+             <span class="org-keyword">return</span> <span class="org-constant">false</span>;
+         }
+         Data[BytesRead]=<span class="org-string">'\0'</span>;
+         output += Data;
+      }
+      <span class="org-keyword">else</span>
+      {
+         <span class="org-keyword">if</span>(WaitForSingleObject(pi.hProcess,0)==WAIT_OBJECT_0)
+         {
+             <span class="org-keyword">break</span>;
+         }
+      }
+   }
+
+   CloseHandle(pi.hThread);
+   CloseHandle(pi.hProcess);
+   CloseHandle(ReadPipeHandle);
+   CloseHandle(WritePipeHandle);
+   <span class="org-keyword">return</span> <span class="org-constant">true</span>;
+}
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdc253ff" class="outline-3">
+<h3 id="orgdc253ff">VCL</h3>
+<div class="outline-text-3" id="text-orgdc253ff">
+</div>
+<div id="outline-container-orga50ddd1" class="outline-4">
+<h4 id="orga50ddd1">Parents, Children &amp; Owner</h4>
+<div class="outline-text-4" id="text-orga50ddd1">
+</div>
+<div id="outline-container-org827de93" class="outline-5">
+<h5 id="org827de93">RTTI</h5>
+<div class="outline-text-5" id="text-org827de93">
+<p>
+panel-&gt;ClassNameIs("")
+UnicodeString class_name = Screen-&gt;FocusedForm-&gt;ClassName();
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf3f1eb5" class="outline-4">
+<h4 id="orgf3f1eb5">Components</h4>
+<div class="outline-text-4" id="text-orgf3f1eb5">
+</div>
+<div id="outline-container-org915e51e" class="outline-5">
+<h5 id="org915e51e">TMS Advanced Office</h5>
+<div class="outline-text-5" id="text-org915e51e">
+<ul class="org-ul">
+<li><p>
+TAdvPopupMenu (APM)
+</p>
+
+<p>
+Access Menu Items (TMenuItem)
+FJavaFileAPM-&gt;Items-&gt;Find("Caption")-&gt;Enabled = false;
+FJavaFileAPM-&gt;Items-&gt;Items_0;
+</p>
+
+<p>
+Dynamically create Popup Menu
+</p>
+<div class="org-src-container">
+<pre class="src src-cpp">
+<span class="org-comment-delimiter">// </span><span class="org-comment">create File Popup Menu</span>
+FJavaFileAPM = <span class="org-keyword">new</span> <span class="org-type">TAdvPopupMenu</span>;
+FJavaFileAPM-&gt;MenuStyler = FJavaIDEFrame-&gt;PopupStyler;
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">- create Menu Items</span>
+<span class="org-type">TMenuItem</span> *<span class="org-variable-name">SetMainClassMI</span> = <span class="org-keyword">new</span> <span class="org-type">TMenuItem</span>;
+SetMainClassMI-&gt;Caption = <span class="org-string">"Contains Main Class"</span>;
+<span class="org-type">TMenuItem</span> *<span class="org-variable-name">RemovefromProjectMI</span> = <span class="org-keyword">new</span> <span class="org-type">TMenuItem</span>;
+RemovefromProjectMI-&gt;Caption = <span class="org-string">"Remove from Project"</span>;
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">- add Menu Items to Popup Menu</span>
+FJavaFileAPM-&gt;Items-&gt;Add(SetMainClassMI);
+FJavaFileAPM-&gt;Items-&gt;Add(RemovefromProjectMI);
+
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6f0526a" class="outline-5">
+<h5 id="org6f0526a">LMD Docking</h5>
+<div class="outline-text-5" id="text-org6f0526a">
+</div>
+<div id="outline-container-org8055b9f" class="outline-6">
+<h6 id="org8055b9f">Add Panel to DockSite dynamically</h6>
+<div class="outline-text-6" id="text-org8055b9f">
+<div class="org-src-container">
+<pre class="src src-cpp">
+<span class="org-type">TLMDDockPanel</span> *<span class="org-variable-name">panel</span>;
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">get panel from DockSite2</span>
+panel = DockSite2-&gt;Panels[0];
+
+<span class="org-type">TLMDDockZone</span> *<span class="org-variable-name">DockZone</span> = DockSite-&gt;SpaceZone;
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">move panel from DockSite2 to DockSite</span>
+DockSite-&gt;DockControl(panel, DockZone, alClient);
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgddcfb64" class="outline-4">
+<h4 id="orgddcfb64">LMD Docking</h4>
+<div class="outline-text-4" id="text-orgddcfb64">
+<p>
+interesting Functions:
+</p>
+
+<ul class="org-ul">
+<li>zone = zone-&gt;ContainsPanel(panel);</li>
+<li>panel = DockSite-&gt;Panels[i];</li>
+</ul>
+</div>
+
+<div id="outline-container-org3760e18" class="outline-5">
+<h5 id="org3760e18">Loop through Child Controls</h5>
+<div class="outline-text-5" id="text-org3760e18">
+<div class="org-src-container">
+<pre class="src src-cpp">
+<span class="org-comment-delimiter">// </span><span class="org-comment">loop through Child Panels</span>
+<span class="org-type">TLMDDockPanel</span> *<span class="org-variable-name">panel</span>;
+<span class="org-keyword">for</span> (<span class="org-type">int</span> <span class="org-variable-name">i</span> = 0; i &lt; DockSite-&gt;PanelCount; i++)
+{
+    panel = DockSite-&gt;Panels[i];
+   StatusBar-&gt;Panels-&gt;Items[i]-&gt;Text = panel-&gt;Caption;
+}
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7726ba1" class="outline-4">
+<h4 id="org7726ba1">Callback Functions</h4>
+<div class="outline-text-4" id="text-org7726ba1">
+<div class="org-src-container">
+<pre class="src src-cpp">
+<span class="org-keyword">class</span> <span class="org-type">TJavaTab</span> : <span class="org-keyword">public</span> <span class="org-type">TLMDDockPanel</span>
+{
+<span class="org-keyword">private</span>:
+
+   <span class="org-constant">System</span>::<span class="org-constant">Classes</span>::<span class="org-type">TNotifyEvent</span> <span class="org-variable-name">FOnCloseJavaTab</span>;  <span class="org-comment-delimiter">// </span><span class="org-comment">Fct. pointer</span>
+
+<span class="org-keyword">public</span>:
+
+   __property <span class="org-constant">System</span>::<span class="org-constant">Classes</span>::<span class="org-type">TNotifyEvent</span> <span class="org-variable-name">OnCloseJavaTab</span> = {read = FOnCloseJavaTab, write = FOnCloseJavaTab};
+
+};
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">in the calling class</span>
+<span class="org-comment-delimiter">// </span><span class="org-comment">declaration</span>
+<span class="org-type">void</span> <span class="org-function-name">__fastcall</span> DecreaseSourcePanelCounter(<span class="org-type">TObject</span>* <span class="org-variable-name">Sender</span>);
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">implementation</span>
+<span class="org-type">void</span> <span class="org-function-name">__fastcall</span> <span class="org-constant">TJavaIDEFrame</span>::DecreaseSourcePanelCounter(<span class="org-type">TObject</span>* <span class="org-variable-name">Sender</span>){}
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">assignment</span>
+java_tab-&gt;OnCloseJavaTab = DecreaseSourcePanelCounter;
+
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org570305e" class="outline-4">
+<h4 id="org570305e">Actions</h4>
+<div class="outline-text-4" id="text-org570305e">
+</div>
+<div id="outline-container-org3ed9268" class="outline-5">
+<h5 id="org3ed9268">Loop through all Actions in Action List</h5>
+<div class="outline-text-5" id="text-org3ed9268">
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="org-keyword">for</span> (<span class="org-type">int</span> <span class="org-variable-name">i</span> = 0; i &lt; JavaAL-&gt;ActionCount; i++)
+{
+   <span class="org-type">UnicodeString</span> <span class="org-variable-name">name</span> = JavaAL-&gt;Actions[i]-&gt;Name;
+   JavaAL-&gt;Actions[i]-&gt;ActionList = action_manager;
+
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org21efcdc" class="outline-5">
+<h5 id="org21efcdc">Disable all Actions of a Category</h5>
+<div class="outline-text-5" id="text-org21efcdc">
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="org-keyword">for</span> (<span class="org-type">int</span> <span class="org-variable-name">i</span> = 0; i &lt; JavaAL-&gt;ActionCount; i++)
+{
+   <span class="org-keyword">if</span> (JavaAL-&gt;Actions[i]-&gt;Category == <span class="org-string">"CategoryName"</span>)
+   {
+      JavaAL-&gt;Actions[i]-&gt;Enabled = <span class="org-constant">false</span>;
+   }
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orga920c98" class="outline-4">
+<h4 id="orga920c98">File I/O</h4>
+<div class="outline-text-4" id="text-orga920c98">
+</div>
+<div id="outline-container-org7129731" class="outline-5">
+<h5 id="org7129731">Ini Files</h5>
+<div class="outline-text-5" id="text-org7129731">
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="org-type">TIniFile</span> *<span class="org-variable-name">control_file</span> = <span class="org-keyword">new</span> <span class="org-type">TIniFile</span>(TempBuildFolder + main_class + <span class="org-string">".control"</span>); <span class="org-comment-delimiter">//</span><span class="org-comment">create file</span>
+control_file-&gt;WriteString(<span class="org-string">"Section"</span>, <span class="org-string">"Key"</span>, <span class="org-string">"Value"</span>);
+<span class="org-keyword">delete</span> control_file;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb7dc709" class="outline-5">
+<h5 id="orgb7dc709">Delete Files in Directory</h5>
+<div class="outline-text-5" id="text-orgb7dc709">
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="org-comment-delimiter">// </span><span class="org-comment">create dir if it doesnt exist</span>
+<span class="org-keyword">if</span> (<span class="org-negation-char">!</span>DirectoryExists(FJavaProject-&gt;TempBuildFolder))
+{
+   CreateDir(FJavaProject-&gt;TempBuildFolder.c_str());
+}
+<span class="org-keyword">else</span> <span class="org-comment-delimiter">// </span><span class="org-comment">clear dir</span>
+{
+   <span class="org-type">TStringDynArray</span> <span class="org-variable-name">files</span> = <span class="org-constant">TDirectory</span>::GetFiles(FJavaProject-&gt;TempBuildFolder);
+
+   <span class="org-keyword">for</span>(<span class="org-type">int</span> <span class="org-variable-name">i</span> = 0; i &lt; files.Length; i++)
+   {
+      <span class="org-comment-delimiter">// </span><span class="org-comment">delete file</span>
+      DeleteFile(files[i]);
+   }
+   <span class="org-comment-delimiter">//</span><span class="org-comment">TDirectory::Delete(FJavaProject-&gt;TempBuildFolder, true); //recursively, doesnt always work immedeatly</span>
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbc9432b" class="outline-5">
+<h5 id="orgbc9432b">Open File Dialog</h5>
+<div class="outline-text-5" id="text-orgbc9432b">
+<p>
+add TOpenDialog
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp">
+<span class="org-keyword">if</span> (OpenFileDialog-&gt;Execute())       <span class="org-comment-delimiter">//</span><span class="org-comment">false = cancel</span>
+{
+
+    <span class="org-type">TFileStream</span> *<span class="org-variable-name">FStream</span>;
+    FStream = <span class="org-keyword">new</span> <span class="org-type">TFileStream</span>(OpenJavaFileDialog-&gt;FileName, fmOpenReadWrite|fmShareDenyNone);
+
+}
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orga71f371" class="outline-4">
+<h4 id="orga71f371">Data Structures</h4>
+<div class="outline-text-4" id="text-orga71f371">
+</div>
+<div id="outline-container-org8c5fe7e" class="outline-5">
+<h5 id="org8c5fe7e">Lists</h5>
+<div class="outline-text-5" id="text-org8c5fe7e">
+<p>
+TList
+</p>
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="org-comment-delimiter">// </span><span class="org-comment">declaration and creation</span>
+<span class="org-type">TList</span>             *<span class="org-variable-name">FSourceTabsList</span>;
+FSourceTabsList = <span class="org-keyword">new</span> <span class="org-type">TList</span>();
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">add things to list</span>
+FSourceTabsList-&gt;Add
+(
+   <span class="org-keyword">new</span> <span class="org-type">TJavaTab</span>(DockSiteJava, FAdvToolBarPager, file_name, id_panel, FSourceTabsList-&gt;Count)
+);
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">---------------------------------------------------------------------------</span>
+<span class="org-comment-delimiter">/** </span><span class="org-comment">\brief Return JavaSourceTab with index  JavaTabs[i]</span>
+<span class="org-comment"> */</span>
+<span class="org-type">TJavaTab</span>* <span class="org-function-name">__fastcall</span> <span class="org-constant">TJavaIDEFrame</span>::GetJavaSourceTabs(<span class="org-type">int</span> <span class="org-variable-name">index</span>)
+{
+
+   <span class="org-keyword">if</span> (FSourceTabsList == <span class="org-constant">NULL</span>)
+   {
+      <span class="org-keyword">return</span> <span class="org-constant">NULL</span>;
+   }
+   <span class="org-keyword">else</span>
+   {
+      <span class="org-keyword">return</span> <span class="org-keyword">reinterpret_cast</span>&lt;<span class="org-type">TJavaTab</span>*&gt;(FSourceTabsList-&gt;Items[index]);
+   }
+
+}
+
+<span class="org-comment-delimiter">// </span><span class="org-comment">Interface to Source Tabs</span>
+<span class="org-keyword">public</span>:
+
+   __property <span class="org-type">TJavaTab</span>* <span class="org-variable-name">JavaSourceTabs</span>[<span class="org-type">int</span> index] = {read=GetJavaSourceTabs<span class="org-comment-delimiter">/*</span><span class="org-comment">, default*/</span>};
+
+</pre>
+</div>
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="org-type">TList</span> *<span class="org-variable-name">node_list</span> = <span class="org-keyword">new</span> <span class="org-type">TList</span>();
+FProjectTree-&gt;GetSelections(node_list);
+
+<span class="org-keyword">try</span>
+{
+   <span class="org-type">int</span> <span class="org-variable-name">count</span> = FProjectTree-&gt;SelectionCount;
+   <span class="org-keyword">for</span> (<span class="org-type">int</span> <span class="org-variable-name">i</span> = 0; i &lt; count; i++)
+   {
+      <span class="org-type">TTreeNode</span> *<span class="org-variable-name">tree_node</span> = <span class="org-keyword">reinterpret_cast</span>&lt;<span class="org-type">TTreeNode</span>*&gt;(node_list-&gt;Items[i]);
+      RemoveJavaFile(<span class="org-keyword">reinterpret_cast</span>&lt;<span class="org-type">TJavaFile</span>*&gt;(tree_node-&gt;Data));
+   }
+}
+<span class="org-keyword">catch</span> (...)
+{
+   <span class="org-keyword">throw</span> Exception(<span class="org-string">"TJavaProject::RemoveSelectedJavaFiles - Couldn't remove File!"</span>);
+}
+
+<span class="org-keyword">delete</span> node_list;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgefe268c" class="outline-4">
+<h4 id="orgefe268c">XML</h4>
+<div class="outline-text-4" id="text-orgefe268c">
+<p>
+Handle Nodes:
+Add TXMLDocument to a form. (create with new difficult)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp">
+<span class="org-type">TXMLDocument</span> *<span class="org-variable-name">xml_document</span> = XMLDocument;
+
+xml_document-&gt;LoadFromFile(<span class="org-string">"DockSettings.xml"</span>);
+
+<span class="org-type">_di_IXMLNode</span> <span class="org-variable-name">xml_node</span>;
+
+xml_node = xml_document-&gt;DocumentElement-&gt;ChildNodes-&gt;GetNode(0);
+
+</pre>
+</div>
+
+<p>
+Handle Attributes:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp">xml_node-&gt;SetAttribute(<span class="org-string">"Attribute_Name"</span>, <span class="org-string">"Attribute_Value"</span>);
+my_string = xml_node-&gt;GetAttribute(<span class="org-string">"Attribute_Name"</span>);
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-org9df969f" class="outline-5">
+<h5 id="org9df969f">Parse XML-Tree</h5>
+<div class="outline-text-5" id="text-org9df969f">
+<p>
+Recursion:
+</p>
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="org-type">void</span> <span class="org-function-name">ParseXMLStructure</span>(<span class="org-type">_di_IXMLNode</span> <span class="org-variable-name">xml_node</span>)
+{
+
+    <span class="org-keyword">for</span> (<span class="org-type">int</span> <span class="org-variable-name">i</span> = 0; i &lt; xml_node-&gt;ChildNodes-&gt;Count; i++)
+    {
+        <span class="org-comment-delimiter">// </span><span class="org-comment">get child node</span>
+        ParseXMLStructure(xml_node-&gt;ChildNodes-&gt;GetNode(i));
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgee46d73" class="outline-3">
+<h3 id="orgee46d73">Function Pointers</h3>
+<div class="outline-text-3" id="text-orgee46d73">
+<p>
+ <a href="http://tpcg.io/5J18tq" target="_blank">Simple Function Pointer Example</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="org-preprocessor">#include</span> <span class="org-string">&lt;iostream&gt;</span>
+
+<span class="org-keyword">using</span> <span class="org-keyword">namespace</span> <span class="org-constant">std</span>;
+
+<span class="org-type">void</span> <span class="org-function-name">myFun</span>()
+{
+    cout &lt;&lt; <span class="org-string">"myFun()\n"</span>;    
+}
+<span class="org-type">void</span> <span class="org-function-name">CallBackFun</span>(<span class="org-type">void</span> (*<span class="org-function-name">fun_ptr</span>)())
+{
+    cout &lt;&lt; <span class="org-string">"CallBackFun()\n"</span>;    
+    fun_ptr();    
+}
+
+<span class="org-keyword">typedef</span> <span class="org-type">void</span> (*<span class="org-type">my_fun_ptr_t</span>)(<span class="org-type">void</span>);
+
+<span class="org-type">int</span> <span class="org-function-name">main</span>()
+{
+    <span class="org-type">my_fun_ptr_t</span> <span class="org-variable-name">fun_ptr</span> = myFun;
+    fun_ptr();
+    CallBackFun(fun_ptr);
+
+   <span class="org-keyword">return</span> 0;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org96985c5" class="outline-3">
+<h3 id="org96985c5">Currying in C++</h3>
+<div class="outline-text-3" id="text-org96985c5">
+<p>
+ <a href="http://tpcg.io/LBNiar" target="_blank">Currying in C++ 14</a>
+</p>
+
+<p>
+Since C++ 14 this is possible due to 
+</p>
+<ul class="org-ul">
+<li><code>auto</code></li>
+<li><code>lambdas</code></li>
+</ul>
+<p>
+Return a new function with the second argument.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span class="org-preprocessor">#include</span> <span class="org-string">&lt;iostream&gt;</span>
+
+<span class="org-keyword">auto</span> <span class="org-function-name">uncurried_add</span>(<span class="org-type">int</span> <span class="org-variable-name">a</span>, <span class="org-type">int</span> <span class="org-variable-name">b</span>){
+    <span class="org-keyword">return</span> a + b;
+}
+
+<span class="org-keyword">auto</span> <span class="org-function-name">curried_add</span>(<span class="org-type">int</span> <span class="org-variable-name">x</span>){
+    <span class="org-keyword">return</span> [x](<span class="org-type">int</span> <span class="org-variable-name">y</span>){<span class="org-keyword">return</span> x + y;};
+}
+
+<span class="org-type">int</span> <span class="org-function-name">main</span>(<span class="org-type">int</span> <span class="org-variable-name">argc</span>, <span class="org-type">char</span> *<span class="org-variable-name">argv</span>[]){
+    <span class="org-constant">std</span>::cout &lt;&lt; uncurried_add(3, 4) &lt;&lt; <span class="org-string">"\n"</span>;
+    <span class="org-constant">std</span>::cout &lt;&lt; curried_add(3)(4) &lt;&lt; <span class="org-string">"\n"</span>;
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org21969a7" class="outline-2">
+<h2 id="org21969a7">Linux</h2>
+<div class="outline-text-2" id="text-org21969a7">
+</div>
+<div id="outline-container-org0b16633" class="outline-3">
+<h3 id="org0b16633">File I/O</h3>
+<div class="outline-text-3" id="text-org0b16633">
+<div class="org-src-container">
+<pre class="src src-c"><span class="linenr"> 1: </span><span class="org-comment-delimiter">/* </span><span class="org-comment">What does this code do?</span>
+<span class="linenr"> 2: </span><span class="org-comment">1. create, open   file</span>
+<span class="linenr"> 3: </span><span class="org-comment">2. write          file</span>
+<span class="linenr"> 4: </span><span class="org-comment">3. read           file</span>
+<span class="linenr"> 5: </span><span class="org-comment-delimiter">*/</span>
+<span class="linenr"> 6: </span>
+<span class="linenr"> 7: </span><span class="org-preprocessor">#include</span> <span class="org-string">&lt;stdio.h&gt;</span>
+<span class="linenr"> 8: </span>
+<span class="linenr"> 9: </span><span class="org-preprocessor">#include</span> <span class="org-string">&lt;sys/types.h&gt;</span>   <span class="org-comment-delimiter">//</span><span class="org-comment">creat(), open()</span>
+<span class="linenr">10: </span><span class="org-preprocessor">#include</span> <span class="org-string">&lt;sys/stat.h&gt;</span>
+<span class="linenr">11: </span><span class="org-preprocessor">#include</span> <span class="org-string">&lt;fcntl.h&gt;</span>
+<span class="linenr">12: </span>
+<span class="linenr">13: </span><span class="org-preprocessor">#include</span> <span class="org-string">&lt;unistd.h&gt;</span>      <span class="org-comment-delimiter">//</span><span class="org-comment">read(), write(), fsync(), lseek()</span>
+<span class="linenr">14: </span><span class="org-preprocessor">#include</span> <span class="org-string">&lt;string.h&gt;</span>      <span class="org-comment-delimiter">//</span><span class="org-comment">strlen()</span>
+<span class="linenr">15: </span>
+<span class="linenr">16: </span><span class="org-type">int</span> <span class="org-function-name">main</span>(<span class="org-type">int</span> <span class="org-variable-name">argc</span>, <span class="org-type">char</span>* <span class="org-variable-name">argv</span>[]){
+<span class="linenr">17: </span>   <span class="org-type">int</span> <span class="org-variable-name">file_descriptor</span> = -1;    <span class="org-comment-delimiter">// </span><span class="org-comment">file descriptor for reading</span>
+<span class="linenr">18: </span>   <span class="org-type">char</span>* <span class="org-variable-name">file_name</span> = <span class="org-string">"./data"</span>;
+<span class="linenr">19: </span>   umask(0);   <span class="org-comment-delimiter">// </span><span class="org-comment">reset file permissions for this process, permissions are mode &amp; ~umask</span>
+<span class="linenr">20: </span>
+<span class="linenr">21: </span>   <span class="org-comment-delimiter">/* </span><span class="org-comment">-------------------- Create file -------------------------------------</span>
+<span class="linenr">22: </span><span class="org-comment">   int creat (const char *name, mode_t mode);</span>
+<span class="linenr">23: </span><span class="org-comment">   </span><span class="org-comment-delimiter">*/</span>
+<span class="linenr">24: </span>   <span class="org-type">mode_t</span> <span class="org-variable-name">mode</span> = 775;
+<span class="linenr">25: </span>   <span class="org-keyword">if</span> (creat(file_name, mode) == -1){
+<span class="linenr">26: </span>      printf(<span class="org-string">"Couldn't create file: %s\n"</span>, file_name);
+<span class="linenr">27: </span>      <span class="org-keyword">return</span> -1;
+<span class="linenr">28: </span>   }
+<span class="linenr">29: </span>
+<span class="linenr">30: </span>   <span class="org-comment-delimiter">/* </span><span class="org-comment">-------------------- Open file ---------------------------------------</span>
+<span class="linenr">31: </span><span class="org-comment">   int open (const char *name, int flags);</span>
+<span class="linenr">32: </span><span class="org-comment">   int open (const char *name, int flags, mode_t mode);</span>
+<span class="linenr">33: </span><span class="org-comment">   </span><span class="org-comment-delimiter">*/</span>
+<span class="linenr">34: </span>
+<span class="linenr">35: </span>   <span class="org-comment-delimiter">// </span><span class="org-comment">O_WRONLY, O_RDWR, O_APPEND</span>
+<span class="linenr">36: </span>   <span class="org-keyword">if</span> ((file_descriptor = open(file_name, O_RDWR | O_NONBLOCK)) == -1){
+<span class="linenr">37: </span>      printf(<span class="org-string">"Couldn't open file: %s\n"</span>, file_name);
+<span class="linenr">38: </span>      <span class="org-keyword">return</span> -1;
+<span class="linenr">39: </span>   }
+<span class="linenr">40: </span>   <span class="org-keyword">else</span>
+<span class="linenr">41: </span>      printf(<span class="org-string">"File opened with descriptor: %d\n"</span>, file_descriptor);
+<span class="linenr">42: </span>
+<span class="linenr">43: </span>   <span class="org-comment-delimiter">/* </span><span class="org-comment">-------------------- Write file ---------------------------------------</span>
+<span class="linenr">44: </span><span class="org-comment">   ssize_t write (int fd, const void *buf, size_t count);</span>
+<span class="linenr">45: </span><span class="org-comment">   </span><span class="org-comment-delimiter">*/</span>
+<span class="linenr">46: </span>   <span class="org-keyword">const</span> <span class="org-type">char</span>* <span class="org-variable-name">buffer</span> = <span class="org-string">"Hello Joe"</span>;
+<span class="linenr">47: </span>   <span class="org-type">ssize_t</span> <span class="org-variable-name">nr_of_bytes_written</span> = 0;
+<span class="linenr">48: </span>   <span class="org-keyword">if</span> ((nr_of_bytes_written = write(file_descriptor, buffer, strlen(buffer))) == -1){
+<span class="linenr">49: </span>      printf(<span class="org-string">"Couldn't write to file: %s\n"</span>, file_name);
+<span class="linenr">50: </span>      close(file_descriptor);
+<span class="linenr">51: </span>      <span class="org-keyword">return</span> -1;
+<span class="linenr">52: </span>   }
+<span class="linenr">53: </span>   <span class="org-keyword">else</span> <span class="org-keyword">if</span> (nr_of_bytes_written != strlen(buffer)){
+<span class="linenr">54: </span>      printf(<span class="org-string">"Partial write to file: %s\n"</span>, file_name);
+<span class="linenr">55: </span>      close(file_descriptor);
+<span class="linenr">56: </span>      <span class="org-keyword">return</span> -1;
+<span class="linenr">57: </span>   }
+<span class="linenr">58: </span>
+<span class="linenr">59: </span>   <span class="org-comment-delimiter">/* </span><span class="org-comment">it's not yet guaranteed that the data has been written but it can</span>
+<span class="linenr">60: </span><span class="org-comment">      be read from the buffer </span><span class="org-comment-delimiter">*/</span>
+<span class="linenr">61: </span>
+<span class="linenr">62: </span>   <span class="org-comment-delimiter">/* </span><span class="org-comment">-------------------- write data to disk -------------------------------</span>
+<span class="linenr">63: </span><span class="org-comment">   int fsync (int fd);</span>
+<span class="linenr">64: </span>
+<span class="linenr">65: </span><span class="org-comment">   if (fsync(file_descriptor) == -1){</span>
+<span class="linenr">66: </span><span class="org-comment">      printf("Couldn't (really) write to file: %s\n", file_name);</span>
+<span class="linenr">67: </span><span class="org-comment">      close(file_descriptor);</span>
+<span class="linenr">68: </span><span class="org-comment">      return -1;</span>
+<span class="linenr">69: </span><span class="org-comment">   }</span>
+<span class="linenr">70: </span><span class="org-comment-delimiter">*/</span>
+<span class="linenr">71: </span>   <span class="org-comment-delimiter">/* </span><span class="org-comment">-------------------- position file pointer ----------------------------</span>
+<span class="linenr">72: </span><span class="org-comment">   off_t lseek (int fd, off_t pos, int origin);</span>
+<span class="linenr">73: </span><span class="org-comment">   </span><span class="org-comment-delimiter">*/</span>
+<span class="linenr">74: </span>   <span class="org-keyword">if</span> (lseek (file_descriptor, (<span class="org-type">off_t</span>) 0, SEEK_SET) == -1){
+<span class="linenr">75: </span>      printf(<span class="org-string">"Cannot position file pointer in file: %s\n"</span>, file_name);
+<span class="linenr">76: </span>      close(file_descriptor);
+<span class="linenr">77: </span>      <span class="org-keyword">return</span> -1;
+<span class="linenr">78: </span>   }
+<span class="linenr">79: </span>
+<span class="linenr">80: </span>   <span class="org-comment-delimiter">/* </span><span class="org-comment">-------------------- unbuffered system read ---------------------------</span>
+<span class="linenr">81: </span><span class="org-comment">   ssize_t read (int fd, void *buf, size_t len);</span>
+<span class="linenr">82: </span><span class="org-comment">   </span><span class="org-comment-delimiter">*/</span>
+<span class="linenr">83: </span>   <span class="org-type">unsigned</span> <span class="org-type">char</span> <span class="org-variable-name">input</span> = 0;
+<span class="linenr">84: </span>   <span class="org-type">ssize_t</span> <span class="org-variable-name">nr_of_bytes_read</span> = 0;
+<span class="linenr">85: </span>
+<span class="linenr">86: </span>   <span class="org-comment-delimiter">// </span><span class="org-comment">0 == EOF</span>
+<span class="linenr">87: </span>   <span class="org-comment-delimiter">// </span><span class="org-comment">read bytewise</span>
+<span class="linenr">88: </span>   printf(<span class="org-string">"Input read:\n"</span>);
+<span class="linenr">89: </span>   <span class="org-keyword">while</span>(read(file_descriptor, &amp;input, <span class="org-keyword">sizeof</span>(input)) != 0){
+<span class="linenr">90: </span>      printf(<span class="org-string">"%c\n"</span>, input);
+<span class="linenr">91: </span>   }
+<span class="linenr">92: </span>
+<span class="linenr">93: </span>   close(file_descriptor);
+<span class="linenr">94: </span>}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org95a6640" class="outline-2">
+<h2 id="org95a6640">Python</h2>
+<div class="outline-text-2" id="text-org95a6640">
+<p>
+Language Reference: <a href="https://docs.python.org/3/reference/index.html">https://docs.python.org/3/reference/index.html</a>
+</p>
+</div>
+<div id="outline-container-orgde87c2f" class="outline-3">
+<h3 id="orgde87c2f">Getting Started</h3>
+<div class="outline-text-3" id="text-orgde87c2f">
+<p>
+ <a href="http://tpcg.io/M0EMG9f3" target="_blank">Getting Started</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="linenr">  1: </span><span class="org-keyword">import</span> functools
+<span class="linenr">  2: </span><span class="org-keyword">import</span> operator
+<span class="linenr">  3: </span><span class="org-string">'''</span>
+<span class="linenr">  4: </span><span class="org-string">multiline comments</span>
+<span class="linenr">  5: </span><span class="org-string">'''</span>
+<span class="linenr">  6: </span>
+<span class="linenr">  7: </span><span class="org-comment-delimiter"># </span><span class="org-comment">--------------------------------- Control Structures ----------------------------------</span>
+<span class="linenr">  8: </span><span class="org-variable-name">n</span> = 0
+<span class="linenr">  9: </span><span class="org-keyword">if</span> n &lt; 0:
+<span class="linenr"> 10: </span>        <span class="org-keyword">print</span>(<span class="org-string">"true"</span>)
+<span class="linenr"> 11: </span><span class="org-keyword">else</span>:
+<span class="linenr"> 12: </span>        <span class="org-keyword">print</span>(<span class="org-string">"false"</span>)
+<span class="linenr"> 13: </span>
+<span class="linenr"> 14: </span><span class="org-keyword">for</span> item <span class="org-keyword">in</span> <span class="org-builtin">range</span>(5):
+<span class="linenr"> 15: </span>        <span class="org-keyword">print</span>(item)
+<span class="linenr"> 16: </span>
+<span class="linenr"> 17: </span><span class="org-variable-name">counter</span> = 0
+<span class="linenr"> 18: </span><span class="org-keyword">while</span> counter &lt; 5:
+<span class="linenr"> 19: </span>        <span class="org-keyword">print</span>(<span class="org-string">"Buh"</span>)
+<span class="linenr"> 20: </span>        <span class="org-variable-name">counter</span> = counter + 1
+<span class="linenr"> 21: </span><span class="org-comment-delimiter"># </span><span class="org-comment">--------------------------------- Functions --------------------------------------</span>
+<span class="linenr"> 22: </span><span class="org-keyword">def</span> <span class="org-function-name">fun</span>():
+<span class="linenr"> 23: </span>         <span class="org-keyword">return</span> 1,2
+<span class="linenr"> 24: </span>
+<span class="linenr"> 25: </span><span class="org-variable-name">x</span>,<span class="org-variable-name">y</span> = fun()
+<span class="linenr"> 26: </span><span class="org-keyword">print</span>(<span class="org-string">'x is'</span>,x)
+<span class="linenr"> 27: </span><span class="org-keyword">print</span>(<span class="org-string">'y is'</span>,y)
+<span class="linenr"> 28: </span><span class="org-comment-delimiter"># </span><span class="org-comment">--------------------------------- Datastructures --------------------------------------</span>
+<span class="linenr"> 29: </span>
+<span class="linenr"> 30: </span><span class="org-comment-delimiter"># </span><span class="org-comment">--- lists []        - mutable, == array</span>
+<span class="linenr"> 31: </span><span class="org-comment-delimiter"># </span><span class="org-comment">creating lists</span>
+<span class="linenr"> 32: </span><span class="org-variable-name">l</span> = [1, 2, 3, 4, 5]
+<span class="linenr"> 33: </span><span class="org-variable-name">l</span> = <span class="org-builtin">list</span>(<span class="org-builtin">range</span>(1, 6))
+<span class="linenr"> 34: </span>
+<span class="linenr"> 35: </span><span class="org-comment-delimiter"># </span><span class="org-comment">O(1)</span>
+<span class="linenr"> 36: </span>l.append(6)                     <span class="org-comment-delimiter"># </span><span class="org-comment">append</span>
+<span class="linenr"> 37: </span>l[2]                                    <span class="org-comment-delimiter"># </span><span class="org-comment">index an element</span>
+<span class="linenr"> 38: </span>l[2:5]
+<span class="linenr"> 39: </span>l.pop()                         <span class="org-comment-delimiter"># </span><span class="org-comment">pop last element</span>
+<span class="linenr"> 40: </span>
+<span class="linenr"> 41: </span><span class="org-comment-delimiter"># </span><span class="org-comment">O(n)</span>
+<span class="linenr"> 42: </span>l.insert(1, 1.5)
+<span class="linenr"> 43: </span><span class="org-variable-name">l2</span> = [6, 7]
+<span class="linenr"> 44: </span><span class="org-variable-name">l3</span> = l + l2
+<span class="linenr"> 45: </span>l.__contains__(5)
+<span class="linenr"> 46: </span>
+<span class="linenr"> 47: </span><span class="org-comment-delimiter"># </span><span class="org-comment">O dont know</span>
+<span class="linenr"> 48: </span>l.extend(<span class="org-builtin">range</span>(7,9))            <span class="org-comment-delimiter"># </span><span class="org-comment">dont use append</span>
+<span class="linenr"> 49: </span>
+<span class="linenr"> 50: </span><span class="org-comment-delimiter"># </span><span class="org-comment">--- tupels ()        - immutable</span>
+<span class="linenr"> 51: </span><span class="org-variable-name">t</span> = (1, 2, 3, 4)
+<span class="linenr"> 52: </span>
+<span class="linenr"> 53: </span><span class="org-comment-delimiter"># </span><span class="org-comment">--- dictionaries {}</span>
+<span class="linenr"> 54: </span><span class="org-variable-name">d</span> = {<span class="org-string">"key1"</span> : <span class="org-string">"value1"</span>, <span class="org-string">"key2"</span> : <span class="org-string">"value2"</span>, <span class="org-string">"key3"</span> : <span class="org-string">"value3"</span>}
+<span class="linenr"> 55: </span>
+<span class="linenr"> 56: </span><span class="org-comment-delimiter"># </span><span class="org-comment">O(1)</span>
+<span class="linenr"> 57: </span>d[<span class="org-string">"key1"</span>]
+<span class="linenr"> 58: </span>
+<span class="linenr"> 59: </span><span class="org-comment-delimiter"># </span><span class="org-comment">--- deque</span>
+<span class="linenr"> 60: </span><span class="org-comment-delimiter"># </span><span class="org-comment">--- set</span>
+<span class="linenr"> 61: </span><span class="org-variable-name">s</span> = <span class="org-builtin">set</span>([1, 2, 3, 4])
+<span class="linenr"> 62: </span>
+<span class="linenr"> 63: </span><span class="org-comment-delimiter"># </span><span class="org-comment">O(1)</span>
+<span class="linenr"> 64: </span>s.add(5)
+<span class="linenr"> 65: </span>s.remove(5)
+<span class="linenr"> 66: </span>
+<span class="linenr"> 67: </span><span class="org-comment-delimiter"># </span><span class="org-comment">--- common operations</span>
+<span class="linenr"> 68: </span><span class="org-builtin">len</span>(s)
+<span class="linenr"> 69: </span>2 <span class="org-keyword">in</span> s
+<span class="linenr"> 70: </span>s.clear()
+<span class="linenr"> 71: </span>
+<span class="linenr"> 72: </span>
+<span class="linenr"> 73: </span><span class="org-comment-delimiter"># </span><span class="org-comment">--------------------------------- Lambdas ---------------------------------------------</span>
+<span class="linenr"> 74: </span><span class="org-comment-delimiter"># </span><span class="org-comment">default value</span>
+<span class="linenr"> 75: </span><span class="org-variable-name">l</span> = <span class="org-keyword">lambda</span> <span class="org-variable-name">x</span>, <span class="org-variable-name">y</span>=5: x*y
+<span class="linenr"> 76: </span><span class="org-keyword">print</span>(l(2))
+<span class="linenr"> 77: </span>
+<span class="linenr"> 78: </span><span class="org-comment-delimiter"># </span><span class="org-comment">n parameters</span>
+<span class="linenr"> 79: </span><span class="org-variable-name">l</span> = <span class="org-keyword">lambda</span> *x: functools.<span class="org-builtin">reduce</span>(operator.add, x)
+<span class="linenr"> 80: </span><span class="org-keyword">print</span>(l(1,2,3,4,5))
+<span class="linenr"> 81: </span>
+<span class="linenr"> 82: </span><span class="org-comment-delimiter"># </span><span class="org-comment">--------------------------------- special Topics --------------------------------------</span>
+<span class="linenr"> 83: </span>
+<span class="linenr"> 84: </span><span class="org-comment-delimiter"># </span><span class="org-comment">measuring time</span>
+<span class="linenr"> 85: </span><span class="org-keyword">import</span> timeit
+<span class="linenr"> 86: </span>
+<span class="linenr"> 87: </span><span class="org-comment-delimiter"># </span><span class="org-comment">measure execution time of an operation</span>
+<span class="linenr"> 88: </span><span class="org-variable-name">l</span> = <span class="org-builtin">list</span>(<span class="org-builtin">range</span>(10000))
+<span class="linenr"> 89: </span><span class="org-variable-name">myTimer</span> = timeit.Timer(<span class="org-string">"l.pop(0)"</span>, <span class="org-string">"from __main__ import l"</span>)
+<span class="linenr"> 90: </span><span class="org-variable-name">myTimer2</span> = timeit.Timer(<span class="org-string">"l.pop()"</span>, <span class="org-string">"from __main__ import l"</span>)
+<span class="linenr"> 91: </span><span class="org-keyword">print</span>(<span class="org-string">"l.pop(0) takes"</span>, myTimer.timeit(number=1000), <span class="org-string">"ms"</span>)
+<span class="linenr"> 92: </span><span class="org-keyword">print</span>(<span class="org-string">"l.pop() takes"</span>, myTimer2.timeit(number=1000), <span class="org-string">"ms"</span>)
+<span class="linenr"> 93: </span>
+<span class="linenr"> 94: </span><span class="org-comment-delimiter"># </span><span class="org-comment">measure execution time of a function</span>
+<span class="linenr"> 95: </span><span class="org-keyword">def</span> <span class="org-function-name">myfun</span>():
+<span class="linenr"> 96: </span>        <span class="org-variable-name">l</span> = <span class="org-builtin">list</span>(<span class="org-builtin">range</span>(100000))
+<span class="linenr"> 97: </span>        l.insert(50000, 1)
+<span class="linenr"> 98: </span>
+<span class="linenr"> 99: </span><span class="org-variable-name">myTimer</span> = timeit.Timer(<span class="org-string">"myfun()"</span>, <span class="org-string">"from __main__ import myfun"</span>)
+<span class="linenr">100: </span><span class="org-keyword">print</span>(<span class="org-string">"myfun() takes"</span>, myTimer.timeit(number=100), <span class="org-string">"ms"</span>)                                                        <span class="org-comment-delimiter"># </span><span class="org-comment">number: execute 100 times</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge825585" class="outline-3">
+<h3 id="orge825585">Files and Directories</h3>
+<div class="outline-text-3" id="text-orge825585">
+</div>
+<div id="outline-container-org4bb71dd" class="outline-4">
+<h4 id="org4bb71dd">Traverse through directory tree</h4>
+<div class="outline-text-4" id="text-org4bb71dd">
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> os
+<span class="org-keyword">import</span> shutil
+
+<span class="org-variable-name">root_dir</span> = <span class="org-string">"TestDirectory"</span>
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">loop through directories in "directory" recursively </span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">(1 iteration per directory)</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">dir_path is the current path </span>
+<span class="org-keyword">for</span> dir_path, dirs, files <span class="org-keyword">in</span> os.walk(root_dir, topdown = <span class="org-constant">True</span>):
+
+        <span class="org-comment-delimiter"># </span><span class="org-comment">loop through files in directories</span>
+        <span class="org-keyword">for</span> file_name <span class="org-keyword">in</span> files:
+                <span class="org-keyword">print</span>(<span class="org-string">"Handling file \""</span> + file_name + <span class="org-string">"\""</span>)
+                os.rename(file_name, new_file_name)
+                shutil.copy2(src, dst)
+
+        <span class="org-comment-delimiter"># </span><span class="org-comment">loop through dirs in directories</span>
+        <span class="org-keyword">for</span> directory <span class="org-keyword">in</span> dirs:
+                <span class="org-keyword">print</span>(<span class="org-string">"Handling directory \""</span> + directory + <span class="org-string">"\""</span>)
+</pre>
+</div>
+
+<p>
+Joining iterators and using <code>os.path.join()</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> os
+<span class="org-keyword">import</span> itertools
+
+<span class="org-keyword">for</span> dir_path, dirs, files <span class="org-keyword">in</span> os.walk(root_dir, topdown = <span class="org-constant">True</span>):  
+         <span class="org-keyword">for</span> name <span class="org-keyword">in</span> itertools.chain(files, dirs):
+                  <span class="org-variable-name">full_path_name</span> = os.path.join(dir_path, name);
+                  <span class="org-keyword">print</span>(<span class="org-string">"Handling file \""</span> + full_path_name + <span class="org-string">"\""</span>)   
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org3ea5001" class="outline-3">
+<h3 id="org3ea5001">Regular Expressions</h3>
+<div class="outline-text-3" id="text-org3ea5001">
+<p>
+ <a href="http://tpcg.io/xVxNWpnT" target="_blank">Use Regular Expressions</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">import</span> re
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">getting matches</span>
+<span class="org-variable-name">m</span> = re.search(<span class="org-string">".*(\.txt)$"</span>,<span class="org-string">"aabcd.txt"</span>)
+<span class="org-keyword">if</span> m:
+         <span class="org-keyword">print</span>(m.group(0))
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">scan through string</span>
+<span class="org-keyword">if</span> re.search(<span class="org-string">"(\.txt)$"</span>, <span class="org-string">"test\\subfotxtlder\\New Text Document.txt"</span>):
+         <span class="org-keyword">print</span>(<span class="org-string">"found txt at the end"</span>)
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">you can also precompile the pattern</span>
+<span class="org-variable-name">pattern</span> = re.<span class="org-builtin">compile</span>(<span class="org-string">"a{2,4}"</span>)
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">just true/false</span>
+<span class="org-keyword">if</span> pattern.search(<span class="org-string">"aaa"</span>):
+         <span class="org-keyword">print</span>(<span class="org-string">"found"</span>)
+<span class="org-keyword">else</span>:
+         <span class="org-keyword">print</span>(<span class="org-string">"not found"</span>)
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">substitution</span>
+<span class="org-variable-name">result</span> = re.sub(<span class="org-string">"a"</span>, <span class="org-string">"b"</span>, <span class="org-string">"aaccdd"</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org09a5975" class="outline-3">
+<h3 id="org09a5975">Measure Time</h3>
+<div class="outline-text-3" id="text-org09a5975">
+<p>
+ <a href="http://tpcg.io/PQiSQp" target="_blank">Measure time</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-comment-delimiter"># </span><span class="org-comment">measuring time</span>
+<span class="org-keyword">import</span> timeit
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">measure execution time of an operation</span>
+<span class="org-variable-name">l</span> = <span class="org-builtin">list</span>(<span class="org-builtin">range</span>(10000))
+<span class="org-variable-name">myTimer</span> = timeit.Timer(<span class="org-string">"l.pop(0)"</span>, <span class="org-string">"from __main__ import l"</span>)
+<span class="org-variable-name">myTimer2</span> = timeit.Timer(<span class="org-string">"l.pop()"</span>, <span class="org-string">"from __main__ import l"</span>)
+<span class="org-keyword">print</span>(<span class="org-string">"l.pop(0) takes"</span>, myTimer.timeit(number=1000), <span class="org-string">"ms"</span>)
+<span class="org-keyword">print</span>(<span class="org-string">"l.pop() takes"</span>, myTimer2.timeit(number=1000), <span class="org-string">"ms"</span>)
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">measure execution time of a function</span>
+<span class="org-keyword">def</span> <span class="org-function-name">myfun</span>():
+        <span class="org-variable-name">l</span> = <span class="org-builtin">list</span>(<span class="org-builtin">range</span>(100000))
+        l.insert(50000, 1)
+
+<span class="org-variable-name">myTimer</span> = timeit.Timer(<span class="org-string">"myfun()"</span>, <span class="org-string">"from __main__ import myfun"</span>)
+<span class="org-keyword">print</span>(<span class="org-string">"myfun() takes"</span>, myTimer.timeit(number = 100), <span class="org-string">"ms"</span>)                                                      <span class="org-comment-delimiter"># </span><span class="org-comment">number: execute 100 times</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1c88551" class="outline-3">
+<h3 id="org1c88551">Data Structures and Algorithms</h3>
+<div class="outline-text-3" id="text-org1c88551">
+</div>
+<div id="outline-container-orgba376ba" class="outline-4">
+<h4 id="orgba376ba">List, Tuple Set, Dictionary</h4>
+<div class="outline-text-4" id="text-orgba376ba">
+<p>
+ <a href="http://tpcg.io/1aW0TWif" target="_blank">List, Tuple, Set, Dictionary</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-comment-delimiter"># </span><span class="org-comment">general: can mix datatypes</span>
+<span class="org-variable-name">x</span> = <span class="org-builtin">list</span>([<span class="org-string">'a'</span>, 25, 8.43, [1, 2, 3]])
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">sequence types</span>
+<span class="org-keyword">print</span>(<span class="org-string">'- sequence types: string, list, tuple'</span>)
+<span class="org-comment-delimiter"># </span><span class="org-comment">- slicing</span>
+<span class="org-variable-name">s</span> = <span class="org-string">'Computer'</span>
+<span class="org-keyword">print</span>(s[0:3])
+<span class="org-keyword">print</span>(s[3:])
+<span class="org-keyword">print</span>(s[:3])
+<span class="org-keyword">print</span>(s[-1])
+<span class="org-keyword">print</span>(s[0:6:2]) <span class="org-comment-delimiter"># </span><span class="org-comment">step = 2</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">- check membership</span>
+<span class="org-keyword">print</span>(<span class="org-string">'m'</span> <span class="org-keyword">in</span> s)
+<span class="org-keyword">print</span>(<span class="org-string">'m'</span> <span class="org-keyword">not</span> <span class="org-keyword">in</span> s)
+<span class="org-comment-delimiter"># </span><span class="org-comment">- index &amp; item</span>
+<span class="org-keyword">print</span>(<span class="org-string">'index of p: '</span> + <span class="org-builtin">str</span>(s.index(<span class="org-string">'p'</span>)))
+
+<span class="org-keyword">for</span> index, item <span class="org-keyword">in</span> <span class="org-builtin">enumerate</span>(s):
+        <span class="org-keyword">print</span>(index, item)
+
+<span class="org-keyword">print</span>(<span class="org-string">'Length: '</span> + <span class="org-builtin">str</span>(<span class="org-builtin">len</span>(s)))
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">- unpacking</span>
+<span class="org-variable-name">x</span> = [<span class="org-string">'pig'</span>, <span class="org-string">'cow'</span>, <span class="org-string">'horse'</span>]
+<span class="org-variable-name">a</span>, <span class="org-variable-name">b</span>, <span class="org-variable-name">c</span> = x
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">list - sortable</span>
+<span class="org-keyword">print</span>(<span class="org-string">'- list'</span>)
+<span class="org-comment-delimiter"># </span><span class="org-comment">- list comprehension (cleverly create lists)</span>
+<span class="org-comment-delimiter">#   </span><span class="org-comment">put a loop and some conditions inside []</span>
+<span class="org-variable-name">x</span> = [m <span class="org-keyword">for</span> m <span class="org-keyword">in</span> <span class="org-builtin">range</span>(8)]
+<span class="org-variable-name">x</span> = [z**2 <span class="org-keyword">for</span> z <span class="org-keyword">in</span> <span class="org-builtin">range</span>(10) <span class="org-keyword">if</span> z%2]  <span class="org-comment-delimiter"># </span><span class="org-comment">1, 3, 5, 7, 9 will be squared</span>
+<span class="org-keyword">print</span>(x)
+
+x.insert(1, [<span class="org-string">'a'</span>, <span class="org-string">'m'</span>])  <span class="org-comment-delimiter"># </span><span class="org-comment">position 1</span>
+<span class="org-keyword">print</span>(x.pop(1))
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">tuple</span>
+<span class="org-keyword">print</span>(<span class="org-string">'- tuple: immutable'</span>)
+<span class="org-variable-name">x</span> = (1, 2, 3) <span class="org-comment-delimiter"># </span><span class="org-comment">also 1, 2, 3 without () is possible</span>
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">set</span>
+<span class="org-keyword">print</span>(<span class="org-string">'- set: unique elements, unordered'</span>)
+<span class="org-variable-name">set1</span> = {1, 2, 3, 4}
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">- set comprehension</span>
+<span class="org-variable-name">set2</span> = {3*n <span class="org-keyword">for</span> n <span class="org-keyword">in</span> <span class="org-builtin">range</span>(4) <span class="org-keyword">if</span> n&gt;0}
+<span class="org-keyword">print</span>(set2)
+
+<span class="org-keyword">print</span>(set1 &amp; set2)  <span class="org-comment-delimiter"># </span><span class="org-comment">intersection AND</span>
+<span class="org-keyword">print</span>(set1 | set2)  <span class="org-comment-delimiter"># </span><span class="org-comment">union OR</span>
+<span class="org-keyword">print</span>(set1 ^ set2)  <span class="org-comment-delimiter"># </span><span class="org-comment">symmetric difference XOR</span>
+<span class="org-keyword">print</span>(set1 - set2)  <span class="org-comment-delimiter"># </span><span class="org-comment">difference</span>
+<span class="org-keyword">print</span>(set1 &lt;= set2) <span class="org-comment-delimiter"># </span><span class="org-comment">is subset?</span>
+<span class="org-keyword">print</span>(set1 &gt;= set2) <span class="org-comment-delimiter"># </span><span class="org-comment">is superset?</span>
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">hashmaps aka dictionary - unordered</span>
+<span class="org-keyword">print</span>(<span class="org-string">'- dictionary: random order'</span>)
+
+<span class="org-variable-name">x</span> = {<span class="org-string">'pork'</span>: 20.5, <span class="org-string">'beef'</span>: 33.8, <span class="org-string">'chicken'</span>: 15.7}
+
+<span class="org-keyword">print</span>(x[<span class="org-string">'pork'</span>])
+<span class="org-keyword">print</span>(x.keys())
+<span class="org-keyword">print</span>(x.values())
+<span class="org-keyword">print</span>(x.items())
+<span class="org-keyword">for</span> k,v <span class="org-keyword">in</span> x.items():
+         <span class="org-keyword">print</span>(k, v)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5d3e6fb" class="outline-4">
+<h4 id="org5d3e6fb">Binary Search Tree (BST) Implementation</h4>
+<div class="outline-text-4" id="text-org5d3e6fb">
+<p>
+ <a href="http://tpcg.io/r0y9id7U" target="_blank">Binary Search Tree</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-comment-delimiter"># </span><span class="org-comment">Binary Search Tree (BST)</span>
+
+<span class="org-keyword">class</span> <span class="org-type">Node</span>:
+         <span class="org-comment-delimiter"># </span><span class="org-comment">------------------------------------------------------    </span>
+         <span class="org-keyword">def</span> <span class="org-function-name">__init__</span>(<span class="org-keyword">self</span>, val):
+                  <span class="org-keyword">self</span>.value = val
+                  <span class="org-keyword">self</span>.leftChild = <span class="org-constant">None</span>
+                  <span class="org-keyword">self</span>.rightChild = <span class="org-constant">None</span>
+         <span class="org-comment-delimiter"># </span><span class="org-comment">------------------------------------------------------    </span>
+         <span class="org-comment-delimiter"># </span><span class="org-comment">left &lt;, right &gt;=    </span>
+         <span class="org-keyword">def</span> <span class="org-function-name">insert</span>(<span class="org-keyword">self</span>, data):
+                  <span class="org-keyword">if</span> <span class="org-keyword">self</span>.value == data:                                                  <span class="org-comment-delimiter"># </span><span class="org-comment">don't insert</span>
+                                <span class="org-keyword">return</span> <span class="org-constant">False</span>
+                  <span class="org-keyword">elif</span> <span class="org-keyword">self</span>.value &gt; data:                                                 <span class="org-comment-delimiter"># </span><span class="org-comment">insert left</span>
+                                <span class="org-keyword">if</span> <span class="org-keyword">self</span>.leftChild:
+                                         <span class="org-keyword">return</span> <span class="org-keyword">self</span>.leftChild.insert(data)
+                                <span class="org-keyword">else</span>:
+                                         <span class="org-keyword">self</span>.leftChild = Node(data)
+                                         <span class="org-keyword">return</span> <span class="org-constant">True</span>
+                  <span class="org-keyword">else</span>: <span class="org-comment-delimiter"># </span><span class="org-comment">self.value &lt;= data                                              # insert right</span>
+                                <span class="org-keyword">if</span> <span class="org-keyword">self</span>.rightChild:
+                                         <span class="org-keyword">return</span> <span class="org-keyword">self</span>.rightChild.insert(data)
+                                <span class="org-keyword">else</span>:
+                                         <span class="org-keyword">self</span>.rightChild = Node(data)
+                                         <span class="org-keyword">return</span> <span class="org-constant">True</span>
+         <span class="org-comment-delimiter"># </span><span class="org-comment">------------------------------------------------------    </span>
+         <span class="org-keyword">def</span> <span class="org-function-name">find</span>(<span class="org-keyword">self</span>, data):
+                  <span class="org-keyword">if</span> (<span class="org-keyword">self</span>.value == data):
+                                <span class="org-keyword">return</span> <span class="org-constant">True</span>
+                  <span class="org-keyword">elif</span> <span class="org-keyword">self</span>.value &gt; data:
+                                <span class="org-keyword">if</span> <span class="org-keyword">self</span>.leftChild:
+                                         <span class="org-keyword">return</span> <span class="org-keyword">self</span>.leftChild.find(data)
+                                <span class="org-keyword">else</span>:
+                                         <span class="org-keyword">return</span> <span class="org-constant">False</span>
+                  <span class="org-keyword">else</span>: <span class="org-comment-delimiter"># </span><span class="org-comment">self.value &lt;= data</span>
+                                <span class="org-keyword">if</span> <span class="org-keyword">self</span>.rightChild:
+                                         <span class="org-keyword">return</span> <span class="org-keyword">self</span>.rightChild.find(data)
+                                <span class="org-keyword">else</span>:
+                                         <span class="org-keyword">return</span> <span class="org-constant">False</span>
+         <span class="org-comment-delimiter"># </span><span class="org-comment">------------------------------------------------------    </span>
+         <span class="org-keyword">def</span> <span class="org-function-name">preorder</span>(<span class="org-keyword">self</span>):
+                  <span class="org-keyword">if</span> <span class="org-keyword">self</span>:
+                                <span class="org-keyword">print</span>(<span class="org-builtin">str</span>(<span class="org-keyword">self</span>.value))
+                                <span class="org-keyword">if</span> <span class="org-keyword">self</span>.leftChild:
+                                         <span class="org-keyword">self</span>.leftChild.preorder()
+                                <span class="org-keyword">if</span> <span class="org-keyword">self</span>.rightChild:
+                                         <span class="org-keyword">self</span>.rightChild.preorder()
+         <span class="org-comment-delimiter"># </span><span class="org-comment">------------------------------------------------------    </span>
+         <span class="org-keyword">def</span> <span class="org-function-name">postorder</span>(<span class="org-keyword">self</span>):
+                  <span class="org-keyword">if</span> <span class="org-keyword">self</span>:
+                                <span class="org-keyword">if</span> <span class="org-keyword">self</span>.leftChild:
+                                         <span class="org-keyword">self</span>.leftChild.postorder()
+                                <span class="org-keyword">if</span> <span class="org-keyword">self</span>.rightChild:
+                                         <span class="org-keyword">self</span>.rightChild.postorder()                
+                                <span class="org-keyword">print</span>(<span class="org-builtin">str</span>(<span class="org-keyword">self</span>.value))  
+         <span class="org-comment-delimiter"># </span><span class="org-comment">------------------------------------------------------    </span>
+         <span class="org-keyword">def</span> <span class="org-function-name">inorder</span>(<span class="org-keyword">self</span>):
+                  <span class="org-keyword">if</span> <span class="org-keyword">self</span>:
+                                <span class="org-keyword">if</span> <span class="org-keyword">self</span>.leftChild:
+                                         <span class="org-keyword">self</span>.leftChild.inorder()
+                                <span class="org-keyword">print</span>(<span class="org-builtin">str</span>(<span class="org-keyword">self</span>.value))
+                                <span class="org-keyword">if</span> <span class="org-keyword">self</span>.rightChild:
+                                         <span class="org-keyword">self</span>.rightChild.inorder()                
+         <span class="org-comment-delimiter"># </span><span class="org-comment">------------------------------------------------------            </span>
+         <span class="org-keyword">def</span> <span class="org-function-name">printNode</span>(<span class="org-keyword">self</span>, level):
+                  <span class="org-keyword">if</span> <span class="org-keyword">self</span>:
+                                <span class="org-keyword">if</span> <span class="org-keyword">self</span>.rightChild:
+                                         <span class="org-keyword">self</span>.rightChild.printNode(level + 1)
+                                <span class="org-keyword">print</span>(<span class="org-string">' '</span> * 4 * level + <span class="org-string">'-&gt;'</span>, <span class="org-keyword">self</span>.value)
+                                <span class="org-keyword">if</span> <span class="org-keyword">self</span>.leftChild:
+                                         <span class="org-keyword">self</span>.leftChild.printNode(level + 1)        
+<span class="org-comment-delimiter"># </span><span class="org-comment">----------------------------------------------------------            </span>
+<span class="org-keyword">class</span> <span class="org-type">Tree</span>:
+         <span class="org-comment-delimiter"># </span><span class="org-comment">------------------------------------------------------    </span>
+         <span class="org-keyword">def</span> <span class="org-function-name">__init__</span>(<span class="org-keyword">self</span>):
+                  <span class="org-keyword">self</span>.root = <span class="org-constant">None</span>
+         <span class="org-comment-delimiter"># </span><span class="org-comment">------------------------------------------------------        </span>
+         <span class="org-keyword">def</span> <span class="org-function-name">insert</span>(<span class="org-keyword">self</span>, data):
+                  <span class="org-keyword">if</span> <span class="org-keyword">self</span>.root:
+                                <span class="org-keyword">return</span> <span class="org-keyword">self</span>.root.insert(data)
+                  <span class="org-keyword">else</span>:
+                                <span class="org-keyword">self</span>.root = Node(data)
+                                <span class="org-keyword">return</span> <span class="org-constant">True</span>
+         <span class="org-comment-delimiter"># </span><span class="org-comment">------------------------------------------------------                </span>
+         <span class="org-keyword">def</span> <span class="org-function-name">find</span>(<span class="org-keyword">self</span>, data):
+                  <span class="org-keyword">if</span> <span class="org-keyword">self</span>.root:
+                                <span class="org-keyword">return</span> <span class="org-keyword">self</span>.root.find(data)
+                  <span class="org-keyword">else</span>:
+                                <span class="org-keyword">return</span> <span class="org-constant">False</span>
+         <span class="org-comment-delimiter"># </span><span class="org-comment">------------------------------------------------------            </span>
+         <span class="org-keyword">def</span> <span class="org-function-name">preorder</span>(<span class="org-keyword">self</span>):
+                  <span class="org-keyword">print</span>(<span class="org-string">'PreOrder'</span>)
+                  <span class="org-keyword">self</span>.root.preorder()
+         <span class="org-comment-delimiter"># </span><span class="org-comment">------------------------------------------------------            </span>
+         <span class="org-keyword">def</span> <span class="org-function-name">postorder</span>(<span class="org-keyword">self</span>):
+                  <span class="org-keyword">print</span>(<span class="org-string">'PostOrder'</span>)
+                  <span class="org-keyword">self</span>.root.postorder()
+         <span class="org-comment-delimiter"># </span><span class="org-comment">------------------------------------------------------            </span>
+         <span class="org-keyword">def</span> <span class="org-function-name">inorder</span>(<span class="org-keyword">self</span>):
+                  <span class="org-keyword">print</span>(<span class="org-string">'InOrder'</span>)
+                  <span class="org-keyword">self</span>.root.inorder()        
+         <span class="org-comment-delimiter"># </span><span class="org-comment">------------------------------------------------------            </span>
+         <span class="org-keyword">def</span> <span class="org-function-name">printTree</span>(<span class="org-keyword">self</span>):
+                  <span class="org-keyword">self</span>.root.printNode(0)
+<span class="org-comment-delimiter"># </span><span class="org-comment">----------------------------------------------------------            </span>
+<span class="org-variable-name">bst</span> = Tree()
+bst.insert(10)
+bst.insert(15)
+bst.insert(1)
+bst.insert(12)
+bst.insert(100)
+bst.printTree()
+
+bst.preorder()
+bst.postorder()
+bst.inorder()
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org736161c" class="outline-2">
+<h2 id="org736161c">Java</h2>
+<div class="outline-text-2" id="text-org736161c">
+<p>
+ <a href="http://tpcg.io/fWG6Rayr" target="_blank">StringHandling</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span class="linenr"> 1: </span><span class="org-keyword">public</span> <span class="org-keyword">class</span> <span class="org-type">StringHandling</span>
+<span class="linenr"> 2: </span>{
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span>    <span class="org-keyword">public</span> <span class="org-keyword">static</span> <span class="org-type">void</span> <span class="org-function-name">main</span>(<span class="org-type">String</span> []<span class="org-variable-name">args</span>)
+<span class="linenr"> 5: </span>    {         
+<span class="linenr"> 6: </span>        System.out.println(int2String(11));
+<span class="linenr"> 7: </span>        System.out.println(String.valueOf(134.034f));
+<span class="linenr"> 8: </span>        System.out.println(floatToString(134.034f, 3));
+<span class="linenr"> 9: </span>    }
+<span class="linenr">10: </span>    <span class="org-comment-delimiter">// </span><span class="org-comment">----------------------------------------------------------------------------------</span>
+<span class="linenr">11: </span>    <span class="org-keyword">static</span> <span class="org-type">String</span> <span class="org-function-name">int2String</span>(<span class="org-type">int</span> <span class="org-variable-name">i</span>)
+<span class="linenr">12: </span>    {
+<span class="linenr">13: </span>        <span class="org-type">String</span> <span class="org-variable-name">str</span> = (<span class="org-keyword">new</span> <span class="org-type">Integer</span>(i)).toString();   <span class="org-comment-delimiter">// </span><span class="org-comment">depreciated</span>
+<span class="linenr">14: </span>
+<span class="linenr">15: </span>        str = String.valueOf(i);
+<span class="linenr">16: </span>
+<span class="linenr">17: </span>        <span class="org-keyword">return</span> str;
+<span class="linenr">18: </span>    }
+<span class="linenr">19: </span>    <span class="org-comment-delimiter">// </span><span class="org-comment">----------------------------------------------------------------------------------</span>
+<span class="linenr">20: </span>    <span class="org-keyword">public</span> <span class="org-keyword">static</span> <span class="org-type">String</span> <span class="org-function-name">floatToString</span>(<span class="org-type">float</span> <span class="org-variable-name">f</span>, <span class="org-type">int</span> <span class="org-variable-name">nrOfDecimalPlaces</span>)
+<span class="linenr">21: </span>   {
+<span class="linenr">22: </span>      <span class="org-keyword">if</span> ((f &gt; 2147483647) || (f &lt; -2147483648) || nrOfDecimalPlaces &lt; 0)
+<span class="linenr">23: </span>         <span class="org-keyword">return</span> <span class="org-string">""</span>;
+<span class="linenr">24: </span>
+<span class="linenr">25: </span>      <span class="org-type">String</span> <span class="org-variable-name">str</span> = <span class="org-string">""</span>;
+<span class="linenr">26: </span>      <span class="org-type">int</span> <span class="org-variable-name">left</span> = (<span class="org-type">int</span>)f;   
+<span class="linenr">27: </span>      <span class="org-type">int</span> <span class="org-variable-name">right</span> = (<span class="org-type">int</span>)(Math.abs((f - left) * Math.pow(10, nrOfDecimalPlaces)));
+<span class="linenr">28: </span>      <span class="org-keyword">if</span> (f &lt; 0f &amp;&amp; left == 0 &amp;&amp; right &gt; 0)
+<span class="linenr">29: </span>         str = <span class="org-string">"-"</span>;
+<span class="linenr">30: </span>
+<span class="linenr">31: </span>      <span class="org-type">String</span> <span class="org-variable-name">rightStr</span> = <span class="org-string">""</span> + right;
+<span class="linenr">32: </span>
+<span class="linenr">33: </span>      <span class="org-keyword">if</span> (rightStr.length() &lt; nrOfDecimalPlaces)
+<span class="linenr">34: </span>      {
+<span class="linenr">35: </span>         <span class="org-keyword">for</span> (<span class="org-type">int</span> <span class="org-variable-name">i</span> = rightStr.length(); i &lt; <span class="org-type">nrOfDecimalPlaces</span>; i++)
+<span class="linenr">36: </span>            rightStr = <span class="org-string">"0"</span> + rightStr; 
+<span class="linenr">37: </span>      }
+<span class="linenr">38: </span>
+<span class="linenr">39: </span>      <span class="org-keyword">if</span> (nrOfDecimalPlaces &gt; 0)
+<span class="linenr">40: </span>         <span class="org-keyword">return</span> str + left + <span class="org-string">"."</span> + rightStr; 
+<span class="linenr">41: </span>      <span class="org-keyword">else</span> 
+<span class="linenr">42: </span>         <span class="org-keyword">return</span> str + left; 
+<span class="linenr">43: </span>   }
+<span class="linenr">44: </span>}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbb3d474" class="outline-2">
+<h2 id="orgbb3d474">JavaScript</h2>
+<div class="outline-text-2" id="text-orgbb3d474">
+<p>
+Handle Keyboard input
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span class="org-keyword">function</span> <span class="org-function-name">orgDefkey</span>(<span class="org-variable-name">e</span>) {
+    <span class="org-keyword">if</span> (!e)
+        <span class="org-keyword">var</span> <span class="org-variable-name">e</span> = window.event;
+    <span class="org-keyword">var</span> <span class="org-variable-name">keycode</span> = (e.keyCode) ? e.keyCode : e.which;
+    <span class="org-keyword">var</span> <span class="org-variable-name">actualkey</span> = String.fromCharCode(keycode);
+    <span class="org-keyword">switch</span> (actualkey) {
+        <span class="org-keyword">case</span> <span class="org-string">"?"</span>: <span class="org-comment-delimiter">// </span><span class="org-comment">help (dashboard)</span>
+        <span class="org-keyword">case</span> <span class="org-string">"h"</span>:
+            togglePanel(e);
+            <span class="org-keyword">break</span>;
+        <span class="org-keyword">case</span> <span class="org-string">"n"</span>: <span class="org-comment-delimiter">// </span><span class="org-comment">next</span>
+            clickNextTab();
+            <span class="org-keyword">break</span>;
+        <span class="org-keyword">case</span> <span class="org-string">"p"</span>: <span class="org-comment-delimiter">// </span><span class="org-comment">previous</span>
+            clickPreviousTab();
+            <span class="org-keyword">break</span>;
+        <span class="org-comment-delimiter">// </span><span class="org-comment">case "b": // scroll down - should be mapped to Shift-SPC</span>
+        <span class="org-comment-delimiter">//     </span><span class="org-comment">$(window).scrollTop($(window).scrollTop()-$(window).height());</span>
+        <span class="org-comment-delimiter">//     </span><span class="org-comment">break;</span>
+        <span class="org-keyword">case</span> <span class="org-string">"&lt;"</span>: <span class="org-comment-delimiter">// </span><span class="org-comment">scroll to top</span>
+            $(window).scrollTop(0);
+            <span class="org-keyword">break</span>;
+        <span class="org-keyword">case</span> <span class="org-string">"&gt;"</span>: <span class="org-comment-delimiter">// </span><span class="org-comment">scroll to bottom</span>
+            $(window).scrollTop($(document).height());
+            <span class="org-keyword">break</span>;
+        <span class="org-keyword">case</span> <span class="org-string">"-"</span>: <span class="org-comment-delimiter">// </span><span class="org-comment">collapse all</span>
+            hsCollapseAll();
+            <span class="org-keyword">break</span>;
+        <span class="org-keyword">case</span> <span class="org-string">"+"</span>: <span class="org-comment-delimiter">// </span><span class="org-comment">expand all</span>
+            hsExpandAll();
+            <span class="org-keyword">break</span>;
+        <span class="org-keyword">case</span> <span class="org-string">"r"</span>: <span class="org-comment-delimiter">// </span><span class="org-comment">go to next task</span>
+            hsReviewTaskNext();
+            <span class="org-keyword">break</span>;
+        <span class="org-keyword">case</span> <span class="org-string">"R"</span>: <span class="org-comment-delimiter">// </span><span class="org-comment">go to previous task</span>
+            hsReviewTaskPrev();
+            <span class="org-keyword">break</span>;
+        <span class="org-keyword">case</span> <span class="org-string">"q"</span>: <span class="org-comment-delimiter">// </span><span class="org-comment">quit reviewing</span>
+            hsReviewTaskQuit();
+            <span class="org-keyword">break</span>;
+        <span class="org-keyword">case</span> <span class="org-string">"g"</span>: <span class="org-comment-delimiter">// </span><span class="org-comment">refresh the page (from the server, rather than the cache)</span>
+            location.reload(<span class="org-constant">true</span>);
+            <span class="org-keyword">break</span>;
+    }
+}
+
+document.onkeypress = orgDefkey;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org90d2e91" class="outline-2">
+<h2 id="org90d2e91">bash</h2>
+<div class="outline-text-2" id="text-org90d2e91">
+<p>
+Check if file exists:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span class="org-keyword">if</span> [[ -e readme.txt ]] ; <span class="org-keyword">then</span>
+  <span class="org-builtin">echo</span> <span class="org-string">'The file "readme.txt" exists.'</span>
+<span class="org-keyword">else</span>
+  <span class="org-builtin">echo</span> <span class="org-string">'The file "readme.txt" does not exist.'</span>
+<span class="org-keyword">fi</span>
+</pre>
+</div>
+
+<p>
+Check if string is empty:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span class="org-keyword">if</span> [ <span class="org-string">"$string"</span> ]; <span class="org-keyword">then</span>
+   <span class="org-builtin">echo</span> not empty
+<span class="org-keyword">fi</span>
+
+</pre>
+</div>
+
+<p>
+Loop through all files in folder:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span class="org-keyword">for</span> file<span class="org-keyword"> in</span> *.txt ; <span class="org-keyword">do</span>
+  mv <span class="org-string">"$file"</span> <span class="org-string">"$file.bak"</span>
+<span class="org-keyword">done</span>
+</pre>
+</div>
+
+<p>
+Error checking:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span class="org-comment-delimiter"># </span><span class="org-comment">the space " " before "]" is necessary !</span>
+<span class="org-keyword">if</span> [ <span class="org-string">"$?"</span> -ne 0 ]; <span class="org-keyword">then</span>
+   <span class="org-builtin">echo</span> <span class="org-string">"command failed"</span>
+   <span class="org-keyword">exit</span> 1
+<span class="org-keyword">else</span>
+   <span class="org-builtin">echo</span> <span class="org-string">"USB Drives connected"</span>
+<span class="org-keyword">fi</span>
+</pre>
+</div>
+
+<pre class="example">
+The variable $ (echo $?)
+</pre>
+
+<p>
+0 is supposed to mean success, everything else is an error.
+</p>
+
+<p>
+Monitor changes in a folder:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span class="org-comment-delimiter">#</span><span class="org-comment">!/bin/</span><span class="org-keyword">sh</span>
+<span class="org-keyword">while</span> inotifywait -e modify /var/log/messages; <span class="org-keyword">do</span>
+  <span class="org-keyword">if</span> tail -n1 /var/log/messages | grep apache; <span class="org-keyword">then</span>
+    kdialog --msgbox <span class="org-string">"Blah blah Apache"</span>
+  <span class="org-keyword">fi</span>
+<span class="org-keyword">done</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb4a8204" class="outline-2">
+<h2 id="orgb4a8204">Windows Batch</h2>
+<div class="outline-text-2" id="text-orgb4a8204">
+<p>
+Use () for code blocks.
+</p>
+
+<p>
+Tip: enter stuff like that
+</p>
+<ul class="org-ul">
+<li>if /?</li>
+<li>findstr /?</li>
+<li>for /?</li>
+</ul>
+</div>
+
+<div id="outline-container-org261b0e9" class="outline-3">
+<h3 id="org261b0e9">Write text to a file</h3>
+<div class="outline-text-3" id="text-org261b0e9">
+<div class="org-src-container">
+<pre class="src src-batch">@echo off
+
+(
+echo /* visibility depends on displayed  project*/
+echo #ilcd_vis 
+echo {
+echo 	/*display: none;*/
+echo 	/*visibility only for ilcd project*/
+echo }
+echo #javaino_vis 
+echo {
+echo 	display: none;
+echo 	/*visibility only for javaino project*/
+echo }
+) &gt; file.txt
+
+ @echo append text without printing &gt;&gt; file.txt
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1166225" class="outline-3">
+<h3 id="org1166225">Start batch file without cmd window</h3>
+<div class="outline-text-3" id="text-org1166225">
+<pre class="example">
+start command.exe
+</pre>
+
+
+<p>
+Create a vbs-script:
+</p>
+<div class="org-src-container">
+<pre class="src src-vb">Set WshShell = CreateObject("WScript.Shell")
+WshShell.Run """C:\Program Files\emacs-26.2-x86_64\bin\emacs.exe"" --daemon", 0, True
+Set WshShell = Nothing
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org9ee8517" class="outline-3">
+<h3 id="org9ee8517">Check if file exists</h3>
+<div class="outline-text-3" id="text-org9ee8517">
+<div class="org-src-container">
+<pre class="src src-batch">@echo off
+
+if exist "main_form_iLCD.dfm" (
+	echo "renaming main_form.dfm to main_form_JoC.dfm"
+	ren "main_form.dfm" "main_form_JoC.dfm"
+
+	echo "renaming main_form_iLCD.dfm to main_form.dfm"
+	ren "main_form_iLCD.dfm" "main_form.dfm"
+)
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcd26fdc" class="outline-3">
+<h3 id="orgcd26fdc">Get batch file path</h3>
+<div class="outline-text-3" id="text-orgcd26fdc">
+<pre class="example">
+%~dp0%
+e.g. C:\dp\Firmware_new\Firmware_MCUXpresso_Workspace\iMXRT1050_Bootloader\ProjectFiles\MCUXpresso\Bootloader\
+%0% including file name
+e.g. C:\dp\Firmware_new\Firmware_MCUXpresso_Workspace\iMXRT1050_Bootloader\ProjectFiles\MCUXpresso\Bootloader\CreateSymlinks.bat
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org56003d5" class="outline-2">
+<h2 id="org56003d5">Embedded</h2>
+<div class="outline-text-2" id="text-org56003d5">
+</div>
+<div id="outline-container-org372029a" class="outline-3">
+<h3 id="org372029a">Debug Pin LPC1765 (iLCD Pin: GP0)</h3>
+<div class="outline-text-3" id="text-org372029a">
+<div class="org-src-container">
+<pre class="src src-c"><span class="org-keyword">static</span> <span class="org-type">bool</span> <span class="org-variable-name">toggle</span> = <span class="org-constant">true</span>;
+
+LPC_GPIO0-&gt;FIODIR |= 1 &lt;&lt; 26;
+
+<span class="org-keyword">if</span> (toggle = <span class="org-negation-char">!</span>toggle)
+   LPC_GPIO0-&gt;FIOSET |= 1 &lt;&lt; 26; 
+<span class="org-keyword">else</span>  
+   LPC_GPIO0-&gt;FIOCLR |= 1 &lt;&lt; 26; 
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc688b3f" class="outline-3">
+<h3 id="orgc688b3f">Debug Pin LPC1788</h3>
+<div class="outline-text-3" id="text-orgc688b3f">
+<p>
+Use pins 24 and 26.
+</p>
+<div class="org-src-container">
+<pre class="src src-c"><span class="org-preprocessor">#if</span> DEBUG_IT   
+LPC_IOCON-&gt;P0_26 = IO_FUNC(0);
+LPC_GPIO0-&gt;DIR |= (1 &lt;&lt; 26);
+LPC_GPIO0-&gt;SET |= (1 &lt;&lt; 26);
+LPC_GPIO0-&gt;CLR |= (1 &lt;&lt; 26);  
+<span class="org-preprocessor">#endif</span>   
+</pre>
+</div>
+
+<p>
+Where to find them on the interface board?
+</p>
+<ul class="org-ul">
+<li>Pin 24 is control pin 18, LED pin 6</li>
+<li>Pin 26 is control pin 17, LED pin 4</li>
+</ul>
+<p>
+(GND: LED pin 9, KEYBOARD pin 20
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7538de2" class="outline-2">
+<h2 id="org7538de2">iLCD Manager</h2>
+<div class="outline-text-2" id="text-org7538de2">
+</div>
+<div id="outline-container-orge772e5e" class="outline-3">
+<h3 id="orge772e5e">Graphics</h3>
+<div class="outline-text-3" id="text-orge772e5e">
+</div>
+<div id="outline-container-org71395c2" class="outline-4">
+<h4 id="org71395c2">Draw a rectangle with Fill Pattern</h4>
+<div class="outline-text-4" id="text-org71395c2">
+<pre class="example">
+\i!
+\iAPC\#00CCFF {Set Filling Color}
+\iAPG\4\D0\#00FFFF\#0000FF {Set Filling Gradient}
+\iDR\x20\D200\D100 {Draw Rectangle} 
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org3f1d94e" class="outline-3">
+<h3 id="org3f1d94e">Fonts</h3>
+<div class="outline-text-3" id="text-org3f1d94e">
+</div>
+<div id="outline-container-orgf903389" class="outline-4">
+<h4 id="orgf903389">Write red Text with Text Alignment</h4>
+<div class="outline-text-4" id="text-orgf903389">
+<pre class="example">
+\i!
+\iAF\D1 {Set Font}
+\iCK\D200\D200 {Set Cursor Position}
+\iCT\x83\D200\D400 {Set Text Alignment} 
+
+\iAU\1 {Set Underline Mode}
+\iAB\1 {Set Bold Mode}
+\iACF\#FF0000 {Set Foreground Color}
+
+\iDTThis is a Text using Font ladsjfldjfldjflkadfj\0 {Write Text}
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgc0c2975" class="outline-4">
+<h4 id="orgc0c2975">Write Text into Rectangle</h4>
+</div>
+</div>
+
+
+<div id="outline-container-org834172d" class="outline-3">
+<h3 id="org834172d">Touch Screen</h3>
+<div class="outline-text-3" id="text-org834172d">
+</div>
+<div id="outline-container-org3f8f6f5" class="outline-4">
+<h4 id="org3f8f6f5">Define a Touchfield + Rectangle</h4>
+<div class="outline-text-4" id="text-org3f8f6f5">
+<pre class="example">
+\i! {Reset All}
+\iCK\D100\D100 {Set Cursor Position}
+\iDR\x0\D200\D200 {Draw Rectangle}
+
+\iTH\D200 {Set Touch Field Height}
+\iTW\D200 {Set Touch Field Width}
+\iTA\0k {Create/Define Touch Field}
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgadc451f" class="outline-4">
+<h4 id="orgadc451f">Make &amp; Break Macros</h4>
+<div class="outline-text-4" id="text-orgadc451f">
+<pre class="example">
+{Reset Break &amp; Make Macro Attributes}
+\iTB\D-1 {Set Touch Field Break Macro}
+\iTM\D-1 {Set Touch Field Make Macro}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc122551" class="outline-3">
+<h3 id="orgc122551">Macros</h3>
+<div class="outline-text-3" id="text-orgc122551">
+</div>
+<div id="outline-container-orgca74b4d" class="outline-4">
+<h4 id="orgca74b4d">Make &amp; Break Macros</h4>
+<div class="outline-text-4" id="text-orgca74b4d">
+<pre class="example">
+#macro_start(10, "Create Touch Field", 1252)
+
+\iTW\D200 \iTH\D200 {Set Touch Field Width &amp; Height} 
+
+\iTA\0\x1 {Create/Define Touch Field, Key: 1}
+\iDR\x0\D200\D200 {Draw Rectangle} 
+
+#macro_end
+#macro_start(11, "Start", 1252)
+\i!
+
+{Define Break &amp; Make Macros}
+\iTM\mMake Macro\0   \iTB\mBreak Macro\0
+{\iTM\D12   \iTB\D13}
+
+\iOE\mCreate Touch Field\0
+
+{Reset Break &amp; Make Macro Attributes}
+{\iTB\D-1 {Set Touch Field Break Macro}
+{\iTM\D-1 {Set Touch Field Make Macro}
+
+#macro_end
+#macro_start(12, "Make Macro", 1252)
+
+\iAPC\#FF0000 {Set Filling Color}
+\iDR\x20\D200\D200 {Draw Rectangle}
+
+#macro_end
+#macro_start(13, "Break Macro", 1252)
+
+\iAPC\#0000FF {Set Filling Color}
+\iDR\x20\D200\D200 {Draw Rectangle}
+
+#macro_end
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgde298aa" class="outline-2">
+<h2 id="orgde298aa">Links</h2>
+<div class="outline-text-2" id="text-orgde298aa">
+<ul class="org-ul">
+<li>Online Compiler: <a href="https://www.tutorialspoint.com/compile_cpp11_online.php">https://www.tutorialspoint.com/compile_cpp11_online.php</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2021-03-31 Wed 06:00</p>
+</div>
+</body>
+</html>

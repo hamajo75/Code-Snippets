@@ -1,0 +1,1270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-03-05 Fr 21:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Der Begriff Form</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="shortcut icon" href="/public_html/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/html-export.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/hideshow.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/code.css">
+
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "0em",
+        "HTML-CSS": {
+             scale: 110,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div style = "text-align: right; margin-top: 5px">
+   <a accesskey="h" href="" style="font: 20px arial,helvetica,clean,sans-serif"></a>
+   <a accesskey="H" href="https://joesanmarzano.duckdns.org/public_html/" style="font: 20px arial,helvetica,clean,sans-serif;margin: 30px;"> HOME </a>
+</div><div id="content">
+<h1 class="title">Der Begriff Form</h1>
+
+<div id="outline-container-org31b034d" class="outline-2">
+<h2 id="org31b034d">Einleitung</h2>
+<div class="outline-text-2" id="text-org31b034d">
+<p>
+Die Grundidee, die wir hier verfolgen wollen, ist:
+Formen sind Strukturen mit austauschbaren Elementen.
+</p>
+
+<p>
+Folgende Fragen sollen behandelt werden:
+</p>
+
+<ul class="org-ul">
+<li>Was genau kann ausgetauscht werden?</li>
+<li>Wo kann ausgetauscht werden?<br />
+Es gibt ORTE, an denen solche Austauschungen von Elementen stattfinden.</li>
+<li>Was erreicht man mit einer Form?
+EINE einheitliche Beschreibung für VIELE Instanzen.</li>
+<li>Wie ist das Verhältnis von Form und Instanz zu verstehen?</li>
+</ul>
+
+<p>
+Wir haben ein gutes mathematisches Verständnis von Strukturen, aber wie
+schaut es mit dieser Art von dynamischen Prozessen (Austauschen) aus?
+</p>
+
+<p>
+Muss es einen systematischen Prozess geben (Algorithmus), der zu allen
+Instanzen einer Form führt?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org16e5986" class="outline-2">
+<h2 id="org16e5986">Zeichenketten und ihre Formen</h2>
+<div class="outline-text-2" id="text-org16e5986">
+<p>
+Wir betrachten der Einfachheit halber endliche Zeichenketten mit lateinischen Kleinbuchstaben.
+Gleichheit und Verschiedenheit zu bestimmen sollte hier keine Schwierigkeiten bereiten.
+</p>
+
+<p>
+Was ausgetauscht werden kann sind also diese Zeichen. Die entsprechenden Stellen seien von 1 bis n 
+durchnummeriert. Konrete Zeichenketten werden mit Anführungsstrichen geschrieben (z.B. "aabbcc"), Formen
+schreiben wir ohne Anführungsstriche (aabbcc oder AABBCC).
+</p>
+
+<p>
+Die folgenden Zeichen nennen wir <i>Formzeichen</i>:
+</p>
+<ul class="org-ul">
+<li>a b c d &#x2026; für nur verschieden
+<ul class="org-ul">
+<li>ab steht für die Form von "ab", aber nicht für die Form von "aa"</li>
+</ul></li>
+<li>A B C D &#x2026; für verschieden oder gleich (übliche Verwendung)
+<ul class="org-ul">
+<li>AB steht für die Form von "ab" UND für die Form von "aa"</li>
+<li>AA steht für die Form von "aa", "bb", etc. aber nicht für die Form von "ab"</li>
+</ul></li>
+</ul>
+
+<p>
+Zeichenketten von <i>Formzeichen</i> sollen hier <i>Formen</i> heißen. Dieser Terminologie ist allerdings ungenau, weil
+verschiedene Zeichenketten (im üblichen Sinn verschieden) durchaus dieselbe Form darstellen können.
+Da es bei den Form - Zeichenketten ausschließlich um die Gleichheit und Verschiedenheit geht, stellen z.B.
+ABC und DEF dieselbe Form dar. 
+</p>
+
+<p>
+Die Form wird von diesen Zeichenketten dargestellt, sie ist aber selbst keine Zeichenkette.
+</p>
+
+<p>
+Eine mögliche <i>Form</i> sieht also z.B. so aus:
+</p>
+<blockquote>
+<p>
+ABCDAA
+</p>
+</blockquote>
+<blockquote>
+<p>
+Die Zeichenkette "abba" hat z.B. die Form abba oder die Form ABBA. 
+</p>
+</blockquote>
+
+<p>
+Beispiel:
+</p>
+<pre class="example">
+Wir betrachten die beiden Zeichenketten: 'hallo' und 'bitte'.
+
+Darstellung der Form: 
+(1) ABCCD
+
+Hier geht es nur um Identität und Verschiedenheit. Was genau gleich und verschieden sein kann, ist auch nicht 
+ohne weiters klar. Es wird einfach vorausgesetzt, dass unzweifelhaft beurteilt werden kann, ob zwei Stellen 
+(Was ist eine Stelle?) in einer Form gleich oder verschieden sind.
+
+Mögliche Instanz dieser Form ist auch: 'hallobittemayermayerbla'. In diesem Fall sind die Zeichen Wörter.
+
+Irgendwie muss also auch noch klar gestellt werden was genau im Hinblick auch Identität und Verschiedenheit 
+betrachtet wird (in diesem Fall Buchstaben bzw. Wörter).
+
+Eine mögliche Form von 'hallo' oder 'bitte' ist auch
+(2) K_A V_A K_B K_B V_B
+
+K...Konsonant
+V...Vokal
+
+Hier werden zwei Kategorien V und K betrachtet, für die Identität und Verschiedenheit unterschiedlich beurteilt wird.
+Der zweite Konsonant in der Zeichenkette ist verschieden vom ersten, der dritte identisch mit dem zweiten etc. 
+
+'aeuuo' ist ein Beispiel für die Form (1) aber nicht für (2).
+
+Betrachten wir nur Identität und Verschiedenheit von V und K, ergibt sich folgende Form:
+(3) KVKKV
+</pre>
+</div>
+
+<div id="outline-container-orge8dbeb3" class="outline-3">
+<h3 id="orge8dbeb3">Anmerkungen zum Zeichenbegriff</h3>
+<div class="outline-text-3" id="text-orge8dbeb3">
+<p>
+Bei der obigen Vereinfachung haben wir willkürlich bestimmte Zeichen festgelegt, weil es hier nicht darauf
+ankommt welche konkreten Zeichen verwendet werden. Trotzdem werden dabei freilich allerlei implizite 
+Voraussetzungen gemacht. 
+</p>
+
+<p>
+Wir setzen gedankenlos ein 2-dimensionales, graphisches Liniengebilde voraus, das verhältnismäßig kurz
+(also nicht kilometerlang) ist und eine gewisse Form hat. Die Form ist zwar unbestimmt, aber gewohnte Formen
+werden wir eher als Zeichen akzeptieren als sehr ungewohnte Gebilde.
+</p>
+</div>
+</div>
+<div id="outline-container-orgfceaa24" class="outline-3">
+<h3 id="orgfceaa24">Anmerkungen zum Formbegriff</h3>
+<div class="outline-text-3" id="text-orgfceaa24">
+<p>
+An einer bestimmten Zeichenkette kann man immer mehrere Formen erkennen.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org93f0f16" class="outline-3">
+<h3 id="org93f0f16"><span class="todo TODO">TODO</span> Vordergrund und Hintergrund</h3>
+</div>
+</div>
+
+<div id="outline-container-org15117bd" class="outline-2">
+<h2 id="org15117bd">Allgemeinere Formen</h2>
+<div class="outline-text-2" id="text-org15117bd">
+<p>
+Was ist eine Struktur? 
+</p>
+
+<p>
+Um dem Begriff der Struktur näher zu kommen, betrachten wir zunächst eine Welt ohne Struktur.
+Darunter stellen wir uns eine Art Sack voller Objekte vor, die keine Beziehung miteinander 
+haben. Wir können aber Identität und Verschiedenheit der Objekte bestimmen.
+</p>
+
+<p>
+Nun beginnen wir, diese Objekte zu ordnen, z.B. teilen wir sie in zwei Kategorien ein.
+</p>
+</div>
+
+<div id="outline-container-org1abf2a6" class="outline-3">
+<h3 id="org1abf2a6">Mathematische Strukturen</h3>
+<div class="outline-text-3" id="text-org1abf2a6">
+<p>
+Menge mit Relationen zwischen den Elementen oder Teilmengen.
+</p>
+
+<ul class="org-ul">
+<li>eine innere Verknüpfung: Gruppen, etc.</li>
+<li>zwei innere Verknüpfungen: 
+<ul class="org-ul">
+<li>Ringe, Körper, etc.</li>
+<li>Verbände, Algebren</li>
+</ul></li>
+<li>innere und äußere Verknüpfung: Vektorräume</li>
+</ul>
+</div>
+
+<div id="outline-container-org633bff1" class="outline-4">
+<h4 id="org633bff1">Abbildungen haben Formen</h4>
+<div class="outline-text-4" id="text-org633bff1">
+<p>
+Betrachten wir zunächst endliche Abbildungen.
+</p>
+
+<p>
+Durchschnitt von Quell- und Zielmenge leer: 
+Durchschnitt von Quell- und Zielmenge nicht leer: 
+Quell- und Zielmenge identisch:
+</p>
+
+<p>
+Eine Abbildung hat eine kenogrammatische Form:
+</p>
+
+
+<p>
+Beispiele:
+</p>
+<ul class="org-ul">
+<li>UND-Verknüpfung (Konjunktion, et)</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Plätze</th>
+<th scope="col" class="org-right">a</th>
+<th scope="col" class="org-right">b</th>
+<th scope="col" class="org-right">Werte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Hat die gleiche kenogrammatische Form wie die 
+ODER-Verknüpfung:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Plätze</th>
+<th scope="col" class="org-right">a</th>
+<th scope="col" class="org-right">b</th>
+<th scope="col" class="org-right">Werte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Wir haben: einen, von den anderen verschiedenen, Wert an der ersten Stelle
+und drei gleiche Werte and den folgenden Stellen. (streng genommen ist das 
+die Beschreibung dieser Form: 01&#x2026;)
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgfd1d503" class="outline-3">
+<h3 id="orgfd1d503">Datenstrukturen</h3>
+<div class="outline-text-3" id="text-orgfd1d503">
+<p>
+struct in C
+Graphen, Bäume, Listen haben alle eine Form. 
+</p>
+</div>
+</div>
+<div id="outline-container-org1035562" class="outline-3">
+<h3 id="org1035562">räumliche, zeitliche Strukturen (Muster)</h3>
+<div class="outline-text-3" id="text-org1035562">
+<p>
+Symmetrie, Periodizität
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgf63db96" class="outline-3">
+<h3 id="orgf63db96">Rekursive Strukturen</h3>
+<div class="outline-text-3" id="text-orgf63db96">
+<p>
+GOD (Gödel, Escher, Bach)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdf89e42" class="outline-2">
+<h2 id="orgdf89e42">Kenogrammatik</h2>
+<div class="outline-text-2" id="text-orgdf89e42">
+</div>
+<div id="outline-container-orgca8d9fb" class="outline-3">
+<h3 id="orgca8d9fb">Klassisches Zeichenkonzept</h3>
+<div class="outline-text-3" id="text-orgca8d9fb">
+<dl class="org-dl">
+<dt><code>Zeichenreihe</code></dt><dd>lineare Aneinanderreihung von endlich vielen Grundzeichen, die einer Menge 
+von Atomzeichen entnommen sind.</dd>
+</dl>
+
+<p>
+Zwei Zeichenreihen sind gleich, wenn ihr Zeichenreihen-Type gleich ist. Anders formuliert, wenn sie die 
+gleiche Gestalt haben. Konkrete physikalische Zeichenreihenvorkommnisse stehen mit der Zeichenreihengestalt
+in der <i>Token-Type-Relation</i>. 
+</p>
+
+<p>
+Die Gleichheit und Verschiedenheit von Zeichenketten leitet sich von der Gleichheit und Verschiedenheit
+der Atomzeichen ab.
+</p>
+
+<p>
+Zeichenketten lassen sich aneinanderhängen, wobei Gleichheit und Verschiedenheit erhalten bleibt.
+Bei der Konkatenation verhalten sich Zeichenketten wie Atomzeichen, d.h. man kann Zeichenketten wieder als
+neue Atomzeichen betrachten, aus ihnen neue Zeichenketten bilden, die wieder neue Atomzeichen bilden, usw.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4386936" class="outline-3">
+<h3 id="org4386936">Kenogrammatisches Zeichenkonzept</h3>
+<div class="outline-text-3" id="text-org4386936">
+<p>
+Betrachten wir bei einer Zeichenkette nur ihre interne Unterschiedenheitsstruktur, so gelangen wir zum 
+kenogrammatischn Zeichenkonzept. Die GUV wird hierbei nicht von der GUV atomarer Zeichen abgeleitet.
+</p>
+
+<p>
+Ein <i>Kenogramm</i> legt Orte (Leerstellen) fest an denen etwas (z.B. ein Zeichen) eingeschrieben werden kann.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+Keine Atomzeichen, keine lineare Verkettung von Grundzeichen
+</p>
+
+<p>
+<i>Formzeichen</i> deuten nur Gleichheit und Verschiedenheit an, und zwar nur innerhalb einer <i>Form</i>. Wir können 
+nicht einfach zwei <i>Formen</i> miteinander verketten, da wir zuerst GUV aller Zeichen in der gesamten <i>Form</i> 
+untersuchen müssen.
+</p>
+
+<pre class="example">
+Betrachten wie die Konkatenation von 'hallo' und 'bitte', also 'hallobitte'
+
+Form('hallo') = ABCCD
+Form('bitte') = ABCCD
+
+Beide Wörter haben dieselbe Form. Wir können aber nicht einfach die Formen aneinanderhängen.
+Das würde nämlich ABCCDABCCD ergeben, was nicht die Form von 'hallobitte' ist.
+
+Form('hallobitte') = ABCCDEFGGH
+
+</pre>
+
+<p>
+Im klassischen Zeichenkonzept kann jederzeit ein neues Zeichen angehängt werden. Die alte Zeichenkette
+bleibt als Teilzeichenkette der neuen erhalten.
+</p>
+
+<p>
+Eine Form ist ein Relationsgebilde, das die Beziehungen verschiedener Stellen, an denen Zeichen 
+stehen können, darstellt. 
+</p>
+
+<p>
+Verortung von Zeichen: Stellen (Plätze) in einer <i>Form</i>.
+</p>
+</div>
+
+<div id="outline-container-org6478526" class="outline-4">
+<h4 id="org6478526">Wie kommt man zur konkreten Zeichenkette?</h4>
+<div class="outline-text-4" id="text-org6478526">
+<p>
+Von der Verschiedenheitsstruktur einer Form kommen wir zu einer konkreten Zeichenkette, wenn wir festlegen, was
+an den einzelnen Stellen der Form vorkommen kann. 
+</p>
+
+<p>
+ABCD legt fest "aaaa", "abcd", "dcba", &#x2026;, wenn wir lateinische Kleinuchstaben als Werte festlegen.
+atomare Zeichen werden festgelegt
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orga2931a7" class="outline-3">
+<h3 id="orga2931a7">Prüfung auf Gleichheit zweier Zeichenketten</h3>
+<div class="outline-text-3" id="text-orga2931a7">
+<p>
+klassisch: Vergleiche Zeichen für Zeichen, sind alle gleich, so sind die zwei Zeichenreihen gleich.
+</p>
+
+<p>
+kenogrammatisch: Welche Zeichen in Zeichenkette 1 sind verschieden bzw. gleich, hat Zeichenkette 2
+                 dieselbe Struktur, dann sind beide kenogrammatisch gleich.
+</p>
+
+<p>
+ander Arten der Gleichheit:
+</p>
+
+<p>
+zwei Zeichenketten sind gleich wenn
+</p>
+<ul class="org-ul">
+<li>sie gleich lang sind</li>
+<li>sie die selben Zeichen enthalten</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8b95edb" class="outline-3">
+<h3 id="org8b95edb">Beispiele</h3>
+<div class="outline-text-3" id="text-org8b95edb">
+</div>
+<div id="outline-container-org88f5baf" class="outline-4">
+<h4 id="org88f5baf">Wahrheitswerttabellen</h4>
+<div class="outline-text-4" id="text-org88f5baf">
+<p>
+Abbildung von Stellen auf Werte.
+</p>
+
+<p>
+Es geht jetzt darum, wie viele Stellen auf gleiche Werte aubgebildet weden.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org94ec7cd" class="outline-3">
+<h3 id="org94ec7cd">Formal</h3>
+<div class="outline-text-3" id="text-org94ec7cd">
+<p>
+Betrachten wir eine Zeichenkette als Abbildung von Stellen auf Werte:<br />
+\(\mu: A \rightarrow B\).
+\(B\) sei die Belegungsmenge. \(A\) sei bis auf weiteres \(A = \{1,2,3, ...\}\), d.h. wir nummerieren die Stellen 
+einfach durch.
+</p>
+
+<p>
+Wir wollen nun von der Belegungsmenge abstrahieren und Abbildungen
+\(\mu_{1}\) und \(\mu_{2}\) nur noch nach Gleichheit und Verschiedenheit unterscheiden.
+</p>
+
+<p>
+Äquivalenzrelation  \(Kern(\mu)\): enthält alle Paare \((a_i, a_ j)\) , deren Bilder
+gleich sind \((\mu(a_i) = \mu(a_j))\). 
+</p>
+
+<p>
+Quotientenmenge \(A/Kern(\mu)\) : Menge aller Äquivalenzklassen bezüglich \(Kern(\mu)\).
+</p>
+
+<p>
+Z.B. "aabcca", <br />
+Äquivalenzrelation: \(Kern(\mu)=\{(1,2),(2,1),(1,6),(6,1),(4,5),(5,6)\}\) <br />
+Menge der Äquivalenzklassen: \(A/Kern(\mu) = \{\{1,2,6\}, \{3\}, \{4,5\}\}\)
+</p>
+
+<p>
+Wir unterscheiden nun drei verschiedene Arten von Zeichenketten, wobei immer nur die 
+Quotientenmenge relevant ist, d.h. es ist egal welche konkreten Zichen verwendet werden.
+Anders ausgedrückt sind für kenogrammatische Äquivalenzrelationen immer nur die 
+Quotientenmengen relevant.
+</p>
+</div>
+
+<div id="outline-container-org290afa2" class="outline-4">
+<h4 id="org290afa2">Protoäquivalenz (Anzahl verschiedener Zeichen)</h4>
+<div class="outline-text-4" id="text-org290afa2">
+<p>
+Zwei Zeichenketten sind protoäquivalent gdw. sie die gleiche Anzahl von Äquivalenzklassen
+(d.h. verschiedener Zeichen) haben.
+</p>
+
+<p>
+Beispiele:
+</p>
+<ul class="org-ul">
+<li>"bbbd" und "aacc" sind protoäquivalent, da sie jeweils zwei Äquivalenzklassen haben.</li>
+<li>"a" und "b" sind protoäquivalent</li>
+</ul>
+
+<p>
+Anschaulicher gesprochen ist bei dieser Äquivalenz nur die Zahl der verschiedenen Zeichen relevant.
+</p>
+
+<p>
+Die Protoäquivalenz ist eine Äquivalenzrelation, d.h. sie ist reflexiv, transitiv und symmetrisch.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org855c78d" class="outline-4">
+<h4 id="org855c78d">Deuteroäquivalenz</h4>
+<div class="outline-text-4" id="text-org855c78d">
+<p>
+Zwei Zeichenketten sind deuteroäquivalent gdw. es eine bijektive Abbildung zwischen \(A/Kern(\mu_{1})\) 
+und \(A/Kern(\mu_{2})\) gibt mit der Eigenschaft, dass die Kardinalität der abgebildeten Äquivalenzklassen
+gleich ist.
+</p>
+
+<p>
+Beispiele:
+</p>
+<ul class="org-ul">
+<li>"bbbd" und "accc" sind deuteroäquivalent.
+<ul class="org-ul">
+<li>\(A/Kern(\mu_{1}) = \{\{1,2,3\}, \{4\}\}\)</li>
+<li>\(A/Kern(\mu_{2}) = \{\{1\}, \{2,3,4\}\}\)</li>
+<li>Die entsprechende Abbildung ist:<br />
+\(\phi(\{1,2,3\}) = \{2,3,4\}\) und \(\phi^{-1}(\{2,3,4\}) = \{1,2,3\}\). Jeweils drei Elemente.<br />
+\(\phi(\{4\}) = \{1\}\) und \(\phi^{-1}(\{1\}) = \{4\}\). Jeweils ein Element.</li>
+</ul></li>
+
+<li>"abba" und "abab" sind deuteroäquivalent</li>
+<li>"ab" und "aab" sind nicht deuteroäquivalent (die Anzahl der gleichen Zeichen ist verschieden.)</li>
+</ul>
+
+<p>
+Aus der Deuteroäquivalenz folgt die Protoäquivalenz.
+</p>
+
+<p>
+Bei dieser Äquivalenz ist die Verteilung der Symbole auf die n Stellen relevant.
+</p>
+
+<p>
+Die Deuteroäquivalenz ist eine Äquivalenzrelation, d.h. sie ist reflexiv, transitiv und symmetrisch.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdcafabc" class="outline-4">
+<h4 id="orgdcafabc">Tritoäquivalenz</h4>
+<div class="outline-text-4" id="text-orgdcafabc">
+<p>
+Zwei Zeichenketten sind tritoäquivalent gdw. \(A/Kern(\mu_{1}) = A/Kern(\mu_{2})\). 
+</p>
+
+<p>
+Z.B. sind "bccd" und "abbc" tritoäquivalent, da \(A/Kern(\mu_{1}) = A/Kern(\mu_{1}) = \{\{1\}, \{2,3\}, \{4\}\}\).
+</p>
+
+<p>
+Aus der Tritoäquivalenz folgt die Deuteroäquivalenz.
+</p>
+
+<p>
+Die Tritoäquivalenz ist eine Äquivalenzrelation, d.h. sie ist reflexiv, transitiv und symmetrisch.
+</p>
+</div>
+</div>
+<div id="outline-container-org0ce6d70" class="outline-4">
+<h4 id="org0ce6d70">Kenogramme</h4>
+<div class="outline-text-4" id="text-org0ce6d70">
+</div>
+<div id="outline-container-orgac46582" class="outline-5">
+<h5 id="orgac46582">Die Tritonormalform TNF als Keogrammsequenz</h5>
+<div class="outline-text-5" id="text-orgac46582">
+<p>
+Eine Zeichenkette, die die Verschiedenheitsstruktur einer klassischen Zeichenkette angibt.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd5e0a11" class="outline-5">
+<h5 id="orgd5e0a11">Deuteronormalform</h5>
+<div class="outline-text-5" id="text-orgd5e0a11">
+<p>
+"abcdab"
+Darstellung der Normalform: AABBCD
+Erklärung: AA für die beiden a, BB für die beiden b, C für c, D für d
+</p>
+</div>
+</div>
+<div id="outline-container-org5ba5683" class="outline-5">
+<h5 id="org5ba5683">Protonormalform</h5>
+<div class="outline-text-5" id="text-org5ba5683">
+<p>
+"abcdab"
+Darstellung der Normalform: AAABCD
+</p>
+</div>
+</div>
+<div id="outline-container-org44d9ffb" class="outline-5">
+<h5 id="org44d9ffb">e/v Darstellung</h5>
+<div class="outline-text-5" id="text-org44d9ffb">
+<p>
+gleich/nicht gleich
+"abac"
+(1,2,v), (1,3,e), (2,3,v), (1,4,v), (2,4,v), (3,4,v)
+andere Darstellung:
+  v
+ e v
+v v v
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8875b8f" class="outline-3">
+<h3 id="org8875b8f">Die Proemialrelation</h3>
+</div>
+</div>
+
+
+
+<div id="outline-container-org485eca5" class="outline-2">
+<h2 id="org485eca5">Differenzenlogik</h2>
+<div class="outline-text-2" id="text-org485eca5">
+<p>
+Luhmann:
+“Ein System ´ist´ die Differenz zwischen System und Umwelt.
+„Am Anfang steht also nicht Identität, sondern Differenz.“ 
+</p>
+</div>
+
+<div id="outline-container-org4fe8906" class="outline-3">
+<h3 id="org4fe8906">Identität und Verschiedenheit</h3>
+<div class="outline-text-3" id="text-org4fe8906">
+<p>
+Es kommt immer darauf an, was man als gleich und was man als verschieden 
+ansieht. 
+</p>
+
+<p>
+Beispiel:
+2 Tabellen vergleichen.
+bzw 2 Versionen derselben Tabelle vergeleichen.
+</p>
+
+<p>
+die gleichen Spalten, die gleichen Datensätze vergleichen.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7739345" class="outline-3">
+<h3 id="org7739345">Teil und Ganzes</h3>
+</div>
+
+
+<div id="outline-container-orgadef097" class="outline-3">
+<h3 id="orgadef097">Methodik</h3>
+<div class="outline-text-3" id="text-orgadef097">
+<p>
+Zähle alle Elemente (Objekte) auf und betrachte ihre Beziehungn.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4d11f69" class="outline-3">
+<h3 id="org4d11f69">Struktur</h3>
+<div class="outline-text-3" id="text-org4d11f69">
+<p>
+mathematisch (das gleiche wie Modell ?)
+Menge mit Operationen auf der Menge, d.h. Funktionen und Relationen.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0dbef99" class="outline-2">
+<h2 id="org0dbef99">Software</h2>
+<div class="outline-text-2" id="text-org0dbef99">
+</div>
+<div id="outline-container-org780f409" class="outline-3">
+<h3 id="org780f409">Parallel arbeiten auf einer Menge</h3>
+<div class="outline-text-3" id="text-org780f409">
+<pre class="example">
+Matlab, Form, Iterator, multiple cursors, regular expressions
+</pre>
+
+
+<p>
+Wenn man parallel auf einer Menge arbeitet, muss irgend etwas für alle Elemente
+in der Menge gelten. 
+</p>
+
+<p>
+vgl. Matrizenrechnung, man arbeitet auf einem Kompositum
+</p>
+
+<ul class="org-ul">
+<li>siehe Beispiel: Menge von Strings</li>
+<li>siehe Beispiel: java packages: Package Liste</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org18e3f1d" class="outline-3">
+<h3 id="org18e3f1d">Template Engines</h3>
+<div class="outline-text-3" id="text-org18e3f1d">
+<p>
+The simplest version of a Template Engine fills in <i>Values</i> for <i>Variables</i> in
+a string by doing a simple string substitution.
+</p>
+
+<p>
+A more advanced approach also includes logic into the template. One way to do
+so is to embed scripting code into the template text and evaluate it when 
+doing the substitution.
+</p>
+
+<p>
+For example you might wanna create a table be looping through all entries
+in a list.
+</p>
+
+<p>
+The thing to think about here is: What do you want from a template?
+</p>
+<ul class="org-ul">
+<li>What is fixed and what might change?</li>
+<li>Why not create everything on the fly?</li>
+</ul>
+
+<p>
+There might also be context-sensitive conditions for when to do a 
+substitution. 
+</p>
+
+<p>
+Some systems use annotated sections.
+</p>
+
+<p>
+All this must have a close relation to formal languages.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org5d4a464" class="outline-2">
+<h2 id="org5d4a464">Formen vs. Regeln</h2>
+<div class="outline-text-2" id="text-org5d4a464">
+<p>
+Was unterscheidet Formen (Muster) von Regeln?
+</p>
+</div>
+</div>
+<div id="outline-container-orgb5d62b5" class="outline-2">
+<h2 id="orgb5d62b5">Beispiele</h2>
+<div class="outline-text-2" id="text-orgb5d62b5">
+</div>
+<div id="outline-container-orgbaeb240" class="outline-3">
+<h3 id="orgbaeb240">Logische Formeln</h3>
+</div>
+<div id="outline-container-orgb0693bd" class="outline-3">
+<h3 id="orgb0693bd">Formale Bildungsregeln</h3>
+<div class="outline-text-3" id="text-orgb0693bd">
+<p>
+Wenn $&psi; $ und \(\phi\) Formeln sind, dann auch \(\psi \wedge \phi\).
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org3397b40" class="outline-3">
+<h3 id="org3397b40">Patching files</h3>
+<div class="outline-text-3" id="text-org3397b40">
+<p>
+Let's say you have two versions of a file. So we are in the somewhat paradoxical
+situation that we are referring to two different things as the same.
+</p>
+
+<p>
+The two files differ on line 1, the rest is the same. So we refer to line 1 as 
+the "place" where something interesting (a difference) is happening. The <i>diff</i>-tool
+refers to this as a <i>hunk</i>. So, suddenly we can talk about new entities, namely
+<i>hunks</i>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge794a21" class="outline-3">
+<h3 id="orge794a21">Menge von Strings</h3>
+<div class="outline-text-3" id="text-orge794a21">
+<p>
+Wie kann man darauf parallel arbeiten, d.h. mit allen Strings gleichzeitig?
+Das geht z.B. dann, wenn die Strings eine gemeinsame Form haben.
+</p>
+
+<p>
+Ersezte in einer Menge von Strings einen Teilstring.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcadb728" class="outline-3">
+<h3 id="orgcadb728">java packages: Package Liste</h3>
+<div class="outline-text-3" id="text-orgcadb728">
+<p>
+Input Liste: package1 package2
+erstelle Liste: package1\*.java package2\*.java
+erstelle Liste: package1\*.class package2\*.class
+</p>
+
+<p>
+Form der Input Liste: [a] [b] [c] 
+</p>
+
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-12-09 Fr&gt;</span></span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org50d7f89" class="outline-3">
+<h3 id="org50d7f89"><span class="todo TODO">TODO</span> Reguläre Ausdrücke</h3>
+<div class="outline-text-3" id="text-org50d7f89">
+<p>
+<b>Wie beschreiben RA eine Form?</b>
+</p>
+
+<p>
+<b>Welche Formen können durch RA nicht beschrieben werden?</b>
+</p>
+
+<p>
+Z.B. verschachtelte Klammerausdrücke.
+</p>
+
+<p>
+Vordergrund-Hintergrund, negative Treffer
+Nehmen wir eine Zeichensequenz, dann legt ein Regulärer Ausdruck Teilstücke davon fest, die Treffer.
+Was aber auch festgelegt wird ist der komplementäre Teil der Zeichensequenz, also der Rest.
+</p>
+
+
+<p>
+Text kann betrachtet werden als:
+</p>
+<ul class="org-ul">
+<li>eindimensional, als Sequenz von Zeichen</li>
+<li>zweidimensional mit Zeilenumbrüchen</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4ca4cd0" class="outline-2">
+<h2 id="org4ca4cd0">Sandbox</h2>
+<div class="outline-text-2" id="text-org4ca4cd0">
+<p>
+Warum sagt ein Beispiel mehr als viele Erklärungen?
+Weil man an dem Beispiel eine Form erkennt.
+Deshalb freuen sich Schüler, wenn sie bei einem Test nach Schema F arbeiten können.
+</p>
+</div>
+<div id="outline-container-org4279760" class="outline-3">
+<h3 id="org4279760">Hylemorphismus</h3>
+<div class="outline-text-3" id="text-org4279760">
+<p>
+Form vs. Materie, zwei Prinzipien des Seienden
+Beispiel: Statue
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8e92d37" class="outline-3">
+<h3 id="org8e92d37">Form als das, was ein Zusammengesetzes individuiert.</h3>
+<div class="outline-text-3" id="text-org8e92d37">
+<p>
+Wie kann ein Ding mit vielen Teilen eine Einheit sein?
+</p>
+
+<p>
+vgl. den Begriff Wesen, Essenz
+</p>
+</div>
+</div>
+<div id="outline-container-orga79986b" class="outline-3">
+<h3 id="orga79986b">Mit binären Zeichenketten Dinge unterscheiden</h3>
+<div class="outline-text-3" id="text-orga79986b">
+<p>
+Man kann mit n-Bits kann man \(2^{n+1}-2\) verschiedene Dinge repräsentieren.
+Repräsentation wird hier einfach als Zuordnung verstanden. 
+</p>
+</div>
+</div>
+<div id="outline-container-org4539d6f" class="outline-3">
+<h3 id="org4539d6f">Veränderung mit Hilfe des Begriffs Form erklären</h3>
+<div class="outline-text-3" id="text-org4539d6f">
+<ul class="org-ul">
+<li>Welche Dinge können substituiert werden?</li>
+<li>Wie verändert sich die Zeichenkette?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgac62a84" class="outline-3">
+<h3 id="orgac62a84">Form und Abstraction</h3>
+</div>
+<div id="outline-container-orgb5522c6" class="outline-3">
+<h3 id="orgb5522c6">Form und Wahrnehmung</h3>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara"><i>keno</i> soll <i>leer</i> heißen</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Created: 2021-03-05 Fr 21:00</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-03-05 Fr 21:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs Lisp Programming</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="shortcut icon" href="/public_html/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/html-export.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/hideshow.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/code.css">
+
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div style = "text-align: right; margin-top: 5px">
+   <a accesskey="h" href="" style="font: 20px arial,helvetica,clean,sans-serif"></a>
+   <a accesskey="H" href="https://joesanmarzano.duckdns.org/public_html/" style="font: 20px arial,helvetica,clean,sans-serif;margin: 30px;"> HOME </a>
+</div><div id="content">
+<h1 class="title">Emacs Lisp Programming</h1>
+<ul class="org-ul">
+<li><code>M-x emacs-lisp-mode</code>     start elisp mode</li>
+<li><code>M-x ielm</code>                start interactive lisp mode</li>
+<li><code>C-x C-e</code>                 evaluate</li>
+<li><code>C-h f</code>                   get help on function</li>
+<li><code>C-h i Elisp</code>             open Elisp Manual</li>
+</ul>
+
+<div id="outline-container-orgeb38483" class="outline-2">
+<h2 id="orgeb38483">Links</h2>
+<div class="outline-text-2" id="text-orgeb38483">
+<ul class="org-ul">
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/index.html#Top">GNU Emacs Lisp Reference</a></li>
+<li>Xah Lee's Page: <a href="http://ergoemacs.org/emacs/elisp.html">http://ergoemacs.org/emacs/elisp.html</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6b895b2" class="outline-2">
+<h2 id="org6b895b2">Datatypes</h2>
+<div class="outline-text-2" id="text-org6b895b2">
+</div>
+<div id="outline-container-org84f26a5" class="outline-3">
+<h3 id="org84f26a5">Arrays</h3>
+<div class="outline-text-3" id="text-org84f26a5">
+<p>
+[1 2 3]
+use make-vector
+</p>
+</div>
+</div>
+<div id="outline-container-orgce29343" class="outline-3">
+<h3 id="orgce29343">Lists</h3>
+<div class="outline-text-3" id="text-orgce29343">
+<p>
+(1 2 3)
+Everything not quoted (') will be evaluated.
+Ways to quote:
+</p>
+<ul class="org-ul">
+<li>(quote (1 2 3))    no evaluation</li>
+<li>`(1 ,(+ 1 1) 3)    backquote, selective evaluation (indicated by the ",")</li>
+</ul>
+<p>
+use list
+</p>
+</div>
+</div>
+<div id="outline-container-orgf0c3307" class="outline-3">
+<h3 id="orgf0c3307">Pairs</h3>
+<div class="outline-text-3" id="text-orgf0c3307">
+<p>
+'( (apple . "red")
+   (banana . "yellow")
+   (orange . "orange") )
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org531b65f" class="outline-2">
+<h2 id="org531b65f">Functions</h2>
+<div class="outline-text-2" id="text-org531b65f">
+<div class="org-src-container">
+<pre class="src src-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">strange_add</span> (x y)
+   (+ x (* 3 y))
+)
+
+(add 3 9)
+</pre>
+</div>
+</div>
+<div id="outline-container-org5ae889d" class="outline-3">
+<h3 id="org5ae889d">Evaluation</h3>
+<div class="outline-text-3" id="text-org5ae889d">
+<p>
+Everything is evaluated accept (quote (1 2 3))  or  '(1 2 3)
+</p>
+</div>
+<div id="outline-container-org3c468b4" class="outline-4">
+<h4 id="org3c468b4">Backquote</h4>
+<div class="outline-text-4" id="text-org3c468b4">
+<p>
+Instead of "'" use "`" and put a "," in front of the expressions
+you want to evaluate.
+(list `,(+ 1 2) '(1 2))
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org53dc73b" class="outline-3">
+<h3 id="org53dc73b">Sequences of function calls</h3>
+<div class="outline-text-3" id="text-org53dc73b">
+<pre class="example">
+(progn a b c ...)
+</pre>
+
+
+<p>
+Example:
+</p>
+<pre class="example">
+(progn (select-window (split-window-right)) (switch-to-buffer (clone-indirect-buffer nil nil)))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1fc8971" class="outline-2">
+<h2 id="org1fc8971">Lists</h2>
+<div class="outline-text-2" id="text-org1fc8971">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(cons '(1 2 3) '(4 5))             results in      ((1 2 3) 4 5)
+(append '(1 2 3) '(4 5) '(6 7))    results in      (1 2 3 4 5 6 7)
+</pre>
+</div>
+</div>
+<div id="outline-container-org2c92a02" class="outline-3">
+<h3 id="org2c92a02">car and cdr</h3>
+<div class="outline-text-3" id="text-org2c92a02">
+<ul class="org-ul">
+<li>car is the first element in the list</li>
+<li>cdr is the rest</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(cdr '(1 2 3))
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org831fd95" class="outline-4">
+<h4 id="org831fd95">CDR-ing down a list</h4>
+<div class="outline-text-4" id="text-org831fd95">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">apply-fun</span>(fun l)
+   (<span class="org-keyword">if</span> (null l)
+      nil
+      (cons (funcall fun (car l))
+            (apply-fun fun (cdr l))
+      )
+   )
+)
+
+(apply-fun (<span class="org-keyword">lambda</span> (x) (* x 2)) '(1 2 3))   <span class="org-comment-delimiter">; </span><span class="org-comment">scale list</span>
+(apply-fun (<span class="org-keyword">lambda</span> (x) (* x x)) '(1 2 3))   <span class="org-comment-delimiter">; </span><span class="org-comment">square list </span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org738c635" class="outline-4">
+<h4 id="org738c635">for-each loop</h4>
+<div class="outline-text-4" id="text-org738c635">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">for-each</span>(fun l)
+   (<span class="org-keyword">if</span> (null l) (print <span class="org-string">"done"</span>)
+         (<span class="org-keyword">progn</span> (funcall fun (car l))
+                (for-each fun (cdr l))
+         )
+
+   )
+)
+
+(for-each (<span class="org-keyword">lambda</span> (x) (print x)) '(1 2 3))
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org2b7ef18" class="outline-2">
+<h2 id="org2b7ef18">Files</h2>
+<div class="outline-text-2" id="text-org2b7ef18">
+<p>
+Open a file in a buffer
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(find-file <span class="org-string">"path/filename"</span>)
+</pre>
+</div>
+
+<p>
+Insert content of a file
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(insert-file-contents (concat notes-folder <span class="org-string">"css/theme-bigblow-modified.setup"</span>))
+</pre>
+</div>
+
+<p>
+Get list of files in directory
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(directory-files <span class="org-string">"."</span>)
+
+(directory-files-recursively <span class="org-string">"."</span> <span class="org-string">"\\.org"</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org941bdbf" class="outline-2">
+<h2 id="org941bdbf">Windows and Buffers</h2>
+<div class="outline-text-2" id="text-org941bdbf">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(select-window (split-window-right))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga0f237c" class="outline-2">
+<h2 id="orga0f237c">Text manipulation</h2>
+<div class="outline-text-2" id="text-orga0f237c">
+</div>
+<div id="outline-container-org2e6cc95" class="outline-3">
+<h3 id="org2e6cc95">Insert Text</h3>
+<div class="outline-text-3" id="text-org2e6cc95">
+<ul class="org-ul">
+<li><p>
+Insert simple Text.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">insert-p-tag</span>()
+  <span class="org-doc">"Insert &lt;p&gt;&lt;/p&gt; at cursor point."</span>
+  (<span class="org-keyword">interactive</span>)
+  (insert <span class="org-string">"&lt;p&gt;&lt;/p&gt;"</span>)
+  (backward-char 4)
+)
+</pre>
+</div></li>
+<li><p>
+Insert Befor/After Selection.
+(interactive "r") tells emacs to use the begin and 
+the end of the current region as paramters.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">wrap-markup-region</span> (start end)
+  <span class="org-doc">"Insert a markup &lt;b&gt;&lt;/b&gt; around a region."</span>
+  (<span class="org-keyword">interactive</span> <span class="org-string">"r"</span>)
+  (<span class="org-keyword">save-excursion</span>
+    (goto-char end) (insert <span class="org-string">"&lt;/b&gt;"</span>)
+    (goto-char start) (insert <span class="org-string">"&lt;b&gt;"</span>)
+  )
+)
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org17ecf16" class="outline-2">
+<h2 id="org17ecf16">Text position</h2>
+<div class="outline-text-2" id="text-org17ecf16">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(point)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgb0fb21e" class="outline-3">
+<h3 id="orgb0fb21e">Movement</h3>
+<div class="outline-text-3" id="text-orgb0fb21e">
+<dl class="org-dl">
+<dt>(goto-char 40)    </dt><dd>move cursor to position 40</dd>
+<dt>(forward-char 10) </dt><dd>move cursor forward by 10 chars</dd>
+<dt>(backward-char 10) </dt><dd>move cursor backward by 10 chars</dd>
+</dl>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5180a1b" class="outline-2">
+<h2 id="org5180a1b">Text styles</h2>
+<div class="outline-text-2" id="text-org5180a1b">
+</div>
+<div id="outline-container-org6902882" class="outline-3">
+<h3 id="org6902882">Faces</h3>
+<div class="outline-text-3" id="text-org6902882">
+<p>
+Define a custom face:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defface</span> <span class="org-variable-name">my_face</span>
+  '((default <span class="org-builtin">:weight</span> bold)
+    (((class color)) <span class="org-builtin">:foreground</span> <span class="org-string">"red1"</span>))
+  <span class="org-doc">"Face for letters to be solved."</span>
+  <span class="org-builtin">:group</span> 'mpuz)
+</pre>
+</div>
+
+<p>
+Open a file. M-o o lets you select a face.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org95f70d8" class="outline-2">
+<h2 id="org95f70d8">Search and replace</h2>
+<div class="outline-text-2" id="text-org95f70d8">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(search-forward <span class="org-string">"text"</span>)
+
+This is my text.
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc82e939" class="outline-2">
+<h2 id="orgc82e939">Lambda Calculus</h2>
+<div class="outline-text-2" id="text-orgc82e939">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;</span><span class="org-comment">-----------------------</span>
+(<span class="org-keyword">defun</span> <span class="org-function-name">inc</span> (x)
+   (+ x 1)
+)
+<span class="org-comment-delimiter">;</span><span class="org-comment">-----------------------</span>
+(<span class="org-keyword">defun</span> <span class="org-function-name">zero</span> (f x)
+   x
+)
+<span class="org-comment-delimiter">;</span><span class="org-comment">-----------------------</span>
+(<span class="org-keyword">defun</span> <span class="org-function-name">one</span> (f x)
+   (funcall f x)
+)
+<span class="org-comment-delimiter">;</span><span class="org-comment">-----------------------</span>
+(<span class="org-keyword">defun</span> <span class="org-function-name">two</span> (f x)
+   (funcall f (funcall f x))
+)
+<span class="org-comment-delimiter">;</span><span class="org-comment">-----------------------</span>
+<span class="org-comment-delimiter">;</span><span class="org-comment">-----------------------</span>
+(zero 'inc 4)
+(one 'inc 4)
+(two 'inc 4)
+
+(two (<span class="org-keyword">lambda</span> (x) (* x x)) 4)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org133df93" class="outline-2">
+<h2 id="org133df93">Misc</h2>
+<div class="outline-text-2" id="text-org133df93">
+</div>
+<div id="outline-container-org6c4fa5d" class="outline-3">
+<h3 id="org6c4fa5d">Sleep</h3>
+<div class="outline-text-3" id="text-org6c4fa5d">
+<ul class="org-ul">
+<li>(sit-for sec)</li>
+<li>(sleep-for sec)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2021-03-05 Fr 21:00</p>
+</div>
+</body>
+</html>

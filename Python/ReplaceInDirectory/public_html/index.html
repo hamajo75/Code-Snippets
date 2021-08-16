@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-1.11.0.min.js"></script> 
+    <script> 
+    $(function(){
+      $("#includedContentFrom").load("JoesNotes.html"); 
+    });
+    </script> 
+        
+    <title>Joe's Notes</title>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+    <link rel="shortcut icon" href="/public_html/favicon.ico" type="image/x-icon">
+    <!-- meta name="viewport" content="width=1024" />
+    <!--[if lt IE 9]>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <![endif]-->
+    <style>
+    /* Show Mindmap */
+    @media (min-width: 1301px) {
+        div#content{
+            display: none;            
+        }
+        div#mindplot{
+            display: visible;            
+        }   
+        #mindplot {
+            width: 100vw;
+            height: 100vh;
+            
+            background-repeat: no-repeat;
+            background-position: 95% 5%;
+
+            /*margin-left: 15%;*/
+        }
+        /* where to define those theme colors ? */
+        body {
+            background-color: #002b36;
+            color: #F8F8F8;            
+
+color: #495879;            ;            
+
+            margin: 0;
+        }
+    }
+    /* Show Tree */
+    @media (max-width: 1300px) {
+        body {        
+            /* background-color: #FFFFFF; */
+            background-color: #002b36;
+        }
+        div#content{
+            display: visible;
+        }
+        div#mindplot{
+            display: none;
+        }
+        div#load{
+            display: none;
+        }   
+        .title  { 
+              text-align: center;
+              margin-top: 2%; 
+              margin-right: 1.5%; 
+              margin-bottom: 1%; 
+              margin-left: 1.5%; 
+              /* background-color: #0A3F69; */
+              background-color: #002b36;
+              color: #F8F8F8;              
+              font-size: 24px;              
+              padding: 10px 10px 10px 10px;              
+            }             
+    }
+    .org-ul
+    {
+        color: #F8F8F8;
+    }
+    a, a:link, a:visited {
+        color: #59a9e1;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    </style>
+    
+    <script type="text/javascript">
+        CENTRAL_TOPIC_STYLE = {shapeType: 'ELLIPSE'};
+    </script>
+    <script type="text/javascript" src="ExternalPages/MindmapViewer/mindmap-viewer-bundle.js"></script>
+</head>
+<body>
+    <div id="load" class="modal fade">
+        <div class="modal-dialog">
+            <div style="height: 120px; text-align: center; border: 2px solid orange" class="modal-content">
+                <img style="margin-top:25px; text-align: center" src="ExternalPages/MindmapViewer/images/ajax-loader.gif">
+            </div>
+        </div>
+    </div>
+
+    <div id="mindplot" onselectstart="return false;"></div>
+
+    <script type="text/javascript">
+        var str = location.search; 
+        var mindmap_xml = str.substring(str.indexOf("?") + 1,str.Length);
+        displayMindmap({
+            mapId: 'welcome',                           /* Change ExternalPages\MindmapViewer\samples\welcome.xml */
+            container: 'mindplot',
+            zoom: 0.7,
+        });
+    </script>
+
+<div id="content">
+    <h1 class="title">Joe's Notes</h1>    
+    <ul class="org-ul" style="font: 13px/1.385 arial,helvetica,clean,sans-serif">
+
+    <div id="includedContentFrom"></div>    
+</div>
+
+
+</body>
+</html>

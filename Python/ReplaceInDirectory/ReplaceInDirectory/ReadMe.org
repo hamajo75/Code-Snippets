@@ -1,0 +1,8 @@
+In the =.csv-file= you can specify a file filter method
+and a replace method.
+If none of those exist a regexp or literal (depending on the 
+call parameter) will be used for replacement. 
+
+
+The real work is done in =Configure/Workers.p=.
+

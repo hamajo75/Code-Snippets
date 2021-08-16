@@ -1,0 +1,2272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-03-31 Wed 06:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Philosophische Notizen</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="shortcut icon" href="/public_html/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/html-export.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/hideshow.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/code.css">
+
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div style = "text-align: right; margin-top: 5px">
+   <a accesskey="h" href="" style="font: 20px arial,helvetica,clean,sans-serif"></a>
+   <a accesskey="H" href="https://joesanmarzano.duckdns.org/public_html/" style="font: 20px arial,helvetica,clean,sans-serif;margin: 30px;"> HOME </a>
+</div><div id="content">
+<h1 class="title">Philosophische Notizen</h1>
+
+<div id="outline-container-org74fd127" class="outline-2">
+<h2 id="org74fd127">Abstraction, Atomism</h2>
+<div class="outline-text-2" id="text-org74fd127">
+<p>
+This is the trick how to deal with a complex wold.                              
+</p>
+
+<p>
+Make complex things simpler by ignoring details.
+</p>
+
+<p>
+encapsulation, blocks, modules
+ignore details 
+ignore differences (classes, types)
+ignorance is bliss
+</p>
+
+
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2017-08-28 Mon&gt;</span></span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org626eee7" class="outline-2">
+<h2 id="org626eee7">Ästhetik</h2>
+<div class="outline-text-2" id="text-org626eee7">
+<p>
+Theorie der sinnlichen Wahrnehmung.
+</p>
+
+<p>
+auch:
+</p>
+<ul class="org-ul">
+<li>Theorie der Kunst</li>
+<li>Theorie des Schönen</li>
+</ul>
+
+<p>
+Alle drei Definitionen zu eng oder zu weit. 
+</p>
+
+<p>
+ästhetische Erlebnisse (Erfahrungen)
+</p>
+
+<p>
+Ästhetische Eigenschaften:
+</p>
+<ul class="org-ul">
+<li>Schönheit</li>
+<li>Hässlichkeit</li>
+<li>Eleganz</li>
+<li>Plumpheit</li>
+<li>Traurigkeit</li>
+<li>Heiterkeit</li>
+<li>Zartheit</li>
+<li>Langeweile</li>
+<li>Genervtheit</li>
+</ul>
+
+<p>
+Viele ästhetische Erlebnisse werden von Kunstwerken verursacht.
+</p>
+
+<p>
+Sind ästhetische Erlebnisse ohne sinnliche Wahrnehmung möglich?
+</p>
+
+<p>
+Ästhetische Erlebnisse wie Spannung, Originalität (z.B. eines Romans) sind nicht direkt sinnlich wahrnehmbar. 
+Sprich, nicht alle ästhetischen Erlebnisse sind Wahrnehmungserlebnisse.
+</p>
+</div>
+
+<div id="outline-container-org57d8030" class="outline-3">
+<h3 id="org57d8030">Ästhetische Erlebnisse</h3>
+<div class="outline-text-3" id="text-org57d8030">
+<p>
+Wie unterscheidet man ästhetische Erlebnisse von anderen Erlebnissen?
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8de5c95" class="outline-2">
+<h2 id="org8de5c95">Diplomarbeitstagebuch</h2>
+<div class="outline-text-2" id="text-org8de5c95">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-06-29 Wed&gt;</span></span>
+</p>
+</div>
+
+<div id="outline-container-org44bbd2f" class="outline-3">
+<h3 id="org44bbd2f">Methoden</h3>
+<div class="outline-text-3" id="text-org44bbd2f">
+<p>
+Es fällt schwer mehr als 2-3 Stunden pro Tag zu arbeiten. Vorteilhaft ist es schon früh (ca. 8) 
+anzufangen und den Vormittag zu nutzen. 
+</p>
+
+<p>
+Die meiste Zeit verbringe ich damit Texte anzulesen, was unterm Strich nicht sehr effizient ist.
+</p>
+
+<p>
+Was ich immer noch nicht habe ist eine klare Vorstellung davon, was ich eigentlich erreichen will.
+Es geht grob um logische Form und Formalisierung. 
+Aber was ist daran interessant?
+</p>
+
+<p>
+Idee für einen effizienteren Ansatz:
+Man legt sich täglich ein bestimmtes Problem bzw. eine bestimmt Frage vor.
+Z.B.: 
+Was ist eine Formalisierung eines umgangssprachlichen Arguments eigentlich?
+Aus welchen Teilen besteht ein Formales System bzw. eine formale (symbolische) Sprache?
+</p>
+<hr />
+<p>
+Schreiben ist besser als lesen. Man befindet sich dabei in einem 
+anderen, aktiveren Modus.
+</p>
+
+<p>
+Projekt für den Tag:
+Suche einen guten Artikel bzw. eine gute Textstelle.
+Schreibe ein Exzerpt. 
+</p>
+
+<p>
+Wie geht man beim Exzerpieren im Detail vor?
+Man beginnt mit Unterstreichungen.
+Man schreibt über einen inhaltlich abgeschlossenen Teil spätestens wenn man ihen fertig gelesen hat.
+</p>
+
+<p>
+Eine andere Methode, die ich offensichtlich (unabsichtlich) anwende:
+Ich stolpere wahllos, durch Assoziation, über verschiedenste Texte,
+greife dort interessante Punkte heraus und füge sie an geeigneter Stelle
+im Diplomarbeitsgerüst ein.
+</p>
+<hr />
+<p>
+Je genauer man weiß was man zun soll, desto effizienter wird man.
+</p>
+
+<p>
+Wenn ich z.B. weiß, dass ich diesen oder jenen Text exzerpieren soll und
+ich weiß wie das geht und ich habe Übung darin, dann wird das relativ
+schnell vonstatten gehen.
+</p>
+<hr />
+<p>
+Es gibt den Lesemodus und den Schreibmodus. 
+Grundsätzlich habe ich die Tendenz den zweiten zu vernachlässigen.
+Das ist schlecht.
+</p>
+
+<p>
+Regel: Sobald man von einem Text thematisch stimuliert wird, sollte man
+       das entsprechende Thema in eine selbstverfasste Form bringen.
+</p>
+<hr />
+
+<p>
+Grundsätzlich kann man sagen, der ganze Vorgang verläuft in 
+Entwicklungszyklen.
+</p>
+
+<p>
+Voraussetzung ist, man hat schon ein Thema gefunden.
+</p>
+
+<p>
+Nun geht es daran, die Arbeit zu strukturieren. Das Thema selbst gibt 
+natürlich schon eine Grobstruktur vor. Diese muss nun feiner untergliedert
+werden. Wichtig ist dabei den roten Faden zu finden. 
+</p>
+
+<p>
+Am besten hantelt man sich von einer allgemeinen Frage zu weiteren 
+spezifischeren Fragen. Das Ganze ist aber nicht so einfach&#x2026;
+</p>
+
+<p>
+Die allgemeine Frage soll das Thema grundsätzlich verorten. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbedd49b" class="outline-3">
+<h3 id="orgbedd49b">Wie findet man ein Thema</h3>
+<div class="outline-text-3" id="text-orgbedd49b">
+<p>
+Bei mir schaut das bis jetzt so aus:
+</p>
+
+<p>
+Gegeben: Irgendein Themengebiet, das einen interessiert. 
+Das kann man dann grob umschreiben: 
+Logik, Beziehung Logik-Sprache: Formalisierung, Beziehung Logik-Denken
+Wofür ist eigentlich formale Logik gut?
+</p>
+
+<p>
+(14.12.2013: Fortsetzung)
+Die Einteilung in verschiedene Schritte ist völlig willkürlich und 
+entspricht nicht wirklich einzelnen Arbeitsschritten (speziell nicht
+zeitlich geordnet) - das Gesagte ist in dieser Form einfach besser 
+nachvollziehbar. Tatsächlich passiert vieles was hier beschrieben 
+wird parallel. 
+</p>
+
+<p>
+Schritt 1:
+Man steckt nun seine Nase in allerlei Material, das sind Texte, 
+also Artikel oder Bücher, vielleicht auch anderes (z.B. Videos).
+Auf diese Art wird sondiert und sortiert, sodass am Ende potentiell
+brauchbares Material übrigbleibt. Man braucht sich aber nicht 
+einzubilden, dass dieses Material bereits gut erschlossen wäre.
+</p>
+
+<p>
+Schritt 2:
+Das Material wird nun erarbeitet. Texte werden gelesen, man macht 
+Unterstreichungen, evtl. kleine Notizen. In der Regel versteht man aber 
+noch nicht alles, was man liest, deshalb müssen die Texte 3,4,5 mal 
+gelesen werden. An dieser Stelle ist aber noch nicht genau klar welche 
+Texte am Ende relevant sind, es wird aber klar welche Texte grundsätzlich
+interessieren.
+</p>
+
+<p>
+Schritt 3:
+Nun werden erste Versuche ein Thema zu formen unternommen. Für jeden 
+dieser Versuche ergeben sich dann verschiedene Textsammlungen. Beim 
+Wiederlesen der Texte wir nun versucht in Bezug auf das angepeilte Thema
+inhaltlich relevantes aus dem Text zu exzerpieren und in eine eigene
+Form zu bringen.
+</p>
+
+<p>
+Schritt 4:
+Es wird ein Thema ausgewählt. &#x2026;
+</p>
+</div>
+</div>
+
+<div id="outline-container-org922f94b" class="outline-3">
+<h3 id="org922f94b">Von Zettelkästen und Diplomarbeitsthemen</h3>
+<div class="outline-text-3" id="text-org922f94b">
+<p>
+Zettelkästen haben mich auf folgende Idee gebracht.
+(Künstliche Intelligenz aus Holz - Berzbach Frank)
+</p>
+
+<p>
+In einem Zettelkasten entsteht ein Netzwerk von Ideen und Begriffen durch 
+Schlüsselworte und Querverweise. Der Zettelkasten "weiß" nach einer gewissen 
+Zeit mehr als sein Autor.
+</p>
+
+<p>
+Im Lauf der Zeit erhalten wichtige Schlüsselworte und Themen immer mehr 
+Verbindungen, unwichtiges verschwindet - ähnlich einem neuronalen Netzwerk.
+</p>
+
+<p>
+Der Punkt ist, man kann mit einem externen System thematische Strukturen auffinden, 
+die man sonst vielleicht nie entdeckt hätte.
+</p>
+
+<p>
+Die Frage ist, wie kann man das systematisieren.
+Mein Zero-Ordnersystem ist ähnlich, allerdings fehlen die Verbindungen, es sind auch
+keine statistischen Daten vorhanden.
+</p>
+
+<p>
+Verbindungen kann man erzeugen mittels Tags - das entspricht den Schlüsselwörtern in 
+einem Zettelkasten.
+</p>
+
+<p>
+Luhmann
+In seinem Aufsatz "Kommunikation mit Zettelkästen" hat der Soziologe 
+mitgeteilt, was geschieht, wenn wir Systemtheorie praktisch werden lassen.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge746b16" class="outline-3">
+<h3 id="orge746b16">Texte erarbeiten</h3>
+<div class="outline-text-3" id="text-orge746b16">
+<p>
+Eine gute (aber zeitaufwändige) Methode:
+</p>
+
+<p>
+Voraussetzung: Sinnvolle Einteilung in möglichst kurze Passagen.
+ca. 2 Seiten ist ein guter Anhaltspunkt Uje nach Text)
+</p>
+
+<ol class="org-ol">
+<li>Text lesen, Unterstreichungen machen</li>
+<li>Audioaufzeichnung einer Inhaltsangabe in eigenen Worten.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org98c0bad" class="outline-3">
+<h3 id="org98c0bad">Effizienz</h3>
+<div class="outline-text-3" id="text-org98c0bad">
+<p>
+Es ist zwar trivial aber es sei trotzdem gesagt:
+</p>
+
+<p>
+(I) Arbeite zuerst einfach alles aus, was klar ist und sich schnell 
+ausarbeiten lässt !
+</p>
+
+<p>
+Methode: Einfach Thema für Thema durchgehen. 
+Lässt es sich schnell ausarbeiten? Ja/Nein 
+Wenn Nein, dann nächstes Thema.
+</p>
+
+<p>
+Ich halte mich ständig mit Problemen auf, die zuerst konzeptionell 
+geklärt werden müssen. Das erledigt sich oft auch unbewusst.
+</p>
+
+<p>
+Im Sinne des Multitaskings ist es also gut sich an (I) zu halten.
+</p>
+
+<p>
+Es ist oft besser die Sachen liegen zu lassen - sie reifen dann im Lauf der
+Zeit "von selber" aus.
+</p>
+
+<p>
+Problem:
+Wenn die Lösung der 'schwierigen Probleme' alles andere beeinflusst und 
+gegebenenfalls umkrempelt oder irrelevant macht, dann ist (I) mit Vorsicht
+anzuwenden.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org003b6f9" class="outline-3">
+<h3 id="org003b6f9">Dialog mit David</h3>
+<div class="outline-text-3" id="text-org003b6f9">
+<p>
+D: Was ist eigentlich das Ziel ihrer Arbeit?
+</p>
+
+<p>
+I: Zu klären, wie man von einem Satz zu einer Formel kommt. Das ist ein 
+   wesentlicher Schritt bei der Anwendung formaler Methoden.
+</p>
+
+<p>
+D: Und wie geht das?
+</p>
+
+<p>
+I: Indem man die logischen Merkmale eines Satzes bzw. einer Prämisse 
+   aufdeckt.
+</p>
+
+
+
+
+
+<p>
+I: Die Beziehung der Begriffe Argument und formales Argument zu klären.
+</p>
+
+<p>
+D: Welche Beziehung besteht nun zwischen Argument und Argumentform, 
+   Argumentschema und Formel?
+</p>
+
+<p>
+I: Für EF: Argument = Schriftgebilde, Argumentform = Typ eines 
+   Ersetzungsschemas, Formel = ?
+   RF: Argument = Propositionales Gebilde, 
+   Argumentform = Argumentschema = Formel = Darstellung der Wahrheitsbedingungen 
+   oder: Argumentform = ?, Argumentschema = Formel
+</p>
+
+
+
+
+
+<p>
+Zeitplan:
+</p>
+
+<p>
+DP Ende Oktober
+4 Wochen vorher einreichen
+2 Wochen vorhar benoten
+</p>
+
+<p>
+D.h. im September sollte die finale Version fertig sein.
+</p>
+
+<p>
+Wie schaut die DA aus?
+Kapitel 1 &amp; 2 fertig.
+in Seiten: 60 Seiten + 20-40 Seiten
+</p>
+
+
+<p>
+Was steht in der DA?
+</p>
+
+<ol class="org-ol">
+<li>Kapitel: Einleitung</li>
+<li>Kapitel: Gültigkeit, logische Form, materiale vs. formale Gültigkeit</li>
+<li>Kapitel: logische Merkmale, logische Form, Misleading Form Thesis</li>
+<li>Kapitel: Formalisierung, Adäquatheit, Genauer-Relation, verschiedene
+adäquate Formalisierungen</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org4c1e82e" class="outline-3">
+<h3 id="org4c1e82e">Regeln</h3>
+<div class="outline-text-3" id="text-org4c1e82e">
+<p>
+Regel 1: Sobald du etwas ins Reine schreiben kannst, tu es auch!
+</p>
+
+<p>
+Regel 2: Sobald du von einem Text thematisch stimuliert wirst, bring 
+         das entsprechende Thema in eine selbstverfasste Form.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org082872b" class="outline-2">
+<h2 id="org082872b">Erkenntnistheorie</h2>
+<div class="outline-text-2" id="text-org082872b">
+<pre class="example">
+Wahrheit, Wissen, Rechtfertigung, Glauben
+</pre>
+
+
+<ul class="org-ul">
+<li>Was kann man wissen und wie sicher ist dieses Wissen?</li>
+<li>Wie genau kann man Begriffe definieren?</li>
+</ul>
+
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2018-11-30 Fri&gt;</span></span>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-08-27 Wed&gt;</span></span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfa20ed8" class="outline-2">
+<h2 id="orgfa20ed8">Ethik</h2>
+<div class="outline-text-2" id="text-orgfa20ed8">
+<pre class="example">
+Gerechtigkeit, Moral, Norm, Freiheit
+</pre>
+</div>
+
+<div id="outline-container-orgbb828d2" class="outline-3">
+<h3 id="orgbb828d2">Gerechtigkeit</h3>
+<div class="outline-text-3" id="text-orgbb828d2">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-08-27 Wed&gt;</span></span>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgaf86de8" class="outline-2">
+<h2 id="orgaf86de8">Fragenkatalog</h2>
+<div class="outline-text-2" id="text-orgaf86de8">
+</div>
+<div id="outline-container-org4c9cb8f" class="outline-3">
+<h3 id="org4c9cb8f">Sprache</h3>
+<div class="outline-text-3" id="text-org4c9cb8f">
+<ol class="org-ol">
+<li>Die Bedeutung vieler SÃ¤tze wird erst durch einen konkreten Kontext festgelegt.
+Aber wie? Durch was wird sie festgelegt? <span class="timestamp-wrapper"><span class="timestamp">&lt;2014-09-15 Mon&gt;</span></span></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd4ab519" class="outline-2">
+<h2 id="orgd4ab519">Gesellschaft</h2>
+<div class="outline-text-2" id="text-orgd4ab519">
+<pre class="example">
+Freiheit, Fairness, Gleichheit, Gerechtigkeit
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orga1e3bc7" class="outline-2">
+<h2 id="orga1e3bc7">Klärung des Begriffs der Klarheit</h2>
+<div class="outline-text-2" id="text-orga1e3bc7">
+</div>
+<div id="outline-container-orgab220ec" class="outline-3">
+<h3 id="orgab220ec">Verstehen</h3>
+<div class="outline-text-3" id="text-orgab220ec">
+<p>
+zweifelsfrei ein fundamentaler Begriff
+</p>
+
+<p>
+Ist Verstehen ein fundamentaler Begriff, so muss sich etwas auf 
+ihm aufbauen. Um diese Aussage zu verstehen ist schon Allerlei
+an Vorverständnis vonnöten. 
+</p>
+
+<p>
+<b>Was bedeutet Verstehen?</b>
+</p>
+
+<ul class="org-ul">
+<li>Alle Möglichkeiten überschauen zu können.</li>
+<li>Ein Modell für etwas zu haben von dem man alle
+Elemente kennt und genau weiß wie die Elemente sich zueinander verhalten.</li>
+<li>Verstehen heißt vereinfachen.</li>
+<li>Verstehen kann bedeuten sich in andere Menschen hineinzuversetzen.</li>
+</ul>
+
+<p>
+einen mathematischen Beweis verstehen
+</p>
+
+<p>
+einen Begriff verstehen
+</p>
+
+<p>
+Genese des Verstehens?
+</p>
+<ol class="org-ol">
+<li>Stufe: Existenz: Z.B. man weiß, dass es in C++ Concepts gibt.</li>
+<li>Stufe: Kontext: Z.B. man weiß, dass Concepts mit Templates zu tun haben.</li>
+<li>Stufe: Man kennt und versteht eine Definition.</li>
+<li>Stufe: Man kennt Anwendugnen und Beispiele.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org06287b9" class="outline-3">
+<h3 id="org06287b9">Klarheit</h3>
+<div class="outline-text-3" id="text-org06287b9">
+<ol class="org-ol">
+<li>Klar ist ein Thema dann wenn man es kennt.</li>
+
+<li>Klar ist etwas dann, wenn es in seine elementaren Bestandteile zerlegt ist.
+Verstehen heißt die Struktur der Zusammensetzung "sehen".</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb052651" class="outline-2">
+<h2 id="orgb052651">Lernen</h2>
+<div class="outline-text-2" id="text-orgb052651">
+</div>
+<div id="outline-container-org6af9daf" class="outline-3">
+<h3 id="org6af9daf">Rosetta Stone Lernmethode</h3>
+<div class="outline-text-3" id="text-org6af9daf">
+<p>
+<a href="Science/Philosophy/Der Begriff Form.html">Der Begriff Form.org</a>
+</p>
+
+<p>
+Es gibt keine Erklärungen, was ich für fragwürdig halte, sondern nur Beispiele.
+Der Lernende soll anhand der Beispiele die Formen der Grammatik intuitiv 
+aufnehmen ohne explizite Regeln zu lernen. 
+</p>
+
+<p>
+Muster (Formen) statt Regeln. 
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge68fd5d" class="outline-2">
+<h2 id="orge68fd5d">Mindmaps</h2>
+<div class="outline-text-2" id="text-orge68fd5d">
+</div>
+<div id="outline-container-orgeba7c44" class="outline-3">
+<h3 id="orgeba7c44">Ideas</h3>
+<div class="outline-text-3" id="text-orgeba7c44">
+<iframe style="width:1200px;height:800px;border: 1px
+solid black" src="https://app.wisemapping.com/c/maps/917725/embed?zoom=0.7" loading="lazy"></iframe>
+</div>
+</div>
+<div id="outline-container-orgab74db8" class="outline-3">
+<h3 id="orgab74db8">Philosophie Mindmap</h3>
+<div class="outline-text-3" id="text-orgab74db8">
+<ul class="org-ul">
+<li><a href="https://app.wisemapping.com//c/maps/917718/edit">https://app.wisemapping.com//c/maps/917718/edit</a></li>
+<li><a href="https://app.wisemapping.com/c/maps/917718/public">https://app.wisemapping.com/c/maps/917718/public</a></li>
+</ul>
+
+<iframe style="width:1200px;height:800px;border: 1px
+solid black" src="https://app.wisemapping.com/c/maps/917718/embed?zoom=0.5" loading="lazy"></iframe>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org54e3905" class="outline-2">
+<h2 id="org54e3905">Notes</h2>
+<div class="outline-text-2" id="text-org54e3905">
+<p>
+What's the point of making these notes? (of having a note system?)
+</p>
+<ul class="org-ul">
+<li>give information to your future self</li>
+<li>navigate to other information</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org988ef2c" class="outline-2">
+<h2 id="org988ef2c">Ontologie</h2>
+<div class="outline-text-2" id="text-org988ef2c">
+<pre class="example">
+Sein, Existenz, Individuum, Eigenschaft
+</pre>
+</div>
+
+<div id="outline-container-org0e27d13" class="outline-3">
+<h3 id="org0e27d13">Kategoriensysteme</h3>
+<div class="outline-text-3" id="text-org0e27d13">
+<p>
+Ein vollständiges KS müsste die Gesamtheit des Seienden aufteilen in Kategorien 
+auf verschiedenen Ebenen. Diese Kategorien schließen sich auf der jeweiligen 
+Ebene gegenseitig aus, d.h. Gegenstände der einen Kategorie kommen nicht in 
+einer anderen Kategorie auf derselben Ebene vor.
+</p>
+
+<p>
+z.B. oberste Ebene 0: reale Gegenstände, ideale Gegenstände
+</p>
+
+<p>
+Eine solche Einteilung wird recht schnell willkürlich (wenn sie es nicht schon 
+von Anfang an ist). Je nach Interesse, Wissenschaft, etc. können verschiedene, 
+sich überschneidende Aufteilungen gemacht werden. Es scheint kein ausgezeichnetes 
+KS zu geben (Onologischer Perspektivismus).
+</p>
+
+<p>
+Sind verschiedene KS miteinander verträglich?
+</p>
+
+<p>
+Zirkularität, Inkonsistenz – Abhilfe: formale Definitionen
+Deduktionssysteme
+</p>
+</div>
+</div>
+
+<div id="outline-container-org26542cf" class="outline-3">
+<h3 id="org26542cf">Was wird kategoriesiert?</h3>
+<div class="outline-text-3" id="text-org26542cf">
+<p>
+Gegenstände, die haben:
+</p>
+<ol class="org-ol">
+<li>Namen</li>
+<li>&#x2026;</li>
+</ol>
+<p>
+allgemein: Attribute
+</p>
+<hr />
+<p>
+Attribute sind Strings. 
+</p>
+
+<p>
+also: 
+G1.Att1, G1.Att2, &#x2026;, G1.Attn1    (n1 viele Attribute)
+G2.Att1, G2.Att2, &#x2026;, G2.Attn2
+&#x2026;
+Gm.Att1, Gm.Att2, &#x2026;, Gm.Attnm    (m viele Gegenstände)
+</p>
+
+<p>
+Anm: 
+</p>
+<ol class="org-ol">
+<li>G1.Att1 ist einfach ein ASCII-String</li>
+<li>Es handelt sich um irgendwelche Gegenstände, d.h. sie fallen 
+zunächst in keine Kategorie.</li>
+<li>Es handelt sich auch um irgendwelche Attribute, G1.Att1 ist
+also nicht notwendigerweise das gleiche (von der Gleichen Art)
+Attribut wie G2.Att1</li>
+</ol>
+<hr />
+<p>
+Diese Gegenstände können nun kategoriesiert werden.
+</p>
+
+<p>
+Um Gegenstände einer Kategorie zuzuordnen, muss man die 
+Attribute dieser Gegenstände verwenden. D.h. die Attribute 
+definieren bereits Kategorien. Wann immer mehrere Gegenstände 
+dasselbe Attribut haben, gehören sie zur entsprechenden Kategorie. 
+</p>
+
+<p>
+Der Name der Kategorie 
+</p>
+
+<p>
+Kategorie1: 
+</p>
+<hr />
+<p>
+grundsätzliche Frage: Was kommt zuerst? Die Kategorien oder die Gegenstände?
+</p>
+
+<p>
+Wenn wir einem Gegenstand begegnen, dann können wir ihn sofort in eine 
+Kategorie oder mehrere Kategorien einordnen. Z.B. Auto, Haus, Mensch, &#x2026;
+</p>
+
+<p>
+Ohne Zuweisung einer Kategorie können wir eigentlich nicht sagen, um was 
+es sich handelt. Und selbst wenn wir eine sehr allgemeine Bestimmung 
+vornehmen, dann können wir den entsprechenden Gegenstand immer noch in 
+eine Kategorie wie Ding, psychischer Gegenstand, Eigenschaft, Zustand, &#x2026;
+einordnen. 
+</p>
+
+<p>
+So gesehen neige ich dazu den Kategorien den Vorrang einzuräumen. 
+Was heißt das?
+Nun, wir legen zuerst fest welche Kategorien es geben soll, dann erst
+sprechen wir von Gegenständen.
+</p>
+
+<p>
+Zunächst legen wir also Kategorien fest, z.B. Auto
+</p>
+
+<p>
+Diese Kategorie kann verschiedene Attribute haben:
+Attribute sind wieder Kategorien (oder Eigenschaften, 
+oder ) oder Begriffe, d.h. unter sie fallen Gegenstände. 
+</p>
+
+<p>
+Auto.Farbe = Blau  (Blau ist eine Instanz von Farbe)
+Blau ist ein Gegenstand, unter Blau fallen keine weiteren Gegenstände,
+wenn wir Blau als Eigenschaft oder Begriff fassen wollen, dann müssen
+wir auf z.B &#x2026;ist blau ausweichen. 
+</p>
+
+<p>
+Wenn Blau ein Gegenstand ist, dann ist einer, der keine weiteren 
+Eigenschaften zu haben scheint. Man könnte bestenfalls sagen, dieses
+Blau ist hell oder dieses Blau ist schön, &#x2026;
+</p>
+
+
+
+
+<p>
+ohne spitze Klammern: 			Referenz auf einen Gegenstand
+einfache spitze Klammern &lt;Name&gt;: 	Referenz auf 
+</p>
+
+
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-06-29 Wed&gt;</span></span>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org493803b" class="outline-3">
+<h3 id="org493803b">Externe vs. interne Eigenschaften</h3>
+<div class="outline-text-3" id="text-org493803b">
+</div>
+<div id="outline-container-orgd27c5d2" class="outline-4">
+<h4 id="orgd27c5d2">Externe Eigenschaften</h4>
+<div class="outline-text-4" id="text-orgd27c5d2">
+<p>
+(relativ zu anderen Gegenständen)
+</p>
+
+<p>
+(die Beispiels sind aus Savigny - Wittgensteins Philosophische Untersuchungen, Ein Kommentar für Leser)<br />
+</p>
+
+<p>
+z.B. groß zu sein (für einen Menschen) - was es heißt groß zu sein hängt davon ab, wie 
+groß die anderen Menschen sind, ein großer Mensch kann ohne zu schrumpfen mittelgroß werden, 
+weil nächste Generation im Durchschnitt größer wird
+</p>
+
+<p>
+z.B. konservativ oder revolutionär zu sein - Wer in seiner Jugend revolutionäre politische Ansichten hat 
+und kein Jota daran ändert, kann sich auf seine alten Tage als Konservativer wiederfinden, weil die 
+meisten Leute in der Zwischenzeit viel weiter nach links gerückt sind als er. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf8c7544" class="outline-4">
+<h4 id="orgf8c7544">Interne Eigenschaften</h4>
+<div class="outline-text-4" id="text-orgf8c7544">
+<p>
+ein Mensch zu sein, alle anderen Menschen könnten verschwinden, mutieren o.Ä. und trotzdem
+bliebe der letzte Mensch ein Mensch
+</p>
+
+<p>
+möglicher Grenzfall: rot zu sein (evtl. vom Beobachter abhängig)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8d17bed" class="outline-4">
+<h4 id="org8d17bed">Sekundäre und primäre Qualitäten</h4>
+<div class="outline-text-4" id="text-org8d17bed">
+<p>
+(John Locke - An Essay concerning human understanding)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdfa3b83" class="outline-3">
+<h3 id="orgdfa3b83">Freges Ontologie</h3>
+<div class="outline-text-3" id="text-orgdfa3b83">
+<p>
+<b>Versuch</b>
+</p>
+
+<p>
+Frege führt eine dichotomische Ontologie ein, die alles in Objekte und Funktionen
+einteilt. 
+</p>
+
+<p>
+Ich möchte hier die Idee einer Rechtfertigung geben, die sich darauf stützt, 
+wie Menschen die Welt wahrnehmen. 
+Wir finden in unserer Umgebung schnell Veränderliches (Funktionen)
+und langsam Veränderliches (Objekte).
+Dementsprechend neigen wir eventuell von Natur aus zu einer Fregeschen Ontologie.
+</p>
+
+<p>
+Was uns in unserer Umgebung interessiert sind auf jeden Fall Objekte und
+Ereignisse.
+</p>
+
+<p>
+Mit welchen Ereignissen haben wir zu tun?
+</p>
+<ul class="org-ul">
+<li>Objekte bewegen sich</li>
+<li>Objekte verändern sich</li>
+</ul>
+
+<p>
+Problematisch ist hier:
+</p>
+<ul class="org-ul">
+<li>Sind Ereignisse Funktionen?</li>
+<li>Was ist mit Begriffen?</li>
+<li>Zusammenhang mit Objektorientierte Programmierung?
+<ul class="org-ul">
+<li>Dependency Injection
+Betrachte Abhängigkeiten als Objekte.</li>
+<li>Betrachte Funktionen als Objekte (λ-Kalkül)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4e9cb8d" class="outline-3">
+<h3 id="org4e9cb8d">Begriffe</h3>
+<div class="outline-text-3" id="text-org4e9cb8d">
+<p>
+Entität
+Kategorie
+</p>
+
+<p>
+Transzendentalie
+Aktualität
+Konkret vs. Abstrakt
+</p>
+
+<p>
+Individuen
+Individuale
+Tropen (Eigenschaftsindividuen)
+Funktionen
+Sachverhalte
+Universalien
+Mengen, Zahlen
+</p>
+<hr />
+<p>
+Entität
+</p>
+<hr />
+<p>
+Kategorie
+</p>
+<hr />
+<p>
+von ALLEM ausgehend eine Teilung einführen bringt 
+uns zu den ont. Kategorien (sich gegenseitig ausschließend)
+</p>
+
+<p>
+Es ergibt sich eine Einteilungshierarchie:
+</p>
+
+<p>
+oberste Einteilung (oberste Seinsarten): Kategorien 1. Ordnung
+Einteilung einer obersten Einteilung:    Kategorien 2. Ordnung
+usw.
+</p>
+
+<p>
+o.K. im strengen Sinn:
+bezogen auf ein Klassifikationssystem, diese
+Kategorien machen das Klassifikationssystem aus. 
+</p>
+
+<p>
+o.K. im weiten Sinn:
+nicht bezogen auf ein Klassifikationssystem, jeder
+sehr allgemeine Einteilungsbegriff
+</p>
+
+<p>
+Kategorien kennen keine Kontingenz:
+Was unter eine Kategorie fällt, fällt notwendigerweise unter sie.
+Es kann also nicht sein, dass etw. unter eine Kategorie fällt, man
+es sich aber auch anders vorstellen könnte. 
+</p>
+<hr />
+<p>
+Transzendentalien
+</p>
+<hr />
+<p>
+Transzendentalien übergreifen alle Kategorien eines Kategoriensystems.
+Von jeder Transzendentalie muss gelten, dass sie in jeder Kategorie, die
+nicht leer ist, auf eine Entität zutrifft. 
+</p>
+<hr />
+<p>
+Individuen
+</p>
+
+<ol class="org-ol">
+<li>ontologischer Grundbegriff (nicht von anderen ableitbar)</li>
+
+<li>von I. sagt man etw. aus, aber I. sagt man von nichts aus</li>
+
+<li>I. können nicht als ein Ganzes an verschiedenen Orten zur selben 
+Zeit sein (nichträumliche I., z.B. Zahlen können gar nicht an Orten 
+sein.), Eigenschaften beispielsweise sind der Multilokation fähig</li>
+
+<li>I. sind gesättigte Entitäten (Gegenstände bei Frege), also keine 
+Funktionen (ein drittes gibt es nicht), hier genannt Objekte
+kurz: I. sind Objekte (es gibt aber O., die keine I. sind)</li>
+</ol>
+
+<hr />
+<p>
+Funktionen
+</p>
+<hr />
+<p>
+Sachverhalte
+</p>
+<hr />
+<p>
+Universalien
+</p>
+<hr />
+<p>
+Mengen, Zahlen
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf0953ae" class="outline-3">
+<h3 id="orgf0953ae">Mereology</h3>
+<div class="outline-text-3" id="text-orgf0953ae">
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=GOjTzQlzLZ4">https://www.youtube.com/watch?v=GOjTzQlzLZ4</a></li>
+<li><a href="#orgb299dcd">Mereology Presentation</a></li>
+</ul>
+
+<p>
+Parts can be (examples from SEP)
+</p>
+<ul class="org-ul">
+<li>attached vs. detached (handle of cup, remote control)</li>
+<li>functionally salient vs. arbitrarily demarcated (handle of cup, your slice of pie and my slice of pie)</li>
+<li>self connected vs. disconnected (remote control, knife in cutlery)</li>
+<li>homogeneous vs. gerrymandered (all the above, a ball as part of the things in my bag)</li>
+<li>material vs. immaterial (all the above, an area above the table as part of the livingroom)</li>
+<li>extended vs. unextended (all the above, points on a perimeter)</li>
+<li>spatial vs. temporal (all the above, the 2nd act of a play)</li>
+</ul>
+
+<p>
+Parthood is a partial order:
+</p>
+<ul class="org-ul">
+<li>reflexive</li>
+<li>transitive</li>
+<li>antisymmetric</li>
+</ul>
+
+<p>
+Proper Parthood (PP)
+</p>
+<ul class="org-ul">
+<li>PPxy := Pxy &amp; !x=y</li>
+</ul>
+
+<p>
+Equality (EQ)
+</p>
+<ul class="org-ul">
+<li>EQxy := Pxy &amp; Pyx</li>
+</ul>
+
+<p>
+Proper Extension (PE)
+</p>
+<ul class="org-ul">
+<li>PE := Pyx &amp; !x=y</li>
+</ul>
+
+<p>
+Overlap (O)
+</p>
+<ul class="org-ul">
+<li>Oxy := Ez(Pzx &amp; Pzy)</li>
+</ul>
+
+<p>
+Underlap (U)
+</p>
+<ul class="org-ul">
+<li>Uxy := Ez(Pxz &amp; Pyz)</li>
+</ul>
+
+<p>
+Decomposition Principles: From whole to parts (at least 2 parts)
+Composition Principles: From parts to whole (there is always a mereological sum)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org288dc80" class="outline-2">
+<h2 id="org288dc80">Philosophische Kurzgeschichten</h2>
+<div class="outline-text-2" id="text-org288dc80">
+</div>
+<div id="outline-container-org6301c76" class="outline-3">
+<h3 id="org6301c76">Die vollkommen transparente Gesellschaft</h3>
+<div class="outline-text-3" id="text-org6301c76">
+<p>
+Jeder weiß alles über jeden. Wie würde so eine Gesellschaft ausschauen?
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4ecb8ad" class="outline-2">
+<h2 id="org4ecb8ad">Philosophische Texte</h2>
+<div class="outline-text-2" id="text-org4ecb8ad">
+<p>
+Was lernen wir von Reicher, Kamitz, Saintsbury, etc?
+</p>
+
+<p>
+Kamitz:
+sehr präzise, aber auch etwas mühsam, er geht davon aus, dass überhaupt
+keine Vorkenntnisse vorhanden sind. 
+</p>
+
+<p>
+Reicher:
+keine ganz klare Linie, eher eine Sammlung verschiedenr Themen, die sich
+unter das Problem der ontologischen Festlegung subsummieren lassen.
+</p>
+
+<p>
+Saintsbury:
+Lockerer Plauderton, ist angenehm zu lesen
+teilweise ist der Aufbau aber undurchsichtig
+Er bringt viele Aspekte und Beispiele, aber etwas unstrukturiert.
+</p>
+
+<p>
+Stegmüller - Strukturtypen:
+sehr technisch, entsprechend schwer lesbar
+</p>
+
+<hr />
+<p>
+Welchen Text willst du selber schreiben?
+</p>
+<hr />
+
+<p>
+weniger Präzision als Kamitz (gefährlich)
+</p>
+
+<p>
+klare Struktur, am Textbild erkennbar
+</p>
+
+<p>
+Nachvollziehbare Entwicklung der Ideen (gut bei Hoyningen-Huene)
+Explikationen sollen schrittweise gut nachvollziehbar sein.
+</p>
+
+<p>
+Es soll sich ein Gesamtbild ergeben, in dem jeder Teil nachvollziehbar
+seinen Platz hat.
+</p>
+
+<p>
+Klare Linie, mit wenig Abweichungen.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org98c402a" class="outline-2">
+<h2 id="org98c402a">Presentations</h2>
+<div class="outline-text-2" id="text-org98c402a">
+</div>
+<div id="outline-container-org46a0cd1" class="outline-3">
+<h3 id="org46a0cd1">Abstract Objects</h3>
+<div class="outline-text-3" id="text-org46a0cd1">
+<p>
+<a href="https://docs.google.com/presentation/d/1YQ8mHHd9HyfL4wZ3M8wshEozaA86HHfpyQNKrQhImqg/present?usp=sharing">https://docs.google.com/presentation/d/1YQ8mHHd9HyfL4wZ3M8wshEozaA86HHfpyQNKrQhImqg/present?usp=sharing</a>
+</p>
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTWvf05zaWzR6Bsw51AlXyW6gX4p-cRGBXTIKWAXlRNZ4QS6QyvpqOKzGYtDgnJIQWN-_RduG38hsIS/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" loading="lazy"></iframe>
+</div>
+</div>
+
+<div id="outline-container-orgc3b95f2" class="outline-3">
+<h3 id="orgc3b95f2">Bündeltheorie</h3>
+<div class="outline-text-3" id="text-orgc3b95f2">
+<p>
+<a href="https://docs.google.com/presentation/d/1211d6RBmsMtVUaGVAHctAM06foqeWPPN6RgYNosHoII/present?usp=sharing">https://docs.google.com/presentation/d/1211d6RBmsMtVUaGVAHctAM06foqeWPPN6RgYNosHoII/present?usp=sharing</a>
+</p>
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ8StcC_6m_Z-aB-leVwbiHZucwcA2zFkwU3EdsXvQvtpiAGUCA-w76mzMhx1VNgWYAmFDLoGD3Pvx3/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" loading="lazy"></iframe>
+</div>
+</div>
+
+<div id="outline-container-orgb1d880a" class="outline-3">
+<h3 id="orgb1d880a">Das Formalisierungsproblem</h3>
+<div class="outline-text-3" id="text-orgb1d880a">
+<p>
+<a href="https://docs.google.com/presentation/d/1zbAqXV-P1F8-mB8fqUa4NmVpVFwtd-YL3pYogBHID7Y/present?usp=sharing">https://docs.google.com/presentation/d/1zbAqXV-P1F8-mB8fqUa4NmVpVFwtd-YL3pYogBHID7Y/present?usp=sharing</a>
+</p>
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRSI5QVVqUxs0n9sN0EjZOPio6c6j-88dW3VbTn2I1KjoClHdme_Cjmbqf3STXjLMSLSROWBK18li3D/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" loading="lazy"></iframe>
+</div>
+</div>
+<div id="outline-container-org72af185" class="outline-3">
+<h3 id="org72af185">Davidson Handlungssätze</h3>
+<div class="outline-text-3" id="text-org72af185">
+<p>
+<a href="https://docs.google.com/presentation/d/1Ho6gLdg7WeX_NEPSl4eutGRCDDsUeji7f_9mYsEKbOk/present?usp=sharing">https://docs.google.com/presentation/d/1Ho6gLdg7WeX_NEPSl4eutGRCDDsUeji7f_9mYsEKbOk/present?usp=sharing</a>
+</p>
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTIt-PrLp9SA2ahwsLL_vcaofdNHRGvlaovjyAUpq2CGGXKBPMtkQv4j0VuiQ73WyLb-KL31GyCeyNo/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" loading="lazy"></iframe>
+</div>
+</div>
+<div id="outline-container-org4290af2" class="outline-3">
+<h3 id="org4290af2">De Re – De Dicto</h3>
+<div class="outline-text-3" id="text-org4290af2">
+<p>
+<a href="https://docs.google.com/presentation/d/1Fa8PjQIKuokszySvLTGeSU3_gppPAbTDZ7d0Pl5D7A4/present?usp=sharing">https://docs.google.com/presentation/d/1Fa8PjQIKuokszySvLTGeSU3_gppPAbTDZ7d0Pl5D7A4/present?usp=sharing</a>
+</p>
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRwDf73PRH9cC_xYSqYbn2HbsS2Qd2vlGAn3M7A5JNcWTJCX47kZCWooSUDCBYzxfHvtbnSH-f1jSF9/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" loading="lazy"></iframe>
+</div>
+</div>
+<div id="outline-container-org65500ec" class="outline-3">
+<h3 id="org65500ec">Empirismus vs. Rationalismus</h3>
+<div class="outline-text-3" id="text-org65500ec">
+<p>
+<a href="https://docs.google.com/presentation/d/1s3Jmz3aTexEfDC1fITMTUGRRjXc1iZae1TpjFkTO4pQ/present?usp=sharing">https://docs.google.com/presentation/d/1s3Jmz3aTexEfDC1fITMTUGRRjXc1iZae1TpjFkTO4pQ/present?usp=sharing</a>
+</p>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT2lzc1Q25dpEwP7NePeMEpgN-bKb_pWNOx-10QFTiN6GJZsT75eyJKpSP8ls9310AlWz6fVy4jVC3P/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" loading="lazy"></iframe>
+</div>
+</div>
+<div id="outline-container-orgb299dcd" class="outline-3">
+<h3 id="orgb299dcd">Mereology Presentation</h3>
+<div class="outline-text-3" id="text-orgb299dcd">
+<p>
+<a href="https://docs.google.com/presentation/d/e/2PACX-1vTQc8WwAF2Wy9Ylwnbc-PI2gN5E3w2bVl3uFmRQn7MqSvqJbnfcBvw4HMa196oveMakPPzAewSpRXxI/pub?start=false&amp;loop=false&amp;delayms=3000">https://docs.google.com/presentation/d/e/2PACX-1vTQc8WwAF2Wy9Ylwnbc-PI2gN5E3w2bVl3uFmRQn7MqSvqJbnfcBvw4HMa196oveMakPPzAewSpRXxI/pub?start=false&amp;loop=false&amp;delayms=3000</a>
+</p>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTQc8WwAF2Wy9Ylwnbc-PI2gN5E3w2bVl3uFmRQn7MqSvqJbnfcBvw4HMa196oveMakPPzAewSpRXxI/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" loading="lazy"></iframe>
+</div>
+</div>
+<div id="outline-container-org2bc9618" class="outline-3">
+<h3 id="org2bc9618">Model Theory</h3>
+<div class="outline-text-3" id="text-org2bc9618">
+<p>
+<a href="https://docs.google.com/presentation/d/e/2PACX-1vSanN5Bqnmzx3Gk8o3EpHP1yJuMmsE2y9PP0dCVOGbujlaPJzsXS6myqKoqvXBMjYnpwdOz3gHtMt6I/pub?start=false&amp;loop=false&amp;delayms=3000">https://docs.google.com/presentation/d/e/2PACX-1vSanN5Bqnmzx3Gk8o3EpHP1yJuMmsE2y9PP0dCVOGbujlaPJzsXS6myqKoqvXBMjYnpwdOz3gHtMt6I/pub?start=false&amp;loop=false&amp;delayms=3000</a>
+</p>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSanN5Bqnmzx3Gk8o3EpHP1yJuMmsE2y9PP0dCVOGbujlaPJzsXS6myqKoqvXBMjYnpwdOz3gHtMt6I/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" loading="lazy"></iframe>
+</div>
+</div>
+</div>
+<div id="outline-container-org86d762e" class="outline-2">
+<h2 id="org86d762e">Schwierige philosophische Probleme</h2>
+<div class="outline-text-2" id="text-org86d762e">
+<ul class="org-ul">
+<li><a href="https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_philosophy">https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_philosophy</a></li>
+</ul>
+
+<p>
+Prinzipiell: Philosophische Probleme müssen am Schreibtisch gelöst werden können, d.h.
+ohne Empirie.
+</p>
+</div>
+
+<div id="outline-container-org1d82420" class="outline-3">
+<h3 id="org1d82420">Problem of Universals</h3>
+</div>
+<div id="outline-container-orgbbc610b" class="outline-3">
+<h3 id="orgbbc610b">Nature of mathematical objects</h3>
+<div class="outline-text-3" id="text-orgbbc610b">
+<ul class="org-ul">
+<li>What is a set?</li>
+<li>What is a number?</li>
+</ul>
+
+<p>
+Can the existence of theses objects be reduced to something else (e.g. relations in structures)?
+</p>
+</div>
+
+<div id="outline-container-org33a3299" class="outline-4">
+<h4 id="org33a3299">Platonism</h4>
+<div class="outline-text-4" id="text-org33a3299">
+<p>
+Mathematical objects really exist. 
+</p>
+</div>
+</div>
+<div id="outline-container-orgb254535" class="outline-4">
+<h4 id="orgb254535">Formalism</h4>
+<div class="outline-text-4" id="text-orgb254535">
+<p>
+Mathematics is really about the manipulation of strings.
+</p>
+
+<p>
+No commitment to the existence of mathematical objects.
+</p>
+</div>
+</div>
+<div id="outline-container-orgabb2c82" class="outline-4">
+<h4 id="orgabb2c82">Logicism</h4>
+</div>
+<div id="outline-container-org5f12251" class="outline-4">
+<h4 id="org5f12251">Intuitionism</h4>
+</div>
+</div>
+
+<div id="outline-container-orge69e6a6" class="outline-3">
+<h3 id="orge69e6a6">Zwei verschiedene Dinge werden als das gleiche betrachtet</h3>
+</div>
+</div>
+<div id="outline-container-orgb43256f" class="outline-2">
+<h2 id="orgb43256f">Sprachphilosophie</h2>
+<div class="outline-text-2" id="text-orgb43256f">
+<pre class="example">
+Bedeutung, Repräsentation, Syntax, Semantik, Pragmatik
+</pre>
+</div>
+
+<div id="outline-container-orga2aa542" class="outline-3">
+<h3 id="orga2aa542">Sprechakte</h3>
+<div class="outline-text-3" id="text-orga2aa542">
+<p>
+<b>J.L. Austin</b>
+</p>
+<pre class="example">
+Kannst du mir die Butter reichen?
+</pre>
+
+
+<p>
+Der Satz ist wörtlich genommen eine Frage, aber eigentlich eine Aufforderung.
+</p>
+
+<p>
+Austin unterscheidet folgende Arten von Sprechakte:
+</p>
+<dl class="org-dl">
+<dt><code>locution</code></dt><dd>Was wurde, wörtlich, gesagt? (Frage).</dd>
+<dt><code>illocution</code></dt><dd>Was wurde damit getan? (Aufforderung).</dd>
+<dt><code>perlocution</code></dt><dd>Was war das Ergebnis? (Überreichen der Butter).</dd>
+</dl>
+
+<p>
+<b>John Searl</b>
+</p>
+
+<p>
+Klassifikation von Sprechakten nach Searl:
+</p>
+<dl class="org-dl">
+<dt><code>assertives</code></dt><dd>Der Sprecher will etwas Wahres aussagen (z.B. Aussagen).</dd>
+<dt><code>directives</code></dt><dd>Der Sprecher will den Hörer dazu bringen etwas zu tun (tu dies, tu das, z.B. Aufforderungen, Befehle, Ratschläge).</dd>
+<dt><code>commissives</code></dt><dd>Der Sprecher verpflichtet sich zu etwas Zukünftigem. (z.B. Versprechen, Schwüre).</dd>
+<dt><code>expressives</code></dt><dd>Drücken Emotionen oder Haltungen aus (z.B. Danksagungen, Gratulationen, Entschuldigungen).</dd>
+<dt><code>declarations</code></dt><dd>Ändern die Realität (z.B. Kriegserklärung, Eheschließung).</dd>
+</dl>
+
+<p>
+<b>Paul Grice</b>
+</p>
+
+<p>
+Konversationsmaximen
+</p>
+
+<p>
+Sprecher und Hörer setzen verschiedene Grundsätze voraus. 
+</p>
+
+<dl class="org-dl">
+<dt><code>Quantität</code></dt><dd>Sprich genau so informativ, wie nötig.</dd>
+<dt><code>Qualität</code></dt><dd>Sag nicht, was du für falsch hältst.</dd>
+<dt><code>Relevanz</code></dt><dd>Sprich zum Thema.</dd>
+<dt><code>Modalität</code></dt><dd>Vermeide Unklarheit, Mehrdeutigkeit, Weitschweifigkeit, Ungeordnetheit.</dd>
+</dl>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0728ae0" class="outline-2">
+<h2 id="org0728ae0">Störungen</h2>
+<div class="outline-text-2" id="text-org0728ae0">
+<div class="FIND_STRINGS">
+<p>
+Experimente, debug, test, testing
+</p>
+
+</div>
+
+<p>
+Bring eine Störung ins System (z.B. ein bisschen Code auskommentieren) und schau was passiert.
+Ist es logisch?
+Verstehst du es?
+</p>
+
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-07-06 Wed&gt;</span></span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb339857" class="outline-2">
+<h2 id="orgb339857">Was ist Philosophie?</h2>
+<div class="outline-text-2" id="text-orgb339857">
+<p>
+Der, vielleicht aussichtslose, Versuch sich in der Realität zurecht zu finden.
+</p>
+</div>
+
+<div id="outline-container-org0a6e885" class="outline-3">
+<h3 id="org0a6e885">Begriffe</h3>
+<div class="outline-text-3" id="text-org0a6e885">
+<p>
+Philosophie beschäftigt sich mit Begriffen. Damit sind nicht Wörter gemeint, 
+sondern Konzepte oder Ideen. Der Unterschied zwischen Wort und Begriff lässt 
+sich am besten mit einem Beispiel veranschaulichen. Nehmen wir den Begriff Hund. 
+Für diesen Begriff gibt es viele Wörter, z.B. Hund (Deutsch), dog (Englisch), 
+chien (Französisch) usw., für gewöhnlich haben verschieden Sprachen verschiedene 
+Wörter für denselben Begriff. Manche Philosophen sind der Meinung, dass sich 
+Begriffe als Bedeutungen von Wörtern interpretieren lassen. Es ist also möglich, 
+dass es für denselben Begriff verschiedene Wörter gibt, ebenso kann es sein, 
+dass sich verschiedene Wörter auf verschiedene Aspekte eines Begriffs beziehen, 
+oder ein Begriff nur mit mehreren Wörtern ausgedrückt werden kann.
+Darüber hinaus können Begriffe in verschiedenen Sprachen variieren, wie das 
+berühmte Beispiel vom Begriff Schnee bei den Eskimos zeigt. Da für Eskimos 
+Schnee eine größere Bedeutung hat als für uns, haben sie einen differenzierteren 
+Begriff und eine größere Zahl von Wörtern, mit denen verschiedene Arten von 
+Schnee und verschiedene Aspekte von Schnee bezeichnet werden. 
+</p>
+
+<p>
+In welchen Beziehungen Begriffe zueinander stehen und in welchen Beziehungen 
+Begriffe zur Welt stehen wäre Teil einer allgemeinen Begriffslehre. Eine solche 
+Lehre würde man für gewöhnlich in dem Gebiet der Philosophie ansiedeln.
+</p>
+
+<p>
+Trifft ein Begriff auf ein Ding zu, so sagt man es falle unter den Begriff, 
+z.B. fällt ein konkreter Mensch (z.B. Arnold Schwarzenegger) unter den allgemeinen 
+Begriff Mensch. 
+In den meisten Fällen wird es so sein, dass unter einen Begriff
+mehrere Dinge fallen.
+Es kann aber auch sein, dass kein Ding unter einen Begriff fällt (z.B. Einhorn). 
+Es wird normalerweise auch so sein, dass zu verschiedenen Zeiten verschiedene 
+Dinge unter einen Begriff fallen.
+Begriffe können auch unterschiedlich exakt sein, je nachdem wofür sie gebraucht 
+werden. Für manche Begriffe gibt es eine sehr präzise Definition (z.B. Primzahl), 
+andere bleiben weitgehend unbestimmt (z.B. Seele). 
+Bei manchen Begriffen ist es leicht zu sagen, ob ein Ding unter den Begriff 
+fällt oder nicht (z.B. österreichischer Staatsbürger), bei anderen Begriffen 
+ist es schwieriger (z.B. Haufen). 
+In den meisten Fällen wird es einen Graubereich geben, in dem 
+nicht ganz klar ist, ob ein Begriff noch auf ein Ding zutrifft oder nicht mehr.
+</p>
+
+<p>
+Ein anderer Aspekt der Beschäftigung mit Begriffen ist das Auffinden von 
+Voraussetzungen, ebenso wie das Infragestellen derselben. Das massive, für 
+viele vielleicht sogar übertriebene, Infragestellen von Voraussetzungen ist 
+ein essentieller Wesenszug des praktischen Philosophierens. 
+</p>
+
+<p>
+Was sind Voraussetzungen?
+Voraussetzungen können Überzeugungen oder Annahmen sein, die in folgenden 
+Hinsichten in Frage gestellt werden können:
+•	ethisch
+•	inhaltlich: In Bezug auf ihre Angemessenheit.
+•	logisch
+</p>
+
+<p>
+Philosophie beschäftigt sich aber nicht nur allgemein damit, was Begriffe 
+sind, sondern vor allem mit speziellen Begriffen. Beispiele sind:
+</p>
+
+<p>
+Philosophie als Standortbestimmung in der Realität.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9957757" class="outline-3">
+<h3 id="org9957757">Methodik</h3>
+<div class="outline-text-3" id="text-org9957757">
+<p>
+Ein philosophisches Problem muss man prinzipiell durch Nachdenken lösen können.
+</p>
+</div>
+
+<div id="outline-container-org8cdc4a5" class="outline-4">
+<h4 id="org8cdc4a5">Gedankenexperimente</h4>
+</div>
+<div id="outline-container-orgb2417b4" class="outline-4">
+<h4 id="orgb2417b4">Begriffsanalyse</h4>
+<div class="outline-text-4" id="text-orgb2417b4">
+<p>
+Explikation
+</p>
+</div>
+</div>
+<div id="outline-container-org184ee59" class="outline-4">
+<h4 id="org184ee59">Das sokratische Gespräch</h4>
+</div>
+</div>
+
+<div id="outline-container-orgf1de8d5" class="outline-3">
+<h3 id="orgf1de8d5">Grundlegende "philosophische" Erlebnisse</h3>
+<div class="outline-text-3" id="text-orgf1de8d5">
+<ul class="org-ul">
+<li>Ich kenne mich nicht aus.</li>
+<li>So hab ich das noch nie gesehen.</li>
+</ul>
+
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-07-19 Tue&gt;</span></span>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf2e89b0" class="outline-2">
+<h2 id="orgf2e89b0">Wichtige Fähigkeiten im Leben</h2>
+<div class="outline-text-2" id="text-orgf2e89b0">
+</div>
+<div id="outline-container-org95ce4df" class="outline-3">
+<h3 id="org95ce4df">Regeln</h3>
+<div class="outline-text-3" id="text-org95ce4df">
+</div>
+<div id="outline-container-orgb5c9dd1" class="outline-4">
+<h4 id="orgb5c9dd1">Regeln, Gesetze finden</h4>
+<div class="outline-text-4" id="text-orgb5c9dd1">
+<p>
+Herausfinden, nach welchen Regeln (Wittgenstein: Grammatik) etwas funktioniert.
+ z.B. Kartenspiel mit Versuch und Irrtum
+</p>
+
+<p>
+Wie macht man das?
+</p>
+<ul class="org-ul">
+<li>Daten sammeln (messen) und interpretieren</li>
+<li>Ergebnisse Dokumentieren</li>
+<li>Bestandsaufnahme der Phänomene erstellen
+Was gibt es?</li>
+<li>Experimente</li>
+<li>Trial and Error</li>
+</ul>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-06-29 Wed&gt;</span></span>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org4489faf" class="outline-3">
+<h3 id="org4489faf">Kommunikation</h3>
+<div class="outline-text-3" id="text-org4489faf">
+<ul class="org-ul">
+<li>Verstehen, was andere wollen (siehe GOT).</li>
+</ul>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-06-28 Tue&gt;</span></span>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org10ea876" class="outline-2">
+<h2 id="org10ea876">Wishful thinking</h2>
+<div class="outline-text-2" id="text-org10ea876">
+<p>
+als Problemlösungsstrategie. (vgl. The Structure and Interpretation of Computer Programs.)
+Man fängt irgendwo an, an einem Punkt der halbwegs klar ist. Dabei setzt man alles andere
+als gegeben voraus. 
+</p>
+
+<p>
+auch: Wie geht man mit einer Situation um, für die gilt: 
+</p>
+<ul class="org-ul">
+<li>Ich kenne mich nicht aus.</li>
+<li>Ich bin verwirrt.</li>
+<li>Ich weiß nicht, wie ich anfangen soll.</li>
+</ul>
+
+<p>
+Erinnert mich an die Strategie: Alles aufzählen was man weiß. Man hält zunächst fest, was 
+klar bzw. gegeben ist. Von dem was klar ist ausgehend, streckt man dann seine Fühler aus
+und nimmt zunächst einfach alles weiter als gegeben an.
+</p>
+
+<p>
+vgl. mit dem Lösen eines Puzzles
+</p>
+
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2017-03-27 Mon&gt;</span></span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga2f2fe0" class="outline-2">
+<h2 id="orga2f2fe0">Wissenschaftstheorie</h2>
+<div class="outline-text-2" id="text-orga2f2fe0">
+<pre class="example">
+Rationalität, Theorie, Erklärung, empirisch, a priori
+</pre>
+</div>
+
+<div id="outline-container-org9273711" class="outline-3">
+<h3 id="org9273711"><span class="todo TODO">TODO</span> Hans Poser - Wissenschaftstheorie</h3>
+<div class="outline-text-3" id="text-org9273711">
+</div>
+<div id="outline-container-org1a1dc50" class="outline-4">
+<h4 id="org1a1dc50">A - Der analytische Ansatz</h4>
+<div class="outline-text-4" id="text-org1a1dc50">
+</div>
+<div id="outline-container-org3e9d036" class="outline-5">
+<h5 id="org3e9d036">1. Grundbegriffe</h5>
+<div class="outline-text-5" id="text-org3e9d036">
+</div>
+<div id="outline-container-org125236f" class="outline-6">
+<h6 id="org125236f">1. Die Sprache als Ausgangspunkt</h6>
+<div class="outline-text-6" id="text-org125236f">
+<p>
+Eine wissenschaftliche Erkenntnis ist eine mit Wahrheitsanspruch verbundene Darstellung eines Sachverhalts.
+</p>
+
+<p>
+Einen Satz zu verstehen bedeutet die Bedingungen zu kennen unter denen er wahr ist. Unabhängig davon, ob
+diese Bedingungen praktisch überprüfbar sind. 
+</p>
+
+<p>
+Für die Wissenschaft ist nur Semantik und Syntax relevant, Pragmatik nicht.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org03f18de" class="outline-6">
+<h6 id="org03f18de">2. A priori / a posteriori</h6>
+<div class="outline-text-6" id="text-org03f18de">
+<p>
+Jede Wissenschaft enthält Aussagen a priori. 
+Grundprinzipien, Konventionen und Definitionen.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc1b34e6" class="outline-6">
+<h6 id="orgc1b34e6">3. Deskriptiv / normativ und der naturalistische Fehlschluss</h6>
+<div class="outline-text-6" id="text-orgc1b34e6">
+<p>
+Aus dem Sein folge kein Sollen.
+</p>
+</div>
+</div>
+<div id="outline-container-org3ad5df5" class="outline-6">
+<h6 id="org3ad5df5">4. Die Explikation</h6>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9219020" class="outline-3">
+<h3 id="org9219020"><span class="todo TODO">TODO</span> Paul Hoyningen-Huene - Was ist Wissenschaft?</h3>
+<div class="outline-text-3" id="text-org9219020">
+<p>
+Inhalt
+</p>
+<ol class="org-ol">
+<li>Formulierung und Entwicklung der Frage</li>
+<li>Antwort auf die Frage und Entwicklung der Antwort</li>
+<li>Welcher Art muss eine Begründung sein?</li>
+<li>Begründung der Antwort</li>
+<li>Vergleich mit alternativen Positionen</li>
+<li>Konsequenzen der Antwort</li>
+</ol>
+
+<p>
+weiter Vorlesung 2
+</p>
+</div>
+
+<div id="outline-container-org3a8ff5c" class="outline-4">
+<h4 id="org3a8ff5c">1. Einführung</h4>
+<div class="outline-text-4" id="text-org3a8ff5c">
+</div>
+<div id="outline-container-orgae58144" class="outline-5">
+<h5 id="orgae58144">1.1 Historische Bemerkungen</h5>
+<div class="outline-text-5" id="text-orgae58144">
+<p>
+Antworten auf: Was ist Wissenschaft?
+</p>
+
+<p>
+beeinflusst von
+</p>
+<ul class="org-ul">
+<li>Wie ändert sich die Wissenschaft? (Wissenschaftliche Revolutionen)</li>
+<li>Wie ändert sich das Nachtdenken über Wissenschaft?</li>
+</ul>
+
+<p>
+4 Phasen des Antwortens auf obige Frage:
+(Was man sich von Wissenschaft erhofft scheint hier passender.)
+</p>
+<ol class="org-ol">
+<li>Antike bis 17. Jhd. : Sicheres Wissen, gesichert durch Beweise.</li>
+<li>17. Jhd - 19. Jhd   : Sicheres Wissen, gesichert durch wissenschaftliche Methoden
+nicht nur Beweise, auch die Methode</li>
+<li>Zweite Hälfte 19. Jhd - letztes Drittel 20. Jhd: fehlbares Wissen, begründet
+durch wissenschaftliche Methoden</li>
+<li>Letztes Drittel 20.Jhd - jetzt: Überzeugung von der strikten Methode brökelt.
+Die Wissenschaft hat historisch gesehen keine speziellen Methoden.</li>
+</ol>
+
+<p>
+Argumente gegen die Existenz einer wissenschaftlichen Methode:
+</p>
+<ul class="org-ul">
+<li>Kuhn (The Structure of Scientific Revolutions, 1962)
+Nicht Regeln, sondern Orientierung an Einzelfällen</li>
+<li>Feyerabend (Against Method, 1975):
+Alle Regeln werden erfolgreich verletzt.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb3716a9" class="outline-5">
+<h5 id="orgb3716a9">1.2 Die Frage: Was ist Wissenschaft?</h5>
+<div class="outline-text-5" id="text-orgb3716a9">
+<p>
+Methodenstatus der Wissenschaft nicht gerechtfertigt. Wie lässt sich der Sonderstatus
+des wissenschaftlichen Wissens rechtfertigen?
+</p>
+
+<p>
+Klärung der Frage:
+</p>
+<ul class="org-ul">
+<li>Wie breit ist der Wissenschaftsbegriff?
+Alles, was auf der Uni vorkommt.</li>
+<li>Bezogen auf wissenschaftliches Wissen.</li>
+<li>Abgrenzung von Alltagswissen, nicht von Metaphysik oder Pseudowissenschaft.</li>
+<li>Keine Wesensfrage</li>
+<li>Keine scharfe Antwort (Abgrenzung zur Nicht-Wissenschaft)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf32545d" class="outline-4">
+<h4 id="orgf32545d">2. Die These</h4>
+<div class="outline-text-4" id="text-orgf32545d">
+</div>
+<div id="outline-container-orgf9cfc32" class="outline-5">
+<h5 id="orgf9cfc32">2.1 Wissenschaft und Systematizität</h5>
+<div class="outline-text-5" id="text-orgf9cfc32">
+<p>
+These
+</p>
+<blockquote>
+<p>
+Wissenschaftliches Wissen unterscheidet sich von anderen Wissensarten, besonders
+vom Alltagswissen, primär durch seinen höheren Grad an Systematizität.
+</p>
+</blockquote>
+
+<p>
+systematisch können sein
+</p>
+<ul class="org-ul">
+<li>die Darstellung des Wissens</li>
+<li>wissenschaftliche Tätigkeiten</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgd8f2576" class="outline-4">
+<h4 id="orgd8f2576">Notizen</h4>
+<div class="outline-text-4" id="text-orgd8f2576">
+<p>
+Nicht jede Wissenschaft macht Vorhersagen (Paläontologie).
+</p>
+
+<p>
+19.Jhd: Mathematik wird zur Formalwissenschaft in dem Sinn, dass sie nichts über 
+die Welt aussagt.
+</p>
+
+<p>
+Min. 10 Millionen Menschen leben im Wissenschaftsbetrieb. 
+</p>
+
+<p>
+Die Frage "Was ist x?" muss nicht mit einer Antwort nach dem Wesen von x beantwortet werden
+(á la Soktrates).
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge7078f6" class="outline-3">
+<h3 id="orge7078f6"><span class="todo TODO">TODO</span> Gerhard Schurz - Einführung in die Wissenschaftstheorie</h3>
+</div>
+</div>
+<div id="outline-container-orgd223eed" class="outline-2">
+<h2 id="orgd223eed">Zeichen</h2>
+<div class="outline-text-2" id="text-orgd223eed">
+</div>
+<div id="outline-container-org6302610" class="outline-3">
+<h3 id="org6302610">Identifizierbarkeit und Separierbarkeit</h3>
+<div class="outline-text-3" id="text-org6302610">
+<p>
+Zeichen müssen von ihrer Umgebung unterscheidbar sein.
+Zeichen müssen, als dieselben Zeichen, wiedererkennbar sein.
+</p>
+
+<p>
+Zeichen müssen, darüber hinaus, wiederholbar sein, d.h. ein und 
+dasselbe Zeichen muss mehrfach vorkommen können. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4b502ec" class="outline-3">
+<h3 id="org4b502ec">Zeichenproduktion</h3>
+<div class="outline-text-3" id="text-org4b502ec">
+<p>
+Zeichen werden auf einem Medium, vor einem Hintergrund produziert.
+Man kann auch sagen, man aktualisiert ein Zeichen. 
+Das schöne an Schriftzeichen ist, dass sie stehen bleiben. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org08a18c4" class="outline-3">
+<h3 id="org08a18c4">Zeichen als abstrakte Gegenstände</h3>
+<div class="outline-text-3" id="text-org08a18c4">
+<p>
+sind doch immer als potentielle raumzeitliche Gebilde gedacht. Ist ein rein
+abstraktes Zeichen denkbar ohne die Möglichkeit einer raumzeitlichen 
+Realisierung?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org73e562d" class="outline-3">
+<h3 id="org73e562d">Schreiber und Leser</h3>
+<div class="outline-text-3" id="text-org73e562d">
+<p>
+Der Schreiber (der Zeichenproduzent) aktualisiert ein Zeichen. Dabei entsteht 
+ein physikalisches (evtl. dauerhaftes) Ding, welches dann vom Leser 
+wiederum aktualisiert wird. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge58b90e" class="outline-3">
+<h3 id="orge58b90e">Repräsentation</h3>
+<div class="outline-text-3" id="text-orge58b90e">
+<p>
+Ein Zeichen(-token) ist mehr als der physikalische Gegenstand, es über die
+physikalischen Eigenschaften hinaus, noch eine Bedeutung. 
+</p>
+
+<p>
+Man kann einem Zeichen evtl. ansehen, dass es sich um ein Zeichen handelt, 
+ohne seine Bedeutung zu verstehen. Man kann evtl. sehen, dass etwas ein 
+Zeichen(-token) ist, ohne seine Bedeutung zu erfassen.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgaaf67e4" class="outline-2">
+<h2 id="orgaaf67e4">Zeichen</h2>
+<div class="outline-text-2" id="text-orgaaf67e4">
+</div>
+<div id="outline-container-orgfe988b1" class="outline-3">
+<h3 id="orgfe988b1">Identifizierbarkeit und Separierbarkeit</h3>
+<div class="outline-text-3" id="text-orgfe988b1">
+<p>
+Zeichen müssen von ihrer Umgebung unterscheidbar sein.
+Zeichen müssen, als dieselben Zeichen, wiedererkennbar sein.
+</p>
+
+<p>
+Zeichen müssen, darüber hinaus, wiederholbar sein, d.h. ein und 
+dasselbe Zeichen muss mehrfach vorkommen können. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdcaf178" class="outline-3">
+<h3 id="orgdcaf178">Zeichenproduktion</h3>
+<div class="outline-text-3" id="text-orgdcaf178">
+<p>
+Zeichen werden auf einem Medium, vor einem Hintergrund produziert.
+Man kann auch sagen, man aktualisiert ein Zeichen. 
+Das schöne an Schriftzeichen ist, dass sie stehen bleiben. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3114e0a" class="outline-3">
+<h3 id="org3114e0a">Zeichen als abstrakte Gegenstände</h3>
+<div class="outline-text-3" id="text-org3114e0a">
+<p>
+sind doch immer als potentielle raumzeitliche Gebilde gedacht. Ist ein rein
+abstraktes Zeichen denkbar ohne die Möglichkeit einer raumzeitlichen 
+Realisierung?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7e556ff" class="outline-3">
+<h3 id="org7e556ff">Schreiber und Leser</h3>
+<div class="outline-text-3" id="text-org7e556ff">
+<p>
+Der Schreiber (der Zeichenproduzent) aktualisiert ein Zeichen. Dabei entsteht 
+ein physikalisches (evtl. dauerhaftes) Ding, welches dann vom Leser 
+wiederum aktualisiert wird. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfb290eb" class="outline-3">
+<h3 id="orgfb290eb">Repräsentation</h3>
+<div class="outline-text-3" id="text-orgfb290eb">
+<p>
+Ein Zeichen(-token) ist mehr als der physikalische Gegenstand, es über die
+physikalischen Eigenschaften hinaus, noch eine Bedeutung. 
+</p>
+
+<p>
+Man kann einem Zeichen evtl. ansehen, dass es sich um ein Zeichen handelt, 
+ohne seine Bedeutung zu verstehen. Man kann evtl. sehen, dass etwas ein 
+Zeichen(-token) ist, ohne seine Bedeutung zu erfassen.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5f06c72" class="outline-2">
+<h2 id="org5f06c72">Zettelkästen und künstliche Intelligenz</h2>
+<div class="outline-text-2" id="text-org5f06c72">
+<p>
+Luhmanns Zettelkästen wussten mehr als er selbst.
+</p>
+
+<p>
+Wie kann man neuronale Netze für einen solchen Zweck einsetzen?
+</p>
+
+<p>
+<a href="http://www.sciencegarden.de/content/2001-07/k%C3%BCnstliche-intelligenz-aus-holz">http://www.sciencegarden.de/content/2001-07/k%C3%BCnstliche-intelligenz-aus-holz</a>
+<a href="../../../Philosophie/Diverses/Luhmann - Kommunikatin mit Zettelkästen.pdf">Luhmann - Kommunikatin mit Zettelkästen.pdf</a>
+</p>
+
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-05-12 Thu&gt;</span></span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org20e4dbe" class="outline-2">
+<h2 id="org20e4dbe">Links</h2>
+<div class="outline-text-2" id="text-org20e4dbe">
+<ul class="org-ul">
+<li>Stanford Encyclopedia of Philosophy: <a href="https://plato.stanford.edu/index.html">https://plato.stanford.edu/index.html</a></li>
+<li>Philpapers: <a href="https://philpapers.org/">https://philpapers.org/</a></li>
+<li>JSTOR: - <a href="https://www.jstor.org/">https://www.jstor.org/</a></li>
+
+<li>Mereology
+<a href="https://www.youtube.com/watch?v=GqKxcaweWxI&amp;t=1649s">https://www.youtube.com/watch?v=GqKxcaweWxI&amp;t=1649s</a></li>
+</ul>
+</div>
+
+<div id="outline-container-org24ed93a" class="outline-3">
+<h3 id="org24ed93a">Timms</h3>
+<div class="outline-text-3" id="text-org24ed93a">
+<ul class="org-ul">
+<li>Heidegger
+<a href="https://timms.uni-tuebingen.de/List/List?id=UT_2018_____00%5B12%5D_philheid_000_&amp;Headline=Die%20Philosophie%20Martin%20Heideggers">https://timms.uni-tuebingen.de/List/List?id=UT_2018_____00%5B12%5D_philheid_000_&amp;Headline=Die%20Philosophie%20Martin%20Heideggers</a></li>
+
+<li>Introduction to Linguistics
+<a href="https://timms.uni-tuebingen.de/tp/UT_20171024_001_indling_0001">https://timms.uni-tuebingen.de/tp/UT_20171024_001_indling_0001</a></li>
+
+<li>Einführung in die Philosophie des Geistes
+<a href="https://timms.uni-tuebingen.de/tp/UT_20170424_001_philogeist_0001">https://timms.uni-tuebingen.de/tp/UT_20170424_001_philogeist_0001</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org188ec6d" class="outline-3">
+<h3 id="org188ec6d">Logic</h3>
+<div class="outline-text-3" id="text-org188ec6d">
+<p>
+Online Logic Proof machines:
+</p>
+<ul class="org-ul">
+<li>Logikübergang: <a href="https://www.erpelstolz.at/gateway/formular.html">https://www.erpelstolz.at/gateway/formular.html</a></li>
+<li>Tree Prove Generator: <a href="https://www.umsu.de/trees/">https://www.umsu.de/trees/</a></li>
+</ul>
+
+<p>
+Software:
+</p>
+<ul class="org-ul">
+<li>Proof Tool : <a href="https://www.logic.at/prooftool/">https://www.logic.at/prooftool/</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2021-03-31 Wed 06:00</p>
+</div>
+</body>
+</html>

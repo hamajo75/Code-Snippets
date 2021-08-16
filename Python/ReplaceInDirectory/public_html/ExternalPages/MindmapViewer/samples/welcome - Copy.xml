@@ -1,0 +1,53 @@
+<map name="welcome" version="tango">
+    <topic central="true" text="Joe's Notes" id="1" fontStyle=";;#F8F8F8;;;" bgColor="#0A3F69">
+        <topic position="1, 1" order="0" text="General" id="11" fontStyle="Arial;8;#F8F8F8;;normal;" bgColor="#839496" brColor="#080559">
+            <topic position="1, 1" order="0" text="Allgemeine Notizen" id="111" fontStyle=";;#839496;;;"/>
+            <topic position="1, 1" order="1" text="TODO List" id="112" fontStyle=";;#839496;;;"/>     
+        </topic>      
+        <topic position="1, 1" order="1" text="Kultur" id="12" fontStyle="Arial;8;#F8F8F8;;normal;" bgColor="#839496" brColor="#080559">
+            <topic position="1, 1" order="0" text="Kulinarik" id="121" fontStyle=";;#839496;;;"/>
+            <topic position="1, 1" order="1" text="Braubrevier" id="122" fontStyle=";;#839496;;;"/>
+            <topic position="1, 1" order="2" text="Society" id="123" fontStyle=";;#839496;;;"/>
+            <topic position="1, 1" order="3" text="Sprachen" id="124" fontStyle=";;#839496;;;"/>
+            <topic position="1, 1" order="4" text="Wirtschaft" id="125" fontStyle=";;#839496;;;"/>
+        </topic>          
+        <topic position="1, 1" order="2" text="Science" id="13" fontStyle="Arial;8;#F8F8F8;;normal;" bgColor="#839496" brColor="#080559">/>
+               <topic position="1, 1" order="0" text="Diagrams" id="131" fontStyle=";;#839496;;;"/>
+               <topic position="1, 1" order="1" text="Psychology" id="132" fontStyle=";;#839496;;;"/>
+            <topic position="1, 1" order="2" text="Mathematics" id="133" fontStyle=";;#839496;;;">   
+                <topic position="1, 1" order="0" text="Angewandte Mathematik" id="1331" fontStyle=";;#839496;;;"/>
+                <topic position="1, 1" order="1" text="Mathematik" id="1332" fontStyle=";;#839496;;;"/>
+            </topic>
+            <topic position="1, 1" order="3" text="Natural Sciences" id="134" fontStyle=";;#839496;;;">
+                <topic position="1, 1" order="0" text="Biology" id="1341" fontStyle=";;#839496;;;"/>                                    
+                <topic position="1, 1" order="1" text="Earth" id="1342" fontStyle=";;#839496;;;"/>                                    
+                <topic position="1, 1" order="2" text="Physics" id="1343" fontStyle=";;#839496;;;"/>                                    
+            </topic>
+            <topic position="1, 1" order="4" text="Philosophy" id="135" fontStyle=";;#839496;;;">
+                <topic position="1, 1" order="0" text="Der Begriff Form" id="1351" fontStyle=";;#839496;;;"/>
+                <topic position="1, 1" order="1" text="Philosophische Notizen" id="1352" fontStyle=";;#839496;;;"/>
+            </topic>
+        </topic>
+        <topic position="1, 1" order="3" text="Technology" id="14" fontStyle="Arial;8;#F8F8F8;;normal;" bgColor="#839496" brColor="#080559">
+            <topic position="1, 1" order="0" text="Computer Science" id="141" fontStyle=";;#839496;;;">
+                <topic position="1, 1" order="0" text="Code Snippets" id="1411" fontStyle=";;#839496;;;"/>
+                <topic position="1, 1" order="1" text="Computer Networks" id="1412" fontStyle=";;#839496;;;"/>
+                <topic position="1, 1" order="2" text="Computer Science" id="1413" fontStyle=";;#839496;;;"/>
+                <topic position="1, 1" order="3" text="Linux" id="1414" fontStyle=";;#839496;;;"/>
+                <topic position="1, 1" order="4" text="Programming" id="1415" fontStyle=";;#839496;;;"/>
+            </topic>
+            <topic position="1, 1" order="1" text="Electrical Engineering" id="142" fontStyle=";;#839496;;;">
+                <topic position="1, 1" order="0" text="Electrical Engineering - Theory" id="1421" fontStyle=";;#839496;;;"/>
+                <topic position="1, 1" order="1" text="Electronics" id="1422" fontStyle=";;#839496;;;"/>
+            </topic>
+            <topic position="1, 1" order="2" text="Emacs" id="143" fontStyle=";;#839496;;;"/>
+            <topic position="1, 1" order="3" text="Emacs Lisp Programming" id="144" fontStyle=";;#839496;;;"/>
+            <topic position="1, 1" order="4" text="Nextcloud" id="145" fontStyle=";;#839496;;;"/>            
+            <topic position="1, 1" order="5" text="Hardware" id="146" fontStyle=";;#839496;;;">
+                <topic position="1, 1" order="0" text="Microcontroller Boards" id="1461" fontStyle=";;#839496;;;"/>                
+                <topic position="1, 1" order="1" text="Microcontrollers" id="1462" fontStyle=";;#839496;;;"/>
+                <topic position="1, 1" order="2" text="Odroid XU4" id="1463" fontStyle=";;#839496;;;"/>                                
+            </topic>            
+        </topic>
+    </topic>
+</map>

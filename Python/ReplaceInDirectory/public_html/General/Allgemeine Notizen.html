@@ -1,0 +1,3223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-03-31 Wed 06:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Allgemeine Notizen</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="shortcut icon" href="/public_html/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/html-export.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/hideshow.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/code.css">
+
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div style = "text-align: right; margin-top: 5px">
+   <a accesskey="h" href="" style="font: 20px arial,helvetica,clean,sans-serif"></a>
+   <a accesskey="H" href="https://joesanmarzano.duckdns.org/public_html/" style="font: 20px arial,helvetica,clean,sans-serif;margin: 30px;"> HOME </a>
+</div><div id="content">
+<h1 class="title">Allgemeine Notizen</h1>
+
+<div id="outline-container-org1dfac30" class="outline-2">
+<h2 id="org1dfac30">Audio</h2>
+<div class="outline-text-2" id="text-org1dfac30">
+<ul class="org-ul">
+<li>HIFIMAN EF100 Kopfhörerverstärker</li>
+<li>HIFIMAN MegaMini High-Res Music Player</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdc25a0a" class="outline-2">
+<h2 id="orgdc25a0a">Bett</h2>
+<div class="outline-text-2" id="text-orgdc25a0a">
+<p>
+Max. Breite: 177 cm
+Max. Höhe Wandteil: 120 cm
+Höhe Nachtkastl: 52 cm
+</p>
+
+<p>
+lag.at Massivholzbetten
+</p>
+
+<p>
+Serie Oak Line
+</p>
+
+<p>
+Füsse 
+</p>
+<ul class="org-ul">
+<li>Xylo</li>
+<li>Aero</li>
+</ul>
+
+<p>
+Kopfteile
+</p>
+<ul class="org-ul">
+<li>Malta</li>
+<li>Duetto</li>
+<li>Ripo</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7debd88" class="outline-2">
+<h2 id="org7debd88">Bier</h2>
+<div class="outline-text-2" id="text-org7debd88">
+</div>
+<div id="outline-container-org530df0b" class="outline-3">
+<h3 id="org530df0b">Bier abkühlen</h3>
+<div class="outline-text-3" id="text-org530df0b">
+<p>
+DMS
+in 5 min unter 60"
+</p>
+</div>
+</div>
+
+<div id="outline-container-org00070b0" class="outline-3">
+<h3 id="org00070b0">Stout Chicxulub Brew Age</h3>
+<div class="outline-text-3" id="text-org00070b0">
+<p>
+sehr cremig, Kaffeegeschmack
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4b52b3b" class="outline-3">
+<h3 id="org4b52b3b">L4 Wiener Lager Laurentz</h3>
+</div>
+</div>
+<div id="outline-container-org8169160" class="outline-2">
+<h2 id="org8169160">Brutto Netto Rechner</h2>
+<div class="outline-text-2" id="text-org8169160">
+<ul class="org-ul">
+<li><a href="https://cpulohnweb.z6.web.core.windows.net/bmf.gv.at/#bruttoNetto_familienbonus">https://cpulohnweb.z6.web.core.windows.net/bmf.gv.at/#bruttoNetto_familienbonus</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdeb6ec3" class="outline-2">
+<h2 id="orgdeb6ec3">Constellations</h2>
+<div class="outline-text-2" id="text-orgdeb6ec3">
+<p>
+In July good to see:
+</p>
+<ul class="org-ul">
+<li>Big Bear</li>
+<li>Dragon</li>
+<li>Swan</li>
+<li>Cassiopia</li>
+<li>Boötes (Bärenhüter)
+Arcturus</li>
+<li>Virgo (Jungfrau)
+Spica</li>
+<li>Andromeda
+Daughter of Cassiopia and Kepheus</li>
+</ul>
+
+<p>
+Nach aufsteigender Größe geordnete Sterne:
+</p>
+<ul class="org-ul">
+<li>Sirius 
+<ul class="org-ul">
+<li>Sternbild: Großer Hund, Winter</li>
+<li>Entfernung: 8.6 LJ</li>
+<li>Doppelsternensystem (Sirius A, Sirius B)</li>
+</ul></li>
+<li>Aldebaran
+<ul class="org-ul">
+<li>Sternbild: Stier</li>
+<li>Entfernung: 67</li>
+</ul></li>
+<li>Rigel
+<ul class="org-ul">
+<li>Sternbild: Orion</li>
+<li>Entfernung: ~700 LJ</li>
+</ul></li>
+<li>Antares
+<ul class="org-ul">
+<li>Sternbild: Skorpion</li>
+<li>Entfernung: 600  LJ</li>
+</ul></li>
+<li>Betelgeuse</li>
+</ul>
+</div>
+
+<div id="outline-container-org4d30a40" class="outline-3">
+<h3 id="org4d30a40">Sommerdreieck</h3>
+<div class="outline-text-3" id="text-org4d30a40">
+<ul class="org-ul">
+<li>Vega</li>
+<li>Deneb</li>
+<li>Altair</li>
+</ul>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/Capture.PNG" alt="Capture.PNG" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org175413c" class="outline-2">
+<h2 id="org175413c">Chemistry</h2>
+<div class="outline-text-2" id="text-org175413c">
+<ul class="org-ul">
+<li>transformation of matter</li>
+<li>The identity of the atoms is preserved under chemical reactions.</li>
+<li>The nucleus of the atoms stays constant due to the strong force holding it together.</li>
+<li>So, only the electron arrangement is changing in chemical reactions (they are the money of chemistry).</li>
+<li>The total number of electrons stays constant.</li>
+</ul>
+</div>
+
+<div id="outline-container-org450c230" class="outline-3">
+<h3 id="org450c230">Galvanic Cell</h3>
+<div class="outline-text-3" id="text-org450c230">
+<ul class="org-ul">
+<li>Transforms chemical energy into electrical energy.</li>
+<li>Usually consists of 2 electrodes made of different metals in an electrolyte.</li>
+</ul>
+
+<p>
+<b>Reduction</b> : gaining electrons.
+</p>
+
+<p>
+<b>Oxidation</b> : loosing electrons.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb6f838a" class="outline-2">
+<h2 id="orgb6f838a">Debug Probleme</h2>
+<div class="outline-text-2" id="text-orgb6f838a">
+<ul class="org-ul">
+<li>expression evaluation doesn't work and hangs up the debugger</li>
+<li>supply via USB is not enough</li>
+<li>chip boots in ROM mode (e.g. short between GPIO_AD_B0_04 and GPIO_AD_B0_05)</li>
+<li>cannot step into inline functions</li>
+<li>SWD pins not connected correctly</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3e8d2ba" class="outline-2">
+<h2 id="org3e8d2ba">Denken</h2>
+<div class="outline-text-2" id="text-org3e8d2ba">
+<p>
+Was ist das? oder besser: Wie geht das?
+</p>
+<ul class="org-ul">
+<li>Laut oder leise sprechen.</li>
+<li>Mit einem Stift auf einem Papier schreiben oder zeichnen.</li>
+</ul>
+</div>
+
+<div id="outline-container-org03c2cc9" class="outline-3">
+<h3 id="org03c2cc9">Dinge, die man im Kopf machen kann</h3>
+<div class="outline-text-3" id="text-org03c2cc9">
+<ul class="org-ul">
+<li>Symbole erfinden</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5a2d9d1" class="outline-2">
+<h2 id="org5a2d9d1">Die Kunst des Prokrastinierens</h2>
+<div class="outline-text-2" id="text-org5a2d9d1">
+<p>
+Folgende Punkte sind wichtig:
+</p>
+<ul class="org-ul">
+<li>Nicht zu etwas sinnlosem zu wechseln.</li>
+<li>Am Ball bleiben, d.h. möglichst alle Aufgaben fertigstellen.</li>
+</ul>
+
+<p>
+Es sollte vermieden werden Aufgaben anzufangen, die dann unfertig
+für den Rest der Ewigkeit liegen bleiben.
+</p>
+
+<p>
+Man kann einerseits beim Thema bleiben und nur den Modus wechseln.
+Beispielsweise wechselt man vom Lesen eines Skripts zu einem Video
+oder man löst ein Beispiel.
+</p>
+
+<p>
+Andererseits kann man sich eine Liste von kleinen Aufgaben bereithalten, die
+erledigt gehören und zu denen man jederzeit wechseln kann. 
+Idealerweise sollten diese Aufgaben dann auch fertiggestellt werden. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3fdea8f" class="outline-2">
+<h2 id="org3fdea8f">Eier kochen</h2>
+<div class="outline-text-2" id="text-org3fdea8f">
+<ul class="org-ul">
+<li>warmes Wasser von der Leitung</li>
+<li>kalte Eier aus dem Kühlschrank</li>
+<li>Stufe P bis kurz vor dem Kochen</li>
+<li>Stufe 12</li>
+<li>ab dem Kochen 4:45</li>
+<li>abschrecken zum leichteren Schälen</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0a7f211" class="outline-2">
+<h2 id="org0a7f211">Emacs in Browser</h2>
+<div class="outline-text-2" id="text-org0a7f211">
+<p>
+<a href="https://github.com/karlicoss/cloudmacs">https://github.com/karlicoss/cloudmacs</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org9f0053f" class="outline-2">
+<h2 id="org9f0053f">Firma aufsetzen</h2>
+<div class="outline-text-2" id="text-org9f0053f">
+</div>
+<div id="outline-container-org695ec7f" class="outline-3">
+<h3 id="org695ec7f">Telefon &amp; Fax</h3>
+<div class="outline-text-3" id="text-org695ec7f">
+<p>
+Voice over IP
+Auerswald Telefonsystem
+</p>
+</div>
+</div>
+
+<div id="outline-container-org11c71d7" class="outline-3">
+<h3 id="org11c71d7">Server &amp; Mail &amp; FTP</h3>
+<div class="outline-text-3" id="text-org11c71d7">
+<ul class="org-ul">
+<li>Host Europe: Homepage, ftp, incoming mail</li>
+</ul>
+</div>
+
+<div id="outline-container-org4030790" class="outline-4">
+<h4 id="org4030790">Backup RAID</h4>
+<div class="outline-text-4" id="text-org4030790">
+<p>
+Hi,
+</p>
+
+<p>
+we have this RAID 5 system with 4 HDs in the company: 
+<a href="https://geizhals.at/synology-diskstation-ds414j-a1095047.html">https://geizhals.at/synology-diskstation-ds414j-a1095047.html</a>
+</p>
+
+<p>
+but for smaller data sizes a system with 2 HDs should be sufficient
+maybe something like this:
+<a href="http://www.amazon.com/Synology-DiskStation-Diskless-Private-DS214se/dp/B00FWURI8K/ref=sr_1_1?s=pc&amp;ie=UTF8&amp;qid=1451903865&amp;sr=1-1&amp;keywords=synology">http://www.amazon.com/Synology-DiskStation-Diskless-Private-DS214se/dp/B00FWURI8K/ref=sr_1_1?s=pc&amp;ie=UTF8&amp;qid=1451903865&amp;sr=1-1&amp;keywords=synology</a>
+</p>
+
+<p>
+Note: HDs are not inculded
+</p>
+
+<p>
+As backup software we use:
+<a href="http://www.easeus.com/backup-software/tb-workstation.html">http://www.easeus.com/backup-software/tb-workstation.html</a>
+</p>
+
+<p>
+greetings,
+Joe
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-07-05 Tue&gt;</span></span>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org53b16ba" class="outline-2">
+<h2 id="org53b16ba">Filme</h2>
+<div class="outline-text-2" id="text-org53b16ba">
+<ul style="column-count: 3;" class="org-ul">
+<li>2001</li>
+<li>21 Gramms</li>
+<li>300</li>
+<li>American Beauty</li>
+<li>American History X</li>
+<li>Asphalt Cowboy</li>
+<li>Avatar</li>
+<li>Apocalypse Now</li>
+<li>Barfly</li>
+<li>Beowulf</li>
+<li>The Best Offer</li>
+<li>Big Fish (2003)</li>
+<li>Cape Fear (1991)</li>
+<li>Carnage</li>
+<li>Cast Away</li>
+<li>Casino</li>
+<li>Catch Me If You Can</li>
+<li>Chocolate</li>
+<li>Clockwork Orange</li>
+<li>Dancer In The Dark</li>
+<li>Das Boot</li>
+<li>Die fabelhafte Welt der Amelie (2001)</li>
+<li>Deliverance</li>
+<li>Dr. Strangelove</li>
+<li>Departed</li>
+<li>Dial M For Murder</li>
+<li>The Exorcist</li>
+<li>Father Of The Bride</li>
+<li>Fight Club</li>
+<li>Forest Gump</li>
+<li>Full Metal Jacket</li>
+<li>Gangs Of New York</li>
+<li>Gatacca</li>
+<li>Gladiator</li>
+<li>The Godfather</li>
+<li>Goldfinger</li>
+<li>Goodfellas (1990)</li>
+<li>The Graduate (1967)</li>
+<li>Groundhog Day</li>
+<li>Hannibal</li>
+<li>Harvey</li>
+<li>Heat (1995)</li>
+<li>Highlander</li>
+<li>I Am Legend</li>
+<li>The Illusionist</li>
+<li>Independence Day</li>
+<li>Indien</li>
+<li>Jackie Brown (1997)</li>
+<li>Leaving Las Vegas</li>
+<li>The Last Unicorn</li>
+<li>León</li>
+<li>Life Of Pi</li>
+<li>The Martian</li>
+<li>Memento</li>
+<li>Midnight In Paris</li>
+<li>The Money Pit</li>
+<li>Mother!</li>
+<li>Mr. Frost</li>
+<li>Mystic River</li>
+<li>The Name Of The Rose</li>
+<li>The Ninth Gate</li>
+<li>No Country For Old Men (2007)</li>
+<li>North By Northwest</li>
+<li>Once Upon A Time In The West</li>
+<li>I Brother where are though</li>
+<li>Papillon</li>
+<li>Payback</li>
+<li>Planes, Trains and Automobiles</li>
+<li>The Pianist</li>
+<li>Predestination</li>
+<li>Pulp Fiction</li>
+<li>Radetzkymarsch</li>
+<li>Raging Bull (1980)</li>
+<li>Rear Window</li>
+<li>Requiem For A Dream</li>
+<li>Road To Perdition</li>
+<li>Ronin (1998)</li>
+<li>The Rope</li>
+<li>Schtonk</li>
+<li>The Secret Window</li>
+<li>The Shankshaw Redemption</li>
+<li>The Shining</li>
+<li>Shutter Island (2010)</li>
+<li>The Silence Of The Lambs</li>
+<li>The Sith Sense</li>
+<li>Sin City</li>
+<li>Singin' in the Rain (1952)</li>
+<li>Shindlers List</li>
+<li>Snatch</li>
+<li>Spring, Summer Fall Winter&#x2026;and Spring</li>
+<li>Sleepy Hollow</li>
+<li>Stalingrad</li>
+<li>Starship Troopers</li>
+<li>Taxi Driver (1976)</li>
+<li>Terminator 2</li>
+<li>Titanic</li>
+<li>The Trial</li>
+<li>The Untouchables</li>
+<li>U Turn</li>
+<li>Vertigo</li>
+<li>Walle</li>
+<li>War of Roses</li>
+<li>Watchmen</li>
+<li>World War Z</li>
+<li>The Wulf of Wall Street</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3b7bf17" class="outline-2">
+<h2 id="org3b7bf17">Gedächtnis</h2>
+<div class="outline-text-2" id="text-org3b7bf17">
+</div>
+<div id="outline-container-org4d36c1f" class="outline-3">
+<h3 id="org4d36c1f">Allgemeines</h3>
+<div class="outline-text-3" id="text-org4d36c1f">
+<p>
+Man untersuche einmal genau, wie gut verschiedene Memotechniken funktionieren. (LR 2.3)
+</p>
+
+<p>
+Also für verschiedene Anwendungen schaut man einfach wie lange es dauert bis
+man sich eine Information merkt (besser gesagt bis man mit bestimmten Konzepten, 
+Wörtern, was auch immer umgehen kann)
+</p>
+
+<p>
+Dann kann man herausfinden was gut funktioniert, was schlecht funktioniert, etc.
+</p>
+
+<p>
+Anwendungsfälle:
+</p>
+<ul class="org-ul">
+<li>einfache Wortlisten
+freies Spiel mit Anki-Wortlisten</li>
+<li>Vokabeln</li>
+<li>einzelne Ideen</li>
+<li>komplexere Sachverhalte (System von Ideen)</li>
+</ul>
+
+<p>
+Beispiel:
+Nanometer IC Kurs
+</p>
+
+<p>
+Also verschiedene Techniken untersuchen und bewerten:
+</p>
+
+<p>
+1 ohne Tricks, einfach so
+2 Karteikartensystem (Anki)
+3 Mind Maps
+4 Loci Methode
+5 Relationen, Querverweistechnik
+6 Bildtechnik, Visualisierungstechnik
+</p>
+</div>
+
+<div id="outline-container-orgd30a31c" class="outline-4">
+<h4 id="orgd30a31c">Grundsätzlich geht es darum Assoziationen zu schaffen.</h4>
+<div class="outline-text-4" id="text-orgd30a31c">
+<p>
+(Man könnte überhaupt von dem Problem sich Informationen zu merken absehen und allgemein die Frage aufwerfen, wie man Assoziationsnetzwerke baut - einerlei
+ob mit alten oder neuen Daten. Unser Erinnerungsvermögen umfasst bereits einen Gedächtnispalast. Nur ist dieser nicht mit Absicht, nach einem Plan entworfen.)
+</p>
+
+<p>
+Hier erscheint es jedenfalls zweckmäßig neue Informationen (die ja nie gänzlich neu sind) in das Assoziationsgewebe unseres Gedächtnisses einzuflechten.
+Assoziationen können verschiedener Art sein:
+räumliche Nähe
+zeitliche Nähe (?)
+Kontext
+Ähnlichkeit (Form, Funktion,&#x2026;) 
+Ursache und Wirkung
+Gegenteil
+Symmetrien
+</p>
+
+<p>
+Ordnungsrelationen: Hier kann man sich auf bestehende OR stützen. 
+   links rechts
+   oben unten
+   Zahlen
+   Alphabet
+   Im Uhrzeigersinn
+   von Innen nach Außen (oder umgekehrt), kleiner-größer
+</p>
+
+<p>
+bekannte Loci-Wege: Wohnung, Arbeit, Supermarkt, Stadt, etc. 
+</p>
+
+<p>
+Betrachten wir Beispiele:
+</p>
+
+<p>
+Darüber hinaus kann man ein Gefühl für Informationen entwickeln. Zum Beispiel habe ich ein 
+spezifisches, wenn auch unbestimmtes Gefühl für die 20er Jahre.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8995edb" class="outline-4">
+<h4 id="org8995edb">Kontext und Sinn</h4>
+<div class="outline-text-4" id="text-org8995edb">
+<p>
+Assoziationen, die in der Luft hängen sind nur vorübergehend nützlich. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org122596d" class="outline-4">
+<h4 id="org122596d">Regeln für das Major System:</h4>
+<div class="outline-text-4" id="text-org122596d">
+<p>
+(Die Anzahl der Möglichkeiten soll erhöht werden.)
+</p>
+
+<ol class="org-ol">
+<li>Nur das erste Wort zählt (?)</li>
+<li>Doppelkonsonanten zählen einfach (?)</li>
+</ol>
+
+<p>
+Besonders effizient lassen sich Zahlen merken, wenn ein Zusammenspiel aus Kontext und Gegenständen gebildet wird. 
+Der Kontext lässt sich bestimmen:
+räumlich (Wald, Strand, &#x2026;)
+zeitlich (siehe Sheet 'Historisch')
+</p>
+
+<p>
+Wie könnten hier noch Verben, Nomen, Adjektive unterschiedlich verwendet werden?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8baa5ae" class="outline-4">
+<h4 id="org8baa5ae">Anmerkungen</h4>
+<div class="outline-text-4" id="text-org8baa5ae">
+<p>
+Geschichtentechnik
+Funktioniert über kurze Zeiträume gut. Auf lange Sicht werden die Geschichten 
+dann auch wieder vergessen. Hier hilft wahrscheinlich nur Wiederholung.
+</p>
+
+<p>
+Verknüpftechnik
+Major Code
+Eselsbrücken
+Loci Methode
+Schlüsselwortmethode (Vokabeln)
+Language Town, Gedächtnispalast
+</p>
+
+<p>
+Gedankenspiel
+Man stelle sich vor, wir würden in einer Gesellschaft leben in der Memotechniken
+selbstverständlich sind und wie Lesen und Schreiben in der Grundschule oder noch
+früher gelernt werden. Wie würden diese Techniken in Alltag und Beruf intergriert
+sein? Auf welche externen Datenspeicher würde eine solche Gesellschaft verzichten?
+Die Menschen wären sich genausowenig bewusst eine spezielle Technik zu verwenden, 
+wie beim Lesen, Schreiben oder Rechnen.
+</p>
+
+<p>
+Ein Problem ist, dass sich die Memotechniken irgendwie fremd und artifiziell 
+anfühlen. Das Ziel müsste sein, dass sie ohne Anstrengung selbstverständlich 
+verwendet werden, ohne dass man sich überhaupt bewusst ist eine spezielle Technik
+zu verwenden (Ähnlich wie Lesen und Schreiben) 
+</p>
+
+<p>
+Schachgroßmeister können sich Stellungen erstaunlich gut merken.
+D.h. es ist möglich das Gedächtnis für bestimmte Arten von Information
+zu trainieren. Im Unterschied zur Verbesserung des Gedächnisses durch die
+Verwendung verschiedener Methoden (Gedächtnistricks), kann man das
+Gedächtnis also auch durch wiederholen der selben Art von Information 
+verbessern.
+</p>
+
+<p>
+Welche Rolle spielt hier, wie sinnvoll eine Schachstellung ist?
+Grundsätzlich gilt, dass man sich sinnvolle Informationen viel  leichter
+merken kann. Aber was ist sinnvoll?
+</p>
+
+<p>
+Im Schachbeispiel heißt sinnvoll, dass die Figuren  bestimmte Beziehungen miteinander haben.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1c294fa" class="outline-4">
+<h4 id="org1c294fa">Gedächtnismodelle</h4>
+<div class="outline-text-4" id="text-org1c294fa">
+<p>
+Ultrakurzzeitgedächnis:
+Sinneswahrnehmungen
+</p>
+
+<p>
+Kurzzeitgedächtnis:
+7 Einheiten, Gruppierung
+</p>
+
+<p>
+Langzeitgedächtnis:
+</p>
+
+<p>
+semantische G.
+episodisches G.
+</p>
+
+<p>
+Prinzip des Andockens neuer Information an alte.
+</p>
+
+<p>
+Auf-der-Zunge-liegen Phänomen
+</p>
+
+<p>
+Analogien:
+Bibliothek, Archiv
+Lager
+Gedächtnispalast
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org654303c" class="outline-3">
+<h3 id="org654303c">Major System</h3>
+<div class="outline-text-3" id="text-org654303c">
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/MajorSystemJoe.png" alt="MajorSystemJoe.png" />
+</p>
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-org836d36d" class="outline-4">
+<h4 id="org836d36d">00 bis 20</h4>
+<div class="outline-text-4" id="text-org836d36d">
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/MajorSystemJoe10-20.png" alt="MajorSystemJoe10-20.png" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeecab92" class="outline-4">
+<h4 id="orgeecab92">30 bis 50</h4>
+<div class="outline-text-4" id="text-orgeecab92">
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/MajorSystemJoe30-50.png" alt="MajorSystemJoe30-50.png" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2e25f20" class="outline-4">
+<h4 id="org2e25f20">60 bis 99</h4>
+<div class="outline-text-4" id="text-org2e25f20">
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/MajorSystemJoe60-90.png" alt="MajorSystemJoe60-90.png" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1a0105a" class="outline-4">
+<h4 id="org1a0105a">Alternative</h4>
+<div class="outline-text-4" id="text-org1a0105a">
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/MajorSystem.png" alt="MajorSystem.png" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org847fa39" class="outline-3">
+<h3 id="org847fa39">Was gut funktioniert</h3>
+<div class="outline-text-3" id="text-org847fa39">
+<p>
+Passwort - Geschichte mit Anfangsbuchstaben
+Nummer - auch Anfangsbuchstaben (schwieriger, weil nicht frei wählbar)
+Körperliste
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8288eaf" class="outline-3">
+<h3 id="org8288eaf">Anwendungen</h3>
+<div class="outline-text-3" id="text-org8288eaf">
+</div>
+<div id="outline-container-org6b8ff0e" class="outline-4">
+<h4 id="org6b8ff0e">Vokabeln</h4>
+<div class="outline-text-4" id="text-org6b8ff0e">
+<p>
+man probiere folgendes:
+Geschichtentechnik
+10 Wörter, die einen inhaltlichen Bezug haben, z.B. Haus, Wohnung, Garten über 
+eine Geschichte verknüpft. Das ist erst mal nur die Liste der Wörter.
+Die Fremdwörter knüft man dann über lautmalerische Assoziationen an.
+</p>
+
+<p>
+Frage: Wieviel Zeit braucht man dafür? (30min)
+</p>
+
+<p>
+An die Wörter knüpft man dann assoziativ weitere Wörter an und erhält so ein Wortfeld.
+So sollte man relativ schnell auf 30-40 Wörter kommen.
+Dazu kann man sich dann noch Sätze überlegen, in denen diese Wörter verwendet werden.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1cd51d4" class="outline-4">
+<h4 id="org1cd51d4">Komplexere Themen</h4>
+<div class="outline-text-4" id="text-org1cd51d4">
+<p>
+Eine wichtige Frage ist, ob diese Gedächtnistricks wirklich etwas bringen, wenn
+man sich mit einem Thema beschäftigt. Das Thema muss entsprechend aufbereitet
+(z.B. mit Mindmaps, was noch??) und dann abgespeichert werden.
+</p>
+
+<p>
+Als Test wären vergangene Themen nützlich. Man müsste sich anschauen, was man 
+vergessen hat und an was man sich noch erinnern kann. 
+Eine Mindmap habe ich z.B. für "Geschichte der Erkenntnistheorie"
+</p>
+</div>
+</div>
+
+<div id="outline-container-org828327f" class="outline-4">
+<h4 id="org828327f">Einkaufsliste</h4>
+<div class="outline-text-4" id="text-org828327f">
+<p>
+Einfach gedanklich in der Küche platzieren.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8ae0504" class="outline-4">
+<h4 id="org8ae0504">Namen</h4>
+</div>
+<div id="outline-container-org23c6249" class="outline-4">
+<h4 id="org23c6249">Informationen in der Arbeit</h4>
+<div class="outline-text-4" id="text-org23c6249">
+<p>
+Allgemeine Anmerkungen
+Geschichtentechnik
+Funktioniert über kurze Zeiträume gut. Auf lange Sicht werden die Geschichten 
+dann auch wieder vergessen. Hier hilft wahrscheinlich nur Wiederholung.
+</p>
+
+<p>
+Verknüpftechnik
+Major Code
+Eselsbrücken
+Loci Methode
+Schlüsselwortmethode (Vokabeln)
+Language Town, Gedächtnispalast
+</p>
+
+<p>
+Gedankenspiel
+Man stelle sich vor, wir würden in einer Gesellschaft leben in der Memotechniken
+selbstverständlich sind und wie Lesen und Schreiben in der Grundschule oder noch
+früher gelernt werden. Wie würden diese Techniken in Alltag und Beruf intergriert
+sein? Auf welche externen Datenspeicher würde eine solche Gesellschaft verzichten?
+Die Menschen wären sich genausowenig bewusst eine spezielle Technik zu verwenden, 
+wie beim Lesen, Schreiben oder Rechnen.
+</p>
+
+<p>
+Ein Problem ist, dass sich die Memotechniken irgendwie fremd und artifiziell 
+anfühlen. Das Ziel müsste sein, dass sie ohne Anstrengung selbstverständlich 
+verwendet werden, ohne dass man sich überhaupt bewusst ist eine spezielle Technik
+zu verwenden (Ähnlich wie Lesen und Schreiben)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9ee1f5d" class="outline-3">
+<h3 id="org9ee1f5d">Beispiele</h3>
+<div class="outline-text-3" id="text-org9ee1f5d">
+</div>
+<div id="outline-container-orgc052c19" class="outline-4">
+<h4 id="orgc052c19">Geschichtentechnik + Major System:</h4>
+<div class="outline-text-4" id="text-orgc052c19">
+<p>
+Regel: (um die Reihenfolge festzulgen)
+Wörter dürfen nicht doppelt vorkommen.
+</p>
+
+<p>
+(Grundproblem bei dem Ganzen: man hat zu wenige Wörter zur Verfügung.)
+</p>
+
+<p>
+Wörter:
+Schuster	6014
+Fass		80
+Soße		00
+Schal		65
+Lupe		59
+Mumie		33
+Sack		07
+</p>
+
+<ol class="org-ol">
+<li>Ein Schuster hat ein Fass voll Soße. (6014 80 00)</li>
+<li>In dem Fass schwimmt ein Schal. Der Schuster beobachtet ihn mit einer Lupe. (65 59)</li>
+<li>Plötzlich kriecht ein Mumie aus einem Sack neben dem Fass und greift den  (33 07)
+Schuster an.</li>
+</ol>
+<hr />
+</div>
+</div>
+
+<div id="outline-container-org462b352" class="outline-4">
+<h4 id="org462b352">Loci Methode + Major System:</h4>
+<div class="outline-text-4" id="text-org462b352">
+<p>
+Loci Weg: Wohnung
+</p>
+
+<ol class="org-ol">
+<li>Beim Schuhkastl steht ein Schuster und repariert Schuhe.</li>
+<li>Im Klo steht ein Fass voll Soße.</li>
+<li>Im Bad hat sich einer mit einem Schal erhängt.</li>
+<li>Im Schalfzimmer bin ich mit einer Lupe hinter Hausstaubmilben her.</li>
+<li>Im Wohnzimmer schmeißt eine dumme Mumie alles mögliche um. Am Ende verkriecht sie sich in ihren Sack.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org00d3649" class="outline-4">
+<h4 id="org00d3649">Wortanfänge, Silbenanfäng</h4>
+<div class="outline-text-4" id="text-org00d3649">
+<p>
+Technik: Man kodiert Zahlen mit Buchstaben und nimmt diese als Wort- oder
+         Silbenanfänge.
+</p>
+
+<p>
+launische Würfel (haben die) Zeche am Kamm 
+</p>
+
+<p>
+Am meisten Möglichkeiten erhält man wenn man Sätze bildet. Wenn die Sätze noch
+einen Kontext schaffen kann man damit auch die Geschichtentechnik anwenden.
+</p>
+
+<p>
+nur der erste Konsonant zählt:
+Zusammengesetzte Wörter ausgenommen: Kaufzwang = 70
+</p>
+
+<p>
+4 Wörter: 
+Lauter nackte Schweine schwitzen.	5266
+Saunaschweine kommen mit.	 	0673
+Kur kann dich retten.			7714
+Keine nackten Schweine schwitzen.	7266
+</p>
+
+<p>
+623
+sch n m
+Schnaps nippen Mäusen.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgce1633a" class="outline-2">
+<h2 id="orgce1633a">Gedankenexperiment der vermeintlich gleichen Gegenstände</h2>
+<div class="outline-text-2" id="text-orgce1633a">
+<p>
+Man stelle sich zwei Metallwürfel vor, einer ausgefüllt und
+einer innen hohl. Von außen sehen sie gleich aus. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7cf8fbb" class="outline-2">
+<h2 id="org7cf8fbb">Gitarrentrallalla</h2>
+<div class="outline-text-2" id="text-org7cf8fbb">
+<ul class="org-ul">
+<li>Endstufe: Harley Benton GPA-400</li>
+<li>Modeller: Line6 Helix Guitar Processor Bundle</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc5ba58f" class="outline-2">
+<h2 id="orgc5ba58f">Heizung</h2>
+<div class="outline-text-2" id="text-orgc5ba58f">
+<ul class="org-ul">
+<li>Herz Thermostatoberteil HE6365.0.12</li>
+<li>Ventiladapter: von M28 x 1,5 auf M30 x 1,5</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5223367" class="outline-2">
+<h2 id="org5223367">Hintergrund</h2>
+<div class="outline-text-2" id="text-org5223367">
+<p>
+Was ist der Hintergrund (Kontext) wenn man eine Klasse in Java wiederverwendet, 
+verschiebt etc.?
+</p>
+
+<p>
+Der Hintergrund ist ein Dateisystem in dem Dateien verschoben, kopiert, etc. 
+werden.
+Der Hintergrund könnte auch ein System sein in dem Text verschoben oder kopiert
+wird.
+</p>
+
+<p>
+Immer gibt es so einen Hintergrund.
+Was ist das?
+</p>
+<ul class="org-ul">
+<li>ein System von Gegenständen, Regeln, Operationen, etc.</li>
+</ul>
+
+<p>
+Viel hat das zu tun mit objektorientierter Programmierung. Im Prinzip stellt man
+dabei so ein System her.
+</p>
+
+<p>
+Beispiele:
+</p>
+<ul class="org-ul">
+<li>2D-Grafik
+2D Objekte werden verschoben, rotiert, gezoomt.</li>
+</ul>
+
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2018-04-11 Wed&gt;</span></span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org25b8bc4" class="outline-2">
+<h2 id="org25b8bc4">Interesting Videos</h2>
+<div class="outline-text-2" id="text-org25b8bc4">
+<ul class="org-ul">
+<li>Penrose Pattern: <a href="https://www.youtube.com/watch?v=48sCx-wBs34">https://www.youtube.com/watch?v=48sCx-wBs34</a></li>
+<li>The Egg: <a href="https://www.youtube.com/watch?v=h6fcK_fRYaI">https://www.youtube.com/watch?v=h6fcK_fRYaI</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org04fec7f" class="outline-2">
+<h2 id="org04fec7f">Klimaanlage</h2>
+<div class="outline-text-2" id="text-org04fec7f">
+<ul class="org-ul">
+<li>Daikin Perfera - FTXM-N</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6d25086" class="outline-2">
+<h2 id="org6d25086">Klappräder</h2>
+<div class="outline-text-2" id="text-org6d25086">
+<ul class="org-ul">
+<li>Brompton</li>
+<li>Pacific Cycles If Mode</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2eb17b9" class="outline-2">
+<h2 id="org2eb17b9">Literatur</h2>
+<div class="outline-text-2" id="text-org2eb17b9">
+</div>
+<div id="outline-container-org06ecc8d" class="outline-3">
+<h3 id="org06ecc8d">Moby Dick</h3>
+<div class="outline-text-3" id="text-org06ecc8d">
+<ul class="org-ul">
+<li><a href="http://www.mobydickbigread.com/">http://www.mobydickbigread.com/</a></li>
+<li><a href="https://www.hr-inforadio.de/podcast/wissen/moby-dick-oder-vom-ungeheuren-ein-wal-zu-sein,podcast-episode-54860.html">HR-Podcast</a></li>
+<li><a href="https://www.bbc.co.uk/programmes/b09gzjm5">BBC-In our Time</a></li>
+</ul>
+
+<p>
+Facts:
+</p>
+<ul class="org-ul">
+<li>erschien 1851</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org83c7ee1" class="outline-2">
+<h2 id="org83c7ee1">Linux PC</h2>
+<div class="outline-text-2" id="text-org83c7ee1">
+<p>
+pocket pc
+open source
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0ebc652" class="outline-2">
+<h2 id="org0ebc652">Löten</h2>
+<div class="outline-text-2" id="text-org0ebc652">
+<ul class="org-ul">
+<li>Eschenbach Brillenaufsatz</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcaa23c9" class="outline-2">
+<h2 id="orgcaa23c9">Marketing Strategy</h2>
+<div class="outline-text-2" id="text-orgcaa23c9">
+<p>
+Key focus: Get a hight quality GUI in no time.
+</p>
+
+<p>
+Whats needed?
+</p>
+<ul class="org-ul">
+<li>GUI Designer</li>
+<li>Internel Logic (Java)</li>
+<li>Software interface for the host controller</li>
+</ul>
+
+<p>
+Advertising:
+</p>
+<ul class="org-ul">
+<li>Video tutorials
+<ul class="org-ul">
+<li>getting started</li>
+<li>complete demo tutorial showing how (and how fast) to get a complete solution
+Which demo?
+DBT, ?</li>
+</ul></li>
+</ul>
+
+<p>
+Benefits:
+</p>
+<ul class="org-ul">
+<li>Maintenance: you have the whole system under control without beeing an expert.</li>
+<li>Time to market:</li>
+<li>Long time support:</li>
+</ul>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-09-01 Thu&gt;</span></span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2e425b0" class="outline-2">
+<h2 id="org2e425b0">A Student's Guide to Maxwell's Equations</h2>
+<div class="outline-text-2" id="text-org2e425b0">
+<ul class="org-ul">
+<li><a href="http://www.danfleisch.com/maxwell/chapter1/podcast.shtml">http://www.danfleisch.com/maxwell/chapter1/podcast.shtml</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfcd853f" class="outline-2">
+<h2 id="orgfcd853f">Notebook Replacement</h2>
+<div class="outline-text-2" id="text-orgfcd853f">
+<ul class="org-ul">
+<li>Tuxedo Infinity Book</li>
+<li>Convertible
+<ul class="org-ul">
+<li>lenovo yoga c940 (1500 EUR)</li>
+<li>HP Spectre</li>
+<li>HP Elite Dragonfly 8MK81EA - extrem teuer</li>
+<li>Lenovo IdeaPad Flex 5!</li>
+<li>Microsoft Surface Pro 7</li>
+<li>ASUS Zenbook</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5c46a7b" class="outline-2">
+<h2 id="org5c46a7b">Pangramme</h2>
+<div class="outline-text-2" id="text-org5c46a7b">
+<ul class="org-ul">
+<li>The quick brown fox jumps over the lazy dog.</li>
+<li>Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.</li>
+<li>Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb2b16ce" class="outline-2">
+<h2 id="orgb2b16ce">Particles</h2>
+<div class="outline-text-2" id="text-orgb2b16ce">
+<ul class="org-ul">
+<li>pointlike, without extension</li>
+</ul>
+
+<p>
+Measurable properties
+</p>
+<ul class="org-ul">
+<li>charge</li>
+<li>mass</li>
+<li>spin</li>
+
+<li>electrons</li>
+<li>protons</li>
+<li>neutrons</li>
+<li>pions</li>
+<li>photons</li>
+<li>quarks</li>
+</ul>
+
+<p>
+wave functions: probability of having various properties
+</p>
+</div>
+
+<div id="outline-container-orged868b8" class="outline-3">
+<h3 id="orged868b8">Quantum Field Theory</h3>
+<div class="outline-text-3" id="text-orged868b8">
+<ul class="org-ul">
+<li>Interprets particles as excited states (quanta) of underlying quantum fields.</li>
+<li>Symmetries allow to predict new particles.</li>
+<li>Interactions between particles can be visualized using Feynman diagrams.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4037d15" class="outline-2">
+<h2 id="org4037d15">Physical Windows 10 machine to VirtualBox</h2>
+<div class="outline-text-2" id="text-org4037d15">
+<p>
+What you need:
+</p>
+<ul class="org-ul">
+<li>Disk2vhd</li>
+<li>startwindconverter</li>
+<li>VirtualBox</li>
+</ul>
+
+<p>
+What you do:
+</p>
+<ol class="org-ol">
+<li>Create VHDX file with disk2vhd.exe</li>
+<li>Convert VHDX file into VMDK growable with StarWind V2V Converter(installer: starwindconverter.exe)</li>
+<li>Add New VM in VirtualBox and enable EFI in Settings-&gt;System</li>
+</ol>
+
+<p>
+You might have to make changes to your bios to enable virtualization.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga4156d9" class="outline-2">
+<h2 id="orga4156d9">Programs, Tools</h2>
+<div class="outline-text-2" id="text-orga4156d9">
+</div>
+<div id="outline-container-org067daa5" class="outline-3">
+<h3 id="org067daa5">Windows</h3>
+<div class="outline-text-3" id="text-org067daa5">
+</div>
+<div id="outline-container-orgcb67fef" class="outline-4">
+<h4 id="orgcb67fef">AOMEI Partition Assistant</h4>
+</div>
+<div id="outline-container-orgc41e9ec" class="outline-4">
+<h4 id="orgc41e9ec">AutoHotkey</h4>
+<div class="outline-text-4" id="text-orgc41e9ec">
+<p>
+Run &amp; Position Programs
+Shortcuts etc.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org40d6ba5" class="outline-4">
+<h4 id="org40d6ba5">Avast Antivirus</h4>
+<div class="outline-text-4" id="text-org40d6ba5">
+<p>
+free version
+problems with LME288 link error?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org44f9b59" class="outline-4">
+<h4 id="org44f9b59">AVG AntiVirus free Edition</h4>
+</div>
+<div id="outline-container-org2ae904e" class="outline-4">
+<h4 id="org2ae904e">Bootice</h4>
+<div class="outline-text-4" id="text-org2ae904e">
+<p>
+Master Boot Record (MBR) manipulation.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4b8efed" class="outline-4">
+<h4 id="org4b8efed">Cmd Line</h4>
+<div class="outline-text-4" id="text-org4b8efed">
+</div>
+<div id="outline-container-org6290b85" class="outline-5">
+<h5 id="org6290b85">Count Lines for all *.cpp files in folder</h5>
+<div class="outline-text-5" id="text-org6290b85">
+<pre class="example">
+for %G in (*.cpp) do find /c /v "ölakjdflajdföl" %G
+</pre>
+
+
+<p>
+/v   display all lines not containing the string
+/c   count of lines containing the string
+(counts every line that doesn't contain "ölakjdflajdföl")
+</p>
+</div>
+</div>
+
+<div id="outline-container-org52fbd33" class="outline-5">
+<h5 id="org52fbd33">Display Variable Value</h5>
+<div class="outline-text-5" id="text-org52fbd33">
+<ul class="org-ul">
+<li>echo %var%
+if it doesnt exist response will be: ECHO is OFF</li>
+
+<li><p>
+list environment variables: 
+</p>
+<pre class="example">
+set
+</pre></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgaf15ef4" class="outline-5">
+<h5 id="orgaf15ef4">path variable with spaces</h5>
+<div class="outline-text-5" id="text-orgaf15ef4">
+<p>
+store var incl. spaces: SET JDK_HOME=D:/Program Files/Java/jdk1.8.0_25/bin
+"quote" when using it : 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdf1ec8a" class="outline-5">
+<h5 id="orgdf1ec8a">start program</h5>
+<div class="outline-text-5" id="text-orgdf1ec8a">
+<ul class="org-ul">
+<li>start /WAIT</li>
+<li>cmd.exe /c ""</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2d9a875" class="outline-4">
+<h4 id="org2d9a875">ConEmu (Interface for different cmd lines)</h4>
+<div class="outline-text-4" id="text-org2d9a875">
+<p>
+Shells are set in Settings:Tasks
+for Default you have to click on the task
+</p>
+</div>
+</div>
+
+<div id="outline-container-org41d5885" class="outline-4">
+<h4 id="org41d5885">Crystal Dew World</h4>
+<div class="outline-text-4" id="text-org41d5885">
+<p>
+Speed Test for Hard Disks, USB Sticks etc.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3e47d62" class="outline-4">
+<h4 id="org3e47d62">Devcon</h4>
+<div class="outline-text-4" id="text-org3e47d62">
+<p>
+driver tool
+</p>
+<ul class="org-ul">
+<li>list installed driver packages</li>
+</ul>
+<pre class="example">
+devcon dp_enum
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgaa07eb6" class="outline-4">
+<h4 id="orgaa07eb6">Ditto Clipboard Manager</h4>
+</div>
+<div id="outline-container-org01815ba" class="outline-4">
+<h4 id="org01815ba">EaseUS Backup Software</h4>
+<div class="outline-text-4" id="text-org01815ba">
+<p>
+license code:  TH1I5-2LFMN-SEHRI-KF8QM-WDUSS
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7460890" class="outline-4">
+<h4 id="org7460890">Filezilla</h4>
+</div>
+
+<div id="outline-container-orga9b3466" class="outline-4">
+<h4 id="orga9b3466">Hotkey Explorer</h4>
+<div class="outline-text-4" id="text-orga9b3466">
+<p>
+check Windows Shortcuts
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf5234d1" class="outline-4">
+<h4 id="orgf5234d1">Inno Setup</h4>
+<div class="outline-text-4" id="text-orgf5234d1">
+<p>
+Installer for Windows Programs
+</p>
+<ul class="org-ul">
+<li>install Inno Setup Compiler first and then</li>
+<li>add Inno Setup Studio</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org39ee181" class="outline-4">
+<h4 id="org39ee181">ImgBurn</h4>
+<div class="outline-text-4" id="text-org39ee181">
+<p>
+Create CD ISO image
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3bdd534" class="outline-4">
+<h4 id="org3bdd534">ListMessenger Pro</h4>
+<div class="outline-text-4" id="text-org3bdd534">
+<p>
+create newsletter
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd069146" class="outline-4">
+<h4 id="orgd069146">NetTraffic</h4>
+<div class="outline-text-4" id="text-orgd069146">
+<pre class="example">
+data transfer
+</pre>
+
+<p>
+monitor network traffic
+</p>
+</div>
+</div>
+
+<div id="outline-container-org58cbe3d" class="outline-4">
+<h4 id="org58cbe3d">Macro Express</h4>
+<div class="outline-text-4" id="text-org58cbe3d">
+<ul class="org-ul">
+<li>Pause           Stop Macro Executeion</li>
+</ul>
+
+<p>
+Limitations:
+</p>
+<ul class="org-ul">
+<li>Wnd + d/e etc. is not correctly captured (edit script!)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org240efc7" class="outline-4">
+<h4 id="org240efc7">Multi Commander</h4>
+<div class="outline-text-4" id="text-org240efc7">
+<p>
+Export/import Configuration
+<code>Help-&gt;Backup/Restore</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd44ffb5" class="outline-4">
+<h4 id="orgd44ffb5">Screencapture</h4>
+<div class="outline-text-4" id="text-orgd44ffb5">
+<p>
+Camtasia Studio
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf4a4265" class="outline-4">
+<h4 id="orgf4a4265">Space Sniffer</h4>
+<div class="outline-text-4" id="text-orgf4a4265">
+<p>
+Analyse Disks.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeff8f20" class="outline-4">
+<h4 id="orgeff8f20">TCC LE (Cmd Line Replace)</h4>
+</div>
+<div id="outline-container-org9e21bfc" class="outline-4">
+<h4 id="org9e21bfc">UltraMon</h4>
+<div class="outline-text-4" id="text-org9e21bfc">
+<p>
+Multiple Screens, additional Toolbar on 2nd Screen
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcfb4deb" class="outline-4">
+<h4 id="orgcfb4deb">USBDeview</h4>
+</div>
+<div id="outline-container-orgf081475" class="outline-4">
+<h4 id="orgf081475">Win32DiskImager</h4>
+</div>
+<div id="outline-container-orgde15692" class="outline-4">
+<h4 id="orgde15692">WinCDEmu</h4>
+<div class="outline-text-4" id="text-orgde15692">
+<p>
+mount .iso files
+</p>
+</div>
+</div>
+
+<div id="outline-container-org75a00f0" class="outline-4">
+<h4 id="org75a00f0">WinDirStatPortable</h4>
+<div class="outline-text-4" id="text-org75a00f0">
+<p>
+Analyze Disk.
+Alternative: SpaceSniffer
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdaa1691" class="outline-4">
+<h4 id="orgdaa1691">Windows Tricks</h4>
+<div class="outline-text-4" id="text-orgdaa1691">
+<ul class="org-ul">
+<li>hidden Windows: Alt+SPACE+m  then arrow keys to move window</li>
+<li>turn off Hibernation (del file hiberfil.sys): Admin cmd: powercfg -h off</li>
+<li>pagefile.sys: move to D:/ : Computer-&gt;Properties-&gt;Advanced system settings-&gt;Virtual Memory-&gt;Advanced</li>
+<li>WIN+r: dxdiag   (DirectX Diagnostic Tool)</li>
+<li>WIN+r: eventvwr.msc (Event Viewer) : power:, power down:</li>
+
+<li>msconfig.exe
+startup programs, services etc.</li>
+</ul>
+</div>
+
+<div id="outline-container-org026131a" class="outline-5">
+<h5 id="org026131a">Server PWD</h5>
+<div class="outline-text-5" id="text-org026131a">
+<p>
+Team Viewer
+Computer Management -&gt; Local Users and Groups
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb673e9f" class="outline-4">
+<h4 id="orgb673e9f">Windows Startup Programs</h4>
+<div class="outline-text-4" id="text-orgb673e9f">
+<p>
+autostart
+open <i>msconfig</i>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-07-05 Tue&gt;</span></span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9d988bb" class="outline-4">
+<h4 id="org9d988bb">Backup</h4>
+<div class="outline-text-4" id="text-org9d988bb">
+<ul class="org-ul">
+<li>Acronis</li>
+<li>Paragon</li>
+</ul>
+</div>
+
+<div id="outline-container-org2788ecc" class="outline-5">
+<h5 id="org2788ecc">FreeFileSynch</h5>
+</div>
+</div>
+<div id="outline-container-org489c988" class="outline-4">
+<h4 id="org489c988">Problems</h4>
+<div class="outline-text-4" id="text-org489c988">
+</div>
+<div id="outline-container-orgd562219" class="outline-5">
+<h5 id="orgd562219">Bluescreen</h5>
+<div class="outline-text-5" id="text-orgd562219">
+<ul class="org-ul">
+<li>igfx
+igfxCUIService1.0.0.0
+Intel HD Graphics 4600
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2015-05-29 Fri&gt; </span></span> new graphics driver installed</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc953548" class="outline-5">
+<h5 id="orgc953548">You may be a victim of software conterfeiting</h5>
+<div class="outline-text-5" id="text-orgc953548">
+<ul class="org-ul">
+<li>windows version not genuine</li>
+</ul>
+<pre class="example">
+slmgr -rearm
+</pre>
+
+<ul class="org-ul">
+<li>RESTART</li>
+</ul>
+<pre class="example">
+slmgr -ato
+</pre>
+
+
+<p>
+if rearm max nr. :
+HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows NT/CurrentVersion/SoftwareProtectionPlatform
+  set skiprearm to 1
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4babe20" class="outline-3">
+<h3 id="org4babe20">Linux</h3>
+<div class="outline-text-3" id="text-org4babe20">
+</div>
+<div id="outline-container-org04d0575" class="outline-4">
+<h4 id="org04d0575">gThumb Pictures</h4>
+</div>
+<div id="outline-container-org34320bc" class="outline-4">
+<h4 id="org34320bc">Kdenlive edit Videos</h4>
+</div>
+</div>
+<div id="outline-container-org11143ea" class="outline-3">
+<h3 id="org11143ea">Cross Platform</h3>
+<div class="outline-text-3" id="text-org11143ea">
+</div>
+<div id="outline-container-orge31d8d6" class="outline-4">
+<h4 id="orge31d8d6">Master PDF Editor</h4>
+</div>
+<div id="outline-container-org9211df9" class="outline-4">
+<h4 id="org9211df9">CopyQ Clipboard Manager</h4>
+</div>
+<div id="outline-container-orgdd7876e" class="outline-4">
+<h4 id="orgdd7876e">Unetbootin</h4>
+<div class="outline-text-4" id="text-orgdd7876e">
+<p>
+Create bootable USB Stick.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0583313" class="outline-3">
+<h3 id="org0583313">Development</h3>
+<div class="outline-text-3" id="text-org0583313">
+</div>
+<div id="outline-container-org0baeb7f" class="outline-4">
+<h4 id="org0baeb7f">Advanced USB Port Monitor</h4>
+<div class="outline-text-4" id="text-org0baeb7f">
+<p>
+monitor USB communication
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd64f209" class="outline-4">
+<h4 id="orgd64f209">Atmel Studio</h4>
+</div>
+<div id="outline-container-org0a661ea" class="outline-4">
+<h4 id="org0a661ea">BareTailPro</h4>
+<div class="outline-text-4" id="text-org0a661ea">
+<p>
+Real Time Log Window Tool
+Debug_iLCD_XE.log
+</p>
+</div>
+</div>
+
+<div id="outline-container-org276bc0a" class="outline-4">
+<h4 id="org276bc0a">BusDog</h4>
+<div class="outline-text-4" id="text-org276bc0a">
+<p>
+USB sniffer
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge6e0343" class="outline-4">
+<h4 id="orge6e0343">Code Warrier</h4>
+</div>
+<div id="outline-container-org31ab381" class="outline-4">
+<h4 id="org31ab381">Cygwin</h4>
+<div class="outline-text-4" id="text-org31ab381">
+<p>
+Installation: Install All (click circle)
+</p>
+</div>
+
+<div id="outline-container-org03a30cb" class="outline-5">
+<h5 id="org03a30cb">grep</h5>
+<div class="outline-text-5" id="text-org03a30cb">
+<p>
+Searches for <b>lines</b> in files containing a reg-ex PATTERN. 
+With option "-o" only <b>matches</b> are given back.
+</p>
+
+<p>
+Options:
+</p>
+<dl class="org-dl">
+<dt><code>-r</code>                   </dt><dd>search dirs recursively</dd>
+<dt><code>--exclude-dir</code>        </dt><dd>exclude dir(s)
+&#x2013;exclude-dir={__history,\.svn,*Save*}</dd>
+</dl>
+
+<p>
+Examples:<br />
+</p>
+<ul class="org-ul">
+<li><p>
+Search in .dfm files for WatchAPM in whole Manager project
+</p>
+<pre class="example">
+$ grep -r -I -n --exclude-dir={__history,\.svn,*Save*} --include=*.cpp "AUpdate(" dp/Manager_XE_Joe &gt; dp/Doxygen/ActionUpdateHandlerList.txt
+</pre></li>
+
+<li><p>
+filter for rest of the line after "*"
+</p>
+<pre class="example">
+grep -o \*.* dp/Doxygen/ActionList.txt
+</pre></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1a6f39c" class="outline-5">
+<h5 id="org1a6f39c">find</h5>
+<div class="outline-text-5" id="text-org1a6f39c">
+<p>
+Searches for <b>files</b>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org06f9c6e" class="outline-5">
+<h5 id="org06f9c6e">List all files in directory recursivley</h5>
+<div class="outline-text-5" id="text-org06f9c6e">
+<pre class="example">
+ls -LR1
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgea5d9f9" class="outline-4">
+<h4 id="orgea5d9f9">Device Monitoring Studio</h4>
+<div class="outline-text-4" id="text-orgea5d9f9">
+<p>
+USB interface debug
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb00de53" class="outline-4">
+<h4 id="orgb00de53">Dia (UML-Diagrams)</h4>
+</div>
+<div id="outline-container-orgd4a4f79" class="outline-4">
+<h4 id="orgd4a4f79">DLL Export Viewer</h4>
+</div>
+<div id="outline-container-org1b74487" class="outline-4">
+<h4 id="org1b74487">Doxygen</h4>
+</div>
+<div id="outline-container-orgda1314f" class="outline-4">
+<h4 id="orgda1314f">Eagle</h4>
+<div class="outline-text-4" id="text-orgda1314f">
+<p>
+prints hersstellen: MultiPCB
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1f05b7f" class="outline-4">
+<h4 id="org1f05b7f">Eclipse</h4>
+<div class="outline-text-4" id="text-org1f05b7f">
+<ul class="org-ul">
+<li>LPCXpresso IDE</li>
+<li>GNU ARM Eclipse Plug-ins</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfdccf1d" class="outline-4">
+<h4 id="orgfdccf1d">Flash Magic</h4>
+</div>
+<div id="outline-container-orgd85046a" class="outline-4">
+<h4 id="orgd85046a">Gerbv</h4>
+<div class="outline-text-4" id="text-orgd85046a">
+<p>
+Gerber file viewer
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga97659e" class="outline-4">
+<h4 id="orga97659e">HTerm</h4>
+<div class="outline-text-4" id="text-orga97659e">
+<pre class="example">
+uart, serial, RS232
+</pre>
+
+<p>
+Terminal program for serial communication.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdfd419d" class="outline-4">
+<h4 id="orgdfd419d">Icon XP</h4>
+<div class="outline-text-4" id="text-orgdfd419d">
+<p>
+creating Icons
+</p>
+</div>
+</div>
+
+<div id="outline-container-org35d8a66" class="outline-4">
+<h4 id="org35d8a66">InnoSetup</h4>
+<div class="outline-text-4" id="text-org35d8a66">
+<pre class="example">
+installer, setup
+</pre>
+
+<p>
+also see: Inno Script Studio
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7cd8bb7" class="outline-4">
+<h4 id="org7cd8bb7">Keil uVision 4</h4>
+</div>
+<div id="outline-container-orgbcf5722" class="outline-4">
+<h4 id="orgbcf5722">Netbeans IDE</h4>
+<div class="outline-text-4" id="text-orgbcf5722">
+<p>
+Installation:
+</p>
+<ul class="org-ul">
+<li>install Java JDK if not installed yet</li>
+<li>download installer, e.g. 11.2</li>
+<li>install the C++ plugin</li>
+<li>install cygwin: contains g++</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org499cc52" class="outline-4">
+<h4 id="org499cc52">Perl</h4>
+</div>
+<div id="outline-container-orgb6992a1" class="outline-4">
+<h4 id="orgb6992a1">Pixelformer</h4>
+</div>
+<div id="outline-container-orge04716d" class="outline-4">
+<h4 id="orge04716d">PowerGrep</h4>
+</div>
+<div id="outline-container-org01f4fd6" class="outline-4">
+<h4 id="org01f4fd6">Putty</h4>
+</div>
+<div id="outline-container-org9383e7b" class="outline-4">
+<h4 id="org9383e7b">Python</h4>
+</div>
+<div id="outline-container-org57cda66" class="outline-4">
+<h4 id="org57cda66">SignTool.exe</h4>
+<div class="outline-text-4" id="text-org57cda66">
+<p>
+Used for code signing.
+Microsoft:
+Sign Tool is a command-line tool that digitally signs files, verifies signatures in files, and time-stamps files.
+</p>
+</div>
+
+<div id="outline-container-orgc44d708" class="outline-5">
+<h5 id="orgc44d708">Code Signing Certificate Anbieter</h5>
+<div class="outline-text-5" id="text-orgc44d708">
+<ul class="org-ul">
+<li><a href="https://www.globalsign.com/de-de/code-signing/microsoft-authenticode/">https://www.globalsign.com/de-de/code-signing/microsoft-authenticode/</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge192b46" class="outline-4">
+<h4 id="orge192b46">Sourcetrail</h4>
+<div class="outline-text-4" id="text-orge192b46">
+<p>
+analyse source code and browse 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5bdf704" class="outline-4">
+<h4 id="org5bdf704">SpyEx</h4>
+<div class="outline-text-4" id="text-org5bdf704">
+<p>
+check windows messages
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcc6c702" class="outline-4">
+<h4 id="orgcc6c702">Sublime Text 2</h4>
+<div class="outline-text-4" id="text-orgcc6c702">
+</div>
+<div id="outline-container-org3b9cb12" class="outline-5">
+<h5 id="org3b9cb12">Search &amp; Replace</h5>
+<div class="outline-text-5" id="text-org3b9cb12">
+<ul class="org-ul">
+<li>search &amp; replace in folders &amp; subfolders: strg+shift+f
+<ul class="org-ul">
+<li><p>
+exclude folder: in Where add: -<b><i>&lt;FOLDER&gt;</i></b> (only slash !!)
+Example:
+</p>
+<pre class="example">
+C:/dp/Manager_XE_Joe/Java IDE/JavaIDEFrame,-*/Tools/*,*.h
+</pre></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbd91d64" class="outline-5">
+<h5 id="orgbd91d64">Project</h5>
+</div>
+</div>
+<div id="outline-container-orgb8bcfd7" class="outline-4">
+<h4 id="orgb8bcfd7">Tiny Hexer (hex editor)</h4>
+</div>
+<div id="outline-container-org9e82b66" class="outline-4">
+<h4 id="org9e82b66">TortoiseSVN</h4>
+<div class="outline-text-4" id="text-org9e82b66">
+</div>
+<div id="outline-container-orgec0d6ad" class="outline-5">
+<h5 id="orgec0d6ad">Create Repository</h5>
+<div class="outline-text-5" id="text-orgec0d6ad">
+<p>
+<a href="D:/Docu/Videos">D:/Docu/Videos</a>
+</p>
+
+<p>
+How to get the data into the repository?
+</p>
+<ol class="org-ol">
+<li>Create new folder, then do TortoiseSVN -&gt; Create Repository Here</li>
+<li>Create trunk etc. folders in Repository Browser</li>
+<li>Right Click Folder you want to add.</li>
+<li>SVN Checkout (! this is the important step !)
+<ul class="org-ul">
+<li>yes there is a "this folder is not empty" - message - ignore that</li>
+</ul></li>
+<li>Add Folder</li>
+<li>Commit</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgcf17679" class="outline-5">
+<h5 id="orgcf17679">Merge Branches</h5>
+<div class="outline-text-5" id="text-orgcf17679">
+<p>
+<a href="http://svnbook.red-bean.com/en/1.6/svn.branchmerge.whatis.html">http://svnbook.red-bean.com/en/1.6/svn.branchmerge.whatis.html</a>
+</p>
+
+<p>
+Some general concepts:
+</p>
+<ul class="org-ul">
+<li>Subversion does not use branches internally, instead it makes copies. When you create
+a branch a directory is copied, i.e. a branch is actually a copied directory in the 
+repository.</li>
+</ul>
+
+<p>
+Merging could mean two things:
+</p>
+
+<ul class="org-ul">
+<li>Move changed files from branch1 to branch2.
+Practically replacing files with other versions.
+So this is best done manually copying the files.</li>
+<li>Combine file changes, so there are two versions (branch1 &amp; branch2) and a third version (combination) is created.
+This really only works with text.</li>
+</ul>
+
+<p>
+How to do a "real" merge (see Notes below):
+We wanna move changes from <i>Firmware_development</i> to <i>Firmware_bugfixes</i>.
+</p>
+
+<p>
+FIRST: merge from <i>Firmware_bugfixes</i> to <i>Firmware_development</i> to be up to date.
+       (otherwise you will overwrite changes with older versions).
+</p>
+
+<ol class="org-ol">
+<li>Commit you local changes (e.g. to SVN 100) in <i>Firmware_bugfixes</i> 
+(We are in <i>Firmware_bugfixes</i>, this is the branch that is gonna be affected!)
+(<i>Firmware_development</i> has already been committed.)
+Don't merge into a modified working copy, you might loose changes when you
+have to revert.</li>
+<li>Open "Merge&#x2026;" from the Menu, select Merge two different trees
+From: <i>Firmware_bugfixes</i> To: <i>Firmware_development</i> 
+(Yes, this is strange! It doesn't make any sense.)</li>
+<li>Commit and check the modifications manually.</li>
+</ol>
+
+<p>
+Notes:<br />
+</p>
+<ul class="org-ul">
+<li>"From - To" is exactly the other way round. (try it out with Test Merge!)
+The files will be copied from TO to FROM !!!</li>
+<li>Merging is always done in the working copy. If you want to merge changes into a
+branch, you need to have it checked out.</li>
+</ul>
+
+<p>
+So:
+</p>
+<ul class="org-ul">
+<li>TO is FROM and FROM is TO</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5ac67c3" class="outline-4">
+<h4 id="org5ac67c3">Visual Studio</h4>
+<div class="outline-text-4" id="text-org5ac67c3">
+<ul class="org-ul">
+<li>VisualGDB with GNU Tools</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga546373" class="outline-4">
+<h4 id="orga546373">WireShark</h4>
+<div class="outline-text-4" id="text-orga546373">
+<p>
+Plug and Unplug Device to find USBCap nr. and Device address.
+</p>
+
+<ul class="org-ul">
+<li>Start with the right USBPcap.</li>
+<li>filter for the right device: <code>usb.device_address==5</code></li>
+</ul>
+
+<p>
+USB live Capture (Windows)
+C:/Program Files/USBPcap/
+USBPcapCMD.exe -d //./USBPcap2 -o - | "C:/Program Files/Wireshark/Wireshark.exe" -k -i
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbeafabc" class="outline-3">
+<h3 id="orgbeafabc">Office, Multimedia, etc.</h3>
+<div class="outline-text-3" id="text-orgbeafabc">
+</div>
+<div id="outline-container-org622b70a" class="outline-4">
+<h4 id="org622b70a">Excel</h4>
+<div class="outline-text-4" id="text-org622b70a">
+<ul class="org-ul">
+<li>Sum of hh:mm: if &gt; 24h Excel shows modulo 24, to prevent this: [hh]:mm</li>
+<li>convert 0,5 to 0:30: =TEXT(0,5/24;"h:mm")</li>
+<li>convert 0:30 to 0,5: A1/24 (A1 has format hh:mm)</li>
+<li>Add Button to QuickStart Toolbar: Symbolleiste anpassen -&gt; Weitere Befehle -&gt; Befehle auswählen:Makros &#x2026;</li>
+</ul>
+</div>
+
+<div id="outline-container-org962abf4" class="outline-5">
+<h5 id="org962abf4">VBA</h5>
+<div class="outline-text-5" id="text-org962abf4">
+<ul class="org-ul">
+<li>Runtime Error is not shown when a function (e.g. Public Function MySub()) is called from a cell.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcb9ce53" class="outline-4">
+<h4 id="orgcb9ce53">Handbrake DVD Ripper</h4>
+</div>
+<div id="outline-container-org2b18c23" class="outline-4">
+<h4 id="org2b18c23">Media Monkey</h4>
+<div class="outline-text-4" id="text-org2b18c23">
+<p>
+CD-Rip: nach 30 Tagen: lame_enc.dll (aus dem Internet) in den Programmfolder kopieren.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org46f2228" class="outline-4">
+<h4 id="org46f2228">Open Broadcaster</h4>
+<div class="outline-text-4" id="text-org46f2228">
+<p>
+Screencast Software
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9144294" class="outline-4">
+<h4 id="org9144294">Precision Helper</h4>
+<div class="outline-text-4" id="text-org9144294">
+<p>
+Tool for creating and managing help projects. It focuses on the 
+organization of existing html files, xml files, scripts, images 
+and other resources.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org82029ed" class="outline-4">
+<h4 id="org82029ed">PaletteHome</h4>
+<div class="outline-text-4" id="text-org82029ed">
+<p>
+Raumplanung, 3D
+</p>
+<pre class="example">
+C:\Users\jh\AppData\Local\Google\Chrome\User Data\Profile 1\IndexedDB
+C:\Users\jh\AppData\Local\Google\Chrome\User Data\Safe Browsing
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8426575" class="outline-4">
+<h4 id="org8426575">Recuva</h4>
+<div class="outline-text-4" id="text-org8426575">
+<p>
+Recover deleted Data
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc49c852" class="outline-4">
+<h4 id="orgc49c852">Skype</h4>
+<div class="outline-text-4" id="text-orgc49c852">
+<p>
+Pwd: Ch&#x2026;
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfbce534" class="outline-4">
+<h4 id="orgfbce534">Team Viewer</h4>
+<div class="outline-text-4" id="text-orgfbce534">
+<p>
+purchase@demmel.com
+pwd: max&#x2026;
+</p>
+</div>
+</div>
+
+<div id="outline-container-org755581e" class="outline-4">
+<h4 id="org755581e">Thunderbird</h4>
+</div>
+<div id="outline-container-org716eb27" class="outline-4">
+<h4 id="org716eb27">Video to Video Converter</h4>
+<div class="outline-text-4" id="text-org716eb27">
+<p>
+<a href="http://www.videotovideo.org/videoformats/">http://www.videotovideo.org/videoformats/</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgebfbf74" class="outline-3">
+<h3 id="orgebfbf74">Drawing, CAD</h3>
+<div class="outline-text-3" id="text-orgebfbf74">
+</div>
+<div id="outline-container-orgf3eca07" class="outline-4">
+<h4 id="orgf3eca07">FreeCAD</h4>
+</div>
+<div id="outline-container-org72163af" class="outline-4">
+<h4 id="org72163af">Adobe Illustrator</h4>
+</div>
+<div id="outline-container-org1b2a4be" class="outline-4">
+<h4 id="org1b2a4be">Adobe Photoshop</h4>
+</div>
+<div id="outline-container-org032106f" class="outline-4">
+<h4 id="org032106f">Corel Paint Shop Pro</h4>
+</div>
+<div id="outline-container-org57d73e7" class="outline-4">
+<h4 id="org57d73e7">Corel Draw</h4>
+</div>
+<div id="outline-container-org96bc7d1" class="outline-4">
+<h4 id="org96bc7d1">graphviz</h4>
+</div>
+<div id="outline-container-org37fc369" class="outline-4">
+<h4 id="org37fc369">ditaa</h4>
+</div>
+</div>
+<div id="outline-container-org502499d" class="outline-3">
+<h3 id="org502499d">Encryption</h3>
+<div class="outline-text-3" id="text-org502499d">
+<ul class="org-ul">
+<li>KeePass</li>
+<li>VeraCrypt
+Create encrypted file container.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org873ef0d" class="outline-2">
+<h2 id="org873ef0d">Qigong</h2>
+<div class="outline-text-2" id="text-org873ef0d">
+</div>
+<div id="outline-container-org9b60ae7" class="outline-3">
+<h3 id="org9b60ae7">Die 8 Brokate</h3>
+<div class="outline-text-3" id="text-org9b60ae7">
+<ol class="org-ol">
+<li>Den Himmel mit den Händen stützen.</li>
+<li>Den Bogen spannen.</li>
+<li>Die Hände einzeln heben.</li>
+<li>Hinter sich schauen.</li>
+<li>Links und rechts schauen.</li>
+<li>Die Füße greifen.</li>
+<li>Die Fäuste ballen.</li>
+<li>Die Fersen heben und fallen lassen.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org75ec425" class="outline-2">
+<h2 id="org75ec425">Rechentricks</h2>
+<div class="outline-text-2" id="text-org75ec425">
+</div>
+<div id="outline-container-org0c3190a" class="outline-3">
+<h3 id="org0c3190a">Multiplikation</h3>
+<div class="outline-text-3" id="text-org0c3190a">
+<ul class="org-ul">
+<li>Vedic Methode
+69x38 = 6x3 | 6x8+9x3 | 9x8 = 18 | 75 | 72 = 2622</li>
+</ul>
+</div>
+
+<div id="outline-container-orgc072c6d" class="outline-4">
+<h4 id="orgc072c6d">Spezialfälle</h4>
+<div class="outline-text-4" id="text-orgc072c6d">
+<ul class="org-ul">
+<li>10er Stellen gleich, 1er Stellen addiert = 10
+28 x 22 = (2x3) | 8x2 = 616</li>
+</ul>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-06-23 Thu&gt;</span></span>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga5389ee" class="outline-2">
+<h2 id="orga5389ee">Serien</h2>
+<div class="outline-text-2" id="text-orga5389ee">
+<ul style="column-count: 3;" class="org-ul">
+<li>Better Call Saul</li>
+<li>The Big Bang Theory</li>
+<li>Breaking Bad</li>
+<li>The Fall</li>
+<li>Fawlty Towers</li>
+<li>Fargo</li>
+<li>Game Of Thrones</li>
+<li>Hannibal</li>
+<li>The Wire</li>
+<li>True Detective</li>
+<li>Twin Peaks</li>
+<li>Silicon Valley</li>
+<li>Young Sheldon</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2e69112" class="outline-2">
+<h2 id="org2e69112">Sessel</h2>
+<div class="outline-text-2" id="text-org2e69112">
+<ul class="org-ul">
+<li>Sessel Garbo</li>
+<li>Ikea Ekenäset</li>
+<li>Lehman Lounge Chair</li>
+<li>Relaxsessel Macumba</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0419cfa" class="outline-2">
+<h2 id="org0419cfa">Sprachsteuerung</h2>
+<div class="outline-text-2" id="text-org0419cfa">
+<ul class="org-ul">
+<li>Mycroft</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2f00829" class="outline-2">
+<h2 id="org2f00829">Star Trek - Good Episodes</h2>
+<div class="outline-text-2" id="text-org2f00829">
+</div>
+<div id="outline-container-org3311202" class="outline-3">
+<h3 id="org3311202">The Next Generation</h3>
+<div class="outline-text-3" id="text-org3311202">
+<p>
+Season 2:
+</p>
+<ul class="org-ul">
+<li>E09: The Measure of a Man (!)</li>
+<li>E13: Time Squared</li>
+<li>E15: Pen Pals</li>
+</ul>
+
+<p>
+Season 3:
+</p>
+<ul class="org-ul">
+<li>E16: The Offspring</li>
+<li>E26: The Best of Both Worlds Part 1</li>
+</ul>
+
+<p>
+Season 4:
+</p>
+<ul class="org-ul">
+<li>E01: The Best of Both Worlds Part 2</li>
+<li>E02: Family</li>
+<li>E21: The Drumhead</li>
+</ul>
+
+<p>
+Season 5:
+</p>
+<ul class="org-ul">
+<li>E02: Darmok</li>
+<li>E13: The Masterpiece Society <br />
+The Enterpise saves a genetically engineered and perfectly balanced society.
+But it might also have been the beginning of it's destruction.</li>
+<li>E23: I, Borg</li>
+<li>E24: The Next Phase</li>
+<li>E25: The Inner Light (!)</li>
+</ul>
+
+<p>
+Season 6:
+</p>
+<ul class="org-ul">
+<li>E04: Relics
+"Dyson sphere"</li>
+<li><p>
+E10 &amp; E11: Chain of Command
+</p>
+
+<p>
+"There are four lights!"
+</p>
+
+<p>
+Picard is called on a secret mission, get's caught by the Cardassians
+and is tortured meanwhile the Enterprise is commanded by the questionable 
+Captain Jellico. 
+</p></li>
+<li>E12: Ship in a Bottle</li>
+</ul>
+
+<p>
+Season 7:
+</p>
+<ul class="org-ul">
+<li>E16: Thine Own Self</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf2c774d" class="outline-3">
+<h3 id="orgf2c774d">Deep Space Nine</h3>
+<div class="outline-text-3" id="text-orgf2c774d">
+<p>
+Season 7:
+</p>
+<ul class="org-ul">
+<li>14 Chimera</li>
+</ul>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2017-09-14 Thu&gt;</span></span>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd543c26" class="outline-2">
+<h2 id="orgd543c26">Staubsaugerroboter</h2>
+<div class="outline-text-2" id="text-orgd543c26">
+<ul class="org-ul">
+<li>Roborock S6MaxV</li>
+<li>Ecovacs Deebot T8 AIVI</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6735e75" class="outline-2">
+<h2 id="org6735e75">Symbol Language</h2>
+<div class="outline-text-2" id="text-org6735e75">
+<p>
+Goals:
+</p>
+<ul class="org-ul">
+<li>induitive</li>
+<li>easy to remember, passively</li>
+<li>can be drawn by hand</li>
+</ul>
+
+<p>
+Syntax
+</p>
+<ul class="org-ul">
+<li>Main Symbol + Indicator + Modifier</li>
+<li>Additional Symbols
+<ul class="org-ul">
+<li>Additional symbols might also have additional symbols (e.g. action + tense).</li>
+<li>Indicator: action, property (e.g. blue, red, etc.), object, plural</li>
+<li>Mode: Assertion, Question(?), Directive (imperative)(!), Commission (promises), Expression (Thank You, etc.), Declaration</li>
+<li>Modifier: negation (opposition), bigger, smaller, faster, etc.</li>
+</ul></li>
+</ul>
+
+<p>
+Indicator
+</p>
+<ul class="org-ul">
+<li>Action:</li>
+</ul>
+
+<p>
+Translation from N
+</p>
+<ul class="org-ul">
+<li>Take a word and translate it into a description.</li>
+<li>Use Symbols for the elements in the description.</li>
+</ul>
+
+<p>
+Questions
+</p>
+<ul class="org-ul">
+<li>ontological categories?</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc381053" class="outline-2">
+<h2 id="orgc381053">Unable to restore file due to long file name</h2>
+<div class="outline-text-2" id="text-orgc381053">
+<ul class="org-ul">
+<li>Right click -&gt; Properties -&gt; Previous Versions -&gt; Open</li>
+<li>Right click on any file or folder within the previous folder and chose Properties. <br />
+On the General tab copy what's shown in 'location', e.g.: <br />
+<code>\\localhost\D$\@GMT-2011.09.20-06.00.04\_Data</code></li>
+<li>cmd.exe: <code>subst X: \\localhost\D$\@GMT-2011.09.20-06.00.04\_Data</code></li>
+<li><code>robocopy X: D:\Destination\ /E /COPYALL</code></li>
+
+<li>When finished: <code>subst X: /D</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgab020be" class="outline-2">
+<h2 id="orgab020be">Virtualbox on USB</h2>
+<div class="outline-text-2" id="text-orgab020be">
+<p>
+What do we dream of?
+</p>
+<ul class="org-ul">
+<li>Linux on USB Stick, persistent live system, so we can store information on the USB Stick</li>
+<li>together with a 2nd Data partition, so the usb stick can be used normally too</li>
+<li>bootable from windows (via portable VirtualBox)</li>
+<li>bootable at PC boot</li>
+</ul>
+</div>
+
+<div id="outline-container-org4c5b331" class="outline-3">
+<h3 id="org4c5b331">Create a Virtual Machine containing the USB Stick</h3>
+<div class="outline-text-3" id="text-org4c5b331">
+<ol class="org-ol">
+<li>Create a bootable USB stick.</li>
+<li>Start <i>Disk Management</i> to get Disk Nr. (from <code>diskmgmt.msc</code>), e.g. you get 1 as answer.</li>
+
+<li>Run <code>cmd.exe</code> as <b>Administrator</b> and create a Virtual disk on the Desktop:</li>
+</ol>
+<pre class="example">
+cd %programfiles%\oracle\virtualbox 
+"VBoxManage.exe" internalcommands createrawvmdk -filename "%USERPROFILE%"\Desktop\usbdrive.vmdk -rawdisk \\.\PhysicalDrive1
+</pre>
+
+
+<ol class="org-ol">
+<li><code>usbdrive.vmdk</code> is now on your Desktop.</li>
+<li>Run <code>start virtualbox</code> (in Admin cmd) and create a new VM with <code>usbdrive.vmdk</code> as existing disk.</li>
+<li>You can now run the system on the USB stick in the VM.</li>
+</ol>
+
+<p>
+Notes:
+</p>
+<ul class="org-ul">
+<li>Windows 7 can only handle the first partition on a USB-stick.</li>
+<li>This method can also be used to install an OS from USB Stick.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org316994b" class="outline-2">
+<h2 id="org316994b">Visual Studio Code for Embedded</h2>
+<div class="outline-text-2" id="text-org316994b">
+<ul class="org-ul">
+<li>Elixir Cross Referencer</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb792f72" class="outline-2">
+<h2 id="orgb792f72">Vogelperspektive</h2>
+<div class="outline-text-2" id="text-orgb792f72">
+<p>
+The language <i>Kuuk Thaayorre</i> spoken by some 200 people in <i>Pormpuraaw</i> Australia has
+16 words for absolute directions instead of relative ones like left, ahead, etc. 
+</p>
+
+<p>
+<a href="https://www.edge.org/conversation/how-does-our-language-shape-the-way-we-think">https://www.edge.org/conversation/how-does-our-language-shape-the-way-we-think</a>
+</p>
+
+<p>
+This allows them to have a map of the area they inhabit in their mind at any time, 
+a birds eye view. 
+</p>
+
+<p>
+We should have a similar birds eye view when coding. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org841d80e" class="outline-2">
+<h2 id="org841d80e">Wie managt man das Unbewusste?</h2>
+<div class="outline-text-2" id="text-org841d80e">
+<p>
+Beobachtung: 
+</p>
+<ul class="org-ul">
+<li>Man hat vage die richtige Idee, aber nicht
+voll bewusst.</li>
+</ul>
+<p>
+Frage:
+</p>
+<ul class="org-ul">
+<li>Wie macht man das Unbewusste konkret?</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org577c4e3" class="outline-2">
+<h2 id="org577c4e3">Yubico</h2>
+<div class="outline-text-2" id="text-org577c4e3">
+<p>
+Does YubiKey 5 Security Key work with?
+</p>
+
+<ul class="org-ul">
+<li>KeepassXC - YES
+<ul class="org-ul">
+<li>Android: Keypass2Android - App (NFC)</li>
+</ul></li>
+<li>Google - YES</li>
+<li>Amazon - NO, only mobile phone</li>
+<li>Linux login, root - YES</li>
+<li>SSH - YES</li>
+<li>VeraCrypt, ?</li>
+</ul>
+</div>
+
+<div id="outline-container-orgb588976" class="outline-3">
+<h3 id="orgb588976">Linux Login</h3>
+<div class="outline-text-3" id="text-orgb588976">
+<p>
+Install on Linux:
+</p>
+<pre class="example">
+sudo apt install libpam-u2f
+</pre>
+
+
+<p>
+Create local keys for each user
+</p>
+<pre class="example">
+mkdir -p ~/.config/Yubico
+pamu2fcfg &gt; ~/.config/Yubico/u2f_keys
+</pre>
+
+<p>
+For additional Yubikeys (<code>-n</code> - append)
+</p>
+<pre class="example">
+pamu2fcfg -n 
+</pre>
+
+<p>
+add the output at the end of (separator is ":")
+</p>
+<pre class="example">
+~/.config/Yubico/u2f_keys
+</pre>
+
+
+<p>
+Same for root
+</p>
+<pre class="example">
+su
+mkdir /root/.config/Yubico
+</pre>
+
+<p>
+etc.
+</p>
+</div>
+
+<div id="outline-container-orgfbaaf3f" class="outline-4">
+<h4 id="orgfbaaf3f">Sudo Login Edit</h4>
+<div class="outline-text-4" id="text-orgfbaaf3f">
+<pre class="example">
+sudo vim /etc/pam.d/sudo
+</pre>
+
+<p>
+insert below <code>@include common-auth</code>
+</p>
+<pre class="example">
+auth required pam_u2f.so interactive
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgbae0deb" class="outline-4">
+<h4 id="orgbae0deb">su login</h4>
+<div class="outline-text-4" id="text-orgbae0deb">
+<pre class="example">
+sudo vim /etc/pam.d/su
+</pre>
+
+<p>
+same as above
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org243f3c2" class="outline-3">
+<h3 id="org243f3c2">WebAuthn</h3>
+<div class="outline-text-3" id="text-org243f3c2">
+<ul class="org-ul">
+<li>Public-key authentication</li>
+<li>Private key is stored on the YubiKey.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdd8d1b3" class="outline-3">
+<h3 id="orgdd8d1b3">U2F (Universal 2nd Factor)</h3>
+<div class="outline-text-3" id="text-orgdd8d1b3">
+<ul class="org-ul">
+<li>open standard</li>
+<li>User name + password + key</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc6ef68b" class="outline-3">
+<h3 id="orgc6ef68b">OATH (Initiative for Open Authentication)</h3>
+<div class="outline-text-3" id="text-orgc6ef68b">
+<p>
+2 Standards:
+</p>
+<ul class="org-ul">
+<li>TOTP : 6-8 digit code valid for 30 seconds (generated using HMAC).</li>
+<li>HOTP : like TOTP but using a counter instead of a timestamp.</li>
+</ul>
+
+<p>
+The YubiKey spits out a HTOP code when the button is pressed (needs to be configured).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9a6f92e" class="outline-3">
+<h3 id="org9a6f92e">PGP (Pretty Good Privacy)</h3>
+<div class="outline-text-3" id="text-org9a6f92e">
+<ul class="org-ul">
+<li>OpenPGP standard</li>
+<li>RSA or ECC sign/encrypt operations using a private key.</li>
+<li>Typically used through GnuPG.</li>
+</ul>
+
+<p>
+Application:
+</p>
+<ul class="org-ul">
+<li>email encryption</li>
+<li>SSH</li>
+<li>PAM (Pluggable Authentication Module) Authentication (e.g. used for SSH)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9dbf7d2" class="outline-3">
+<h3 id="org9dbf7d2">PIV (Personal Identity Verification)</h3>
+<div class="outline-text-3" id="text-org9dbf7d2">
+<ul class="org-ul">
+<li>RSA or ECC sign/encrypt operations using a private key.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6c55864" class="outline-3">
+<h3 id="org6c55864">OTP</h3>
+<div class="outline-text-3" id="text-org6c55864">
+<p>
+If you press the button the YubiKey spits out a 44-character <b>One Time Password</b>.
+These OTPs can be verified by the YoubiCloud web service. 
+</p>
+<ul class="org-ul">
+<li>first 12 characters represent the <b>Public ID</b> of the YubiKey.</li>
+<li>remaining 32 characters are the unique passcode.</li>
+<li>an internal counter allows for checking if a OTP has already been used.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1dd1dc1" class="outline-3">
+<h3 id="org1dd1dc1">SSH</h3>
+<div class="outline-text-3" id="text-org1dd1dc1">
+</div>
+<div id="outline-container-orge7445f0" class="outline-4">
+<h4 id="orge7445f0">Set up SSH for authentication with public/private key</h4>
+<div class="outline-text-4" id="text-orge7445f0">
+<p>
+<a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server">https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server</a>
+</p>
+
+<ul class="org-ul">
+<li>The public key is stored on the server.
+It is stored in <code>~/.ssh/authorized_keys</code>.</li>
+</ul>
+
+<p>
+Create Public/Private Key Pair (on the Client)
+</p>
+<pre class="example">
+ssh-keygen
+</pre>
+
+
+<p>
+Copy Public Key to your server
+</p>
+<pre class="example">
+ssh-copy-id odroid@joesanmarzano.duckdns.org
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgfda45fb" class="outline-4">
+<h4 id="orgfda45fb">Method 0</h4>
+<div class="outline-text-4" id="text-orgfda45fb">
+<p>
+<a href="https://www.youtube.com/watch?v=pfVhAtJt5_o">https://www.youtube.com/watch?v=pfVhAtJt5_o</a>
+</p>
+
+<p>
+On the ssh-server:
+</p>
+<pre class="example">
+sudo apt-add-repository ppa:yubico/stable
+sudo apt update
+sudo apt install libpam-yubico
+</pre>
+
+
+<p>
+Create file <code>authorized_yubikeys</code>
+</p>
+<pre class="example">
+sudo vim /etc/ssh/authorized_yubikeys
+</pre>
+
+<p>
+Enter:
+</p>
+<pre class="example">
+odroid:...first 12 chars when you press the yubikey button
+</pre>
+
+
+<pre class="example">
+sudo vim /etc/pam.d/sshd
+</pre>
+
+<p>
+add
+</p>
+<pre class="example">
+auth required pam_yubico.so id=&lt;Client ID&gt; key=&lt;Secret Key&gt; authfile=/etc/ssh/authorized_yubikeys
+</pre>
+
+
+<p>
+Get Client ID and Secret Key from:
+<a href="https://upgrade.yubico.com/getapikey/">https://upgrade.yubico.com/getapikey/</a>
+</p>
+
+<p>
+Example:
+</p>
+<pre class="example">
+Client ID: 12345
+Secret Key: 29384=hr2wCsdl+fi4tj4o3i
+</pre>
+
+
+<p>
+paste it into the above line
+</p>
+
+<p>
+Change:
+</p>
+<pre class="example">
+sudo /etc/pam.d/sshd_config
+ChallengeResponseAuthentication yes
+UsePam yes
+</pre>
+
+
+<pre class="example">
+sudo service ssh restart
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8d99d5d" class="outline-4">
+<h4 id="org8d99d5d">Method 1 GnuPG</h4>
+<div class="outline-text-4" id="text-org8d99d5d">
+<p>
+<a href="https://gist.github.com/artizirk/d09ce3570021b0f65469cb450bee5e29">https://gist.github.com/artizirk/d09ce3570021b0f65469cb450bee5e29</a>
+</p>
+
+<p>
+GnuPG only needs the CCID (Chip Card Interface Device) protocol. The YubiKey will emulate
+a Smartcard Reader. 
+</p>
+
+<p>
+Install YubiKey Manager (<code>ykman</code>)
+</p>
+<pre class="example">
+sudo apt-add-repository ppa:yubico/stable
+sudo apt update
+sudo apt install yubikey-manager
+</pre>
+
+
+<p>
+Install <code>gnupg</code>, <code>pcscd</code> and <code>scdaemon</code>
+</p>
+<pre class="example">
+sudo apt install gnupg pcscd scdaemon
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orge38e64b" class="outline-4">
+<h4 id="orge38e64b">Method 2</h4>
+<div class="outline-text-4" id="text-orge38e64b">
+<p>
+<a href="https://monicalent.com/blog/2017/12/16/ssh-via-yubikeys-ubuntu/">https://monicalent.com/blog/2017/12/16/ssh-via-yubikeys-ubuntu/</a>
+</p>
+
+<p>
+Get Client ID and Secret Key from:
+<a href="https://upgrade.yubico.com/getapikey/">https://upgrade.yubico.com/getapikey/</a>
+</p>
+
+<p>
+Example:
+</p>
+<pre class="example">
+Client ID: 12345
+Secret Key: 29384=hr2wCsdl+fi4tj4o3i
+</pre>
+
+
+<p>
+Update pam settings to use YubiKey
+</p>
+<pre class="example">
+sudo vim /etc/pam.d/sshd
+</pre>
+
+<p>
+enter:
+</p>
+<pre class="example">
+auth required pam_yubico.so id=[Your Client ID] key=[Your Secret Key] debug authfile=/etc/yubikey_mappings mode=client
+</pre>
+
+
+<p>
+Create the file <code>/etc/youbikey_mappings</code> and insert the YubiKeys OTP (first 12 characters). 
+</p>
+<pre class="example">
+odroid:jdlrkfosndhf
+</pre>
+
+
+<p>
+Configure SSH
+</p>
+<pre class="example">
+sudo vim /etc/ssh/sshd_config
+</pre>
+
+<p>
+Make sure to set this
+</p>
+<pre class="example">
+ChallengeResponseAuthentication yes
+AuthenticationMethods publickey,keyboard-interactive:pam
+UsePAM yes
+PubkeyAuthentication yes
+AuthorizedKeysFile      %h/.ssh/authorized_keys
+</pre>
+
+
+<p>
+If you want to turn off password authentication
+</p>
+<pre class="example">
+PasswordAuthentication no
+</pre>
+
+
+<p>
+Restart <code>sshd</code>
+</p>
+<pre class="example">
+service sshd restart
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2021-03-31 Wed 06:00</p>
+</div>
+</body>
+</html>

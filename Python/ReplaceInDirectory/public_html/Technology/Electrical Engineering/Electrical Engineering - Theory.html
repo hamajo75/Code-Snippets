@@ -1,0 +1,1958 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-03-12 Fri 19:30 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Electrical Engineering - Theory</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="shortcut icon" href="/public_html/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/html-export.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/hideshow.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/code.css">
+
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "0em",
+        "HTML-CSS": {
+             scale: 110,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div style = "text-align: right; margin-top: 5px">
+   <a accesskey="h" href="" style="font: 20px arial,helvetica,clean,sans-serif"></a>
+   <a accesskey="H" href="https://joesanmarzano.duckdns.org/public_html/" style="font: 20px arial,helvetica,clean,sans-serif;margin: 30px;"> HOME </a>
+</div><div id="content">
+<h1 class="title">Electrical Engineering - Theory</h1>
+
+<div id="outline-container-org6e97f2c" class="outline-2">
+<h2 id="org6e97f2c">Introduction to Electrical Engineering</h2>
+<div class="outline-text-2" id="text-org6e97f2c">
+</div>
+<div id="outline-container-orgeb39782" class="outline-3">
+<h3 id="orgeb39782">Electric charges in motion</h3>
+<div class="outline-text-3" id="text-orgeb39782">
+<p>
+<b>The basic problem</b>
+</p>
+
+<p>
+We have a collection of <b>source charges</b> (static or moving) and we want to know what force results on an
+additional <b>test charge</b>.
+</p>
+
+<p>
+The source charges are:
+</p>
+<ol class="org-ol">
+<li>static (no motion) -&gt; Elektrostatics</li>
+<li>in uniform motion -&gt; Current, Magnetostatics</li>
+<li>accelerated -&gt; Electromagnetic Waves</li>
+</ol>
+
+<p>
+Static vs. in motion
+</p>
+<ul class="org-ul">
+<li>Static charges produce a static electric field.</li>
+<li>Constantly moving charges produce a static magnetic field.</li>
+</ul>
+
+<p>
+What do we know about electric charges?
+</p>
+<ul class="org-ul">
+<li>2 types: positive and negative (Ben Franklin - 1747)</li>
+<li>they are quantized (see <a href="#orgf3fbb0c">Millikan Experiment</a>), elementary charge: \(e=1.6\cdot10^{-19}C\) (Electron: -e Positron: e)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbb7935f" class="outline-3">
+<h3 id="orgbb7935f">Forces on electric charges</h3>
+<div class="outline-text-3" id="text-orgbb7935f">
+<p>
+Current in a static magnetic field.
+</p>
+
+<p>
+<b>Lorentz force law</b>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{\vec{F} = \vec{F_e} + \vec{F_m} = q(\vec{E}+\vec{v}\times\vec{B})}$$</font>
+</p>
+
+<p>
+Line current: $\vec{I} = $
+$\vec{F_m} = $
+</p>
+
+<p>
+Notes:
+</p>
+<ul class="org-ul">
+<li>The magnetic force does no work. <br />
+This is due to the fact that the direction of the force \(\vec{F_m}\) is
+perpendicular to the motion \(\vec{v}\).</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5f0e7be" class="outline-3">
+<h3 id="org5f0e7be">Fields</h3>
+<div class="outline-text-3" id="text-org5f0e7be">
+<ul class="org-ul">
+<li>conservative vector field</li>
+<li>path independence</li>
+
+<li>irrotational vector fields (curl is 0) (wirbelfrei)</li>
+<li>solenoidal vector fields (div is 0) (quellenfrei)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org259eab6" class="outline-3">
+<h3 id="org259eab6">Elektrische Strömungsfelder</h3>
+<div class="outline-text-3" id="text-org259eab6">
+<p>
+Normally the negative charges move. 
+</p>
+
+<p>
+Änderungen der Ladungsverteilung, aber nicht ihrer Felder
+</p>
+</div>
+</div>
+<div id="outline-container-orgaa34500" class="outline-3">
+<h3 id="orgaa34500">The Magnetic Field</h3>
+</div>
+<div id="outline-container-org2ecac95" class="outline-3">
+<h3 id="org2ecac95">Alternating current</h3>
+</div>
+<div id="outline-container-orgffd036b" class="outline-3">
+<h3 id="orgffd036b">Elektromagnetische Energieumformer</h3>
+</div>
+</div>
+
+<div id="outline-container-orga897cb5" class="outline-2">
+<h2 id="orga897cb5">Electrostatics</h2>
+<div class="outline-text-2" id="text-orga897cb5">
+<p>
+All source charges are fixed. The test charge is fixed or moving.
+Note that in the static case the electric and magnetic fields are
+not coupled, so the electrostatic and the magnetostatic fields can 
+be treated separately. 
+</p>
+</div>
+
+<div id="outline-container-org7a18dfd" class="outline-3">
+<h3 id="org7a18dfd">Electric Charges</h3>
+<div class="outline-text-3" id="text-org7a18dfd">
+<p>
+Triboelectric charging (Reibungselektrizität):<br />
+(Lichtenberg 1777)
+</p>
+<ul class="org-ul">
+<li>Glass rod rubbed with silk - positive</li>
+<li>Plastic rod rubbed with fur - negative</li>
+</ul>
+
+<p>
+Protons and electrons have the same elementary charge with different signs 
+(+e and -e). 
+</p>
+
+<p>
+\(e=1.6 \cdot 10^-19\ C\)
+</p>
+
+<p>
+Millikan showed in 1909 with his famous oil drop experiment that
+all amounts of charge appearing in nature are integer multiples of e.
+</p>
+
+<p>
+The <b>conservation of charge</b> in an isolated system is a fundamental law of
+nature. Charged particles can be created and destroyed but the total amount
+of charge must stay the same. E.g. if an electron is created, at the same
+time a positron is created. Although the total amount of charge in the 
+universe is constant, it's value is not known (might be 0). Creation and 
+destruction of charges is rare, normally they just move around. Electrical 
+Enginieering is basically about how charges move around and what happens
+because of that. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6aafb5b" class="outline-3">
+<h3 id="org6aafb5b">Coulomb's law</h3>
+<div class="outline-text-3" id="text-org6aafb5b">
+<p>
+Force between two electric charges.
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{\vec{F}= \frac{1}{4\pi\epsilon_0} \frac{q_1 \cdot q_0}{r^2}\vec e_r}$$</font>
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/Coulombs_Law.png" alt="Coulombs_Law.png" style="float:right;margin:0px 10% 0px 0px;padding:unset;" />
+</p>
+</div>
+
+</div>
+
+<ul class="org-ul">
+<li>\(F = k_e \frac{q_0 \cdot q_1}{r^2}\) (scalar form)</li>
+<li>\(\vec e_r\) is a unit vector of length 1 between \(q_0\) and \(q_1\)</li>
+</ul>
+
+<p>
+Dividing by \(q_0\) we get an expression that is only dependent on the target charge:
+</p>
+<ul class="org-ul">
+<li>\(\vec{E} = \frac{\vec{F}}{q_1}\) in \(\frac{V}{m}\) (Definition)</li>
+<li><b>Coulomb's constant</b>: \(k_e \approx 9\cdot 10^9 \frac{N \cdot m^2}{C^{2}} = \frac{1}{4 \cdot \pi \cdot \epsilon_0}\)</li>
+<li><b>Permitivity</b> of free space: \(\epsilon_0 = 8.85 \cdot 10^{-12}\frac{C^2}{N \cdot m^2}\)</li>
+<li>Note that the <b>principle of superposition</b> holds.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org45107f6" class="outline-3">
+<h3 id="org45107f6">Electric Field Strength</h3>
+<div class="outline-text-3" id="text-org45107f6">
+<p>
+From Coulombs Law we get the definition of the Electric Field Strength (in \(\frac{V}{m}\)):
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{\vec{E} = \frac{\vec{F}}{q}}$$</font>
+</p>
+
+<p>
+This is the force on a charge with 1 Coulomb. We can characterize the field produced by the 
+source charges independent of the target charge. 
+</p>
+
+<p>
+Let's think about it this way:<br />
+We put a test charge at an interesting point in the field and measure the force on this
+charge. Then we divide the force by the charge value and get the electric field strength
+in this point.
+</p>
+
+<p>
+Note:<br />
+One could think that to get the total field we need to add the field of the test charge but
+we have to note, that for the force on the test charge it's own electric field is irrelevant.
+Only when we add a 3rd charge we need to consider it.
+</p>
+
+<p>
+Field lines:<br />
+Lines tangent to the Field vectors. The density of the field lines is proportional
+to the field strength (the higher the field strength the more lines we have in 
+a given space). 
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{\vec{F} = Q \cdot \vec{E}}$$</font>
+</p>
+
+<p>
+\[dW = \vec{F} \cdot \vec{dl} = Q \cdot \vec{E} \cdot \vec{dl}\]
+</p>
+
+<p>
+Integrate:
+</p>
+
+<p>
+\[\displaystyle W = Q \cdot \int_{a}^{b} \vec{E} \cdot \vec{dl}\]
+</p>
+
+<p>
+\[\displaystyle U_{ab} = \frac{W}{Q} = \int_{a}^{b} \vec{E} \cdot \vec{dl}\]
+</p>
+
+<p>
+<b>Electric flux</b>
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{\Phi_E = \iint_{A}^{} \vec{E} \cdot \vec{df}}$$</font>
+</p>
+
+<p>
+Useful for calculating the electric field. 
+</p>
+
+<hr />
+<p>
+<b><span class="underline">Example: Point Charge Q</span></b>
+</p>
+
+<p>
+Calculate the flux of a point charge. 
+</p>
+
+<p>
+\[\vec{E} = \frac{\vec{F}}{q} = \frac{1}{4 \pi \epsilon_0} \frac{Q}{r^2} \hat{r}\]
+</p>
+
+<p>
+Electric Flux: Surface is a sphere with radius \(R\), surface vectors are parallel to the
+field. 
+</p>
+
+<p>
+\[\Phi_E = \iint_{A}^{} \vec{E} \cdot \vec{df} = \lim_{}\sum_{A}\vec{E} \cdot \vec{\Delta f}\]
+</p>
+
+<p>
+\(\vec{E}\) and \(\vec{\Delta f}\) are parallel, so we get
+</p>
+
+<p>
+\[\Phi_E = E \cdot lim \sum_{A} \Delta f = \frac{1}{4 \pi \epsilon_0} \cdot \frac{Q}{R^2} \cdot 4 \pi R^2 = \frac{Q}{\epsilon_0}\] (independent of the Radius!)
+</p>
+
+<p>
+Note:
+</p>
+<ul class="org-ul">
+<li>This result can be generalized for arbitrary closed surfaces and enclosed charge densities.</li>
+</ul>
+<hr />
+</div>
+</div>
+
+<div id="outline-container-orgbb537dc" class="outline-3">
+<h3 id="orgbb537dc">Gauss's Law</h3>
+<div class="outline-text-3" id="text-orgbb537dc">
+<p>
+(Don't confuse with Gauss's Theorem.)
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{\Phi_E = \frac{Q}{\epsilon_0}}$$</font>
+</p>
+<ul class="org-ul">
+<li>Q is the total charge inside a closed surface.</li>
+<li>The electric flux is going through this surface.</li>
+</ul>
+
+<p>
+<b>Charge Distributions, charge density</b>
+\(\rho = \frac{\Delta Q}{\Delta v}\)
+</p>
+
+<p>
+The total charge is
+\[Q = \iiint_{V} \rho \cdot dv\]
+</p>
+
+<p>
+\[\Phi_E = \frac{Q}{\epsilon_0} = \iiint_{V} \frac{\rho}{\epsilon_0} \cdot dv\]
+</p>
+
+<p>
+from the Definition we get (with closed surface) using Gauss's Theorem:
+</p>
+
+<p>
+\[\Phi_E = \oint_{Rd(V)} \vec{E} \cdot \vec{df} = \int_{V} div(\vec{E}) \cdot dv\]
+</p>
+
+<p>
+\[\int_{V} \vec{E} \cdot dv = \int_{V} \frac{\rho}{\epsilon_0} \cdot dv\]
+</p>
+
+<p>
+from this we get the <b>1st Maxwell Equation</b>:
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{div(\vec{E}) =\frac{\rho}{\epsilon_0}}$$</font>
+</p>
+
+<p>
+<b>What is the divergence?</b>
+</p>
+
+<p>
+Using Gauss's Theorem
+\[\oint_{Rd(V)} \vec{E} \cdot \vec{df} = \int_{\Delta V} div(\vec{E}) \cdot dv\]
+</p>
+
+<p>
+We look at a small Volume \(\Delta V\), where the electric field is approximately constant.
+Then we get
+</p>
+
+<p>
+\[\int_{\Delta V} div(\vec{E}) \cdot dv = div(\vec{E}) \int_{\Delta V} dv =  div(\vec{E}) \cdot \Delta V\]
+</p>
+
+<p>
+\[\oint_{Rd(V)} \vec{E} \cdot \vec{df} = div(\vec{E}) \cdot \Delta V\]
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{div(\vec{E}) = \frac{1}{\Delta V} \oint_{Rd(V)} \vec{E} \cdot \vec{df}}$$</font>
+</p>
+
+<p>
+The divergence inside a small \(\Delta V\) is the electric Flux through the surrounding surface
+divided by the volume. Now we make the volume smaller and the limit is the divergence. 
+</p>
+
+<p>
+The divergence is the limit of the flux density on a closed surface. The first Maxwell equation
+states that the outward electric flux from a point is equal to the charge density at that point.
+</p>
+
+<p>
+<b>Lets talk about potential energy</b>
+</p>
+
+<p>
+What is the potential energy of a test charge q in an electric field?
+</p>
+
+<p>
+In order to have <b>potential energy</b> we need a conservative force field. This is the case in
+Electrostatics (in general not). 
+</p>
+
+<p>
+For a conservative electric field we have:
+Work needed to move a charge from point \(p\) to a fixed reference point \(p_0\).
+</p>
+
+<p>
+\[V(p) = \int_{p}^{p_0} \vec F \cdot \vec{dr} = - \int_{p_0}^{p} \vec F \cdot \vec{dr}\]
+</p>
+
+<p>
+with the field of a point charge Q:
+</p>
+
+<p>
+\[V(p) = - \int_{\infty}^{R} \frac{1}{4 \pi \epsilon_0} \frac{Qq}{r^2} dr\]
+</p>
+
+<ul class="org-ul">
+<li>We choose the reference point to be infinitely distant (we cannot choose it to be at the location of Q due to the division by 0).</li>
+<li>\(R\) distance from Q</li>
+</ul>
+
+<p>
+\[V(R) = \frac{1}{4 \pi \epsilon_0} \frac{Qq}{R}\]
+</p>
+
+<ul class="org-ul">
+<li>charges with same sign: 1/R, starting with infinity ending with 0</li>
+<li>charges with opposite sign: -1/R, starting with minus infinity</li>
+</ul>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/PotentialEnergyOfPointCharge.png" alt="PotentialEnergyOfPointCharge.png" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org35408bd" class="outline-3">
+<h3 id="org35408bd">Electric Voltage and Electric Potential</h3>
+<div class="outline-text-3" id="text-org35408bd">
+<p>
+Let's consider two points in an electric field. The voltage is the work needed to move a charge
+from one point to another divided by that charge.
+</p>
+
+<p>
+\[U_{12} = \frac{1}{q} \int_{p_1}^{p_2} \vec F \cdot \vec{dr} = \int_{p_1}^{p_2} \frac{\vec F}{q} \cdot \vec{dr}\]
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{U_{12} = \int_{p_1}^{p_2} \vec E \cdot \vec{dr} = \frac{W}{q}}$$</font>
+</p>
+
+<p>
+Let's say it again: The electric voltage is a <span class="underline">measure for the work needed to move a charge in an electric field</span>. 
+</p>
+
+<p>
+Note: The field strength is the force per charge, the voltage is the work per charge.
+So now we also divide the Potential Energy form above by the charge and get the Electric Potential.
+</p>
+
+<p>
+<b>Electric Potential</b>
+</p>
+
+<p>
+Potential Energy divided by charge:
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{\phi(p) = \int_{p}^{p_0} \vec E \cdot \vec{dr}}$$</font>
+</p>
+
+<p>
+If the field is conservative the integral does not depend on the path between \(p_1\) and \(p_2\)
+but only on the end points. So we can also go via the reference point \(p_0\):
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/voltage_path.png" alt="voltage_path.png" style="float:right;margin:0px 10% 0px 0px;padding:unset;" />
+</p>
+</div>
+
+</div>
+
+<p>
+\[U_{12} = \int_{p_1}^{p_0} \vec E \cdot \vec{dr} + \int_{p_0}^{p_2} \vec E \cdot \vec{dr} = \phi(p_1) - \phi(p_2)\]
+</p>
+
+<p>
+The voltage is the difference between the potential in the points \(p_1\) and \(p_2\):
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{U_{12} = \phi(p_1) - \phi(p_2)}$$</font>
+</p>
+
+<p>
+\[[ U ] = \frac{J}{C} = V = \frac{Ws}{As}\]
+</p>
+
+<p>
+This only holds in a conservative electric field! E.g. when the voltage is induced (closed loop) it cannot
+be seen as a potential difference (no potential energy in a vortex field).
+</p>
+
+<p>
+<b>Connection between potential \(\phi\) and \(\vec E\)</b>
+</p>
+
+<p>
+from Mechanics:
+</p>
+
+<p>
+\[\vec F = -grad(V)\]
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{\vec E = -grad(\phi)}$$</font>
+</p>
+
+<p>
+\[[E] = \frac{N}{C} = \frac{V}{m}\]
+</p>
+
+<p>
+\[grad(\phi) = \begin{pmatrix}
+\partial \phi/\partial x\\ 
+\partial \phi/\partial y\\
+\partial \phi/\partial z\\ 
+\end{pmatrix}\]
+</p>
+
+<p>
+The potential \(\phi\) depends on the reference point, but the gradient doesn't. So the 
+reference point can be chosen at will. 
+</p>
+
+<p>
+Notes:
+</p>
+<ul class="org-ul">
+<li>The potential in an conducting material is constant otherwise the charges
+would redistribute.</li>
+</ul>
+<hr />
+<p>
+<b><span class="underline">Example: Point Charge Q</span></b>
+</p>
+
+<p>
+The potential energy was: \(V(R) = \frac{1}{4 \pi \epsilon_0} \frac{Qq}{r}\)
+</p>
+
+<p>
+So we get (reference point at infinity):
+</p>
+
+<p>
+\[\phi = \frac{1}{4 \pi \epsilon_0} \frac{Q}{r}\]
+</p>
+
+<p>
+\[U_{12} = \frac{Q}{4 \pi \epsilon_0} \left ( \frac{1}{R_1} - \frac{1}{R_2} \right )\]
+</p>
+<hr />
+
+<p>
+<b>Now we can solve Maxwells equation</b>
+</p>
+
+<p>
+Lets put \(\vec E = -grad(\phi)\) into ME:
+</p>
+
+<p>
+\[div(\vec E) = \frac{\rho}{\epsilon_0}\]
+</p>
+
+<p>
+\[-div (grad (\phi)) = \frac{\rho}{\epsilon_0}\]
+</p>
+
+<p>
+\[div(\vec E) = \frac{\partial E_x}{\partial x} + \frac{\partial E_y}{\partial y} + \frac{\partial E_z}{\partial z}\]
+</p>
+
+<p>
+\[div(grad(\phi)) = \Delta \phi\]
+</p>
+
+<p>
+With the <i>Laplace Operator</i> defined as:
+\[\Delta \phi = \frac{\partial^2 \phi}{\partial x^2} + \frac{\partial^2 \phi}{\partial y^2} + \frac{\partial^2 \phi}{\partial z^2}\]
+</p>
+
+<p>
+we get the <b>Poisson Equation</b>
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{\Delta \phi = - \frac{\rho}{\epsilon_0}}$$</font>
+</p>
+
+<p>
+Again: this only works in a conservative field.
+</p>
+
+<p>
+With given charge density we can calculate the potential and then get the electric field. 
+</p>
+
+<p>
+Without charges we get the <b>Laplace Equation</b>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{\Delta \phi = 0}$$</font>
+</p>
+
+<p>
+Those two equations are the basic equations of Electrostatics.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc2bd648" class="outline-3">
+<h3 id="orgc2bd648">Influence (Electrostatic Induction)</h3>
+<div class="outline-text-3" id="text-orgc2bd648">
+<p>
+Charges in a conductor can be redistributed with an external charged body. 
+</p>
+
+<p>
+Let's say we introduce two metal plates inside a capacitor with an electric
+Field E. Then the charges in the plates will move to the surface (no field 
+between the plates!). When the
+two plates are separated the will stay charged even when the outer Field is
+removed.
+</p>
+
+<p>
+<b>Faradays Cage</b><br />
+Consider a conducting closed surface with a constant potential. Inside the surface there is no field. This is
+also true when there is an external field because the charges in the conductor will 
+redistribute so that the external field is compensated inside the 
+surface. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8de25fd" class="outline-3">
+<h3 id="org8de25fd">Capacitor</h3>
+<div class="outline-text-3" id="text-org8de25fd">
+<p>
+Store charges.
+</p>
+
+<p>
+2 Electrods: +Q, -Q
+</p>
+</div>
+
+<div id="outline-container-orgbb37094" class="outline-4">
+<h4 id="orgbb37094">Parallel-plate Capacitor (Plattenkondensator)</h4>
+<div class="outline-text-4" id="text-orgbb37094">
+<p>
+One of 2 metal plates is connected with the positive side of a voltage source.
+The other metal plate is grounded, i.e. positive charges resulting from influcnec
+are sucked away towards ground. 
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/Plattenkondensator.png" alt="Plattenkondensator.png" />
+</p>
+</div>
+
+</div>
+
+<p>
+So we have a positively and a negatively charged plate. The resulting 
+fields compensate on the outside and add up on the inside of the plates.
+</p>
+
+<p>
+There is connection between charge on the plates and the electric field:
+\[Q \sim |\vec E| \sim U\]
+</p>
+
+<p>
+We define 
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">\(Q = C \cdot U\)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org86e6fff" class="outline-3">
+<h3 id="org86e6fff">Examples</h3>
+<div class="outline-text-3" id="text-org86e6fff">
+<p>
+Gauss's Law
+</p>
+
+<p>
+\[\Phi_E = \frac{Q}{\epsilon_0} = \int_{A} \vec E \cdot \vec{df}\]
+</p>
+
+<p>
+Poisson Equation
+</p>
+
+<p>
+\[\Delta \phi = - \frac{\rho}{\epsilon_0}\] 
+</p>
+
+<p>
+Note: The minus comes from the Gradient. 
+</p>
+
+<p>
+Laplace Equation (If there is no charge)
+</p>
+
+<p>
+\[\Delta \phi = 0\]
+</p>
+
+<p>
+<b>Important Theorem</b>
+If the baundary conditions on a closed surface are given then the solution of 
+the Poisson Equation inside the closed surface is unique. 
+</p>
+</div>
+
+<div id="outline-container-org9ccc850" class="outline-4">
+<h4 id="org9ccc850">Charged conducting hollow sphere</h4>
+<div class="outline-text-4" id="text-org9ccc850">
+<p>
+Charge Q, Radius R
+</p>
+
+<p>
+a) Field Outside r &gt; R <br />
+Note: \(\vec E\) and \(\vec{df}\) are parallel.
+</p>
+
+<p>
+\[\oint_{A} \vec E \cdot \vec{df} = 4 \pi r^2 |\vec E| = \frac{Q}{\epsilon_0}\]
+</p>
+
+<p>
+\[|\vec E| = \frac{Q}{4 \pi \epsilon_ß} \cdot \frac{1}{e^2}\]
+</p>
+
+<p>
+Thus we get the same field as for a point charge.
+</p>
+
+<p>
+What's the potential like?
+</p>
+
+<p>
+\[\phi(r) = - \int_{\infty}^{r} \frac{Q}{4 \pi \epsilon_0} \frac{1}{r'^2} dr'\]
+</p>
+
+<p>
+\[\phi(r) = \frac{Q}{4 \pi \epsilon_0} \frac{1}{r}\]
+</p>
+
+<p>
+Note: The reference point is put to infinity. 
+</p>
+
+<p>
+\[|\vec E| = \frac{\phi}{r}\]
+</p>
+
+<p>
+When the potential is fixed (e.g. Ground) the Field Strength only depends on r 
+getting bigger with smaller r (see lightning rod, sucks away ions from the 
+surrounding athmosphere). 
+</p>
+
+<p>
+b) Field Inside r &lt; R<br />
+Inside the sphere there is no charge, i.e. the Laplace Equation applies.
+</p>
+
+<p>
+\[\Delta \phi = 0\]
+</p>
+
+<p>
+The charges sphere itself is an equipotential surface, i.e. we have the sampe potential
+everywher on the sphere (\(\phi = const\)).
+</p>
+
+<p>
+Inside the sphere we have therefore only one unique solution (see Theorem above).
+</p>
+
+<p>
+One possible solution of the Laplace Equation inside the sphere is \(\phi = const\).
+Together with the Theorem we get the solution for r &lt; R. 
+</p>
+
+<p>
+\[\vec E = -grad(\phi) = 0\]
+</p>
+
+<p>
+So there is no electric field inside the sphere (Faraday Cage).
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/Hollow_Sphere.PNG" alt="Hollow_Sphere.PNG" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7545831" class="outline-4">
+<h4 id="org7545831">Infinitly long conducting hollow cylinder</h4>
+<div class="outline-text-4" id="text-org7545831">
+<p>
+Models a coaxial cable. 
+</p>
+
+<p>
+Charge per Length = \(\lambda\), Radius R
+</p>
+
+<p>
+a) Outside 
+</p>
+
+<p>
+The flux through the cylinder surface for some l is
+</p>
+
+<p>
+\[\Phi_E = \oint_{A} \vec E \cdot \vec{dl} = 2 \pi r \cdot l \cdot |\vec E|\]
+</p>
+
+<p>
+Using Gauss's Law
+</p>
+
+<p>
+\[ \Phi_E = \frac{Q}{\epsilon_0} = \frac{\lambda \cdot l}{\epsilon_0}\]
+</p>
+
+<p>
+Combining the two we get
+</p>
+
+<p>
+\[ |\vec E| = \frac{\lambda}{2 \pi \epsilon_0} \cdot \frac{1}{r}\]
+</p>
+
+<p>
+And the potential
+</p>
+
+<p>
+\[\phi(r) = - \int_{R}^{r} \frac{\lambda}{2 \pi \epsilon_0} \cdot \frac{1}{r'} dr' = - \frac{\lambda}{2 \pi \epsilon_0} ln\frac{r}{R}\]
+</p>
+
+<p>
+Note: the reference point is not infinitly far away but on the cylinder surface.
+</p>
+
+<p>
+b) Inside
+</p>
+
+<p>
+no charge inside, \(\phi = const\) is the solution for the Laplace Equation (same
+as whith the hollow sphere), and again
+</p>
+
+<p>
+\[|\vec E| = 0\]
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/Hollow_Cylinder.PNG" alt="Hollow_Cylinder.PNG" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org904761b" class="outline-2">
+<h2 id="org904761b">Mathematics</h2>
+<div class="outline-text-2" id="text-org904761b">
+<p>
+We assume 3D-euclidian space for all vectors.
+</p>
+
+<p>
+Component Form of a vector:  \(\vec{a}=a_x\vec{e_x}+a_y\vec{e_y}+a_z\vec{e_z}\)
+</p>
+
+<p>
+Displacement vector: \(\vec{dl}=dx\vec{e_x}+dy\vec{e_y}+dz\vec{e_z}\) from \((x,y,z)\) to \((x+dx, y+dy, z+dz)\).
+</p>
+</div>
+
+<div id="outline-container-org1728874" class="outline-3">
+<h3 id="org1728874">Dot Product (Scalar Product)</h3>
+<div class="outline-text-3" id="text-org1728874">
+<p>
+Algebraic Definition (AD): \(\vec{a}\cdot\vec{b}=a_xb_x+a_yb_y+a_zb_z\)
+</p>
+
+<p>
+Geometric Definition (GD): \(\vec{a}\cdot\vec{b}=\left| a \right|\left| b \right|cos(\theta)\)
+</p>
+
+<p>
+Projections: \(\vec{a}\cdot\vec{b}=\left| a \right|\left| b_a \right|\)
+</p>
+<div class="PICTURE">
+
+<div class="figure">
+<p><img src="resources/DotProductProjection.PNG" alt="DotProductProjection.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+Applications:
+</p>
+<ul class="org-ul">
+<li>Compute lengths and angles.</li>
+<li>Detect orthogonality.</li>
+</ul>
+
+<p>
+Notes:
+</p>
+<ul class="org-ul">
+<li>The origin of the vectors doesn't change the dot product, we can move them around as we like.</li>
+<li>For perpendicular vectors the dot product is 0.</li>
+<li>\(\vec a \cdot \vec a = |\vec a|^2\)</li>
+<li>The equivalency of AD and GD can be proven using the law of cosines: 
+\(|\vec c|^2 = |\vec a|^2 + |\vec b|^2 - 2 \cdot |\vec a| \cdot |\vec b| \cdot cos(\theta)\) <br />
+\(\vec c \cdot \vec c = |\vec c|^2 = (\vec a - \vec b) \cdot (\vec a - \vec b) = |\vec a|^2 + |\vec b|^2 - 2 \vec a \cdot \vec b\)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org719f133" class="outline-3">
+<h3 id="org719f133">Cross Product</h3>
+<div class="outline-text-3" id="text-org719f133">
+<p>
+\(\vec{a}\times \vec{b}=\left| a \right|\left| b \right|sin(\theta)\vec{n}\)
+</p>
+
+<p>
+Screw rule: Turn vector \(\vec{a}\) into vector \(\vec{b}\) on the shortest path. Then the 
+cross product vector points in the same direction an imaginary screw would
+move.
+</p>
+<div class="PICTURE">
+
+<div class="figure">
+<p><img src="resources/CrossProduct.PNG" alt="CrossProduct.PNG" />
+</p>
+</div>
+
+</div>
+<p>
+The cross product is not commutative!
+</p>
+
+<p>
+Component wise multiplication:
+</p>
+
+<div class="Latex">
+\begin{align*}
+{}&\vec{a}\times \vec{b}=
+\begin{bmatrix}
+\vec{e_x} & \vec{e_y} & \vec{e_z} \\
+a_1 & a_2 & a_3 \\
+b_1 & b_2 & b_3
+\end{bmatrix}= \\&
+\begin{bmatrix}
+a_2 & a_3 \\
+b_2 & b_3
+\end{bmatrix} \cdot\vec{e_x}-
+\begin{bmatrix}
+a_1 & a_3 \\
+b_1 & b_3
+\end{bmatrix} \cdot\vec{e_y}+
+\begin{bmatrix}
+a_1 & a_2 \\
+b_1 & b_2
+\end{bmatrix} \cdot\vec{e_z}= \\&
+(a_2b_3-a_3b_2)\cdot\vec{e_x}-
+(a_1b_3-a_3b_1)\cdot\vec{e_y}+
+(a_1b_2-a_2b_1)\cdot\vec{e_z}
+\end{align*}
+
+</div>
+
+
+<p>
+The norm of the cross product is the area of the parallelogram generated
+by the two vectors.
+</p>
+<div class="PICTURE">
+
+<div class="figure">
+<p><img src="resources/CrossProductArea.PNG" alt="CrossProductArea.PNG" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgaac32c3" class="outline-3">
+<h3 id="orgaac32c3">Triple Products</h3>
+</div>
+<div id="outline-container-org1d196fd" class="outline-3">
+<h3 id="org1d196fd">Gradient</h3>
+<div class="outline-text-3" id="text-org1d196fd">
+<p>
+Total Differential of a function \(T(x,y,z)\) :
+</p>
+
+<p>
+\(dT=\left ( \frac{\partial T}{\partial x} \right )dx+\left ( \frac{\partial T}{\partial y} \right )dy+\left ( \frac{\partial T}{\partial z} \right )dz\).
+</p>
+
+<p>
+The intuitive idea is that when we wiggle a little with x, y, z. How much will T wiggle?
+</p>
+
+<p>
+From this we get to the gradient using the dot product:
+</p>
+
+<p>
+\(dT=\left ( \frac{\partial T}{\partial x}\vec{e_x}+ \frac{\partial T}{\partial y} \vec{e_y}+\frac{\partial T}{\partial z} \vec{e_z}\right )\cdot(dx\, \vec{e_x}+dy\, \vec{e_y}+dz\, \vec{e_z})\).
+</p>
+
+<p>
+Note that the dot product of a unit vector with itself is 1.
+</p>
+
+<p>
+The first part will be defined as the <b>gradient</b> of T:
+</p>
+
+<p>
+\(grad(T) = \triangledown T=\left ( \frac{\partial T}{\partial x}\vec{e_x}+ \frac{\partial T}{\partial y} \vec{e_y}+\frac{\partial T}{\partial z} \vec{e_z}\right )\).
+</p>
+
+<p>
+using the Nabla Operator: \(\triangledown =\left ( \frac{\partial }{\partial x}\vec{e_x}+ \frac{\partial }{\partial y} \vec{e_y}+\frac{\partial }{\partial z} \vec{e_z}\right )\).
+</p>
+
+<p>
+The gradient is a vector and so has a magnitude and a direction.
+</p>
+<ul class="org-ul">
+<li>\(\triangledown T\) points in the direction of maximum increase of T.</li>
+<li>\(\left| \triangledown T \right|\) gives the rate of increase along this direction.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8d77ffc" class="outline-3">
+<h3 id="org8d77ffc">Flux</h3>
+<div class="outline-text-3" id="text-org8d77ffc">
+<p>
+Imagine a vector field (no vector field no flux), i.e. velocity vectors of flowing water.
+Now we want to know how much volume of water flows through a given 
+area.
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{\Phi = \iint_{A}^{} \vec{v} \cdot \vec{df}}$$</font>
+</p>
+
+<p>
+Notes:
+</p>
+<ul class="org-ul">
+<li>The direction of the surface vector is in the direction of the flow.
+For closed surfaces it goes outwards.</li>
+<li>For a closed surface the flux tells us "how much" field is coming out of the enclosed volume.</li>
+<li>The flux is 0 when there are as many field lines going into a given volume as are going out of the volume.</li>
+</ul>
+
+
+<p>
+Examples:
+</p>
+<ul class="org-ul">
+<li>Fluid Flow: \(\vec{v}\) is the speed, so we get \([\frac{m}{s}] \cdot [m^2]=\frac{m^3}{s}\) a Volume Flow.</li>
+<li>Wind</li>
+<li>Magnetic Flux: \[\Phi = \iint_{A}^{} \vec{B} \cdot \vec{df}\]</li>
+<li>Electric Flux: \[\Phi = \iint_{A}^{} \vec{D} \cdot \vec{df}\]</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0d88f93" class="outline-3">
+<h3 id="org0d88f93">Divergence</h3>
+<div class="outline-text-3" id="text-org0d88f93">
+<p>
+Calculate the flux through a closed surface.
+</p>
+
+<p>
+\[{\mathop{\rm div}\nolimits} \vec F = \nabla \centerdot \vec F = (\frac{\partial }{{\partial x}}\,\,\vec e_x + \frac{\partial }{{\partial y}}\,\,\vec e_y + \frac{\partial }{{\partial z}}\,\,\vec e_z)(F_x \vec e_x + F_y \vec e_y + F_z \vec e_z)\]
+\[= \frac{{\partial F_x}}{{\partial x}} + \frac{{\partial F_y}}{{\partial y}} + \frac{{\partial F_z}}{{\partial z}}\]
+</p>
+
+<p>
+Two vectors can be multiplied using the dot or the cross product. So can the Nabla Operator.
+Doing that we get:
+</p>
+<ul class="org-ul">
+<li>Divergence \(\triangledown \cdot \vec{v}\)</li>
+<li>Curl       \(\triangledown \times \vec{v}\)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd808972" class="outline-3">
+<h3 id="orgd808972">Curl</h3>
+<div class="outline-text-3" id="text-orgd808972">
+<p>
+\[{\mathop{\rm curl}\nolimits} \vec F = \nabla \times \vec F =  \left| {\begin{array}{*{20}{c}}{\vec i}&{\vec j}&{\vec k}\\{\displaystyle \frac{\partial }{{\partial x}}}&{\displaystyle \frac{\partial }{{\partial y}}}&{\displaystyle \frac{\partial }{{\partial z}}}\\F_x&F_y&F_z\end{array}} \right|\]
+</p>
+</div>
+</div>
+<div id="outline-container-org42e5150" class="outline-3">
+<h3 id="org42e5150">Integrals</h3>
+<div class="outline-text-3" id="text-org42e5150">
+</div>
+<div id="outline-container-org1d4eb98" class="outline-4">
+<h4 id="org1d4eb98">Line Integrals (of a vector field)</h4>
+<div class="outline-text-4" id="text-org1d4eb98">
+<p>
+We have a vector function and a piecewise smooth path from point \(a\) to point \(b\).
+At each point along the path the dot product of the vector in this point
+and the displacement vector is calculated.
+</p>
+
+<p>
+\[\int_{a}^{b} \vec{v} \cdot \vec{dl}\]
+</p>
+
+<p>
+Famous example:
+</p>
+<ul class="org-ul">
+<li>Work done by a force: \(W = \int_{a}^{b} \vec{F} \cdot \vec{dl}\)</li>
+</ul>
+
+<p>
+Notes:
+</p>
+<ul class="org-ul">
+<li>If the line integral is independent of the path, i.e. depends only on the 
+endpoints \(a\) and \(b\), the field is said to be <b>conservative</b>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0d2aa6d" class="outline-4">
+<h4 id="org0d2aa6d">Double Integrals</h4>
+<div class="outline-text-4" id="text-org0d2aa6d">
+<p>
+Volume below the graph of a function \(z=f(x,y)\).
+</p>
+
+<p>
+We need to choose a Region R in the xy-plane.
+</p>
+
+<p>
+\[R = \left[ {x_1,x_2} \right] \times \left[ {y_1,y_2} \right]\]
+</p>
+
+<p>
+\[\iint_R f(x,y)\ dA\]
+</p>
+
+<p>
+We cut R in small pieces \(\Delta A_i\) at position \((x_i, y_i)\).
+Then we take the sum of all those pieces multiplied with value of the 
+function at that point (the volume of a small block below the function).
+</p>
+
+<p>
+\[\sum_i f(x_i, y_i)\ \Delta A_i\] 
+</p>
+
+<p>
+Now we let \(\Delta A_i \rightarrow 0\). If the function \(f(x,y)\) is piecewise continuous 
+in the region R the limit of the sum exists and is the same for all partitions.
+</p>
+
+<p>
+In order to actually calculate these integrals we will reduce them to 
+single integrals. 
+</p>
+
+<p>
+Imagine a plane i.e. parallel to the yz-plane cutting through the graph
+of \(z\). 
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/function_f_xy_cut_by_plane.png" alt="function_f_xy_cut_by_plane.png" />
+</p>
+</div>
+
+</div>
+
+<p>
+Each slice has an area \(S(x)\). To get a volume we calculate
+</p>
+
+<p>
+\[V=\int_{x_{min}}^{x_{max}} S(x)\ dx\]
+</p>
+
+<p>
+with
+</p>
+
+<p>
+\[S(x) = \int_{y_{min}(x)}^{y_{max}(x)} f(x,y)\ dy\]
+</p>
+
+<p>
+Note that the limits of integration depend on x. 
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/integration_region_dependence_of_y.png" alt="integration_region_dependence_of_y.png" />
+</p>
+</div>
+
+</div>
+
+<p>
+\[\iint_R f(x,y)\ dA = \int_{x_{min}}^{x_{max}} \left [\int_{y_{min}(x)}^{y_{max}(x)} f(x,y)\ dy \right ]   \tag{Iterated Integral}\]
+</p>
+
+<p>
+Of course it also works the other way round.
+</p>
+</div>
+
+<div id="outline-container-orgcb90466" class="outline-5">
+<h5 id="orgcb90466">Example 1 Paraboloid</h5>
+<div class="outline-text-5" id="text-orgcb90466">
+<p>
+\(z=1-x^2-y^2\)
+</p>
+
+<p>
+Region: 
+</p>
+<ul class="org-ul">
+<li>\(0 \leq x \leq 1\)</li>
+<li>\(0 \leq y \leq 1\)</li>
+</ul>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/Example1.png" alt="Example1.png" />
+</p>
+</div>
+
+</div>
+
+<p>
+\[\int_0^1 \int_0^1 (1-x^2-y^2)\ dy\ dx =\]
+</p>
+
+<p>
+\[\int_0^1 \left [y -x^2y-\frac{y^3}{3} \right ]_0^1 dx = 
+\int_0^1 (1 - x^2 - \frac{1}{3})\ dx =
+\left [ \frac{2x}{3} - \frac{x^3}{3} \right ]_0^1 = \frac{1}{3}\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org34f4c0f" class="outline-5">
+<h5 id="org34f4c0f">Example 2 Paraboloid</h5>
+<div class="outline-text-5" id="text-org34f4c0f">
+<p>
+This time we choose the region R to be a quarter circle.
+\(x^2+y^2 \leq 1\), \(x \geq 0\), \(y \geq 0\)
+</p>
+
+<p>
+Now we have different integration bounds. 
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/Mathematics/QuarterCircle.png" alt="QuarterCircle.png" />
+</p>
+</div>
+
+</div>
+
+<p>
+For given x, the range of y goes from 0 to \(y=\sqrt{1-x^2}\).
+</p>
+
+<p>
+\[\int_0^1 \int_0^{\sqrt{1-x^2}} (1-x^2-y^2)\ dy\ dx =\]
+</p>
+
+
+<p>
+\[\int_0^1 \left [y -x^2y-\frac{y^3}{3} \right ]_0^{\sqrt{1-x^2}} dx =
+\int_0^1 (\sqrt{1-x^2} - x^2 \sqrt{1-x^2} - \frac{(1-x^2)^{3/2}}{3}) dx =\]
+\[\int_0^1 (\sqrt{1-x^2}\ (1-x^2) - \frac{(1-x^2)^{3/2}}{3}) dx = \]
+\[\int_0^1 (\sqrt{1-x^2}\ (\sqrt{1-x^2}\ \sqrt{1-x^2}) - \frac{(1-x^2)^{3/2}}{3}) dx = \]
+\[\int_0^1 (\frac{2}{3}\ (1-x^2)^{3/2}) dx\]
+</p>
+
+<p>
+Substitution: \(x=sin(\theta)\), then \((1-x^2)^{1/2} = cos(\theta)\)
+</p>
+
+<p>
+\(dx = cos(\theta)\ d\theta\)
+</p>
+
+<p>
+Then the integral becomes
+</p>
+
+<p>
+\[\int_0^{\pi/2} \frac{2}{3}\ cos(\theta)^4 d\theta\]
+</p>
+
+<p>
+With
+</p>
+
+<p>
+\[cos(\theta)^2 = \frac{1+cos(2\theta)}{2}\]
+</p>
+
+<p>
+this becomes
+</p>
+
+<p>
+\[\frac{2}{3}\ \int_0^{\pi/2}  \left (\frac{1+cos(2\theta)}{2} \right)^2 d\theta =
+\frac{2}{3}\ \int_0^{\pi/2}  \left (\frac{1}{4} + \frac{1}{2} cos(2\theta) + \frac{1}{4} cos(2\theta)^2 \right ) d\theta =\]
+</p>
+
+<p>
+Using the above formula again
+</p>
+
+<p>
+\[\frac{2}{3}\ \int_0^{\pi/2}  \left (\frac{1}{4} + \frac{1}{2} cos(2\theta) + \frac{1}{8} + \frac{1}{8} cos(4\theta) \right ) d\theta = \frac{\pi}{8}\]
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org7603f2c" class="outline-5">
+<h5 id="org7603f2c">Changing Bounds</h5>
+</div>
+</div>
+
+<div id="outline-container-org02ffdb4" class="outline-4">
+<h4 id="org02ffdb4">Triple Integrals</h4>
+<div class="outline-text-4" id="text-org02ffdb4">
+<p>
+Here we have a function \(z=f(x,y,z)\) and a 3-D-region R. 
+</p>
+
+<p>
+\[R = \left[ {x_1,x_2} \right] \times \left[ {y_1,y_2} \right] \times \left[ {z_1,z_2} \right]\]
+</p>
+
+<p>
+The region will be cut into small boxes. In each box we choose a point \((x_i, y_i, z_i)\) and then we sum the product
+of the box-volumes and the function value at the chosen point.
+</p>
+
+<p>
+\[\sum_i f(x_i, y_i, z_i)\ \Delta V_i\] 
+</p>
+
+<p>
+Now we let \(\Delta V_i \rightarrow 0\). If the function \(f(x,y,z)\) is piecewise continuous 
+in the region R the limit of the sum exists and is the same for all partitions.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org0f43ea7" class="outline-4">
+<h4 id="org0f43ea7">Surface Integrals</h4>
+</div>
+<div id="outline-container-org1c5da1d" class="outline-4">
+<h4 id="org1c5da1d">Volume Integrals</h4>
+</div>
+
+<div id="outline-container-org7c20a20" class="outline-4">
+<h4 id="org7c20a20">Gauss's Theorem (Divergence)</h4>
+<div class="outline-text-4" id="text-org7c20a20">
+<p>
+Volume -&gt; Boundary Area
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{\int_{V} div(\vec{E})\ dv = \int_{V} (\nabla \cdot \vec{E})\ dv = \oint_{A} \vec{E} \cdot \vec{df}}$$</font>
+</p>
+</div>
+</div>
+<div id="outline-container-orgf0b11c0" class="outline-4">
+<h4 id="orgf0b11c0">Stokes' Theorem (Curl)</h4>
+<div class="outline-text-4" id="text-orgf0b11c0">
+<p>
+Surface -&gt; Boundary Line
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{\int_{A} rot(\vec{E}) \cdot \vec{df} = \int_{A} (\nabla \times \vec{E}) \cdot \vec{df} = \oint_{S} \vec{E} \cdot \vec{dl}}$$</font>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org31f67f7" class="outline-2">
+<h2 id="org31f67f7">Experiments and Effects</h2>
+<div class="outline-text-2" id="text-org31f67f7">
+</div>
+<div id="outline-container-orgf3fbb0c" class="outline-3">
+<h3 id="orgf3fbb0c">Millikan Experiment (1910)</h3>
+<div class="outline-text-3" id="text-orgf3fbb0c">
+<p>
+Measurement of the elementary charge of the electron.
+Oil drop experiment, showing that charges are integer multiples of a certain
+fundamental quantum. 
+</p>
+
+<p>
+Elementary Charge: \(e=1.6021766208(98)\ 10^{-19} C\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd4b27d6" class="outline-3">
+<h3 id="orgd4b27d6">Tolman Stewart Experiment (1916)</h3>
+<div class="outline-text-3" id="text-orgd4b27d6">
+<p>
+A rapidly rotating coil is instantly stopped. Due to the mass of the 
+electrons in the metal a potential difference can be measured. 
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org4aa9fe6" class="outline-3">
+<h3 id="org4aa9fe6">Rowland Experiment (1875)</h3>
+<div class="outline-text-3" id="text-org4aa9fe6">
+<p>
+Shows that a rotating charged plate generates a magnetic field. 
+</p>
+</div>
+</div>
+<div id="outline-container-org2701ca8" class="outline-3">
+<h3 id="org2701ca8">Faraday Effect</h3>
+<div class="outline-text-3" id="text-org2701ca8">
+<p>
+Also called Faraday rotation. 
+Magneto-optical effect between light and a magnetic field in a medium.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org32c3f8d" class="outline-3">
+<h3 id="org32c3f8d">BCS - Effect (1957)</h3>
+<div class="outline-text-3" id="text-org32c3f8d">
+<p>
+(Bardeen, Cooper, Schrieffer)
+The BCS-Theory is the first microscopic theory of superconductivity.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd5fe443" class="outline-2">
+<h2 id="orgd5fe443">Circuit Elements</h2>
+<div class="outline-text-2" id="text-orgd5fe443">
+</div>
+<div id="outline-container-org5241415" class="outline-3">
+<h3 id="org5241415">Capacitor and Inductor</h3>
+<div class="outline-text-3" id="text-org5241415">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Capacitor</th>
+<th scope="col" class="org-left">Inductor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Definition</td>
+<td class="org-left">\(L:=\frac{\Psi}{i}=\frac{N\cdot \phi}{i}\)</td>
+<td class="org-left">\(C:=\frac{Q}{u}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">u-i</td>
+<td class="org-left">\(i=C\cdot\frac{du}{dt}\)</td>
+<td class="org-left">\(u=L\cdot\frac{di}{dt}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">u-i</td>
+<td class="org-left">\(I=U \omega C \ (X_C = \frac{1}{\omega C})\)</td>
+<td class="org-left">\(U=I \omega L \ (X_L=\omega L)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">Energy</td>
+<td class="org-left">\(W_C=\frac{1}{2}\cdot C\cdot u^{2}\)</td>
+<td class="org-left">\(W_L=\frac{1}{2}\cdot L\cdot i^{2}\)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb5069e7" class="outline-2">
+<h2 id="orgb5069e7">System Theory</h2>
+<div class="outline-text-2" id="text-orgb5069e7">
+</div>
+<div id="outline-container-org570e0d2" class="outline-3">
+<h3 id="org570e0d2">Digital Filters</h3>
+<div class="outline-text-3" id="text-org570e0d2">
+</div>
+<div id="outline-container-org17c85b4" class="outline-4">
+<h4 id="org17c85b4">Finite Impulse Response (FIR) Filters</h4>
+<div class="outline-text-4" id="text-org17c85b4">
+<p>
+The response to a finite input sequence is also finite (settles to 0).
+</p>
+
+<p>
+A FIR-Filter of order n is just the weighted sum of the past n input values.
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{y_n = b_0 \cdot x_n + b_1 \cdot x_{n-1} + \dots + b_1 \cdot x_{n-N}}$$</font>
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/System Theory/FIR Filter.jpg" alt="FIR Filter.jpg" />
+</p>
+</div>
+
+</div>
+
+<p>
+Notes:
+</p>
+<ul class="org-ul">
+<li>\(y_n\) doesn't depend on any prior \(y_i\) (difference to IIR-Filters).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgce73066" class="outline-4">
+<h4 id="orgce73066">Infinite Impulse Response (IIR) Filters</h4>
+<div class="outline-text-4" id="text-orgce73066">
+<p>
+The response to a finite input sequence might be infinite.
+This is due so internal feedback. 
+</p>
+
+<p>
+A IIR-Filter also has feedback, i.e. it's output also depends on past \(y_i\).
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{y_n = \sum_0^P b_i \cdot x_{n-i} -\sum_1^Q a_i \cdot y_{n-i}}$$</font>
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/System Theory/IIR Filter.jpg" alt="IIR Filter.jpg" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2021-03-12 Fri 19:30</p>
+</div>
+</body>
+</html>

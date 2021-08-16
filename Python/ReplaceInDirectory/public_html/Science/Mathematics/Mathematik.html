@@ -1,0 +1,2625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-03-17 Wed 06:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mathematik</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="shortcut icon" href="/public_html/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/html-export.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/hideshow.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/code.css">
+
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "0em",
+        "HTML-CSS": {
+             scale: 110,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div style = "text-align: right; margin-top: 5px">
+   <a accesskey="h" href="" style="font: 20px arial,helvetica,clean,sans-serif"></a>
+   <a accesskey="H" href="https://joesanmarzano.duckdns.org/public_html/" style="font: 20px arial,helvetica,clean,sans-serif;margin: 30px;"> HOME </a>
+</div><div id="content">
+<h1 class="title">Mathematik</h1>
+
+<div id="outline-container-org342570b" class="outline-2">
+<h2 id="org342570b">Links</h2>
+<div class="outline-text-2" id="text-org342570b">
+<ul class="org-ul">
+<li>GeoGebra: <a href="https://www.geogebra.org/calculator">https://www.geogebra.org/calculator</a></li>
+<li>Desmos: <a href="https://www.desmos.com/calculator">https://www.desmos.com/calculator</a></li>
+
+<li>Mandelbrot Viewer: <a href="http://math.hws.edu/eck/js/mandelbrot/MB.html">http://math.hws.edu/eck/js/mandelbrot/MB.html</a></li>
+</ul>
+</div>
+
+<div id="outline-container-org26ba6c9" class="outline-3">
+<h3 id="org26ba6c9">Analysis</h3>
+<div class="outline-text-3" id="text-org26ba6c9">
+<ul class="org-ul">
+<li>Analysis 1 (TIMMS)
+<a href="https://timms.uni-tuebingen.de/tp/UT_20141014_001_ana1b_0001">https://timms.uni-tuebingen.de/tp/UT_20141014_001_ana1b_0001</a></li>
+<li>Analysis 2 (TIMMS)
+<a href="http://timms.uni-tuebingen.de/List/List?id=UT_2015_____00%5B12%5D_ana2b_000_&amp;Headline=Analysis%20II">http://timms.uni-tuebingen.de/List/List?id=UT_2015_____00%5B12%5D_ana2b_000_&amp;Headline=Analysis%20II</a></li>
+<li>Analysis 3 (TIMMS)
+<a href="http://timms.uni-tuebingen.de/tp/UT_20151013_001_ana3c_0001">http://timms.uni-tuebingen.de/tp/UT_20151013_001_ana3c_0001</a></li>
+<li>Analysis 4 (TIMMS)
+<a href="http://timms.uni-tuebingen.de/tp/UT_20160415_001_ana4c_0001">http://timms.uni-tuebingen.de/tp/UT_20160415_001_ana4c_0001</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0025c77" class="outline-3">
+<h3 id="org0025c77">Lineare Algebra</h3>
+<div class="outline-text-3" id="text-org0025c77">
+<ul class="org-ul">
+<li>Lineare Algebra 1 (TIMMS)
+<a href="https://timms.uni-tuebingen.de/tp/UT_20131015_001_lineal1_0001">https://timms.uni-tuebingen.de/tp/UT_20131015_001_lineal1_0001</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3922a4a" class="outline-3">
+<h3 id="org3922a4a">Stochastik</h3>
+<div class="outline-text-3" id="text-org3922a4a">
+<ul class="org-ul">
+<li>Stochastik für Informatiker und Bioinformatiker (TIMMS)
+<a href="https://timms.uni-tuebingen.de/tp/UT_20040421_001_stochastik_0001">https://timms.uni-tuebingen.de/tp/UT_20040421_001_stochastik_0001</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc010d41" class="outline-2">
+<h2 id="orgc010d41">Grundlagen</h2>
+<div class="outline-text-2" id="text-orgc010d41">
+</div>
+<div id="outline-container-orga36fc71" class="outline-3">
+<h3 id="orga36fc71">Definitionen</h3>
+<div class="outline-text-3" id="text-orga36fc71">
+</div>
+<div id="outline-container-org8edf8af" class="outline-4">
+<h4 id="org8edf8af">Wohldefiniertheit</h4>
+<div class="outline-text-4" id="text-org8edf8af">
+<p>
+Ein (sprachlicher) Ausdruck ist wohldefiniert bzw. eindeutig, wenn die Definition für ihn genau eine 
+Bedeutung festlegt. 
+</p>
+
+<p>
+Repräsentantenunabhängigkeit 
+</p>
+
+<p>
+explizite Definition
+</p>
+
+<p>
+implizite Definition
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc6c342a" class="outline-3">
+<h3 id="orgc6c342a">Beweise</h3>
+<div class="outline-text-3" id="text-orgc6c342a">
+<p>
+Wie macht man keine Fehler?
+Gar nicht. Der Trick ist die Fehler durch sorgfältiges Testen zu finden.
+</p>
+
+<p>
+Wie findet man Beweise?
+Von Definitionen ausgehen.
+</p>
+</div>
+<div id="outline-container-org1ab4e88" class="outline-4">
+<h4 id="org1ab4e88">Induktionsbeweise</h4>
+<div class="outline-text-4" id="text-org1ab4e88">
+<p>
+A(n) folgt A(n+1)
+Warum hat das oft was mit Rekursionen zu tun?
+In A(n+1) baut man meist A(n) ein und verwendet dann die Induktionsvoraussetzung (das ist der Witz).
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-06-19 Sun&gt;</span></span>
+</p>
+</div>
+</div>
+<div id="outline-container-org1862bf4" class="outline-4">
+<h4 id="org1862bf4">Direkt an einem allgemeinen Beispiel zeigen</h4>
+<div class="outline-text-4" id="text-org1862bf4">
+<p>
+Das ist gemeint wenn angegeben wird, dass das folgende
+<i>ohne Beschränkung der Allgemeinheit</i> angenommen wird.
+</p>
+
+<p>
+Z.B. nehmen wir allgemeine Indizes n, m an etc.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org2809e6e" class="outline-3">
+<h3 id="org2809e6e">Gleichungen</h3>
+<div class="outline-text-3" id="text-org2809e6e">
+<p>
+Typen von Gleichungen
+</p>
+<ul class="org-ul">
+<li>Idenitätsgleichungen</li>
+<li>Bestimmungsgleichungen</li>
+<li>Definitionsgleichungen</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga7f137f" class="outline-3">
+<h3 id="orga7f137f">Relations</h3>
+<div class="outline-text-3" id="text-orga7f137f">
+<p>
+For all \(x,y:\)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">reflexive</td>
+<td class="org-left">\(Rxx\)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">transitive</td>
+<td class="org-left">\(Rxy \wedge Ryz \rightarrow Rxz\)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">symmetric</td>
+<td class="org-left">\(Rxy \rightarrow Ryx\)</td>
+<td class="org-left">"x is a sibling of y"</td>
+</tr>
+
+<tr>
+<td class="org-left">asymmetric</td>
+<td class="org-left">\(Rxy \rightarrow \neg Ryx\)</td>
+<td class="org-left">"x is taller than y"</td>
+</tr>
+
+<tr>
+<td class="org-left">antisymmetric</td>
+<td class="org-left">\((Rxy \wedge Ryx) \rightarrow x=y\)</td>
+<td class="org-left">"x paid the bill of y"</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org9d057cf" class="outline-4">
+<h4 id="org9d057cf">Order Relation</h4>
+<div class="outline-text-4" id="text-org9d057cf">
+<p>
+Preorder (Halbordnung)
+</p>
+<ul class="org-ul">
+<li>Reflexve</li>
+<li>Transitive</li>
+</ul>
+
+<p>
+Partial Order
+</p>
+<ul class="org-ul">
+<li>Preorder</li>
+<li>Antisymmetric</li>
+</ul>
+
+<p>
+Total Order
+</p>
+<ul class="org-ul">
+<li>Partial Order</li>
+<li>Connexity (Totalität)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org217d1b6" class="outline-4">
+<h4 id="org217d1b6">Equivalence Relation</h4>
+<div class="outline-text-4" id="text-org217d1b6">
+<ul class="org-ul">
+<li>Reflexive</li>
+<li>Transitive</li>
+<li>Symmetric</li>
+</ul>
+
+<p>
+see <a href="#org8d8c7a7">Äquivalenzrelationen</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org95a93a0" class="outline-3">
+<h3 id="org95a93a0">Elementary Functions</h3>
+<div class="outline-text-3" id="text-org95a93a0">
+<ul class="org-ul">
+<li>Powers: \(x^2, x^3\) etc.</li>
+<li>Roots: \(\sqrt{x}, \sqrt[3]{x}\), etc.</li>
+<li>Exponential functions: \(e^x, a^x\)</li>
+<li>Logarithms: \(log(x)\)</li>
+<li>Trigonometric functions: \(sin(x), cos(x), arcsin(x), arccos(x)\) etc.</li>
+<li>Hyperbolic functions: \(sinh(x), cosh(x), arcsinh(x), arccosh(x)\) etc.</li>
+</ul>
+
+<p>
+Compositions of the above and all functions obtained by: +,-,*,/
+</p>
+</div>
+
+<div id="outline-container-orgb0a6a6c" class="outline-4">
+<h4 id="orgb0a6a6c">Trigonometry</h4>
+<div class="outline-text-4" id="text-orgb0a6a6c">
+<p>
+Euler's Formula
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{e^{i \phi} = cos(\phi) + i\ sin(\phi)}$$</font>
+</p>
+
+<p>
+From this we get:
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{cos(\phi) = \frac{e^{i \phi} + e^{-i \phi}}{2} \ \ \ \ sin(\phi) = \frac{e^{i \phi} - e^{-i \phi}}{2i}}$$</font>
+</p>
+
+<p>
+If we get rid of the i's, we immediately get the hyperbolic functions:
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{cosh(\phi) = \frac{e^{\phi} + e^{- \phi}}{2} \ \ \ \ sinh(\phi) = \frac{e^{\phi} - e^{- \phi}}{2}}$$</font>
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/sin_cos_complex.png" alt="sin_cos_complex.png" />
+</p>
+</div>
+
+</div>
+
+<p>
+Using \((a+ib)(a-ib) = a^2+b^2\) we quickly get:
+</p>
+
+<p>
+\[e^{i \phi} e^{-i \phi} = e^0 = 1 = sin(\phi)^2 + cos(\phi)^2\]
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{sin(\phi)^2 + cos(\phi)^2 = 1}$$</font>
+</p>
+
+<p>
+The exponential function allows us to derive trigonometric identities like this:
+</p>
+
+<p>
+\[cos(\theta + \phi) + i\ sin(\theta + \phi) = e^{i(\theta + \phi)} = e^{i \theta}e^{i \phi}\]
+\[= (cos(\theta) + i\ sin(\theta))(cos(\phi) + i\ sin(\phi))\] 
+\[= (cos(\theta) cos(\phi) - sin(\theta) sin(\phi) + i (sin(\theta) cos(\phi) - cos(\theta) sin(\phi))\]
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge1b11df" class="outline-2">
+<h2 id="orge1b11df">Analysis</h2>
+<div class="outline-text-2" id="text-orge1b11df">
+</div>
+<div id="outline-container-org19e51e3" class="outline-3">
+<h3 id="org19e51e3">Intuitiver Zugang <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h3>
+<div class="outline-text-3" id="text-org19e51e3">
+</div>
+<div id="outline-container-org78a103b" class="outline-4">
+<h4 id="org78a103b">Kreisfläche</h4>
+<div class="outline-text-4" id="text-org78a103b">
+<p>
+Wie könnte man die Fläche eines Kreises berechnen? 
+</p>
+
+<p>
+Wie kommt man also zu folgender Formel?
+\[A= \pi R^2\]
+</p>
+
+<p>
+<b>Man teilt den Kreis in Ringe</b>
+</p>
+
+<p>
+Näherungsweise hat ein ausgerollter Ring die Fläche \(2 \pi r \cdot dr\).
+Wir legen jetzt die ausgerollten Ringe nebeneinander (Annahme: \(R = 3\)).
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/Analysis/Circle_Approximation.png" alt="Circle_Approximation.png" />
+</p>
+</div>
+
+</div>
+
+<p>
+Je kleiner man \(dr\) wählt, desto genauer wird Approximation.
+Am Ende erhalten wir die Fläche des Dreiecks: \(A = \frac{1}{2} \cdot 2 \pi R \cdot R = \pi R^2\).
+</p>
+
+<p>
+Das Problem reduziert sich am Ende auf die Berechung der Fläche unter einer Kurve.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org92d20cb" class="outline-4">
+<h4 id="org92d20cb">Fläche unter einer Kurve</h4>
+<div class="outline-text-4" id="text-org92d20cb">
+<p>
+Wie berechnen wir die Fläche \(A(x)\) unter dem Graph von \(x^2\)?
+</p>
+
+<p>
+Eine Änderung \(dx\) gibt Näherungsweise eine Änderung \(dA \approx x^2 dx\).
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/Analysis/Area_under_x_2.png" alt="Area_under_x_2.png" />
+</p>
+</div>
+
+</div>
+
+<p>
+Dies lässt sich verallgemeinern: \(dA \approx f(x) dx\) oder: \(\frac{dA}{dx} \approx f(x)\) 
+an jeder Stelle x. Je kleiner \(dx\) gewählt wird, desto kleiner ist der 
+Fehler, der sich durch die Rechtecksapproximation ergibt.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd795587" class="outline-4">
+<h4 id="orgd795587">Ableitungen</h4>
+<div class="outline-text-4" id="text-orgd795587">
+<p>
+\(\frac{x^n}{dx}\) = ?
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/Analysis/power_rule.png" alt="power_rule.png" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org45449d3" class="outline-3">
+<h3 id="org45449d3">Folgen</h3>
+<div class="outline-text-3" id="text-org45449d3">
+<p>
+<b>Definition</b> <br />
+Eine Folge ist <b>nach unten beschränkt</b>, wenn es ein \(a\) gibt, sodass für alle \(n\) gilt: \((a_n) \leq a\).<br />
+Eine Folge ist <b>nach oben beschränkt</b>, wenn es ein \(a\) gibt, sodass für alle \(n\) gilt: \((a_n) \geq a\).<br />
+Eine Folge ist <b>beschränkt</b>, wenn sie nach unten und nach oben beschränkt ist.<br />
+\(a\) heißt entsprechend untere und obere Schranke. 
+</p>
+
+<p>
+<b>Definition Supremum</b> <br />
+Eine Zahl \(a\) heißt <b>kleinste obere Schranke</b> oder <b>Supremum</b> falls gilt:
+</p>
+<ul class="org-ul">
+<li>\(a\) ist eine untere Schranke und</li>
+<li>es gibt keine untere Schranke, die kleiner ist</li>
+</ul>
+
+
+<p>
+<b>Definition Infimum</b> <br />
+Größte untere Schranke.
+</p>
+</div>
+
+
+
+
+<div id="outline-container-orge0a4593" class="outline-4">
+<h4 id="orge0a4593">Häufungspunkte (limit points) und Grenzwerte</h4>
+<div class="outline-text-4" id="text-orge0a4593">
+<p>
+<b>Definition</b> <br />
+Die Folge \((a_n)\) konvergiert gegen \(a\), wenn es zu jedem \(\epsilon > 0\) einen Index \(n_0\) gibt, so dass
+für alle \(n>n_0\) gilt \(|a_n - a| < \epsilon\). \(a\) heißt <b>Grenzwert</b> der Folge \((a_n)\).
+</p>
+
+<p>
+<b>Satz</b> <br />
+Eine konvergente Folge besitzt genau einen Grenzwert.
+</p>
+
+<p>
+<b>Satz</b> <br />
+Jede Teilfolge einer konvergenten Folge hat den gleichen Grenzwert.
+</p>
+
+<p>
+<b>Definition</b><br />
+Eine Zahl \(a\) ist <b>Häufungspunkt</b> einer Folge \((a_n)\), wenn in jeder \(\epsilon\)-Umgebung von \(a\)
+unendlich viele Folgenglieder liegen. 
+</p>
+
+<p>
+<b>Satz von Bolzano Weierstraß</b><br />
+Jede beschränkte Folge hat mindestens einen Häufungspunkt. 
+</p>
+
+<p>
+Vergleich der Begriffe Grenzwert und Häufungspunkt.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Grenzwert</th>
+<th scope="col" class="org-left">Häufungspunkt</th>
+<th scope="col" class="org-left">Anmerkung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Wie viele kann eine Folge haben?</td>
+<td class="org-left">höchstens einen</td>
+<td class="org-left">mehrere, evtl. unendlich viele</td>
+<td class="org-left">GW ist auch HP.</td>
+</tr>
+
+<tr>
+<td class="org-left">In einer ε-Umgebung liegen</td>
+<td class="org-left">fast alle Folgenglieder</td>
+<td class="org-left">"nur" unendlich viele</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Konvergenz von Teilfolgen.</td>
+<td class="org-left">alle konvergieren gegen GW.</td>
+<td class="org-left">eine Teilfolge ist hinreichend.</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orge8f58d9" class="outline-3">
+<h3 id="orge8f58d9">Funktionen</h3>
+<div class="outline-text-3" id="text-orge8f58d9">
+</div>
+<div id="outline-container-orgbcd372d" class="outline-4">
+<h4 id="orgbcd372d">Grenzwert von Funktionen</h4>
+<div class="outline-text-4" id="text-orgbcd372d">
+<p>
+Die Funktion \(f(x)\) konvergiert gegen \(c\) für \(x\) gegen \(x_0\), geschrieben
+</p>
+
+<p>
+\[\lim_{x \to x_0}f(x) = c\]
+</p>
+
+<p>
+wenn für jede \(\epsilon\)-Umgebung um \(c\) eine \(\delta\)-Umgebung um \(x_0\) existiert, sodass alle Funktionswerte
+für Argumente in der \(\delta\)-Umgebung in der \(\epsilon\)-Umgebung liegen.
+</p>
+
+<p>
+Anschaulich: die Funktion bleibt beliebig nahe an \(c\).
+Auch: Man ignoriert den tatsächlichen Funktionswert in \(x_0\) (falls es ihn gibt) und fragt sich, wass denn der richtige
+Funktionswert sein müsste, ausgehend von der Umgebung von \(x_0\).
+</p>
+
+<p>
+Man kann hier eine Folge von Funktionswerten \((f(x_i))\) erzeugen, diese muss gegen c konvergieren, wenn der 
+Grenzwert der Funktion im Punkt \(x_0\) existiert.
+</p>
+
+<p>
+Allerdings funktioniert das alles auch ohne Folge, wir betrachten dann nur ein \(\epsilon\)- und ein \(\delta\)-Intervall
+in dem die Punkte beliebig herumliegen.
+</p>
+
+<p>
+Bemerkungen:
+</p>
+<ul class="org-ul">
+<li>Funktion muss nicht im Punkt \(x_{0}\) definiert sein.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6a05b02" class="outline-4">
+<h4 id="org6a05b02">Stetigkeit</h4>
+<div class="outline-text-4" id="text-org6a05b02">
+<p>
+Der Limes einer im Punkt \(x_0\) stetigen Funktion \(f(x)\) existiert und ist gleich dem Funktionswert in diesem Punkt.
+</p>
+
+<p>
+Es gibt folgende Möglichkeiten, wie die Sache mit der Stetigkeit schief gehen kann:
+</p>
+<ul class="org-ul">
+<li>Der Grenzwert existiert nicht.</li>
+<li>Der Grenzwert existiert, ist aber nicht gleich dem Funktionswert.</li>
+<li>Der Grenzwert existiert, die Funktion ist aber im PUnkt \(x_0\) gar nicht definiert (siehe \(\frac{1}{n}\)).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7beb87a" class="outline-4">
+<h4 id="org7beb87a">Potenz- und Exponentialfunktion</h4>
+<div class="outline-text-4" id="text-org7beb87a">
+<p>
+Wir erklären zunächst was unter \(a^r\) zu verstehen ist.
+</p>
+
+<p>
+Für natürliche Exponenten \(r\) ist die Sache klar. Aber wie sieht es mit rationalen 
+und reellen Exponenten aus?
+</p>
+
+<hr />
+<p>
+<b>Definition</b><br />
+Eine <b>p-te Wurzel</b> (\(p \in \mathbb{N}\)) aus einer Zahl \(a \geq 0\) ist eine reelle Zahl \(w\) falls gilt:
+</p>
+<ul class="org-ul">
+<li>\(w \geq 0\)</li>
+<li>\(w^p = a\) oder \(\underbrace{w \cdot w \dots w}_{p-times} = a\)</li>
+<li>Schreibweise: \(w=\sqrt[p]{a}\) (siehe unten: \(w=a^{\frac{1}{p}}\))</li>
+</ul>
+
+<p>
+<b>Satz</b><br />
+Die p-te Wurzel existiert und ist eindeutig.
+</p>
+<hr />
+<p>
+<b>Definition: Potenz mit rationalem Exponenten</b> <br />
+Wir nehmen nun einfach p-te Wurzeln und multiplizieren sie s-mal miteinander. Das gibt: \((a^{\frac{1}{p}})^s\).
+Nun setzen wir \(s,p \in \mathbb{Z}\) indem wir negative Exponenten als die inversen Zahlen auffassen.
+</p>
+
+<p>
+Wir definieren (\(a > 0\), \(r=\frac{s}{p}\).):
+\[a^r = \sqrt[p]{a^s} = a^{\frac{s}{p}}\]
+\[a^{-r}= \frac{1}{\sqrt[p]{a^s}} = \frac{1}{a^r} = a^\frac{p}{s}\]
+</p>
+
+<p>
+Zudem wird wird festgelegt:
+</p>
+<ul class="org-ul">
+<li>\(0^r = 0\)</li>
+<li>\(a^0 = 1\)</li>
+</ul>
+
+<p>
+Die p-te Wurzel ist der Spezialfall: \(w=a^{\frac{1}{p}}\). Die Gleichung hierzu war: \(w^p = a\).
+</p>
+
+<p>
+Zu \(w = a^\frac{s}{p}\) gehört entsprechend die Gleichung: \(w^p = a^s\).
+</p>
+<hr />
+<p>
+<b>Definition: Potenz mit reellem Exponenten</b> <br />
+Sei \(a>0\) und \(\rho \in \mathbb{R}\). 
+</p>
+
+<p>
+Wenn \(\rho\) irrational ist, suchen wir uns eine rationalen Folge \((r_n)\) for die gilt: \(r_n \to \rho\).
+</p>
+
+<p>
+Nun definieren wir 
+\[a^\rho = \lim_{n \to \infty} a^{r_n}\]
+</p>
+
+<p>
+Dabei ist zu bedenken, dass für diese Definition der Grenzwert \(a^\rho\) immer existieren und von der
+speziellen Wahl der Folge \((r_n)\) unabhängig sein muss.
+</p>
+<hr />
+<p>
+Je nachdem ob wir bei \(a^r\), \(a\) oder \(r\) als veränderlich auffassen, ergeben sich die
+Potenzfunktion oder die Exponentialfunktion.
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{f(x) = x^b}$$</font>
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{f(x) = b^x}$$</font>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc465909" class="outline-3">
+<h3 id="orgc465909">Volumina von Rotationskörpern</h3>
+<div class="outline-text-3" id="text-orgc465909">
+<p>
+Wir rotieren die Fläche unter einer Kurve \(f(x)\) um die x-Achse.
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/Analysis/f_x.png" alt="f_x.png" style="float:right;margin:0px 20% 0px 0px;padding:unset;" />
+</p>
+</div>
+
+</div>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{V = \pi \int_{a}^{b} f(x)^2 dx}$$</font>
+</p>
+
+<p>
+Begründung:
+</p>
+
+<p>
+Volumen einer Kreisscheibe: \[\Delta V= \pi f(x_i)^2 \cdot \Delta x\]
+</p>
+
+<p>
+Gesamtvolumen: \[V \approx \pi \sum_{i=1}^{n} f(x_i)^2 \cdot \Delta x\]
+</p>
+
+<p>
+Grenzwert: \[V = \lim_{n \to \infty} \pi \sum_{i=1}^{n} f(x_i)^2 \cdot \Delta x = \pi \int_{a}^{b} f(x)^2 dx\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgae6ab12" class="outline-3">
+<h3 id="orgae6ab12">Bogenlänge</h3>
+<div class="outline-text-3" id="text-orgae6ab12">
+<p>
+Für eine Funktion \(f(x)\):
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{s = \int_{a}^{b} \sqrt{1 + f^{'}(x)^2} dx}$$</font>
+</p>
+
+<p>
+Begründung: 
+</p>
+
+<p>
+Ein Stück angenähert durch eine Gerade: 
+\[\Delta s = \sqrt{ \Delta x^2 + \Delta y^2}\]
+</p>
+
+<p>
+\[\Delta y \approx f^{'}(x) \Delta x\]
+</p>
+
+<p>
+\[\Delta s \approx \sqrt{\Delta x^2 + f^{'}(x)^2 \Delta x^2} \approx \Delta x \sqrt{1 + f^{'}(x)^2}\]
+</p>
+
+<p>
+\[s \approx \sum_{i=1}^{n} \Delta s_i\]
+</p>
+
+<p>
+\[s = \lim_{n \to \infty} \sum_{i=1}^{n} \Delta s_i = \int_{a}^{b} \sqrt{1 + f^{'}(x)^2} dx\]
+</p>
+
+<p>
+Für eine Kurve in <b>Parameterform</b>: \(\vec{r(t)}=\begin{pmatrix}x(t)\\y(t)\end{pmatrix}\)
+</p>
+
+<p>
+\[\Delta x \approx \dot{x}(t) \Delta t\]
+</p>
+
+<p>
+\[\Delta y \approx \dot{y}(t) \Delta t\]
+</p>
+
+<p>
+\[\Delta s = \sqrt{ \Delta x^2 + \Delta y^2} = \Delta t \sqrt{\dot{x}(t)^2 + \dot{y}(t)^2}\]
+</p>
+
+<p>
+das gibt dann:
+</p>
+
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{s = \int_{t_1}^{t_2} \sqrt{\dot{x}(t)^2 + \dot{y}(t)^2}dt}$$</font>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeeb1383" class="outline-3">
+<h3 id="orgeeb1383">Doppelintegral</h3>
+<div class="outline-text-3" id="text-orgeeb1383">
+<p>
+Wie berechnet man das Volumen, das eine Funktion \(z=f(x,y)\) mit der
+x,y-Ebene einschließt?
+</p>
+
+<p>
+\[\Delta V \approx f(x_i, y_j) \cdot \Delta x \cdot \Delta y\]
+</p>
+
+<p>
+\[V \approx \sum_{i} \sum_{j} f(x_i, y_j) \cdot \Delta x \cdot \Delta y\]
+</p>
+
+<p>
+Das Doppelintegral ist salopp so definiert:
+</p>
+
+<p>
+\[V=\lim_{\Delta x \to 0} \lim_{\Delta y \to 0}\sum_{i} \sum_{j} f(x_i, y_j) \cdot \Delta x \cdot \Delta y = \iint_{A} f(x,y)dx dy\]
+</p>
+</div>
+</div>
+<div id="outline-container-org46d6bc6" class="outline-3">
+<h3 id="org46d6bc6">Differentialgleichungen</h3>
+<div class="outline-text-3" id="text-org46d6bc6">
+<ul class="org-ul">
+<li>Poissongleichung (Laplacegleichung)</li>
+<li>Bernoullische Differentialgleichung</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga92a394" class="outline-2">
+<h2 id="orga92a394">Lineare Algebra</h2>
+<div class="outline-text-2" id="text-orga92a394">
+<p>
+Ursprünge:
+</p>
+<ul class="org-ul">
+<li>Lösen von linearen Gleichungssystemen.</li>
+</ul>
+</div>
+<div id="outline-container-org9ebe029" class="outline-3">
+<h3 id="org9ebe029">Matrizen</h3>
+<div class="outline-text-3" id="text-org9ebe029">
+</div>
+<div id="outline-container-org757838d" class="outline-4">
+<h4 id="org757838d">Rechenregeln</h4>
+<div class="outline-text-4" id="text-org757838d">
+<p>
+Transponierte Matrix
+</p>
+<ul class="org-ul">
+<li>\((A + B)^T = A^T + B^T\).</li>
+<li>\((AB)^T = B^TA^T\).</li>
+<li>\((A^T)^{-1} = (A^{-1})^T\) (wenn \(A\) invertierbar, dann auch \(A^T\)).</li>
+<li>\(Rg(A) = Rg(A^T)\) .</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5029f9f" class="outline-4">
+<h4 id="org5029f9f">Rang einer Matrix</h4>
+<div class="outline-text-4" id="text-org5029f9f">
+</div>
+<div id="outline-container-org3c21fa1" class="outline-5">
+<h5 id="org3c21fa1">Treppennormalform</h5>
+<div class="outline-text-5" id="text-org3c21fa1">
+<p>
+Jede Matrix kann durch elementare Zeilenumformungen in <b>Treppennormalform</b> überführt werden. 
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/LinearAlgebra/Treppennormalform.PNG" alt="Treppennormalform.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+Anmerkung:
+</p>
+<ul class="org-ul">
+<li>Die ersten \(r\) Zeilen haben eine 1. Dazu korrespondieren \(j_1 - j_r\) Spalten (<b>ausgezeichnete Spaltenindizes</b>).</li>
+<li>Über und links der 1-er stehen nur 0-en.</li>
+</ul>
+<hr />
+<p>
+<b>Definition:</b> <b>Pivot-Positionen</b> sind die Paare \((1, j_1) ... (r, j_r)\) (Zeile, Spalte).
+</p>
+<hr />
+<p>
+<b>Definition:</b> Der <b>Rang</b> \(Rg(A)\) einer Matrix \(A\) ist die Anzahl von Pivot-Positionen in ihrer Treppennormalform.
+</p>
+<hr />
+<p>
+<b>Definition:</b> Eine Matrix \(A \in M_{mn}(\mathbb{K})\) ist in <b>Treppennormalform</b>, wenn sie die 
+Nullmatrix ist oder wenn es \(r\) Spaltenindizes \(j_1 < j_2 < ... < j_r\) gibt, sodass für alle \(1 \leq i \leq r\) gilt:
+</p>
+<ol class="org-ol">
+<li>\(a_{ij_i} = 1\) (Pivot-Positionen)</li>
+<li>\(a_{lj_i} = 0\) für alle \(j \neq i\) (oberhalb und unterhalb der 1er)</li>
+<li>\(a_{il} = 0\) für alle \(l < j_i\) (linkes der 1er)</li>
+<li>\(a_{kl} = 0\) für alle \(k > r\) und alle \(1 \leq l \leq n\) (der 0-Bereich ganz unten)</li>
+</ol>
+<hr />
+<p>
+<b>Satz:</b> Die Treppennormalform ist eindeutig. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org90b3140" class="outline-5">
+<h5 id="org90b3140">Elementare Zeilenumformungen und Elementarmatrizen</h5>
+<div class="outline-text-5" id="text-org90b3140">
+<p>
+Betrachten wir zunächst <b>elementare Zeilenumformungen</b> <a id="orgfbb2b68"></a> bei Matrizen.
+</p>
+<hr />
+<p>
+<b>Definition:</b> Sei \(A \in M_{mn}(\mathbb{K})\). <b>Elementare Zeilenumformungen</b> sind die folgenden
+Manipulationen an \(A\):
+</p>
+<ul class="org-ul">
+<li>\(Z_{ij}:\) <b>Vertausche</b> die i-te Zeile mit der j-ten Zeile, wobei.</li>
+<li>\(Z_i(r):\) <b>Multipliziere</b> die i-te Zeile mit dem Skalar \(r \neq 0 \in \mathbb{K}\).</li>
+<li>\(Z_{ij}(s):\) <b>Addiere</b> das s-fache der j-ten Zeile zur i-ten Zeile, wobei \(s \in \mathbb{K}\) und \(i \neq j\).</li>
+</ul>
+<hr />
+
+<p>
+Dann wird der Begriff der <b>Elementarmatrix</b> <a id="orge60ff7a"></a> (\(P_{ij}, D_i(r), T_{ij}(s)\)) definiert.
+</p>
+
+<ul class="org-ul">
+<li>\(P_{ij}A\) wird aus \(A\) durch \(Z_{ij}\) gewonnen (Zeilenvertauschung).</li>
+<li>\(D_i(r)A\) wird aus \(A\) durch \(Z_i(r)\) gewonnen (Multiplikation mit Skalar).</li>
+<li>\(T_{ij}(s)A\) wird aus \(A\) durch \(Z_{ij}(s)\) gewonnen (Addition mit s-fachem einer anderen Zeile).</li>
+</ul>
+<hr />
+<p>
+Hilfreich ist noch folgende Definition einer Matrix \(E_{ij}\), die überall 0 ist, außer an einer
+Stelle, wo sie 1 ist.
+</p>
+<hr />
+<p>
+<b>Definition:</b> Sei \(E_{ij} \in M_{mn}(\mathbb{K})\) jene Matrix, die an der Stelle \((i,j)\) den Eintrag 1 hat, 
+und überall sonst 0.  
+</p>
+<hr />
+
+<p>
+<b>Satz:</b> Elementarmatrizen sind invertierbar und die Inversen sind wieder Elementarmatrizen.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org55644dd" class="outline-4">
+<h4 id="org55644dd">Gaußalgorithmus</h4>
+<div class="outline-text-4" id="text-org55644dd">
+<p>
+Systematisches Verfahren um eine Matrix auf Treppennormalform zu bringen. 
+</p>
+
+<p>
+Vorgehensweise:
+</p>
+<ul class="org-ul">
+<li>Man bringt von links nach rechts eine Spalte nach der anderen auf Treppennormalform.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1ba618f" class="outline-4">
+<h4 id="org1ba618f">Lineare Gleichungssysteme</h4>
+</div>
+</div>
+<div id="outline-container-org765db21" class="outline-3">
+<h3 id="org765db21">Determinanten</h3>
+<div class="outline-text-3" id="text-org765db21">
+<hr />
+<p>
+Sei \(S_n\) die symmetrische Gruppe in \(n\) Buchstaben. \(sgn(\sigma)\) ist die Signatur von \(\sigma \in S_n\).<br />
+<b>Definition:</b> Die <b>Determinante</b> von \(A=(a_{ij} \in M_{nn}(R))\) ist folgendes Element des Ringes \(R\) (<b>Leibnizformel</b>):
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{det(A) = \sum_{\sigma \in S_n}sgn(\sigma)a_{1\sigma(1)}a_{2\sigma(2)}\dots a_{n\sigma(n)}}$$</font> 
+</p>
+
+<p>
+Anmerkungen:
+</p>
+<ul class="org-ul">
+<li></li>
+</ul>
+<hr />
+</div>
+<div id="outline-container-org36fa05d" class="outline-4">
+<h4 id="org36fa05d">Cramer'sche Regel</h4>
+</div>
+<div id="outline-container-org8913f84" class="outline-4">
+<h4 id="org8913f84">Adjunktensatz</h4>
+</div>
+<div id="outline-container-orgbed860c" class="outline-4">
+<h4 id="orgbed860c">Satz von Cayley-Hamilton</h4>
+</div>
+</div>
+<div id="outline-container-orgcc6309a" class="outline-3">
+<h3 id="orgcc6309a">Eigenwerte</h3>
+</div>
+<div id="outline-container-org7b25fde" class="outline-3">
+<h3 id="org7b25fde">Normalformen</h3>
+<div class="outline-text-3" id="text-org7b25fde">
+</div>
+<div id="outline-container-org69d7914" class="outline-4">
+<h4 id="org69d7914">Diagonalisierbarkeit</h4>
+</div>
+<div id="outline-container-orgc7b4486" class="outline-4">
+<h4 id="orgc7b4486">Nilpotenz</h4>
+</div>
+<div id="outline-container-org23df4cb" class="outline-4">
+<h4 id="org23df4cb">Jordan'sche Normalform</h4>
+</div>
+<div id="outline-container-org7152402" class="outline-4">
+<h4 id="org7152402">Bilinearformen</h4>
+</div>
+<div id="outline-container-orge4e1799" class="outline-4">
+<h4 id="orge4e1799">Sesquilinearformen</h4>
+</div>
+</div>
+<div id="outline-container-orgb7e626a" class="outline-3">
+<h3 id="orgb7e626a">Vektorräume</h3>
+<div class="outline-text-3" id="text-orgb7e626a">
+<hr />
+<p>
+<b>Definition:</b> Ein <b>Vektorraum</b> \(V\) auf einem Körper \(\mathbb{K}\) ist eine Menge \(V\) mit einer Verknüpfung \(+\) (<b>Vektoraddition</b>) 
+und einer Abbildung \(\cdot\) (<b>Skalarmultiplikation</b>):
+</p>
+<ul class="org-ul">
+<li>\(+:V\times V \rightarrow  V\). Für alle \(v,w \in V: (v,w) \mapsto v+w\).</li>
+<li>\(\cdot : \mathbb{K} \times V \rightarrow V\). Für alle \(a \in \mathbb{K}, v \in V: (a,v) \mapsto a \cdot v\).</li>
+</ul>
+
+<p>
+Es gelten die folgenden Regeln:<br />
+<b>Vektoraddition</b> Für alle \(u,v,w \in V\):
+</p>
+<ul class="org-ul">
+<li>Kommutativität: \(v + w = w + v\).</li>
+<li>Assoziativität: \((u+v)+w = u+(v+w)\).</li>
+<li>Neutrales Element (\(0 \in V\)): \(v + 0 = v\).</li>
+<li>Inverses Element (\(v' \in V\)): Zu jedem \(v \in V\) gibt es ein \(v' \in V : v+v'=0\).</li>
+</ul>
+<p>
+<b>Skalarmultiplikation</b>
+</p>
+<ul class="org-ul">
+<li>Für alle \(a,b \in \mathbb{K}\) und alle \(v \in V\) gilt: \((ab) \cdot v = a \cdot (b \cdot v)\).</li>
+<li>Einselement: Für \(1 \in \mathbb{K}\) gilt für alle \(v \in V\) \(1 \cdot v = v\).</li>
+</ul>
+<p>
+<b>Distributivgesetze</b> Für alle \(a,b \ \mathbb{K}\) und \(v_1, v_2 \ in V\):
+</p>
+<ul class="org-ul">
+<li>\(a \cdot (v_1+v_2) = a \cdot v_1 + a \cdot v_2\).</li>
+<li>\((a+b) \cdot v_1 = a \cdot v_1 + b \cdot v_1\).</li>
+</ul>
+<hr />
+
+<p>
+<span class="underline">Anmerkungen</span>:
+</p>
+<ul class="org-ul">
+<li>Vorsicht mit der Bedeutung der Zeichen \(\cdot\) und \(+\) ist geboten. Für den Vektorraum und
+den Körper ist sie jeweils verschieden.</li>
+</ul>
+</div>
+
+<div id="outline-container-org2006be0" class="outline-4">
+<h4 id="org2006be0">Unterräume</h4>
+<div class="outline-text-4" id="text-org2006be0">
+<p>
+<b>Definition:</b> Eine Teilmenge \(U \neq \emptyset\) eines Vektorraums \(V\) nennt man <b>Unterraum von V</b>, wenn \(U\) mit
+der Addition und der Skalarmultiplikation in \(V\) einen Vektorraum bildet. 
+</p>
+<hr />
+<p>
+<span class="underline">Anmerkungen</span>:
+</p>
+<ul class="org-ul">
+<li>Ein Unterraum ist also eine Teilmenge eines Vektorraums, die selbst wieder ein Vektorraum ist.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org7ae0d6b" class="outline-4">
+<h4 id="org7ae0d6b">Endlich erzeugte Vektorräume</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org607dc4f" class="outline-2">
+<h2 id="org607dc4f">Vector Calculus</h2>
+<div class="outline-text-2" id="text-org607dc4f">
+<p>
+Concerned with functions assigning vectors to its input domain.
+</p>
+
+<p>
+Most important: vector fields (assigning vectors to locations in space)
+</p>
+
+<p>
+Examples:
+</p>
+<ul class="org-ul">
+<li>Wind velocity for location (x,y)</li>
+<li>Electric Field for location (x,y,z)</li>
+
+<li>Gradient : vector of the partial derivatives of a scalar function</li>
+<li>Field Lines : curve following the vectors, i.e. the vectors of a vector field</li>
+</ul>
+
+<p>
+2 ways of differentiation
+</p>
+<ul class="org-ul">
+<li>Divergence :</li>
+<li>Curl :</li>
+</ul>
+
+<p>
+2 ways of integration
+</p>
+<ul class="org-ul">
+<li>Line Integral</li>
+<li>Surface Integral</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org447bee2" class="outline-2">
+<h2 id="org447bee2">Algebraische Strukturen</h2>
+<div class="outline-text-2" id="text-org447bee2">
+<p>
+Grundsätzlich ist eine AS eine Menge mit mindestens einer Verknüpfung.
+Intuitiv: Man verknüpft Objekte und erzeugt damit neue Objekte. 
+</p>
+
+<p>
+Es geht darum Gleichungen zu lösen. Was man dafür braucht sind bestimmet 
+Eigenschaften von Verknüpfungen und neutrale Elemente.
+</p>
+</div>
+<div id="outline-container-org8d8c7a7" class="outline-3">
+<h3 id="org8d8c7a7">Äquivalenzrelationen</h3>
+<div class="outline-text-3" id="text-org8d8c7a7">
+<p>
+<b>Definition:</b> Die Teilmenge \(R \subseteq M \times M\) heißt <b>Äquivalenzrelation</b> (Schreibweise: \(x \sim y\)) 
+auf \(M\), wenn für alle \(x,y,z \in M\) gilt:
+</p>
+<ol class="org-ol">
+<li><b>Reflexivität:</b> \((x,x) \in R\).</li>
+<li><b>Symmetrie:</b> Wenn \((x,y) \in R\), dann \((y,x) \in R\).</li>
+<li><b>Transitivität:</b> Wenn \((x,y) \in R\) und \((y,z) \in R\), dann \((x,z) \in R\).</li>
+</ol>
+</div>
+
+<div id="outline-container-orgdf82e00" class="outline-4">
+<h4 id="orgdf82e00">Äquivalenzklassen</h4>
+<div class="outline-text-4" id="text-orgdf82e00">
+<p>
+<b>Definition:</b> Sei \(M\) eine Menge und \(R\) eine Äquivalenzrelation auf \(M\).
+Eine Teilmenge \(C \subseteq M\) heißt <b>Äquivalenzklasse</b> bezüglich \(R\), wenn gilt:
+</p>
+<ol class="org-ol">
+<li>\(C \neq \emptyset\).</li>
+<li>Wenn \(x,y \in C\), dann \(x \sim y\).</li>
+<li>Wenn \(x \in C\) und \(y \in M\) mit \(x \sim y\), dann \(y \in C\).</li>
+</ol>
+
+<p>
+<b>Satz:</b> Sei \(R\) eine Äquivalenzrelation auf \(M\). Dann liegt jedes \(x \in M\) in genau
+einer Äquivalenzklasse von \(M\) bezüglich \(R\). 
+</p>
+
+<p>
+<b>Satz:</b> Sei \(M \neq \emptyset\) und \(R\) eine Äquivalenzrelation auf \(M\). Seien \(C_1\) und
+\(C_2\) Äquivalenzklassen bezüglich R. Dann sind \(C_1\) und \(C_2\) disjunkt (oder identisch).
+D.h. jede Äquivalenzrelation auf einer nicht leeren Menge liefert eine Zerlegung in 
+disjunkte Äquivalenzklassen.
+</p>
+
+<p>
+<b>Definition:</b> Die Zerlegung einer nicht leeren Menge \(M\), hervorgerufen durch die 
+Äquivalenzrelation \(R\) auf \(M\), heißt <b>Klasseneinteilung</b> von \(M\) bezüglich \(R\). 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org60e31f0" class="outline-4">
+<h4 id="org60e31f0">Beispiel Zeilenäquivalenz</h4>
+<div class="outline-text-4" id="text-org60e31f0">
+<p>
+<b>Definition:</b> Seien \(A,B \in M_{mn}(\mathbb{K})\) zwei Matrizen und \(\mathbb{K}\) ein Körper.
+\(A\) und \(B\) sind <b>zeilenäquivalent</b>, wenn es endlich viele <a href="#orge60ff7a">Elementarmatrizen</a> \(E_1,..., E_r\) gibt, 
+so dass \(A=E_1 \cdots E_r B\) ist. Ist das der Fall, so schreibt man \(A \sim_\mathbb{Z} B\). 
+</p>
+
+<p>
+Das besagt gerade, dass \(B\) aus \(A\) durch <a href="#orgfbb2b68">elementare Zeilenumformungen</a> erzeugt werden kann (und 
+umgekehrt). 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga51ccb4" class="outline-4">
+<h4 id="orga51ccb4">Beispiel Vektorraum</h4>
+<div class="outline-text-4" id="text-orga51ccb4">
+<ul class="org-ul">
+<li>\(V\) ist ein Vektorraum auf dem Körper \(\mathbb{K}\).</li>
+<li>\(U\) ist ein Unterraum von \(V\).</li>
+</ul>
+
+<p>
+\(v \sim w\), wenn gilt: \(v-w \in U\) (zwei Vektoren sind äquivalent, wenn ihrer Differenz im selben Unterraum landet).
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org6e5ceac" class="outline-4">
+<h4 id="org6e5ceac">Beispiel Modulorelation</h4>
+<div class="outline-text-4" id="text-org6e5ceac">
+<p>
+Für \(n>1 \in \mathbb{N}\) und \(a, b \in \mathbb{Z}\) sei \(a \sim_n b\) (\(a\) ist äquivalent \(b\) modulo \(n\)), wenn
+gilt \(n\ |\ a-b\), d.h. wenn es ein \(x \in \mathbb{Z}\) gibt, sodass \(nx=a-b\).
+</p>
+
+<ul class="org-ul">
+<li>\(\sim_n\) ist eine Äquivalenzrelation.</li>
+<li>\(\mathbb{Z} = \overline{0} \cup \overline{1}\ \cup ... \cup \ \overline{n-1}\).</li>
+</ul>
+<hr />
+<p>
+<b>Definition:</b> Die Menge \(\left\{ a + kn\ |\ k \in \mathbb{Z}\right\}\) heißt 
+<b>Restklasse (Kongruenzklasse) von \(\mathbb{Z}\) nach \(n \mathbb{Z}\)</b> oder 
+<b>Restklasse von \(\mathbb{Z}\) modulo \(n \mathbb{Z}\)</b> und wird mit \(\bar{a}\) bezeichnet.
+</p>
+<hr />
+
+<p>
+<span class="underline">Anmerkungen</span>:
+</p>
+<ul class="org-ul">
+<li>Für verschiedene (sogar unendlich viele) \(as\)  erhält man dieselbe Menge. Für \(n=3\) ist z.B. 
+\(\cdots = \overline{-3} = \overline{0} = \overline{3}=\cdots\). Diese Menge hat unendlich viele Namen
+(z.B. für jedes Element \(a \in \overline{0}\) gibt es auch den Namen \(\overline{a}\).)</li>
+</ul>
+
+<p>
+Die Klasseneinteilung von \(\mathbb{Z}\) bezüglich \(\sim_n\) ist 
+\(\mathbb{Z}/n\mathbb{Z}  = \left\{ \overline{0}, \overline{1}, ..., \overline{n-1} \right\}\)
+mit den Elementen (ein bestimmtes \(n > 1 \in \mathbb{N}\) und ein unbestimmtes \(k \in \mathbb{Z}\))
+</p>
+
+<div class="latex">
+\begin{align*}
+\overline{0} &= \left\{ 0 + kn \right\} \\
+\overline{1} &= \left\{ 1 + kn \right\} \\
+\vdots \\
+\overline{n-1} &= \left\{ n-1 + kn \right\} \\
+\end{align*}
+
+</div>
+
+<p>
+<span class="underline">Anmerkungen</span>:
+</p>
+<ul class="org-ul">
+<li>Die \(n-\) Mengen \(\overline{0}\) etc. sind für ein bestimmtes \(n\) zu verstehen. Mit \(kn\) sind also nicht
+etwa alle möglichen Kombinationen gemeint. Nur das \(k\) läuft über \(\mathbb{Z}\), das \(n\) ist fix. 
+(Genauer müsste man \(\overline{0}_n\) notieren.)</li>
+</ul>
+
+<p>
+Beispiel: \(n=3\). Die Äquivalenzrelation \(\sim_3\) teilt \(\mathbb{N}\) in 3 Äquivalenzklassen:
+</p>
+<div class="latex">
+\begin{align*}
+\overline{0} &= \left\{ ..., -6, -3, 0, 3, 6, ... \right\} = \overline{-3} = \overline{3} = \overline{-6} = \overline{6} = ...\\
+\overline{1} &= \left\{ ..., -5, -2, 1, 4, 7, ... \right\} = \overline{-2} = \overline{4} = \overline{-5} = \overline{7} = ... \\
+\overline{2} &= \left\{ ..., -4, -1, 2, 5, 8, ... \right\} = \overline{-1} = \overline{5} = \overline{-4} = \overline{8} = ... \\
+\end{align*}
+
+</div>
+</div>
+
+<div id="outline-container-orgc58b563" class="outline-5">
+<h5 id="orgc58b563">Rechnen mit Restklassen</h5>
+<div class="outline-text-5" id="text-orgc58b563">
+<p>
+Es werden zwei Verknüpfungen \(+\) und \(\cdot\) definiert, die festlegen wie man die obigen (unendlichen) Mengen addieren und
+multiplizieren kann. 
+</p>
+
+<p>
+Die beiden Verknüpfungen werden folgendermaßen festgelegt:
+</p>
+<ul class="org-ul">
+<li>\(\overline{a} + \overline{b} = \overline{a + b}\)</li>
+<li>\(\overline{a} \cdot \overline{b} = \overline{a \cdot b}\)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org30d4464" class="outline-3">
+<h3 id="org30d4464">Eine Verknüpfung * (Gruppen)</h3>
+<div class="outline-text-3" id="text-org30d4464">
+</div>
+<div id="outline-container-orge88950b" class="outline-4">
+<h4 id="orge88950b">Eigenschaften der Verknüpfung *</h4>
+<div class="outline-text-4" id="text-orge88950b">
+<p>
+Sei \(*\) eine Verknüpfung auf einer Menge M.
+</p>
+<ol class="org-ol">
+<li>\(*\) heißt <b>kommutativ</b>, wenn für \(a,b \in M\) gilt: \(a*b = b*a\).</li>
+<li>\(*\) heißt <b>assoziativ</b>, wenn für \(a,b,c \in M\) gilt: \((a*b)*c = a*(b*c)\).
+<ul class="org-ul">
+<li>(z.B. verletzt bei : und - 8:4:2 oder 3-2-1)</li>
+</ul></li>
+<li>\(*\) besitzt ein <b>neutrales Element</b> e wenn für \(e \in M\) gilt:  \(a*e = a\) und \(e*a=a\).</li>
+</ol>
+<hr />
+<p>
+<b>Definition:</b> Die Verknüpfung \(*\) habe ein neutrales Element \(e\). Ein Element \(m \in M\) heißt <b>invertierbar</b>, 
+wenn es ein \(m'\in M\) gibt, so dass gilt: 
+</p>
+<ul class="org-ul">
+<li>\(m * m' = e\).</li>
+<li>\(m' * m = e\).</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="outline-container-org462ea54" class="outline-4">
+<h4 id="org462ea54">Halbgruppen</h4>
+</div>
+<div id="outline-container-org6535f0d" class="outline-4">
+<h4 id="org6535f0d">Gruppen</h4>
+<div class="outline-text-4" id="text-org6535f0d">
+<p>
+<b>Definition: \(*\) Eine nicht leere Menge \(G\) mit einer Verknüpfung \(*\) ist eine *Gruppe</b> \((G, *)\) wenn gilt:
+</p>
+<ul class="org-ul">
+<li>\(*\) ist <b>assoziativ</b>.</li>
+<li>\(*\) hat ein <b>neutrales Element</b>.</li>
+<li>jedes Element in G ist <b>invertierbar</b>.</li>
+</ul>
+
+<p>
+Ist \(*\) auch noch kommutativ, dann heißt \((G,*)\) <b>abelsche Gruppe</b>.
+</p>
+</div>
+<div id="outline-container-orgd2cb022" class="outline-5">
+<h5 id="orgd2cb022">Die symmetrischen Gruppen</h5>
+<div class="outline-text-5" id="text-orgd2cb022">
+<p>
+Wir betrachten zunächst die <b>Menge aller bijektiven Abbildungen</b> auf einer nicht leeren Menge \(M\).
+</p>
+<div class="org-center">
+<p>
+\(S_M = \left\{f: M \rightarrow M \mid f \text{ ist bijektiv}\right\}\).
+</p>
+</div>
+
+<p>
+Hinzu kommt die <b>Komposition</b> der Abbildungen als Verknüpfung \(\circ\). 
+</p>
+<ul class="org-ul">
+<li>\(\circ\) ist assoziativ.</li>
+<li>Neutrales Element: die identische Abbildung \(id_M \in S_M\) (trivialerweise bijektiv).</li>
+<li>\(f^{-1}\) liegt wegen der Bijektivität in \(S_M\) und es gilt: \(f \circ f^{-1} = f^{-1} \circ f = id_M\).</li>
+</ul>
+
+<p>
+D.h. \((S_M, \circ)\) ist eine Gruppe. Sie heißt <b>symmetrische Gruppe auf M</b>. 
+</p>
+<hr />
+<p>
+<b>Definition:</b> Wenn \(M = \left\{ 1, \dots n \right\}\), dann heißt \((S_M, \circ)\) <b>symmetrische Gruppe in \(n\) Buchstaben</b>.
+Ein Element \(\sigma \in S_M\) heißt <b>Permutation</b>.
+</p>
+<hr />
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf2bf0ec" class="outline-3">
+<h3 id="orgf2bf0ec">Zwei Verknüpfungen +,* (Ringe, Körper))</h3>
+<div class="outline-text-3" id="text-orgf2bf0ec">
+</div>
+<div id="outline-container-org9ab8ff1" class="outline-4">
+<h4 id="org9ab8ff1">Ringe</h4>
+<div class="outline-text-4" id="text-org9ab8ff1">
+<ul class="org-ul">
+<li>Addition +
+<ul class="org-ul">
+<li>assoziativ: \((a*b)*c = a*(b*c)\)</li>
+<li>neutrales Element: 0</li>
+<li>alle Elemente invertierbar</li>
+<li>kommutativ</li>
+</ul></li>
+<li>Multiplikation *</li>
+<li>Distributivgesetze</li>
+<li>(Kommutativgesetz - kommutativer Ring)</li>
+</ul>
+</div>
+
+<div id="outline-container-org8bfb173" class="outline-5">
+<h5 id="org8bfb173">Integritätsbereiche</h5>
+<div class="outline-text-5" id="text-org8bfb173">
+<p>
+Für Elemente \(r_1\), \(r_2\) ungleich 0 folgt \(r_1 * r_2 \neq 0\). 
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge3fc79d" class="outline-4">
+<h4 id="orge3fc79d">Körper</h4>
+<div class="outline-text-4" id="text-orge3fc79d">
+<p>
+Integritätsbereich mit einem neutralen Element bzgl. + (0) und einem 
+neutralen Element bzgl. * (1). Damit sind alle Elemente außer 0 invertierbar.
+</p>
+</div>
+<div id="outline-container-org86e3c9e" class="outline-5">
+<h5 id="org86e3c9e">Hauptsatz der Algebra</h5>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc23e71f" class="outline-3">
+<h3 id="orgc23e71f">Group Theory</h3>
+<div class="outline-text-3" id="text-orgc23e71f">
+<p>
+Groups are used to describe symmetry. 
+</p>
+
+<p>
+<b>Transformations</b>
+</p>
+<ul class="org-ul">
+<li>Rigid transformations: Move a figure so that it's outer shape stays the same.
+E.g. rotate a square by multiples of 90°. I.e. points of the figure move
+around</li>
+<li>Rotation: Turn the figure but don't move it.</li>
+<li>Translation: Move the figure around but don't rotate it.</li>
+<li>Reflection: Mirror the figure across a line. In the 2D-case it can be thought of as a 180°-rotation in 
+the 3rd dimension.</li>
+</ul>
+
+<p>
+Example: Rubics Cube
+</p>
+
+<p>
+Transformations can be combined resulting in a new transformation. The new transformation is called
+the product.
+</p>
+
+<dl class="org-dl">
+<dt>Symmetry </dt><dd>Rigid Transformation of an object to itself.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org5c0887e" class="outline-3">
+<h3 id="org5c0887e">Abgeschlossenheit (closure)</h3>
+<div class="outline-text-3" id="text-org5c0887e">
+<p>
+A set is closed under an operation. In that case it has the closure property.
+</p>
+
+<p>
+Eine Menge ist bezüglich einer Verknüpfung abgeschlossen, wenn die Verknüpfung beliebiger Elemente
+wieder in der Menge landet. 
+</p>
+</div>
+
+<div id="outline-container-orga406373" class="outline-4">
+<h4 id="orga406373">Transitive Hülle (transitive closure) einer Relation</h4>
+<div class="outline-text-4" id="text-orga406373">
+<p>
+Die transitive Hülle einer zweistelligen Relation ist diese Relation erweitert um diejenigen Paare, 
+die Elemente verbinden, die sich indirekt in dieser Relation stehen. Dadurch wird die neue Relation
+transitiv. 
+</p>
+
+<p>
+Anschauliches Beispiel mit Hilfe eines Graphen. Die ursprüngliche (nicht transitive) Relation 
+ist mit die durchgehenden Linien dargestellt.
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/Algebra/Transitive Hülle.PNG" alt="Transitive Hülle.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+B und D sind nur indirekt verbunden, deshalb wird eine direkte Verbindung von B und D hinzugefügt. 
+Anmerkung: Ist ein Knoten isoliert, bleibt er isoliert.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org08dfbf6" class="outline-2">
+<h2 id="org08dfbf6">Stochastik</h2>
+<div class="outline-text-2" id="text-org08dfbf6">
+</div>
+<div id="outline-container-org7931114" class="outline-3">
+<h3 id="org7931114">Statistik</h3>
+<div class="outline-text-3" id="text-org7931114">
+<p>
+<b>Was ist Statistik?</b>
+</p>
+
+<p>
+Ganz allgemein: Die Lehre vom Umgang mit empirischen Daten.
+Einerseits können Daten beschrieben werden (Mittelwert, Verteilung, etc. Deskriptive Statistik) 
+andererseits können aus Daten induktive  Schlüsse gezogen werden (Inferenzstatistik). 
+Man schließt von vorliegenden Daten auf Eigenschaften einer Grundgesamtheit. 
+(Man kostet z.B. einen Löffel Suppe um festzustellen ob der ganze Topf versalzen ist.)
+</p>
+
+<p>
+Woher die Unsicherheit?
+Es gibt nun einmal stochastische Prozesse, ob sie an unserer Beschränktheit 
+liegen oder tatsächlich in der Natur vorkommen ist praktisch ohne Belang. 
+Beim Würfeln wird davon ausgegangen, dass das Ergebnis des 
+Wahrscheinlichkeitsexperiments deterministisch zustande kommt, allerdings ist 
+eine Vorhersage für uns praktisch unmöglich.
+Für Messwerte und ihre Genauigkeit sind Schätzwerte anzugeben und es stellt 
+sich die Frage wie solche Schätzungen sinnvoll vorgenommen werden sollen.
+</p>
+
+<p>
+Statistik ist nicht das Gleiche wie Wahrscheinlichkeitsrechnung, erstere hat 
+mit der Realität zu tun, zweitere nicht (a priori). 
+</p>
+
+<p>
+Anwendungsbeispiele:
+</p>
+<ul class="org-ul">
+<li>Schätzung des Ausgangs einer politischen Wahl durch Stichprobenbefragung.</li>
+<li>Lebensdauer einer Glühbirne, Data Retention für EE, …</li>
+<li>Häufigkeit einer bestimmten Erkrankung in einem Land, Kontinent, weltweit.</li>
+<li>MSA: Vergleich von zwei Messsystemen</li>
+</ul>
+</div>
+
+<div id="outline-container-orge59a3ba" class="outline-4">
+<h4 id="orge59a3ba">Wahrscheinlichkeitsrechnung (nicht gleich Statistik)</h4>
+<div class="outline-text-4" id="text-orge59a3ba">
+<dl class="org-dl">
+<dt>Wahrscheinlichkeit</dt><dd></dd>
+</dl>
+<p>
+Der anschaulichste Wahrscheinlichkeitsbegriff ergibt sich über den Begriff der 
+Häufigkeit. Die Wahrscheinlichkeit wird dabei als Grenzwert der Häufigkeit 
+einer unendlichen Folge von Versuchen gedeutet.
+</p>
+
+<dl class="org-dl">
+<dt>Wahrscheinlichkeitsdichte</dt><dd></dd>
+</dl>
+<p>
+Integral über ein Intervall gibt eine Wahrscheinlichkeit (Gesamtfläche = 1).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6a0b5d1" class="outline-4">
+<h4 id="org6a0b5d1">Deskriptive Statistik</h4>
+<div class="outline-text-4" id="text-org6a0b5d1">
+<p>
+Beschreibung, Darstellung von Daten mittels Kennwerten, Grafiken, Tabellen
+</p>
+
+<p>
+Kenngrößen:
+</p>
+
+<ul class="org-ul">
+<li>Mittelwert</li>
+<li>Medianwert</li>
+</ul>
+
+<p>
+Der Medianwert ist nützlich bei der Bewertung von sehr schiefen Verteilungen, 
+z.B. Vermögensverteilung in Österreich  : 
+Mittelwert = 265.000 EUR, Medianwert = 76.500 EUR
+</p>
+
+<p>
+Bei Normalverteilung fallen die beiden Werte zusammen.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org979a0b4" class="outline-4">
+<h4 id="org979a0b4">Inferenzstatistik</h4>
+<div class="outline-text-4" id="text-org979a0b4">
+<p>
+Induktive S., Schluss von Stichprobe auf Grundgesamtheit.
+Grundlage: Wahrscheinlichkeitstheorie
+Ermöglicht die Überprüfung von Hypothesen. 
+Stichproben
+Schluss von Eigenschaften einer Stichprobe auf Eigenschaften der Grundgesamtheit.
+</p>
+
+<p>
+Zufällige Auswahl:
+</p>
+<ul class="org-ul">
+<li>Zufallsstichprobe: alle Teilmengen gleichwahrscheinlich</li>
+<li>Klumpenstichprobe:</li>
+<li>Geschichtete Stichprobe:</li>
+</ul>
+
+<p>
+Bestimmet Auswahl:
+</p>
+<ul class="org-ul">
+<li>Theoriegeleitete Stichprobe</li>
+</ul>
+<p>
+Standardfehler
+Standardabweichung der Mittelwerte von gleichgroßen Stichproben
+Konfidenzintervalle
+Schätzung von Populationsparametern
+Hypothese
+Annahme von Eigenschaften, anschließende Überprüfung.
+</p>
+
+<p>
+Alternativhypothese H1 : die neue H.	=	not (Nullhypothese H0)
+</p>
+
+<p>
+Unterschiedshypothesen: Häufigkeitsvergleiche
+Zusammenhangshypothesen: Korreltationsrechnung
+</p>
+
+<p>
+Gerichtete H.: besser / schlechter
+Ungerichtete H.: indifferent
+Tests
+Irrtumswahrscheinlichkeit
+</p>
+</div>
+</div>
+
+<div id="outline-container-org36f090e" class="outline-4">
+<h4 id="org36f090e">Ideen</h4>
+<div class="outline-text-4" id="text-org36f090e">
+<dl class="org-dl">
+<dt>Normalverteilung</dt><dd></dd>
+</dl>
+<p>
+Weiß man den Erwartungswert + Standardabweichung, dann weiß man alles über die Normalverteilung.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7e7a210" class="outline-3">
+<h3 id="org7e7a210">Wahrscheinlichkeitstheorie</h3>
+</div>
+<div id="outline-container-org945b0ec" class="outline-3">
+<h3 id="org945b0ec">Kombinatorik</h3>
+<div class="outline-text-3" id="text-org945b0ec">
+<p>
+Laplace Modelle: alle Ereignisse gleich wahrscheinlich. Die Bestimmung der Wahrscheinlichkeiten
+führt auf das Abzählen der Elemente einer Menge.
+</p>
+
+
+<dl class="org-dl">
+<dt>Permutationen </dt><dd>Auf wie viele Arten kann man n Dinge anordnen? <br />
+\(n \cdot (n-1) \cdot (n-2)\ ...\ 3 \cdot 2 \cdot 1\)</dd>
+</dl>
+</div>
+
+<div id="outline-container-orga187958" class="outline-4">
+<h4 id="orga187958">Summenregel (ODER, Vereinigung)</h4>
+<div class="outline-text-4" id="text-orga187958">
+<p>
+Gibt die Wahrscheinlichkeit, dass min. eines von zwei Ereignissen eintritt.
+</p>
+
+<p>
+\(P(A \cup B)=P(A)+P(B)\)
+</p>
+
+<p>
+Dabei ist es relevant, ob die beiden Ereignisse sich ausschließen, oder nicht.
+Mit anderen Worten, ob Ereignisse unabhängig sind, oder nicht.
+</p>
+
+<p>
+Beispiele:<br />
+</p>
+<ul class="org-ul">
+<li>Unabhängige Ereignisse: Münzwurf, Würfel</li>
+<li>Abhängige Ereignisse: Urnenziehung ohne Zurücklegen</li>
+</ul>
+
+<p>
+Wir wählen zufällig eine Zahl von 1 bis 100. 
+Wie hoch ist die Wahrscheinlichkeit, dass die Zahl größer 80 oder kleiner 10 ist?
+</p>
+<ul class="org-ul">
+<li>P(x&gt;80) = 0.2</li>
+<li>P(x&lt;10) = 0.1</li>
+<li>P(x&gt;80 oder x&lt;10) = 0.2 + 0.1 = 0.3</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9863196" class="outline-4">
+<h4 id="org9863196">Produktregel (UND, Durchschnitt)</h4>
+<div class="outline-text-4" id="text-org9863196">
+<p>
+Gibt die Wahrscheinlichkeit, dass beide Ereignisse eintreten.
+</p>
+
+<p>
+\(P(A \cap B)=P(A) \cdot P(B)\)
+</p>
+
+<p>
+Voraussetzung: die Ereignisse sind unabhängig
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8dbe2d6" class="outline-4">
+<h4 id="org8dbe2d6">Urnenmodell</h4>
+<div class="outline-text-4" id="text-org8dbe2d6">
+<p>
+<b>Laplace-Experiment</b>
+</p>
+<blockquote>
+<p>
+Ein Zufallsexperiment bei dem jedes Ergebnis mit der gleichen Wahrscheinlichkeit
+eintritt.
+</p>
+</blockquote>
+
+<p>
+<b>Laplace'sche Wahrscheinlichkeitsregel</b>
+</p>
+<blockquote>
+<p>
+\(P(A)=\frac{\mid A \mid}{\mid \Omega \mid}\) (relative Häufigkeit)
+</p>
+
+<ul class="org-ul">
+<li>\(\Omega\)   &#x2026; Ereignismenge</li>
+<li>\(A\)        &#x2026; Menge der günstigen Ergebnisse</li>
+</ul>
+</blockquote>
+
+
+<p>
+Wir stellen uns nun eine Urne vor mit farbigen Kugeln, die zudem nummeriert sind
+(z.B. Urne = {g1, g2, b1, b2, b3, r1, r2, r3}).
+</p>
+
+<p>
+Urnenmodelle beschreiben Laplace Experimente, d.h.
+jede Kugel wird mit der gleichen Wahrscheinlichkeit gezogen.
+</p>
+
+<p>
+\(P(K_i)=\frac{1}{N}\)
+</p>
+
+<p>
+Alle Möglichkeiten Kugeln zu ziehen kann man in einem Baumdiagramm darstellen.
+Wahrscheinlichkeiten entlang eines Pfades werden multipliziert, W. auf
+parallelen Pfaden addiert.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge44b0b8" class="outline-4">
+<h4 id="orge44b0b8">Ziehen mit Zurücklegen</h4>
+<div class="outline-text-4" id="text-orge44b0b8">
+<p>
+Die Wahrscheinlichkeit eine Kugel zu ziehen ist immer gleich. Bei mehrfacher
+Ziehung multiplizieren sich die Wahrscheinlichkeiten nach der Produktregel.
+</p>
+</div>
+</div>
+<div id="outline-container-org480ac03" class="outline-4">
+<h4 id="org480ac03">Ziehen ohne Zurücklegen</h4>
+<div class="outline-text-4" id="text-org480ac03">
+<p>
+Die Wahrscheinlichkeit ändert sich bei jeder Ziehung.
+</p>
+</div>
+</div>
+<div id="outline-container-org2f154a5" class="outline-4">
+<h4 id="org2f154a5">mit und ohne Beachtung der Reihenfolge (geordnete Ziehung)</h4>
+<div class="outline-text-4" id="text-org2f154a5">
+<p>
+Betrachten wir folgende Fragen: (Urne: {r1, b1}, mit Zurücklegen)
+</p>
+
+<p>
+Wie hoch ist die Wahrscheinlichkeit zuerst eine blaue und dann eine rote Kugel zu ziehen? <br />
+\(P = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}\)
+</p>
+
+<p>
+Wie hoch ist die Wahrscheinlichkeit eine blaue und eine rote Kugel zu ziehen? <br />
+\(P = \frac{1}{4} + \frac{1}{4} = \frac{1}{2}\) Zuerst eine rote dann eine blaue ODER zuerst eine blaue und dann eine rote.
+</p>
+
+
+
+<p>
+Beachtet man die Reihenfolge nicht, dann 
+</p>
+
+<p>
+hat etwas mit Permutationen zu tun
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org46c6b8a" class="outline-3">
+<h3 id="org46c6b8a">Zufallsvariable, Erwartungswert, Varianz</h3>
+<div class="outline-text-3" id="text-org46c6b8a">
+<p>
+Eine Funktion, die einer Menge von zufälligen Ereignissen eine andere Menge zuordnet.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8260595" class="outline-3">
+<h3 id="org8260595">Bedingte Wahrscheinlichkeit und Unabhängigkeit</h3>
+<div class="outline-text-3" id="text-org8260595">
+<dl class="org-dl">
+<dt>Bedingte Wahrscheinlichkeit</dt><dd></dd>
+</dl>
+<p>
+Die bedingte Wahrscheinlichkeit P(A|B) des Eintretens von Ereignis A ist die 
+Wahrscheinlichkeit es Eintretens von Ereignis A, vorausgesetzt Ereignis B 
+ist bereits eingetreten.
+</p>
+</div>
+
+<div id="outline-container-orgfe3472d" class="outline-4">
+<h4 id="orgfe3472d">Beispiel</h4>
+<div class="outline-text-4" id="text-orgfe3472d">
+<p>
+Ein Paar hat 2 Kinder, von denen eines ein Mädchen ist.
+Wie hoch ist die Wahrscheinlichkeit, dass das zweite Kind auch ein Mädchen ist?
+</p>
+
+<p>
+(Man ist vielleicht versucht 0.5 zu antworten.)
+</p>
+
+<p>
+Die Möglichkeiten sind: MM MB BM BB
+</p>
+
+<p>
+Bedingung 1 (B1): Ein Kind ist ein Mädchen (P(B1) = 3/4).
+Bedingung 2 (B2): Das andere Kind ist auch ein Mädchen (P(B2) = 1/2).
+</p>
+
+<p>
+B1 schränkt die Anzahl der Möglichkeiten auf 3 ein.
+Innerhalb dieser Möglichkeiten ergibt sich eine Wahrscheinlichkeit von 1/3, weil
+einer der drei Fälle (MM MB BM) der günstige (MM) ist. Der Fall BB ist durch
+Bedingung 1 ausgeschlossen.
+</p>
+
+<p>
+Jede Bedingung schränkt die Anzahl der Möglichkeiten ein.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf3dcc75" class="outline-4">
+<h4 id="orgf3dcc75">Bayes Theorem</h4>
+<div class="outline-text-4" id="text-orgf3dcc75">
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}}$$</font>
+</p>
+</div>
+
+<div id="outline-container-orga7a1a5b" class="outline-5">
+<h5 id="orga7a1a5b">Example: Shy Philosophy Student&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Show">Show</span></span></h5>
+<div class="outline-text-5" id="text-orga7a1a5b">
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=BrK7X_XlGB8&amp;t=5s">https://www.youtube.com/watch?v=BrK7X_XlGB8&amp;t=5s</a></li>
+</ul>
+
+<p>
+You meet a shy person on campus. Is he more likely to be a philosophy student or
+a business student?
+</p>
+
+<p>
+Let's say:
+</p>
+<ul class="org-ul">
+<li>90% of philosophy students are shy.</li>
+<li>10% of business students are shy.</li>
+<li>There are 15x more business students than philosophy students.</li>
+</ul>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/Stochastic/Bayes Theorem Example.png" alt="Bayes Theorem Example.png" />
+</p>
+</div>
+
+</div>
+
+<p>
+Let's compare the 2 shy-areas: 
+</p>
+<ul class="org-ul">
+<li>9/10 1/16 Area (Philosophy) = 9/160 Area</li>
+<li>1/10 15/16 Area (Business)  = 15/160 Area</li>
+</ul>
+
+<p>
+Let's state some facts:
+</p>
+<ul class="org-ul">
+<li>The shy person we meet is in the shy-area (90%,10%).</li>
+<li>P(shy) = 24/160</li>
+<li>P(philosophy student) = 1/16</li>
+<li>P(business student) = 15/16</li>
+<li>P(shy | philosophy student) = 9/10</li>
+<li>P(shy | business student) = 1/10</li>
+</ul>
+
+<p>
+Now the final questions:
+</p>
+<ul class="org-ul">
+<li>What's the probability that he is a philosophy student?
+<ul class="org-ul">
+<li>So P(philosophy student | shy) = 9/24 (part of the shy area)</li>
+</ul></li>
+<li>What's the probability that he is a business student?
+<ul class="org-ul">
+<li>P(business student | shy) = 15/24</li>
+</ul></li>
+</ul>
+
+<p>
+Looking at this closely we can figure out Bayes Theorem:
+</p>
+<ul class="org-ul">
+<li>P(shy) P(philosophy student | shy) = 24/160 9/24 = 9/160</li>
+<li>Now this is 9/10 1/16, which is</li>
+<li>P(shy | philosophy student) P(philosophy student)</li>
+</ul>
+<p>
+So:
+</p>
+<ul class="org-ul">
+<li>P(shy) P(philosophy student | shy) = P(shy | philosophy student) P(philosophy student)</li>
+<li>and with A = shy, B = philosophy student</li>
+<li>P(A|B) = P(B|A) P(A) / P(B)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc7e0c64" class="outline-4">
+<h4 id="orgc7e0c64">The Prosecutors Fallacy</h4>
+<div class="outline-text-4" id="text-orgc7e0c64">
+<p>
+DNA matching
+The “match probability” answers the question “What is the probability that 
+an individual’s DNA will match the crime sample, given that he or she is innocent?”
+</p>
+
+<p>
+Condition: Many (almost all) are innocent. (large population)
+</p>
+
+<p>
+But the question that should concern the court is “What is the probability 
+that the suspect is innocent, given a DNA match?”
+</p>
+
+<p>
+Condition: Very few people have a matching DNA (small population)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3886107" class="outline-3">
+<h3 id="org3886107">Beispiele</h3>
+<div class="outline-text-3" id="text-org3886107">
+<p>
+Münzen, Würfel, Karten, Lotto, Urnen
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orge1512a4" class="outline-3">
+<h3 id="orge1512a4">Skalenniveau (Messniveau)</h3>
+<div class="outline-text-3" id="text-orge1512a4">
+<p>
+Je nach Art eines Merkmals bzw. der Methodik seiner Messung unterscheidet man
+vier Skalenniveaus.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Eigenschaften</th>
+<th scope="col" class="org-left">Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Nominalskala</td>
+<td class="org-left">Identität</td>
+<td class="org-left">Postleitzahlen</td>
+</tr>
+
+<tr>
+<td class="org-left">Ordinalskala</td>
+<td class="org-left">Ordnung</td>
+<td class="org-left">Schulnoten</td>
+</tr>
+
+<tr>
+<td class="org-left">Intervallskala</td>
+<td class="org-left">Abstand</td>
+<td class="org-left">Datum</td>
+</tr>
+
+<tr>
+<td class="org-left">Verhältnisskala</td>
+<td class="org-left">Nullpunkt</td>
+<td class="org-left">Alter</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org43b65ce" class="outline-3">
+<h3 id="org43b65ce">Central Limit Theorem</h3>
+<div class="outline-text-3" id="text-org43b65ce">
+<dl class="org-dl">
+<dt>Zentraler Grenzwertsatz</dt><dd></dd>
+</dl>
+<p>
+Werden viele Stichproben gezogen, so nähert sich der Mittelwert der Stichprobenmittelwerte dem Mittelwert der Gesamtpopulation.
+Voraussetzung: σ beschränkt
+</p>
+
+<p>
+<b>Coin Example</b>
+</p>
+
+<p>
+Let's flip a coin many times. 
+Then choose a number n.
+Now the probability of getting n-times heads in a series of t-flips will approach a normal curve, the
+mean value being t/2.
+</p>
+
+<p>
+Simple version of the CLT:
+</p>
+<div class="org-center">
+<p>
+The distribution of the sampling means approaches a normal distribution when the sample size gets bigger
+independent of the population distribution.
+</p>
+</div>
+
+<p>
+Let's apply this to the coin example.
+If we flip the coin e.g. 100 times (t is 100) we should get about 50 heads and 50 tails, sometimes less
+heads and more tails, sometimes the other way round. The average number of heads we get is about 0.5 
+(= the sum of each result divided by 100).
+</p>
+
+<p>
+If we flip 100 times again and again and again etc., the average will come out a little different each time.
+The distribution of the average however will be a normal distribution. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge62e0ba" class="outline-2">
+<h2 id="orge62e0ba">Zahlentheorie</h2>
+<div class="outline-text-2" id="text-orge62e0ba">
+</div>
+<div id="outline-container-org80cc3a7" class="outline-3">
+<h3 id="org80cc3a7">Modulare Arithmetik</h3>
+<div class="outline-text-3" id="text-org80cc3a7">
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/NumberTheory/ModularArithmetics.png" alt="ModularArithmetics.png" />
+</p>
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-org0db571d" class="outline-4">
+<h4 id="org0db571d">Kleiner fermatscher Satz</h4>
+<div class="outline-text-4" id="text-org0db571d">
+<p>
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{a^p \equiv a\ (mod\ p)}$$</font>
+oder
+<font color=lightgray>$$\bbox[10px,#073642,border: 1px solid white]{a^{p-1} \equiv 1\ (mod\ p)}$$</font>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge6c909a" class="outline-2">
+<h2 id="orge6c909a">Topologie</h2>
+<div class="outline-text-2" id="text-orge6c909a">
+<p>
+Homöomorphismus - Strecken, Verbiegen, Dehnen, Verzerren, etc. 
+(benachbarte Punkte bleiben benachbarte Punkte)
+</p>
+
+<p>
+Loslösung vom Abstandsbegriff -&gt; Begriff der Umgebung (Teilmengen)
+</p>
+
+<p>
+alg. Topologie: Abbildungen
+mengenth. Topologie: top. Räume
+</p>
+
+<p>
+1.) Definition einer Topologie
+</p>
+
+<hr />
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Topologie / Topologischer Raum</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>
+Eine Menge X, eine Topologie T ist eine Menge von 
+Untermengen von X mit best. Eigenschaften. 
+</p>
+
+<p>
+discrete T. / disc. T. Space
+</p>
+
+<p>
+T umfasst alle Teilmengen von X (Potenzmenge - per se
+eine Topologie)
+</p>
+<hr />
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">offene Menge</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>
+Anschaulich ist eine Menge offen, wenn ihre Elemente 
+nur von Elementen dieser Menge umgeben sind, mit anderen 
+Worten, wenn kein Element der Menge auf ihrem Rand liegt.
+</p>
+
+<p>
+jeder Pkt. ist von einem Pkt. desselben Intervalls umgeben
+</p>
+
+<p>
+d. Konjunktion / Disjunktion ist wieder offen
+</p>
+<hr />
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">abgeschlossene Menge</td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+<hr />
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Homöomorphismus</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>
+bijektive (eineindeutig + rechtstotal) stetige Abbildung, deren
+Umkehrabb. ebenfalls stetig ist 
+anschaulich: Dehnen, Stauchen, Verbiegen, Verzerren, Verdrillen, &#x2026;
+(T. handelt von Eigenschaften, die unter H. invariant sind.)
+</p>
+<hr />
+</div>
+</div>
+<div id="outline-container-org0124ea6" class="outline-2">
+<h2 id="org0124ea6">Trivia</h2>
+<div class="outline-text-2" id="text-org0124ea6">
+</div>
+<div id="outline-container-org832bccf" class="outline-3">
+<h3 id="org832bccf">Arabische Ziffern</h3>
+<div class="outline-text-3" id="text-org832bccf">
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/arabic_numbers.PNG" alt="arabic_numbers.PNG" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org4ccaeca" class="outline-3">
+<h3 id="org4ccaeca">Quadratische Gleichung</h3>
+<div class="outline-text-3" id="text-org4ccaeca">
+<div class="picture">
+
+<div class="figure">
+<p><img src="../../../public_html/Science/Mathematics/resources/quadratic equation.png" alt="quadratic equation.png" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org28305c5" class="outline-3">
+<h3 id="org28305c5">Continuum Hypothesis</h3>
+<div class="outline-text-3" id="text-org28305c5">
+<p>
+Paul Cohen proved 1963 that the CH is independent. 
+</p>
+</div>
+</div>
+<div id="outline-container-orgc2da755" class="outline-3">
+<h3 id="orgc2da755">Irrational Numbers</h3>
+<div class="outline-text-3" id="text-orgc2da755">
+<p>
+Examples:
+</p>
+<ul class="org-ul">
+<li>0.12345678910111213141516171819202122232425…
+<ul class="org-ul">
+<li>Champernowne's Constant</li>
+<li>Contains the decimal representations of all natural numbers.</li>
+<li>Contains all possible digit sequences (infinitely many times).</li>
+</ul></li>
+<li>0.101001000100001&#x2026;
+<ul class="org-ul">
+<li>1, 2, 3, 4, &#x2026; Zeros in between the 1s.</li>
+<li>1 + 1 = 2, 2 + 2 + 1 = 5,  5 + 3 + 1 = 9,</li>
+<li>0, 2, 5, 9, &#x2026;</li>
+<li>0.1 + 0.001 + 0.000001 + 0.0000000001 + &#x2026;</li>
+<li>\(10^{-1} + 10^{-3}\) + 10^{-6} + &#x2026;$</li>
+<li>we observe that: \(\frac{n(n+1)}{2}\) gives the sequence: 0, 1, 3, 6, 9, &#x2026;</li>
+<li>so we get \(\sum_1^\infty10^{-\frac{n(n+1)}{2}}\).</li>
+<li>Obviously doesn't contain all possible digit sequences.</li>
+</ul></li>
+<li>π, ε, \(sqrt{2}\)
+<ul class="org-ul">
+<li>We don't know if it's decimal representation contains all possible digit sequences.</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgbb3922f" class="outline-4">
+<h4 id="orgbb3922f">π - Bailey-Borwein-Plouffe formula</h4>
+<div class="outline-text-4" id="text-orgbb3922f">
+<p>
+<a href="https://en.wikipedia.org/w/index.php?title=Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula&amp;oldid=987000484">https://en.wikipedia.org/w/index.php?title=Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula&amp;oldid=987000484</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+See 3Blue1Brown <a href="https://www.youtube.com/watch?v=WUvTyaaNkzM&amp;list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr">https://www.youtube.com/watch?v=WUvTyaaNkzM&amp;list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr</a>
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Created: 2021-03-17 Wed 06:00</p>
+</div>
+</body>
+</html>

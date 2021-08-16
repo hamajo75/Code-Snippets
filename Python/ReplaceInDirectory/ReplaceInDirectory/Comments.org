@@ -1,0 +1,136 @@
+=replace_functions.py= contain the functions used for the replacement.
+
+* Most simple approach
+Make replacements according to csv-list, recursively in directory.
+
+next steps: 
+- exclude folders
+- exclude files
+* Match and replace functions
+Define matches 
+
+* Philosophy
+** Form
+There is a form, that tells us WHERE something is. It does not tell us
+WHAT there is. 
+
+The form itself is a text, e.g.
+: A___B____C
+
+There are variables A,B,C, etc. that will be replaced by
+some other text. 
+
+This replacement might result in a new
+form or a terminal text.
+
+More general: The WHAT is part of a replacement process. In this process we need
+to define what objects will be placed where. 
+
+
+HTML-Example:
+#+BEGIN_SRC html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+_INSERT_TITLE_HERE_
+(replaced with: <title>_INSERT_CLASS_NAME_HERE_</title>)
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="_STYLESHEET_help_styles.css" rel="stylesheet" type="text/css" />
+  <link href="_STYLESHEET_webhelp_styles.css" rel="stylesheet" type="text/css" />
+  <link href="_STYLESHEET_single_doc_styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+_INSERT_CLASS_HEADER_HERE_
+(replaced with: 
+<h3><font size="-1">Package <a href="_PACKAGE_RELATIVE_PATH_package-summary.htm">_INSERT_PACKAGE_NAME_HERE_</a></font><br />_INSERT_CLASS_NAME_HERE_</h3>
+<font size="-1">extends 
+<a href="class-summary.htm">_CLASS_NAME_</a>
+</font>
+<br />
+<font size="-1">implements 
+<a href="class-summary.htm">_CLASS_NAME_</a>
+</font>
+)
+
+_INSERT_MANUAL_ENTRY_1_HERE_
+(replaced with: 
+<!-- add manual entries after this line -->
+
+<!-- END: manual entries -->
+)
+
+_INSERT_CONSTRUCTOR_ENTRY_HERE_
+(replaced with: 
+<h3><font size="-1">Public Constructors</h3>
+<ul>
+<li><a href="Dictionary.htm">Dictionary</a></li>
+</ul>
+)
+
+_INSERT_METHOD_ENTRY_HERE_
+(replaced with: 
+<h3><font size="-1">Public Methods</h3>
+<ul>
+<li><a href="elements.htm">elements</a></li>
+<li><a href="get.htm">get</a></li>
+<li><a href="isEmpty.htm">isEmpty</a></li>
+<li><a href="keys.htm">keys</a></li>
+<li><a href="put.htm">put</a></li>
+<li><a href="remove.htm">remove</a></li>
+<li><a href="size.htm">size</a></li>
+</ul>
+)
+
+_INSERT_INHERITED_METHOD_ENTRY_HERE_
+(replaced with: 
+<h3><font size="-1">Methods inherited from <a href=../../../java/lang/Object/class-summary.htm>java.lang.Object</a></h3>
+<ul>
+<li><a href="../../../java/lang/Object/equals.htm">equals</a></li>
+<li><a href="../../../java/lang/Object/toString.htm">toString</a></li>
+<li><a href="../../../java/lang/Object/wait.htm">wait</a></li>
+<li><a href="../../../java/lang/Object/hashCode.htm">hashCode</a></li>
+<li><a href="../../../java/lang/Object/notify.htm">notify</a></li>
+<li><a href="../../../java/lang/Object/notifyAll.htm">notifyAll</a></li>
+<p class="_HTMLCLASS_">_INSERT_METHOD_ENTRY_HERE_</p></p>
+</ul>
+)
+
+_INSERT_FIELDS_ENTRY_HERE_
+(replaced with: 
+<h3><font size="-1">Public Fields</h3>
+<ul>
+<li>static final   int E_Y_OUT_OF_RANGE</li>
+<li>static final   EventManager EventManagement</li>
+<li>static final   int MAIN_THREAD_ID</li>
+</ul>
+)
+
+_INSERT_MANUAL_ENTRY_2_HERE_
+(replaced with: 
+<!-- add manual entries after this line -->
+
+<!-- END: manual entries -->
+)
+
+</body>
+</html>
+#+END_SRC
+
+For each variable you might supply a function that does the replacements.
+
+
+** Content
+In the HTML Help the files are also generated from templates.
+The generation is done based on some hierarchical information (package-class-method - tree).
+1. A template is copied.
+2. Replacements are done based on the information until generation is finished.
+
+* TODO Things that can't be done with regular expressions.
+- negative matches
+  Example: find all "bbb" not after "aaa"
+  : aaabbb - mo match
+  : cccbbb - match
+- nested expressions
+  e.g. (level1(level2(level3)level2)level1)

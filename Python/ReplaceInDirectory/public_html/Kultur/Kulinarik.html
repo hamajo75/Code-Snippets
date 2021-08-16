@@ -1,0 +1,2596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-03-15 Mon 06:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kulinarik</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="shortcut icon" href="/public_html/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/html-export.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/hideshow.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/code.css">
+
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div style = "text-align: right; margin-top: 5px">
+   <a accesskey="h" href="" style="font: 20px arial,helvetica,clean,sans-serif"></a>
+   <a accesskey="H" href="https://joesanmarzano.duckdns.org/public_html/" style="font: 20px arial,helvetica,clean,sans-serif;margin: 30px;"> HOME </a>
+</div><div id="content">
+<h1 class="title">Kulinarik</h1>
+
+<div id="outline-container-orgb9281df" class="outline-2">
+<h2 id="orgb9281df">Vorspeisen</h2>
+<div class="outline-text-2" id="text-orgb9281df">
+</div>
+<div id="outline-container-org8c59070" class="outline-3">
+<h3 id="org8c59070">Fava</h3>
+<div class="outline-text-3" id="text-org8c59070">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>1 Tasse Fava</li>
+<li>2 rote Zwiebeln</li>
+<li>4 Tassen Wasser</li>
+<li>2 Zitronen</li>
+<li>Olivenöl</li>
+<li>Salz</li>
+<li>Lorbeerblätter</li>
+<li>Pfeffer</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+Favabohnen gut waschen.
+Eine Zwiebel vierteln und mit dem Wasser aufkochen. Schaum entfernen.
+Auf Stufe 10 beginnen und je nach Konsistenz bis 5 runtergehen.
+</p>
+
+<p>
+Es entsteht ein Brei, der anschließend püriert wird.
+1-3 h stehen lassen.
+</p>
+
+<p>
+Mit reichlich Olivenöl, Zitronensaft und nudelig gschnittenen Zwiebeln
+anrichten.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbd22168" class="outline-3">
+<h3 id="orgbd22168">Flammkuchen á la Elsass</h3>
+<div class="outline-text-3" id="text-orgbd22168">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>Tante Fanny Flammkuchenteig</li>
+<li>1 Pkg. Créme Fraiche</li>
+<li>Speck &amp; Zwiebel</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+<ol class="org-ol">
+<li>Backrohr auf 220°C Unter- und Oberhitze vorheizen.</li>
+<li>Teig mit Créme Fraiche bestreichen und mit Speck und Zwiebeln belegen.</li>
+<li>Ca. 12-15 min knusprig backen.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgb1ab18c" class="outline-3">
+<h3 id="orgb1ab18c">Suppen</h3>
+<div class="outline-text-3" id="text-orgb1ab18c">
+</div>
+<div id="outline-container-org05ac751" class="outline-4">
+<h4 id="org05ac751">Fischsuppe</h4>
+<div class="outline-text-4" id="text-org05ac751">
+<p>
+Fischsuppe (ca. 9 Teller), im großen Topf
+</p>
+
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>Fischfilets (ca. 0.5 kg)</li>
+<li>Suppengrün</li>
+<li>Ingwer (nicht sparen)</li>
+<li>1/2 Orangenschale</li>
+<li>1 Stange Lauch</li>
+<li>Weißwein (halbe Flasche)</li>
+<li>Fischfont</li>
+
+<li>Dill, Curcuma, Safran, Lorbeerblätter, Muskatpfefferkörner, etwas Chilli</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+<ol class="org-ol">
+<li>Suppengrün und Lauch in Olivenöl anbraten.</li>
+<li>Mit Weißwein und Fischfont ablöschen.</li>
+
+<li>Fischfilets schneiden und mit Olivenöl, Salz und Pfeffer
+marinieren.</li>
+<li>Am Ende die Fischfilets ca. 30 min mitkochen.</li>
+</ol>
+
+<p>
+Variante:
+Mit billigem Fisch kochen (der zerkocht), am nächsten Tag nochmals
+Fischfilets zugeben.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org767779f" class="outline-4">
+<h4 id="org767779f">Hühnersuppe</h4>
+<div class="outline-text-4" id="text-org767779f">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>Hühnerfleisch</li>
+<li>Ingwer</li>
+<li>Safran</li>
+<li>Chili</li>
+<li>1/2 Lauch</li>
+<li>Suppengemüse</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+<ol class="org-ol">
+<li>Hühnerfleisch anraten (vorher salzen, sonst schmeckt es am Ende fad).</li>
+<li>Suppengemüse anbraten.</li>
+<li>Hühnerfleisch dazugeben, dann mit Wasser aufgießen.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org1d2727a" class="outline-4">
+<h4 id="org1d2727a">Kürbiscremesuppe</h4>
+</div>
+</div>
+<div id="outline-container-orgf395906" class="outline-3">
+<h3 id="orgf395906">Pikante Muffins</h3>
+<div class="outline-text-3" id="text-orgf395906">
+<p>
+Αλμυρα μαφινς
+</p>
+
+<p>
+1 γιαουρτι
+1 κεσεδακι αλευρι
+1 κ.γ. μπεικιν
+αλατι, πιπερι, ριγανη κλπ
+1/4 κεσεδακι καλαμποκελαιο η σπορελαιο
+2 αυγα
+φετα τριμμενη
+</p>
+
+<p>
+15 λεπτα 180 στον αερα
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6eea643" class="outline-2">
+<h2 id="org6eea643">Hauptspeisen</h2>
+<div class="outline-text-2" id="text-org6eea643">
+</div>
+<div id="outline-container-orga3bddc0" class="outline-3">
+<h3 id="orga3bddc0">Rindfleisch&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Rind">Rind</span></span></h3>
+<div class="outline-text-3" id="text-orga3bddc0">
+</div>
+<div id="outline-container-org8fc3e5d" class="outline-4">
+<h4 id="org8fc3e5d">Boeuf Bourguignon á la Julia &amp; Tim&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Top">Top</span></span></h4>
+<div class="outline-text-4" id="text-org8fc3e5d">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>1.5 kg Rind, Schulter</li>
+<li>0.5 kg Champignons</li>
+<li>4 Karotten Karotten in Stifte geschnitten</li>
+<li>1 kg Schalotten</li>
+<li>1-2 Zwiebel</li>
+<li>1 Fl. Burgunder (Chianti)</li>
+<li>500 mL Rinderbrühe (zum Schmoren des Fleisches)</li>
+<li>150 mL Rinderbrühe (zum Schmoren der Schalotten)</li>
+<li>Bauchspeck</li>
+<li>1 Bouquet garni: Lorbeerblatt, Thymian</li>
+<li>2 Knoblauchzehen (zerdrückt)</li>
+<li>0.5 L Rindssuppe</li>
+<li>Tomatenmark</li>
+</ul>
+
+<p>
+<b>Zubereitung</b> <br />
+<i>Fleisch Schmoren</i>
+</p>
+<ol class="org-ol">
+<li>Fleisch in große Stücke schneiden, bemehlen und im Bräter anbraten. 
+Am Ende ablöschen, damit sich der Bodensatz löst.</li>
+<li>Zwiebeln und Karotten anbraten, den Speck im Ganzen dazugeben und mit anbraten.
+Am Ende Tomatenmark dazugeben.</li>
+<li>Mit Burgunder aufgießen und deglacieren. Dann die Brühe dazugeben.</li>
+<li>Rindfleisch dazugeben, Deckel drauf und ca. <b>4 h</b> garen (<b>160°C</b>).</li>
+</ol>
+
+<p>
+<i>Champignons sautieren</i>
+</p>
+<ol class="org-ol">
+<li>Champignons sautieren mit Butter und Olivenöl.</li>
+<li>Schalotten und Karotten mit Butter und Öl anschwitzen. Entsprechend würzen.</li>
+<li>Suppe dazugeben und <b>15 min</b> schmoren (nicht zu weich).</li>
+</ol>
+
+<p>
+<i>Sauce</i>
+</p>
+<ol class="org-ol">
+<li>Fleisch herausnehmen, Flüssigkeit sieben.</li>
+<li>Einkochen und mit Beurre manié binden.</li>
+</ol>
+
+<p>
+Am Ende alles gemeinsam in den Bräter. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7541059" class="outline-4">
+<h4 id="org7541059">Boeuf Stroganov</h4>
+<div class="outline-text-4" id="text-org7541059">
+<p>
+<b>Zutaten</b> (für ca. 4 Personen)
+</p>
+<ul class="org-ul">
+<li>500-750g Rinderfilet (zur Not auch gutes Steak)</li>
+<li>300g Champignons</li>
+<li>100g eingelegte Gurken (Abtropfgewicht)</li>
+<li>2-3 mittelgrosse Zwiebeln (rote sehen besonders gut aus)</li>
+<li>75ml Saure Sahne (1/2 Becher)</li>
+<li>100ml Schlagsahne (1/2 Becher)</li>
+<li>1 Knoblauchzehe</li>
+<li>Ca. 50g Butter</li>
+<li>Etwas Tomatenmark</li>
+<li>Etwas (Dijon-) Senf (keine Angst, Kühne geht auch)</li>
+<li>Saft einer halben Zitrone</li>
+<li>Salz</li>
+<li>Pfeffer</li>
+<li>Etwas Sonnenblumen- oder Erdnußöl</li>
+</ul>
+
+<p>
+Die Zwiebeln in feine, die Gurken in etwas grobere Würfel schneiden. 
+Den Knoblauch so fein wie möglich hacken. Die Champignons putzen und in ca. 5mm dicke Scheiben schneiden. 
+Das Fleisch in mundgerechte Streifen (etwa daumengroß) schneiden.
+Ab jetzt dauert das Kochen des Ragouts ca. 15 Minuten. 
+Boeuf Stroganoff kann man nicht gut warm halten (dabei wird das Fleisch zäh - Ausnahme: Die Mensa-Variante, 
+da macht es nichts mehr aus), also sollte man jetzt auch mit der Beilage beginnen. Passend sind Pasta (gut für den ersten Versuch, da einfach), Salzkartoffeln, oder, am klassischsten, Bratkartoffeln. Ich mag am liebsten Rosmarin-Bratkartoffeln.
+Gut die Hälfte der Zwiebeln mit Butter in einer Pfanne bei guter Hitze anbraten, bis sie hellbraun sind. 
+Dann den Knoblauch dazugeben und unter Rühren kurz weiterbraten. Die Champignons dazugeben und dann mit ca. 100ml Wasser ablöschen. 
+Die Hitze auf mittel reduzieren, noch einmal umrühren und mit Deckel 3 Minuten köcheln lassen
+Jetzt die Hitze noch einmal reduzieren. Die süße und die saure Sahne zusammen glatt rühren und zu den Champignons geben. 
+Noch einen Eßlöffel Tomatenmark und einen Eßlöffel Senf unterrühren, und mit Salz und Pfeffer abschmecken.
+In einer zweiten Pfanne (wer keine zweite große Pfanne hat, kann auch die erste nehmen und die Champignons in einem Topf unterbringen) 
+die Rindfleischstreifen in heißem Öl anbraten. Nach ca. einer Minute die restlichen Zwiebeln dazugeben, salzen und pfeffern. Noch etwas weiterbraten. Das Fleisch sollte außen braun werden, aber innen noch etwas blutig sein. Mit etwas (sehr wenig) Wasser ablöschen und von der heiße Platte nehmen.
+Jetzt die Gurkenwürfel und die Champignons zu den Fleischstücke geben. Den Zitronensaft dazu, kurz umrühren, 
+2 Minuten ziehen lassen, dann das Ragout noch einmal mit Salz und Pfeffer abschmecken. Fertig.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga968019" class="outline-4">
+<h4 id="orga968019">Filet Wellington</h4>
+<div class="outline-text-4" id="text-orga968019">
+<ul class="org-ul">
+<li>Lungenbraten</li>
+<li>Blätterteig (evtl.Ei zum bestreichen)</li>
+</ul>
+
+<p>
+Champignonfarce (Duelles):
+(es sollte sich ein ca. 0.5 cm dicke Schicht ergeben)
+</p>
+<ul class="org-ul">
+<li>Champignons</li>
+<li>Scharlotten</li>
+<li>Petersilie</li>
+</ul>
+<p>
+So lange rösten bis die Flüssigkeit verschwunden ist.
+</p>
+
+<p>
+Lungenbraten auf Raumtemperatur bringen (rechtzeitig aus
+dem Kühlschrank nehmen)
+Lungenbraten auf allen Seiten anbraten.
+kalt werden lassen.
+Farce auf den Blätterteig aufstreichen (siehe Plachutta S. 281)
+</p>
+
+<p>
+220°C (Kerntemperatur 55°C) ~40 min.
+20 min. rasten lassen (bei 50°C) 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4a3ffb5" class="outline-4">
+<h4 id="org4a3ffb5">Fleischlaibchen á la Mama&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Top">Top</span></span></h4>
+<div class="outline-text-4" id="text-org4a3ffb5">
+<p>
+Zutaten:
+</p>
+<ul class="org-ul">
+<li>1 kg Faschiertes vom Rind</li>
+<li>1 Ei</li>
+<li>rote Zwiebel</li>
+<li>Knoblauch 3 Zehen</li>
+<li>etwas Milch und Knõdelbrot</li>
+<li>Semmelbrösel</li>
+<li>1 EL Senf</li>
+<li>Petersilie</li>
+<li>Schnittlauch</li>
+<li>süsser Paprika</li>
+<li>Majoran</li>
+<li>Liebstöckl</li>
+</ul>
+
+<p>
+Zubereitung: 
+</p>
+<ul class="org-ul">
+<li>Knödelbrot mit Milch vermischen.</li>
+<li>Fleisch und alles weitere mit vermischen.</li>
+<li>Am Ende in Semmelbrösel wältzen.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc12f27b" class="outline-4">
+<h4 id="orgc12f27b">Gefüllte Paprika</h4>
+<div class="outline-text-4" id="text-orgc12f27b">
+<p>
+Gefüllte Paprika (mit Hackfleisch)
+</p>
+
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>6St	Parikaschoten</li>
+<li>2St	GemÃ¼sezwiebeln</li>
+<li>500g	Tomaten</li>
+<li>400g	Hackfleisch</li>
+<li>4EL	Tomatenmark</li>
+<li>375ml	Gemüsebrühe</li>
+<li>15g	Mehl</li>
+<li>6EL	Sahne</li>
+<li>200g	Fetakäse</li>
+<li>Salz, Pfeffer, Oregano</li>
+</ul>
+
+<p>
+Faschiertes anbraten.
+Gemüsezwiebeln schälen und würfeln. Tomaten waschen. Drei Tomaten in Würfel schneiden.
+</p>
+
+<p>
+Zwiebeln andünsten. Hackfleisch dazugeben und anbraten. 
+Die Tomatenwürfel und zwei Esslöffel Tomatenmarkt dazugeben. Den Fetakäse würfeln und ebenfalls dazugeben. 
+Abschließend mit Salz und Pfeffer würzen; die Masse anschließend in die Paprikaschoten füllen.
+</p>
+
+<p>
+Die restlichen Tomaten in Würfel schneiden. Butter in einem großen Topf erhitzen, die restlichen Zwiebeln darin anschwitzen. 
+Die Paprikaschoten auf die gehackten Zwiebeln in den Topf stellen, Leerräuume mit den TomatenwÃ¼rfeln auffüllen und die Gemüsebrühe 
+in den Topf gießen. 50 Minuten auf kleiner Hitze garen lassen (mit Deckel). Danach die Paprika aus dem Topf nehmen und im Ofen warm stellen.
+</p>
+
+<p>
+Die Garflüssigkeit aus dem Topf mit einem Stabmixer pürieren, zwei Esslöffel Tomatenmark unterziehen und zum Kochen bringen. Die 
+Sahne und etwas Mehl zum Binden langsam unterrühren.
+</p>
+
+<p>
+Die Soße mit Salz, Pfeffer, Zucker und gerebelten, getrockneten Oregano würzen und abschmecken. Gemeinsam mit Reis zu den 
+Paprikaschoten servieren.
+</p>
+
+<p>
+Alternative Beilagen: Salz- oder Pellkartoffeln.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgba5f914" class="outline-4">
+<h4 id="orgba5f914">Gulasch</h4>
+<div class="outline-text-4" id="text-orgba5f914">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>1 kg Rindfleisch (Wade, Schulter, gut durchwachsen)</li>
+<li>1 kg Zwiebeln</li>
+<li>50 g Butterschmalz</li>
+<li>4 EL Paprikapulver, edelsüß</li>
+<li>2 EL Tomatenmark</li>
+<li>3 EL Rotweinessig</li>
+<li>0.25 L Rundsuppe</li>
+<li>2 Koblauchzehen</li>
+<li>2 Lorbeerblätter</li>
+<li>Wacholderbeeren und Kümmel zerreiben.</li>
+<li>Majoran, Salz, Pfeffer</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+<ol class="org-ol">
+<li>Zwiebeln nudelig schneiden und  anbraten bis sie Farbe nehmen.</li>
+<li>Mit Essig den Bodensatz ablösen.</li>
+<li>Tomatenmark und Paprika dazugeben, kurz anbraten.  Mit etwas Suppe ablöschen. 
+Einkochen und noch einmal ablöschen. Dieser Schritt führt zu einer dunklen Farbe.</li>
+<li>Fleisch dazugeben und kochen bis das Fleisch weich ist.</li>
+<li>Fleisch raus nehmen, Sauce pürieren und das Fleisch wieder hinzufügen.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org72574c9" class="outline-4">
+<h4 id="org72574c9">Gulasch á la Börni</h4>
+<div class="outline-text-4" id="text-org72574c9">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>1 kg Rindfleisch (Wade, Schulter, gut durchwachsen)</li>
+<li>1 kg Zwiebeln</li>
+<li>2 Lorbeerblätter</li>
+<li>0.5 L Rotwein</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+<ul class="org-ul">
+<li>Zwiebeln ganz fein würfelig schneiden, anschwitzen in Olivenöl.</li>
+<li>Gulaschfleisch in großen Würfeln in den Zwiebeln anbraten.</li>
+<li>Dann Paprika ( Drei Esslöffel) mitrösten.</li>
+<li>Aufgießen mit halbem Liter Rotwein. Zwei Knoblauchzehen fein geschnitten dazu. Kümmel und Wacholderbeeren zerstoßen dazu.</li>
+<li>Wein verkochen, mit Wasser aufgießen.</li>
+<li>Leise köcheln, danach salzen und abschmecken. Die Zwiebeln binden die Sauce, kein Mehl nötig.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6a1fc8e" class="outline-4">
+<h4 id="org6a1fc8e">Rindfleisch mit Kartoffeln</h4>
+<div class="outline-text-4" id="text-org6a1fc8e">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>Gulaschfleisch</li>
+<li>Kartoffeln</li>
+<li>Zwiebel</li>
+</ul>
+
+<p>
+Gemüse (wie man will):
+</p>
+<ul class="org-ul">
+<li>Paprika</li>
+<li>Tomaten</li>
+<li>Karotten</li>
+<li>Ingwer</li>
+<li>Suppe</li>
+</ul>
+
+<p>
+Gewürze:
+</p>
+<ul class="org-ul">
+<li>Majoran</li>
+<li>Muskatpfeffer</li>
+<li>Paprika</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+<ol class="org-ol">
+<li>Fleisch scharf anbraten.</li>
+<li>Zwiebeln, Senf dazugeben, etwas anbraten, dann mit Majoran und Salz würzen.</li>
+<li>Mit Cogniac ablöschen, dann Suppe, Karotten und mit Paprika würzen.</li>
+<li>Schmoren bis das Fleisch weich ist.</li>
+<li>Kartoffeln, Paprika, Tomaten, Ingwer dazu, ausreichend Wasser</li>
+<li>Schmoren bis die Kartoffeln fertig sind.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org109e9ce" class="outline-4">
+<h4 id="org109e9ce">Rindfleisch mit Pflaumen á la Jorgos</h4>
+<div class="outline-text-4" id="text-org109e9ce">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>1.5 kg Rindfleisch, gut durchzogen z.B. Schulter, alternativ: Wildschwein</li>
+<li>3 Zwiebeln</li>
+<li>0.25 L Rotwein</li>
+<li>2 Lorbeerblätter</li>
+<li>1 Packung getrocknete Pflaumen</li>
+<li>Salz, Pfeffer, Olivenöl</li>
+</ul>
+
+<p>
+<b>Beilage</b>
+</p>
+<ul class="org-ul">
+<li>Pommes</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+<ol class="org-ol">
+<li>In einem Topf das Fleisch (2-3 cm große Stücke) in Olivenöl anbraten.</li>
+<li>Die Zwiebeln, fein gehackt dazugeben, anschwitzen lassen.</li>
+<li>0.25 L Rotwein dazugeben, Lorbeerblätter, Pfeffer</li>
+<li>1.5 h auf niedriger Stufe (3/14 auf meinem Herd) mit Deckel kochen lassen.</li>
+<li>Den Deckel runtergeben, die Flüssigkeit reduzieren.</li>
+<li>Pflaumen dazugeben, auf Stufe 8, ca. 5 min. kochen. Dann wieder auf Stufe 3
+reduzieren. Danach nicht mehr umrühren. Die Pflaumen nehmen die Flüssigkeit auf.</li>
+<li>Noch ca. 30 min weiterkochen, danach ca. 30 min ziehen lassen.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org4c5a723" class="outline-4">
+<h4 id="org4c5a723">Roastbeef á la Hopf</h4>
+<div class="outline-text-4" id="text-org4c5a723">
+<ul class="org-ul">
+<li>Beiried 1kg (gut abgelegen, 2 Tage)</li>
+<li>Marinade: (12 Stunden)
+<ul class="org-ul">
+<li>Maiskeimöl + Worchester Sauce</li>
+<li>Pfeffer (reichlich), Wacholderbeeren (wenige), Salz, Rosmarin (schneiden), (Knoblauch)</li>
+</ul></li>
+</ul>
+
+<p>
+Fleisch 12 h vorher aus dem Kühlschrank nehmen
+das Roastbeef (das nicht unbedingt mariniert sein muss) 
+mit Senf bestreichen
+bei 180°C ins Rohr bis die Kerntemeratur 50°C erreicht hat.
+Das Fleisch in Alufolie etwas rasten lassen
+Danach (!) das Fleisch gut anbraten in Alufolie wickeln und
+wieder rasten lassen.
+</p>
+
+<p>
+Mit Dijonsenf bestreichen, Fettn einschneiden.
+</p>
+
+<p>
+In heißem Öl von allen Seiten anbraten.
+Im Bräter (in Alufolie) bei 90°C ca. 40 min.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf7965d5" class="outline-4">
+<h4 id="orgf7965d5">Russisches Reisfleisch</h4>
+<div class="outline-text-4" id="text-orgf7965d5">
+<p>
+auf Paprikapulver verzichten, aber Paprika in Streifen geschnitten ist gut
+</p>
+
+<p>
+Reis direkt rein
+</p>
+</div>
+</div>
+<div id="outline-container-orgcd50daa" class="outline-4">
+<h4 id="orgcd50daa">Steak</h4>
+</div>
+<div id="outline-container-org289803c" class="outline-4">
+<h4 id="org289803c">Züricher Geschnetzeltes</h4>
+<div class="outline-text-4" id="text-org289803c">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>Filet vom Kalb (oder Rind)</li>
+<li>Champignons</li>
+<li>250 ml Sahne</li>
+<li>Frühlingszwiebeln</li>
+<li>Weisswein</li>
+<li>Butter</li>
+<li>2 cl Cognac</li>
+<li>klein gehackte Petersilie</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+<ol class="org-ol">
+<li>Filet in Streifen schneiden (nicht zu klein) und kurz anbraten. Auf die Seite stellen.</li>
+<li>Butter schmelzen und klein geschnittene Zwiebeln glasig werden lassen.</li>
+<li>In Streifen geschnittene Champignons dazugeben.</li>
+<li>Mit Cognac ablöschen, Wein dazu und eine Idee von Mehl.</li>
+<li>Einkochen, dann die Sahne dazugeben.</li>
+<li>Wenn die gewünschte Konsistenz erreicht ist, das Fleisch dazugeben.</li>
+<li>Mit Pfeffer und Petersilie anrichten.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org1fe9e04" class="outline-4">
+<h4 id="org1fe9e04">Γιαπράκα&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Top">Top</span></span></h4>
+<div class="outline-text-4" id="text-org1fe9e04">
+<p>
+<b>Zutaten</b> (für ca. 16 Stück)
+</p>
+<ul class="org-ul">
+<li>1000 g Faschiertes</li>
+<li>2 Zwiebeln</li>
+<li>200 g Tomatensaft</li>
+<li>Reis</li>
+<li>2 Kautköpfe (16 Blätter)</li>
+<li>8 Zitronen</li>
+</ul>
+
+<p>
+<b>Gewürze</b>
+</p>
+<ul class="org-ul">
+<li>Muskatpfeffer</li>
+<li>süßer Paprika (genug)</li>
+<li>Pfeffer, Salz</li>
+<li>Olivenöl (reichlich)</li>
+<li>Butter</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+<ol class="org-ol">
+<li>Krautblätter ca. 1 min in kochendem Wasser blanchieren, damit sie weich werden. 
+In eine Schüssel mit kaltem Wasser geben.</li>
+<li>Faschiertes mit fein gehackten Zwiebeln, Tomatensaft, Reis, Olivenöl mischen.
+würzen: reichlich Paprika, Olivenöl, Muskatpfeffer, Salz, Pfeffer.</li>
+<li>Faschiertes in jeweils ein bis zwei Blatt einwickeln (viel Kraut).
+Den Wickler mit den Händen fest zusamme
+Die dicken Teile vom Kraut wegschneiden und am Boden eines Bräters verteilen.</li>
+<li>Die Wickler auf das Kraut im Bräter stellen. 
+Am Ende: Paprika oben drauf, Olivenöl und Butter.</li>
+<li>Gesalzenes Wasser mit Zitronensaft und Zucker(oder Sauerkrautsaft) hinein, ~ halb voll</li>
+<li>5-6 Stunden auf 120°C im Rohr, in einem geschlossenen Topf, 
+Ober-Unterhitze auf der untersten Stufe.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org98481fe" class="outline-3">
+<h3 id="org98481fe">Huhn</h3>
+<div class="outline-text-3" id="text-org98481fe">
+</div>
+<div id="outline-container-org4ae9b73" class="outline-4">
+<h4 id="org4ae9b73">Curryhuhn</h4>
+<div class="outline-text-4" id="text-org4ae9b73">
+<ul class="org-ul">
+<li>Huhn Kartoffeln Karotten Zwiebeln</li>
+<li>frischer Koriander</li>
+<li>Ingwer</li>
+<li>Kokosmilch + Sahne</li>
+<li>etwas Garam Masala !</li>
+<li>Muskatpfeffer</li>
+<li>1/4 Suppenwürfel (nicht zuviel)</li>
+<li>Safranreis (passt gut)</li>
+</ul>
+
+<p>
+Kartoffeln &amp; Karotten kann man auch sparen.
+</p>
+
+<p>
+Ausprobieren: in Strifen geschnittene Paprika
+</p>
+</div>
+</div>
+<div id="outline-container-org4011438" class="outline-4">
+<h4 id="org4011438">Huhn mit Kartoffeln im Ofen</h4>
+</div>
+</div>
+<div id="outline-container-org871b497" class="outline-3">
+<h3 id="org871b497">Schwein</h3>
+<div class="outline-text-3" id="text-org871b497">
+</div>
+<div id="outline-container-orgce4bf33" class="outline-4">
+<h4 id="orgce4bf33">Schweinsbraten</h4>
+<div class="outline-text-4" id="text-orgce4bf33">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>1kg Bauch mit Schwarte</li>
+<li>1kg Karee mit Schwarte
+(aufpassen auf den Knorpel)</li>
+
+<li>1 Flasche Bier</li>
+<li>Knoblauch</li>
+<li>Kartoffeln</li>
+<li>Salz, Koriander (gemahlen)</li>
+<li>Apfel</li>
+</ul>
+
+<p>
+dazu: Krautsalat, Knödel
+</p>
+
+<p>
+<b>Zubereitung</b> <br />
+Bier, Kartoffeln (evtl. Suppengemüse) und Schwein in eine möglichst große Form.
+20 min auf der Hautseite bei 180°C im Rohr garen, danach Haut nicht zu tief einschneiden.
+</p>
+
+<p>
+Apfel (geschält) eine halbe Stunde vor Schluss dazugeben.
+</p>
+
+<p>
+Wenn die Kruste noch nicht passt, am Ende den Turbo einschalten.
+</p>
+<hr />
+<p>
+25.12.2012
+</p>
+
+<p>
+Mit Knoblauch spiken bringt nichts.
+</p>
+
+<p>
+Saft am Ende pürieren ist gut, Sauce muss nicht mehr gebunden werden.
+</p>
+
+<p>
+Äpfel sollten erst sehr spät dazu gegeben werden.
+</p>
+
+<p>
+Kartoffeln kann man von Anfang an dazu geben.
+</p>
+<hr />
+<p>
+14.03.2019
+</p>
+
+<p>
+Mit Knoblauch spiken muss nicht sein, kann aber schon einen schönen Effekt bringen
+wenn man genau draufbeißt.
+</p>
+
+<p>
+Welche Kartoffeln? Da gibt's riesige Unterschiede.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org08c34ff" class="outline-3">
+<h3 id="org08c34ff">Lamm</h3>
+<div class="outline-text-3" id="text-org08c34ff">
+</div>
+<div id="outline-container-org373e879" class="outline-4">
+<h4 id="org373e879">Geschmorte Lammkeule</h4>
+</div>
+</div>
+<div id="outline-container-org25af3f9" class="outline-3">
+<h3 id="org25af3f9">Wild</h3>
+<div class="outline-text-3" id="text-org25af3f9">
+</div>
+<div id="outline-container-orgf02c83a" class="outline-4">
+<h4 id="orgf02c83a">Rehragout</h4>
+<div class="outline-text-4" id="text-orgf02c83a">
+<ul class="org-ul">
+<li>Rehgeschnetzeltes</li>
+<li>1 Melanzani</li>
+<li>getrocknete Zwetschken</li>
+<li>Tomaten</li>
+<li>Scharlotten halbiert</li>
+<li>Wildjus</li>
+<li>Rosmarin, Muskatpfeffer, Knoblauch</li>
+</ul>
+
+<p>
+Fleisch vorkochen, damit das Gemüse nicht zu sehr verkocht.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7b28f41" class="outline-3">
+<h3 id="org7b28f41">Fisch &amp; Meeresfrüchte</h3>
+<div class="outline-text-3" id="text-org7b28f41">
+</div>
+<div id="outline-container-orgeba3915" class="outline-4">
+<h4 id="orgeba3915">Oktopus á la Jorgos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Top">Top</span></span></h4>
+<div class="outline-text-4" id="text-orgeba3915">
+<p>
+für 2 Personen
+(es bleibt am Ende ca. die Hälfte)
+</p>
+
+<ul class="org-ul">
+<li>1.3 kg Oktopus</li>
+<li>90 mL Olivenöl, 150 mL Weißwein</li>
+<li>Lorbeerblätter, Chilis, Pfefferkörner</li>
+
+<li>Oktopus in 2-2.5 cm große Stücke schneiden</li>
+<li>Stücke in einem Topf ca. 20 min. leicht köcheln lassen 
+(der Oktopus lässt dabei Flüssigkeit)</li>
+<li>Olivenöl und Weißwein zugeben.</li>
+<li>1-2 Stück Lorbeerblatt, 3 Chilis, Pfefferkörner
+(wichtig: kein Salz, der Oktopus ist salzig genug)</li>
+<li>auf kleiner Flamme, ohne Deckel, ca. 1h köcheln bis die
+Masse klebrig wird
+dann: ca. 2 Esslöffel Essig dazugeben und auf kleinster 
+Flamme 3-5 min. weiterköcheln.</li>
+<li>zudecken und ca. 20 min. ziehen lassen</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd4223a8" class="outline-3">
+<h3 id="orgd4223a8">Ohne Fleisch</h3>
+<div class="outline-text-3" id="text-orgd4223a8">
+</div>
+<div id="outline-container-orgc9f658c" class="outline-4">
+<h4 id="orgc9f658c">Gigantes Bohnen</h4>
+</div>
+<div id="outline-container-org1fcad7a" class="outline-4">
+<h4 id="org1fcad7a">Kartoffelgulasch</h4>
+<div class="outline-text-4" id="text-org1fcad7a">
+<ul class="org-ul">
+<li>Kartoffeln</li>
+<li>Würstl 100g (Käsekrainer)</li>
+<li>Suppenwürfel 1/2</li>
+<li>Majoran (nicht übertreigen)</li>
+<li>Paprikapulver</li>
+<li>Lorbeerblätter</li>
+<li>Zwiebeln</li>
+<li>Paprika</li>
+<li>Petersilie</li>
+<li>ein Schuss Essig</li>
+<li>Tomatenmark</li>
+</ul>
+
+<p>
+ca. 1h kochen
+(kann auch länger sein)
+Sämigkeit entsteht durch die Stärke in den Kartoffeln
+(man kann auch mehlige nehmen)
+</p>
+</div>
+</div>
+<div id="outline-container-org5874d29" class="outline-4">
+<h4 id="org5874d29">Kasnocken</h4>
+<div class="outline-text-4" id="text-org5874d29">
+<p>
+Teig muss am Löffel kleben bleiben, sonst tropft er zu schnell durch den Hobel.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdd158b6" class="outline-4">
+<h4 id="orgdd158b6">Linsen mit Speck</h4>
+<div class="outline-text-4" id="text-orgdd158b6">
+<p>
+Linsen + Karotten kochen (30min.) - kein Salz, sonst bleiben sie angeblich hart
+</p>
+
+<p>
+In Würfel geschnittenen Speck in der Pfanne auslassen
+Linsen mit Karotten dazugeben
+</p>
+
+<p>
+Butter (oder Öl) dazu + nicht zu wenig Essig
+(nicht zu wenig Butter sonst wirds trocken)
+</p>
+
+<p>
+würzen wie auch immer
+</p>
+
+<p>
+Petersilie dazu
+</p>
+</div>
+</div>
+
+<div id="outline-container-org61eeee5" class="outline-4">
+<h4 id="org61eeee5">Linsen mit Speck á la Schubeck</h4>
+<div class="outline-text-4" id="text-org61eeee5">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>1 geschält, klein gewürfelt Zwiebel</li>
+<li>2 Esslöffel Öl</li>
+<li>300 Gramm Berglinsen kleine grüne Linsen</li>
+<li>1 Esslöffel Tomatenmark</li>
+<li>1000 Milliliter Geflügelbrühe</li>
+<li>60 Gramm Karotte</li>
+<li>60 Gramm Knollensellerie</li>
+<li>60 Gramm Stange Lauch</li>
+<li>1 Prise getrocknet Majoran</li>
+<li>1 Teelöffel Puderzucker</li>
+<li>3 Esslöffel Balsamicoessig</li>
+<li>50 Gramm Durchwachsener Speck ohne Schwarte</li>
+<li>2 Scheibe Knoblauch</li>
+<li>2 Scheibe Ingwer</li>
+<li>1 Klein.Splitter Zimtrinde</li>
+<li>1 Klein.Streifen Orangenschale unbehandelte Frucht!</li>
+<li>1 Prise Cayennepfeffer</li>
+<li>Salz</li>
+</ul>
+
+<p>
+Die Hälfte vom Öl in einem Topf  erhitzen und die Zwiebel darin bei milder Hitze anbraten. Die Linsen dazugeben, 
+das Tomatenmark unterrühren und die Brühe  angiessen. Die Linsen knapp unter dem Siedepunkt fünfunddreissig bis vierzig Minuten garen.
+Karotte und Knollensellerie schälen, Lauch putzen und waschen. Das Gemüse  in kleine Würfel schneiden und mit dem Majoran zu den Linsen 
+geben. Den Eintopf weitere fünf Minuten fertig garen.
+Den Puderzucker in einer Pfanne bei milder Hitze hell karamellisieren lassen, mit dem Essig ablöschen und sirupartig einköcheln lassen.
+Den Speck in kleine Würfel schneiden. Das restliche Öl in einer Pfanne erhitzen und den Speck darin bei mittlerer Hitze kross braten. 
+Herausnehmen und auf Küchenpapier abtropfen lassen.
+Knoblauch, Ingwer, Zimt und Orangenschale in ein Gewürzsäckchen füllen und mit dem Speck in den Eintopf geben. Mit dem eingeköchelten Essig, 
+Salz und Cayennepfeffer abschmecken. Das Gewürzsäckchen nach einigen Minuten wieder entfernen.
+Den Eintopf eventuell noch mit etwas brauner Butter verfeinern. Den Linseneintopf in vorgewärmte Suppenteller verteilen.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6817ea2" class="outline-4">
+<h4 id="org6817ea2">WOK Gemüse</h4>
+<div class="outline-text-4" id="text-org6817ea2">
+<p>
+Gemüse: 
+Lauch, Ingwer
+Paprika in Streifen 
+[Karrotten joulienne]
+[Zucchini]
+</p>
+
+<p>
+nur ganz kurz anbraten (2min) !!
+Am Ende muss alles zusammen nochmal
+2-3min mit Sauce etc. kochen.
+</p>
+
+<p>
+Petersilie muss nicht sein
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org331c8e3" class="outline-3">
+<h3 id="org331c8e3">Pasta&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Pasta">Pasta</span></span></h3>
+<div class="outline-text-3" id="text-org331c8e3">
+</div>
+<div id="outline-container-orga9d51b2" class="outline-4">
+<h4 id="orga9d51b2">Gefüllte Canneloni&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Top">Top</span></span></h4>
+<div class="outline-text-4" id="text-orga9d51b2">
+<ul class="org-ul">
+<li>1.5 Pkg Canneloni (1.5x 250g)</li>
+<li>1 Dose Tomaten</li>
+<li>Ragout von ca. 700 g Fleisch (2 Packungen)</li>
+<li>1 Packung Emmentaler</li>
+</ul>
+
+<p>
+Tomatensaft mit Wasser in eine Auflaufform.
+Canneloni füllen und reinlegen.
+</p>
+
+<p>
+Noch ohne Käse 10 min ins Rohr. Dann die oberen Canneloni umdrehen, sonst
+werden sie nich weich, nochmal 10 min. im Rohr garen. 
+Danach den Käse obendrauf und so lange im Rohr lassen bis der Käse 
+geschmolzen ist. 
+</p>
+</div>
+</div>
+<div id="outline-container-org136fece" class="outline-4">
+<h4 id="org136fece">Ragu</h4>
+<div class="outline-text-4" id="text-org136fece">
+<p>
+Zutaten:
+</p>
+<ul class="org-ul">
+<li>2 kg Faschiertes</li>
+<li>Karrotten</li>
+<li>3 Stangen Sellerie</li>
+<li>Knoblauch</li>
+<li>2 gro0e Zwiebeln</li>
+<li>3 Knoblauchzehen</li>
+<li>3 Dosen Tomaten</li>
+<li>Tomatenmark</li>
+<li>Muskatpfeffer, Senf, Paprika</li>
+<li>1 Flasche Weisswein</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org887b6f1" class="outline-4">
+<h4 id="org887b6f1">Lasagne</h4>
+<div class="outline-text-4" id="text-org887b6f1">
+<ul class="org-ul">
+<li>ca. 2kg Ragu</li>
+<li>Sauce Béchamel (ca. 70g Butter, 700 ml Milch)</li>
+<li>Gauda zum überbacken</li>
+</ul>
+
+<p>
+Achtung:
+Das Ragu muss etwas flüssig sein, damit die Nudeln gar werden.
+Einfach etwas Wasser dazu geben.
+</p>
+
+
+<p>
+Zubereitung:
+</p>
+<ul class="org-ul">
+<li>4 Schichten legen (weiße Auflaufform).</li>
+<li>Lasagneblätter mit Ragu bedecken, dann Bechamelsauce drauf.</li>
+<li>Den Käse auf die letzte Schicht Bechamel geben.</li>
+<li>Mit Alufolie 30 min @ 180°C backen.</li>
+<li>Dann 10 min. bei 200°C ohne Alufolie.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9be0e40" class="outline-4">
+<h4 id="org9be0e40">Spaghetti Carbonara&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Top">Top</span></span></h4>
+<div class="outline-text-4" id="text-org9be0e40">
+<p>
+<b>Zutaten</b> (2 Personen)
+</p>
+<ul class="org-ul">
+<li>3 Eier</li>
+<li>Butter</li>
+<li>Olivenöl</li>
+<li>Speck</li>
+<li>Pfeffer !</li>
+<li>Grana, evtl. Pecorino</li>
+</ul>
+
+<p>
+Man mische so viel Käse in die verrührten Eier bis eine
+dickflüssige Masse entsteht. Dann nach Gefühl die 
+Menge an Speck festlegen. 
+</p>
+
+<p>
+Die Masse sollte nicht zu dickflüssig sein, damit am Ende eine
+sämige Soße entsteht.
+</p>
+
+<p>
+Nicht zu viel Speck und den Speck nicht zu sehr braten, damit er
+nicht hart wird.
+</p>
+
+
+<p>
+Eier mit Käse vermischen.
+Butter, Speck in die Pfanne.
+</p>
+
+<p>
+Spaghettiwasser nicht zu viel salzen. 
+</p>
+
+<p>
+Nudeln mit dem Rest zusammenmischen solange auf der 
+Herdplatte halten bis man zufrieden ist.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3ea1a92" class="outline-4">
+<h4 id="org3ea1a92">Spaghetti Putanesca</h4>
+</div>
+<div id="outline-container-orga5c707b" class="outline-4">
+<h4 id="orga5c707b">Spaghetti mit Tomatensauce und Speck</h4>
+</div>
+</div>
+<div id="outline-container-org4d78b3d" class="outline-3">
+<h3 id="org4d78b3d">Risotto</h3>
+<div class="outline-text-3" id="text-org4d78b3d">
+</div>
+<div id="outline-container-org52abe74" class="outline-4">
+<h4 id="org52abe74">Pilzrisotto</h4>
+</div>
+<div id="outline-container-org4c6d9c6" class="outline-4">
+<h4 id="org4c6d9c6">Spargelrisotto</h4>
+</div>
+</div>
+<div id="outline-container-orgfcb392d" class="outline-3">
+<h3 id="orgfcb392d">Pizza</h3>
+</div>
+<div id="outline-container-org1163ddb" class="outline-3">
+<h3 id="org1163ddb">Strudel</h3>
+<div class="outline-text-3" id="text-org1163ddb">
+</div>
+<div id="outline-container-orge4024df" class="outline-4">
+<h4 id="orge4024df">Rotkrautstrudel</h4>
+<div class="outline-text-4" id="text-orge4024df">
+<p>
+Rotkraut + Muskatpfeffer + Rotwein + Pfeffer
+Blätterteig
+</p>
+
+<p>
+Rotkraut sollte kalt sein, wenn man es in den Teig gibt.
+ca. 30 min. ins Rohr
+</p>
+
+<p>
+Yoghurt (Sauerrahm) mit Kräutermischung, Salz und Pfeffer.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org14dfbd9" class="outline-2">
+<h2 id="org14dfbd9">Beilagen</h2>
+<div class="outline-text-2" id="text-org14dfbd9">
+</div>
+<div id="outline-container-org2227e7b" class="outline-3">
+<h3 id="org2227e7b">Aufstriche</h3>
+<div class="outline-text-3" id="text-org2227e7b">
+</div>
+<div id="outline-container-orge80bc41" class="outline-4">
+<h4 id="orge80bc41">Melanzaniaufstrich</h4>
+<div class="outline-text-4" id="text-orge80bc41">
+<ul class="org-ul">
+<li>4 Melanzani</li>
+<li>Walnüsse</li>
+<li>1 Koblauchzehe</li>
+
+<li>Olivenöl</li>
+<li>Essig</li>
+<li>etwas rauchiger Paprika</li>
+</ul>
+
+<p>
+Die Melanzani im Rohr bei 180°C eine Stunde garen.
+Danach auf der Grillstufe weitergaren.
+</p>
+
+<p>
+Inhalt der Melanzani mit Knoblauch, Salz, Olivenöl, Essig
+und Walnüssen im Blender mixen.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2d435d8" class="outline-3">
+<h3 id="org2d435d8">Kartoffelgration</h3>
+<div class="outline-text-3" id="text-org2d435d8">
+<p>
+mittlere (runde) Auflaufform
+</p>
+
+<ul class="org-ul">
+<li>mehlige Kartoffeln</li>
+<li>Käse: Emmentaler (keinen Parmesan), 1/4 der Menge an Kartoffeln</li>
+<li>Sahene &amp; Milch</li>
+<li>1 Ei</li>
+
+<li>Kartoffeln hacheln, im Wasser aufbewahren</li>
+<li>Ei, eine Packung Schlag (250ml) mixen, Salz, Pfeffer, Muskatnuss dazu</li>
+<li>Alles miteinander vermengen</li>
+<li>Form buttern und alles rein, oben ein Daumen breit Platz lassen</li>
+<li>OHNE Käse oben, 1 h, zugedeckt ins vorgeheizte Rohr (180°C) geben
+danach Käse drüber (nicht zu viel-knapp bedecken) und fertig garen, ca. 30 min.</li>
+</ul>
+
+<hr />
+<p>
+14.03.2019
+</p>
+
+<p>
+Es geht auch ganz ohne Käse, wie das Intercontinental bewiesen hat. Das bringt den 
+Vorteil, dass die Kartoffeln oben schön braun werden.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6a26467" class="outline-3">
+<h3 id="org6a26467">Kartoffelrösti</h3>
+<div class="outline-text-3" id="text-org6a26467">
+<p>
+ähnlich wie Tortilla
+</p>
+
+<p>
+Kartoffeln reiben, salzen
+die Kartoffelfäden in der Pfanne bei geringer Hitze braten&#x2026;
+</p>
+</div>
+</div>
+<div id="outline-container-orgb528712" class="outline-3">
+<h3 id="orgb528712">Knödel</h3>
+<div class="outline-text-3" id="text-orgb528712">
+</div>
+<div id="outline-container-orgeed1751" class="outline-4">
+<h4 id="orgeed1751">Semmelknödel</h4>
+<div class="outline-text-4" id="text-orgeed1751">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>Knödelbrot</li>
+<li>~1/8l Milch</li>
+<li>Eier</li>
+<li>50g zerlassene butter</li>
+<li>Mehl</li>
+<li>Petersilie (wenn mans mag)</li>
+</ul>
+
+<p>
+Die Frage ist, wie wird der Knödel schön luftig?
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb7d5980" class="outline-4">
+<h4 id="orgb7d5980">Serviettenknödel</h4>
+<div class="outline-text-4" id="text-orgb7d5980">
+<p>
+Serviettenknödel á la Flo:
+</p>
+
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>1/4 kg knödelbrot</li>
+<li>~1/8l Milch</li>
+<li>2 Eier (meist nehm ich ein ganzes und ein dotter)</li>
+<li>5dag zerlassene butter</li>
+<li>bissl gries &amp; mehl zum binden</li>
+<li>petersilie (wenn mans mag)</li>
+<li>Muskatnuss (evtl.)</li>
+<li>Pfeffer</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+<ul class="org-ul">
+<li>In bemehlte Alufolie einwickeln und 25 min in leicht wallendem Wasser kochen.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgda2ae15" class="outline-4">
+<h4 id="orgda2ae15">Kartoffelknödel</h4>
+<div class="outline-text-4" id="text-orgda2ae15">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>750 g Erdäpfel mehlig</li>
+<li>45 g Grieß oder Polenta</li>
+<li>155 g Mehl</li>
+<li>2 Eidotter</li>
+<li>30 g Butter</li>
+<li>Salz</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+<ol class="org-ol">
+<li>Erdäpfeln mit der Schale kochen, abgießen und schälen.</li>
+<li>Noch warm durch die Erdäpfelpresse drücken.</li>
+<li>Die zimmerwarme Butter in kleine Stücke schneiden.</li>
+<li>Alle Zutaten schnell mit den Händen zu einer Knödelmasse kneten und etwas rasten lassen.</li>
+<li>Salzwasser in einem großen Topf zum kochen bringen.</li>
+<li>Aus dem Erdäpfelteig Knödel formen.</li>
+<li>Anschließend im leicht köchelnden Salzwasser ziehen lassen (15-20 min).</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6ba7feb" class="outline-3">
+<h3 id="org6ba7feb">Salate</h3>
+<div class="outline-text-3" id="text-org6ba7feb">
+</div>
+<div id="outline-container-org061c47e" class="outline-4">
+<h4 id="org061c47e">Griechischer Salat</h4>
+</div>
+<div id="outline-container-orgaa6b0ee" class="outline-4">
+<h4 id="orgaa6b0ee">Krautsalat</h4>
+<div class="outline-text-4" id="text-orgaa6b0ee">
+<p>
+Kraut in heißes Wasser legen, sonst ist es mir 
+ein bisschen zu knackig. Blanchieren heißt das.
+</p>
+
+<p>
+wichtig: Kraut gut salzen und stehen lassen.
+</p>
+
+<p>
+Eher billigen Apfel-Essig nehmen.
+Wenn man gleich kostet, schmeckts fad. Es braucht Zeit bis der Salat
+gut wird.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbfdd936" class="outline-4">
+<h4 id="orgbfdd936">Vogerlsalat</h4>
+</div>
+</div>
+<div id="outline-container-orgaf86fab" class="outline-3">
+<h3 id="orgaf86fab">Saucen</h3>
+<div class="outline-text-3" id="text-orgaf86fab">
+</div>
+<div id="outline-container-org57660cb" class="outline-4">
+<h4 id="org57660cb">Saucenansatz á la Hopf</h4>
+<div class="outline-text-4" id="text-org57660cb">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>Knochen (walnussgroß geschnitten)</li>
+<li>2/3 Wurzelgemüse</li>
+<li>1/3 zwiebel am besten mit schale (walnußgröße gschnitten)</li>
+<li>1 Fl. Rotwein</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+<ol class="org-ol">
+<li>Die Knochen im Topf rösten bis sie dunkelbraun sind.
+Dann das Wurzelgemüse rösten. Die Zwiebel und die Kochen 
+dazugeben und etwas Tomatenmark und Öl beisteuern.</li>
+<li>Deglacieren (Ablöschen)<br />
+Rösten bis sich am Boden ein Satz bildet, dann mit Rotwein ablöschen.
+Das ganze unzälige Male wiederholen, bis der Fond sehr dunkel geworden ist.</li>
+<li>Dann mit Wasser aufgießen bis alles bedeckt ist. Ca. 3h köcheln lassen und
+dann durch ein Sieb abseihen.</li>
+<li>Anschließend auf die Hälfte reduzieren.</li>
+</ol>
+
+<p>
+Das ganze führt zu einem kräftigen Fond und aufgrund der Energiebilanz zu 2°C Erderwärmung.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0d65cc2" class="outline-4">
+<h4 id="org0d65cc2">Sauce Hollandaise</h4>
+<div class="outline-text-4" id="text-org0d65cc2">
+<ul class="org-ul">
+<li>2 Eigelb</li>
+<li>125 g Butter (halber Block), geschmolzen (nicht heiß!)</li>
+<li>Zitronensaft</li>
+<li></li>
+
+<li>Reduktion:</li>
+<li>Weißwein 1/4</li>
+<li>Scharlotten</li>
+<li>Pfefferkörner</li>
+<li>Salz</li>
+<li>Wein</li>
+<li>Lorbeerblatt</li>
+<li>Zucker</li>
+
+<li>Butter zerlassen</li>
+<li>Sud auf ein Viertel reduzieren (1/4-&gt;1/16)</li>
+<li>die zwei Eigelb in eine Metallschüssel, im Wasserdampf
+(nicht zu heiß, das Ei soll nicht gerinnen Stufe 10-12) rühren, 
+bis schaumig.</li>
+<li>langsam die geschmolzene Butter hinzufügen</li>
+<li>mit Zitronensaft, Salz und Pfeffer abschmecken</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6a9ab56" class="outline-2">
+<h2 id="org6a9ab56">Nachspeisen</h2>
+<div class="outline-text-2" id="text-org6a9ab56">
+</div>
+<div id="outline-container-org099f754" class="outline-3">
+<h3 id="org099f754">Apfelstrudel</h3>
+<div class="outline-text-3" id="text-org099f754">
+<p>
+siehe <a href="#org94542b4">Strudelteig</a>
+</p>
+
+<p>
+<b>Füllung</b>
+</p>
+<ul class="org-ul">
+<li>saure Äpfel in Scheiben</li>
+<li>Semmelbrösel</li>
+<li>Butter</li>
+<li>Zimt</li>
+<li>Zucker</li>
+<li>Rum</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgaa430be" class="outline-3">
+<h3 id="orgaa430be">Bananenschnitte</h3>
+<div class="outline-text-3" id="text-orgaa430be">
+<p>
+<b>Zutaten</b> (24cm Springform)
+</p>
+<ul class="org-ul">
+<li><a href="#orge67ccbc">Biskuittteig</a></li>
+<li>1kg Bananen</li>
+<li>400 ml Milch</li>
+<li>100 ml Schlagobers</li>
+<li>1 Pkg. Vanillepuddingpulver</li>
+<li>100 g zimmerwarme Butter</li>
+<li>100 g Staubzucker</li>
+<li>Marillenmarmelade</li>
+<li>4 Blatt Gelatine</li>
+<li>1 EL Rum</li>
+</ul>
+
+<p>
+<b>Glasur</b>
+</p>
+<ul class="org-ul">
+<li>200 g Schokolade</li>
+<li>50 g Kokosfett</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+<ol class="org-ol">
+<li>Puddingpulver nach Anleitung auf der Packung verwenden (sonst gibt es Klumpen).
+In eine Schüssel umfüllen. Gelatine einrühren und abkülen lassen (dauert etwas).</li>
+<li>Gelatine in kaltem Wasser einweichen.</li>
+<li>Biskuittteig mit Marmelade + Rum bestreichen.</li>
+<li>Zimmerwarme Butter mit Staubzucker flaumig rühren und Pudding unterheben.</li>
+<li>Schlag steif schlagen und dazugeben.</li>
+<li>Biskuit mit längs halbierten Bananen belegen.</li>
+<li>Mit Vanillecreme bestreichen und einige Stunden kalt stellen.</li>
+<li>Schokolade und Kokosfett im Wasserbad zum schmelzen bringen.</li>
+<li>Bananenschnitten mit Glasur überziehen und über Nacht kalt stellen.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orge67ccbc" class="outline-3">
+<h3 id="orge67ccbc">Biskuitteig á la Athina</h3>
+<div class="outline-text-3" id="text-orge67ccbc">
+<p>
+<b>Zutaten</b> (24cm Springform)
+</p>
+
+<ul class="org-ul">
+<li>4 Eier</li>
+<li>100 g Dinkelmehl</li>
+<li>60 g Maisstärke</li>
+<li>160 g Zucker</li>
+<li>1 Pkg Vanillzucker</li>
+<li>1/2 TL Backpulver</li>
+</ul>
+
+<p>
+<b>Zubereitung</b> (180°C Umluft, 30 min)
+</p>
+<ul class="org-ul">
+<li>Eier + Prise Salz schaumig schlagen</li>
+<li>Zucker + Vanillezucker dazugeben, schlagen bis schnittfest</li>
+<li>Mehl, Stärke und Backpulver unterheben</li>
+<li>Die Masse in eine gefettete Form geben und in den vorgeheizten Ofen.</li>
+<li>Biskuittteig im ausgeschalteten Ofen langsam auskühlen lassen.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9396638" class="outline-3">
+<h3 id="org9396638">Cheesecake</h3>
+<div class="outline-text-3" id="text-org9396638">
+<p>
+Cheese Cake American Style, etwa 16 Stück 
+</p>
+
+<p>
+<b>Zutaten</b>
+</p>
+
+<p>
+Knetteig: 
+</p>
+<ul class="org-ul">
+<li>200 g Weizenmehl</li>
+<li>1 Messerspitze Backpulver</li>
+<li>40 g Zucker</li>
+<li>1 Päckchen Vanillezucker</li>
+<li>1 EL Honig</li>
+<li>150 g Butter</li>
+<li>1 EL Weizenmehl</li>
+</ul>
+
+<p>
+oder Butterkekse, 1 Packung
+</p>
+
+<p>
+Belag: 
+</p>
+<ul class="org-ul">
+<li>200-250 g Schlagsahne</li>
+<li>600 g Topfen</li>
+<li>100 g Zucker</li>
+<li>1 Päckchen Vanillezucker</li>
+<li>Geriebene Zitronenschale (??)</li>
+<li>4 Eier (Größe M)</li>
+<li>30 g Stärke (Maizena)</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+
+<p>
+Knetteig (Backzeit: etwa 15 min):
+</p>
+<ol class="org-ol">
+<li>Mehl mit Backin mischen, in eine Rührschüssel sieben. Zucker,
+Vanillin-Zucker, Honig und Butter hinzufügen. Alles mit Handrührgerät 
+(Knethaken) kurz auf niedrigster, dann auf höchster Stufe zu einem glatten 
+Teig verkneten und eine Zeitlang kalt stellen.</li>
+<li>Inzwischen heizen Sie den Backofen vor.</li>
+<li>2/3 des Teiges auf leicht bemehlter Arbeitsfläche zu einer Platte 
+ausrollen (Ø 28 cm) und in eine Tarteform (Ø 28 cm) legen. Restlichen Teig
+mit 1 EL Mehl verkneten, zu einer Rolle formen, als Rand auf den Teigboden 
+legen und leicht an der Form hoch drücken. Den Teigboden mehrmals mit einer 
+Gabel einstechen. Die Form auf dem Rost in den Backofen schieben.</li>
+<li>Ober-/Unterhitze: etwa 220°C (vorgeheizt) Heißluft: etwa 200°C (vorgeheizt)</li>
+</ol>
+
+<p>
+Boden in der Form lösen und darin erkalten lassen. Die Backofentemperatur reduzieren. 
+</p>
+
+<p>
+Belag (Backzeit: etwa 40 min):
+</p>
+<ol class="org-ol">
+<li>Sahne steif schlagen. Topfen mit übrigen Zutaten glatt rühren und Sahne unterheben.</li>
+<li>Masse auf den Boden streichen und weiterbacken.</li>
+<li>Ober-/Unterhitze: etwa 200°C (vorgeheizt) Heißluft: etwa 180°C (vorgeheizt)</li>
+</ol>
+
+<p>
+Cheese Cake noch 10 Minuten im ausgeschalteten Backofen stehen lassen. Dann erkalten lassen. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org41ab0ec" class="outline-3">
+<h3 id="org41ab0ec">Cheesecake á la Susi</h3>
+<div class="outline-text-3" id="text-org41ab0ec">
+<p>
+<b>Zutaten</b> (24cm Springform)
+</p>
+
+<p>
+Boden:
+</p>
+<ul class="org-ul">
+<li>1 Pkg Butterkekse</li>
+<li>80g Butter</li>
+</ul>
+
+<p>
+Masse:
+</p>
+<ul class="org-ul">
+<li>1 kg Topfen (fein)</li>
+<li>2 Becher Schlagobers</li>
+<li>4 Eier</li>
+<li>150 g Zucker</li>
+<li>1  Pkg. Vanillepuddingpulver</li>
+<li>2 Zitronen</li>
+</ul>
+
+<p>
+<b>Zubereitung</b> (160°C Umluft, 80 min)
+</p>
+<ol class="org-ol">
+<li>Butterkekse zerbröseln.</li>
+<li>Butter zerlassen und mit den Keksen verrühren.</li>
+<li>Die Masse in eine am Rand gefettete Springform geben. Am Rand hochdrücken.</li>
+
+<li>Topfen, Eier, Zucker, Vanillepuddingpulver glatt rühren.</li>
+<li>Den Schlag steif schlagen und unterheben.</li>
+<li>Die Masse in die Springform geben und bei 160°C 80 min backen.
+Nach einer halben Stunde mit dem Messer am Rand entlang schneiden.</li>
+<li>Nach dem Backen den Kuchen ca. 30 min. abkühlen lassen.</li>
+</ol>
+
+<p>
+<b>Anmerkungen</b>
+</p>
+<ul class="org-ul">
+<li>Der Cheesecake wächst im Rohr stark über sich hinaus. Er fällt danach
+aber wieder zusammen.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf2305fa" class="outline-3">
+<h3 id="orgf2305fa">Crepes</h3>
+<div class="outline-text-3" id="text-orgf2305fa">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>200 g Mehl</li>
+<li>3 Eier</li>
+<li>300ml Milch</li>
+<li>50 g Butter</li>
+<li>1 Prise Salz</li>
+<li>Mineralwasser?</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+
+<p>
+wichtig: Butter, Salz, dünn!!
+Temp: Stufe 5 
+mit reichlich Butter schmeckt er besonders gut.
+</p>
+
+<p>
+Verhältnis: <br />
+Nehmen wir an man hat 1 Ei. 
+Ei verquirrlen, Milch dazugeben und dann
+Mehl mit dem Sieb (damit sich keine Klumpen
+bilden) bis gefühlsmäßig die richtige 
+Konsistenz erreicht ist.
+Ein Crêpes sollte so dünn wie möglich sein.
+Um das zu erreichen sollte die Mass nicht zu
+dickflüssig sein. Die Pfanne mit Teig bedecken
+und den Rest wieder zurückgießen! 
+</p>
+
+<p>
+Schwenkt man die Masse in der
+Schüssel kann man schon recht gut abschätzen ob
+die Konsistenz passt.
+</p>
+
+<p>
+30 min. kaltstellen 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcf88397" class="outline-3">
+<h3 id="orgcf88397">Crepes Suzette</h3>
+<div class="outline-text-3" id="text-orgcf88397">
+<p>
+Crepes: siehe <a href="#orgf2305fa">Crepes</a>
+</p>
+
+<p>
+Zucker karamelisieren, Butter hinzufügen
+mit Orangensaft aufgießen, in Scheiben geschnittene
+geschälte Orangen dazu, flammbieren
+</p>
+</div>
+</div>
+
+<div id="outline-container-org899cc2a" class="outline-3">
+<h3 id="org899cc2a">Grand Marnier Parfait á la Johanna</h3>
+<div class="outline-text-3" id="text-org899cc2a">
+<p>
+<a href="https://www.spar.at/mahlzeit/rezepte/suesses/johanna-maiers-grandmarnierparfaitmitmariniertenorangenfilets?icid=sca">https://www.spar.at/mahlzeit/rezepte/suesses/johanna-maiers-grandmarnierparfaitmitmariniertenorangenfilets?icid=sca</a>
+</p>
+
+<p>
+<b>Zutaten</b>
+</p>
+
+<p>
+Parfait
+</p>
+<ul class="org-ul">
+<li>1 Orangenzesten</li>
+<li>1 Dotter</li>
+<li>1 Ei</li>
+<li>1 Blatt Gelatine</li>
+<li>40 ml Grand Marnier</li>
+<li>50g Kristallzucker</li>
+<li>150g Schlagobers</li>
+<li>4 Orangenscheiben, kandiert</li>
+<li>Vanilleschoten, zum Verzieren</li>
+</ul>
+
+<p>
+Orangenfilets
+</p>
+<ul class="org-ul">
+<li>0.5 TL Maizena</li>
+<li>100 ml Grand Marnier</li>
+<li>0.5 TL Ingwer, fein geschnitten</li>
+<li>1 Msp. Vanillemark</li>
+<li>2 EL Zucker</li>
+<li>2 Orangen, saftig</li>
+<li>125ml	Orangensaft, frisch gepresst</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+
+<p>
+Parfait
+</p>
+<ol class="org-ol">
+<li>Ei und Dotter mit Kristallzucker über Wasserdampf schaumig aufschlagen, anschließend kalt schlagen.</li>
+<li>Gelatine in kaltem Wasser einweichen, im erwärmten Grand Marnier auflösen.</li>
+<li>Grand Marnier und Orangenzesten in den Eischaum rühren. Obers cremig schlagen und unterheben.</li>
+<li>Parfaitmasse in 4 Portionsförmchen füllen und mindestens 34 Stunden tiefkühlen.</li>
+</ol>
+
+<p>
+Marinierte Orangenfilets
+</p>
+<ol class="org-ol">
+<li>Orangen schälen und filetieren.</li>
+<li>Zucker karamellisieren, mit Orangensaft und Grand Marnier ablöschen.</li>
+<li>Ingwer und Vanillemark dazugeben, 15 Minuten schwach köcheln.</li>
+<li>Maizena mit etwas Orangensaft anrühren, in die Sauce gießen und kurz köcheln, bis sie bindet.</li>
+<li>Orangenfilets einlegen und mindestens 1 Stunde ziehen lassen.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org16ffa78" class="outline-3">
+<h3 id="org16ffa78">Salzburger Nockerl</h3>
+<div class="outline-text-3" id="text-org16ffa78">
+<p>
+<b>Zutaten</b> (2 Portionen)
+</p>
+<ul class="org-ul">
+<li>1 Päckchen Vanillezucker, evtl. Vanille</li>
+<li>5 Eiklar</li>
+<li>3 Eidotter</li>
+
+<li>3 EL Kristallzucker</li>
+<li>etwas Zitronenschale (gerieben)</li>
+<li>1 EL Mehl (glatt)</li>
+<li>Staubzucker (zum Bestreuen)</li>
+
+<li>Marmelade für die Form</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+<ol class="org-ol">
+<li>Eiklar schaumig rühren. Kristallzucker und Vanillezucker dazugeben und sehr steif schlagen.</li>
+<li>3 Eidotter und Mehl nur kurz dazu mischen, da sonst der Eischnee wieder zusammenfällt.</li>
+<li>Masse glatt streichen</li>
+
+<li>180°C vorgeheizt, ca. 20 min</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org014270c" class="outline-3">
+<h3 id="org014270c">Schokotörtchen mit flüssigem Kern</h3>
+<div class="outline-text-3" id="text-org014270c">
+<p>
+<b>Zutaten</b> (6 Stück)
+</p>
+<ul class="org-ul">
+<li>200g Zartbitterschokolade</li>
+<li>120g Butter</li>
+<li>4 Eier</li>
+<li>100g Zucker</li>
+<li>1 Pck. Vanillezucker</li>
+<li>1 Prise Salz</li>
+<li>80 g Mehl</li>
+<li>etwas Butter für die Formen</li>
+<li>etwas Puderzucker zum Bestreuen</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+<ol class="org-ol">
+<li>Backofen auf 160°C Umluft vorheizen.</li>
+<li>Butter in einem Topf schmelzen. Gehackte Schokolade dazugeben und auflösen.</li>
+<li>Eier, Zucker, Salz in einer Schüssel schaumig rühren. Schokobutter dazugeben.
+Dann das Mehl unterheben.</li>
+<li>Die Masse in Formen geben und exakt 13 min. backen.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org8e3d7b1" class="outline-3">
+<h3 id="org8e3d7b1">Tiramisu&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Top">Top</span></span></h3>
+<div class="outline-text-3" id="text-org8e3d7b1">
+<p>
+<b>Zutaten</b> (im großen Tupperware)
+</p>
+<ul class="org-ul">
+<li>2 Pkg Biskotten (40 Stk)</li>
+<li>2 x 500 g Mascarpone</li>
+<li>2 EL Rum (oda mehr)</li>
+<li>240 g Kristallzucker</li>
+<li>8 Dotter</li>
+<li>8 Eiklar</li>
+<li>2 Pkg Vanillezucker</li>
+<li>starker Kaffee (mit Rum) 2x kleine Espressokanne</li>
+<li>Kakaopulver</li>
+</ul>
+
+<p>
+<b>Zubereitung</b> <br />
+1.) Gatsch 
+</p>
+
+<p>
+Dotter, Zucker und Vanillezucker mit dem Mixer schaumig rühren
+Rum und Mascarpone unterheben (mit Mixer langsamste Stufe)
+</p>
+
+<p>
+2.) Schnee
+</p>
+
+<p>
+Schnee schlagen und unterheben mit einer Spachtel
+</p>
+
+<p>
+3.) Zusammenbauen
+</p>
+
+<p>
+Die Biskotten rein in Kaffee mit Rum und Schicht legen - 
+dann Gatsch von Pkt 2 drauf und dann a bissi Kakaopulver, lässt sich endlos wiederholen,
+</p>
+</div>
+</div>
+
+<div id="outline-container-org82a08a6" class="outline-3">
+<h3 id="org82a08a6">Zitronenmousse mit Marenga</h3>
+<div class="outline-text-3" id="text-org82a08a6">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>110 g Zitronensaft</li>
+<li>Zitronenrinde</li>
+<li>300 ml Schlag</li>
+<li>7 Eier: 3 Eigelb + 7 Eiweiß</li>
+<li>6 Blätter Gelatine (10g)</li>
+<li>150g (Mousse) + 90g (Merenga) Zucker</li>
+<li>1 Pkg Vanillezucker</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+
+<p>
+Mousse:
+</p>
+<ol class="org-ol">
+<li>Zitronen pressen, Schale schaben</li>
+<li>Gelatine in kaltem Wasser einweichen</li>
+<li>3 Eigelb mit 2/3 des Zuckers rühren bis schaumig
+Zitronensaft langsam dazugeben</li>
+
+<li>Schlag schlagen</li>
+<li>3 Eiweiß mit 1/3 des Zuckers steif schlagen</li>
+<li>Gelatine in warmem Wasser auflösen 
+<ul class="org-ul">
+<li>dann mit Zitronenschale zur Mousse geben</li>
+<li>dann Schlag hinzufügen</li>
+<li>dann Eischnee dazu</li>
+</ul></li>
+</ol>
+
+<p>
+-&gt; dieses in Gläser aufgeteilt in den Kühlschrank
+(unten setzt sich die Flüssigkeit ab&#x2026;)
+</p>
+
+<p>
+Merenga:
+</p>
+<ol class="org-ol">
+<li>4 Eiweiß + Zucker im Dampfbad ein paar Minuten
+rühren (bei ca. 60°C) bis Flüssigkeit steif und schaumig</li>
+
+<li>Obiges mixen bis es fest wird</li>
+</ol>
+
+<p>
+Merenga mit dem Sprizbeutel verteilen und flämmen.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org649b9e7" class="outline-2">
+<h2 id="org649b9e7">Kochtechniken</h2>
+<div class="outline-text-2" id="text-org649b9e7">
+<ul class="org-ul">
+<li>Food Brothers: <a href="https://www.foodbrothers.com/koch-wiki/deglacieren.html">https://www.foodbrothers.com/koch-wiki/deglacieren.html</a></li>
+</ul>
+</div>
+
+<div id="outline-container-orgb7392bb" class="outline-3">
+<h3 id="orgb7392bb"><span class="todo TODO">TODO</span> Garmethoden</h3>
+<div class="outline-text-3" id="text-orgb7392bb">
+</div>
+<div id="outline-container-org48686d9" class="outline-4">
+<h4 id="org48686d9">Blanchieren</h4>
+</div>
+<div id="outline-container-org77c90f0" class="outline-4">
+<h4 id="org77c90f0">Braten</h4>
+</div>
+<div id="outline-container-org409fb17" class="outline-4">
+<h4 id="org409fb17">Dämpfen</h4>
+</div>
+<div id="outline-container-orgdf0b702" class="outline-4">
+<h4 id="orgdf0b702">Dünsten</h4>
+</div>
+<div id="outline-container-orgcfd9651" class="outline-4">
+<h4 id="orgcfd9651">Pochieren</h4>
+</div>
+<div id="outline-container-orgfa4ab53" class="outline-4">
+<h4 id="orgfa4ab53">Rösten</h4>
+</div>
+<div id="outline-container-org3716545" class="outline-4">
+<h4 id="org3716545">Sautieren</h4>
+</div>
+<div id="outline-container-org22e5829" class="outline-4">
+<h4 id="org22e5829">Schmoren</h4>
+</div>
+</div>
+<div id="outline-container-orgc9300a8" class="outline-3">
+<h3 id="orgc9300a8">Deglacieren (Ablöschen)</h3>
+<div class="outline-text-3" id="text-orgc9300a8">
+<p>
+Bratensatz mit Wasser, Brühe Wein oder irgendeiner anderen Flüssigkeit aufgießen. 
+Die entstandene Flüssigkeit kann als Grundlage für Saucen oder zum Schmoren dienen.
+</p>
+
+<p>
+Soll weiter geschmort werden kann das Fleisch oder Gemüse auch beim Deglacieren in 
+der Pfanne verbleiben. Dies empfiehlt sich beispielsweise bei großen Fleischstücken, die
+ansonsten in der Mitte nicht gar werden ohne außen zu verbrennen. 
+</p>
+</div>
+</div>
+<div id="outline-container-orgdb34f28" class="outline-3">
+<h3 id="orgdb34f28">Karamelisieren</h3>
+<div class="outline-text-3" id="text-orgdb34f28">
+<p>
+Zucker stark erhitzen um ihn zu verflüssigen. 
+</p>
+
+<p>
+Trocken Karamelisieren
+</p>
+<ul class="org-ul">
+<li>Zucker in eine Pfanne geben, ständig rühren und anschließend mit kochendem Wasser ablöschen.</li>
+</ul>
+
+<p>
+Nass Karamelisieren
+</p>
+<ul class="org-ul">
+<li>Zucker und Wasser (Verhältnis 3:2) erhitzen bis das Wasser verdunstet ist und Karamell entsteht.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org94542b4" class="outline-3">
+<h3 id="org94542b4">Strudelteig</h3>
+<div class="outline-text-3" id="text-org94542b4">
+<p>
+<b>Zutaten</b>
+</p>
+<ul class="org-ul">
+<li>15 g (ca. 1 ¾ EL) Sonnenblumenöl od. anderes geschmacksneutrales Öl</li>
+<li>1/2 TL Zitronensaft (oder Essig)</li>
+<li>1/8 TL Salz</li>
+<li>145 g Weizenmehl, glatt (W 700)</li>
+<li>warmes Wasser</li>
+</ul>
+
+<p>
+<b>Zubereitung</b>
+</p>
+<ol class="org-ol">
+<li>Kneten ca. 10 min.</li>
+<li>Teigkugel mit Öl bestreichen und in Plastikfolie einwickeln.</li>
+<li>1 Stunde bei Zimmertemperatur rasten lassen. (oder wärmer?)</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7b18755" class="outline-2">
+<h2 id="org7b18755">Bier</h2>
+<div class="outline-text-2" id="text-org7b18755">
+</div>
+<div id="outline-container-org004fa16" class="outline-3">
+<h3 id="org004fa16">Bierlokale in Wien</h3>
+<div class="outline-text-3" id="text-org004fa16">
+<ul class="org-ul">
+<li>Habidere</li>
+<li>Kangaroo Pub</li>
+<li>Siebensternbräu</li>
+<li>Lichtenthalerbräu</li>
+<li>achtundzwanzig <a href="https://goo.gl/maps/wAbRBG8gTAv7URjw5">https://goo.gl/maps/wAbRBG8gTAv7URjw5</a></li>
+<li>Craftmühle</li>
+<li>1516</li>
+<li>Fassdipler <a href="https://goo.gl/maps/T5H11NBmgtz2L8j17">https://goo.gl/maps/T5H11NBmgtz2L8j17</a></li>
+<li>Verde 1080 <a href="https://goo.gl/maps/LRvGdWB8ExZAKBB47">https://goo.gl/maps/LRvGdWB8ExZAKBB47</a></li>
+<li>AMACORD CAFÉ</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7a7816f" class="outline-3">
+<h3 id="org7a7816f">Interessante Biere</h3>
+<div class="outline-text-3" id="text-org7a7816f">
+<ul class="org-ul">
+<li>Stout Chicxulub Brew Age - sehr cremig, Kaffeegeschmack</li>
+<li>L4 Wiener Lager Laurentz</li>
+</ul>
+
+<div class="gallery">
+  <img src="resources/Biere/Beavertown - Black Betty.jpg" alt="" width="180" height="320">
+  <div class="desc">Beavertown - Black Betty</div>
+</div>
+
+<div class="gallery">
+  <img src="resources/Biere/Beavertown - Gammaray.png" alt="" width="180" height="320">
+  <div class="desc">Beavertown - Gammaray</div>
+</div>
+
+<div class="gallery">
+  <img src="resources/Biere/Bevog - Tak.jpg" alt="" width="180" height="320">
+  <div class="desc">Bevog - TAK Pale Ale</div>
+</div>
+
+<div class="gallery">
+  <img src="resources/Biere/Dead Guy Ale.jpg" alt="" width="180" height="320">  
+  <div class="desc">Dead Guy Ale</div>
+</div>
+
+<div class="gallery">
+  <img src="resources/Biere/Einstök - Icelandic Doppelbock.jpg" alt="" width="180" height="320">  
+  <div class="desc">Icelandic Doppelbock</div>
+</div>
+
+<div class="gallery">
+  <img src="resources/Biere/Commerzialrat Riegele.jpg" alt="" width="180" height="320">  
+  <div class="desc">Commerzialrat Riegele</div>
+</div>
+
+<div class="gallery">
+  <img src="resources/Biere/Ancher Porter.jpg" alt="" width="180" height="320">  
+  <div class="desc">Anchor - Porter</div>
+</div>
+
+<div class="gallery">
+  <img src="resources/Biere/BlackStoc.jpg" alt="" width="180" height="320">  
+  <div class="desc">Hopfen Cider</div>
+</div>
+
+<div class="gallery">
+  <img src="resources/Biere/Pöhjala - Imperial Baltic Porter.png" alt="" width="180" height="320">  
+  <div class="desc">Imperial Baltic Porter</div>
+</div>
+
+<div class="gallery">
+  <img src="resources/Biere/Ruden - Black IPA.jpg" alt="" width="180" height="320">  
+  <div class="desc">Ruden - Black IPA</div>
+</div>
+
+<div class="gallery">
+  <img src="resources/Biere/Thornbridge - Eldon.jpg" alt="" width="180" height="320">  
+  <div class="desc">Thornbridge - Eldon</div>
+</div>
+
+<div class="gallery">
+  <img src="resources/Biere/Walzer and Molen.jpg" alt="" width="180" height="320">  
+  <div class="desc">Flüssige Zigarre</div>
+</div>
+
+<div class="gallery">
+  <img src="resources/Biere/Peter Pale and Mary.jpg" alt="" width="180" height="320">  
+  <div class="desc">Peter, Pale and Mary</div>
+</div>
+
+<div class="gallery">  
+  <img src="resources/Biere/Koida Kaffee.jpg" alt="" width="180" height="320">  
+  <div class="desc">Koida Kaffee</div>
+</div>
+
+<div class="gallery">  
+  <img src="resources/Biere/Padrino.jpg" alt="" width="180" height="320">  
+  <div class="desc">Padrino</div>
+</div>
+
+<div class="gallery">  
+  <img src="resources/Biere/Nitro.jpg" alt="" width="180" height="241">  
+  <div class="desc">Nitro</div>
+</div>
+
+<div class="gallery">  
+  <img src="resources/Biere/MyAntonia.jpg" alt="" width="180" height="241">  
+  <div class="desc">MyAntonia</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge68c866" class="outline-2">
+<h2 id="orge68c866">Wein</h2>
+<div class="outline-text-2" id="text-orge68c866">
+</div>
+<div id="outline-container-orgaae4657" class="outline-3">
+<h3 id="orgaae4657">Weißwein</h3>
+<div class="outline-text-3" id="text-orgaae4657">
+<ul class="org-ul">
+<li>Klöcher Traminer von Giesauff Nell 	- exzellent</li>
+<li>Muskateller Triebaumer - fruchtig</li>
+<li>Muskateller</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc363899" class="outline-3">
+<h3 id="orgc363899">Rotwein</h3>
+<div class="outline-text-3" id="text-orgc363899">
+<ul class="org-ul">
+<li>Big John - Scheiblhofer</li>
+<li>Juris St. Laurent - sehr fruchtig, guter Tischwein</li>
+<li>Arachon - Tement (Zweigelt, Blaufränkisch, Merlot, Cabernet Sauvignon)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7200442" class="outline-3">
+<h3 id="org7200442">Fotos</h3>
+<div class="outline-text-3" id="text-org7200442">
+<div class="gallery">
+  <img src="resources/Weine/Fleva.jpg" alt="" width="180" height="241">
+  <div class="desc">Fleva</div>
+</div>
+
+<div class="gallery">
+  <img src="resources/Weine/Zabaco_Zinfandel.jpg" alt="" width="180" height="241">
+  <div class="desc">Zabaco Zinfandel</div>
+</div>
+
+<div class="gallery">
+  <img src="resources/Weine/Josef_Merlot.jpg" alt="" width="180" height="241">
+  <div class="desc">Josef Merlot</div>
+</div>
+
+<div class="gallery">
+  <img src="resources/Weine/Anton_Bauer_Merlot.jpg" alt="" width="180" height="241">
+  <div class="desc">Anton Bauer Merlot</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfb4e772" class="outline-2">
+<h2 id="orgfb4e772">Rum</h2>
+<div class="outline-text-2" id="text-orgfb4e772">
+<ul class="org-ul">
+<li>Diplomatico</li>
+<li>Don Papa</li>
+<li>Bumbu</li>
+
+<li>Pampero Anniversario</li>
+<li>Pyrat</li>
+<li>El Dorado</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6f37158" class="outline-2">
+<h2 id="org6f37158">Restaurants in Wien</h2>
+<div class="outline-text-2" id="text-org6f37158">
+</div>
+<div id="outline-container-org48ca5dd" class="outline-3">
+<h3 id="org48ca5dd">Sterne Restaurants</h3>
+<div class="outline-text-3" id="text-org48ca5dd">
+<p>
+Zwei-Sterne
+</p>
+<ul class="org-ul">
+<li>Amador</li>
+<li>Konstantin</li>
+<li>Filippou</li>
+<li>Mraz &amp; Sohn</li>
+<li>Silvio Nickol Gourmet Restaurant</li>
+<li>Steirereck im Stadtpark</li>
+</ul>
+
+<p>
+Ein-Sterne
+</p>
+<ul class="org-ul">
+<li>Blue Mustard (neu)</li>
+<li>Le Ciel by Toni Mörwald</li>
+<li>Das Loft (neu)</li>
+<li>Edvard</li>
+<li>OPUS</li>
+<li>Pramerl &amp; the Wolf (neu)</li>
+<li>SHIKI (neu)</li>
+<li>Tian</li>
+<li>Walter Bauer</li>
+</ul>
+
+<p>
+Crazy Lobster
+</p>
+</div>
+</div>
+<div id="outline-container-orgb906642" class="outline-3">
+<h3 id="orgb906642">Gastgärten, Restaurants, Beisl</h3>
+<div class="outline-text-3" id="text-orgb906642">
+<ul class="org-ul">
+<li>Schreiners Gastwirtschaft?</li>
+<li>Fuhrmann?</li>
+<li>Buxbaum (Heiligenkreuzerhof)?</li>
+<li>Ubl</li>
+<li>Steman</li>
+<li>Zum Friedensrichter</li>
+<li>Zum Reichsapfel</li>
+<li>Anzengruber</li>
+<li>Entler</li>
+<li>Rebhuhn</li>
+<li>Servitenwirt</li>
+<li>Brandauer</li>
+<li>Clementine im Glashaus?</li>
+<li>Zwischenbrückenwirt?</li>
+<li>Highlander (Sobietskiplatz)</li>
+<li>Lingenhel</li>
+<li>Landgasthof Muhr</li>
+<li><a href="http://www.la-koliba.at/">http://www.la-koliba.at/</a></li>
+<li>Tartuf (Kroatisch)</li>
+</ul>
+
+<p>
+Pizzarien:
+</p>
+<ul class="org-ul">
+<li>La spiga</li>
+<li>Riva Pizza (Rossauer Lände)</li>
+<li>Disco Volante</li>
+<li>Pizza Mari</li>
+<li>Via Toledo</li>
+<li>Il Sestante</li>
+</ul>
+
+<p>
+Griechisch:
+</p>
+<ul class="org-ul">
+<li>Ariston</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5a8924d" class="outline-3">
+<h3 id="org5a8924d">Frühstück</h3>
+<div class="outline-text-3" id="text-org5a8924d">
+<ul class="org-ul">
+<li>Cafe Aumann</li>
+<li>Cafe Ansari</li>
+<li>Salzberg (?)</li>
+<li>Frühpension</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org9eedcf8" class="outline-2">
+<h2 id="org9eedcf8">Ernährung</h2>
+<div class="outline-text-2" id="text-org9eedcf8">
+</div>
+<div id="outline-container-orgd8bc74b" class="outline-3">
+<h3 id="orgd8bc74b">Mindmap</h3>
+<div class="outline-text-3" id="text-orgd8bc74b">
+<p>
+Ernährung: <a href="https://app.wisemapping.com/c/maps/1046508/public">https://app.wisemapping.com/c/maps/1046508/public</a>
+</p>
+<iframe style="width:1200px;height:800px;border: 1px
+solid black" src="https://app.wisemapping.com/c/maps/1046508/embed?zoom=1"> </iframe>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2021-03-15 Mon 06:00</p>
+</div>
+</body>
+</html>

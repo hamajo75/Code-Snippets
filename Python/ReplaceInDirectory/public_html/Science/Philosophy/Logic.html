@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-03-31 Wed 06:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Logic</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="shortcut icon" href="/public_html/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/html-export.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/hideshow.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/code.css">
+
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div style = "text-align: right; margin-top: 5px">
+   <a accesskey="h" href="" style="font: 20px arial,helvetica,clean,sans-serif"></a>
+   <a accesskey="H" href="https://joesanmarzano.duckdns.org/public_html/" style="font: 20px arial,helvetica,clean,sans-serif;margin: 30px;"> HOME </a>
+</div><div id="content">
+<h1 class="title">Logic</h1>
+
+<div id="outline-container-orgd090fdf" class="outline-2">
+<h2 id="orgd090fdf">Logische Begriffe</h2>
+<div class="outline-text-2" id="text-orgd090fdf">
+<ul class="org-ul">
+<li>und, oder, wenn-dann</li>
+<li>kein, alle, kein, min. ein,</li>
+<li>dieses, jenes</li>
+<li>Identität</li>
+</ul>
+
+<p>
+Sätze, die (möglicherweise) nicht in der Quantorenlogik 1.Stufe formalisierbar sind:
+</p>
+<ul class="org-ul">
+<li>There are at least as many As as Bs.</li>
+<li>Some relative of each villager and some relative of each townsman hate each other.
+<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3787684" class="outline-2">
+<h2 id="org3787684">Formalisieren</h2>
+<div class="outline-text-2" id="text-org3787684">
+<p>
+hgfdsFgg
+</p>
+</div>
+
+<div id="outline-container-orgd043ce5" class="outline-3">
+<h3 id="orgd043ce5">Korrektheitskriterien</h3>
+<div class="outline-text-3" id="text-orgd043ce5">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2014-08-27 Wed]</span></span>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org2a45518" class="outline-2">
+<h2 id="org2a45518">Warum wird Logik mittels formaler Sprachen verwendet?</h2>
+<div class="outline-text-2" id="text-org2a45518">
+<p>
+Sind formale Sprachen essentiell oder sind sie nur Werkzeuge, etwa mit dem Status einer effizienten Notation?
+</p>
+
+<p>
+Is there a coginitive impact?
+</p>
+
+<p>
+<a href="https://philosophiascientiae.revues.org/719#tocto2n2">https://philosophiascientiae.revues.org/719#tocto2n2</a>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-05-17 Tue&gt;</span></span>
+</p>
+</div>
+</div>
+<div id="outline-container-org8aed4fa" class="outline-2">
+<h2 id="org8aed4fa">Formale Sprache für Begriffsrelationen</h2>
+<div class="outline-text-2" id="text-org8aed4fa">
+<ul class="org-ul">
+<li>x ist ein y</li>
+<li>Alle A sind B: A &lt; B</li>
+</ul>
+
+<p>
+Umfangsrelationen: wie Mengen
+Inhaltsrelationen: 
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgfd77d11" class="outline-2">
+<h2 id="orgfd77d11">Schlussarten</h2>
+<div class="outline-text-2" id="text-orgfd77d11">
+</div>
+<div id="outline-container-orgbe186b8" class="outline-3">
+<h3 id="orgbe186b8">Abduktion</h3>
+<div class="outline-text-3" id="text-orgbe186b8">
+<p>
+Schluss auf die beste (oder plausible) Erklärung.
+</p>
+
+<p>
+Nach Peirce ist die A. die "einzige logische Operation, die 
+irgendeine neue Idee einführt" (CP 5.171) und somit die Prämissen 
+für nachfolgende deduktive und induktive Schlüsse findet oder erfindet.
+</p>
+
+<p>
+Man macht eine überraschende Beobachtung B.
+</p>
+
+<p>
+Man erfindet eine Regel, die B erklärt. A -&gt; B und schließt fröhlich auf A.
+</p>
+
+<p>
+Beispiele:
+</p>
+<ol class="org-ol">
+<li>Ist Sherlock Holmes ein Abduktionsmeister?</li>
+<li>Klinische Diagnostik</li>
+<li>Fehlersuche in technischen Systemen</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org8f13ca8" class="outline-3">
+<h3 id="org8f13ca8">Fallacies</h3>
+<div class="outline-text-3" id="text-org8f13ca8">
+<ul class="org-ul">
+<li><a href="https://www.logicallyfallacious.com/logicalfallacies/Appeal-to-Authority">https://www.logicallyfallacious.com/logicalfallacies/Appeal-to-Authority</a></li>
+</ul>
+</div>
+<div id="outline-container-org6399818" class="outline-4">
+<h4 id="org6399818">Ad hominem</h4>
+<div class="outline-text-4" id="text-org6399818">
+<ul class="org-ul">
+<li>Attacking the person arguing instead of the argument.</li>
+</ul>
+
+<p>
+<b>Examples</b>
+</p>
+<ul class="org-ul">
+<li>People like you don't understand what it's like to grow up black in America. You have no right to argue about the gang violence on our streets.</li>
+<li>You cheated and lied to your wife, but you expect the jury to believe you now?</li>
+<li>Don't listen to Dave's argument on gun control. He's an idiot.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org29215f4" class="outline-4">
+<h4 id="org29215f4">Ad verecudiam</h4>
+<div class="outline-text-4" id="text-org29215f4">
+<ul class="org-ul">
+<li>Appeal to authority.</li>
+</ul>
+
+<p>
+<b>Examples</b>
+</p>
+<ul class="org-ul">
+<li>Richard Dawkins, an evolutionary biologist and perhaps the foremost expert in the field, says that evolution is true. Therefore, it's true.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org518c608" class="outline-2">
+<h2 id="org518c608">The Markable Mark</h2>
+<div class="outline-text-2" id="text-org518c608">
+<p>
+A tree can be marked or unmarked, we use the following symbols for
+the final value of a marking pattern:
+</p>
+<ul class="org-ul">
+<li>marked: 1</li>
+<li>unmarked: 0</li>
+</ul>
+
+<p>
+Unmark a mark: (())
+and then remark it : (()) ()
+</p>
+
+<p>
+<b>Evaluation rules</b>
+</p>
+<ul class="org-ul">
+<li>(( )) -&gt;</li>
+<li>() () -&gt; ()</li>
+</ul>
+
+<p>
+<b>Transformation rules</b>
+</p>
+<ul class="org-ul">
+<li>-&gt; (( ))</li>
+<li>() -&gt; () ()</li>
+</ul>
+
+<p>
+<b>Steps of enlightenment</b>
+</p>
+<dl class="org-dl">
+<dt>The father</dt><dd>Figures out that the forester is marking or unmarking trees but he doesn't understand the system.</dd>
+<dt>The son</dt><dd>The son understands that there is a system in place.
+There are rules to reduce complex patterns to simpler ones.
+In the end this always leads to a result (0 or 1).</dd>
+<dt>The daughter</dt><dd><p>
+She can explain why the sons rules work. She can talk about the system in an abstract way and even 
+state and proof theorems.
+</p>
+
+<p>
+Calls the patterns expressions:
+</p>
+<ul class="org-ul">
+<li>Which expressions are regular?
+<ul class="org-ul">
+<li>Prime expressions: (e)</li>
+<li>Molecular expressions: (e_1) (e_2) &#x2026;</li>
+</ul></li>
+<li>Factorization: split molecular expression into prime expressions</li>
+<li><p>
+Content of an expression: the interior expression e in (e)
+</p>
+
+<p>
+Expressions have a tree structure:
+</p>
+<div class="PICTURE">
+
+<div class="figure">
+<p><img src="resources/mark_expression_example.PNG" alt="mark_expression_example.PNG" />
+</p>
+</div>
+
+
+<div class="figure">
+<p><img src="resources/mark_expression_tree_analysis.PNG" alt="mark_expression_tree_analysis.PNG" />
+</p>
+</div>
+
+</div></li>
+<li>Recursion: factorize, inspect, factorize, inspect, etc.</li>
+</ul>
+
+<p>
+Every expression can be evaluated by 2 rules:
+</p>
+<ol class="org-ol">
+<li>(Factors) The value of an expression is 1 if any of its prime factors is 1, 
+otherwise it's 0.</li>
+<li>(Content) The value of a prime expression is the opposite of it's content.</li>
+</ol>
+<p>
+Those rules have to be applied recursively. 
+</p></dd>
+
+<dt>The grandson (Arithmetic)</dt><dd><p>
+He abstracts away from marks and their meaning - no more words, only symbols.
+He also tries to do evaluation in a mechanical machine like way.
+Also he introduces the idea of transforming one expression into another if the 
+have the same value, applying new rules and introducing the equal sign (Identity).
+</p>
+
+<p>
+Two fundamental equations:
+</p>
+<ol class="org-ol">
+<li>(( )) =        cancel</li>
+<li>() () = ()     repeat</li>
+</ol></dd>
+
+<dt>The other grandson (Algebra)</dt><dd><p>
+Form!
+We enter the realm of calculation with letters.
+</p>
+
+<p>
+(() x) 
+</p></dd>
+</dl>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">Hintikka, Quantifiers vs. Quantification Theory, Linguistic Inquiry, 1974, 153-177.</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Created: 2021-03-31 Wed 06:00</p>
+</div>
+</body>
+</html>

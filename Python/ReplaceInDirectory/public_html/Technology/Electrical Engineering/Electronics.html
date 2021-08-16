@@ -1,0 +1,1545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-03-26 Fri 06:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Electronics</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="shortcut icon" href="/public_html/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/html-export.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/hideshow.css"/>
+<link rel="stylesheet" type="text/css" href="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/css/code.css">
+
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://joesanmarzano.duckdns.org/public_html/css/org-html-themes-master/styles/bigblow/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div style = "text-align: right; margin-top: 5px">
+   <a accesskey="h" href="" style="font: 20px arial,helvetica,clean,sans-serif"></a>
+   <a accesskey="H" href="https://joesanmarzano.duckdns.org/public_html/" style="font: 20px arial,helvetica,clean,sans-serif;margin: 30px;"> HOME </a>
+</div><div id="content">
+<h1 class="title">Electronics</h1>
+
+<div id="outline-container-orgf1c37e9" class="outline-2">
+<h2 id="orgf1c37e9">Fahrzeugtechnik</h2>
+<div class="outline-text-2" id="text-orgf1c37e9">
+</div>
+<div id="outline-container-org9305254" class="outline-3">
+<h3 id="org9305254">Terminologie</h3>
+<div class="outline-text-3" id="text-org9305254">
+<p>
+EPS &#x2026; Elektronisches Stabilitätsprogramm umfasst
+        Fahrdynamikregelung: ABS, APS, grundsätzlich geht es ums Bremsen
+OBD &#x2026; On-Board-Diagnose (OBD-Buchse)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge9fe2b8" class="outline-3">
+<h3 id="orge9fe2b8">Motorsteuergeräte</h3>
+<div class="outline-text-3" id="text-orge9fe2b8">
+<p>
+Wichtigster Input: Gaspedal (Wunsch nach mehr Drehmoment)
+</p>
+
+<p>
+INPUT: Gaspedalstellung, Motordrehzahl, Drosselklappenstellung, Temperatur, versch. Drücke, Klopfsensor
+OUTPUT: Aktivierung der Zündung, der Einspritzventile, Drosselklappensteller, Turbolader, Nockenwellenversteller
+</p>
+</div>
+
+<div id="outline-container-org72f2ecd" class="outline-4">
+<h4 id="org72f2ecd">Sensorik</h4>
+<div class="outline-text-4" id="text-org72f2ecd">
+</div>
+<div id="outline-container-orgc4ff3f9" class="outline-5">
+<h5 id="orgc4ff3f9">Berechnung der Drosselklappenstellung</h5>
+<div class="outline-text-5" id="text-orgc4ff3f9">
+<p>
+Ansaugluftmenge, Luftdrucksensor, Motordrehzahl: Luftmasse für Einspritzung berechnen (Drosselklappe regelt die Luftzufuhr)
+</p>
+</div>
+</div>
+<div id="outline-container-org422d1cb" class="outline-5">
+<h5 id="org422d1cb">Berechnung des Drehmoments</h5>
+<div class="outline-text-5" id="text-org422d1cb">
+<p>
+Kurbelwellensensor, Klopfsensor, Temperatursensor, Nockenwellensensor
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/Nockenwelle.PNG" alt="Nockenwelle.PNG" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org187ac2b" class="outline-2">
+<h2 id="org187ac2b">WLan</h2>
+<div class="outline-text-2" id="text-org187ac2b">
+<p>
+What do the b/g/n/a/ac letters mean?
+</p>
+<ul class="org-ul">
+<li>a: 5 GHz-Band, bis zu 54 Mbits/s</li>
+<li>b: 2.4 GHz-Band, bis zu 11 Mbits/s</li>
+<li>g: 2.4 GHz-Band, bis zu 54 Mbits/s</li>
+<li>n: 2.4 &amp; 5 GHz-Band, bis zu 600 Mbits/s</li>
+<li>ac: 5 GHz-Band, bis zu 1.3 Gbits/s</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org39bffbb" class="outline-2">
+<h2 id="org39bffbb">Bus Systems</h2>
+<div class="outline-text-2" id="text-org39bffbb">
+</div>
+<div id="outline-container-org7430abb" class="outline-3">
+<h3 id="org7430abb">General Comments</h3>
+<div class="outline-text-3" id="text-org7430abb">
+<p>
+A bus is a collection of wires connecting different devices.
+</p>
+</div>
+
+<div id="outline-container-org4bdb3a3" class="outline-4">
+<h4 id="org4bdb3a3">Kinds of data transfer</h4>
+<div class="outline-text-4" id="text-org4bdb3a3">
+</div>
+<div id="outline-container-orge3421c5" class="outline-5">
+<h5 id="orge3421c5">Synchronous I/O (blocking)</h5>
+<div class="outline-text-5" id="text-orge3421c5">
+<p>
+Synchronization is done via a common clock signal.
+</p>
+
+<p>
+Start data transfer and wait until it's finished, i.e. someone (a process or
+a thread) is waiting until the operation is complete (usually a function call
+is blocking the process). In other words nothing else can be done while the 
+transfer is running.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org08c9df6" class="outline-5">
+<h5 id="org08c9df6">Asynchronous I/O (non-blocking)</h5>
+<div class="outline-text-5" id="text-org08c9df6">
+<p>
+Don't wait for finish of the data transfer. This means while the transfer
+is running processing can continue. In other words something else can be 
+done while the transfer is running.
+</p>
+<ul class="org-ul">
+<li>clk has to be synchronized (e.g. start, stop bits, different default speeds)</li>
+<li>data can be sent any time</li>
+</ul>
+
+<p>
+(In Windows also called Overlapped I/O.)<br />
+The communication is started but the calling process or thread immediately 
+returns from the call and doesn't wait for the operation to complete.
+The completion of the transfer has to trigger something else, i.e. a callback
+function is called or a flag is set.
+Synchronization is done using special signals (symbols).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1a5ea5f" class="outline-5">
+<h5 id="org1a5ea5f">Serial vs. parallel communication</h5>
+<div class="outline-text-5" id="text-org1a5ea5f">
+<p>
+One bit at a time.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org00a7d78" class="outline-4">
+<h4 id="org00a7d78">Arbitration</h4>
+<div class="outline-text-4" id="text-org00a7d78">
+<p>
+(Vergabe des Buszugriffs)
+Who gets the bus?
+</p>
+
+<p>
+When there is more than one MCU (Master Control Unit) on the bus it might
+happen that e.g. MCU2 wants to initiate a communication while there is still
+another data transfer initiated by MCU1 active.
+</p>
+
+<p>
+A Central Bus-Arbiter decides which component will get the bus next. There
+might be a bus request line for each component.
+</p>
+</div>
+</div>
+<div id="outline-container-org57db4c0" class="outline-4">
+<h4 id="org57db4c0">Duplex</h4>
+<div class="outline-text-4" id="text-org57db4c0">
+<ul class="org-ul">
+<li>Half duplex (Wechselsprechen, Funk: alle Teilnehmer sprechen auf der selben Frequenz)
+Two-way alternate communication, one party can communicate while the other is listening
+(e.g. Walkie-Talkie with a push-to-talk button).</li>
+<li>Full duplex (Gegensprechen, Funk: zwei unterschiedliche Frequenzen, Oberband und Unterband)
+Both parties can communicate at the same time (e.g. Telephone).</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfe83944" class="outline-4">
+<h4 id="orgfe83944">Open Drain / Collector</h4>
+<div class="outline-text-4" id="text-orgfe83944">
+<p>
+A open drain pin can pull it's output low, but not high. Therefor a pull up
+resistor has to be provided. Imagine a rubber band that is being pulled down
+by a transistor and flips back when it's released.
+</p>
+</div>
+</div>
+<div id="outline-container-org5b63cce" class="outline-4">
+<h4 id="org5b63cce">Masters and Slaves</h4>
+<div class="outline-text-4" id="text-org5b63cce">
+<p>
+Masters initiate data transfers, Slaves are told what to do. Normally there
+is only one master at a time.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc8a150c" class="outline-3">
+<h3 id="orgc8a150c">CAN Bus</h3>
+<div class="outline-text-3" id="text-orgc8a150c">
+<ul class="org-ul">
+<li>2(3) Leitungen: CAN-Hi, CAN-Lo (Differenzsignal), evtl. GND
+dominanter und rezessiver Zustand (3.5V, 2.5V), lo = 1.5V</li>
+<li>ca. 500 kBit/s (bis 1MBit/s)</li>
+<li>mehrere Busmaster, alle können gleichzeitig kommunizieren (nicht deterministisch)
+Bus-Arbitrierung (Konfliktauflösung) nötig: dom./rez. Bits</li>
+<li>NRZ (non return to 0) Kodierung, d.h. 0-hi, 1-lo</li>
+<li>ID (11-bit) identifiziert die Datenquelle, den Sendeknoten,
+der Empfänger entscheidet ob ihn die Nachricht interessiert oder nicht.</li>
+</ul>
+</div>
+
+
+<div id="outline-container-org9266e8e" class="outline-4">
+<h4 id="org9266e8e">Tools</h4>
+<div class="outline-text-4" id="text-org9266e8e">
+<p>
+CANoe/CANalyzer
+CANape
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orged18739" class="outline-3">
+<h3 id="orged18739">Ethernet</h3>
+</div>
+<div id="outline-container-org3ad1edf" class="outline-3">
+<h3 id="org3ad1edf">FlexRay</h3>
+<div class="outline-text-3" id="text-org3ad1edf">
+<p>
+für sicherheitsrelevante Anwendungen (steer by wire, brake by wire, etc.)
+</p>
+
+<ul class="org-ul">
+<li>2 Kommunikationskanäle</li>
+<li>hohe Datenrate (10 Mbit/s pro Kanal)</li>
+<li>echtzeitfähig (garantierte Latenzzeiten)</li>
+<li><p>
+Stern- und Bustopologie möglich
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/Electronics/BusTopologie.PNG" alt="BusTopologie.PNG" />
+</p>
+</div>
+
+</div></li>
+<li>fixe Kommunikationszyklen (Endlosloop)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd9a67e6" class="outline-3">
+<h3 id="orgd9a67e6">I2C</h3>
+<div class="outline-text-3" id="text-orgd9a67e6">
+<p>
+(Inter integrated Circuit)
+</p>
+
+<p>
+<a href="../../../../../../../Science/Technology/Electronics/i2c_bus_specification.pdf">i2c_bus_specification.pdf</a>
+</p>
+
+<p>
+Derived from I2C are <i>System Management Bus</i> (SM Bus) and <i>Power Management Bus</i> 
+(PM Bus).
+</p>
+
+<p>
+Operation Modes:
+</p>
+<ol class="org-ol">
+<li><p>
+Master Transmitter
+</p>
+
+<p>
+Master addresses Slave with R/W = 0 and sends n bytes to the slave.
+Each byte is followed by an ACK or NACK if slave wants no more data.
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/I2C/master-transmitter.PNG" alt="master-transmitter.PNG" />
+</p>
+</div>
+
+</div></li>
+
+<li><p>
+Master Receiver
+</p>
+
+<p>
+Master addresses Slave with R/W = 1 and expects data immediately. 
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/I2C/master-receiver.PNG" alt="master-receiver.PNG" />
+</p>
+</div>
+
+</div></li>
+<li><p>
+Slave Receiver
+</p>
+
+<p>
+Slave is addressed with R/W = 0 and starts receiving bytes from Master.
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/I2C/combined-format.PNG" alt="combined-format.PNG" />
+</p>
+</div>
+
+</div></li>
+<li><p>
+Slave Transmitter
+</p>
+
+<p>
+Slave is addresses with R/W = 1 and starts sending bytes to Master.
+Note: In this case the master has to send a NACK before generating STOP.
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/I2C/combined-format.PNG" alt="combined-format.PNG" />
+</p>
+</div>
+
+</div></li>
+</ol>
+</div>
+<div id="outline-container-org5739295" class="outline-4">
+<h4 id="org5739295">Example</h4>
+<div class="outline-text-4" id="text-org5739295">
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/I2C/i2c_Example.GIF" alt="i2c_Example.GIF" />
+</p>
+</div>
+
+</div>
+
+<ul class="org-ul">
+<li>START begins the transfer.</li>
+<li>Reading from a Slave Device. First the R/W-bit is 0 then 1 for reading.</li>
+<li>STOP ends the transfer.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd0c7f5b" class="outline-4">
+<h4 id="orgd0c7f5b">Hardware</h4>
+<div class="outline-text-4" id="text-orgd0c7f5b">
+<p>
+Two active wires (SDA, SCL) and (VDD), GND connections. Master provides
+the clock. 
+</p>
+
+<ul class="org-ul">
+<li>Master-Slave-Bus (Multimaster mode)
+More than one device can initiate data transfers. But only one at a time.</li>
+<li>128 (7 bits) possible addresses (112 can be used)
+16 are reserved for special purposes.</li>
+<li>half duplex</li>
+<li>2 wire: SCA (data), SCL (clock)
+Open drain outputs are used. When the bus is idle the lines are in HIGH state (pull up). 
+To put a signal on the bus an IC needs to turn on its output transistor thus pulling the line to LOW.</li>
+<li>100 kHz (standard: 0.1 Mbit/s), 400 kHz (fast-mode: 0.4 Mbit/s)</li>
+<li>Arbitration
+Guaranteed by design: If the bus is occupied some IC is sending a 0 and no other
+IC can initiate a transfer.</li>
+<li>Drawbacks
+The open drain technique has a serious effect on the speed for long bus lines.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb03403b" class="outline-4">
+<h4 id="orgb03403b">Protocol</h4>
+<div class="outline-text-4" id="text-orgb03403b">
+<ul class="org-ul">
+<li>Bit-Encoding: 1 - high, 0 - low</li>
+<li>MSB first</li>
+
+<li><p>
+Transmission
+Data transfer happens between the START and STOP sequences. In between the 
+bus is busy. Data transmission happens byte wise. Data from Slave (S) or data 
+to Slave. Each byte has to be acknowledged.
+</p>
+
+<pre class="example">
+START | ADDRESS | ACK (S) | Byte1 (S or M) | ACK (M or S) |...| STOP
+</pre></li>
+</ul>
+
+<p>
+E.g. ADDRESS: 1100 0000 means address 0xC0 R/W bit = 0 (device will receive)
+</p>
+
+<p>
+The first byte send by the master is a standard I2C-address, the first 7 bits are
+the actual address, the last bit (R/W-bit) tells the device if it receives data
+(0-LOW) or should send data (1-high). 
+</p>
+
+<p>
+The Slave is allowed to hold the SCL line low when it sends data back if it
+needs to pause the transaction (clock stretching).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge35b432" class="outline-3">
+<h3 id="orge35b432">LIN Bus</h3>
+<div class="outline-text-3" id="text-orge35b432">
+<p>
+(local interconnet network)
+</p>
+
+<ul class="org-ul">
+<li>Kommunikation zwischen lokalen Sensoren &amp; Aktuatoren</li>
+<li>billiger Ersatz für CAN</li>
+<li>Eindraht-Bus</li>
+<li>1 Master, n Slaves</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3c546cf" class="outline-3">
+<h3 id="org3c546cf">MOST</h3>
+<div class="outline-text-3" id="text-org3c546cf">
+<p>
+(Media Oriented Systems Transport)
+Netzwerk für Multimediadaten.
+</p>
+</div>
+</div>
+<div id="outline-container-org225684e" class="outline-3">
+<h3 id="org225684e">SD Card</h3>
+<div class="outline-text-3" id="text-org225684e">
+<p>
+All SD Cards should work with 2.7V to 3.6V (typically 3.3V).
+</p>
+
+<p>
+Pinout:
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/SD Card/Pinout.PNG" alt="Pinout.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+Communication with SD Cards works via commands.
+</p>
+
+<p>
+Command Format:
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/SD Card/Command Format.PNG" alt="Command Format.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+There are different response formats (R1, R2, R3, etc.).
+</p>
+
+<p>
+Transfer modes
+</p>
+<ul class="org-ul">
+<li>SPI : Simplest mode, can be used with most microcontrollers.</li>
+<li>1 Bit : CMD + Data Line</li>
+<li>4 Bit : CMD + 4 Data Lines</li>
+</ul>
+
+<p>
+The first commands for initialization of the SD-Card are sent with lower frequency
+(e.g. 400kHz) in SPI mode, later frequency and mode are changed to the normal use
+settings.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org25dccf6" class="outline-3">
+<h3 id="org25dccf6">SPI</h3>
+<div class="outline-text-3" id="text-org25dccf6">
+<p>
+(Serial Peripheral Interface)
+</p>
+
+<p>
+Master-Slave 4-wire Bus with a single master. Slaves are selected with individual 
+slave lines. The master has to know how much data the slave returns, because that
+is how much clock cycles it will generate.
+</p>
+
+<p>
+Properties:
+</p>
+<ul class="org-ul">
+<li>Master-Slave</li>
+<li>serial communication, 4-16 bits per data frame</li>
+<li>3 wires:     SCK, 
+MOSI (Master Output Slave Input) auch SDO (serial data out)
+MISO auch SDI (serial data in)</li>
+<li>full duplex, every read is also a write</li>
+<li>synchronous
+same clock: When the master clocks, the data on the MISO line counts!</li>
+<li>data-rate: 1/2 clk</li>
+<li>~ 16 devices (not 100)</li>
+</ul>
+
+<p>
+From a hardware point of view the bus is simply a connection of two shift registers
+in a ring topology.
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/SPI/SPI_MISO_MOSI.PNG" alt="SPI_MISO_MOSI.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+Master and Slave load their shift registers, then it takes eight clock cycles to 
+shift the date around, then the received data can be read and the shift registers
+will be loaded again.
+</p>
+
+<p>
+<b>Notes</b>
+</p>
+<ul class="org-ul">
+<li>Motorola frame format (also SPI frame format): see the 4 modes below</li>
+<li>Texas Instruments frame format</li>
+<li>Microwire frame format</li>
+</ul>
+</div>
+
+<div id="outline-container-org9916986" class="outline-4">
+<h4 id="org9916986">Modes</h4>
+<div class="outline-text-4" id="text-org9916986">
+<p>
+Modes:
+</p>
+<ul class="org-ul">
+<li><code>CPOL</code> Clock Polarity bit (0 - Active High, 1 - Active Low)</li>
+<li><code>CPHA</code> Phase Control bit - timing of data relative to clock <br />
+(0 - data valid on first edge after SSEL, rising, 1 - data valid on second edge after SSEL, falling)</li>
+</ul>
+
+<p>
+Notes:
+</p>
+<ul class="org-ul">
+<li>When <code>CPHA</code> is 0 the <code>SSEL</code> pin has to be pulled high between frames (ARM - not sure if it holds generally).</li>
+
+<li><p>
+Mode 0 (CPOL=0, CPHA=0)
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/SPI/mode0.PNG" alt="mode0.PNG" />
+</p>
+</div>
+
+</div></li>
+<li><p>
+Mode 1 (CPOL=0, CPHA=1)
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/SPI/mode1.PNG" alt="mode1.PNG" />
+</p>
+</div>
+
+</div></li>
+<li><p>
+Mode 2 (CPOL=1, CPHA=0)
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/SPI/mode2.PNG" alt="mode2.PNG" />
+</p>
+</div>
+
+</div></li>
+<li><p>
+Mode 3 (CPOL=1, CPHA=1)
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/SPI/mode3.PNG" alt="mode3.PNG" />
+</p>
+</div>
+
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgbdbe16b" class="outline-3">
+<h3 id="orgbdbe16b">UART</h3>
+<div class="outline-text-3" id="text-orgbdbe16b">
+<p>
+(Universal Asynchronous Receiver Transmitter)
+</p>
+
+<p>
+UART is device for asynchronous serial communication.
+Data format and transmission speeds can be configured. 
+</p>
+
+<p>
+Data Frame:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Start Bit</td>
+<td class="org-left">Bit0</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">Bit7</td>
+<td class="org-left">Stop Bit</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<div id="outline-container-orga5f0e1f" class="outline-4">
+<h4 id="orga5f0e1f">RS232</h4>
+</div>
+<div id="outline-container-org12cf69b" class="outline-4">
+<h4 id="org12cf69b">RS232</h4>
+</div>
+<div id="outline-container-orgc7f167e" class="outline-4">
+<h4 id="orgc7f167e">RS485</h4>
+<div class="outline-text-4" id="text-orgc7f167e">
+<ul class="org-ul">
+<li>differential data signal (twisted pair)</li>
+<li>3-state logic
+<ul class="org-ul">
+<li>transmitters can be turned off</li>
+<li>linear bus with 2 wires</li>
+</ul></li>
+<li>noisy environments</li>
+<li>up to 10 Mb/s</li>
+<li>up to 1200 m</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2df6bd8" class="outline-3">
+<h3 id="org2df6bd8">USB</h3>
+<div class="outline-text-3" id="text-org2df6bd8">
+<ul class="org-ul">
+<li>USB in a NutShell: - <a href="https://www.beyondlogic.org/usbnutshell/usb1.shtml">https://www.beyondlogic.org/usbnutshell/usb1.shtml</a></li>
+</ul>
+</div>
+
+<div id="outline-container-orgeef734f" class="outline-4">
+<h4 id="orgeef734f">Overview</h4>
+<div class="outline-text-4" id="text-orgeef734f">
+<ul class="org-ul">
+<li>Tree structure with max. 7 layers, hubs are nodes, devices are leafs</li>
+<li>11 bit address</li>
+<li>polling: host checks for communication</li>
+<li>communication in packets (URB: USB Request Block)
+4 types of packets
+<ul class="org-ul">
+<li>Token (IN, OUT, Setup)</li>
+<li>Data</li>
+<li>Handshake</li>
+<li>Start of Frame</li>
+</ul></li>
+<li>max. 127 devices</li>
+<li>different transfer speeds available (slow, normal, fast, high)</li>
+<li>4 transfer (endpoint) types: CONTROL, BULK, INTERRUPT, ISOCHRONOUS
+<ul class="org-ul">
+<li>CONTROL
+Each USB device has at least on control pipe (default).</li>
+<li>BULK
+Large data, guarantee of delivery. Error correction.</li>
+<li>INTERRUPT 
+E.g. HID</li>
+<li>ISOCHRONOUS
+Typically audio or video stream (time sensitive info). Packets 
+might be dropped.</li>
+</ul></li>
+<li>max. 16 IN and 16 OUT endpoints</li>
+<li><p>
+Pipes
+Logical connection between host and endpoint(s). Two types of USB pipes
+</p>
+<ul class="org-ul">
+<li>Stream (no defined format)</li>
+<li>Message</li>
+</ul>
+
+<p>
+Parameters: (e.g.)
+</p>
+<ul class="org-ul">
+<li>max. bandwith</li>
+<li>transfer type (control, bulk, isochronous, interrupt)</li>
+<li>direction</li>
+<li>max. packet size</li>
+</ul>
+
+<p>
+Default Pipe 0 (corresponding to Endpoint 0) always exists. It's needed for the device setup process.
+</p></li>
+
+<li>2 kinds of data exchange: Functional and Control
+<ul class="org-ul">
+<li>Functional: move data back and forth (BULK, INTERRUPT, ISOCHRONOUS)</li>
+<li>Control: configure device when attached via default Pipe 0.</li>
+</ul></li>
+</ul>
+
+<p>
+USB communication is done using buffers called <i>Endpoints</i>. Endpoints have a transfer direction (IN, OUT) viewed
+from the Host. Endpoint 0 is reserved for control purposes (read Device Descriptors and control commands). A USB device
+can have 16 OUT and 16 IN Endpoints.
+</p>
+
+<p>
+Every USB data transfer is between a host and a device endpoint.
+</p>
+
+<p>
+Each device has an address and multiple endpoints. The communication is serial, LSB first, organized in packets.
+</p>
+</div>
+<div id="outline-container-orgfec0818" class="outline-5">
+<h5 id="orgfec0818">Speeds</h5>
+<div class="outline-text-5" id="text-orgfec0818">
+<ul class="org-ul">
+<li>SuperSpeed+   2.5 GB/s    (USB 3.1)</li>
+<li>SuperSpeed+   1.25 GB/s   (USB 3.2)</li>
+<li>SuperSpeed    625 MB/s</li>
+<li>High Speed    60 MB/s</li>
+<li>Full Speed    1.5 MB/s</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc86aea9" class="outline-4">
+<h4 id="orgc86aea9">USB Protocols</h4>
+<div class="outline-text-4" id="text-orgc86aea9">
+<p>
+USB transactions consist of packets.
+</p>
+<ul class="org-ul">
+<li>Token packet (Host says what it wants from the device, e.g. IN- OUT-Tokens)</li>
+<li>Data Packet (payload)</li>
+<li>Handshake Packet (acknowledge, error correction)</li>
+</ul>
+
+<p>
+All packets start with:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Sync</td>
+<td class="org-left">PID</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">(CRC)</td>
+<td class="org-left">EOP</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>EOP : End of Packet</li>
+<li>CRC: CRC5 and CRC16</li>
+</ul>
+</div>
+
+<div id="outline-container-orge5d8f27" class="outline-5">
+<h5 id="orge5d8f27">PID (Packet ID)</h5>
+<div class="outline-text-5" id="text-orge5d8f27">
+<p>
+Identify the type of packet. 
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/USB/PID.PNG" alt="PID.PNG" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgd4145f4" class="outline-5">
+<h5 id="orgd4145f4">Token Packets</h5>
+<div class="outline-text-5" id="text-orgd4145f4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Sync</td>
+<td class="org-left">PID</td>
+<td class="org-left">ADDR</td>
+<td class="org-left">ENDP</td>
+<td class="org-left">CRC5</td>
+<td class="org-left">EOP</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>IN</li>
+<li>OUT</li>
+<li>SETUP</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4aa93cd" class="outline-5">
+<h5 id="org4aa93cd">Data Packets</h5>
+<div class="outline-text-5" id="text-org4aa93cd">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Sync</td>
+<td class="org-left">PID</td>
+<td class="org-left">EOP</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Types:
+</p>
+<ul class="org-ul">
+<li>DATA0</li>
+<li>DATA1</li>
+<li>DATA2</li>
+<li>MDATA</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1e1e191" class="outline-5">
+<h5 id="org1e1e191">Handshake Packets</h5>
+<div class="outline-text-5" id="text-org1e1e191">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Sync</td>
+<td class="org-left">PID</td>
+<td class="org-left">EOP</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>ACK</li>
+<li>NAK</li>
+<li>STALL</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgde8efeb" class="outline-5">
+<h5 id="orgde8efeb">Requests send from the Host</h5>
+<div class="outline-text-5" id="text-orgde8efeb">
+<ul class="org-ul">
+<li>Device Descriptor request</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdf1855d" class="outline-4">
+<h4 id="orgdf1855d">Device Classes</h4>
+<div class="outline-text-4" id="text-orgdf1855d">
+<p>
+The functionality of a device is defined by sending the class code (1 byte) to the host. 
+Examples:
+</p>
+<ul class="org-ul">
+<li>0x03 : HID</li>
+<li>0xFF : Vendor-specific</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd00c740" class="outline-4">
+<h4 id="orgd00c740">Endpoint Types</h4>
+<div class="outline-text-4" id="text-orgd00c740">
+<p>
+Those correspond to different types of transfer.
+</p>
+</div>
+<div id="outline-container-org46f2020" class="outline-5">
+<h5 id="org46f2020">Control Transfers</h5>
+<div class="outline-text-5" id="text-org46f2020">
+<p>
+Set up a device. 
+3 stages
+</p>
+<ol class="org-ol">
+<li>Setup Stage</li>
+<li>Data Stage</li>
+<li>Status Stage</li>
+</ol>
+
+<p>
+Examples:
+</p>
+<ul class="org-ul">
+<li>Enumeration: Host sends device descriptor request</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbee49dc" class="outline-5">
+<h5 id="orgbee49dc">Interrupt Transfers</h5>
+<div class="outline-text-5" id="text-orgbee49dc">
+<p>
+Since the host is polling a device needs to wait until it gets attention. So interrupt requests are queued on the device
+side until the host polls the device. 
+</p>
+
+<p>
+Maximum data size
+</p>
+<ul class="org-ul">
+<li>full-speed: 64 bytes</li>
+<li>high-speed: 1024 bytes</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8b3e690" class="outline-5">
+<h5 id="org8b3e690">Bulk Transfers</h5>
+</div>
+<div id="outline-container-org8098407" class="outline-5">
+<h5 id="org8098407">Isochronous Transfers</h5>
+</div>
+</div>
+<div id="outline-container-orgda2a41b" class="outline-4">
+<h4 id="orgda2a41b">Enumeration Process</h4>
+<div class="outline-text-4" id="text-orgda2a41b">
+</div>
+<div id="outline-container-org9131f89" class="outline-5">
+<h5 id="org9131f89">USB Descriptors</h5>
+<div class="outline-text-5" id="text-org9131f89">
+<p>
+<a href="https://www.beyondlogic.org/usbnutshell/usb5.shtml#StringDescriptors">https://www.beyondlogic.org/usbnutshell/usb5.shtml#StringDescriptors</a>
+</p>
+
+<p>
+How is a USB connection identified?
+</p>
+
+<p>
+Host gives addresses to the connected devices. The devices give back information about itself in form
+of a series of <b>descriptors</b>. 
+</p>
+<ul class="org-ul">
+<li>ONE Device Descriptor
+Vendor and Product ID
+<ul class="org-ul">
+<li>MULTIPLE Configuration Descriptors</li>
+</ul></li>
+</ul>
+
+<p>
+USB devices have a hierarchy of descriptors.
+</p>
+
+
+<div class="figure">
+<p><img src="resources/USB_Descriptor_Hierarchy.png" alt="USB_Descriptor_Hierarchy.png" />
+</p>
+</div>
+
+<p>
+Descriptor Types:
+</p>
+
+<ul class="org-ul">
+<li>Device Descriptors (ONE only) (Type: 0x01)
+<ul class="org-ul">
+<li>USB version</li>
+<li>product and vendor id</li>
+</ul></li>
+<li>Configuration Descriptors (0x02)
+<ul class="org-ul">
+<li>power usage</li>
+</ul></li>
+<li>Interface Descriptors (0x04)</li>
+<li>Endpoint Descriptors (0x05)</li>
+<li>String Descriptors (optional) (0x03)
+<ul class="org-ul">
+<li>provide human readable info</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb6bb9e8" class="outline-4">
+<h4 id="orgb6bb9e8">Device Setup</h4>
+<div class="outline-text-4" id="text-orgb6bb9e8">
+<p>
+When the device is attached to the host system a setup stage is initiated. 
+A 8-byte <i>Setup Packet</i> is sent to Endpoint 0 (default pipe).  Every USB device must respond to setup packets.
+</p>
+
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/USB/USB Setup Packet.PNG" alt="USB Setup Packet.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+The host sends requests to the device: Device, Interface, Endpoint Requests.
+</p>
+
+<p>
+Standard Device Requests:
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/USB/USB Standard Device Requests.PNG" alt="USB Standard Device Requests.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+Standard Interface Requests:
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/USB/Standard Interface Requests.PNG" alt="Standard Interface Requests.PNG" />
+</p>
+</div>
+
+</div>
+
+<p>
+Standard Endpoint Requests:
+</p>
+<div class="picture">
+
+<div class="figure">
+<p><img src="resources/USB/USB Standard Endpoint Requests.PNG" alt="USB Standard Endpoint Requests.PNG" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org6836224" class="outline-4">
+<h4 id="org6836224">Software</h4>
+<div class="outline-text-4" id="text-org6836224">
+</div>
+<div id="outline-container-org4f74fa8" class="outline-5">
+<h5 id="org4f74fa8">Device</h5>
+<div class="outline-text-5" id="text-org4f74fa8">
+<p>
+When the host is polling a device an interrupt handler is called. Most of the complexity mentioned 
+above is of no concern to the programmer. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgefb1399" class="outline-5">
+<h5 id="orgefb1399">Host</h5>
+<div class="outline-text-5" id="text-orgefb1399">
+<p>
+The usb interface is accessed through a file. You might have a thread handling incoming data.
+Then you call a function (e.g. <code>WaitForMultipleObjects</code> on windows) that puts the thread to sleep
+if nothing happens. 
+</p>
+
+<p>
+You might open pipes (Stream, Message). 
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2d9514c" class="outline-2">
+<h2 id="org2d9514c">Elektroinstallationen</h2>
+<div class="outline-text-2" id="text-org2d9514c">
+<p>
+Hausinstallation - Überblick
+</p>
+<div class="PICTURE">
+
+<div class="figure">
+<p><img src="resources/Electronics/Installation.PNG" alt="Installation.PNG" />
+</p>
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-orge273b16" class="outline-3">
+<h3 id="orge273b16">Normen</h3>
+<div class="outline-text-3" id="text-orge273b16">
+<ul class="org-ul">
+<li>OVE E 8101 - Errichtungsbestimmungen für elektrische Niederspannungsanlagen</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org14b3a90" class="outline-2">
+<h2 id="org14b3a90">IOT</h2>
+<div class="outline-text-2" id="text-org14b3a90">
+</div>
+<div id="outline-container-org3721d3b" class="outline-3">
+<h3 id="org3721d3b">MQTT (Message Queue Telemetry Transport)</h3>
+<div class="outline-text-3" id="text-org3721d3b">
+<p>
+All communication goes via the MQTT-Broker. Devices don't know anything about
+each other, they only communicate with the Broker. 
+</p>
+
+<p>
+Ports:
+</p>
+<ul class="org-ul">
+<li>1883</li>
+<li>8883 (encrypted)</li>
+</ul>
+
+<p>
+MQTT is based on TCP and has a 2 Byte Header.
+</p>
+<dl class="org-dl">
+<dt>Byte 1</dt><dd>Message Type (4 bit) Quality of Service (2 bit) Retain Flag</dd>
+<dt>Byte 2</dt><dd>Length of the rest of the package</dd>
+</dl>
+
+<p>
+The rest of the package is of variable length beginning with the <code>Topic</code>
+(e.g. <code>/home/rooms/kitchen/temperature</code>).
+</p>
+
+<p>
+Message Types:
+</p>
+<dl class="org-dl">
+<dt>PUBLISH</dt><dd>Topic + Data (Payload)</dd>
+<dt>SUBSCRIBE</dt><dd>subscript to a topic</dd>
+<dt>UNSUBSCRIBE</dt><dd></dd>
+
+
+<dt>CONNECT</dt><dd></dd>
+
+<dt>(no term)</dt><dd>DISCONNE ::CT</dd>
+<dt>CONNACK</dt><dd></dd>
+
+<dt>PUBACK</dt><dd></dd>
+
+<dt>PUBREC</dt><dd></dd>
+
+<dt>PUBREL</dt><dd></dd>
+
+<dt>PUBCOMP</dt><dd></dd>
+
+<dt>SUBACK</dt><dd></dd>
+
+<dt>UNSUBACK</dt><dd></dd>
+
+<dt>PINGREQ</dt><dd></dd>
+
+<dt>PINGRESP</dt><dd></dd>
+</dl>
+
+<p>
+The symbol <code>#</code> allows to receive everything below a certain level in the topic.
+E.g. <code>/level1/level2/#</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2021-03-26 Fri 06:00</p>
+</div>
+</body>
+</html>
