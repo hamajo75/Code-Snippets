@@ -4,4 +4,6 @@ def scope_test():
         print("do_local")
 
     do_local()
-scope_test()
+store_fun = scope_test
+
+store_fun()
