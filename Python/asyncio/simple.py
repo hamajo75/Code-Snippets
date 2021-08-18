@@ -14,7 +14,7 @@ async def fetch_data():
 async def print_numbers():
   for i in range(10):
     print(i)
-    await asyncio.sleep(0.25)
+    await asyncio.sleep(0.25) # non-blocking, standard time.sleep() is blocking!
 
 async def main():
   task1 = asyncio.create_task(fetch_data())
