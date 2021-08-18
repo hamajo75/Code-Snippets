@@ -1,3 +1,3 @@
 # Code-Snippets
 
-Collection of code snippted for various languages.
+Collection of code snippets for various languages.
