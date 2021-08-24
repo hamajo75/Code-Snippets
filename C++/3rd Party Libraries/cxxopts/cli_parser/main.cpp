@@ -10,8 +10,12 @@ int main(int argc, char** argv) {
     options.add_options()
         ("send_receive", "first parameter", cxxopts::value<std::string>())
         ("address", R"(e.g. //52.157.151.140:5671/wps_default)", cxxopts::value<std::string>())
-        ("d,debug", "Enable debugging", cxxopts::value<bool>()->default_value("false"))
         ("bool", "", cxxopts::value<bool>())
+        // default value: value, when the option is not given on the cli
+        ("d,debug", "Enable debugging", cxxopts::value<bool>()->default_value("false"))
+        // implicit value: given on the cli without argument
+        ("p,send-periodically", "Keep sending the message with optional interval in s (default is 0)",
+          cxxopts::value<double>()->implicit_value(0))
         ("h,help", "Print usage");
 
     // this defines which params are positional (without "-" of "--")
