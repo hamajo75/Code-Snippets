@@ -29,8 +29,8 @@ void print_visitor(const std::variant<int, double, float, std::string>& value) {
 }
 
 struct ReturnVisitor {
-  int operator()(int v, int add) { return 1; }
-  int operator()(double v, int add) { return 2; }
+  int operator()(int v, int add) { return v + add; }
+  int operator()(double v, int add) { return v + add; }
   // default handler to ignore types we are not interested in here
   template <typename T1, typename T2>
   void operator()(T1, T2) {}
