@@ -47,5 +47,9 @@ int main(int argc, const char *argv[]) {
       std::cout << "found!" << '\n';
   }
 
+  std::string path = "my/path/to";
+  if (path.back() != '/') path += '/';
+  std::cout << "path: " << path << "\n";
+
   return 0;
 }
