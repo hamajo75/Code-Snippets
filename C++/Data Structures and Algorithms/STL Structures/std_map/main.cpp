@@ -2,6 +2,19 @@
 #include <string.h>
 #include <map>
 
+struct MyStruct {
+  int i_;
+
+  MyStruct() = default;              // remove this line -> compile error
+  MyStruct(int i) : i_{i}{}
+};
+
+void InsertUserDefinedType() {
+  MyStruct str{1};
+  std::map<std::string, MyStruct> gas_detectors_;
+  gas_detectors_["ARJJ-0002"] = str;  // to do this you need the default ctor above !!
+}
+//-------------------------------------------------------------------------------
 std::string ReturnValue() {
   static std::map<std::string, std::string> msg_queue_map = {
   {"cameraControl.activateCameraLight", "camera_daemon_default"}};
@@ -35,7 +48,7 @@ int main(int argc, const char* argv[])
     my_map.insert(std::pair <int, std::string> (3, "Marge"));
     my_map.insert(std::pair <int, std::string> (4, "Homer"));
 
-    std::cout << my_map[5] << "\n";
+    std::cout << "non existing element: " << my_map[5] << "\n";
 
     std::map<int, std::string>::iterator it;
 
@@ -48,6 +61,8 @@ int main(int argc, const char* argv[])
 
     // initialize map
     std::map<std::string,int> myMap{{"Scott",1976}, {"Dijkstra",1972}};
+
+    InsertUserDefinedType();
 
     return 0;
 }

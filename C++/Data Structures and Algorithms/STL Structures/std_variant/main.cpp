@@ -55,7 +55,9 @@ int main() {
 
   var_t v = 1;
   std::cout << "return parameter (lambda): " << std::visit([](auto&& arg) -> int {return 1;}, v) << "\n";
-  std::cout << "return parameter: " << add_visitor(3.0f) << "\n";
+
+  double value = 3.0f;
+  std::cout << "return parameter: " << add_visitor(value) << "\n";
 
   return 0;
 }
