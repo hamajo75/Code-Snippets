@@ -1,7 +1,7 @@
 BIN=main
 
 CC=g++
-CFLAGS=-I. -lpthread -std=c++17
+CFLAGS=-I. -lpthread -std=c++20
 
 $(BIN).exe: *.cpp
 	$(CC) -g -o $@ *.cpp $(CFLAGS)
