@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # check for argument
+# the space " " before "]" is necessary !
 if [ "$1" ]; then
   remote_url=$1
 else
@@ -20,3 +21,19 @@ fi
 if [ "$string" ]; then
    echo not empty
 fi
+
+# case switch
+case $1 in
+   start)
+      echo starting
+      ;;
+   stop)
+      echo stoping
+      ;;
+   restart)
+      echo restarting
+      ;;
+   *)
+      echo don\'t know
+      ;;
+esac

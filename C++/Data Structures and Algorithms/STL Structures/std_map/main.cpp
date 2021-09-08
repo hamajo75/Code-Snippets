@@ -3,27 +3,37 @@
 #include <map>
 
 struct MyStruct {
-  int i_;
+  int i_ = -1;
 
-  MyStruct() = default;              // remove this line -> compile error
-  MyStruct(int i) : i_{i}{}
+  MyStruct() {              // remove this line -> compile error
+    std::cout << "default ctor\n";
+  }
+  explicit MyStruct(int i) : i_{i} {
+    std::cout << "constructor MyStruct(int i)\n";
+  }
+
+  MyStruct& operator=(MyStruct& other) {
+    std::cout << "copy assignment\n";
+    return *this;
+  }
+
+  int getValue() { return i_; }
 };
 
 void InsertUserDefinedType() {
   MyStruct str{1};
   std::map<std::string, MyStruct> gas_detectors_;
-  gas_detectors_["ARJJ-0002"] = str;  // to do this you need the default ctor above !!
-}
-//-------------------------------------------------------------------------------
-std::string ReturnValue() {
-  static std::map<std::string, std::string> msg_queue_map = {
-  {"cameraControl.activateCameraLight", "camera_daemon_default"}};
+  gas_detectors_["ARJJ-0002"] = str;  // default ctor AND copy assignment is called here ! - thats why you need it
 
-  return msg_queue_map["hello"];
+  std::cout << "gas_detector: " << gas_detectors_["ARJJ-0002"].getValue() << "\n";
+
+  // Note: if the element in the map is not found, a default object is created.
+  if (gas_detectors_.find("") != gas_detectors_.end())
+    std::cout << "not existing: " << gas_detectors_[""].getValue() << "\n";
+
 }
-//-------------------------------------------------------------------------------
-int main(int argc, const char* argv[])
-{
+
+void SimpleMapStuff() {
     std::map<int, int> memo;
     memo.insert({0, 1});
     memo.insert({1, 2});
@@ -37,7 +47,7 @@ int main(int argc, const char* argv[])
     std::cout << memo[0] << "\n";
 
     // C++ 17 way of looping through a map
-    for(auto [first, second]: memo)
+    for (auto [first, second] : memo)
         std::cout << "first: " << first << " second: " << second << "\n";
 
     // no duplicate keys
@@ -53,18 +63,28 @@ int main(int argc, const char* argv[])
     std::map<int, std::string>::iterator it;
 
     // iterator - way of looping through a map
-    for(it = my_map.begin(); it != my_map.end(); ++it)
-    {
+    for (it = my_map.begin(); it != my_map.end(); ++it) {
         std::cout << "Key: " << it->first << "\n";
         std::cout << "Value: " << it->second << "\n";
     }
 
     // initialize map
-    std::map<std::string,int> myMap{{"Scott",1976}, {"Dijkstra",1972}};
+    std::map<std::string, int> myMap{{"Scott", 1976}, {"Dijkstra", 1972}};
+}
+//-------------------------------------------------------------------------------
+std::string ReturnValue() {
+  static std::map<std::string, std::string> msg_queue_map = {
+  {"cameraControl.activateCameraLight", "camera_daemon_default"}};
 
-    InsertUserDefinedType();
+  return msg_queue_map["hello"];
+}
+//-------------------------------------------------------------------------------
+int main(int argc, const char* argv[])
+{
+  SimpleMapStuff();
+  InsertUserDefinedType();
 
-    return 0;
+  return 0;
 }
 
 

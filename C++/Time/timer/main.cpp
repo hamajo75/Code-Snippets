@@ -1,5 +1,6 @@
 #include <chrono>
 #include <iostream>
+#include <map>
 
 #include <thread>
 #include <functional>
@@ -11,7 +12,14 @@ class CallBackTimer {
   ~CallBackTimer() {
     if (is_running_.load(std::memory_order_acquire)) {
       Stop();
-    };
+    }
+  }
+  CallBackTimer(const CallBackTimer& other) {                       // copy constructor
+    std::cout << "Copy constructor\n";
+  }
+  CallBackTimer& operator=(const CallBackTimer& other) {            // copy assignment
+    std::cout << "Copy assignment\n";
+    return *this;
   }
 
   void Stop() {
@@ -23,7 +31,7 @@ class CallBackTimer {
   void Start(int interval, std::function<void(void)> func) {
     if (is_running_.load(std::memory_order_acquire)) {
       Stop();
-    };
+    }
     is_running_.store(true, std::memory_order_release);
     thread_ = std::thread([this, interval, func]() {
       while (is_running_.load(std::memory_order_acquire)) {
@@ -47,12 +55,14 @@ void CallbackFun() {
 }
 //-----------------------------------------------------------------------------
 int main() {
+  std::map<std::string, CallBackTimer> timers_;
+
   CallBackTimer timer;
+  timers_["1"] = timer;
 
-  timer.Start(1000, CallbackFun);
-
+  timers_["1"].Start(1000, CallbackFun);
   std::this_thread::sleep_for(std::chrono::milliseconds(5000));
-  timer.Stop();
+  timers_["1"].Stop();
 
   return 0;
 }

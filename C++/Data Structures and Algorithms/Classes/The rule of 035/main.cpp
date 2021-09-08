@@ -44,8 +44,9 @@ class MyClass {
     std::cout << "Copy constructor\n";
     data_ = new int[1];
     *data_ = *other.data_;
+    // *this = other;                                            // call copy assignment
   }
-  MyClass& operator=(const MyClass& other) {            // 3. copy assignment     a = b
+  MyClass& operator=(const MyClass& other) {            // 3. copy assignment     a = b (other), a will be constructed
     std::cout << "Copy assignment\n";
 
     if (this == &other) return *this;                        // check assignment to self
@@ -71,7 +72,9 @@ int main() {
   MyClass o1{&data};  // default constructor
 
   MyClass o2{o1};     // copy initialization
-  MyClass o3 = o2;    // copy assignment
+  MyClass o3 = o2;    // still copy contructor !
+  MyClass o4{&data};  // default constructor
+  o4 = o3;            // copy assignment
 
   return 0;
 }
