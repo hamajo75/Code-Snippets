@@ -1,0 +1,26 @@
+#include "common/message_framework/json/messages.h"
+
+messaging::json::MessageHeader MessageHeader;
+
+x.MessageHeader = j.at("messageHeader").get<messaging::json::MessageHeader>();
+
+    inline void from_json(const json & j, wcep::alarm_and_error_state::MessageHeader& x) {
+        x.MessageType = j.at("messageType").get<std::string>();
+        x.MessageVersion = j.at("messageVersion").get<std::string>();
+        x.MessageId = j.at("messageId").get<std::string>();
+        x.WorkplaceId = j.at("workplaceId").get<std::string>();
+        x.CreatedAt = j.at("createdAt").get<std::string>();
+        x.ValidUntil = j.at("validUntil").get<std::string>();
+    }
+
+    inline void to_json(json & j, const wcep::alarm_and_error_state::MessageHeader & x) {
+        j = json::object();
+        j["messageType"] = x.MessageType;
+        j["messageVersion"] = x.MessageVersion;
+        j["messageId"] = x.MessageId;
+        j["workplaceId"] = x.WorkplaceId;
+        j["createdAt"] = x.CreatedAt;
+        j["validUntil"] = x.ValidUntil;
+    }
+
+
