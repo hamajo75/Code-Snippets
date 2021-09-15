@@ -26,3 +26,10 @@ startIntercomDaemon() {
 stopIntercomDaemon() {
   echo stop > /tmp_intercom-in
 }
+
+# default variable values
+LOCAL_BROKER_URL=${LOCAL_BROKER_URL:-"localhost:5672"}
+
+# open new gnome-terminal in dir and source settings
+gnome-terminal --working-directory='/home/jha/Development/mee066-esw-intercom-apps/build_target' \
+-- env -i bash --norc --noprofile -c "source /home/jha/Development/Yocto/sdk/environment-setup-cortexa7t2hf-neon-vfpv4-me-linux-gnueabi; exec bash"
