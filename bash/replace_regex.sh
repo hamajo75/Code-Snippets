@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # g - global replacement
+# escape (), ""
 
 namespace=wcep::alarm_and_error_state
 namespace=$namespace::MessageHeader
@@ -13,3 +14,6 @@ sed -i "s/x.MessageHeader = j.at(\"messageHeader\").get<$namespace>/x.MessageHea
 sed -i 's/namespace detail {//' $1
 # remove last "}" in the file
 sed -i '$ s/.$//' $1
+
+# capture groups
+echo "foobarbaz" | sed 's/^foo\(.*\)baz$/\1/'
