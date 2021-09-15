@@ -11,17 +11,17 @@ using namespace std::chrono_literals;   // i think you must do it like this
 //-----------------------------------------------------------------------------
 // only seconds
 std::string GetTimestamp() {
-    time_t now;
-    time(&now);
-    char buf[sizeof "2011-10-08T07:07:09"];
-    strftime(buf, sizeof buf, "%FT%T", gmtime(&now));
-    std::string timestamp_str{buf};
-    return timestamp_str;
+  time_t now;
+  time(&now);
+  char buf[sizeof "2011-10-08T07:07:09"];
+  strftime(buf, sizeof buf, "%FT%T", gmtime(&now));
+  std::string timestamp_str{buf};
+  return timestamp_str;
 }
 //-----------------------------------------------------------------------------
 std::string GetISO_8601_Timestamp() {
-    auto now = std::chrono::time_point_cast<std::chrono::milliseconds>(std::chrono::system_clock::now());
-    return date::format("%FT%T", now);
+  auto now = std::chrono::time_point_cast<std::chrono::milliseconds>(std::chrono::system_clock::now());
+  return date::format("%FT%T", now);
 }
 //-----------------------------------------------------------------------------
 std::string currentISO8601TimeUTC() {
@@ -57,8 +57,14 @@ void measure_time() {
   std::cout << "Waited " << elapsed.count() << " ms\n";
 }
 //-----------------------------------------------------------------------------
+void print_ms_since_epoch() {
+  std::cout << "time: " << std::chrono::duration_cast<std::chrono::milliseconds>
+    (std::chrono::system_clock::now().time_since_epoch()).count() << "\n";
+}
+//-----------------------------------------------------------------------------
 int main() {
   measure_time();
+  print_ms_since_epoch();
 
   std::cout << GetTimestamp() << "\n";
   std::cout << GetISO_8601_Timestamp() << "\n";
