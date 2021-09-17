@@ -1,5 +1,6 @@
 #include <iostream>
 
+namespace my_namespace {
 class Point {
  private:
   double m_x{};
@@ -19,6 +20,10 @@ std::ostream &operator<<(std::ostream &out, const Point &point) {
 
   return out;  // return std::ostream so we can chain calls to operator<<
 }
+}
+
+using my_namespace::Point;
+using my_namespace::operator<<;
 
 int main() {
   const Point point1{2.0, 3.0, 4.0};
