@@ -1,7 +1,16 @@
 #!/bin/sh
 
-# g - global replacement
-# escape (), ""
+# Options
+# -i                            - in place replacement
+
+# Regular Expressions
+# 's/RE/Substitution/gI'
+
+# I                             - ignore case
+# g                             - global replacement
+# escape \(  \) for capturing groups
+# escape \"  \" for literal ""
+# capture groups: \1 \2 etc.
 
 namespace=wcep::alarm_and_error_state
 namespace=$namespace::MessageHeader

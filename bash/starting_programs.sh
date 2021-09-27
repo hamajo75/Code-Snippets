@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# run kill 0 to kill all background (chhild) processes in case one of the signals
+# SIGINT SIGTERM SIGERR SIGEXIT
+trap "exit" INT TERM ERR
+trap "kill 0" EXIT
+
 # run in the background
 program &
 # bring it back (%n for multiple processes)
@@ -19,13 +24,18 @@ command_1 && command_2
 
 # send input to background process with fifo
 startIntercomDaemon() {
-  mkfifo /tmp/intercom-in
-  tail -f /tmp/intercom-in | ./intercom-daemon -u $REMOTE_BROKER_URL > /dev/null &
+  mkfifo /tmp/intercom-in > /dev/null 2>&1
+  tail -f /tmp/intercom-in | intercom-daemon -u $REMOTE_BROKER_URL --ssl-path=ssl-certs -t > /dev/null &
 }
 
 stopIntercomDaemon() {
-  echo stop > /tmp_intercom-in
+  echo stop > /tmp_intercom-in  # this might lead to "interrupted system call" error
 }
+
+# save process id and kill later
+foo &
+FOO_PID=$!
+kill $FOO_PID
 
 # default variable values
 LOCAL_BROKER_URL=${LOCAL_BROKER_URL:-"localhost:5672"}

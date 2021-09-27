@@ -7,7 +7,9 @@ if [ "$1" ]; then
 else
   remote_url=172.31.1.83:5671
 fi
-
+# check absence of parameter
+if [ -z "$1" ]; then
+fi
 echo "external url:" $remote_url
 
 # check if file exists

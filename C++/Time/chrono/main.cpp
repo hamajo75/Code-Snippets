@@ -29,7 +29,7 @@ std::string currentISO8601TimeUTC() {
   auto itt = std::chrono::system_clock::to_time_t(now);
   auto t = now.time_since_epoch();
   auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(t).count() -
-  std::chrono::duration_cast<std::chrono::seconds>(t).count() * 1000;
+            std::chrono::duration_cast<std::chrono::seconds>(t).count() * 1000;
 
   std::ostringstream ss;
   ss << std::put_time(gmtime(&itt), "%FT%T") << "." << ms;
@@ -63,10 +63,13 @@ void print_ms_since_epoch() {
 }
 //-----------------------------------------------------------------------------
 int main() {
-  measure_time();
-  print_ms_since_epoch();
+  // measure_time();
+  // print_ms_since_epoch();
 
-  std::cout << GetTimestamp() << "\n";
-  std::cout << GetISO_8601_Timestamp() << "\n";
-  std::cout << currentISO8601TimeUTC() << "\n";
+  // std::cout << GetTimestamp() << "\n";
+  // std::cout << GetISO_8601_Timestamp() << "\n";
+  for (int i = 0; i < 2000; ++i){
+    std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    std::cout << currentISO8601TimeUTC() << "\n";
+  }
 }

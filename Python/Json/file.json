@@ -1,0 +1,31 @@
+{
+  "messageBody": {
+    "alarmSources": [
+      {
+        "alarmType": "A1",
+        "gasDetectorId": "e3269fa7-68f1-4277-8944-7f26142f1825",
+        "sensorChannel": {
+          "channelNumber": 0,
+          "gasType": "ch4"
+        }
+      },
+      {
+        "alarmType": "A2",
+        "gasDetectorId": "e3269fa7-68f1-4277-8944-7f26142f1825",
+        "sensorChannel": {
+          "channelNumber": 3,
+          "gasType": "CO"
+        }
+      }
+    ],
+    "errorSources": []
+  },
+  "messageHeader": {
+    "messageType": "my.message.type",
+    "messageVersion": "1.0",
+    "messageId": "e2ead843-0158-408b-8cd5-2497534be297",
+    "workplaceId": "e0a074f1-f321-4910-a5a5-5a721ba7f44a",
+    "createdAt": "2021-12-17T09:30:47.0",
+    "validUntil": "2021-12-17T09:40:47.0"
+  }
+}
