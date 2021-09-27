@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 class Vertex {
  private:
@@ -27,7 +28,7 @@ void LoopThroughVector(const std::vector<T>& v) {
   }
 }
 
-int main() {
+void ElementaryOperations() {
   std::vector<int> v;
 
   v.push_back(1);
@@ -57,4 +58,25 @@ int main() {
   vertices.emplace_back(1, 2, 3);  // create directly in the vector
   vertices.emplace_back(4, 5, 6);
   vertices.emplace_back(7, 8, 9);
+}
+
+void FindElements() {
+  // find, find_if only finds the first element satisfying the criteria
+
+  std::vector<int> v{1, 2, 3, 4};
+  auto result3 = std::find_if(begin(v), end(v), [](int i){ return i%2 == 0; });
+
+  struct MyStruct {
+    std::string key;
+    int value;
+  };
+  std::vector<MyStruct> data {{"a", 1}, {"b", 2}, {"c", 3}, {"d", 4}};
+
+  auto result = std::find_if(std::begin(data), std::end(data), [](MyStruct d){ return d.key == "b"; });
+  std::cout << "result: " << (*result).key << ", " << (*result).value << "\n";
+}
+
+int main() {
+  ElementaryOperations();
+  FindElements();
 }
