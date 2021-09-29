@@ -1,0 +1,1 @@
+/usr/bin/g++ -shared -Wl,--enable-auto-import -o cyglib_my_lib.dll -Wl,--out-implib,liblib_my_lib.dll.a -Wl,--major-image-version,0,--minor-image-version,0 CMakeFiles/lib_my_lib.dir/my_lib.cc.o 

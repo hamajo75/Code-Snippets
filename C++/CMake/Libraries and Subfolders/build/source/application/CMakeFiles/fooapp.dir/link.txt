@@ -1,0 +1,1 @@
+/usr/bin/g++ -Wl,--enable-auto-import CMakeFiles/fooapp.dir/main.cc.o -o fooapp.exe -Wl,--out-implib,libfooapp.dll.a -Wl,--major-image-version,0,--minor-image-version,0  ../libraries/liblib_my_lib.dll.a 

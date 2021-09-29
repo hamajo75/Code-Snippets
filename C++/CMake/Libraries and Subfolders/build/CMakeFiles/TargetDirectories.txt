@@ -1,0 +1,8 @@
+/cygdrive/d/Nextcloud/PC_Sync/Projects/C and C++/CMake/Libraries and Subfolders/build/CMakeFiles/rebuild_cache.dir
+/cygdrive/d/Nextcloud/PC_Sync/Projects/C and C++/CMake/Libraries and Subfolders/build/CMakeFiles/edit_cache.dir
+/cygdrive/d/Nextcloud/PC_Sync/Projects/C and C++/CMake/Libraries and Subfolders/build/source/libraries/CMakeFiles/rebuild_cache.dir
+/cygdrive/d/Nextcloud/PC_Sync/Projects/C and C++/CMake/Libraries and Subfolders/build/source/libraries/CMakeFiles/edit_cache.dir
+/cygdrive/d/Nextcloud/PC_Sync/Projects/C and C++/CMake/Libraries and Subfolders/build/source/libraries/CMakeFiles/lib_my_lib.dir
+/cygdrive/d/Nextcloud/PC_Sync/Projects/C and C++/CMake/Libraries and Subfolders/build/source/application/CMakeFiles/rebuild_cache.dir
+/cygdrive/d/Nextcloud/PC_Sync/Projects/C and C++/CMake/Libraries and Subfolders/build/source/application/CMakeFiles/edit_cache.dir
+/cygdrive/d/Nextcloud/PC_Sync/Projects/C and C++/CMake/Libraries and Subfolders/build/source/application/CMakeFiles/fooapp.dir
