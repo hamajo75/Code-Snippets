@@ -43,8 +43,8 @@ int add_visitor(const std::variant<int, double>& value) {
 }
 
 using var_t = std::variant<int, long, double, std::string>;
-//-------------------------------------------------------------------------------
-int main() {
+
+void UseVisitors() {
   print(5);
   print(5.0);
   print(5.0f);
@@ -58,6 +58,34 @@ int main() {
 
   double value = 3.0f;
   std::cout << "return parameter: " << add_visitor(value) << "\n";
+}
+
+var_t ReturnVariant() {
+  return 0.5f;
+}
+
+void AccessVariantValues() {    // std::get<>(), std::get_if<>()
+  var_t v = 0.5;
+  // double d = v;   // you cannot do this! (even if we know the active type)
+  try {
+    auto d = std::get<double>(v);
+    std::cout << "double! " << d << "\n";
+  } catch (std::bad_variant_access&) {
+    std::cout << "variant doesn't hold a double right now\n";
+  }
+
+  double* ret = std::get_if<double>(&v);
+
+  var_t ret_v = ReturnVariant();
+  double* ret_d = std::get_if<double>(&ret_v);    // you'll get a nullptr if the stored value is of another type
+
+  std::cout << "ret: " << *ret_d << "\n";
+
+}
+//-------------------------------------------------------------------------------
+int main() {
+  UseVisitors();
+  AccessVariantValues();
 
   return 0;
 }
