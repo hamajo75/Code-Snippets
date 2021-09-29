@@ -31,7 +31,7 @@ void LoopThroughVector(const std::vector<T>& v) {
 void ElementaryOperations() {
   std::vector<int> v;
 
-  v.push_back(1);
+  v.push_back(1);T
   v.push_back(2);
   v.push_back(3);
 
@@ -58,6 +58,15 @@ void ElementaryOperations() {
   vertices.emplace_back(1, 2, 3);  // create directly in the vector
   vertices.emplace_back(4, 5, 6);
   vertices.emplace_back(7, 8, 9);
+}
+
+template<typename T>
+void UpdateElement(std::vector<T>* container, T element, std::function criteria) {
+  auto entry = std::find_if(container->begin(), container->end(), criteria);
+  if (entry == container->end())
+    container->push_back(element);
+  else
+    *entry = element;
 }
 
 void FindElements() {
