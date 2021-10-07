@@ -1,0 +1,15 @@
+@startuml
+participant "intercom-daemon" as id
+participant "gas-daemon" as gd
+participant "camera-daemon" as cd
+participant "field engineer" as fe
+
+id -> gd: Request: Visible Devices (topic: /broadcast/pairing)
+id -> cd: Request: Visible Devices (topic: /broadcast/pairing)
+gd -> id: Response: DeviceId, pairing status
+cd -> id: Response: DeviceId, pairing status
+id -[#blue]> fe: List of devices with pairing status
+fe -[#blue]> id: Pair gas detector SNR
+id -> gd: Request: Pair device with DeviceId
+gd -> id: Response: Device with DeviceId is paired
+@enduml
