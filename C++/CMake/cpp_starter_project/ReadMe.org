@@ -1,0 +1,7 @@
+Jason Turner's Ultimate CMake / C++ Quick Start
+- https://www.youtube.com/watch?v=YbgH7yat-Jo&t=0s
+
+Github:
+- https://github.com/lefticus/cpp_starter_project.git
+: git clone https://github.com/lefticus/cpp_starter_project.git
+
