@@ -3,10 +3,10 @@
 #include <gtest/gtest.h>
 
 //-----------------------------------------------------------------------------
-class MyClass {
+class MyClassUnderTest {
   int base_value_;
  public:
-  explicit MyClass(int start) : base_value_{start} {}
+  explicit MyClassUnderTest(int start) : base_value_{start} {}
   void Increment(int value) {
     base_value_ += value;
   }
@@ -14,8 +14,8 @@ class MyClass {
 };
 //-----------------------------------------------------------------------------
 struct MyClassTest : public testing::Test {
-  MyClass *mc;
-  void SetUp() { mc = new MyClass(100); }
+  MyClassUnderTest *mc;
+  void SetUp() { mc = new MyClassUnderTest(100); }
   void TearDown() { delete mc; }
 };
 //-----------------------------------------------------------------------------
