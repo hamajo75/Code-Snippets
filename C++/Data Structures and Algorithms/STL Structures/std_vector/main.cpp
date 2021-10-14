@@ -1,6 +1,25 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <functional>
+
+struct MyStruct {
+  int i_ = -1;
+
+  // MyStruct() {              // remove this line -> compile error
+  //   std::cout << "default ctor\n";
+  // }
+  // explicit MyStruct(int i) : i_{i} {
+  //   std::cout << "constructor MyStruct(int i)\n";
+  // }
+
+  // MyStruct& operator=(MyStruct& other) {
+  //   std::cout << "copy assignment\n";
+  //   return *this;
+  // }
+
+  // int getValue() { return i_; }
+};
 
 class Vertex {
  private:
@@ -31,7 +50,7 @@ void LoopThroughVector(const std::vector<T>& v) {
 void ElementaryOperations() {
   std::vector<int> v;
 
-  v.push_back(1);T
+  v.push_back(1);
   v.push_back(2);
   v.push_back(3);
 
@@ -61,8 +80,8 @@ void ElementaryOperations() {
 }
 
 template<typename T>
-void UpdateElement(std::vector<T>* container, T element, std::function criteria) {
-  auto entry = std::find_if(container->begin(), container->end(), criteria);
+void UpdateElement(std::vector<T>* container, T element, std::function<bool(T)> predicate) {
+  auto entry = std::find_if(container->begin(), container->end(), predicate);
   if (entry == container->end())
     container->push_back(element);
   else
@@ -88,4 +107,8 @@ void FindElements() {
 int main() {
   ElementaryOperations();
   FindElements();
+
+  std::vector<std::pair<std::string, MyStruct>> myVector;
+  MyStruct obj;
+  myVector.push_back({"hello", obj});
 }

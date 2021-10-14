@@ -95,7 +95,7 @@ void ConvertMessage(const std::string& msg) {
     j_out["messageBody"]["gasValues"].push_back(j);
   }
 
-  std::cout << j_out.dump();
+  std::cout << j_out;
 }
 
 void BasicStuff() {
@@ -141,11 +141,12 @@ void BasicStuff() {
       {"value", 42.99}
     }}
   };
+  std::cout << j_object;
 }
 
 //-----------------------------------------------------------------------------
 int main()
 {
-  // BasicStuff();
-  ConvertMessage(json_msg);
+  BasicStuff();
+  // ConvertMessage(json_msg);
 }
