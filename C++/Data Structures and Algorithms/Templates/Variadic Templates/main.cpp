@@ -1,17 +1,37 @@
 #include <iostream>
 #include <string.h>
 
-//   template <typename ...Args> pimpl
-//     (Args&& ...args);
+template<typename ... T>
+struct MessageBody {};
 
-// // forwarding constructor
-// template<typename T>
-// template<typename... Args>
-// pimpl<T>::pimpl(Args &&... args)
-//   : impl{new T{std::forward<Args>(args)... }} {
+template<typename T, typename ... Rest>
+struct MessageBody<T, Rest ...> {
+    MessageBody(const T& first, const Rest& ... rest)
+        : first(first)
+        , rest(rest...)
+    {}
 
-// }
+    T first;
+    MessageBody<Rest ... > rest;    // specialization-> we need to declare it like this: MessageBody<T, Rest ...>
+};
 
+template<typename ... T>
+struct Message {
+  Message(std::string header, const T& ... args) :
+    MessageHeader{header},
+    MessageBody{args...} {}
+
+  MessageBody<T ...> MessageBody;
+  std::string MessageHeader;
+};
+
+void UseTemplateStruct() {
+  Message<int, std::string> message{"header", 1, "data"};
+
+  std::cout << "message.MessageHeader " << message.MessageHeader << "\n";
+  std::cout << message.MessageBody.first << "\n";
+  std::cout << message.MessageBody.rest.first << "\n";
+}
 //-------------------------------------------------------------------------------
 // unpack parameters using fold expressions
 template<typename ...T>
@@ -55,14 +75,20 @@ void print2(T x, Params ...args) {
   std::cout << x << " ";
   print2(args...);
 }
-//-------------------------------------------------------------------------------
-int main() {
+
+void FunctionTemplates() {
   std::cout << sum(1, 2, 3, 4, 5) << "\n";
   std::cout << sum2(1, 2.4f, 4, 5) << "\n";
 
   printer("a", 1, 0.5f);
   print({1, 2, 3, 4, 5});
   print2("\n", 1, 2.3f, "a");
+  std::cout << "\n";
+}
+//-------------------------------------------------------------------------------
+int main() {
+  FunctionTemplates();
+  UseTemplateStruct();
 
   return 0;
 }

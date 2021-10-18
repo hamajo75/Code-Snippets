@@ -3,6 +3,10 @@
 
 #include <variant>
 
+template<class... Ts> struct overloaded : Ts... { using Ts::operator()...; };
+// explicit deduction guide (not needed as of C++20)
+template<class... Ts> overloaded(Ts...) -> overloaded<Ts...>;
+
 // select with index
 void print(const std::variant<int, double, float>& value) {
   switch(value.index()) {
@@ -36,7 +40,7 @@ struct ReturnVisitor {
   void operator()(T1, T2) {}
 };
 
-int add_visitor(const std::variant<int, double>& value) {
+int additionVisitor(const std::variant<int, double>& value) {
   std::variant<int> add;
   add = 10;
   return std::visit(ReturnVisitor{}, value, add);
@@ -53,11 +57,28 @@ void UseVisitors() {
   print_visitor(5.0);
   print_visitor(5.0f);
 
-  var_t v = 1;
-  std::cout << "return parameter (lambda): " << std::visit([](auto&& arg) -> int {return 1;}, v) << "\n";
+  var_t v = 666;
+  // get contained value: method 1
+  std::cout << "get value with lambda: " << std::visit([](auto&& arg) -> int {
+    using T = std::decay_t<decltype(arg)>;
+    if constexpr (std::is_same_v<T, int>)
+      return arg;
+    return 1;
+  }, v) << "\n";
 
   double value = 3.0f;
-  std::cout << "return parameter: " << add_visitor(value) << "\n";
+
+  // get contained value : method 2
+  // need the helper templates above
+  int external_value = 5;
+  v = 10.0f;
+  std::visit(overloaded {
+      [external_value](int arg) { std::cout << "int + external_value: " << arg + external_value << "\n"; },
+      [](long arg) { std::cout << "long: " << arg << "\n"; },
+      [](const std::string& arg) { std::cout << "string: " << arg << "\n"; },
+      // [](double arg) { std::cout << "double: " << arg << "\n"; },
+      [](auto arg) { std::cout << "auto: " << arg << "\n"; },                                                // default
+  }, v);
 }
 
 var_t ReturnVariant() {

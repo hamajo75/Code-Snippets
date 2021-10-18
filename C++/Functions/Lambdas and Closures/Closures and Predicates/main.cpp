@@ -43,7 +43,7 @@ void print(C container){
     std::cout << x << std::endl;
 }
 //-------------------------------------------------------------------------------
-int main(int argc, const char* argv[]) {  
+int main(int argc, const char* argv[]) {
   int y = 100;
 
   auto closure = [=](int x) { return x + y; };  // can access y ! - closure
