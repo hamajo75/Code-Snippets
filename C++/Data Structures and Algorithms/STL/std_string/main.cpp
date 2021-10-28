@@ -29,6 +29,8 @@ void FindAndReplace() {
   if (name.find("Hagler") != std::string::npos) {
       std::cout << "found!" << '\n';
   }
+  std::string url = "127.0.0";
+  std::cout << "url.substr(0, 9) " << url.substr(0, 9) << "\n";
 }
 //-------------------------------------------------------------------------------
 void StringManipulation() {

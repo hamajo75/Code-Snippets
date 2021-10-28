@@ -3,23 +3,44 @@
 #include <algorithm>
 #include <functional>
 
-struct MyStruct {
-  int i_ = -1;
+// template <typename T>
+// std::vector<T>& operator +=(std::vector<T>& vector1, const std::vector<T>& vector2) {
+//   vector1.insert(vector1.end(), vector2.begin(), vector2.end());
+//   return vector1;
+// }
 
-  // MyStruct() {              // remove this line -> compile error
-  //   std::cout << "default ctor\n";
-  // }
-  // explicit MyStruct(int i) : i_{i} {
-  //   std::cout << "constructor MyStruct(int i)\n";
-  // }
+std::vector<Base>& operator +=(std::vector<Base>& vector1, const std::vector<Base>& vector2) {
+  vector1.insert(vector1.end(), vector2.begin(), vector2.end());
+  return vector1;
+}
 
-  // MyStruct& operator=(MyStruct& other) {
-  //   std::cout << "copy assignment\n";
-  //   return *this;
-  // }
-
-  // int getValue() { return i_; }
+struct Base {
+  std::string base = "base";
 };
+struct DerivedA : public Base {
+  std::string derived = "derived";
+};
+struct DerivedB : public Base {
+  std::string derived = "derived";
+};
+
+
+void LoopThroughDerivedClassVector() {
+  std::vector<DerivedA> vectorA;
+  vectorA.push_back(DerivedA{});
+  vectorA.push_back(DerivedA{});
+  vectorA.push_back(DerivedA{});
+
+  std::vector<DerivedB> vectorB;
+  vectorB.push_back(DerivedB{});
+  vectorB.push_back(DerivedB{});
+  vectorB.push_back(DerivedB{});
+
+  vectorA += vectorB;
+
+  for (Base b : vectorA)
+    std::cout << "b.base " << b.base << "\n";
+}
 
 class Vertex {
  private:
@@ -105,10 +126,9 @@ void FindElements() {
 }
 
 int main() {
-  ElementaryOperations();
-  FindElements();
+  // ElementaryOperations();
+  // FindElements();
 
-  std::vector<std::pair<std::string, MyStruct>> myVector;
-  MyStruct obj;
-  myVector.push_back({"hello", obj});
+  LoopThroughDerivedClassVector();
+
 }

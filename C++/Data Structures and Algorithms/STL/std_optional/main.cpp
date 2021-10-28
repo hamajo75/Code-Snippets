@@ -8,11 +8,16 @@ void Simple() {
   // i = 1;
 
   if (i)
-    std::cout << i.value();
+    std::cout << i.value() << "\n";
 
   // use default value
-  std::cout << i.value_or(2);
+  std::cout << i.value_or(2) << "\n";
 }
+
+struct SensorChannel {
+    int64_t ChannelNumber;
+    std::string GasType;
+};
 
 struct MessageHeader {
   std::string MessageType;
@@ -20,6 +25,7 @@ struct MessageHeader {
   std::optional<std::string> CreatedAt;
   std::optional<std::string> MessageId;
   std::optional<std::string> ValidUntil;
+  std::optional<SensorChannel> SensorChannel;
 };
 
 struct ConnectionOptions {
@@ -36,9 +42,27 @@ struct ConnectionOptions {
   bool reconnect;
 };
 
+void OptionalStruct() {
+  MessageHeader msg_header{"type", "created_at"};
+  SensorChannel sensor_channel{0, "CO2"};
+  msg_header.SensorChannel = sensor_channel;
+
+  std::cout << "msg_header.SensorChannel.value().GasType " << msg_header.SensorChannel.value().GasType << "\n";
+
+  MessageHeader msg_header2{"type", "created_at"};
+  // method 1
+  msg_header2.SensorChannel = SensorChannel{msg_header.SensorChannel.value().ChannelNumber,
+                                            msg_header.SensorChannel.value().GasType};
+  // method 2
+  msg_header2.SensorChannel.emplace(SensorChannel{msg_header.SensorChannel.value().ChannelNumber,
+                                                  msg_header.SensorChannel.value().GasType});
+
+  std::cout << "msg_header2.SensorChannel.value().GasType " << msg_header2.SensorChannel.value().GasType << "\n";
+}
+
 int main() {
   Simple();
-
+  OptionalStruct();
   MessageHeader msg_header {"type", "created_at"};
 
   ConnectionOptions conn_opts {
