@@ -10,12 +10,16 @@ cd $(dirname $0)
 generate_cc_source.sh periodical.alarmAndErrorState.schema.json periodical_alarmAndErrorState.h wimp::alarm_and_error_state AlarmAndErrorState --src-lang=schema"
 """
 
-print(form)
+def basic():
+  print(form)
 
-str = "access a string like an array"
-print(str[5:])
+  str = "access a string like an array"
+  print(str[5:])
 
-txt = "hello.my.darling"
-x = txt.split(".")
+  txt = "hello.my.darling"
+  x = txt.split(".")
 
-print(x)
+  print(x)
+
+if __name__ == "__main__":
+  basic()
