@@ -95,6 +95,10 @@ void ConvertMessage(const std::string& msg) {
     j_out["messageBody"]["gasValues"].push_back(j);
   }
 
+  // check if a field exists
+  if (j.find("periodic_workplace_state_send_interval") != j.end())
+    j_out["periodic_workplace_state_send_interval"] = ;
+
   std::cout << j_out;
 }
 

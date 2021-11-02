@@ -10,7 +10,7 @@ Contra
 - Difficult to implement.
 */
 
-class Object {
+class Object {        // std::functional, std::any act like Object
  public:
   template <typename T>
   explicit Object(const T& obj) : object(std::make_shared<Model<T>>(std::move(obj))) {}
@@ -20,9 +20,9 @@ class Object {
   }
 
  private:
-  struct Concept {
+  struct Concept {                              // tells us what a duck is
     virtual ~Concept() {}
-    virtual std::string getName() const = 0;    // this is what we actually want to call
+    virtual std::string getName() const = 0;    // this is what we actually want to call (quack)
   };
 
   template <typename T>                         // implements the abstract class Concept
@@ -56,6 +56,8 @@ struct Foo {
 };
 
 int main() {
-  std::vector<Object> vec{Object(Foo()), Object(Bar())};  // objects, not base class pointers, any type can be used
+  std::vector<Object> vec{Object{Foo()},  // objects, not base class pointers, any type can be used
+                          Object{Bar()}};
+                          // Object{std::string{""}}};  // this doesn't work, no getName fct
   printName(vec);
 }
