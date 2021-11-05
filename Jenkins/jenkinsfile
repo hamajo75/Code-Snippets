@@ -1,0 +1,4 @@
+pipleline {
+  // Groovy Syntax
+  // - each statement on separate line (no ";")
+}
