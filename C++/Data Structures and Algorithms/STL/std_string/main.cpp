@@ -55,13 +55,14 @@ void FormatOutput() {
 }
 //-------------------------------------------------------------------------------
 int main(int argc, const char *argv[]) {
-  FindAndReplace();
-  StringManipulation();
-  FormatOutput();
+  // FindAndReplace();
+  // StringManipulation();
+  // FormatOutput();
 
   // push line from CSV-file into vector, split at DELIMITER
-  const char DELIMITER = ';';
-  std::vector<std::string> str_array = splitString("Dummy;String", DELIMITER);
+  std::vector<std::string> str_array = SplitString("Dummy", ',');
+  for (auto& s : str_array)
+    std::cout << s << " ";
 
   return 0;
 }

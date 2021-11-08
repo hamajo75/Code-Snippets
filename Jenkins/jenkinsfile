@@ -1,4 +1,26 @@
-pipleline {
+pipeline {
   // Groovy Syntax
   // - each statement on separate line (no ";")
+
+  parameters {}
+
+  environment {}
+
+  options {
+      timeout(time: 1, unit: 'HOURS')
+  }
+
+  stages {
+    stage('JENKINS: stage description') {
+      options {
+        timeout(time: 1, unit: 'HOURS')   // timeout on this stage
+      }
+      steps {
+        script {
+          // code
+        }
+      }
+
+    }
+  }
 }

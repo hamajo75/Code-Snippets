@@ -1,7 +1,11 @@
 #ifndef STRING_UTILITIES_H_
 #define STRING_UTILITIES_H_
 
-std::vector<std::string> splitString(const std::string &s, char delimiter) {
+#include <string>
+#include <vector>
+#include <algorithm>
+
+std::vector<std::string> SplitString(const std::string &s, char delimiter) {
   std::vector<std::string> tokens;
   std::string token;
   std::istringstream tokenStream(s);
