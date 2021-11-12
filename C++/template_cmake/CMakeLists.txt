@@ -1,11 +1,3 @@
-##########################################################################
-#   COPYRIGHT: Mission Embedded GmbH - All rights reserved.
-#              Registered with Commercial Court Vienna,
-#              reg.no. FN 410566 z
-#     PROJECT: MEI005 Common Components
-#      AUTHOR: gpi@mission-embedded.com
-#  SUBSTITUTE: crr@mission-embedded.com
-##########################################################################
 cmake_minimum_required (VERSION 3.20)
 
 project(main CXX)

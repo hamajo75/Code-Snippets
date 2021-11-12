@@ -9,10 +9,10 @@
 //   return vector1;
 // }
 
-std::vector<Base>& operator +=(std::vector<Base>& vector1, const std::vector<Base>& vector2) {
-  vector1.insert(vector1.end(), vector2.begin(), vector2.end());
-  return vector1;
-}
+// std::vector<Base>& operator +=(std::vector<Base>& vector1, const std::vector<Base>& vector2) {
+//   vector1.insert(vector1.end(), vector2.begin(), vector2.end());
+//   return vector1;
+// }
 
 struct Base {
   std::string base = "base";
@@ -25,22 +25,22 @@ struct DerivedB : public Base {
 };
 
 
-void LoopThroughDerivedClassVector() {
-  std::vector<DerivedA> vectorA;
-  vectorA.push_back(DerivedA{});
-  vectorA.push_back(DerivedA{});
-  vectorA.push_back(DerivedA{});
+// void LoopThroughDerivedClassVector() {
+//   std::vector<DerivedA> vectorA;
+//   vectorA.push_back(DerivedA{});
+//   vectorA.push_back(DerivedA{});
+//   vectorA.push_back(DerivedA{});
 
-  std::vector<DerivedB> vectorB;
-  vectorB.push_back(DerivedB{});
-  vectorB.push_back(DerivedB{});
-  vectorB.push_back(DerivedB{});
+//   std::vector<DerivedB> vectorB;
+//   vectorB.push_back(DerivedB{});
+//   vectorB.push_back(DerivedB{});
+//   vectorB.push_back(DerivedB{});
 
-  vectorA += vectorB;
+//   vectorA += vectorB;
 
-  for (Base b : vectorA)
-    std::cout << "b.base " << b.base << "\n";
-}
+//   for (Base b : vectorA)
+//     std::cout << "b.base " << b.base << "\n";
+// }
 
 class Vertex {
  private:
@@ -125,10 +125,24 @@ void FindElements() {
   std::cout << "result: " << (*result).key << ", " << (*result).value << "\n";
 }
 
+void EraseElements() {
+  std::vector<std::string> request_message_ids_{"hello", "bla", "bla"};
+
+  request_message_ids_.erase(
+    std::find_if(request_message_ids_.begin(), request_message_ids_.end(),
+    [](const auto& request_msg_id) {
+      return request_msg_id == "hello";
+    }));
+
+    for (const auto& id : request_message_ids_)
+      std::cout << "id: " << id << "\n";
+}
+
 int main() {
   // ElementaryOperations();
   // FindElements();
 
-  LoopThroughDerivedClassVector();
+  // LoopThroughDerivedClassVector();
+  EraseElements();
 
 }
