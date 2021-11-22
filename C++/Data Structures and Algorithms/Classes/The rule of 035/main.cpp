@@ -34,7 +34,8 @@ class MyClass {
   int* data_;
 
  public:
-  explicit MyClass(int* data) : data_{data} {           // default constructor
+  MyClass() = default;
+  explicit MyClass(int* data) : data_{data} {           // constructor
     std::cout << "Default constructor\n";
   }
   ~MyClass() {                                          // 1. destructor
@@ -69,12 +70,16 @@ class MyClass {
 //-------------------------------------------------------------------------------
 int main() {
   int data = 1;
-  MyClass o1{&data};  // default constructor
-
-  MyClass o2{o1};     // copy initialization
-  MyClass o3 = o2;    // still copy contructor !
-  MyClass o4{&data};  // default constructor
-  o4 = o3;            // copy assignment
+  MyClass o1{&data};                     // default constructor
+  MyClass o2{o1};                        // copy initialization -> copy constructor
+  MyClass o3 = o2;                       // still copy contructor !
+  MyClass o5;
+  {
+    MyClass o4{&data};                   // default constructor
+    o4 = o3;                             // copy assignment
+    o5 = std::move(o4);                  // move assignment
+  }
+  MyClass o6 = std::move(o5);
 
   return 0;
 }

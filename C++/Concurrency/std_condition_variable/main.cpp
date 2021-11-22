@@ -3,6 +3,9 @@
 #include <iostream>
 #include <thread>
 
+/* Wait until another thread has finished something, a certain condition is met.
+*/
+
 std::condition_variable cv;
 std::mutex cv_m;  // This mutex is used for three purposes:
                   // 1) to synchronize accesses to i

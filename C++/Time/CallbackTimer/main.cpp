@@ -71,6 +71,7 @@ class CallBackTimer {
 //-----------------------------------------------------------------------------
 void CallbackFun() {
   std::cout << "CallbackFun\n";
+  std::this_thread::sleep_for(std::chrono::milliseconds(100));
 }
 //-----------------------------------------------------------------------------
 int main() {
@@ -79,9 +80,11 @@ int main() {
   CallBackTimer timer{1000, CallbackFun};
   timers_["1"] = timer;
 
-  timers_["1"].Start();
-  std::this_thread::sleep_for(std::chrono::milliseconds(5000));
-  timers_["1"].Stop();
+  for (int i = 0; i < 10000; ++i) {
+    timers_["1"].Start();
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    timers_["1"].Stop();
+  }
 
   return 0;
 }

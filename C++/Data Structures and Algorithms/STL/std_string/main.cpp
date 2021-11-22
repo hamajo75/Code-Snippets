@@ -31,6 +31,9 @@ void FindAndReplace() {
   }
   std::string url = "127.0.0";
   std::cout << "url.substr(0, 9) " << url.substr(0, 9) << "\n";
+
+  std::cout << "Replace(): " <<
+    string_utilities::Replace("workplace_${workplaceId}.default", "${workplaceId}", "123") << "\n";
 }
 //-------------------------------------------------------------------------------
 void StringManipulation() {
@@ -46,7 +49,7 @@ void StringManipulation() {
   std::cout << "path: " << path << "\n";
 
   std::string value = "ch4";
-  value = Uppercase(value);
+  value = string_utilities::Uppercase(value);
   std::cout << "value.toupper(): " << value << "\n";
 }
 void FormatOutput() {
@@ -54,15 +57,18 @@ void FormatOutput() {
   std::cout << "2021-09-21T23:30:27." << std::setw(3) << std::setfill('0') << "999" << std::endl;
 }
 //-------------------------------------------------------------------------------
-int main(int argc, const char *argv[]) {
-  // FindAndReplace();
-  // StringManipulation();
-  // FormatOutput();
-
+void SplitString() {
   // push line from CSV-file into vector, split at DELIMITER
-  std::vector<std::string> str_array = SplitString("Dummy", ',');
+  std::vector<std::string> str_array = string_utilities::SplitString("Dummy", ',');
   for (auto& s : str_array)
     std::cout << s << " ";
+}
+//-------------------------------------------------------------------------------
+int main(int argc, const char *argv[]) {
+  FindAndReplace();
+  // StringManipulation();
+  // FormatOutput();
+  // SplitString();
 
   return 0;
 }

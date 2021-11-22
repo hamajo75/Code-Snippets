@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <functional>
 
+#include "vector_utilities.h"
+
 // template <typename T>
 // std::vector<T>& operator +=(std::vector<T>& vector1, const std::vector<T>& vector2) {
 //   vector1.insert(vector1.end(), vector2.begin(), vector2.end());
@@ -100,15 +102,6 @@ void ElementaryOperations() {
   vertices.emplace_back(7, 8, 9);
 }
 
-template<typename T>
-void UpdateElement(std::vector<T>* container, T element, std::function<bool(T)> predicate) {
-  auto entry = std::find_if(container->begin(), container->end(), predicate);
-  if (entry == container->end())
-    container->push_back(element);
-  else
-    *entry = element;
-}
-
 void FindElements() {
   // find, find_if only finds the first element satisfying the criteria
 
@@ -128,14 +121,21 @@ void FindElements() {
 void EraseElements() {
   std::vector<std::string> request_message_ids_{"hello", "bla", "bla"};
 
-  request_message_ids_.erase(
-    std::find_if(request_message_ids_.begin(), request_message_ids_.end(),
-    [](const auto& request_msg_id) {
-      return request_msg_id == "hello";
-    }));
+  // be carefull: this will only erase the first element !!
+  // request_message_ids_.erase(
+  //   std::find_if(request_message_ids_.begin(), request_message_ids_.end(),
+  //   [](const auto& request_msg_id) {
+  //     return request_msg_id == "bla";
+  //   }));
 
-    for (const auto& id : request_message_ids_)
-      std::cout << "id: " << id << "\n";
+  // the right way to do it is this:
+  EraseElements(&request_message_ids_,
+    [](const auto& request_msg_id) {
+    return request_msg_id == "bla";
+  });
+
+  for (const auto& id : request_message_ids_)
+    std::cout << "id: " << id << "\n";
 }
 
 int main() {
