@@ -5,18 +5,18 @@
 #include <vector>
 #include <tuple>
 
-enum class VideoResolution {kHigh, kLow, kUnknown};
-
-template <typename T, typename ... R>
+template <typename T>
 class EnumerationClass {
-  using EnumMap = std::vector<std::tuple<T, R ...>>;
+  using EnumMap = std::vector<std::tuple<T, std::vector<std::string>>>;
  private:
   EnumMap mapping_;
 
   std::string GetIndexedRepresentation(T enum_value, int index) {
     for (auto entry : mapping_)
-      if (std::get<0>(entry) == enum_value)
-        return std::get<1>(entry);
+      if (std::get<0>(entry) == enum_value) {
+        auto representations = std::get<1>(entry);
+        return representations[index];
+      }
 
     return "";
   }
@@ -30,16 +30,18 @@ class EnumerationClass {
   }
 };
 
+enum class VideoResolution {kHigh, kLow, kUnknown};
 //-------------------------------------------------------------------------------
 int main() {
-  EnumerationClass<VideoResolution, std::string, std::string, std::string> my_enum { {
-      {VideoResolution::kHigh, "HIGH", "high", ""},
-      {VideoResolution::kLow, "LOW", "low", ""},
-      {VideoResolution::kUnknown, "UNKNOWN", "unknown", ""}}
+  EnumerationClass<VideoResolution> my_enum { {
+      {VideoResolution::kHigh, {"HIGH", "high", "tertium"}},
+      {VideoResolution::kLow, {"LOW", "low", "tertium", "tetartum"}},
+      {VideoResolution::kUnknown, {"UNKNOWN", "unknown", "tertium"}}}
   };
 
-  std::cout << "representation 1" << my_enum.GetRepresentation(VideoResolution::kLow, 1) << "\n";
-  std::cout << "representation 2" << my_enum.GetRepresentation(VideoResolution::kLow, 2) << "\n";
+  std::cout << "representation 0: " << my_enum.GetRepresentation(VideoResolution::kLow, 0) << "\n";
+  std::cout << "representation 1: " << my_enum.GetRepresentation(VideoResolution::kLow, 1) << "\n";
+  std::cout << "representation 2: " << my_enum.GetRepresentation(VideoResolution::kLow, 2) << "\n";
 
   return 0;
 }
