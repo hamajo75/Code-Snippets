@@ -6,8 +6,9 @@
 #include <tuple>
 
 template <typename T>
-class EnumerationClass {
+class EnumStringMaps {
   using EnumMap = std::vector<std::tuple<T, std::vector<std::string>>>;
+
  private:
   EnumMap mapping_;
 
@@ -22,7 +23,7 @@ class EnumerationClass {
   }
 
  public:
-  explicit EnumerationClass(EnumMap mapping) :
+  explicit EnumStringMaps(EnumMap mapping) :
   mapping_{mapping} {}
 
   std::string GetRepresentation(T enum_value, int index) {
@@ -38,21 +39,20 @@ class EnumerationClass {
     }
     return std::get<0>(mapping_[0]);
   }
-
 };
 
 enum class VideoResolution {kHigh, kLow, kUnknown};
 //-------------------------------------------------------------------------------
 int main() {
-  EnumerationClass<VideoResolution> my_enum { {
+  EnumStringMaps<VideoResolution> my_enum { {
       {VideoResolution::kHigh, {"HIGH", "high", "tertium"}},
       {VideoResolution::kLow, {"LOW", "low", "tertium", "tetartum"}},
       {VideoResolution::kUnknown, {"UNKNOWN", "unknown", "tertium"}}}
   };
 
   std::cout << "representation 0: " << my_enum.GetRepresentation(VideoResolution::kLow, 0) << "\n";
-  std::cout << "representation 1: " << my_enum.GetRepresentation(VideoResolution::kLow, 1) << "\n";
-  std::cout << "representation 2: " << my_enum.GetRepresentation(VideoResolution::kLow, 2) << "\n";
+  std::cout << "representation 1: " << my_enum.GetRepresentation(VideoResolution::kHigh, 1) << "\n";
+  std::cout << "representation 2: " << my_enum.GetRepresentation(VideoResolution::kUnknown, 2) << "\n";
 
   if (my_enum.GetEnumValue("unknown") == VideoResolution::kUnknown)
     std::cout << "unknown\n";
