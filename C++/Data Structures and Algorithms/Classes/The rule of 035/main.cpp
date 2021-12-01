@@ -10,7 +10,7 @@ make sure that assignment, and passing by value works and moving data works with
 
 Rule of Zero C.20
 If you can avoid defining default operations, do.
-In other words: Don't write any of the 6 operations above, if you don't have to.
+In other words: Don't write any of the 6 operations below, if you don't have to.
 And if you have to, look at the Rules below.
 
 Rule of Three
@@ -57,13 +57,23 @@ class MyClass {
 
     return *this;
   }
-  MyClass(MyClass&& other) {                            // 4. move constructor
+
+  // C.66: Make move operations noexcept. (matter of performance)
+  MyClass(MyClass&& other) noexcept {                            // 4. move constructor
     std::cout << "Move constructor\n";
+    // memberwise move (default ctor will do this)
+    // reset original values (e.g. to nullptr)
   }
-  MyClass& operator=(MyClass&& other) {                 // 5. move assignment
+  // When is this function called?
+  //
+
+  MyClass& operator=(MyClass&& other) noexcept {                 // 5. move assignment
     std::cout << "Move assignment\n";
     return other;
   }
+  // When is this function called?
+  // rvalue: v = myfun();
+  // v2 = std::move(v1);     - lvalue v1 lives on!
 
 };
 
