@@ -10,6 +10,7 @@ Videos
 
 ## Basic Concepts
 
+- Uses **Proactor** pattern.
 - You always need an io-context.
 
 ```cpp
@@ -17,3 +18,5 @@ boost::asio::io_context io_context{};
 // start event loop
 io_context.run();
 ```
+
+- Use a **Strand** to synchronize multiple threads.
