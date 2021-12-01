@@ -12,7 +12,7 @@ Videos
 
 - You always need an io-context.
 
-```C++
+```cpp
 boost::asio::io_context io_context{};
 // start event loop
 io_context.run();
