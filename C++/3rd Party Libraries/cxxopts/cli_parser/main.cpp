@@ -53,9 +53,10 @@ int main(int argc, char** argv) {
   cxxopts::Options options("tester", " - test basic options");
 
   options.add_options()
-    ("value", "an option with a value", cxxopts::value<std::string>())
+    ("value", "an option with a value", cxxopts::value<std::string>(), "argument name")
     ("a,av", "a short option with a value", cxxopts::value<std::string>())
     ("d,debug", "Enable debugging", cxxopts::value<bool>()->default_value("false"))
+    ("h,help", "Print usage");
     ;
 
   auto result = options.parse(argc, argv);
@@ -65,8 +66,12 @@ int main(int argc, char** argv) {
     std::cout << value;
   }
   if (result.count("d")) {
-    auto value = result["d"].as<std::bool>();
+    auto value = result["d"].as<bool>();
     std::cout << value;
+  }
+  if (result.count("help")) {
+    std::cout << options.help() << std::endl;
+    return 0;
   }
   return 0;
 }
