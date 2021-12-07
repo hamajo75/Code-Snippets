@@ -1,0 +1,12 @@
+@startuml
+' declarations
+abstract Animal
+
+Animal : MakeSound()
+
+Animal <|-- Dog
+Dog : Bark()
+
+Animal <|-- Donky
+Donky : BeStubborn()
+@enduml
