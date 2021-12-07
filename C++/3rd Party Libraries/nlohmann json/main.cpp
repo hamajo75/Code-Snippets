@@ -96,8 +96,8 @@ void ConvertMessage(const std::string& msg) {
   }
 
   // check if a field exists
-  if (j.find("periodic_workplace_state_send_interval") != j.end())
-    j_out["periodic_workplace_state_send_interval"] = ;
+  if (j_in.find("periodic_workplace_state_send_interval") != j_in.end())
+    j_out["periodic_workplace_state_send_interval"] = 100;
 
   std::cout << j_out;
 }
@@ -129,28 +129,77 @@ void BasicStuff() {
 
   // auto hdr = j3.at("messageHeader").get();
   std::cout << messageType << "\n";
+}
 
+void ObjectCreation() {
   // write it almost like json text file:
+  // nlohmann::json j_object = {
+  //   {"pi", 3.141},
+  //   {"happy", true},
+  //   {"name", "Niels"},
+  //   {"nothing", nullptr},
+  //   {"answer", {
+  //     {"everything", 42}
+  //   }},
+  //   {"list", {1, 0, 2}},
+  //   {"object", {
+  //     {"currency", "USD"},
+  //     {"value", 42.99}
+  //   }}
+  // };
   nlohmann::json j_object = {
-    {"pi", 3.141},
-    {"happy", true},
-    {"name", "Niels"},
-    {"nothing", nullptr},
-    {"answer", {
-      {"everything", 42}
-    }},
-    {"list", {1, 0, 2}},
-    {"object", {
-      {"currency", "USD"},
-      {"value", 42.99}
-    }}
+    {"url", "172.31.1.83:5671"},
+    {"ConnectionOptions", {
+      {"reconnect", true},
+      {"Credentials", {
+        {"user", "intercom-123"},
+        {"password", "intercom-123"}
+      }}
+      },
+      {"SSL", {
+        {"ssl_path", "../../intercom_daemon/ssl-certs/"},
+        {"ssl_client_certificate", "intercom-123.cert.pem"},
+        {"ssl_client_private_key", "intercom-123.key.pem"},
+        {"ssl_broker_certificate", "ccs_dev_ca.pem"}
+      }}
+    }
   };
-  std::cout << j_object;
+
+  std::cout << j_object << "\n";
+
+  nlohmann::json j_object2;
+  j_object2["url"] = "172.31.1.83:5671";
+  j_object2["ConnectionOptions"] = {{"reconnect", true}, {"Credentials", {{"user", "123"}, {"password, 123"}}}};
+  if (j_object2.find("url") != j_object2.end())
+    std::cout << "url found: " << j_object2["url"] << "\n";
+
+
+  // create from string
+  std::string json_str = R"(
+      {
+        "url": "172.31.1.83:5671",
+        "ConnectionOptions": {
+          "reconnect": true,
+          "Credentials": {
+            "user": "intercom-123",
+            "password": "intercom-123"
+          },
+          "SSL": {
+            "ssl_path": "../../intercom_daemon/ssl-certs/",
+            "ssl_client_certificate": "intercom-123.cert.pem",
+            "ssl_client_private_key": "intercom-123.key.pem",
+            "ssl_broker_certificate": "ccs_dev_ca.pem"
+          }
+        }
+      }
+  )";
+  nlohmann::json j_object3 = nlohmann::json::parse(json_str);
 }
 
 //-----------------------------------------------------------------------------
 int main()
 {
   BasicStuff();
+  ObjectCreation();
   // ConvertMessage(json_msg);
 }
