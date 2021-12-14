@@ -20,3 +20,9 @@ io_context.run();
 ```
 
 - Use a **Strand** to synchronize multiple threads.
+
+### Buffers
+
+A buffer is a sequence of bytes represented by
+- [boost::asio::const_buffer](https://www.boost.org/doc/libs/master/doc/html/boost_asio/reference/const_buffer.html)
+- [boost::asio::mutable_buffer](https://www.boost.org/doc/libs/master/doc/html/boost_asio/reference/mutable_buffer.html)
