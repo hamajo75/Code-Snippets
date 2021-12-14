@@ -8,9 +8,12 @@ class WebSocket {
 
  public:
   explicit WebSocket(Mediator* mediator) : mediator_{mediator} {}
-
-  void Send(const std::string& msg) {
-    mediator_->SendToMessageHandler(msg);
+  void Send(const std::string& msg);
+  void Receive(const std::string& msg) {
+    std::cout << "WebSocket::Receive: " << msg << "\n";
+  }
+  void Inject(const std::string& msg) {
+    Send(msg);
   }
 };
 
@@ -20,9 +23,12 @@ class MessageHandler {
 
  public:
   explicit MessageHandler(Mediator* mediator) : mediator_{mediator} {}
-
-  void Send(const std::string& msg) {
-    mediator_->SendToWebSocket(msg);
+  void Send(const std::string& msg);
+  void Receive(const std::string& msg) {
+    std::cout << "MessageHandler::Receive: " << msg << "\n";
+  }
+  void Inject(const std::string& msg) {
+    Send(msg);
   }
 };
 
@@ -34,15 +40,34 @@ class Mediator {
   Mediator() : websocket_{this}, msg_handler_{this} {}
 
   void SendToWebSocket(const std::string& msg) {
-    websocket_.Send(msg);
+    websocket_.Receive(msg);
   }
   void SendToMessageHandler(const std::string& msg) {
-    msg_handler_.Send(msg);
+    msg_handler_.Receive(msg);
+  }
+
+  void InjectStringFromWebsocket(const std::string& msg) {
+    websocket_.Inject(msg);
+  }
+  void InjectMessage(const std::string& msg) {
+    msg_handler_.Inject(msg);
   }
 };
+
+void WebSocket::Send(const std::string& msg) {
+  mediator_->SendToMessageHandler(msg);
+}
+
+void MessageHandler::Send(const std::string& msg) {
+  mediator_->SendToWebSocket(msg);
+}
 
 //-------------------------------------------------------------------------------
 int main() {
   Mediator m;
+
+  m.InjectMessage("message");
+  m.InjectStringFromWebsocket("string");
+
   return 0;
 }
