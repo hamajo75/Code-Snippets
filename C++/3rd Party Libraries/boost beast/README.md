@@ -13,9 +13,19 @@ Videos:
 ### Buffers
 See also [boost::asio](<../boost asio/README.md#Buffers>).
 
-ConstBufferSequence
-MutableBufferSequence
-DynamicBuffer - resizable
+There are two concepts:
+- `ConstBufferSequence`
+- `MutableBufferSequence`
+
+They allow transacting with multiple buffers in a single function call.
+
+The following buffers are by definition `ConstBufferSequence` and `MutableBufferSequence`.
+- [boost::asio::const_buffer](https://www.boost.org/doc/libs/master/doc/html/boost_asio/reference/const_buffer.html)
+- [boost::asio::mutable_buffer](https://www.boost.org/doc/libs/master/doc/html/boost_asio/reference/mutable_buffer.html)
+
+The `DynamicBuffer` concept defines a resizable buffer sequence interface.
+Examples are:
+- `flat_buffer`
 
 ### Networking
 
