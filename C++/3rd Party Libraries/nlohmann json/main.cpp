@@ -197,9 +197,39 @@ void ObjectCreation() {
 }
 
 //-----------------------------------------------------------------------------
+enum class EventNotification {
+  kCheckInSuccessful,
+  kCheckInFailed,
+  kCheckOut,
+};
+
+NLOHMANN_JSON_SERIALIZE_ENUM(EventNotification, {
+  {EventNotification::kCheckInSuccessful, "CHECK_IN_SUCCESSFUL"},
+  {EventNotification::kCheckInFailed, "CHECK_IN_FAILED"},
+  {EventNotification::kCheckOut, "CHECK_OUT"},
+})
+
+void HandleEnums() {
+  std::string json_str = R"(
+  {
+    "messageBody": {
+      "event": "CHECK_IN_SUCCESSFUL"
+    }
+  }
+  )";
+
+  nlohmann::json j_object = nlohmann::json::parse(json_str);
+  EventNotification enum_value = j_object["messagebody"]["event"];
+
+  j_object["messagebody"]["event"] = EventNotification::kCheckInFailed;
+  std::cout << "Enum Value: " << j_object["messagebody"]["event"] << "\n";
+}
+
+//-----------------------------------------------------------------------------
 int main()
 {
-  BasicStuff();
-  ObjectCreation();
+  // BasicStuff();
+  // ObjectCreation();
   // ConvertMessage(json_msg);
+  HandleEnums();
 }
