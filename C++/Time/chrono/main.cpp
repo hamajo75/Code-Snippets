@@ -19,7 +19,15 @@ std::string GetTimestamp() {
   return timestamp_str;
 }
 //-----------------------------------------------------------------------------
-std::string GetISO_8601_Timestamp() {
+// using boost library
+#include <boost/date_time/posix_time/posix_time.hpp>
+std::string GetISO_8601_Timestamp_boost() {
+    auto t = boost::posix_time::microsec_clock::universal_time();
+    return boost::posix_time::to_iso_extended_string(t) + "Z";
+}
+//-----------------------------------------------------------------------------
+// using date library
+std::string GetISO_8601_Timestamp_date() {
   auto now = std::chrono::time_point_cast<std::chrono::milliseconds>(std::chrono::system_clock::now());
   return date::format("%FT%T", now);
 }
@@ -68,8 +76,9 @@ int main() {
 
   // std::cout << GetTimestamp() << "\n";
   // std::cout << GetISO_8601_Timestamp() << "\n";
-  for (int i = 0; i < 2000; ++i){
-    std::this_thread::sleep_for(std::chrono::milliseconds(1));
-    std::cout << currentISO8601TimeUTC() << "\n";
-  }
+  std::cout << GetISO_8601_Timestamp_boost() << "\n";
+  // for (int i = 0; i < 2000; ++i){
+  //   std::this_thread::sleep_for(std::chrono::milliseconds(1));
+  //   std::cout << currentISO8601TimeUTC() << "\n";
+  // }
 }
