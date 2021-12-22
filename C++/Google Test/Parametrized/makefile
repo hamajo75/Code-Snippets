@@ -1,7 +1,7 @@
 BIN=executable
 
 CC=g++
-CFLAGS=-I. -I ../googletest/googletest/include -lgtest -lgtest_main -pthread
+CFLAGS=-I. -I ../googletest/googletest/include -lgtest -lgtest_main -pthread -std=c++17
 
 $(BIN).exe: *.cc
 	$(CC) -g -o $@ *.cc $(CFLAGS)

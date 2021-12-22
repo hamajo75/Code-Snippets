@@ -1,46 +1,30 @@
 #include "gtest/gtest.h"
 #include "gtest/gtest-param-test.h"
 
+#include <tuple>
 #include <memory>
 
-enum class State {
-  kOff,
-  kYellowLights,
-  kRedLights,
-  kGreenLights,
-  kA2Alarm,
-  kA2AlarmReduced,
-  kA1Alarm,
-  kWarning,
-};
+#include "cut.h"
 
-enum class EventNotification {
-  kCheckInSuccessful,
-  kCheckInFailed,
-  kCheckOut,
-};
-
-using StateProposition = std::pair<
-    State,  // expected emissions
-    EventNotification  // input
-  >;
-
-class StateEmissionTestFixture :
-  public testing::TestWithParam<std::vector<StateProposition>>
+class ToHexTest :
+  public testing::TestWithParam<std::tuple<int, int, const char*>>
 {};
 
-TEST_P(StateEmissionTest, UpdateAndEmitState) {
-  const auto& pairs = GetParam();        // get values from INSTANTIATE_TEST_CASE_P
-
-  // do something with pairs
+TEST_P(ToHexTest, IntToHex) {
+  const auto& [val, width, expected] = GetParam();
+  EXPECT_EQ(ToHex(val, width), expected);
 }
 
-INSTANTIATE_TEST_CASE_P(
-  StateEmissionTest,                            // test suite
-  StateEmissionTestFixture,                     //
-  ::testing::Values(                            // parameters to be used
-    {kOff, kCheckInSuccessfull},
-    {kYellowLights, kCheckInSuccessfull}
+INSTANTIATE_TEST_SUITE_P(
+  HexDecIntegers,
+  ToHexTest,
+  testing::Values(
+    std::make_tuple(0, 0, "0x0"),
+    std::make_tuple(26, 0, "0x1a"),
+    std::make_tuple(32, 0, "0x20"),
+    std::make_tuple(1, 2, "0x01"),
+    std::make_tuple(259, 8, "0x00000103"),
+    std::make_tuple(511, 2, "0x1ff")
   )
 );
 
