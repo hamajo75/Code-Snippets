@@ -38,7 +38,7 @@ FOO_PID=$!
 kill $FOO_PID
 
 # default variable values
-LOCAL_BROKER_URL=${LOCAL_BROKER_URL:-"localhost:5672"}
+: ${LOCAL_BROKER_URL:-"localhost:5672"}
 
 # open new gnome-terminal in dir and source settings
 gnome-terminal --working-directory='/home/jha/Development/mee066-esw-intercom-apps/build_target' \

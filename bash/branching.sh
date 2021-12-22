@@ -24,8 +24,13 @@ if [ "$string" ]; then
    echo not empty
 fi
 
+if [ "$start_foreground" = "-fg" ]; then
+   echo "check for string equality in sh"
+fi
+
 # case switch
 case $1 in
+
    start)
       echo starting
       ;;
