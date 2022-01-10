@@ -7,16 +7,16 @@ from WalkThroughComposite import WalkThroughComposite
 import itertools
 def createDirectoryComposite(path, non_recursive=False):
     return_list = []
-    for dir_path, dirs, files in os.walk(path, topdown = True):  
+    for dir_path, dirs, files in os.walk(path, topdown = True):
         for name in itertools.chain(files, dirs):
-            full_path_name = os.path.join(dir_path, name);
+            full_path_name = os.path.join(dir_path, name)
             return_list.append(full_path_name)
 
         if non_recursive:
             break
 
     return return_list
-   
+
 #########################################################################
 # this is executed only when the file is run (not when its imported)
 if __name__ == "__main__":
@@ -47,7 +47,7 @@ if __name__ == "__main__":
       sys.exit("Directory " + directory + " doesn't exit!")
 
    arguments = (csv_replace_file, literal)
-      
+
    WalkThroughComposite.traverse(
-                  createDirectoryComposite(directory, non_recursive), arguments) 
+                  createDirectoryComposite(directory, non_recursive), arguments)
 

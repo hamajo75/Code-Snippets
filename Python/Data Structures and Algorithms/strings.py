@@ -15,6 +15,9 @@ def basic():
 
   str = "access a string like an array"
   print(str[5:])
+  str.capitalize()
+  if ("access" in str):
+    print("contained")
 
   txt = "hello.my.darling"
   x = txt.split(".")
