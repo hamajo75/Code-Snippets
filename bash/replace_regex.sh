@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# ------- sed ---------------------------------------
 # Options
 # -i                            - in place replacement
 
@@ -26,3 +27,11 @@ sed -i '$ s/.$//' $1
 
 # capture groups
 echo "foobarbaz" | sed 's/^foo\(.*\)baz$/\1/'
+
+# ------------ perl -------------------------------------------------------------------------------------
+# sed can't handle '\n', for complicated stuff use perl
+perl -0777 -i.original -pe 's/,\n.*\"enum\": \[(\n.*,)*\n.*\n.*\]//g' definitions.global.1.0.schema.json
+# -0777            slurp whole file (performance)
+# -pi -e           replace in place
+# -i.original      backup the file
+# -pe              output to stdout
