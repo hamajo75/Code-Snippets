@@ -7,8 +7,10 @@ void Simple() {
   std::optional<int> i;
   // i = 1;
 
-  if (i)
-    std::cout << i.value() << "\n";
+  if (i) {
+    std::cout << i.value() << "\n";             // .value()
+    std::cout << *i << "\n";             // pointer style
+  }
 
   // use default value
   std::cout << i.value_or(2) << "\n";
@@ -47,12 +49,12 @@ void OptionalStruct() {
   SensorChannel sensor_channel{0, "CO2"};
   msg_header.SensorChannel = sensor_channel;
 
-  std::cout << "msg_header.SensorChannel.value().GasType " << msg_header.SensorChannel.value().GasType << "\n";
+  std::cout << "msg_header.SensorChannel.value().GasType " << msg_header.SensorChannel->GasType << "\n";
 
   MessageHeader msg_header2{"type", "created_at"};
   // method 1
-  msg_header2.SensorChannel = SensorChannel{msg_header.SensorChannel.value().ChannelNumber,
-                                            msg_header.SensorChannel.value().GasType};
+  msg_header2.SensorChannel = SensorChannel{msg_header.SensorChannel.value().ChannelNumber,         // .value()
+                                            msg_header.SensorChannel->GasType};                     // pointer style
   // method 2
   msg_header2.SensorChannel.emplace(SensorChannel{msg_header.SensorChannel.value().ChannelNumber,
                                                   msg_header.SensorChannel.value().GasType});
