@@ -63,12 +63,17 @@ void SplitString() {
   for (auto& s : str_array)
     std::cout << s << " ";
 }
+void StringConversion() {
+  int i = 10;
+  std::cout << "std::to_string " << std::to_string(i) << "\n";
+}
 //-------------------------------------------------------------------------------
 int main(int argc, const char *argv[]) {
-  FindAndReplace();
+  // FindAndReplace();
   // StringManipulation();
   // FormatOutput();
   // SplitString();
+  void StringConversion();
 
   return 0;
 }

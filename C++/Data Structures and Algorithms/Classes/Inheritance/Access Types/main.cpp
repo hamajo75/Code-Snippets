@@ -6,6 +6,8 @@
 *  public:    Interface stays the same
 *  protected: public -> protected
 *  private:   everything becomes private
+
+Note: default (nothing specified): private for class and public for struct
 ********************************************************************************/
 //-------------------------------------------------------------------------------
 class Animal {
