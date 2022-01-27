@@ -1,4 +1,4 @@
-BIN=main
+BIN=executable
 
 CC=g++
 CFLAGS=-I.

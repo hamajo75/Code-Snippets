@@ -1,4 +1,4 @@
-BIN=main
+BIN=executable
 
 CC=g++
 CFLAGS=-I. -lpthread -std=c++20

@@ -1,5 +1,5 @@
 
-BIN=main
+BIN=executable
 
 CPPFLAGS=-std=c++17 -Werror
 

@@ -1,4 +1,4 @@
-BIN=main
+BIN=executable
 
 CC=g++
 CFLAGS=-I. -I ../googletest/googletest/include -lgtest -lgtest_main -pthread
