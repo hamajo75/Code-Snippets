@@ -29,5 +29,6 @@ int main(int argc, char* argv[]) {
 /* options
 --gtest_list_tests        list all tests
 --gtest_filter=*MessagingRequestManager*
+--gtest_catch_exceptions
 */
 
