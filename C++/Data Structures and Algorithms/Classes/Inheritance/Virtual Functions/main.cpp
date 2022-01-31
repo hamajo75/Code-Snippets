@@ -3,6 +3,8 @@
 #include <iostream>
 #include <memory>
 
+// Hint: for Polymorphism without inheritance see: Design Patterns/Composite/std_variant
+
 class Entity {
  public:
   float X = 0;
