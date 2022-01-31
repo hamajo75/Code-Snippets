@@ -1,4 +1,4 @@
-class MyClass:
+class Executor:
   print("this statement will be executed at instantiation")
   name = "static variable, all objects"
 
@@ -6,11 +6,19 @@ class MyClass:
     self.r = realpart
     self.i = imagpart
 
+  def __call__(self, cmd):
+    print("calling " + cmd)
+
   def myfun(self, text):
     print(text)
 
+
+
 # Instatiation
-x = MyClass(1, 2)
+x = Executor(1, 2)
+
+x("cmd")
+
 print("r:", x.r, ", i:", x.i)
 x.myfun("hello")
 
