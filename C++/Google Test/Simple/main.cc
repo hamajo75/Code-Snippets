@@ -14,7 +14,7 @@ Build gtest lib
 #include <gtest/gtest.h>
 
 TEST(Test1, Subtest1) {
-  ASSERT_TRUE(1 == 1);
+  ASSERT_TRUE(1 == 1) << "Error message!";
 }
 TEST(Test1, Subtest2) {
   ASSERT_FALSE(1 == 2);
