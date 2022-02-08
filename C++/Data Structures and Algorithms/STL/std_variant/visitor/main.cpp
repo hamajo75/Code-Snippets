@@ -10,6 +10,9 @@ struct Device {
   std::string owner;                   // e.g. "master.gasDaemon", "slave.cameraDaemon"
   std::string device_type;             // e.g. "GAS_DETECTOR", "CAMERA"
   std::string device_name;             // e.g. "Camera Left"
+
+  // virtual void FindDevice() {}      // with virtual functions the initializer list init doesn't work anymore
+  // virtual ~Device() = default;
 };
 
 struct PairingDevice : public Device {
@@ -94,13 +97,15 @@ Cameras GetCameras(const WorkplaceDevices& devices) {
 int main() {
   WorkplaceDevices devices;
 
-  Camera camera = {{{"1", "", "", "CAMERA", "camera"},  // Device
+  Device device {"1", "", "", "CAMERA", "camera"};
+
+  Camera camera {{device,  // Device
                     "", ""},                            // PairingDevice
                     "", "", "", "", ""};                // Camera
-  GasDetector gas_detector = {{{"2", "", "", "", "gas_detector"},
+  GasDetector gas_detector {{{"2", "", "", "", "gas_detector"},
                                "", ""},
                                "", "", {}};
-  Intercom intercom = {{{"3", "", "", "", "intercom"}, "", ""},
+  Intercom intercom {{{"3", "", "", "", "intercom"}, "", ""},
                        {camera}, {gas_detector}, "", "", "", ""
                       };
 

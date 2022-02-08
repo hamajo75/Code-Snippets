@@ -20,12 +20,15 @@ void print3(std::string &&name) {}       // rvalue-reference
 void FindAndReplace() {
   std::string name = "Johann Hagler";
 
+  // substr
   std::cout
       << name.substr(7, 12)
       << std::endl;  // substr(index, length) indexing starts at 0, 'Hagler'
+
+  // replace
   std::cout << name.replace(0, 6, "Joe")
             << std::endl;  // replace(index, length)
-  // string.find
+  // find
   if (name.find("Hagler") != std::string::npos) {
       std::cout << "found!" << '\n';
   }

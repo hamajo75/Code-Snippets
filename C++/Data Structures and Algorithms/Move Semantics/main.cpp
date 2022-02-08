@@ -3,7 +3,6 @@
 #include <utility>
 #include <vector>
 
-
 /* The main point is to avoid avoidable construction/destruction of objects.
  */
 
@@ -52,18 +51,18 @@ void printIntVector(std::vector<int> v) { print<std::vector<int>>(v); }
 int main(int argc, const char *argv[]) {
   // Entity e;
 
-  std::vector<int> v1 = {1, 2, 3, 4}; // resource handle, container
+  std::vector<int> v1 = {1, 2, 3, 4};  // resource handle, container
   std::vector<int> v2 = {5, 6, 7, 8};
 
   printIntVector(v1);
   printIntVector(v2);
 
-  v2 = std::move(v1); // now v1 is empty
+  v2 = std::move(v1);  // now v1 is empty
 
   printIntVector(v1);
   printIntVector(v2);
 
-  auto v3 = std::move(v2); // now v2 is empty
+  auto v3 = std::move(v2);  // now v2 is empty
 
   printIntVector(v1);
   printIntVector(v2);
