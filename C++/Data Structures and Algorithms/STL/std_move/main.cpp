@@ -12,7 +12,7 @@ int main() {
   std::vector<int> v1 = {1, 2, 3, 4};
   std::vector<int> v2;
 
-  v2 = std::move(v1);  // now v1 is empty
+  v2 = std::move(v1);  // now v1 is empty, same works for std::string
 
   return 0;
 }

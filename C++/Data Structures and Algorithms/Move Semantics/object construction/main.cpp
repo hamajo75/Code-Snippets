@@ -73,23 +73,40 @@ class Device {
     this->device_type = "X-AM-8000";
     this->device_name = "Gas Detectore upper left";
   }
+
+  Device& operator=(const Device& other) {
+  std::cout << "Device copy operator=\n";
+
+  if (this == &other) return *this;
+
+  this->hardware_id = other.hardware_id;
+  this->external_device_id = other.external_device_id;
+  this->owner = other.owner;
+  this->device_type = other.device_type;
+  this->device_name = other.device_name;
+  return *this;
+}
   Device(const Device& other) {
     std::cout << "Device copy ctor\n";
-
-    this->hardware_id = other.hardware_id;
-    this->external_device_id = other.external_device_id;
-    this->owner = other.owner;
-    this->device_type = other.device_type;
-    this->device_name = other.device_name;
+    *this = other;
   }
-  Device(const Device&& other) {
-    std::cout << "Device move ctor\n";
 
-    hardware_id = std::move(other.hardware_id);
-    external_device_id = std::move(other.external_device_id);
-    owner = std::move(other.owner);
-    device_type = std::move(other.device_type);
-    device_name = std::move(other.device_name);
+  Device& operator=(Device&& other) {
+    std::cout << "Device move operator=\n";
+
+    if (this == &other) return *this;
+
+    this->hardware_id = std::move(other.hardware_id);
+    this->external_device_id = std::move(other.external_device_id);
+    this->owner = std::move(other.owner);
+    this->device_type = std::move(other.device_type);
+    this->device_name = std::move(other.device_name);
+    return *this;
+  }
+
+  Device(Device&& other) {
+    std::cout << "Device move ctor\n";
+    *this = std::move(other);
   }
 };
 
@@ -105,16 +122,16 @@ class Camera : public Device {
   explicit Camera(const Device& device) : Device(device) {
     std::cout << "Camera copy ctor\n";
   }
-  explicit Camera(const Device&& device) : Device(std::move(device)) {
+  explicit Camera(Device&& device) : Device(std::move(device)) {
     std::cout << "Camera move ctor\n";
   }
 };
 
-void AddDevice(const Device& device) {
-  // std::vector<Camera> vec;
-  Camera camera(std::move(device));
-  // Camera camera2{device};
-  // vec.push_back(std::move(camera));
+void AddDevice(Device device) {
+  std::vector<Camera> vec;
+  Camera camera{std::move(device)};
+
+  vec.push_back(std::move(camera));
 }
 
 //-------------------------------------------------------------------------------
@@ -129,13 +146,8 @@ int main(int argc, const char *argv[]) {
 
   auto start = std::chrono::high_resolution_clock::now();
 
-  // std::string str = "3fb1840a-37e1-48db-81c0-cefcef716cab";
-  // std::string str2 = "";
-  // str2 = std::move(str);
-
   // for (int i = 0; i < 10000; ++i) {
-    Device device;
-    AddDevice(device);
+    AddDevice(Device{});
   // }
 
   auto end = std::chrono::high_resolution_clock::now();
