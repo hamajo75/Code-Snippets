@@ -1,26 +1,12 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
-class Fruit {
- public:
-  enum Value : uint8_t { Apple, Pear, Banana, Strawberry };
-
-  Fruit() = default;
-  constexpr explicit Fruit(Value aFruit) : value(aFruit) {}
-
-  constexpr bool operator==(Fruit a) const { return value == a.value; }
-  constexpr bool operator!=(Fruit a) const { return value != a.value; }
-
-  constexpr bool IsYellow() const { return value == Banana; }
-
- private:
-  Value value;
-};
 
 //-------------------------------------------------------------------------------
 int main() {
-  Fruit f = Fruit::Strawberry;
-  f.IsYellow();
+  std::vector<int> v = {1, 2, 3, 4};
+  std::vector<int> v_in = {1, 5, 2};
 
   return 0;
 }

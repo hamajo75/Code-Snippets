@@ -138,11 +138,27 @@ void EraseElements() {
     std::cout << "id: " << id << "\n";
 }
 
+void CompareVectors() {
+  std::vector<int> v1 {6, 1, 2};
+  std::vector<int> v2 {1, 2, 6};
+
+  if (v1 == v2)
+    std::cout << "equal\n";
+  else
+    std::cout << "not equal\n";
+
+  if (std::is_permutation(v1.begin(), v1.end(), v2.begin()))
+    std::cout << "equal\n";
+  else
+    std::cout << "not equal\n";
+}
+
 int main() {
   // ElementaryOperations();
   // FindElements();
 
   // LoopThroughDerivedClassVector();
-  EraseElements();
+  // EraseElements();
+  CompareVectors();
 
 }

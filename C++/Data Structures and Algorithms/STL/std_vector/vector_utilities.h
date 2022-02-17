@@ -12,7 +12,7 @@
 * \param element Element to be updated.
 * \param predicate Identity criterion.
 */
-template<class C>
+template<class C, typename T>
 void UpdateElement(C* container, T element, std::function<bool(typename C::value_type)> predicate) {
   auto entry = std::find_if(container->begin(), container->end(), predicate);
   if (entry == container->end()) {
