@@ -1,14 +1,15 @@
 #include <iostream>
 #include <string.h>
 
-#include <gtest/gtest.h>
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 
-/* Mocks are used to test logic that uses an API (or an Interface). 
-   It only checks the API function 
+/* Mocks are used to test logic that uses an API (or an Interface).
+   It only checks the API function
    calls nothing inside the API. It's not testing the implementation of the API (only
    the Component under Test).
 
-Notes:   
+Notes:
 It's neither a stub nor a fake.
 Fake: working but usually heavily simplified implementation.
 Stub: return predefined results, no real logic inside.
@@ -22,7 +23,7 @@ class API {
 };
 class MockAPI : public API {
  public:
-  MOCK_METHOD(void, APICall, (int x, int y), (override));
+  MOCK_METHOD(bool, APICall, (int x, int y), (override));
 };
 //-----------------------------------------------------------------------------
 // Component Under Test (CUT)
@@ -30,10 +31,10 @@ class UsingTheAPI {
   API& api_;
 
  public:
-  explicit UsingTheAPI(API& api) : apt_{api} {}
+  explicit UsingTheAPI(API& api) : api_{api} {}
 
   void UseTheAPI() {
-    if (api.APICall())
+    if (api_.APICall(1, 2))
       std::cout << "Success\n";
   }
 };
