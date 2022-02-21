@@ -121,12 +121,17 @@ void FindElements() {
 void EraseElements() {
   std::vector<std::string> request_message_ids_{"hello", "bla", "bla"};
 
-  // be carefull: this will only erase the first element !!
+  // WARNING: this will only erase the first element !!
   // request_message_ids_.erase(
   //   std::find_if(request_message_ids_.begin(), request_message_ids_.end(),
   //   [](const auto& request_msg_id) {
   //     return request_msg_id == "bla";
   //   }));
+
+  // erase remove idiom
+  std::vector<int> v;
+  // v.erase(v.begin());                                                             // WARNING: This gives a segfault.
+  v.erase(std::remove_if(v.begin(), v.end(), [](int i){return i % 2;}), v.end());
 
   // the right way to do it is this:
   EraseElements(&request_message_ids_,
@@ -158,7 +163,7 @@ int main() {
   // FindElements();
 
   // LoopThroughDerivedClassVector();
-  // EraseElements();
-  CompareVectors();
+  EraseElements();
+  // CompareVectors();
 
 }
