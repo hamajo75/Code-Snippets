@@ -225,11 +225,23 @@ void HandleEnums() {
   std::cout << "Enum Value: " << j_object["messagebody"]["event"] << "\n";
 }
 
+void ErrorsAndExceptions() {
+  try {
+    nlohmann::json j = nlohmann::json::parse("");
+    auto intercom_id = j["intercom_id"];
+    auto request_msg_id = j["request_msg_id"];
+  } catch (const std::exception& e) {
+    std::cout << "e.what() " << e.what() << "\n";
+  }
+}
+
 //-----------------------------------------------------------------------------
 int main()
 {
   // BasicStuff();
   // ObjectCreation();
   // ConvertMessage(json_msg);
-  HandleEnums();
+  // HandleEnums();
+  ErrorsAndExceptions();
+  std::cout << "Program continues\n";
 }
