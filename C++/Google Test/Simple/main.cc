@@ -16,8 +16,18 @@ Build gtest lib
 TEST(Test1, Subtest1) {
   ASSERT_TRUE(1 == 1) << "Error message!";
 }
-TEST(Test1, Subtest2) {
-  ASSERT_FALSE(1 == 2);
+
+void MyThrowingFun() {
+  throw std::runtime_error("exception");
+}
+
+TEST(ConfigurationTest, EmptyCfg) {
+  EXPECT_NO_THROW(
+    MyThrowingFun());
+
+  EXPECT_THROW(
+    MyThrowingFun(),
+    std::exception);
 }
 //-----------------------------------------------------------------------------
 int main(int argc, char* argv[]) {
