@@ -11,3 +11,7 @@ while inotifywait -e modify /var/log/messages; do
     kdialog --msgbox "Blah blah Apache"
   fi
 done
+
+# read from file
+station_idx=$(head -n 1 "file.txt")
+echo $station_idx

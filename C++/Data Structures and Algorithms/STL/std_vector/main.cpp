@@ -144,7 +144,7 @@ void EraseElements() {
 }
 
 void CompareVectors() {
-  std::vector<int> v1 {6, 1, 2};
+  std::vector<int> v1 {}; //{6, 1, 2};
   std::vector<int> v2 {1, 2, 6};
 
   if (v1 == v2)
@@ -152,10 +152,10 @@ void CompareVectors() {
   else
     std::cout << "not equal\n";
 
-  if (std::is_permutation(v1.begin(), v1.end(), v2.begin()))
-    std::cout << "equal\n";
+  if (std::is_permutation(v1.begin(), v1.end(), v2.begin()))    // if v1.empty this is always true !!
+    std::cout << "permutation\n";
   else
-    std::cout << "not equal\n";
+    std::cout << "not permutation\n";
 }
 
 int main() {
@@ -163,7 +163,7 @@ int main() {
   // FindElements();
 
   // LoopThroughDerivedClassVector();
-  EraseElements();
-  // CompareVectors();
+  // EraseElements();
+  CompareVectors();
 
 }
