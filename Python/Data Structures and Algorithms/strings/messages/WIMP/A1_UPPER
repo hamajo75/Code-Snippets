@@ -1,0 +1,8 @@
+      {
+        "deviceId": "00:11:22:33:FF:01",
+        "alarmType": "A1_UPPER",
+        "sensorChannel": {
+          "channelNumber": 3,
+          "gasType": "CO"
+        }
+      }
