@@ -17,11 +17,29 @@ class MyClass {
   // Notes:
   // - Calling GetElement() would only recursively call itself. That's why we need the static_cast.
 
+  int& GetElementAlternative();
+  const int& GetElementAlternative() const;
+
+
   explicit MyClass(int i) : i_{i} {}
  private:
   int i_;
 
+  template<typename Self>                                 // C++ 14 solution
+  static decltype(auto) GetElementCommon(Self* self) {
+    return (self->i_);          // () -> expression, not just identifier
+  }
+
 };
+
+int& MyClass::GetElementAlternative() {
+  return GetElementCommon(this);
+}
+
+const int& MyClass::GetElementAlternative() const {
+  return GetElementCommon(this);
+}
+
 
 //-------------------------------------------------------------------------------
 int main() {
@@ -29,6 +47,9 @@ int main() {
 
   m.GetElement() = 1;
   std::cout << "m.GetElement(): " << m.GetElement() << "\n";
+
+  m.GetElementAlternative() = 2;
+  std::cout << "m.GetElement(): " << m.GetElementAlternative() << "\n";
 
   return 0;
 }
