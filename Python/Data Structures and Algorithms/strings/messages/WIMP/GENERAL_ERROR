@@ -1,0 +1,5 @@
+      {
+        "deviceId": "00:11:22:33:FF:01",
+        "alarmType": "GENERAL_ERROR",
+        "additionalInformation": "freetext"
+      }

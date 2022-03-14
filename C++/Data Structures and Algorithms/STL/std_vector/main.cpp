@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <vector>
 #include <algorithm>
 #include <functional>
@@ -106,7 +107,9 @@ void FindElements() {
   // find, find_if only finds the first element satisfying the criteria
 
   std::vector<int> v{1, 2, 3, 4};
-  auto result3 = std::find_if(begin(v), end(v), [](int i){ return i%2 == 0; });
+  auto it = std::find_if(begin(v), end(v), [](int i){ return i%2 == 0; });
+  if (it != v.end())
+    std::cout << "element found: " << std::to_string(*it) << "\n";
 
   struct MyStruct {
     std::string key;
@@ -116,6 +119,11 @@ void FindElements() {
 
   auto result = std::find_if(std::begin(data), std::end(data), [](MyStruct d){ return d.key == "b"; });
   std::cout << "result: " << (*result).key << ", " << (*result).value << "\n";
+
+  v = {};
+  it = std::find_if(begin(v), end(v), [](int i){ return i%2 == 0; });
+  if (it == v.end())
+    std::cout << "Nothing found in empty array";
 }
 
 void EraseElements() {
@@ -144,7 +152,7 @@ void EraseElements() {
 }
 
 void CompareVectors() {
-  std::vector<int> v1 {6, 1, 2};
+  std::vector<int> v1 {}; //{6, 1, 2};
   std::vector<int> v2 {1, 2, 6};
 
   if (v1 == v2)
@@ -152,18 +160,18 @@ void CompareVectors() {
   else
     std::cout << "not equal\n";
 
-  if (std::is_permutation(v1.begin(), v1.end(), v2.begin()))
-    std::cout << "equal\n";
+  if (std::is_permutation(v1.begin(), v1.end(), v2.begin()))    // if v1.empty this is always true !!
+    std::cout << "permutation\n";
   else
-    std::cout << "not equal\n";
+    std::cout << "not permutation\n";
 }
 
 int main() {
   // ElementaryOperations();
-  // FindElements();
+  FindElements();
 
   // LoopThroughDerivedClassVector();
-  EraseElements();
+  // EraseElements();
   // CompareVectors();
 
 }

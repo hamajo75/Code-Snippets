@@ -2,6 +2,15 @@
 #include <string.h>
 #include <map>
 
+/*
+Notes
+- ctor and copy= is needed
+
+Questions
+- What if the key doesn't exist?
+- How to check if element is already there?
+*/
+
 struct MyStruct {
   int i_ = -1;
 
@@ -12,7 +21,7 @@ struct MyStruct {
     std::cout << "constructor MyStruct(int i)\n";
   }
 
-  MyStruct& operator=(MyStruct& other) {
+  MyStruct& operator=(const MyStruct& other) {
     std::cout << "copy assignment\n";
     return *this;
   }

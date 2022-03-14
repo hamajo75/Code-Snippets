@@ -1,0 +1,8 @@
+      {
+        "deviceId": "00:11:22:33:FF:01",
+        "alarmType": "A2_LOWER",
+        "sensorChannel": {
+          "channelNumber": 0,
+          "gasType": "CH4"
+        }
+      }
