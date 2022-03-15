@@ -41,6 +41,8 @@ class MyClass {
   ~MyClass() {                                          // 1. destructor
     std::cout << "destructor\n";
   }
+
+  // Note: don't make this explicit, it won't be called e.g. in MyClass c = b;
   MyClass(const MyClass& other) {                       // 2. copy constructor    fun(object)
     std::cout << "Copy constructor\n";
     data_ = new int[1];
