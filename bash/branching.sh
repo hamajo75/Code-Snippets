@@ -22,7 +22,7 @@ else
   echo 'The file "readme.txt" does not exist.'
 fi
 
-# check if string is empty
+# check if string is not empty
 if [ "$string" ]; then
    echo not empty
 fi

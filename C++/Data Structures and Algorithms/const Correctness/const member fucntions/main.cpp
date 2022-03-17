@@ -3,7 +3,7 @@
 
 // see Scott Meyers Effective C++, 3rd Edition, Item 3: Use const whenever possible.
 //   const and non-const versions of member functions witout code duplication.
-
+// see also: C++/Data Structures and Algorithms/Classes/Inheritance/Downcast in container
 
 class MyClass {
  public:
@@ -22,6 +22,7 @@ class MyClass {
 
 
   explicit MyClass(int i) : i_{i} {}
+
  private:
   int i_;
 

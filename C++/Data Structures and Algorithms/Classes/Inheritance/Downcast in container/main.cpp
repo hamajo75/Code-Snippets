@@ -19,7 +19,7 @@ static decltype(auto) FindDevice(C& devices, std::function<bool(Device)> predica
   auto it = std::find_if(devices.begin(), devices.end(), predicate);
   // if (it == devices.end())
   //   return Device{};
-  return *it;
+  return &(*it);
 }
 
 using Cameras = std::vector<Camera>;
@@ -56,17 +56,17 @@ struct DeviceManagement {
     });
   }
 
-  Device& Find(const std::string& hardware_id) {
+  Device* Find(const std::string& hardware_id) {
     return FindCommon(this, hardware_id);
   }
 
-  const Device& Find(const std::string& hardware_id) const {
+  const Device* Find(const std::string& hardware_id) const {
     return FindCommon(this, hardware_id);
   }
   // --------------------------------------------------------------------------------
 
   std::string GetStatus(const std::string& hardware_id) const {
-    return ((Camera&)(Find(hardware_id))).camera_light_status;
+    return reinterpret_cast<const Camera*>(Find(hardware_id))->camera_light_status;
   }
 };
 
@@ -74,7 +74,7 @@ struct DeviceManagement {
 int main() {
   DeviceManagement device_management;
 
-  device_management.Find("123").hardware_id = "456";
+  device_management.Find("123")->hardware_id = "456";
   std::cout << "device_management.cameras[0].hardware_id: " << device_management.cameras[0].hardware_id << "\n";
 
   std::cout << "device_management.GetStatus: " << device_management.GetStatus("456") << "\n";
