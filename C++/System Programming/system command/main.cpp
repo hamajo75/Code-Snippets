@@ -22,8 +22,15 @@ void GetMacAddressOfNetworkInterface(const std::string& net_if) {
   std::system(cmd.c_str());
 }
 
+void CalculateMD5Hash(const std::string& input) {
+  std::string cmd = "printf '%s' " + input + "| md5sum";
+  std::system(cmd.c_str());
+}
+
 //-------------------------------------------------------------------------------
 int main() {
   GetMacAddressOfNetworkInterface("enp0s3");
+  CalculateMD5Hash("Hello");
+
   return 0;
 }
