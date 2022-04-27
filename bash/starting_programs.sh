@@ -47,3 +47,20 @@ gnome-terminal --working-directory='/home/jha/Development/mee066-esw-intercom-ap
 # change workdir to folder of this script
 cd "$(dirname "$0")"
 echo "WORKDIR: ${PWD}"
+
+# collect exit codes
+success=0
+./cmd1.sh
+[[ $? -ne 0 ]] && success=1
+./cmd2.sh
+[[ $? -ne 0 ]] && success=1
+
+exit $success
+
+# exit on error
+if [[ $? -ne 0 ]] ; then
+  exit 1
+fi
+
+# exit on error (if any commands fail)
+set -e

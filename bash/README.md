@@ -1,5 +1,8 @@
 # Shell scripts
 
+## Links
+[The Shell Scripting Tutorial](https://www.shellscript.sh/index.html)
+
 ## Commands
 
 echo "Put the output of $(cmd)" right there."

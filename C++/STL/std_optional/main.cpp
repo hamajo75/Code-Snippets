@@ -82,12 +82,16 @@ void TestOptionalVector() {
   Intercom wimp_intercom;
 
   std::vector<PairingDevice> pairing_devices;
+  std::optional<std::vector<PairingDevice>> pairing_devices_opt;
   for (int i = 0; i < 10; ++i) {
     PairingDevice device;
     device.hardware_id = std::to_string(i);
-    pairing_devices.push_back(device);             // beware! pairing_devices == std::nullopt
+    pairing_devices_opt->push_back(device);          // beware! pairing_devices == std::nullopt
+    pairing_devices.push_back(device);
   }
   wimp_intercom.pairing_devices = pairing_devices;
+
+  pairing_devices_opt.value()[0].pairing_status;
 
   for (auto device : wimp_intercom.pairing_devices.value()) {
     std::cout << device.hardware_id << "\n";
