@@ -1,4 +1,28 @@
 #!/bin/bash
+
+# run cmds with send-keys
+# attach to the session if want it to be opened
+
+#!/bin/sh
+
+SESSION="jha"
+
+# new session
+tmux new-session -d -s $SESSION
+
+# create tabs
+tmux new-window -t $SESSION -n 'intercom-daemon'
+tmux new-window -t $SESSION -n 'gas_daemon'
+tmux new-window -t $SESSION -n 'camera_daemon'
+tmux new-window -t $SESSION -n 'voice-daemon'
+tmux new-window -t $SESSION -n 'signaling-daemon'
+tmux new-window -t $SESSION -n 'button-daemon'
+tmux new-window -t $SESSION -n 'admin-interface-daemon'
+
+tmux attach-session -t $SESSION
+
+
+
 SESSION="AP_test"
 # new session
 tmux new-session -d -s ${SESSION}
@@ -23,3 +47,4 @@ for port in "${PORTS[@]}"; do
   tmux send-keys -t ${SESSION}:0 "iperf3 -s -p ${port} | tee log_${port}.txt" C-m
   pane=$((pane+1))
 done
+
