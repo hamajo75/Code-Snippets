@@ -2,6 +2,7 @@
 #include <string.h>
 
 #include <nlohmann/json.hpp>
+#include <string>
 
 std::string json_msg = R"(
 {
@@ -234,6 +235,45 @@ void ErrorsAndExceptions() {
     std::cout << "e.what() " << e.what() << "\n";
   }
 }
+//-----------------------------------------------------------------------------
+std::string file_content = R"(
+{
+  "workplace_information": {
+    "workplace_info": "workplace_info"
+  },
+  "device_information": {
+    "device_info": "device_info"
+ }
+}
+)";
+void UpdateFile(const std::string& type_of_data,
+                const std::string& data) {
+  try {
+    auto j = nlohmann::json::parse(file_content);
+    j[type_of_data] = nlohmann::json::parse(data);
+    std::cout << "j.dump() " << j.dump() << "\n";
+  } catch (const std::exception& e) {
+    std::cout << "Data (" + type_of_data + ") couldn't be saved: " + std::string {e.what()} << "\n";
+  }
+}
+
+void MultipleObjectsInOneJsonString() {
+std::string json_str = R"(
+{
+  "workplace_info": "workplace_info_updated"
+}
+)";
+
+  UpdateFile("workplace_information", json_str);
+
+json_str = R"(
+{
+  "device_info": "device_info_updated"
+}
+)";
+
+  UpdateFile("device_information", json_str);
+}
 
 //-----------------------------------------------------------------------------
 int main()
@@ -242,6 +282,6 @@ int main()
   // ObjectCreation();
   // ConvertMessage(json_msg);
   // HandleEnums();
-  ErrorsAndExceptions();
-  std::cout << "Program continues\n";
+  // ErrorsAndExceptions();
+  MultipleObjectsInOneJsonString();
 }
