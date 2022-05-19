@@ -1,14 +1,14 @@
 #include <iostream>
 #include <string.h>
 
-/* Decouple interface from implementation. 
- * 
+/* Decouple interface from implementation.
+ *
  * Bridge prevents "Cartesian product" complexity explosion:
- * You need a verson of a class for Windows, Linux, preemptive or cooperative.
+ * You need a version of a class for Windows, Linux, preemptive or cooperative.
  * Instead of implementing 4 classes
 */
 
-// We have different Shapes - circle, square, etc. 
+// We have different Shapes - circle, square, etc.
 // We also have different Renderers - raster, vector
 // we dont want: RasterCircleRenderer, RasterSquareRenderer, VectorCircleRendere, VectorSquareRenderer, ...
 //-------------------------------------------------------------------------------
@@ -34,7 +34,7 @@ class RasterRenderer : public Renderer {
 class Shape {
  protected:
   Renderer& renderer;         // this is the Bridge between concrete Shapes and concrete Renderers
-  Shape(Renderer& renderer)
+  explicit Shape(Renderer& renderer)
     : renderer{renderer} {}
  public:
   virtual void draw() = 0;
@@ -44,12 +44,12 @@ class Shape {
 class Circle : public Shape {
  private:
   float x, y, r;
- 
+
  public:
   Circle(Renderer& renderer, float x,
   float y, float r)
     : Shape(renderer), x{x}, y{y}, r{r} {}
-  
+
   void draw() override { renderer.render_circle(x, y, r); }
   void resize(float factor) override {
     r *= factor;
@@ -57,7 +57,6 @@ class Circle : public Shape {
 };
 //-------------------------------------------------------------------------------
 int main() {
-
   RasterRenderer rr;
   Circle circle(rr, 5, 5, 5);
 

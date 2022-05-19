@@ -43,7 +43,5 @@ int main() {
   Person p{"Sepp"};
   p.greet();
 
-  Messaging::Message{"text"};
-
   return 0;
 }
