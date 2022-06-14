@@ -1,8 +1,8 @@
 #include <iostream>
-#include <string.h>
+#include <string>
 
 #include <nlohmann/json.hpp>
-#include <string>
+#include "support.h"
 
 std::string json_msg = R"(
 {

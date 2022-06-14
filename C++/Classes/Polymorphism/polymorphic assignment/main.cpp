@@ -54,7 +54,7 @@ Good article: https://www.fluentcpp.com/2020/05/22/how-to-assign-derived-classes
 // CRTP solution
 template <typename Derived, typename Base> struct VirtualAssignable : Base {
   explicit VirtualAssignable(std::string type) : Base{type} {}
-  VirtualAssignable &operator=(Base const &other) override {
+  VirtualAssignable& operator=(Base const &other) override {
     auto &thisDerived = static_cast<Derived &>(*this);
     if (auto *otherDerived = dynamic_cast<Derived const *>(&other)) {
       thisDerived = *otherDerived;
@@ -91,16 +91,16 @@ int main() {
   Camera c1{1};
   Camera c2{2};
 
-  Device& b1 = c1;
-  Device& b2 = c2;
+  Device* b1 = &c1;
+  Device* b2 = &c2;
 
   b2 = b1;
 
-  std::cout << "b2.type_ " << b2.type_ << "\n";
+  std::cout << "b2.type_ " << b2->type_ << "\n";
   std::cout << "c2.value_ " << c2.value_ << "\n";
 
   GasDetector g1{1};
-  b2 = g1;
+  b2 = &g1;
   b2 = b1;
 
   return 0;
