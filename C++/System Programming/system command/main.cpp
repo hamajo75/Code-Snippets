@@ -1,29 +1,38 @@
 #include <iostream>
 #include <string>
+#include <array>
 
-std::string exec(const char* cmd) {
-  char buffer[128];
-  std::string result = "";
-  FILE* pipe = popen(cmd, "r");
-  if (!pipe) throw std::runtime_error("popen() failed!");
+#include <cerrno>
+
+std::pair<int, std::string> Execute(const std::string &cmd) {
+  std::array<char,128> buffer;
+  std::string output = "";
+  FILE *pipe = popen(cmd.c_str(), "r");
+  if (!pipe)
+    throw std::runtime_error("popen() failed!");
   try {
-      while (fgets(buffer, sizeof buffer, pipe) != NULL)
-          result += buffer;
+    while (fgets(buffer.data(), sizeof buffer, pipe) != NULL)
+      output += buffer.data();
   } catch (...) {
-      pclose(pipe);
-      throw;
+    pclose(pipe);
+    throw;
   }
   pclose(pipe);
-  return result;
+
+  return std::make_pair(errno, output);
 }
 
-void GetMacAddressOfNetworkInterface(const std::string& net_if) {
-  std::string cmd = "ifconfig " + net_if + " | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}' ";
+void GetMacAddressOfNetworkInterface(const std::string &net_if) {
+  std::string cmd = "ifconfig " + net_if +
+                    " | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}' ";
   std::system(cmd.c_str());
 }
 
 //-------------------------------------------------------------------------------
 int main() {
-  GetMacAddressOfNetworkInterface("enp0s3");
+  GetMacAddressOfNetworkInterface("wlp0s20f3");
+
+  auto result = Execute("systemctl get-default");
+  std::cout << "error_nr: " << result.first << "\n" << result.second << "\n";
   return 0;
 }
