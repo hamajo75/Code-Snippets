@@ -22,14 +22,15 @@ else
   echo 'The file "readme.txt" does not exist.'
 fi
 
-# check if string is empty
+# check if string is not empty
 if [ "$string" ]; then
    echo not empty
 fi
 
 # check if string is equal
-if [ "$start_foreground" = "-fg" ]; then
-   echo "check for string equality in sh"
+destination=root@10.64.0.52
+if [[ "$destination" == *"@10."* ]]; then
+   echo "contains"
 fi
 
 # check if string contains substring

@@ -9,7 +9,7 @@ Inspect and transform properties of types at compile time.
 Is it a function, a class, an integer?
 Conditional compilation
 
-
+Used in template meta programming and conditional compilation.
 */
 // primary type categories
 template <class T> struct is_void;
@@ -36,19 +36,19 @@ void Simple() {
 }
 
 // conditional compilation
-void algorithm_signed  (int i)      { /*...*/ }
-void algorithm_unsigned(unsigned u) { /*...*/ }
+void algorithm_signed(int i) { /*...*/
+}
+void algorithm_unsigned(unsigned u) { /*...*/
+}
 
-template <typename T>
-void algorithm(T t)
-{
-    if constexpr(std::is_signed<T>::value)
-        algorithm_signed(t);
-    else
-    if constexpr (std::is_unsigned<T>::value)
-        algorithm_unsigned(t);
-    else
-        static_assert(std::is_signed<T>::value || std::is_unsigned<T>::value, "Must be signed or unsigned!");
+template <typename T> void algorithm(T t) {
+  if constexpr (std::is_signed<T>::value)             // conditional compilation
+    algorithm_signed(t);
+  else if constexpr (std::is_unsigned<T>::value)
+    algorithm_unsigned(t);
+  else
+    static_assert(std::is_signed<T>::value || std::is_unsigned<T>::value,
+                  "Must be signed or unsigned!");
 }
 //-------------------------------------------------------------------------------
 int main() {

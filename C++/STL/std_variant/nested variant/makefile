@@ -1,7 +1,7 @@
 BIN=executable
 
 CC=g++
-CFLAGS=-I. -lpthread -std=c++2a
+CFLAGS=-I. -lpthread -std=c++17
 
 $(BIN).exe: *.cpp
 	$(CC) -g -o $@ *.cpp $(CFLAGS)

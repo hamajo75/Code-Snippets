@@ -1,39 +1,60 @@
-//helper
-std::vector<std::string> split(std::string const& str, char const delim) noexcept {
-  std::vector<std::string> res = {};
-  std::size_t start {0};
-  std::size_t end {0};
-  while ((start = str.find_first_not_of(delim, end)) != std::string::npos) {
-    end = str.find(delim, start);
-    res.push_back(str.substr(start, end - start));
+//  To parse this JSON data, first install
+//
+//      json.hpp  https://github.com/nlohmann/json
+//
+//  Then include this file, and then do
+//
+//     Coordinate data = nlohmann::json::parse(jsonString);
+
+#pragma once
+
+#include <nlohmann/json.hpp>
+#include <optional>
+
+namespace nlohmann {
+template <typename T> struct adl_serializer<std::optional<T>> {
+  static void to_json(json &j, const std::optional<T> &opt) {
+    if (!opt)
+      j = nullptr;
+    else
+      j = *opt;
   }
-  return res;
-}
-// get("object.value")
-nlohmann::json get(nlohmann::json const& root, std::string const& dot_separated_names) {
-  std::vector<std::string> const names = split(dot_separated_names, '.');
-  nlohmann::json const* leaf = &root;
-  for (auto const& name : names) {
-    if (leaf->contains(name)) {
-      leaf = &leaf->at(name);
-    } else {
-      // Error handling (e.g. throw error)
-      std::cerr << "Name '" << name << "' not found!" << std::endl;
-    }
+
+  static std::optional<T> from_json(const json &j) {
+    if (j.is_null())
+      return std::nullopt;
+    else
+      return j.get<T>();
   }
-  return *leaf;
+};
 }
-// set("object.value")
-nlohmann::json& set(nlohmann::json& root, std::string const& dot_separated_names) {
-  std::vector<std::string> const names = split(dot_separated_names, '.');
-  nlohmann::json* leaf = &root;
-  for (auto const& name : names) {
-    if (leaf->contains(name)) {
-      leaf = &leaf->at(name);
-    } else {
-      // Error handling (e.g. throw error)
-      std::cerr << "Name '" << name << "' not found!" << std::endl;
-    }
-  }
-  return *leaf;
+
+namespace wplc {
+using nlohmann::json;
+
+/**
+ * A geographical coordinate
+ */
+struct Coordinate {
+  std::optional<std::string> latitude;
+};
 }
+
+namespace nlohmann {
+void from_json(const json &j, std::string &x) {
+
+}
+void to_json(json &j, const std::string &x) {
+
+}
+
+
+inline void from_json(const json &j, wplc::Coordinate &x) {
+  x.latitude = j.get<std::optional<std::string>>("latitude");
+}
+
+inline void to_json(json &j, const wplc::Coordinate &x) {
+  j = json::object();
+  j["latitude"] = x.latitude;
+}
+}  // namespace nlohmann

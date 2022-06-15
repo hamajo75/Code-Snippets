@@ -28,11 +28,18 @@ void GetMacAddressOfNetworkInterface(const std::string &net_if) {
   std::system(cmd.c_str());
 }
 
+void CalculateMD5Hash(const std::string& input) {
+  std::string cmd = "printf '%s' " + input + "| md5sum";
+  std::system(cmd.c_str());
+}
+
 //-------------------------------------------------------------------------------
 int main() {
   GetMacAddressOfNetworkInterface("wlp0s20f3");
+  CalculateMD5Hash("Hello");
 
   auto result = Execute("systemctl get-default");
   std::cout << "error_nr: " << result.first << "\n" << result.second << "\n";
+
   return 0;
 }
