@@ -35,6 +35,8 @@ C++/Sandbox/GenericMessage/makefile
 C++/Sandbox/Workplace/main.cpp
 C++/Sandbox/Workplace/makefile
 
+build/
+
 .idea/
 __pycache__
 .vscode

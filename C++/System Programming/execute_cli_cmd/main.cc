@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
-#include <array>
 
+#include <utility>
+#include <array>
 #include <cerrno>
 
 std::pair<int, std::string> Execute(const std::string &cmd) {
@@ -34,12 +35,14 @@ void CalculateMD5Hash(const std::string& input) {
 }
 
 //-------------------------------------------------------------------------------
-int main() {
-  GetMacAddressOfNetworkInterface("wlp0s20f3");
-  CalculateMD5Hash("Hello");
+int main(int argc, char* argv[]) {
+  // GetMacAddressOfNetworkInterface("wlp0s20f3");
+  // CalculateMD5Hash("Hello");
 
-  auto result = Execute("systemctl get-default");
-  std::cout << "error_nr: " << result.first << "\n" << result.second << "\n";
+  std::string target = argv[1];
+
+  auto result = Execute("systemctl isolate " + target);
+  // std::cout << "error_nr: " << result.first << "\n" << result.second << "\n";
 
   return 0;
 }
