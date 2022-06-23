@@ -3,24 +3,33 @@
 
 #include <utility>
 #include <array>
-#include <cerrno>
 
-std::pair<int, std::string> Execute(const std::string &cmd) {
-  std::array<char,128> buffer;
+struct ExecutionResult {
+  int error;
+  std::string output;
+};
+
+ExecutionResult Execute(const std::string &cmd) {
+  std::array<char, 128> buffer;
   std::string output = "";
-  FILE *pipe = popen(cmd.c_str(), "r");
+  std::string cmd_redirected;
+  cmd_redirected = cmd + " 2>&1";   // redirect stderr to stdout
+
+  FILE *pipe = popen(cmd_redirected.c_str(), "r");
+
+  ExecutionResult error_result{-1, "Failed to execute command"};
   if (!pipe)
-    throw std::runtime_error("popen() failed!");
+    return error_result;
   try {
     while (fgets(buffer.data(), sizeof buffer, pipe) != NULL)
       output += buffer.data();
   } catch (...) {
     pclose(pipe);
-    throw;
+    return error_result;
   }
-  pclose(pipe);
 
-  return std::make_pair(errno, output);
+  auto error_code = pclose(pipe);
+  return {error_code, output};
 }
 
 void GetMacAddressOfNetworkInterface(const std::string &net_if) {
@@ -35,14 +44,12 @@ void CalculateMD5Hash(const std::string& input) {
 }
 
 //-------------------------------------------------------------------------------
-int main(int argc, char* argv[]) {
+int main() {
   // GetMacAddressOfNetworkInterface("wlp0s20f3");
   // CalculateMD5Hash("Hello");
 
-  std::string target = argv[1];
-
-  auto result = Execute("systemctl isolate " + target);
-  // std::cout << "error_nr: " << result.first << "\n" << result.second << "\n";
+  auto result = Execute("lsasdf");
+  std::cout << "error_nr: " << result.error << "\n" << result.output << "\n";
 
   return 0;
 }
