@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string.h>
 
+#include "cut.h"
+
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
 
@@ -38,9 +40,14 @@ class UsingTheAPI {
       std::cout << "Success\n";
   }
 };
+
+std::string fun2BMocked() {
+  return "fun2BMocked_mocked";
+}
+
 //-----------------------------------------------------------------------------
 TEST(Test1, Subtest1) {
-  ASSERT_TRUE(1 == 1);
+  fun2BTested();
 }
 //-----------------------------------------------------------------------------
 TEST(Test1, Subtest2) {
