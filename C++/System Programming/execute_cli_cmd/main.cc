@@ -15,7 +15,13 @@ ExecutionResult Execute(const std::string &cmd) {
   std::string cmd_redirected;
   cmd_redirected = cmd + " 2>&1";   // redirect stderr to stdout
 
+std::cout << cmd_redirected << "\n";
+
   FILE *pipe = popen(cmd_redirected.c_str(), "r");
+
+  // C++ 11 alternative with custom deleter
+  // std::unique_ptr<FILE, decltype(&pclose)>
+  //   pipe(popen(cmd.c_str(), "r"), pclose);
 
   ExecutionResult error_result{-1, "Failed to execute command"};
   if (!pipe)
@@ -45,11 +51,12 @@ void CalculateMD5Hash(const std::string& input) {
 
 //-------------------------------------------------------------------------------
 int main() {
-  // GetMacAddressOfNetworkInterface("wlp0s20f3");
+  // GetMacAddressOfNetworkInterface("enp0s3");
   // CalculateMD5Hash("Hello");
 
-  auto result = Execute("lsasdf");
+  auto result = Execute("ifconfig eth0");
   std::cout << "error_nr: " << result.error << "\n" << result.output << "\n";
+  result = Execute("grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}' <<< absd");
 
   return 0;
 }
