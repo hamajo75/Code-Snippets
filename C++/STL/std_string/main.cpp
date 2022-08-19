@@ -55,28 +55,47 @@ void StringManipulation() {
   value = string_utilities::Uppercase(value);
   std::cout << "value.toupper(): " << value << "\n";
 }
+
 void FormatOutput() {
   std::cout << "[" << std::setw(3) << std::setfill('*') << "1]" << std::endl;
   std::cout << "2021-09-21T23:30:27." << std::setw(3) << std::setfill('0') << "999" << std::endl;
 }
-//-------------------------------------------------------------------------------
+
 void SplitString() {
   // push line from CSV-file into vector, split at DELIMITER
   std::vector<std::string> str_array = string_utilities::SplitString("Dummy", ',');
   for (auto& s : str_array)
     std::cout << s << " ";
 }
+
 void StringConversion() {
   int i = 10;
   std::cout << "std::to_string " << std::to_string(i) << "\n";
 }
+
+inline void SortVectorOfStrings() {
+  std::vector<std::string> v = { "12", "2", "10", "6", "4", "99", "12", "110" };
+
+  std::cout << "before\n";
+  for (auto e : v) {
+    std::cout << e << "\n";
+  }
+
+  std::sort(v.begin(), v.end());
+
+  std::cout << "after\n";
+  for (auto e : v) {
+    std::cout << e << "\n";
+  }
+}
 //-------------------------------------------------------------------------------
-int main(int argc, const char *argv[]) {
+int main() {
   // FindAndReplace();
   // StringManipulation();
   // FormatOutput();
   // SplitString();
-  void StringConversion();
+  // StringConversion();
+  SortVectorOfStrings();
 
   return 0;
 }
