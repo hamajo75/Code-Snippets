@@ -14,3 +14,6 @@ Don't confuse `$()` with `${}`. The latter is for distinguishing between `${var}
 - `$0` Name of the script.
 - `$?` Exit status of the most recent command.
 - `$!` Process Id of the most recent command placed in background.
+- `$*` Parameters as one single string.
+- `$@` Parameters as individual strings (to be passed to a function).
+- `$#` Nr. of parameters.
