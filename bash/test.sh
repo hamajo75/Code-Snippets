@@ -23,5 +23,7 @@ fi
 # if [ condition ]     - test
 # if [[ condition ]]   - test with extended features (not POSIX compatible)
 # if ( command )       - command runs in a subshell and sets it's exit code
-# if (( command ))     - arithmetic evaluation:  If the value of the expression is non-zero, the return status is 0; 
+# if (( command ))     - arithmetic evaluation:  If the value of the expression is non-zero, the return status is 0;
 #                        otherwise the return status is 1. (not POSIX compatible)
+
+# "[[" doesn't correspond to a command (like test)

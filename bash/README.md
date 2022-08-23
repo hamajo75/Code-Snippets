@@ -9,6 +9,12 @@ echo "Put the output of $(cmd)" right there."
 
 Don't confuse `$()` with `${}`. The latter is for distinguishing between `${var}text` and `$vartext`.
 
+## Differences between: () (()) [] [[]]
+
+- `[[` can do everything `[` can.
+- `(` substitute command output `$(cmd)`.
+- `((` compound command for evaluating arithmetic expressions `$((3 + 2))`.
+
 ## Special Variables
 
 - `$0` Name of the script.
