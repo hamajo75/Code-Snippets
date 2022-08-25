@@ -1,12 +1,22 @@
 #include <iostream>
 #include <thread>
-
 #include <chrono>
+
 #include <ctime>
+#include <stdlib.h>
+#include <string.h>
 #include <iomanip>
 
 using namespace std::chrono_literals;   // i think you must do it like this
 
+auto GetTimepointFromString(const std::string& timestamp) {
+  std::tm time_point{};
+  std::istringstream ss(timestamp);
+  ss >> std::get_time(&time_point, "%Y-%m-%dT%H:%M:%S");
+  std::time_t t = std::mktime(&time_point);
+  std::tm *utc_time = std::gmtime(&t);
+  return std::chrono::system_clock::from_time_t(std::mktime(utc_time));
+}
 //-----------------------------------------------------------------------------
 // only seconds
 std::string GetTimestamp() {
@@ -19,11 +29,11 @@ std::string GetTimestamp() {
 }
 //-----------------------------------------------------------------------------
 // using boost library
-#include <boost/date_time/posix_time/posix_time.hpp>
-std::string GetISO_8601_Timestamp_boost() {
-    auto t = boost::posix_time::microsec_clock::universal_time();
-    return boost::posix_time::to_iso_extended_string(t) + "Z";
-}
+// #include <boost/date_time/posix_time/posix_time.hpp>
+// std::string GetISO_8601_Timestamp_boost() {
+//     auto t = boost::posix_time::microsec_clock::universal_time();
+//     return boost::posix_time::to_iso_extended_string(t) + "Z";
+// }
 //-----------------------------------------------------------------------------
 std::string currentISO8601TimeUTC() {
   auto now = std::chrono::system_clock::now();
@@ -33,7 +43,7 @@ std::string currentISO8601TimeUTC() {
             std::chrono::duration_cast<std::chrono::seconds>(t).count() * 1000;
 
   std::ostringstream ss;
-  ss << std::put_time(gmtime(&itt), "%FT%T") << "." << ms;
+  ss << std::put_time(std::gmtime(&itt), "%FT%T") << "." << ms;
   return ss.str();
 }
 //-----------------------------------------------------------------------------
@@ -66,7 +76,7 @@ void Print_ms_SinceEpoch() {
 void Timestamps() {
   // std::cout << GetTimestamp() << "\n";
   // std::cout << GetISO_8601_Timestamp() << "\n";
-  std::cout << GetISO_8601_Timestamp_boost() << "\n";
+  // std::cout << GetISO_8601_Timestamp_boost() << "\n";
   // for (int i = 0; i < 2000; ++i){
   //   std::this_thread::sleep_for(std::chrono::milliseconds(1));
   //   std::cout << currentISO8601TimeUTC() << "\n";
@@ -77,5 +87,15 @@ int main() {
   // MeasureTime();
   // Print_ms_SinceEpoch();
   // Timestamps();
+
+  auto tp = GetTimepointFromString("2022-08-24T16:00:00.000Z");
+
+  std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+
+  std::cout << "time elapsed: " << std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now() - tp).count() << "\n";
+
+  auto tt = std::chrono::system_clock::to_time_t(tp);
+  std::cout << "time: " << std::put_time(std::localtime(&tt), "%Y-%m-%dT%H:%M:%S");
+
   return 0;
 }
