@@ -20,6 +20,7 @@ Rule of Three
 Destructor ~MyClass()
 Copy Constructor MyClass(const MyClass& other)
 Copy Assignment Operator MyClass& operator=(MyClass other)
+
 With the implementation of move semantics things get more complicated.
 
 Rule of Five
@@ -35,24 +36,24 @@ class MyClass {
 
  public:
   MyClass() = default;
-  explicit MyClass(int* data) : data_{data} {           // constructor
+  explicit MyClass(int* data) : data_{data} {                 // constructor
     std::cout << "Default constructor\n";
   }
-  ~MyClass() {                                          // 1. destructor
+  ~MyClass() {                                                // 1. destructor
     std::cout << "destructor\n";
   }
 
   // Note: don't make this explicit, it won't be called e.g. in MyClass c = b;
-  MyClass(const MyClass& other) {                       // 2. copy constructor    fun(object)
+  MyClass(const MyClass& other) {                             // 2. copy constructor    fun(object)
     std::cout << "Copy constructor\n";
     data_ = new int[1];
     *data_ = *other.data_;
-    // *this = other;                                            // call copy assignment
+    // *this = other;                                         // call copy assignment
   }
-  MyClass& operator=(const MyClass& other) {            // 3. copy assignment     a = b (other), a will be constructed
+  MyClass& operator=(const MyClass& other) {                  // 3. copy assignment     a = b (other), a will be constructed
     std::cout << "Copy assignment\n";
 
-    if (this == &other) return *this;                        // check assignment to self
+    if (this == &other) return *this;                         // check assignment to self
 
     data_ = new int[1];
     *data_ = *other.data_;
@@ -61,7 +62,7 @@ class MyClass {
   }
 
   // C.66: Make move operations noexcept. (matter of performance)
-  MyClass(MyClass&& other) noexcept {                            // 4. move constructor
+  MyClass(MyClass&& other) noexcept {                         // 4. move constructor
     std::cout << "Move constructor\n";
     // memberwise move (default ctor will do this)
     // reset original values (e.g. to nullptr)
@@ -69,7 +70,7 @@ class MyClass {
   // When is this function called?
   //
 
-  MyClass& operator=(MyClass&& other) noexcept {                 // 5. move assignment
+  MyClass& operator=(MyClass&& other) noexcept {              // 5. move assignment
     std::cout << "Move assignment\n";
     return other;
   }
