@@ -9,7 +9,7 @@
 
 using namespace std::chrono_literals;   // i think you must do it like this
 
-auto GetTimepointFromString(const std::string& timestamp) {
+std::chrono::system_clock::time_point GetTimeFromTimestamp(const std::string& timestamp) {
   std::tm time_point{};
   std::istringstream ss(timestamp);
   ss >> std::get_time(&time_point, "%Y-%m-%dT%H:%M:%S");
@@ -82,20 +82,18 @@ void Timestamps() {
   //   std::cout << currentISO8601TimeUTC() << "\n";
   // }
 }
+
+void PrintTimeDifference(const std::string& timestamp) {
+  auto now = std::chrono::system_clock::now();
+  auto timestamp_time = GetTimeFromTimestamp(timestamp);
+  std::cout << "seconds: " << std::chrono::duration_cast<std::chrono::seconds>(now - timestamp_time).count() << "\n";
+}
 //-----------------------------------------------------------------------------
 int main() {
   // MeasureTime();
   // Print_ms_SinceEpoch();
   // Timestamps();
-
-  auto tp = GetTimepointFromString("2022-08-24T16:00:00.000Z");
-
-  std::this_thread::sleep_for(std::chrono::milliseconds(3000));
-
-  std::cout << "time elapsed: " << std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now() - tp).count() << "\n";
-
-  auto tt = std::chrono::system_clock::to_time_t(tp);
-  std::cout << "time: " << std::put_time(std::localtime(&tt), "%Y-%m-%dT%H:%M:%S");
+  PrintTimeDifference("4022-08-25T13:56:00.638Z");
 
   return 0;
 }

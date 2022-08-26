@@ -1,6 +1,7 @@
 #include <functional>
 #include <thread>
 #include <iostream>
+#include <utility>
 
 #include <boost/asio.hpp>
 
@@ -14,8 +15,8 @@ class Timer {
  public:
   Timer(int interval, TimeoutHandler handler)
     :  timeout_handler_{handler},
-       interval_(interval),
-       timer_(io_context_, std::chrono::seconds(interval_)) {
+       interval_ms_(interval),
+       timer_(io_context_, std::chrono::milliseconds(interval_ms_)) {
     handler_ = [this](const boost::system::error_code& error){
       if (error == boost::asio::error::operation_aborted) {
         // std::cout << "aborted\n";
@@ -26,18 +27,27 @@ class Timer {
     };
   }
 
+  Timer() = delete;
+  // delete because boost timer cannot be assigned
+  Timer& operator=(const Timer& other) = delete;
+  Timer& operator=(Timer&& other) = delete;
+
   Timer(const Timer& other)
-    : timer_(io_context_, std::chrono::seconds(other.interval_)) {
-    *this = other;  // call operator=
+    : timer_(io_context_, std::chrono::milliseconds(other.interval_ms_)) {
+    if (this == &other) return;
+
+    this->handler_ = other.handler_;
+    this->timeout_handler_ = other.timeout_handler_;
+    this->interval_ms_ = other.interval_ms_;
   }
 
-  Timer& operator=(const Timer& other) {
-    if (this == &other) return *this;
+  Timer(Timer&& other) noexcept
+    : timer_(io_context_, std::chrono::milliseconds(other.interval_ms_)) {
+    if (this == &other) return;
 
-    this->timeout_handler_ = other.timeout_handler_;
-    this->interval_ = other.interval_;
-
-    return *this;
+    this->handler_ = std::move(other.handler_);
+    this->timeout_handler_ = std::move(other.timeout_handler_);
+    this->interval_ms_ = std::move(other.interval_ms_);
   }
 
   ~Timer() {
@@ -62,8 +72,8 @@ class Timer {
     }
 
     // this cancels all running timers
-    timer_.expires_after(std::chrono::seconds(interval_));
-    // std::cout << "canceled timers: " << timer_.expires_after(std::chrono::seconds(interval_)) << "\n";
+    timer_.expires_after(std::chrono::milliseconds(interval_ms_));
+    // std::cout << "canceled timers: " << timer_.expires_after(std::chrono::milliseconds(interval_)) << "\n";
     timer_.async_wait(handler_);
   }
 
@@ -71,7 +81,7 @@ class Timer {
   std::thread thread_;
   bool thread_started_ = false;
   TimeoutHandler timeout_handler_;
-  int interval_ = 0;
+  int interval_ms_ = 0;
   boost::asio::io_context io_context_;
   boost::asio::steady_timer timer_;
   std::function<void(const boost::system::error_code& error)>handler_;
@@ -84,11 +94,11 @@ class Timer {
       // keep io_context_ event loop running until io_context_.stop()
       boost::asio::executor_work_guard<boost::asio::io_context::executor_type> wg
         = boost::asio::make_work_guard(io_context_);
-      thread_started_ = true;
-      timer_.async_wait(handler_);
       io_context_.run();
       thread_started_ = false;
       std::cout << "Thread finished\n";
     });
+    thread_started_ = true;
+    Reset();
   }
 };
