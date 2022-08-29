@@ -38,3 +38,4 @@ C++/Sandbox/Workplace/makefile
 .idea/
 __pycache__
 .vscode/launch.json
+.vscode/settings.json
