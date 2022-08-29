@@ -19,17 +19,25 @@ void UseTemplate() {
   std::cout << "gcd(100,33)= " << gcd(100,33) << std::endl;
   std::cout << "gcd(100,0)= " << gcd(100,0)  << std::endl;
 
-  std::cout << std::endl;
+Used in template meta programming and conditional compilation.
+*/
+// primary type categories
+template <class T> struct is_void;
+template <class T> struct is_integral;
+template <class T> struct is_floating_point;
+template <class T> struct is_array;
+template <class T> struct is_pointer;
+template <class T> struct is_reference;
+template <class T> struct is_member_object_pointer;
+template <class T> struct is_member_function_pointer;
+template <class T> struct is_enum;
+template <class T> struct is_union;
+template <class T> struct is_class;
+template <class T> struct is_function;
+template <class T> struct is_lvalue_reference;
+template <class T> struct is_rvalue_reference;
 
-  std::cout << "gcd(100,10LL)= " << gcd(100,10LL) << std::endl;
-
-  std::conditional <(sizeof(100) < sizeof(10LL)), long long, long>::type uglyRes = gcd(100,10LL);
-  auto res= gcd(100,10LL);
-  auto res2= gcd(100LL,10L);
-
-  std::cout << "typeid(gcd(100,10LL)).name(): " << typeid(res).name() << std::endl;
-  std::cout << "typeid(gcd(100LL,10L)).name(): " << typeid(res2).name() << std::endl;
-}
+class Class {};
 
 void Simple() {
   std::cout << std::endl;
@@ -64,18 +72,19 @@ void Simple() {
 }
 
 // conditional compilation
-void algorithm_signed  (int i)      { /*...*/ }
-void algorithm_unsigned(unsigned u) { /*...*/ }
+void algorithm_signed(int i) { /*...*/
+}
+void algorithm_unsigned(unsigned u) { /*...*/
+}
 
-template <typename T>
-void algorithm(T t) {
-  if constexpr(std::is_signed<T>::value)
+template <typename T> void algorithm(T t) {
+  if constexpr (std::is_signed<T>::value)             // conditional compilation
     algorithm_signed(t);
+  else if constexpr (std::is_unsigned<T>::value)
+    algorithm_unsigned(t);
   else
-    if constexpr (std::is_unsigned<T>::value)
-        algorithm_unsigned(t);
-    else
-        static_assert(std::is_signed<T>::value || std::is_unsigned<T>::value, "Must be signed or unsigned!");
+    static_assert(std::is_signed<T>::value || std::is_unsigned<T>::value,
+                  "Must be signed or unsigned!");
 }
 //-------------------------------------------------------------------------------
 int main() {

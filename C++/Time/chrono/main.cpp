@@ -1,13 +1,22 @@
 #include <iostream>
 #include <thread>
-
 #include <chrono>
+
 #include <ctime>
-#include "../../3rd Party Libraries/date/include/date/date.h"
+#include <stdlib.h>
+#include <string.h>
 #include <iomanip>
 
 using namespace std::chrono_literals;   // i think you must do it like this
 
+std::chrono::system_clock::time_point GetTimeFromTimestamp(const std::string& timestamp) {
+  std::tm time_point{};
+  std::istringstream ss(timestamp);
+  ss >> std::get_time(&time_point, "%Y-%m-%dT%H:%M:%S");
+  std::time_t t = std::mktime(&time_point);
+  std::tm *utc_time = std::gmtime(&t);
+  return std::chrono::system_clock::from_time_t(std::mktime(utc_time));
+}
 //-----------------------------------------------------------------------------
 // only seconds
 std::string GetTimestamp() {
@@ -20,17 +29,11 @@ std::string GetTimestamp() {
 }
 //-----------------------------------------------------------------------------
 // using boost library
-#include <boost/date_time/posix_time/posix_time.hpp>
-std::string GetISO_8601_Timestamp_boost() {
-    auto t = boost::posix_time::microsec_clock::universal_time();
-    return boost::posix_time::to_iso_extended_string(t) + "Z";
-}
-//-----------------------------------------------------------------------------
-// using date library
-std::string GetISO_8601_Timestamp_date() {
-  auto now = std::chrono::time_point_cast<std::chrono::milliseconds>(std::chrono::system_clock::now());
-  return date::format("%FT%T", now);
-}
+// #include <boost/date_time/posix_time/posix_time.hpp>
+// std::string GetISO_8601_Timestamp_boost() {
+//     auto t = boost::posix_time::microsec_clock::universal_time();
+//     return boost::posix_time::to_iso_extended_string(t) + "Z";
+// }
 //-----------------------------------------------------------------------------
 std::string currentISO8601TimeUTC() {
   auto now = std::chrono::system_clock::now();
@@ -40,7 +43,7 @@ std::string currentISO8601TimeUTC() {
             std::chrono::duration_cast<std::chrono::seconds>(t).count() * 1000;
 
   std::ostringstream ss;
-  ss << std::put_time(gmtime(&itt), "%FT%T") << "." << ms;
+  ss << std::put_time(std::gmtime(&itt), "%FT%T") << "." << ms;
   return ss.str();
 }
 //-----------------------------------------------------------------------------
@@ -48,7 +51,7 @@ void sleep_chrono_literals(std::chrono::duration<float> duration) {
   std::this_thread::sleep_for(duration);
 }
 //-----------------------------------------------------------------------------
-void measure_time() {
+void MeasureTime() {
   auto start = std::chrono::high_resolution_clock::now();
 
   sleep_chrono_literals(100ms);
@@ -58,6 +61,7 @@ void measure_time() {
 // std::chrono::milliseconds
 // std::chrono::seconds
 // std::chrono::minutes
+
 // std::chrono::hours
 
   auto end = std::chrono::high_resolution_clock::now();
@@ -65,20 +69,31 @@ void measure_time() {
   std::cout << "Waited " << elapsed.count() << " ms\n";
 }
 //-----------------------------------------------------------------------------
-void print_ms_since_epoch() {
+void Print_ms_SinceEpoch() {
   std::cout << "time: " << std::chrono::duration_cast<std::chrono::milliseconds>
     (std::chrono::system_clock::now().time_since_epoch()).count() << "\n";
 }
-//-----------------------------------------------------------------------------
-int main() {
-  // measure_time();
-  // print_ms_since_epoch();
-
+void Timestamps() {
   // std::cout << GetTimestamp() << "\n";
   // std::cout << GetISO_8601_Timestamp() << "\n";
-  std::cout << GetISO_8601_Timestamp_boost() << "\n";
+  // std::cout << GetISO_8601_Timestamp_boost() << "\n";
   // for (int i = 0; i < 2000; ++i){
   //   std::this_thread::sleep_for(std::chrono::milliseconds(1));
   //   std::cout << currentISO8601TimeUTC() << "\n";
   // }
+}
+
+void PrintTimeDifference(const std::string& timestamp) {
+  auto now = std::chrono::system_clock::now();
+  auto timestamp_time = GetTimeFromTimestamp(timestamp);
+  std::cout << "seconds: " << std::chrono::duration_cast<std::chrono::seconds>(now - timestamp_time).count() << "\n";
+}
+//-----------------------------------------------------------------------------
+int main() {
+  // MeasureTime();
+  // Print_ms_SinceEpoch();
+  // Timestamps();
+  PrintTimeDifference("4022-08-25T13:56:00.638Z");
+
+  return 0;
 }

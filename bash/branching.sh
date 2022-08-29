@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # check for argument
 # the space " " before "]" is necessary !
@@ -7,9 +7,12 @@ if [ "$1" ]; then
 else
   remote_url=172.31.1.83:5671
 fi
+
 # check absence of parameter
 if [ -z "$1" ]; then
+  echo '$1 not present'
 fi
+
 echo "external url:" $remote_url
 
 # check if file exists
@@ -19,13 +22,25 @@ else
   echo 'The file "readme.txt" does not exist.'
 fi
 
-# check if string is empty
+# check if string is not empty
 if [ "$string" ]; then
    echo not empty
 fi
 
-if [ "$start_foreground" = "-fg" ]; then
-   echo "check for string equality in sh"
+# check if string is equal
+destination=root@10.64.0.52
+if [[ "$destination" == *"@10."* ]]; then
+   echo "contains"
+fi
+
+# check if string contains substring
+str="hello world"
+substr="hello"
+if [[ $str == *"$substr"* ]];
+then
+    echo "String contains substring."
+else
+    echo "String does not contain substring."
 fi
 
 # case switch
@@ -41,6 +56,6 @@ case $1 in
       echo restarting
       ;;
    *)
-      echo don\'t know
+      echo 'dont know this case'
       ;;
 esac

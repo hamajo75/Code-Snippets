@@ -5,8 +5,12 @@ def basic():
     m = re.search("aa", "aabcd")
     m.group(0)
 
-    # substitution
-    re.sub("a", "b", "aaccdd")
+    # substitution this, that, in
+    # use raw strings for capture groups (\1, \2, etc.)
+    re.sub(r"(ab)", r"\1b", "aaccdd")
+
+    # get a list of all matches
+    matches = re.findall("std::shared_ptr<.*> ().*);", "content")
 
 def camel_case_split(str):
     matches = re.finditer(
