@@ -41,3 +41,4 @@ build/
 __pycache__
 .vscode
 executable
+.vscode/settings.json
