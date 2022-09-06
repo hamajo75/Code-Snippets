@@ -11,3 +11,8 @@ add_executable(${PROJECT_NAME} main.cpp)
 
 # macro definition (use like #define in the code)
 target_compile_definitions(${PROJECT_NAME} PRIVATE TEST_MSG_PATH=${CMAKE_SOURCE_DIR})
+
+# install files
+install(FILES project_config_default.json
+  DESTINATION /data/project_config/
+  RENAME config.json)
