@@ -1,15 +1,32 @@
 @startuml
-participant "intercom-daemon" as id
-participant "gas-daemon" as gd
-participant "camera-daemon" as cd
-participant "field engineer" as fe
 
-id -> gd: Request: Visible Devices (topic: /broadcast/pairing)
-id -> cd: Request: Visible Devices (topic: /broadcast/pairing)
-gd -> id: Response: DeviceId, pairing status
-cd -> id: Response: DeviceId, pairing status
-id -[#blue]> fe: List of devices with pairing status
-fe -[#blue]> id: Pair gas detector SNR
-id -> gd: Request: Pair device with DeviceId
-gd -> id: Response: Device with DeviceId is paired
+title Title
+
+participant "Alice" as a
+participant "Bob" as b
+
+== Part I ==
+
+skinparam sequenceMessageAlign center
+a <-> b: open websocket connection
+note left: Note left
+
+== Part II ==
+
+a -[#blue]> b: Request
+note right
+a note
+can also be defined
+on several lines
+end note
+note right of b
+a 2nd note below
+needs to be specified
+relative to the participant
+end note
+skinparam responseMessageBelowArrow true
+a <-[#blue] b: Response
+note right of a: This is displayed right of Alice.
+note over a, b: This is displayed over Alice & Bob.
+
 @enduml

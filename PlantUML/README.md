@@ -2,6 +2,9 @@
 
 Play around online: [www.plantuml](www.plantuml)
 
+## VS Code
+Use the Rich PlantUML Extension.
+
 ## Class Diagram
 
 By default an element is a class.
