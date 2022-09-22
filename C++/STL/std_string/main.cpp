@@ -88,6 +88,15 @@ inline void SortVectorOfStrings() {
     std::cout << e << "\n";
   }
 }
+#include <boost/algorithm/string.hpp>
+void BoostFunctions() {
+  std::string str = "\n alkdjflkadjfl     \n  ";
+
+  boost::trim(str);
+  std::cout << str << "\n";
+
+  // boost::algorithm::replace_all(str, "\n", "");
+}
 //-------------------------------------------------------------------------------
 int main() {
   // FindAndReplace();
@@ -95,7 +104,8 @@ int main() {
   // FormatOutput();
   // SplitString();
   // StringConversion();
-  SortVectorOfStrings();
+  // SortVectorOfStrings();
+  BoostFunctions();
 
   return 0;
 }
