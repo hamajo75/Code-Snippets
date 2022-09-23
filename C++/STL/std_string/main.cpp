@@ -90,7 +90,7 @@ inline void SortVectorOfStrings() {
 }
 #include <boost/algorithm/string.hpp>
 void BoostFunctions() {
-  std::string str = "\n alkdjflkadjfl     \n  ";
+  std::string str = "\n alkdjflkadjfl     \n  hello \n next line   \n";
 
   boost::trim(str);
   std::cout << str << "\n";
