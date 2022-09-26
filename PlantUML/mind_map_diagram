@@ -1,0 +1,13 @@
+@startmindmap
+* Root
+**[#orange] Branch A
+***_ Branch A.1
+***_ Branch A.2
+left side
+**[#lightblue] Branch B
+*** Branch B.1
+***: Branch B.2
+Example 1
+<code>mycode();</code>
+;
+@endmindmap
