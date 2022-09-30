@@ -20,3 +20,10 @@ Relationships between classes:
 - Inheritance: `--|>`
 - Composition: `--*`
 - Aggregation: `--o`
+
+## Themes
+
+Just add: `!theme spacelab`
+
+- spacelab
+- blueprint
