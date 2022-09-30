@@ -11,7 +11,7 @@ SESSION="jha"
 tmux new-session -d -s $SESSION
 
 # create tabs
-tmux new-window -t $SESSION -n 'intercom-daemon'
+tmux new-window -t $SESSION -n 'intercom-daemon' 'ls -lah'  # add command at the end
 tmux new-window -t $SESSION -n 'gas_daemon'
 tmux new-window -t $SESSION -n 'camera_daemon'
 tmux new-window -t $SESSION -n 'voice-daemon'
