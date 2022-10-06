@@ -1,0 +1,17 @@
+@startuml
+skinparam componentStyle rectangle
+
+component A as a{
+  component A.1 {
+    component A.1.1
+    component A.1.2
+  }
+  component A.2 {
+    component A.2.1
+    component A.2.2
+  }
+}
+
+A.1 -- A.2
+
+@enduml
