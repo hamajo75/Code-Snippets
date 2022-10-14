@@ -59,3 +59,7 @@ case $1 in
       echo 'dont know this case'
       ;;
 esac
+
+# conditionally execute cmd
+[[ -n $DEBUG ]] && echo "DEBUG is set"
+[[ -z $DEBUG ]] && echo "DEBUG is not set"
