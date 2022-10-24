@@ -8,7 +8,17 @@
 #include <string.h>
 #include <iomanip>
 
-using namespace std::chrono_literals;   // i think you must do it like this
+/*
+std::get_time                                                          - parse timestamp string to std::tm
+std::ctime                                                             - format
+timegm                                                                 - interpret std::tm as utc
+std::mktime                                                            - convert std::tm to time_t (local)
+std::gmtime                                                            - convert std::tm to time_t (utc)
+std::chrono::system_clock::from_time_t(time);                          - time_t -> std::chrono::system_clock::time_point
+std::chrono::duration_cast<std::chrono::seconds>(t2 - t1)              - time_point diff -> duration
+*/
+
+using namespace std::chrono_literals;  // NOLINT, e.g. 1s, 20ms, etc.
 
 //-----------------------------------------------------------------------------
 // only seconds
@@ -78,47 +88,43 @@ void Timestamps() {
 
 std::chrono::system_clock::time_point GetTimeFromTimestamp(const std::string& timestamp) {
   std::tm time_point{};
+  time_point.tm_isdst = -1;
   std::istringstream ss(timestamp);
   ss >> std::get_time(&time_point, "%Y-%m-%dT%H:%M:%S");
   if (ss.fail())
     std::cout << "couldn't parse input\n";
 
-  std::time_t t = std::mktime(&time_point);
 
-  std::cout << "time_point 2 time_t: " << std::ctime(&t) << "\n";
+  std::time_t time = timegm(&time_point);   // interpret time_point as utc
+  // std::time_t time = std::mktime(&time_point);
+  std::cout << "time_t: " << std::ctime(&time) << "\n";
 
-  std::tm *utc_time = std::gmtime(&t);
+  std::tm *utc_tm = std::gmtime(&time);
+  auto utc_time = std::mktime(utc_tm);
 
-  auto tt = std::mktime(utc_time);
-  std::cout << "utc time 2 time_t: " << std::ctime(&tt) << "\n";
+  std::cout << "utc time 2 time_t: " << std::ctime(&utc_time) << "\n";
 
-  return std::chrono::system_clock::from_time_t(std::mktime(utc_time));
+  return std::chrono::system_clock::from_time_t(time);
 }
 
-std::int64_t GetTimestampDifferenceToNow(const std::string& timestamp) {
+std::chrono::system_clock::duration GetTimestampDifferenceToNow(
+  const std::string& timestamp
+) {
   auto now = std::chrono::system_clock::now();
-
-  auto tt = std::chrono::system_clock::to_time_t(now);
-  std::cout << "now: " << std::ctime(&tt) << "\n";
-
   auto timestamp_time = GetTimeFromTimestamp(timestamp);
-  tt = std::chrono::system_clock::to_time_t(timestamp_time);
-  std::cout << "timestamp: " << std::ctime(&tt) << "\n";
 
-
-  std::cout << "count(): " << std::chrono::duration_cast<std::chrono::seconds>(now - timestamp_time).count() << "\n";
-  return std::chrono::duration_cast<std::chrono::seconds>(now - timestamp_time).count();
+  return now - timestamp_time;
 }
+
 //-----------------------------------------------------------------------------
 int main(int argc, char *argv[]) {
   // MeasureTime();
   // Print_ms_SinceEpoch();
   // Timestamps();
 
-  std::cout << "sizeof(time_t): " << sizeof(time_t) << "\n";
-
   auto timestamp = argc > 1 ? argv[1] : "4022-08-25T13:56:00.638Z";
-  std::cout << GetTimestampDifferenceToNow(timestamp) << "\n";
+  std::cout << std::chrono::duration_cast<std::chrono::seconds>(
+    GetTimestampDifferenceToNow(timestamp)).count() << "\n";
 
   return 0;
 }
