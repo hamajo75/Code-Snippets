@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <vector>
 #include <ranges>
+#include <numeric>
 
 #include <string_view>
 
@@ -34,6 +35,15 @@ bool TestDataViews() {
   return result;
 }
 
+int GetSumOfSquares() {
+  auto view = GetData()
+    | std::ranges::views::transform([](int i) { return i * i; })   // this is lazy!
+    | std::ranges::views::common;  // good practice when "view" is to be used with C++ 17 algorithms,
+                                   // transforms the range into a common type (expected by std::accumulate)
+
+  return std::accumulate(view.begin(), view.end(), 0);
+}
+
 void SplitString() {
   // lazy evaluation
   auto split_strings =
@@ -49,6 +59,7 @@ void SplitString() {
 int main() {
 
   SplitString();
+  std::cout << "GetSumOfSquares(): " << GetSumOfSquares() << "\n";
 
   std::cout << std::boolalpha << TestData() << "\n";
   std::cout << std::boolalpha << TestDataViews() << "\n";
