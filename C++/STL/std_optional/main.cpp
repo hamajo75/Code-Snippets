@@ -8,6 +8,9 @@ void Simple() {
   std::optional<int> i;
   // i = 1;
 
+  if (i.value_or(0) == 0)
+    std::cout << "this is not ok\n";
+
   if (i) {
     std::cout << i.value() << "\n";             // .value()
     std::cout << *i << "\n";             // pointer style
@@ -99,24 +102,9 @@ void TestOptionalVector() {
 }
 
 int main() {
-  // Simple();
+  Simple();
   // OptionalStruct();
-  // MessageHeader msg_header {"type", "created_at"};
-
-  // ConnectionOptions conn_opts {
-  //    (ConnectionOptions::Credentials){    // here you cannot use plain initializer list
-  //     "user",
-  //     "password"
-  //   },
-  //   {                             // this works
-  //     "ssl_client_certificate"
-  //     "ssl_client_private_key"
-  //     "ssl_broker_certificate"
-  //   },
-  //   true
-  // };
-
-  TestOptionalVector();
+  // TestOptionalVector();
 
   return 0;
 }

@@ -1,3 +1,4 @@
+#include <exception>
 #include <stdio.h>
 #include <string>
 #include <cctype>
@@ -37,6 +38,20 @@ void FindAndReplace() {
 
   std::cout << "Replace(): " <<
     string_utilities::Replace("workplace_${workplaceId}.default", "${workplaceId}", "123") << "\n";
+
+  using namespace std::literals;
+  auto ip_address = ""s;
+  auto pos = ip_address.find_last_of(".");
+  auto length = ip_address.size();
+  auto ip_address_plus_1 = ip_address.substr(0, pos + 1);
+
+  try {
+    ip_address_plus_1 += std::to_string(std::stoi(ip_address.substr(pos + 1, length - pos)) + 1);
+  } catch(const std::exception& e) {
+    std::cout << e.what() << "\n";
+  }
+
+  std::cout << "ip_address_plus_1: " << ip_address_plus_1 << "\n";
 }
 //-------------------------------------------------------------------------------
 void StringManipulation() {
@@ -99,13 +114,13 @@ void BoostFunctions() {
 }
 //-------------------------------------------------------------------------------
 int main() {
-  // FindAndReplace();
+  FindAndReplace();
   // StringManipulation();
   // FormatOutput();
   // SplitString();
   // StringConversion();
   // SortVectorOfStrings();
-  BoostFunctions();
+  // BoostFunctions();
 
   return 0;
 }
