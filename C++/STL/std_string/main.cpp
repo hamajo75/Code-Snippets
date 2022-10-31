@@ -9,6 +9,8 @@
 #include <vector>
 #include <iomanip>
 
+#include <boost/asio.hpp>
+
 #include "string_utilities.h"
 
 /* functions: substring, replace, find, length
@@ -52,6 +54,11 @@ void FindAndReplace() {
   }
 
   std::cout << "ip_address_plus_1: " << ip_address_plus_1 << "\n";
+
+  boost::system::error_code ec;
+  boost::asio::ip::address::from_string(ip_address, ec);
+  if (ec)
+    std::cout << ec.message( ) << std::endl;
 }
 //-------------------------------------------------------------------------------
 void StringManipulation() {
