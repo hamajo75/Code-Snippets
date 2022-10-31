@@ -11,6 +11,6 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-ADD ./ /usr/src/mee066-esw-intercom-apps/
-WORKDIR /usr/src/mee066-esw-intercom-apps/
+ADD ./ /usr/src/work-dir/
+WORKDIR /usr/src/work-dir/
 CMD ["./tools/docker-run-qa.sh"]
