@@ -1,9 +1,11 @@
 #include <cstddef>
 #include <exception>
+#include <initializer_list>
 #include <ios>
 #include <iostream>
 #include <string>
 #include <any>
+#include <tuple>
 
 #include <unordered_map>
 #include <unordered_set>
@@ -18,18 +20,16 @@ enum class Event {
 };
 
 using EventGroup = std::unordered_set<Event>;
-using EventHandlerParams = std::any;
+using EventHandlerParams = std::initializer_list<std::any>;
 using EventHandler = std::function<void(EventHandlerParams)>;
 using EventHandlers = std::unordered_map<Event, EventHandler>;
 
-
-
 EventHandlers event_handlers_ = {
   {Event::kEventA, [](EventHandlerParams p){
-    auto info = std::any_cast<std::string>(p);
+    auto info = std::any_cast<std::string>(*p.begin());
     std::cout << "handle EventA " << info << "\n"; }},
   {Event::kEventB, [](EventHandlerParams p){
-    auto flag = std::any_cast<bool>(p);
+    auto flag = std::any_cast<bool>(*p.begin());
     std::cout << "handle EventB " << std::boolalpha << flag << "\n"; }},
   {Event::kEventC, [](EventHandlerParams p){ std::cout << "handle EventC\n"; }},
   {Event::kEventE, [](EventHandlerParams p){}}
@@ -43,9 +43,9 @@ void OnUpdate(
   for (const auto& event : events) {
     try {
       if (event == Event::kEventA)
-        event_handlers_[event](info);
+        event_handlers_[event]({info});
       if (event == Event::kEventB)
-        event_handlers_[event](flag);
+        event_handlers_[event]({flag});
     } catch (const std::exception& e) {
       std::cout << "no handler found\n";
     }
