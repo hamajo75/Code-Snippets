@@ -25,9 +25,12 @@ using EventHandler = std::function<void(EventHandlerParams)>;
 using EventHandlers = std::unordered_map<Event, EventHandler>;
 
 EventHandlers event_handlers_ = {
-  {Event::kEventA, [](EventHandlerParams p){
+  {Event::kEventA,
+    [](EventHandlerParams p){
     auto info = std::any_cast<std::string>(*p.begin());
-    std::cout << "handle EventA " << info << "\n"; }},
+    std::cout << "handle EventA " << info << "\n"; }
+
+    },
   {Event::kEventB, [](EventHandlerParams p){
     auto flag = std::any_cast<bool>(*p.begin());
     std::cout << "handle EventB " << std::boolalpha << flag << "\n"; }},
