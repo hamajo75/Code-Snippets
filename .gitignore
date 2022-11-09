@@ -36,6 +36,7 @@ C++/Sandbox/Workplace/main.cpp
 C++/Sandbox/Workplace/makefile
 
 build/
+target/
 
 .idea/
 __pycache__
