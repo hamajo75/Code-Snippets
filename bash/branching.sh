@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# boolean operators: &&, ||
+
+
 # check for argument
 # the space " " before "]" is necessary !
 if [ "$1" ]; then
