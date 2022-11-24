@@ -17,7 +17,7 @@ cat file.txt >> output.txt 2>&1
 cat << EOF >> output.txt
 {
   "Object": {
-    "key": "value
+    "key": "value"
   }
 }
 EOF

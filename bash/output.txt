@@ -81,6 +81,6 @@ x.MessageHeader = j.at("messageHeader").get<messaging::json::MessageHeader>();
 
 {
   "Object": {
-    "key": "value
+    "key": "value"
   }
 }
