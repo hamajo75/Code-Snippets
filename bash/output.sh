@@ -13,3 +13,11 @@ cat file.txt > output.txt
 cat file.txt >> output.txt
 # stdout + stderr
 cat file.txt >> output.txt 2>&1
+
+cat << EOF >> output.txt
+{
+  "Object": {
+    "key": "value
+  }
+}
+EOF
