@@ -4,6 +4,8 @@
 [The Shell Scripting Tutorial](https://www.shellscript.sh/index.html)
 
 ## Commands
+`cmd1 && cmd2`   execute `cmd2` only if `cmd1` was successful.
+`cmd1 || cmd2`   execute `cmd2` only if `cmd1` failed.
 
 echo "Put the output of $(cmd)" right there."
 

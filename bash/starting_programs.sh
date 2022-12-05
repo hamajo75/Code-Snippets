@@ -16,6 +16,9 @@ fg
 # see all background processes
 jobs
 
+# run multiple commands in background
+{ sleep 10; echo finished; } &
+
 # running multiple cmds if previous was successful
 command_1 && command_2
 
