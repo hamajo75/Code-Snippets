@@ -11,11 +11,15 @@ echo "Put the output of $(cmd)" right there."
 
 Don't confuse `$()` with `${}`. The latter is for distinguishing between `${var}text` and `$vartext`.
 
-## Differences between: () (()) [] [[]]
+## Differences between: () (()) [] [[]] {}
 
-- `[[` can do everything `[` can.
-- `(` substitute command output `$(cmd)`.
+- `[[` can do everything `[` can. Try to use `[[`.
+- `$(cmd)` substitute command output.
+- `( cmd1, cmd2 )` group commands and run them in a subshell (note the spaces!).
+- `{ cmd1, cmd2 }` group commands and run them in the current shell (note the spaces!).
 - `((` compound command for evaluating arithmetic expressions `$((3 + 2))`.
+- `{h,d}ump` expands to hump, dump.
+
 
 ## Special Variables
 
