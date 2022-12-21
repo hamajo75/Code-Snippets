@@ -94,6 +94,8 @@ class MyClass {
 };
 // start a member function in a thread
 MyClass::MyClass()
+// if you wanna use a mutex in WorkerThread,
+// make sure it's initialized before this
     : thread_(&MyClass::WorkerThread, this) { }
 
 //-----------------------------------------------------------------------------
