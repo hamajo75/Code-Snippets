@@ -1,0 +1,10 @@
+[Unit]
+Description=Test service foo 3
+#PartOf=slave.target
+StopWhenUnneeded=true
+
+[Service]
+ExecStart=/bin/bash /usr/local/bin/foo.sh 3
+Type=simple
+
+
