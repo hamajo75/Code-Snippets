@@ -5,5 +5,5 @@ https://github.com/AkihiroSuda/containerized-systemd
 `docker run -it --rm --privileged systemd_playground /bin/bash`
 
 # Switching targets
-master: run foo1 & foo2
-slave: run foo2 & foo3     (foo2 will continue running)
+groupA: run foo1 & foo2
+groupB: run foo2 & foo3     (foo2 will continue running)
