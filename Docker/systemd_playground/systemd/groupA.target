@@ -1,7 +1,7 @@
 [Unit]
 Description=Test target master
 Wants=foo1.service foo2.service
-Conflicts=slave.target
+Conflicts=groupB.target
 
 [Install]
 WantedBy=multi-user.target

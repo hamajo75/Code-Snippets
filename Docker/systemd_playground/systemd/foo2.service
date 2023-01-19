@@ -1,6 +1,5 @@
 [Unit]
 Description=Test service foo 2
-#PartOf=master.target
 StopWhenUnneeded=true
 
 [Service]
