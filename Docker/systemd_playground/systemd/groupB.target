@@ -1,4 +1,4 @@
 [Unit]
-Description=Test target slave
+Description=GroupB target
 Wants=foo2.service foo3.service
 Conflicts=groupA.target
