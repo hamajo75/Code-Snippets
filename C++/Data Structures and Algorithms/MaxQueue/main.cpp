@@ -4,19 +4,28 @@
 #include <deque>
 
 template<typename T>
-class MaxQueue : public std::deque<T> {
+class MaxQueue {
  public:
   explicit MaxQueue(size_t size) : size_{size} {}
 
-  void push(T element) {
-    this->push_back(element);
+  void Push(T element) {
+    queue_.push_back(element);
 
-    if (this->size() > size_)
-      this->pop_front();
+    if (queue_.size() > size_)
+      queue_.pop_front();
   }
+
+  T Front() { return queue_.front(); }
+  void Pop() { queue_.pop_front(); }
+  size_t Empty() const { return queue_.empty(); }
+
+  auto begin() { return queue_.begin(); }
+  auto end() { return queue_.end(); }
 
  private:
   size_t size_;
+  // use deque for iteration
+  std::deque<T> queue_;
 };
 
 template<typename T>
@@ -31,14 +40,14 @@ void PrintQueue(MaxQueue<T> q) {
 int main() {
   MaxQueue<int> q{2};
 
-  q.push(1);
-  q.push(2);
-  q.push(3);
+  q.Push(1);
+  q.Push(2);
+  q.Push(3);
 
   PrintQueue(q);
 
-  q.push(4);
-  q.push(5);
+  q.Push(4);
+  q.Push(5);
 
   PrintQueue(q);
 
