@@ -1,4 +1,5 @@
 #include <cstddef>
+#include <ios>
 #include <iostream>
 #include <string>
 #include <deque>
@@ -17,7 +18,7 @@ class MaxQueue {
 
   T Front() { return queue_.front(); }
   void Pop() { queue_.pop_front(); }
-  size_t Empty() const { return queue_.empty(); }
+  bool Empty() const { return queue_.empty(); }
 
   auto begin() { return queue_.begin(); }
   auto end() { return queue_.end(); }
@@ -36,10 +37,10 @@ void PrintQueue(MaxQueue<T> q) {
   }
 }
 
-//-------------------------------------------------------------------------------
-int main() {
+void test_MaxQueue() {
   MaxQueue<int> q{2};
 
+  std::cout << std::boolalpha << "q.Empty(): " << q.Empty() << "\n";
   q.Push(1);
   q.Push(2);
   q.Push(3);
@@ -49,7 +50,17 @@ int main() {
   q.Push(4);
   q.Push(5);
 
+  std::cout << std::boolalpha << "q.Empty(): " << q.Empty() << "\n";
+  std::cout << "q.Front(): " << q.Front() << "\n";
   PrintQueue(q);
+  q.Pop();
 
+  PrintQueue(q);
+}
+
+//-------------------------------------------------------------------------------
+int main() {
+
+  test_MaxQueue();
   return 0;
 }
