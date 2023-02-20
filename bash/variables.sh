@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Variable Substitution
+
 # default value
 : ${UTILS_PATH:=.}
 #. $UTILS_PATH/utils.sh

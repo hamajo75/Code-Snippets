@@ -11,6 +11,11 @@ echo "Put the output of $(cmd)" right there."
 
 Don't confuse `$()` with `${}`. The latter is for distinguishing between `${var}text` and `$vartext`.
 
+## Quoting
+
+- Single quotes: 'no substitution'
+- Double quotes: "$variables will be substituted"
+
 ## Differences between: () (()) [] [[]]
 
 - `[[` can do everything `[` can.
