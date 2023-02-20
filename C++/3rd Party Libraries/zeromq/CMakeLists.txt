@@ -1,12 +1,17 @@
 cmake_minimum_required (VERSION 3.20)
 
-project(main CXX)
+project(zeromq CXX)
 
 set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
 find_package(Threads REQUIRED)
+find_package(cppzmq)
 
-file(GLOB SOURCES "*.cc")
+set(SERVER server)
+add_executable(${SERVER} server.cc)
+target_link_libraries(${SERVER} pthread)
+target_link_libraries(${SERVER} cppzmq)
 
-add_executable(${PROJECT_NAME} ${SOURCES})
-target_link_libraries(${PROJECT_NAME} pthread)
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR})
+set(CLIENT client)
+add_executable(${CLIENT} client.cc)
+target_link_libraries(${CLIENT} pthread)
+target_link_libraries(${CLIENT} cppzmq)
