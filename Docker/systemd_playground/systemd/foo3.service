@@ -1,0 +1,9 @@
+[Unit]
+Description=Test service foo 3
+StopWhenUnneeded=true
+
+[Service]
+ExecStart=/bin/bash /usr/local/bin/foo.sh 3
+Type=simple
+
+

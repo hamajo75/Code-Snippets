@@ -1,0 +1,10 @@
+FROM ubuntu:20.04
+RUN apt-get update && \
+  apt-get install -y --no-install-recommends \
+  systemd systemd-sysv dbus dbus-user-session vim
+
+COPY docker-entrypoint.sh /
+COPY systemd /lib/systemd/system
+COPY foo.sh /usr/local/bin/
+
+ENTRYPOINT ["/docker-entrypoint.sh"]

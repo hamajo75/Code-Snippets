@@ -74,12 +74,38 @@ void Basic() {
 void thread_fun() {
   std::cout << "having fun\n";
 }
+
+//-----------------------------------------------------------------------------
+using namespace std::chrono_literals;
+class MyClass {
+ public:
+  MyClass();
+  ~MyClass() {
+    if (thread_.joinable())
+      thread_.join();
+  }
+
+ private:
+  std::thread thread_;
+  void WorkerThread() {
+    std::cout << "working...\n";
+    std::this_thread::sleep_for(1s);
+  }
+};
+// start a member function in a thread
+MyClass::MyClass()
+// if you wanna use a mutex in WorkerThread,
+// make sure it's initialized before this
+    : thread_(&MyClass::WorkerThread, this) { }
+
 //-----------------------------------------------------------------------------
 int main() {
   Basic();
 
   std::thread t(thread_fun);  // will cause: terminate called without an active exception
 
+  MyClass obj;
+  t.join();
 
   return 0;
 }

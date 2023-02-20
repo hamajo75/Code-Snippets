@@ -1,9 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 # Variable Substitution
 
 # default value
 : ${UTILS_PATH:=.}
+# Note: the ":" in front allows you to write UTILS_PATH=${UTILS_PATH:=.} shorter.
 #. $UTILS_PATH/utils.sh
 
 #config_file=not_default_value

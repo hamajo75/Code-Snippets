@@ -2,6 +2,7 @@
 
 ## Links
 [The Shell Scripting Tutorial](https://www.shellscript.sh/index.html)
+[Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
 
 ## Commands
 `cmd1 && cmd2`   execute `cmd2` only if `cmd1` was successful.
@@ -11,16 +12,24 @@ echo "Put the output of $(cmd)" right there."
 
 Don't confuse `$()` with `${}`. The latter is for distinguishing between `${var}text` and `$vartext`.
 
+<<<<<<< HEAD
 ## Quoting
 
 - Single quotes: 'no substitution'
 - Double quotes: "$variables will be substituted"
 
 ## Differences between: () (()) [] [[]]
+=======
+## Differences between: () (()) [] [[]] {}
+>>>>>>> 922e41fe83ccfb8dfbde9bc00a895a754e01bbfd
 
-- `[[` can do everything `[` can.
-- `(` substitute command output `$(cmd)`.
+- `[[` can do everything `[` can. Try to use `[[`.
+- `$(cmd)` substitute command output.
+- `( cmd1, cmd2 )` group commands and run them in a subshell (note the spaces!).
+- `{ cmd1, cmd2 }` group commands and run them in the current shell (note the spaces!).
 - `((` compound command for evaluating arithmetic expressions `$((3 + 2))`.
+- `{h,d}ump` expands to hump, dump.
+
 
 ## Special Variables
 

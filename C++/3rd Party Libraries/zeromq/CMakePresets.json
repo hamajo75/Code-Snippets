@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 20,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "displayName": "Default",
+      "description": "Default build using make",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_CXX_FLAGS": "-Werror -Wall -Wextra -pedantic",
+        "CMAKE_CXX_STANDARD": "17",
+        "CMAKE_CXX_STANDARD_REQUIRED": "YES",
+        "CMAKE_CXX_EXTENSIONS": "OFF"
+      },
+      "environment": {
+      }
+    }
+  ]
+}

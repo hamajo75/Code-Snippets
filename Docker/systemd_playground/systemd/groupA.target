@@ -1,0 +1,7 @@
+[Unit]
+Description=GroupA target
+Wants=foo1.service foo2.service
+Conflicts=groupB.target
+
+[Install]
+WantedBy=multi-user.target
