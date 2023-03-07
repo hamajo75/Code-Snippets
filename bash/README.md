@@ -1,8 +1,8 @@
 # Shell scripts
 
 ## Links
-[The Shell Scripting Tutorial](https://www.shellscript.sh/index.html)
-[Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [The Shell Scripting Tutorial](https://www.shellscript.sh/index.html)
+- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
 
 ## Commands
 `cmd1 && cmd2`   execute `cmd2` only if `cmd1` was successful.
