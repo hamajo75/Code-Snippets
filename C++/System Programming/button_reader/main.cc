@@ -5,10 +5,10 @@
 #include <string>
 #include <fstream>
 #include <filesystem>
-
+#include <array>
 
 void ReadFromKeyboard() {
-  std::filesystem::path event_file = "/dev/input/event2";
+  std::filesystem::path event_file = "/dev/input/event1";
   std::ifstream file{event_file};
   file.exceptions(std::ios_base::badbit | std::ios_base::failbit);  // otherwise file.read is not blocking
   input_event event;
