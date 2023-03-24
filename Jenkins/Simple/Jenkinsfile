@@ -8,8 +8,8 @@ pipeline {
     HOME = sh(script: "mkdir -p build/ && mktemp -d -p $WORKSPACE/build/", returnStdout: true).trim()
     DOCKER_TAG = params.VERSION.replaceAll(/[^a-zA-Z0-9_.]/, "-")
     REGISTRY = "docker-dev.mission-embedded.net"
-    IMAGE = "mee066-esw/mee066-intercom-apps:${env.DOCKER_TAG}"
-    CREDENTIAL_ID = "MEE066-ESW-artifact-robot"
+    IMAGE = "my_repository:${env.DOCKER_TAG}"
+    CREDENTIAL_ID = ""
   }
   parameters {
     string(
@@ -34,7 +34,7 @@ pipeline {
         checkout scm: ([
           $class: 'GitSCM',
           userRemoteConfigs: [
-            [credentialsId: 'MEE066-VIZA-ESW-Bitbucket-Repos', url: "git@bitbucket.org:mission-embedded/mee066-esw-intercom-apps.git"]
+            [credentialsId: '', url: ""]
           ],
           branches: [
             [name: '$BRANCH_NAME']
@@ -55,7 +55,7 @@ pipeline {
       }
       steps {
         script {
-          docker.withRegistry('https://docker-dev.mission-embedded.net', "${env.CREDENTIAL_ID}") {
+          docker.withRegistry('', "${env.CREDENTIAL_ID}") {
             def image = docker.build(env.IMAGE, "--pull .")
             image.push()
           }
@@ -71,7 +71,7 @@ pipeline {
         script {
           docker.withRegistry("https://${env.REGISTRY}", "${env.CREDENTIAL_ID}") {
             docker.image(env.IMAGE).inside("--rm") {
-              sh "./tools/docker-run-qa.sh"
+              sh "script.sh"
             }
           }
         }
