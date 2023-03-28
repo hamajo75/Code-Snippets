@@ -11,10 +11,9 @@ class Animal {
   virtual void Eat() = 0;
 };
 
-class Dog : private Animal {
+class Dog : public Animal {
  public:
-  Dog(){ std::cout << "Dog constructor\n"; }
-  ~Dog(){ std::cout << "Dog destructor\n"; }
+  Dog() = default;
 
  private:
   void Eat() override {
@@ -22,10 +21,9 @@ class Dog : private Animal {
   }
 };
 
-class Donkey : private Animal {
+class Donkey : public Animal {
  public:
-  Donkey(){ std::cout << "Donkey constructor\n"; }
-  ~Donkey(){ std::cout << "Donkey destructor\n"; }
+  Donkey() = default;
 
  private:
   void Eat() override {
