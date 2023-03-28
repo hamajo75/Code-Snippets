@@ -1,10 +1,6 @@
 #include <iostream>
 #include <string>
 
-#include <iostream>
-#include <string.h>
-
-
 // Animal interface
 class Animal {
  public:
