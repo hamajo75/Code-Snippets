@@ -7,6 +7,10 @@ class Animal {
   virtual void Eat() = 0;
 };
 
+void UseTheInterface(Animal& animal) {
+  animal.Eat();
+}
+
 class Dog : public Animal {
  public:
   Dog() = default;
@@ -19,17 +23,17 @@ class Dog : public Animal {
 
 class Donkey : public Animal {
  public:
-  Donkey() = default;
+  Donkey() {
+    UseTheInterface(*this);
+  };
 
  private:
+  // Notice that is's perfectly possible to have the Eat() method private, so it
+  // can only be called through the base class interface.
   void Eat() override {
     std::cout << "Donkey eats\n";
   }
 };
-
-void UseTheInterface(Animal& animal) {
-  animal.Eat();
-}
 
 //-------------------------------------------------------------------------------
 int main(int argc, const char* argv[]) {
