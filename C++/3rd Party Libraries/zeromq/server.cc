@@ -5,9 +5,11 @@
 #include <iostream>
 #include <unistd.h>
 
+using namespace std::chrono_literals;
 int main () {
     //  Prepare our context and socket
-    zmq::context_t context (2);
+    int nr_threads;
+    zmq::context_t context (nr_threads = 2);
     zmq::socket_t socket (context, zmq::socket_type::rep);
     socket.bind ("tcp://*:5555");
 
@@ -19,7 +21,7 @@ int main () {
         std::cout << "Received Hello" << std::endl;
 
         //  Do some 'work'
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        std::this_thread::sleep_for(1000ms);
 
         //  Send reply back to client
         zmq::message_t reply (5);

@@ -5,7 +5,8 @@
 int main ()
 {
     //  Prepare our context and socket
-    zmq::context_t context (1);
+    int nr_threads;
+    zmq::context_t context (nr_threads = 1);
     zmq::socket_t socket (context, zmq::socket_type::req);
 
     std::cout << "Connecting to hello world server..." << std::endl;
