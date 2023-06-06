@@ -28,6 +28,9 @@ Qpid Proton:
 
 Create a file named `CMakeUserPresets.json` in the root folder.
 
+### Notes
+- Escape Backticks: ``` Put your code between `` `` ``` or more if you have to escape mutiple backticks.
+
 ### Images
 ![alt text](Gnu.PNG "Title")
 
