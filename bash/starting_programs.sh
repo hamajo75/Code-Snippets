@@ -67,6 +67,7 @@ fi
 
 # exit on error (if any commands fail)
 set -e
+set +e          # ignore errors (continue)
 
 # Wait for a process to end by process ID
 # param1: PID

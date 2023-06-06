@@ -25,3 +25,13 @@ dollar_star a b c        # pass params as one single string
 echo Script params: $@
 shift 1                  # shift params 1 to the left
 echo Script params shifted: $@
+
+# fake return value
+get_ssid() {
+  echo "MySSID"
+}
+
+set_ssid() {
+  local SSID="$(get_ssid)"
+  echo $SSID
+}
