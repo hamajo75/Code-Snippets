@@ -13,6 +13,11 @@ echo "Put the output of $(cmd)" right there."
 
 Don't confuse `$()` with `${}`. The latter is for distinguishing between `${var}text` and `$vartext`.
 
+### Command Substitution
+
+- `cd /lib/modules/\`uname -r\``
+- `cd /lib/modules/$(uname -r)`
+
 ## Quoting
 
 - Single quotes: 'no substitution'
@@ -36,3 +41,4 @@ Don't confuse `$()` with `${}`. The latter is for distinguishing between `${var}
 - `$*` Parameters as one single string.
 - `$@` Parameters as individual strings (to be passed to a function).
 - `$#` Nr. of parameters.
+
