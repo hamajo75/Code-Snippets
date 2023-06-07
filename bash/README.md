@@ -13,6 +13,11 @@ echo "Put the output of $(cmd)" right there."
 
 Don't confuse `$()` with `${}`. The latter is for distinguishing between `${var}text` and `$vartext`.
 
+### Command Substitution
+Get the output of a command.
+- `` cd /lib/modules/`uname -r` ``
+- `cd /lib/modules/$(uname -r)`
+
 ### Redirections
 
 ## Quoting
