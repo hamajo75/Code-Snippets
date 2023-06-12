@@ -66,3 +66,20 @@ esac
 # conditionally execute cmd
 [[ -n $DEBUG ]] && echo "DEBUG is set"
 [[ -z $DEBUG ]] && echo "DEBUG is not set"
+
+# using a function
+my_check() {
+  if [[ -e readme.txt ]] ; then
+    true
+  else
+    false
+  fi
+}
+
+if ! my_check; then
+  echo my_check failed
+fi
+
+# C-style if then - in arithmetic expansions
+i=2
+echo $(($i < 2 ? 3 : 4))
