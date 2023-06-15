@@ -35,7 +35,7 @@ get_ssid() {
 set_ssid() {
   local ssid1=${1:-"$(get_ssid)"}
   local ssid2=${2:-"$(get_ssid)"}
-  shift $(($# < 3 ? $# : 2))
+  shift $(($# < 2 ? $# : 2))
 
   echo ssid1: $ssid1 ssid2: $ssid2 rest: $@
 }

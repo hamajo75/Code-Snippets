@@ -1,4 +1,14 @@
-#!/bin/sh
+#!/bin/bash
+
+# store a cmd call in variable
+cmd="ls"
+cmd="$cmd -la"
+eval "$cmd"
+
+cmd=(ls -la)
+"${cmd[@]}"
+
+exit 0
 
 # run kill 0 to kill all background (chhild) processes in case one of the signals
 # SIGINT SIGTERM SIGERR SIGEXIT
