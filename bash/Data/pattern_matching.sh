@@ -6,11 +6,11 @@
 # ## last or longest match
 # #  first or shortest match
 
-test="ajdfljbadlfjaöbajadlfj"
+test="20.16.86.189:13002"
 
-echo ${test##*ba}  # jadlfj
-echo ${test#*ba}   # dlfjaöbajadlfj
+echo ${test##*:}  # jadlfj
+echo ${test#*:}   # dlfjaöbajadlfj
 
 # from right to left: %
-echo ${test%%ba*}  # ajdflj
-echo ${test%ba*}   # ajdfljbadlfjaö
+echo ${test%%:*}  # ajdflj
+echo ${test%:*}   # ajdfljbadlfjaö
