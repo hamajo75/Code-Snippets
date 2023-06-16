@@ -7,3 +7,6 @@ echo ${VAR//./_}
 "string" != "string"
 -z ""  # true if string length == 0
 -n "1" # true if string length > 0
+
+# uppercase: ^ fist letter, ^^ all, lowercase: ~, ~~
+echo ${$interface^^}
