@@ -8,20 +8,18 @@ eval "$cmd"
 cmd=(ls -la)
 "${cmd[@]}"
 
-exit 0
-
 # run kill 0 to kill all background (chhild) processes in case one of the signals
 # SIGINT SIGTERM SIGERR SIGEXIT
 trap "exit" INT TERM ERR
 trap "kill 0" EXIT
 
 # run in the background
-program &
+ls &
 # bring it back (%n for multiple processes)
-fg
+#fg
 # move to background again
   # Ctrl + z puts current process to sleep
-  bg
+#  bg
 
 # see all background processes
 jobs
@@ -30,45 +28,44 @@ jobs
 { sleep 10; echo finished; } &
 
 # running multiple cmds if previous was successful
-command_1 && command_2
+echo command_1 && echo command_2
 
 # send string to stdin
-/my/bash/script <<< 'This string will be sent to stdin.'
+# /my/bash/script <<< 'This string will be sent to stdin.'
 
 # send input to background process with fifo
-startIntercomDaemon() {
-  mkfifo /tmp/intercom-in > /dev/null 2>&1
-  tail -f /tmp/intercom-in | intercom-daemon -u $REMOTE_BROKER_URL --ssl-path=ssl-certs -t > /dev/null &
-}
+# startIntercomDaemon() {
+#   mkfifo /tmp/intercom-in > /dev/null 2>&1
+#   tail -f /tmp/intercom-in | intercom-daemon -u $REMOTE_BROKER_URL --ssl-path=ssl-certs -t > /dev/null &
+# }
 
-stopIntercomDaemon() {
-  echo stop > /tmp_intercom-in  # this might lead to "interrupted system call" error
-}
+# stopIntercomDaemon() {
+#   echo stop > /tmp_intercom-in  # this might lead to "interrupted system call" error
+# }
 
 # save process id and kill later
-foo &
-FOO_PID=$!
-kill $FOO_PID
+# foo &
+# FOO_PID=$!
+# kill $FOO_PID
 
-# default variable values
-: ${LOCAL_BROKER_URL:-"localhost:5672"}
-
-# open new gnome-terminal in dir and source settings
-gnome-terminal --working-directory='/home/jha/Development/mee066-esw-intercom-apps/build_target' \
--- env -i bash --norc --noprofile -c "source /home/jha/Development/Yocto/sdk/environment-setup-cortexa7t2hf-neon-vfpv4-me-linux-gnueabi; exec bash"
+open_new_gnome-terminal_in_dir_and_source_settings() {
+  gnome-terminal --working-directory='/home/jha/Development/mee066-esw-intercom-apps/build_target' \
+  -- env -i bash --norc --noprofile -c "source /home/jha/Development/Yocto/sdk/environment-setup-cortexa7t2hf-neon-vfpv4-me-linux-gnueabi; exec bash"
+}
 
 # change workdir to folder of this script
 cd "$(dirname "$0")"
 echo "WORKDIR: ${PWD}"
 
-# collect exit codes
-success=0
-./cmd1.sh
-[[ $? -ne 0 ]] && success=1
-./cmd2.sh
-[[ $? -ne 0 ]] && success=1
+collect_exit_codes() {
+  success=0
+  ./cmd1.sh
+  [[ $? -ne 0 ]] && success=1
+  ./cmd2.sh
+  [[ $? -ne 0 ]] && success=1
 
-exit $success
+  exit $success
+}
 
 # exit on error
 if [[ $? -ne 0 ]] ; then
@@ -114,3 +111,14 @@ wait_for_end() {
 
   pidof $1 > /dev/null 2>&1 && return 1
 }
+
+# subshells
+var=shell
+(
+  var=subshell
+  echo $var modified the variable, but only in the subshell
+) # each cmd is started in a new shell with copy of environment
+echo $var was not modified
+
+# run command detached from this shell
+nohup sleep 3
