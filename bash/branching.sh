@@ -2,6 +2,17 @@
 
 # boolean operators: &&, ||
 
+# 0 is true !
+check() {
+  return 0
+}
+
+if ! check; then
+  echo true
+else
+  echo false
+fi
+exit 0
 
 # check for argument
 # the space " " before "]" is necessary !
