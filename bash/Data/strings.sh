@@ -3,10 +3,13 @@ VAR=1.77.0
 echo ${VAR//./_}
 
 # comparison operators
-"string" == "string"
-"string" != "string"
--z ""  # true if string length == 0
--n "1" # true if string length > 0
+if [[ "string" == "string" ]]; then echo equal; fi
+if [[ "string" != "string1" ]]; then echo not equal; fi
+if [[ -z "" ]]; then echo empty; fi
+if [[ -n "string" ]]; then echo not empty; fi
 
 # uppercase: ^ fist letter, ^^ all, lowercase: ~, ~~
-echo ${$interface^^}
+lowercase="abcdefg"
+echo ${lowercase^^}
+protocol="TCP"
+echo ${protocol~~}
