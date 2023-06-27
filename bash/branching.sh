@@ -66,3 +66,10 @@ esac
 # conditionally execute cmd
 [[ -n $DEBUG ]] && echo "DEBUG is set"
 [[ -z $DEBUG ]] && echo "DEBUG is not set"
+
+# select
+select dir in /dir1 /dir2 /dir3
+do
+  echo You have selected: $dir
+  break
+done
