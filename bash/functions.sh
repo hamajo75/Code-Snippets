@@ -13,7 +13,7 @@ dollar_at () {
 }
 
 dollar_star () {
-    foo "$*"
+  foo "$*"
 }
 
 echo "Using \$@"
@@ -31,7 +31,13 @@ get_ssid() {
   echo "MySSID"
 }
 
+# handle optional params + extra (e.g. for debugging) params
 set_ssid() {
-  local SSID="$(get_ssid)"
-  echo $SSID
+  local ssid1=${1:-"$(get_ssid)"}
+  local ssid2=${2:-"$(get_ssid)"}
+  shift $(($# < 2 ? $# : 2))
+
+  echo ssid1: $ssid1 ssid2: $ssid2 rest: $@
 }
+
+set_ssid ssid1 ssid2 rest a b c
