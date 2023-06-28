@@ -5,13 +5,9 @@ cmd="ls"
 cmd="$cmd -la"
 eval "$cmd"
 
+# store cmd in an array
 cmd=(ls -la)
 "${cmd[@]}"
-
-# run kill 0 to kill all background (chhild) processes in case one of the signals
-# SIGINT SIGTERM SIGERR SIGEXIT
-trap "exit" INT TERM ERR
-trap "kill 0" EXIT
 
 # run in the background
 ls &
@@ -112,13 +108,3 @@ wait_for_end() {
   pidof $1 > /dev/null 2>&1 && return 1
 }
 
-# subshells
-var=shell
-(
-  var=subshell
-  echo $var modified the variable, but only in the subshell
-) # each cmd is started in a new shell with copy of environment
-echo $var was not modified
-
-# run command detached from this shell
-nohup sleep 3
