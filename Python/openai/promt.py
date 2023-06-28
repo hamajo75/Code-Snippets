@@ -1,6 +1,6 @@
 import openai
 
-openai.api_key = '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'
+openai.api_key = '***'
 prompt = "Translate the following English text to French: 'Hello, how are you?'"
 
 response = openai.Completion.create(
