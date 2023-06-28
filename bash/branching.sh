@@ -78,6 +78,13 @@ esac
 [[ -n $DEBUG ]] && echo "DEBUG is set"
 [[ -z $DEBUG ]] && echo "DEBUG is not set"
 
+# select
+select dir in /dir1 /dir2 /dir3
+do
+  echo You have selected: $dir
+  break
+done
+
 # using a function
 my_check() {
   if [[ -e readme.txt ]] ; then
