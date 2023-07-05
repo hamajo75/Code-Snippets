@@ -43,3 +43,4 @@ __pycache__
 .vscode
 executable
 .vscode/settings.json
+bash/Data/file.json

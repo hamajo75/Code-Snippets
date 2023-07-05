@@ -35,6 +35,10 @@ class MyClass {
   int* data_;
 
  public:
+  void PrintData() {
+    std::cout << "Data: " << *data_ << "\n";
+  }
+
   MyClass() = default;
   explicit MyClass(int* data) : data_{data} {                 // constructor
     std::cout << "Default constructor\n";
@@ -64,11 +68,11 @@ class MyClass {
   // C.66: Make move operations noexcept. (matter of performance)
   MyClass(MyClass&& other) noexcept {                         // 4. move constructor
     std::cout << "Move constructor\n";
-    // memberwise move (default ctor will do this)
-    // reset original values (e.g. to nullptr)
+    data_ = std::move(other.data_);
   }
-  // When is this function called?
-  //
+
+  // MyClass(MyClass&& other) = default;
+
 
   MyClass& operator=(MyClass&& other) noexcept {              // 5. move assignment
     std::cout << "Move assignment\n";
@@ -80,19 +84,29 @@ class MyClass {
 
 };
 
+MyClass CreateObject(int* data) {
+  MyClass o{data};
+  return o;
+}
+
 //-------------------------------------------------------------------------------
 int main() {
-  int data = 1;
-  MyClass o1{&data};                     // default constructor
-  MyClass o2{o1};                        // copy initialization -> copy constructor
-  MyClass o3 = o2;                       // still copy contructor !
-  MyClass o5;
-  {
-    MyClass o4{&data};                   // default constructor
-    o4 = o3;                             // copy assignment
-    o5 = std::move(o4);                  // move assignment
-  }
-  MyClass o6 = std::move(o5);
+  // int data = 1;
+  // MyClass o1{&data};                     // default constructor
+  // MyClass o2{o1};                        // copy initialization -> copy constructor
+  // MyClass o3 = o2;                       // still copy contructor !
+  // MyClass o5;
+  // {
+  //   MyClass o4{&data};                   // default constructor
+  //   o4 = o3;                             // copy assignment
+  //   o5 = std::move(o4);                  // move assignment
+  // }
+  // MyClass o6 = std::move(o5);            // move constructor
+
+  int d = 2;
+  // MyClass o7{std::move(CreateObject(&d))};
+  MyClass o7{CreateObject(&d)};
+  o7.PrintData();
 
   return 0;
 }

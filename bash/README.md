@@ -6,12 +6,19 @@
 - [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/)
 
 ## Commands
-`cmd1 && cmd2`   execute `cmd2` only if `cmd1` was successful.
-`cmd1 || cmd2`   execute `cmd2` only if `cmd1` failed.
+`cmd1 && cmd2` execute `cmd2` only if `cmd1` was successful.
+`cmd1 || cmd2` execute `cmd2` only if `cmd1` failed.
 
 echo "Put the output of $(cmd)" right there."
 
 Don't confuse `$()` with `${}`. The latter is for distinguishing between `${var}text` and `$vartext`.
+
+### Command Substitution
+Get the output of a command.
+- `` cd /lib/modules/`uname -r` ``
+- `cd /lib/modules/$(uname -r)`
+
+### Redirections
 
 ## Quoting
 
@@ -36,3 +43,15 @@ Don't confuse `$()` with `${}`. The latter is for distinguishing between `${var}
 - `$*` Parameters as one single string.
 - `$@` Parameters as individual strings (to be passed to a function).
 - `$#` Nr. of parameters.
+
+## Shell Builtin Commands
+- [Bash Reference Manual - 4.3.1 The Set Builtin](https://www.gnu.org/software/bash/manual/bash.html#The-Set-Builtin)
+
+- `set -e` Exit immediately on error.
+- `set -x` Print trace info (Useful for debugging).
+- `set -m` Enable Job Control.
+
+## Job Control
+- [Bash Reference Manual - 7 Job Control](https://www.gnu.org/software/bash/manual/html_node/Job-Control.html)
+
+All processes of the same pipeline are members of the same job.

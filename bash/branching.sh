@@ -2,6 +2,17 @@
 
 # boolean operators: &&, ||
 
+# 0 is true !
+check() {
+  return 0
+}
+
+if ! check; then
+  echo true
+else
+  echo false
+fi
+exit 0
 
 # check for argument
 # the space " " before "]" is necessary !
@@ -66,3 +77,27 @@ esac
 # conditionally execute cmd
 [[ -n $DEBUG ]] && echo "DEBUG is set"
 [[ -z $DEBUG ]] && echo "DEBUG is not set"
+
+# select
+select dir in /dir1 /dir2 /dir3
+do
+  echo You have selected: $dir
+  break
+done
+
+# using a function
+my_check() {
+  if [[ -e readme.txt ]] ; then
+    true
+  else
+    false
+  fi
+}
+
+if ! my_check; then
+  echo my_check failed
+fi
+
+# C-style if then - in arithmetic expansions
+i=2
+echo $(($i < 2 ? 3 : 4))
