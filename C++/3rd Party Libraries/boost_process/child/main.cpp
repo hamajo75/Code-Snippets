@@ -39,8 +39,6 @@ ExecutionResult ExecuteCommandNonBlocking(const std::string &command) {
   return ExecutionResult{result, output_str};
 }
 
-
-
 int main() {
   // auto result = ExecuteCommandBlocking("ls -l");
   // std::cout << "Command output:\n" << result.output;
