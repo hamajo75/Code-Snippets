@@ -1,7 +1,7 @@
 BIN=executable
 
 CC=g++
-CFLAGS=-I.
+CFLAGS=-I. -lgtest -lgtest_main -pthread -std=c++2a
 
 $(BIN).exe: *.cpp
 	$(CC) -g -o $@ *.cpp $(CFLAGS)
