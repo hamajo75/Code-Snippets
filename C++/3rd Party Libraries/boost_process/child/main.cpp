@@ -6,56 +6,32 @@
 #include <vector>
 #include <thread>
 
-struct ExecutionResult {
-  int result;
-  std::string output;
-};
-
-ExecutionResult ExecuteCommandBlocking(const std::string &command) {
-  boost::process::ipstream output;
-  auto result =
-      boost::process::system(command, boost::process::std_out > output);
-
-  std::string output_str;
+std::string GetString(boost::process::ipstream &stream) {
+  std::string str;
   std::string line;
-  while (output && std::getline(output, line)) {
-    output_str += line + '\n';
+  while (std::getline(stream, line)) {
+    str += line + "\n";
   }
-
-  return ExecutionResult{result, output_str};
-}
-
-ExecutionResult ExecuteCommandNonBlocking(const std::string &command) {
-  boost::process::ipstream output;
-  auto result =
-      boost::process::system(command, boost::process::std_out > output);
-
-  std::string output_str;
-  std::string line;
-  while (output && std::getline(output, line)) {
-    output_str += line + '\n';
-  }
-
-  return ExecutionResult{result, output_str};
+  return str;
 }
 
 int main() {
-  // auto result = ExecuteCommandBlocking("ls -l");
-  // std::cout << "Command output:\n" << result.output;
+  boost::process::ipstream output;
+  boost::process::ipstream error;
 
-    boost::asio::io_service ios;
-    std::vector<char> buf(4096);
-    boost::process::child c(
-        "ls -l", boost::process::std_out > boost::asio::buffer(buf), ios);
+  boost::process::child c(
+      "ls -l",
+      boost::process::std_out > output,
+      boost::process::std_err > error);
 
-    std::thread t([&ios, &c]() {
-        ios.run();
-        c.wait();
-    });
+  std::cout << "doing other stuff\n";
 
-    t.join(); // Wait for the thread to finish
+  // c.wait();
+  c.wait_until(std::chrono::system_clock::now() + std::chrono::seconds(1));
 
-  std::cout << "exit_code: " << c.exit_code();
+  std::cout << "exit_code: " << c.exit_code() << "\n";
+  std::cout << "output: " << GetString(output);
+  std::cout << "error: " << GetString(error);
 
   return 0;
 }
