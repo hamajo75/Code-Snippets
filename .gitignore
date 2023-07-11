@@ -44,3 +44,4 @@ __pycache__
 executable
 .vscode/settings.json
 bash/Data/file.json
+run_tests
