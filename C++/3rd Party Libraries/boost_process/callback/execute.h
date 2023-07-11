@@ -6,6 +6,8 @@
 - an end result
 - capture output & error
 - a callback function, handling error code & output
+- a means to terminate the process
+- limit process execution with a timeout
 */
 
 struct ExecutionResult {
@@ -14,7 +16,7 @@ struct ExecutionResult {
   std::string error;
 };
 
-std::future<ExecutionResult> ExecuteCommandNonBlocking(
+std::future<ExecutionResult> ExecuteNonBlocking(
   const std::string &command,
   std::function<void(ExecutionResult&)> callback
 );

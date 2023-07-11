@@ -4,7 +4,7 @@
 
 TEST(ExecuteCommandNonBlockingTest, TestScript) {
   std::string command = "script.sh";
-  auto future = ExecuteCommandNonBlocking(command,
+  auto future = ExecuteNonBlocking(command,
     [](ExecutionResult& result) {
       ASSERT_EQ(result.result, 1);
       ASSERT_EQ(result.output, "script started\n");
@@ -14,7 +14,17 @@ TEST(ExecuteCommandNonBlockingTest, TestScript) {
 
   std::cout << "Waiting for future to finish..." << std::endl;
   future.wait();
+}
 
+TEST(ExecuteCommandNonBlockingTest, TestNonCommandString) {
+  std::string command = "abcd";
+  auto future = ExecuteNonBlocking(command,
+    [](ExecutionResult& result) {
+      ASSERT_EQ(result.result, 1);
+      ASSERT_EQ(result.output, "");
+      ASSERT_EQ(result.error, "execve failed: No such file or directory");
+    }
+  );
 }
 
 int main(int argc, char **argv) {

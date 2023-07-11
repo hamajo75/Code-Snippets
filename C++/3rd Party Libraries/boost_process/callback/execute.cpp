@@ -14,7 +14,7 @@ std::string GetString(boost::process::ipstream &stream) {
   return str;
 }
 
-std::future<ExecutionResult> ExecuteCommandNonBlocking(
+std::future<ExecutionResult> ExecuteNonBlocking(
   const std::string &command,
   std::function<void(ExecutionResult&)> callback
 ){
