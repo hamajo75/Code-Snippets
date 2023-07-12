@@ -21,8 +21,8 @@ int main() {
 
   boost::process::child c(
       "ls -l",
-      boost::process::std_out > output,
-      boost::process::std_err > error);
+      boost::process::std_out > output,   // if omitted defaults to stdout
+      boost::process::std_err > error);   // if omitted defaults to stderr
 
   std::cout << "doing other stuff\n";
 
