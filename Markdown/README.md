@@ -16,8 +16,7 @@ References:
 - [OpenSSL](https://www.openssl.org/) Version 1.0 or higher
 
 ### Code Samples, etc
-
-Get the lib:
+Indent 2x to create a code block, or use backticks.
 
     apt install libssl-dev
 
@@ -29,7 +28,7 @@ Qpid Proton:
 Create a file named `CMakeUserPresets.json` in the root folder.
 
 ### Notes
-- Escape Backticks: ``` Put your code between `` `` ``` or more if you have to escape mutiple backticks.
+- Escape Backticks: ``` Put your code between `` `` ``` or more if you have to escape multiple backticks.
 
 ### Images
 ![alt text](Gnu.PNG "Title")
