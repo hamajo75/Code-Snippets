@@ -3,10 +3,19 @@
 # enable job control
 set -m
 
+# set cleanup trap
+trap cleanup_on_stop SIGQUIT SIGINT SIGTERM
+
+cleanup_on_stop() {
+  echo stopped
+  kill -SIGINT "$pid_a" "$pid_b"
+  exit 0
+}
+
 # run in the background
 ls &
 # see all background processes
-echo jobs: $(jobs)
+echo jobs: "$(jobs)"
 
 # bring it back (%n for multiple processes)
 fg
@@ -18,18 +27,17 @@ fg
 { sleep 1; echo finished; } &
 
 my_fun() {
-  sleeper=$1
-  sleep 5;
-  echo the $sleeper has awoken
+  sleep 1 &
+  pid_a=$!
+  echo started with pid: $pid_a
+  sleep 1 &
+  pid_b=$!
+  echo started with pid: $pid_b
+
 }
 
-my_fun a &
-pid_a=$!
+my_fun
 
-echo starting next
-my_fun b
-pid_b=$!
-
+# you need to be waiting in order to stop the background process
+# because it keeps running if this shell is already
 wait $pid_a $pid_b
-
-echo FIN
