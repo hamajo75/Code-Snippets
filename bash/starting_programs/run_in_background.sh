@@ -27,17 +27,26 @@ fg
 { sleep 1; echo finished; } &
 
 my_fun() {
-  sleep 1 &
-  pid_a=$!
-  echo started with pid: $pid_a
-  sleep 1 &
-  pid_b=$!
-  echo started with pid: $pid_b
-
+  local v=$1
+  for i in {1..3}
+  do
+    echo sleeping for $v
+    sleep 10 &
+    pid=$!
+    echo started with pid: $pid
+    # you need to be waiting in order to stop the background process
+    # because it keeps running if this shell is already finished
+    # wait $pid_a $pid_b
+    wait $pid
+  done
 }
 
-my_fun
+my_fun a &
+echo pid $pid         # my_fun() is run in a sub shell that copies the context of the parent shell, so change made
+                      # in my_fun() are not visible here
+pid_a=$!
+my_fun b &
+pid_b=$!
 
-# you need to be waiting in order to stop the background process
-# because it keeps running if this shell is already
 wait $pid_a $pid_b
+

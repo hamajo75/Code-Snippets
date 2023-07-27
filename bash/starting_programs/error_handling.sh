@@ -10,7 +10,7 @@ fi
 # The variable $ (echo $?)
 # 0 is supposed to mean success, everything else is an error.
 
-# run kill 0 to kill all background (chhild) processes in case one of the signals
+# run kill 0 to kill all background (child) processes in case one of the signals
 # SIGINT SIGTERM SIGERR SIGEXIT
 trap "exit" INT TERM ERR
 trap "kill 0" EXIT

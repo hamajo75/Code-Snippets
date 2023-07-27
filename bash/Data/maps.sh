@@ -34,7 +34,8 @@ call=($call_str)
 
 echo "Executing map entry built from other map entries"
 declare -A link2
-link2["destination"]="1.2.3.4"
+destination=destination
+link2["$destination"]="1.2.3.4"
 link2["port"]="22"
 link2["iperf_call"]="iperf3 \
                      -c ${link2["destination"]} \
