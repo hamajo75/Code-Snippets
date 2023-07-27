@@ -19,17 +19,22 @@ int main() {
   boost::process::ipstream output;
   boost::process::ipstream error;
 
-  boost::process::child c(
-      "ls -l",
+  auto command = "ls -l";
+
+  std::unique_ptr<boost::process::child> c;
+
+  c = std::make_unique<boost::process::child>(
+    boost::process::child{
+      command,
       boost::process::std_out > output,   // if omitted defaults to stdout
-      boost::process::std_err > error);   // if omitted defaults to stderr
+      boost::process::std_err > error});  // if omitted defaults to stderr
 
   std::cout << "doing other stuff\n";
 
   // c.wait();
-  c.wait_until(std::chrono::system_clock::now() + std::chrono::seconds(1));
+  c->wait_until(std::chrono::system_clock::now() + std::chrono::seconds(1));
 
-  std::cout << "exit_code: " << c.exit_code() << "\n";
+  std::cout << "exit_code: " << c->exit_code() << "\n";
   std::cout << "output: " << GetString(output);
   std::cout << "error: " << GetString(error);
 
