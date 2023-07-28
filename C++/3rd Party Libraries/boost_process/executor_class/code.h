@@ -1,6 +1,8 @@
 #include <string>
 #include <thread>
 #include <memory>
+#include <optional>
+
 #include <boost/process.hpp>
 
 /* What do we need?
@@ -27,6 +29,7 @@ class Process {
   ~Process();
 
   bool Execute(const std::string &command);
+  bool Execute(const std::string &command, std::chrono::milliseconds timeout);
   void Terminate();
   void Wait();
 
@@ -40,6 +43,8 @@ class Process {
 
   ProcessCallback callback_;
 
-  void WaitThread();
-  void DoWait();
+  bool DoExecute(const std::string &command,
+                 std::optional<std::chrono::milliseconds> timeout = std::nullopt);
+  void WaitThread(std::optional<std::chrono::milliseconds> timeout = std::nullopt);
+  void DoWait(std::optional<std::chrono::milliseconds> timeout = std::nullopt);
 };

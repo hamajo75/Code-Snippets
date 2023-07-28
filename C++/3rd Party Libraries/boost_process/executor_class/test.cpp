@@ -9,8 +9,10 @@ class ProcessTest : public ::testing::Test {
   Process p {
     [this](ExecutionResult result) {
       if (result.result == 0) {
+        std::cout << "Success " << result.output << std::endl;
         i++;
       } else {
+        std::cout << "Error " << result.error << std::endl;
         i--;
       }
     }
@@ -67,6 +69,17 @@ TEST_F(ProcessTest, Terminate) {
 
   // give some time for the callback to finish
   std::this_thread::sleep_for(std::chrono::milliseconds(10));
+  ASSERT_EQ(i, 0);
+}
+
+TEST_F(ProcessTest, ExecuteWithTimeout) {
+  MeasureTime time;
+  ASSERT_TRUE(p.Execute("sleep 10", std::chrono::seconds(1)));
+
+  time.Expect_LT(std::chrono::seconds(2));
+
+  // give some time for the callback to finish
+  std::this_thread::sleep_for(std::chrono::seconds(3));
   ASSERT_EQ(i, 0);
 }
 
