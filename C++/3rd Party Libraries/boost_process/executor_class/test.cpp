@@ -39,7 +39,7 @@ class MeasureTime {
 };
 
 TEST_F(ProcessTest, SimpleUse) {
-  p.Execute("echo Hello, World!");
+  ASSERT_TRUE(p.Execute("echo Hello, World!"));
 
   // give some time for the callback to finish
   std::this_thread::sleep_for(std::chrono::milliseconds(10));
@@ -48,7 +48,7 @@ TEST_F(ProcessTest, SimpleUse) {
 
 TEST_F(ProcessTest, Wait) {
   MeasureTime time;
-  p.Execute("sleep 1");
+  ASSERT_TRUE(p.Execute("sleep 1"));
   p.Wait();
 
   time.Expect_GT(std::chrono::seconds(1));
@@ -60,7 +60,7 @@ TEST_F(ProcessTest, Wait) {
 
 TEST_F(ProcessTest, Terminate) {
   MeasureTime time;
-  p.Execute("sleep 10");
+  ASSERT_TRUE(p.Execute("sleep 10"));
   p.Terminate();
 
   time.Expect_LT(std::chrono::seconds(1));
@@ -68,6 +68,10 @@ TEST_F(ProcessTest, Terminate) {
   // give some time for the callback to finish
   std::this_thread::sleep_for(std::chrono::milliseconds(10));
   ASSERT_EQ(i, 0);
+}
+
+TEST_F(ProcessTest, ExecuteFail) {
+  ASSERT_FALSE(p.Execute("akdjfhkafh"));
 }
 
 int main(int argc, char **argv) {

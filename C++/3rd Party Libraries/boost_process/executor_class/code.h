@@ -26,7 +26,7 @@ class Process {
   explicit Process(ProcessCallback callback);
   ~Process();
 
-  void Execute(const std::string &command);
+  bool Execute(const std::string &command);
   void Terminate();
   void Wait();
 

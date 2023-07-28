@@ -30,25 +30,29 @@ void Process::WaitThread() {
   thread_.detach();
 }
 
-void Process::Execute(const std::string &command) {
+bool Process::Execute(const std::string &command) {
   if (IsRunning())
-    return;
+    return false;
 
-  child_ = std::make_unique<boost::process::child>(
-    boost::process::child{command}
-  );
+  try {
+    child_ = std::make_unique<boost::process::child>(
+      boost::process::child{command}
+    );
+  } catch (boost::process::process_error& e) {
+    std::cerr << "Error: " << e.what() << std::endl;
+    return false;
+  }
 
   WaitThread();
+  return true;
 }
 
 void Process::Wait() {
-  // if (IsRunning())
   if (child_)
     DoWait();
 }
 
 void Process::Terminate() {
-  // if (IsRunning())
   if (child_)
     child_->terminate();
 }
