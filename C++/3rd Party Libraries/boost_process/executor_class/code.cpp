@@ -14,6 +14,7 @@ Process::~Process() {
 
 void Process::DoWait() {
   try {
+    // throws an unnecessary exception when the process is terminated
     child_->wait();
   } catch (...) {}
 }
@@ -41,12 +42,14 @@ void Process::Execute(const std::string &command) {
 }
 
 void Process::Wait() {
-  if (IsRunning())
+  // if (IsRunning())
+  if (child_)
     DoWait();
 }
 
 void Process::Terminate() {
-  if (IsRunning())
+  // if (IsRunning())
+  if (child_)
     child_->terminate();
 }
 
