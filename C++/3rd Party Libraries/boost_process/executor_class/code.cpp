@@ -30,37 +30,52 @@ void Process::WaitThread(std::optional<std::chrono::milliseconds> timeout) {
   if (!child_)
     return;
 
-  thread_ = std::thread([this, timeout]() {
+  // thread_ = std::thread([this, timeout]() {
     DoWait(timeout);
     callback_(ExecutionResult{child_->exit_code(), "", ""});
-  });
-  thread_.detach();
+  // });
+  // thread_.detach();
 }
 
-bool Process::DoExecute(const std::string &command,
-                      std::optional<std::chrono::milliseconds> timeout) {
-  if (IsRunning())
-    return false;
+bool DoExecute(const std::string &command,
+                        ProcessCallback callback,
+                        std::optional<std::chrono::milliseconds> timeout) {
+  std::thread([command, callback, timeout]() {
+    try {
+      boost::process::child child = boost::process::child{command};
+      try {
+        // throws an unnecessary exception when the process is terminated
+        if (timeout.has_value()) {
+          child.wait_for(timeout.value());
+        } else {
+          child.wait();
+        }
+      } catch (std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+      }
+      callback(ExecutionResult{child.exit_code(), "", ""});
+    } catch (boost::process::process_error& e) {
+      std::cerr << "Error: " << e.what() << std::endl;
+    }
+  }).detach();
 
-  try {
-    child_ = std::make_unique<boost::process::child>(
-      boost::process::child{command}
-    );
-  } catch (boost::process::process_error& e) {
-    std::cerr << "Error: " << e.what() << std::endl;
-    return false;
-  }
-
-  WaitThread(timeout);
   return true;
 }
 
 bool Process::Execute(const std::string &command, std::chrono::milliseconds timeout) {
-  return DoExecute(command, timeout);
+  return DoExecute(command, callback_, timeout);
 }
 
 bool Process::Execute(const std::string &command) {
-  return DoExecute(command, std::nullopt);
+  return DoExecute(command, callback_, std::nullopt);
+}
+
+bool Execute(const std::string &command, ProcessCallback callback, std::chrono::milliseconds timeout) {
+  return DoExecute(command, callback, timeout);
+}
+
+bool Execute(const std::string &command, ProcessCallback callback) {
+  return DoExecute(command, callback, std::nullopt);
 }
 
 void Process::Wait() {
