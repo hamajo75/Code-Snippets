@@ -23,6 +23,9 @@ struct ExecutionResult {
 
 typedef std::function<void(ExecutionResult)> ProcessCallback;
 
+bool Execute(const std::string &command, ProcessCallback callback);
+bool Execute(const std::string &command, ProcessCallback callback, std::chrono::milliseconds timeout);
+
 class Process {
  public:
   explicit Process(ProcessCallback callback);
@@ -43,8 +46,6 @@ class Process {
 
   ProcessCallback callback_;
 
-  bool DoExecute(const std::string &command,
-                 std::optional<std::chrono::milliseconds> timeout = std::nullopt);
   void WaitThread(std::optional<std::chrono::milliseconds> timeout = std::nullopt);
   void DoWait(std::optional<std::chrono::milliseconds> timeout = std::nullopt);
 };
