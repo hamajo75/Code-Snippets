@@ -1,31 +1,5 @@
 #!/bin/bash
 
-# store a cmd call in variable
-cmd="ls"
-cmd="$cmd -la"
-eval "$cmd"
-
-# store cmd in an array
-cmd=(ls -la)
-"${cmd[@]}"
-
-# run in the background
-ls &
-# bring it back (%n for multiple processes)
-#fg
-# move to background again
-  # Ctrl + z puts current process to sleep
-#  bg
-
-# see all background processes
-jobs
-
-# run multiple commands in background
-{ sleep 10; echo finished; } &
-
-# running multiple cmds if previous was successful
-echo command_1 && echo command_2
-
 # send string to stdin
 # /my/bash/script <<< 'This string will be sent to stdin.'
 

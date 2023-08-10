@@ -3,7 +3,7 @@
 #include "code.h"
 
 TEST(SomeTestSuite, SomeTest) {
-  ASSERT_TRUE(false);
+  ASSERT_TRUE(MyTest());
 }
 
 int main(int argc, char **argv) {

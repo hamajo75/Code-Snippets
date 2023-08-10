@@ -4,9 +4,10 @@
 /* What do we need?
 - a child process
 - an end result
-- capture output & error
+- optional: capture output & error
 - a callback function, handling error code & output
-- a means to terminate the process
+- terminate the process
+- check if the process is still running
 - limit process execution with a timeout
 */
 
