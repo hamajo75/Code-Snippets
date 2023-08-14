@@ -13,4 +13,4 @@ RUN apt-get update && \
 
 ADD ./ /usr/src/work-dir/
 WORKDIR /usr/src/work-dir/
-CMD ["./tools/docker-run-qa.sh"]
+CMD ["./some_script.sh"]
