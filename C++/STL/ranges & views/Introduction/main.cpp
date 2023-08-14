@@ -15,6 +15,7 @@ std::vector<int> GetData() {
 
 // Advantage 1: safe begin(), end()
 bool TestData() {
+
   auto result =
  // std::all_of(
  //   GetData().begin(), GetData().end(),  // BUG: 2 objects
@@ -55,6 +56,7 @@ std::vector<std::string> SplitString(std::string_view str, char delimiter) {
 }
 
 void SplitString() {
+  std::cout << "SplitString():\n";
   auto split_str = SplitString("one two three", ' ');
 
   for (const auto& str : split_str) {
