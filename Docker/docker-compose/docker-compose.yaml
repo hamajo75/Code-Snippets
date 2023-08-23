@@ -1,0 +1,7 @@
+# create nginx container
+version: "3"
+services:
+  webiste:
+    image: nginx
+    ports:
+      - "8081:80"

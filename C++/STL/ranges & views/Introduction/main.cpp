@@ -15,6 +15,7 @@ std::vector<int> GetData() {
 
 // Advantage 1: safe begin(), end()
 bool TestData() {
+
   auto result =
  // std::all_of(
  //   GetData().begin(), GetData().end(),  // BUG: 2 objects
@@ -44,14 +45,22 @@ int GetSumOfSquares() {
   return std::accumulate(view.begin(), view.end(), 0);
 }
 
-void SplitString() {
-  // lazy evaluation
-  auto split_strings =
-    std::string_view{"one two three"} | std::ranges::views::split(' ');
+std::vector<std::string> SplitString(std::string_view str, char delimiter) {
+  auto split_ranges = std::ranges::views::split(str, delimiter);
+  std::vector<std::string> split_str;
+  for (const auto& range : split_ranges) {
+    split_str.emplace_back(range.begin(), range.end());
+  }
 
-  std::cout << "SplitString()" << "\n";
-  for (const auto& str : split_strings) {
-    std::cout << std::string_view{str} << "\n";
+  return split_str;
+}
+
+void SplitString() {
+  std::cout << "SplitString():\n";
+  auto split_str = SplitString("one two three", ' ');
+
+  for (const auto& str : split_str) {
+    std::cout << str << "\n";
   }
 }
 
