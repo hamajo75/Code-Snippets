@@ -12,7 +12,6 @@ if ! check; then
 else
   echo false
 fi
-exit 0
 
 # check for argument
 # the space " " before "]" is necessary !
