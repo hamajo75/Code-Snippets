@@ -10,17 +10,20 @@ fi
 # The variable $ (echo $?)
 # 0 is supposed to mean success, everything else is an error.
 
-# false  # trigger the eroor trap
-networkctl reconfigure opnet opnet_wifi
-
-cleanup() {
- echo "cleaning up..."
-}
-
 # run kill 0 to kill all background (child) processes in case one of the signals
 # SIGINT SIGTERM SIGERR SIGEXIT
-trap cleanup INT TERM ERR
-trap "kill 0" EXIT
+trap cleanup_on_error INT TERM ERR
+trap "cleanup_on_exit" EXIT
+
+cleanup_on_exit() {
+  echo "cleaning up on exit..."
+}
+
+cleanup_on_error() {
+  echo "cleaning up on error..."
+}
+
+#false  # trigger the error trap
 
 # exit on error (if any commands fail)
 set -e
