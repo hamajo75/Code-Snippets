@@ -1,7 +1,7 @@
 BIN=main
 
 CC=g++
-CFLAGS=-I. -lgtest -lgtest_main -pthread -std=c++2a
+CFLAGS=-I. -lgtest -lgtest_main -pthread -std=c++2a -fno-elide-constructors
 
 $(BIN): *.cpp *.h
 	$(CC) -g -o $@ *.cpp $(CFLAGS)

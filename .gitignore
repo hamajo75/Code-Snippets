@@ -45,3 +45,4 @@ executable
 .vscode/settings.json
 bash/Data/file.json
 run_tests
+C++/Move Semantics/template/main
