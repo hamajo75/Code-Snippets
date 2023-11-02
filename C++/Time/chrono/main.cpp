@@ -116,15 +116,36 @@ std::chrono::system_clock::duration GetTimestampDifferenceToNow(
   return now - timestamp_time;
 }
 
+std::string getISO8601Timestamp() {
+  // Get the current time as a time_point
+  auto now = std::chrono::system_clock::now();
+
+  // Convert the time_point to a time_t
+  auto time_t_now = std::chrono::system_clock::to_time_t(now);
+
+  // Convert the time_t to a tm struct in UTC
+  std::tm tm_utc = *std::gmtime(&time_t_now);
+
+  // Get the milliseconds component of the current time
+  auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()) % 1000;
+
+  // Format the timestamp as a string
+  std::ostringstream oss;
+  oss << std::put_time(&tm_utc, "%Y-%m-%dT%H:%M:%S") << '.' << std::setfill('0') << std::setw(3) << ms.count() << "Z";
+  return oss.str();
+}
+
 //-----------------------------------------------------------------------------
 int main(int argc, char *argv[]) {
   // MeasureTime();
   // Print_ms_SinceEpoch();
   // Timestamps();
 
-  auto timestamp = argc > 1 ? argv[1] : "4022-08-25T13:56:00.638Z";
-  std::cout << std::chrono::duration_cast<std::chrono::seconds>(
-    GetTimestampDifferenceToNow(timestamp)).count() << "\n";
+  // auto timestamp = argc > 1 ? argv[1] : "4022-08-25T13:56:00.638Z";
+  // std::cout << std::chrono::duration_cast<std::chrono::seconds>(
+  //   GetTimestampDifferenceToNow(timestamp)).count() << "\n";
+
+  std::cout << "timestamp: " << getISO8601Timestamp();
 
   return 0;
 }
