@@ -3,17 +3,26 @@
 #include <iostream>
 #include "mathlib_wrapper.h"
 
+extern "C" {
+#include "libfbg/fbg_fbdev.h"
+#include "libfbg/fbg_fbdev.h"
+}
+
+void UseMathlibWrapper() {
+  MathLibWrapper mathLib;
+
+  int a = 10;
+  int b = 5;
+
+  int sum = mathLib.add(a, b);
+  int difference = mathLib.subtract(a, b);
+
+  std::cout << "Sum: " << sum << std::endl;
+  std::cout << "Difference: " << difference << std::endl;
+}
+
 int main() {
-    MathLibWrapper mathLib;
+  UseMathlibWrapper();
 
-    int a = 10;
-    int b = 5;
-
-    int sum = mathLib.add(a, b);
-    int difference = mathLib.subtract(a, b);
-
-    std::cout << "Sum: " << sum << std::endl;
-    std::cout << "Difference: " << difference << std::endl;
-
-    return 0;
+  return 0;
 }

@@ -1,7 +1,7 @@
 BIN=main
 
 CC=g++
-CFLAGS=-I. -lgtest -lgtest_main -pthread -std=c++2a -Lmathlib -lmathlib
+CFLAGS=-I. -lgtest -lgtest_main -pthread -std=c++2a -Lmathlib -lmathlib -Llibfbg -lfbg
 
 $(BIN): *.cpp *.h
 	$(CC) -g -o $@ *.cpp $(CFLAGS)
