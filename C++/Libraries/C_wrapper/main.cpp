@@ -3,11 +3,6 @@
 #include <iostream>
 #include "mathlib_wrapper.h"
 
-extern "C" {
-#include "libfbg/fbg_fbdev.h"
-#include "libfbg/fbg_fbdev.h"
-}
-
 void UseMathlibWrapper() {
   MathLibWrapper mathLib;
 
