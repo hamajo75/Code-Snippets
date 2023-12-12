@@ -1,14 +1,12 @@
 #include <boost/process.hpp>
-#include <memory>
+#include <string>
 
 class Process {
  public:
-  explicit Process(const std::string& command);
-  void Start();
+  void Start(const std::string& cmd);
   void Kill();
-  bool IsRunning() const;
+  bool IsRunning();
 
  private:
-  std::string command_;
-  std::unique_ptr<boost::process::child> child_process_;
+  boost::process::child child;
 };
