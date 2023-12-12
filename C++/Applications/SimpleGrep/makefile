@@ -3,7 +3,7 @@ BIN=template
 CC=g++
 CFLAGS=-I.
 
-$(BIN).exe: *.cpp
+$(BIN): *.cpp
 	$(CC) -std=c++11 -o $@ *.cpp $(CFLAGS)
 
 # ---------------- wildcards -----------------------------------------------------------
