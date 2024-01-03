@@ -1,4 +1,11 @@
 @startuml
+' - extends              `--|>` (Inheritance)
+' - is composed of       `--*`  (Composition)
+' - a has b              `--o` (Aggregation)
+' - is associated with   `--`'
+' - depends on | uses    `..>`
+' - implements           `..|>`'
+
 ' declarations
 abstract Animal
 
@@ -11,4 +18,10 @@ Dog <|-- Beagle
 
 Animal <|-- Donky
 Donky : BeStubborn()
+
+CoffeeMaker ..> HeatPump : uses
+CoffeeMaker ..> ElectricHeater
+HeatPump ..|> IPump
+HeatPump ..> ElectricHeater
+ElectricHeater ..|> IHeater : implements
 @enduml
