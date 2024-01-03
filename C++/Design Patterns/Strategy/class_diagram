@@ -1,0 +1,25 @@
+@startuml
+
+abstract class Strategy {
+    {abstract} execute()
+}
+
+class ConcreteStrategyA {
+    execute()
+}
+
+class ConcreteStrategyB {
+    execute()
+}
+
+class Context {
+    - strategy_ : Strategy
+    + set_strategy(strategy : Strategy)
+    + execute_strategy()
+}
+
+Strategy <|-- ConcreteStrategyA
+Strategy <|-- ConcreteStrategyB
+Context -right-> Strategy: <<uses>>
+
+@enduml
