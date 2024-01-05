@@ -2,7 +2,7 @@
 #include <iostream>
 
 // implementation is hidden here
-class Person::PersonImpl {
+class PersonImpl {
  private:
   // here you can hide a lot of stuff too
  public:
