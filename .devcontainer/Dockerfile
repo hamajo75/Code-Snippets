@@ -19,4 +19,5 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
   && apt-get -y install --no-install-recommends \
   cmake \
   libgtest-dev \
-  libboost-all-dev
+  libboost-all-dev \
+  libqpid-proton-cpp-dev
