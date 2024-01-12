@@ -11,6 +11,15 @@ cat >> $file << EOF
     ###
 EOF
 
+# include TAB without indenting in the file
+cat >> $file <<- EOF
+	###
+	[Network]
+	Address=opnet_ip_address/24
+	###
+EOF
+
+
 #sed -i "/###/,/###/d" $file
 
 # # Server IP address
