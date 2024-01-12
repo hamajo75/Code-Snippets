@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# here document is used to redicert multiple lines of input into a command
+# heredoc (here document) is used to redicert multiple lines of input into a command
 
 file=test_file
 
