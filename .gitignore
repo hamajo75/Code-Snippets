@@ -46,3 +46,4 @@ executable
 bash/Data/file.json
 run_tests
 C++/Move Semantics/template/main
+bash/Data/test_file
