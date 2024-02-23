@@ -24,3 +24,20 @@ done
 #       break
 #    fi
 # done
+
+#!/bin/bash
+cmd="scp -i ~/.ssh/mee066/mee066-ssh-developer-key"
+arg_proxy="-o ProxyJump=intercom-wifi"
+
+source=/home/jha/Development/Viza/mee066-esw-camera-daemon/camera_daemon
+destination=root@192.168.201.2:/usr/lib/python3.8/site-packages/camera_daemon
+
+subfolders=(workplace onvif amqp_messaging)
+files=(workplace_control.py discovery.py intercom_handler.py)
+
+for index in "${!files[@]}"
+do
+  $cmd $arg_proxy \
+    $source/${subfolders[index]}/${files[index]} \
+    $destination/${subfolders[index]}
+done
