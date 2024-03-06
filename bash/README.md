@@ -21,7 +21,7 @@ Get the output of a command.
 ### Redirections
 
 ## Quoting
-
+ 
 - Single quotes: 'no substitution'
 - Double quotes: "$variables will be substituted"
 
