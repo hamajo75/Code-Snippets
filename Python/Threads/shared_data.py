@@ -10,7 +10,6 @@ def read_function(array):
             print("Array empty")
         time.sleep(1)
 
-
 def write_function():
     array = ["elem1", "elem2"]
     x = threading.Thread(target=read_function, args=(array,))
