@@ -166,12 +166,26 @@ void CompareVectors() {
     std::cout << "not permutation\n";
 }
 
+typedef std::vector<uint8_t> ByteVector;
+ByteVector& RemoveLeadingBytes(ByteVector& data) {
+  auto it = std::find(data.begin(), data.end(), 0x65);
+  if (it != data.end()) {
+    data.erase(data.begin(), it);
+  }
+  return data;
+}
+
 int main() {
   // ElementaryOperations();
-  FindElements();
-
+  // FindElements();
   // LoopThroughDerivedClassVector();
   // EraseElements();
   // CompareVectors();
+  // ByteVector data = {0x80, 0x02, 0x65, 0x01, 0x02};
+  // ByteVector data = {0x65, 0x01, 0x02};
+  ByteVector data;
+  data = RemoveLeadingBytes(data);
 
+  for (auto d : data)
+    std::cout << std::hex << static_cast<int>(d) << " ";
 }
