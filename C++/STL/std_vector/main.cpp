@@ -181,9 +181,9 @@ int main() {
   // LoopThroughDerivedClassVector();
   // EraseElements();
   // CompareVectors();
-  // ByteVector data = {0x80, 0x02, 0x65, 0x01, 0x02};
+  ByteVector data = {0x80, 0x02, 0x65, 0x01, 0x02, 0x65, 0x03, 0x04};
   // ByteVector data = {0x65, 0x01, 0x02};
-  ByteVector data;
+  // ByteVector data;
   data = RemoveLeadingBytes(data);
 
   for (auto d : data)
