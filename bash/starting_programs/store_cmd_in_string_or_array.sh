@@ -7,6 +7,11 @@ cmd="$cmd Hello World\nnext line"
 # no eval necessary:
 $cmd | grep World
 
+cmd="echo -e"
+cmd="$cmd 'Hello World\nnext line'"         # here you need '' for the linebreak
+output=$(eval "$cmd" | grep World)          # store output in a variable
+echo "$output"
+
 # Notes:
 # Word splitting happens after variable expansion and command substitution.
 # Here's the order of operations:
@@ -22,6 +27,6 @@ cmd="echo -e 'Hello World\nnext line' | grep World"
 eval "$cmd"
 
 
-# store cmd in an array
+# store cmd + params in an array
 cmd=(ls -la)
 "${cmd[@]}"
