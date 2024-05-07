@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # simple replace
 VAR=1.77.0
 echo ${VAR//./_}
@@ -5,6 +7,7 @@ echo ${VAR//./_}
 # comparison operators
 if [[ "string" == "string" ]]; then echo equal; fi
 if [[ "string" != "string1" ]]; then echo not equal; fi
+if [[ "superstring" == *"string"* ]]; then echo substring found; fi             # Note: *glob_pattern* needs to be on the right
 if [[ -z "" ]]; then echo empty; fi
 if [[ -n "string" ]]; then echo not empty; fi
 
