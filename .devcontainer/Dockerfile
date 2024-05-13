@@ -12,6 +12,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     shellcheck \
     cppcheck \
     vim \
+    ninja-build \
     python3-pip
 
 RUN pip3 install cpplint
