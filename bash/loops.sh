@@ -9,7 +9,7 @@ for i in {1..3} ; do
   echo "$i"
 done
 
-echo 
+echo
 
 iterations=3
 for i in $(seq 1 ${iterations}); do  # this also works in sh
@@ -44,11 +44,20 @@ for file in "${files[@]}"; do
   echo $file
 done
 
-echo 
+echo
 
 # loop over indices: ${!files[@]}
 for index in "${!files[@]}"; do
   echo $cmd $arg_proxy \
     $source/${subfolders[index]}/${files[index]} \
     $destination/${subfolders[index]}
+done
+
+
+trap exit INT TERM ERR
+
+mac_address=${1:-F4:4E:FC:92:DA:A6}
+
+while true; do
+  l2ping -i hci0 $mac_address;
 done
