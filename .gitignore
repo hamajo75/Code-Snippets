@@ -47,31 +47,4 @@ bash/Data/file.json
 run_tests
 C++/Move Semantics/template/main
 bash/Data/test_file
-C++/Design Patterns/Single Responsibility Principle/build/cmake_install.cmake
-C++/Design Patterns/Single Responsibility Principle/build/CMakeCache.txt
-C++/Design Patterns/Single Responsibility Principle/build/Makefile
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/cmake.check_cache
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/CMakeDirectoryInformation.cmake
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/CMakeOutput.log
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/Makefile.cmake
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/Makefile2
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/progress.marks
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/TargetDirectories.txt
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/3.20.0/CMakeCCompiler.cmake
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/3.20.0/CMakeCXXCompiler.cmake
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/3.20.0/CMakeDetermineCompilerABI_C.bin
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/3.20.0/CMakeDetermineCompilerABI_CXX.bin
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/3.20.0/CMakeRCCompiler.cmake
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/3.20.0/CMakeSystem.cmake
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/3.20.0/CompilerIdC/CMakeCCompilerId.c
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/3.20.0/CompilerIdCXX/CMakeCXXCompilerId.cpp
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/main.dir/build.make
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/main.dir/cmake_clean.cmake
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/main.dir/compiler_depend.internal
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/main.dir/compiler_depend.make
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/main.dir/compiler_depend.ts
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/main.dir/depend.make
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/main.dir/DependInfo.cmake
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/main.dir/flags.make
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/main.dir/link.txt
-C++/Design Patterns/Single Responsibility Principle/build/CMakeFiles/main.dir/progress.make
+
