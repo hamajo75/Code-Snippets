@@ -5,6 +5,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     cmake \
     lcov \
     gcovr \
+    pax-utils \
     libgtest-dev \
     libboost-all-dev \
     libqpid-proton-cpp-dev \
