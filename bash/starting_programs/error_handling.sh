@@ -19,10 +19,15 @@ cleanup_on_error() {
 set -o errexit -o errtrace  # same as: `set -eE`
 trap cleanup_on_error ERR
 
+subfunction() {
+  echo "subfunction"
+  return 1
+}
+
 do_add() {
   echo "do_add"
   echo "error"
-  false
+  subfunction
   echo "we don't get here"
 }
 
@@ -55,7 +60,7 @@ cleanup_on_error() {
   echo "cleaning up on error..."
 }
 
-#false  # trigger the error trap
+#false  # trigger the error trap (better use return 1)
 
 # exit on error (if any commands fail)
 set -e

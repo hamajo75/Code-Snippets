@@ -1,17 +1,14 @@
 @startuml
-skinparam componentStyle rectangle
+' skinparam componentStyle rectangle
 
-component A as a{
-  component A.1 {
-    component A.1.1
-    component A.1.2
-  }
-  component A.2 {
-    component A.2.1
-    component A.2.2
-  }
+frame WorkplaceBox {
+  [camera-daemon] -l-> [qpidd]
+  [intercom-daemon] -r-> [qpidd]
+  [gas-daemon] -d-> [qpidd]
+  [badge-daemon] -u-> [qpidd]
+  [connectivity-daemon] -u-> [qpidd]
 }
 
-A.1 -- A.2
+[workplace-admin-app] -l-> [intercom-daemon]
 
 @enduml

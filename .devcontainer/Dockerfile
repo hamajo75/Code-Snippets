@@ -14,6 +14,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     cppcheck \
     vim \
     ninja-build \
+    default-jdk graphviz \
     python3-pip
 
 RUN pip3 install cpplint
