@@ -36,3 +36,7 @@ Deactivate a Virtual Environment:
 ## Setuptools
 For packaging an application.    
 - https://setuptools.readthedocs.io/en/latest/setuptools.html
+
+Components
+- `setup.py` : Metadata, configuration, dependencies for a Python package. Defines `setup()` function with e.g. name, version, author, etc. 
+- `setup()` also defines the `entry_points` of the application.
