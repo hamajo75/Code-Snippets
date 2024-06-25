@@ -11,7 +11,13 @@
 		  "extensions": [
 			"ms-vscode.cpptools-extension-pack",
 			"QiuMingGe.cpp-check-lint",
-			"llvm-vs-code-extensions.vscode-clangd"
+      "GitHub.copilot",
+      "GitHub.copilot-chat",
+      "mhutchie.git-graph",
+      "waderyan.gitblame",
+      "lucax88x.codeacejumper",
+      "alefragnani.numbered-bookmarks",
+      "jebbs.plantuml"
 		]
 		}
 	}
