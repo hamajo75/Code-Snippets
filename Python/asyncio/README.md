@@ -1,5 +1,11 @@
-# Asynchronous code
-Seamingly parallel execution of taks although there is only one thread.
+# Python asyncio
+
+## Basics
+- Event Loop
+- Coroutine
+
+## Asynchronous code
+Seemingly parallel execution of taks although there is only one thread.
 (Parallelism and Concurrency are not the same - tasks might or might not
 really run in parallel)
 
