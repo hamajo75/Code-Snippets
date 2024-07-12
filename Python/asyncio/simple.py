@@ -7,7 +7,7 @@ import asyncio
 
 async def fetch_data():
   print("start fetching")
-  await asyncio.sleep(2)    # this is a time consumint IO-operation
+  await asyncio.sleep(2)    # this is a time consuming IO-operation
   print("done fetching")
   return {"data": 1}
 
