@@ -2,9 +2,8 @@
 
 ## Basics
 - Event Loop
-- Coroutine
-- Generator
-- await
+- Coroutine, await
+- Generator, yield
 
 ## Asynchronous code
 Seemingly parallel execution of tasks although there is only one thread.
@@ -42,6 +41,8 @@ The keyword 'await' is used to pause the execution of the coroutine until the
 awaited function is finished.
 
 ## Generators
+Coroutines are a specialized form of generators. So let's briefly mention them here.
+
 Generators are a type of function that allow you to create a sequence of values.
 They are defined with def and use the yield statement to produce a series of values lazily,
 meaning values are computed as needed rather than all at once.
