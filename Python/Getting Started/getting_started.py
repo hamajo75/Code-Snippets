@@ -27,7 +27,7 @@ print('x is',x)
 print('y is',y)
 # --------------------------------- Datastructures --------------------------------------
 
-# --- lists []        - mutable, == array
+# --- lists []        - mutable
 # creating lists
 l = [1, 2, 3, 4, 5]
 l = list(range(1, 6))
@@ -47,7 +47,7 @@ l.__contains__(5)
 # O dont know
 l.extend(range(7,9))		# dont use append
 
-# --- tupels ()        - immutable
+# --- tuples ()        - immutable
 t = (1, 2, 3, 4)
 
 # --- dictionaries {}
