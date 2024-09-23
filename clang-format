@@ -1,0 +1,9 @@
+BaseOnStyle: Google
+
+DerivePointerAlignment: false
+PointerAlignment: Left
+IncludeBlocks: Preserve
+SpacesBeforeTrailingComments: 4
+IndentCaseLabels: true
+AccessModifierOffset: -1
+InsertNewlineAtEOF: true
