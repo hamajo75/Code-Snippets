@@ -135,6 +135,14 @@ std::string getISO8601Timestamp() {
   return oss.str();
 }
 
+std::string GetTimestampCPP20() {
+    auto now = std::chrono::system_clock::now();
+    auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()) % 1000;
+    auto utc_time = std::chrono::zoned_time{"UTC", floor<std::chrono::seconds>(now)};
+
+    return std::format("{:%FT%T}.{:03}Z", utc_time.get_local_time(), ms.count());
+}
+
 //-----------------------------------------------------------------------------
 int main(int argc, char *argv[]) {
   // MeasureTime();
@@ -145,7 +153,7 @@ int main(int argc, char *argv[]) {
   // std::cout << std::chrono::duration_cast<std::chrono::seconds>(
   //   GetTimestampDifferenceToNow(timestamp)).count() << "\n";
 
-  std::cout << "timestamp: " << getISO8601Timestamp();
+  std::cout << "timestamp: " << GetTimestampCPP20();
 
   return 0;
 }
