@@ -54,7 +54,7 @@ TEST(Test1, Subtest2) {
   MockAPI mock_api;
   UsingTheAPI usingTheAPI{mock_api};
 
-  // set expectation (before the call!)
+  // set expectation (before the call!)                                         - see also "Call Sequences"
   EXPECT_CALL(mock_api, APICall(1, 2)).Times(1);
   usingTheAPI.UseTheAPI();
 }

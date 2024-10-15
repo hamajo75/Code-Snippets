@@ -6,8 +6,8 @@ using ::testing::Return;
 
 class MockClass {
 public:
-    MOCK_METHOD0(FunctionA, void());
-    MOCK_METHOD0(FunctionB, void());
+    MOCK_METHOD(void, FunctionA, (int));
+    MOCK_METHOD(void, FunctionB, (int));
 };
 
 TEST(StateHandlerTest, SequenceTest) {
@@ -15,9 +15,16 @@ TEST(StateHandlerTest, SequenceTest) {
 
     InSequence seq;                       // Make sure that EXPECT_CALLs are called in the order they are defined.
 
-    EXPECT_CALL(mock, FunctionA());
-    EXPECT_CALL(mock, FunctionB());
+    // gMock will search for expectations in the reverse order they are defined!
 
-    mock.FunctionA();
-    mock.FunctionB();
+    // EXPECT_CALL(mock, FunctionA(1));
+    // EXPECT_CALL(mock, FunctionB(2)).Times(2);
+    EXPECT_CALL(mock, FunctionA(3)).Times(1);
+    EXPECT_CALL(mock, FunctionA(3)).Times(1);
+
+    // mock.FunctionA(1);
+    // mock.FunctionB(2);
+    // mock.FunctionB(2);
+    mock.FunctionA(3);
+    mock.FunctionA(3);
 }
