@@ -8,7 +8,6 @@ class Generator {
  public:
   struct promise_type {
       std::uint64_t current_value_;
-      // this is what the caller of the coroutine will get as a return value
       Generator get_return_object() {
           return Generator{
               std::coroutine_handle<promise_type>::from_promise(*this)};
@@ -20,7 +19,6 @@ class Generator {
       void unhandled_exception() { std::terminate(); }
       std::suspend_always yield_value(std::uint64_t value) {
           current_value_ = value;
-          std::cout << "current_value_: " << current_value_ << " ";
           return {};
       }
   };
@@ -35,15 +33,9 @@ class Generator {
   Generator(const Generator&) = delete;
   Generator& operator=(const Generator&) = delete;
 
-  bool Resume() {
-    if (!handle_)
-      return false;
+  std::uint64_t operator()() const {
     handle_.resume();
-    return !handle_.done();
-  }
-
-  int operator()() const {
-      return handle_.promise().current_value_;
+    return handle_.promise().current_value_;
   }
 
  private:
@@ -61,10 +53,10 @@ Generator fibonacci() {
 int main() {
   std::cout << "Printing Fibonacci numbers:\n";
   // for (auto i : fibonacci()) {
-    auto i = fibonacci();
-    std::cout << i() << "\n";
-    i = fibonacci();
-    // std::cout << i() << "\n";
+    auto generator = fibonacci();
+    std::cout << generator() << "\n";
+    std::cout << generator() << "\n";
+    std::cout << generator() << "\n";
   // }
 
   return 0;
