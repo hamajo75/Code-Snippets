@@ -30,7 +30,7 @@
 *.exe
 *.out
 *.app
-C++/Coroutines/Generator/main
+main
 
 build/
 target/
