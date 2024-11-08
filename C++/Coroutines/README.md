@@ -11,7 +11,10 @@ The related new keywords are
 - `co_yield`: Suspend the coroutine and return a value to the caller. Resume at same point when called again.
 - `co_return`: Signal the end of the coroutine and return final value to the caller.
 
-There is not extra syntactic keyword to define a coroutine, it is just a function that uses the above keywords.
+There is not extra syntactic keyword to define a coroutine.
+There are two requirements for a function to become a coroutine:
+1. A function that uses one of the above keywords.
+2. The return type conforms with the coroutine requirements.
 
 A coroutine returns an object that acts as the coroutine interface for the caller. In C++ 20 this object has to be provided by the programmer.
 
