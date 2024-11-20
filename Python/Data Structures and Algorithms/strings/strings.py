@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 
 form = """#!/bin/sh
 
@@ -46,6 +47,29 @@ def find_replace():
 
   print (content)
 
+def raw_strings():
+  data = {
+    "name": "modemB",
+    "device": "/dev/cdc-lte1",
+    "rx": {
+        "bytes_total": 0,
+        "bytes_last": 0,
+        "datarate": 0
+    },
+    "tx": {
+        "bytes_total": 0,
+        "bytes_last": 0,
+        "datarate": 0
+    }
+  }
+  mystr = (
+    f"{data['name']} "
+    f"{data['rx']['bytes_total']}"
+  )
+
+  print(mystr)
+
 if __name__ == "__main__":
   # basic()
-  find_replace()
+  # find_replace()
+  raw_strings()
