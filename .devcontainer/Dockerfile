@@ -12,7 +12,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     shellcheck \
     cppcheck \
     vim \
-    python3-pip
+    python3-pip \
+    sbcl
 
 RUN pip3 install cpplint
 
