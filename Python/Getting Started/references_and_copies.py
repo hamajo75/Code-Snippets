@@ -22,3 +22,10 @@ def func(input_list):
 b = func(a)
 print("list a:", a)
 print("list b:", b)
+
+def fun_int(int):
+    int = 13
+    
+c = 1
+fun_int(c)
+print("int c:", c)      

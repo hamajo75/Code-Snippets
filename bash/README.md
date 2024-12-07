@@ -21,7 +21,7 @@ Get the output of a command.
 ### Redirections
 
 ## Quoting
- 
+
 - Single quotes: 'no substitution'
 - Double quotes: "$variables will be substituted"
 
@@ -55,3 +55,6 @@ Get the output of a command.
 - [Bash Reference Manual - 7 Job Control](https://www.gnu.org/software/bash/manual/html_node/Job-Control.html)
 
 All processes of the same pipeline are members of the same job.
+
+## Notes
+- Comments for multiline commands are not possible.

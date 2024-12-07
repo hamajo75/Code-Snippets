@@ -5,17 +5,25 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     cmake \
     lcov \
     gcovr \
+    pax-utils \
     libgtest-dev \
     libboost-all-dev \
     libqpid-proton-cpp-dev \
-    clangd \
     shellcheck \
     cppcheck \
     vim \
     python3-pip \
-    sbcl
+    ninja-build \
+    default-jdk graphviz \
+    python3-pip \
+    gforth \
+    python3 \
+    haskell-platform
+
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 RUN pip3 install cpplint
+# RUN pip3 install dbus-python
 
 RUN git clone https://github.com/catchorg/Catch2.git --depth 1 --branch v3.4.0 && \
     cd Catch2 && \

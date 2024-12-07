@@ -1,5 +1,42 @@
 #!/bin/bash -e
 
+# check for parameter
+# comparie set -u
+[[ -z $1 ]] && { echo "param missing" 1>&2; exit 1; }  # execute in same shell, redirect to stderr
+
+# trap on error
+do_del() {
+  echo do_del
+}
+
+cleanup_on_error() {
+  echo "cleaning up on error"
+  do_del
+  echo "exit 1"
+  exit 1
+}
+
+set -o errexit -o errtrace  # same as: `set -eE`
+trap cleanup_on_error ERR
+
+subfunction() {
+  echo "subfunction"
+  return 1
+}
+
+do_add() {
+  echo "do_add"
+  echo "error"
+  subfunction
+  echo "we don't get here"
+}
+
+# Thanks to -E / -o errtrace, this still triggers the trap,
+# even though the failure occurs *inside the function*.
+do_add
+
+echo "this code is not executed on error"
+
 # the space " " before "]" is necessary !
 if [ "$?" -ne 0 ]; then
    echo "command failed"
@@ -23,7 +60,7 @@ cleanup_on_error() {
   echo "cleaning up on error..."
 }
 
-#false  # trigger the error trap
+#false  # trigger the error trap (better use return 1)
 
 # exit on error (if any commands fail)
 set -e

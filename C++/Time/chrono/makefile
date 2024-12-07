@@ -1,10 +1,10 @@
-BIN=executable
+BIN=main
 
 CC=g++
-CFLAGS=-I. -lpthread -std=c++2a
+CFLAGS=-I. -I ../googletest/googletest/include -pthread -std=c++2a
 
-$(BIN).exe: *.cpp
-	$(CC) -g -o $@ *.cpp $(CFLAGS)
+$(BIN): *.cc
+	$(CC) -g -o $@ *.cc $(CFLAGS)
 
 # ---------------- wildcards -----------------------------------------------------------
 # Example:

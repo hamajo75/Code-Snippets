@@ -1,10 +1,10 @@
-BIN=template
+BIN=main
 
 CC=g++
-CFLAGS=-I.
+CFLAGS=-I. -lgtest -lgtest_main -pthread -std=c++2a
 
-$(BIN).exe: *.cpp
-	$(CC) -o $@ *.cpp $(CFLAGS)
+$(BIN): *.cpp
+	$(CC) -g -o $@ *.cpp $(CFLAGS)
 
 # ---------------- wildcards -----------------------------------------------------------
 # Example:

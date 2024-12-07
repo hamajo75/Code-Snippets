@@ -1,9 +1,9 @@
-BIN=executable
+BIN=main
 
 CC=g++
 CFLAGS=-I.
 
-$(BIN).exe: *.cpp
+$(BIN): *.cpp
 	$(CC) -std=c++17 -g -o $@ *.cpp $(CFLAGS)
 
 # ---------------- wildcards -----------------------------------------------------------

@@ -1,9 +1,9 @@
-BIN=executable
+BIN=main
 
 CC=g++
 CFLAGS=-I. -I ../googletest/googletest/include -lgtest -lgtest_main -pthread -std=c++17
 
-$(BIN).exe: *.cc
+$(BIN): *.cc
 	$(CC) -g -o $@ *.cc $(CFLAGS)
 
 # ---------------- wildcards -----------------------------------------------------------

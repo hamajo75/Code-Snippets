@@ -30,10 +30,7 @@
 *.exe
 *.out
 *.app
-C++/Sandbox/GenericMessage/main.cpp
-C++/Sandbox/GenericMessage/makefile
-C++/Sandbox/Workplace/main.cpp
-C++/Sandbox/Workplace/makefile
+main
 
 build/
 target/
@@ -45,5 +42,4 @@ executable
 .vscode/settings.json
 bash/Data/file.json
 run_tests
-C++/Move Semantics/template/main
 bash/Data/test_file

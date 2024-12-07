@@ -5,6 +5,12 @@ Play around online: [www.plantuml](www.plantuml)
 ## VS Code
 Use the Rich PlantUML Extension.
 
+Dependencies:
+- Java
+- GraphViz
+
+      apt install default-jdk graphviz
+
 ## Class Diagram
 
 By default an element is a class.
@@ -20,6 +26,13 @@ Relationships between classes:
 - Inheritance: `--|>`
 - Composition: `--*`
 - Aggregation: `--o`
+
+## Comments
+    ' This is also a single-line comment
+
+    /' This is a
+    multi-line
+    comment '/
 
 ## Themes
 

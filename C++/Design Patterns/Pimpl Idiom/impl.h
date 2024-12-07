@@ -1,1 +1,0 @@
-// TODO(jha): Hide logger implementaion in .cc file
