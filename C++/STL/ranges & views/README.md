@@ -1,6 +1,21 @@
 # Ranges and Views
 
+## Ranges
+Ranges are sequences of objects that can be iterated over, i.e.
+it makes sense to say what is the next and previous element in the range. Ranges are composable, meaning that you can combine them to perform complex operations.
+
+Instead of passing begin and end iterators to algorithms, you can now pass a single range object that represents the sequence.
+
+    std::ranges::sort(collection);
+
+## Pipelines
+Pipelines are a way to combine views and perform operations on a range in a concise and readable manner. You can chain views together using the pipe operator `|` to create a pipeline.
+
+    auto result = range | view1 | view2 | view3;
+
 ## Views
+Lightweight ranges that provide a way to access and manipulate elements of a sequence without actually storing or copying the elements .
+
 Views provide a way to access and manipulate elements of a sequence without actually storing or copying the elements themselves. Views are lazy, meaning that they only perform computation when needed. Views are also composable, meaning that you can combine them to perform complex operations.
 
 * Views do not own or store the elements themselves.
@@ -30,6 +45,6 @@ Types of views:
         std::views::drop
         std::views::reverse
 
-## Ranges
-Ranges are sequences of objects that can be iterated over, i.e.
-it makes sense to say what is the next and previous element in the range. Ranges are composable, meaning that you can combine them to perform complex operations.
+### Lifetime of Views
+
+
