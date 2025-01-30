@@ -12,6 +12,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     shellcheck \
     cppcheck \
     vim \
+    python3-pip \
     ninja-build \
     default-jdk graphviz \
     python3-pip \
@@ -19,7 +20,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     python3 \
     haskell-platform
 
-# RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 RUN pip3 install cpplint
 # RUN pip3 install dbus-python
