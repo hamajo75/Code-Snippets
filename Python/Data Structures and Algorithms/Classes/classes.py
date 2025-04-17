@@ -5,7 +5,7 @@ class Executor:
     print("this statement will be executed at instantiation")
     name = "static variable, all objects"
 
-    def __init__(self, realpart, imagpart):  # constructur
+    def __init__(self, realpart, imagpart):  # ctor
         self.r = realpart
         self.i = imagpart
 
@@ -19,7 +19,7 @@ class Executor:
         print(text)
 
 
-# Instatiation
+# Instantiation
 x = Executor(1, 2)
 
 x("cmd")
