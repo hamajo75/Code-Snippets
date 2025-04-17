@@ -14,8 +14,8 @@ class HWVersion:
 class Static:
     hw_version = None
 
-    @classmethod
-    def fetch_hw_version(cls):
+    @staticmethod
+    def fetch_hw_version():
         Static.hw_version = HWVersion("item_type", "0000614", 1, 2, 3)
 
     @staticmethod
@@ -28,5 +28,4 @@ class Static:
         return False
 
 
-print(Static.fetch_hw_version())
 print(Static.is_new_hw())
