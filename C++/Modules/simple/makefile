@@ -1,11 +1,22 @@
 BIN=main
 
 CC=g++
-CFLAGS=-I. -lgtest -lgtest_main -pthread -std=c++2a
+CFLAGS=-I. -std=c++2a -fmodules-ts
 
-$(BIN): *.cpp
-	$(CC) -g -o $@ *.cpp $(CFLAGS)
+# Link everything
+$(BIN): main.o math.o
+	$(CC) $(CFLAGS) main.o math.o -o $(BIN)
 
+# Compile the module interface unit
+math.o: math.cxx
+	$(CC) $(CFLAGS) -c math.cxx -o math.o
+
+# Compile the main file, importing the module
+main.o: main.cpp math.o
+	$(CC) $(CFLAGS) -c main.cpp -o main.o
+
+clean:
+	rm -f *.o $(BIN)
 # ---------------- wildcards -----------------------------------------------------------
 # Example:
 #  %.o: %.c

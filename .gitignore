@@ -44,3 +44,4 @@ bash/Data/file.json
 run_tests
 bash/Data/test_file
 .venv
+gcm.cache
