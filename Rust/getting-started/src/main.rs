@@ -36,11 +36,49 @@ fn use_datatypes() {
 
 // Get the type of given variable, return a string representation of the type  , e.g "i8", "u8", "i32", "u32"
 fn type_of<T>(_: &T) -> String {
-    format!("{}", std::any::type_name::<T>())
+    format!("{}", std::any::type_name::<T>())    
 }
+
+// Demonstrate usage of different kinds of loops in Rust
+
+fn demonstrate_loops() {
+    // 1. while loop
+    let mut counter = 0;
+    println!("while loop:");
+    while counter < 3 {
+        println!("counter = {}", counter);
+        counter += 1;
+    }
+
+    // 2. loop (infinite loop with break)
+    let mut n = 0;
+    println!("loop with break:");
+    loop {
+        if n >= 2 {
+            break;
+        }
+        println!("n = {}", n);
+        n += 1;
+    }
+
+    // 3. for loop
+    println!("for loop:");
+    for i in 0..3 {
+        println!("i = {}", i);
+    }
+
+    // 4. for-each over a collection
+    let arr = [10, 20, 30];
+    println!("for-each over array:");
+    for item in arr.iter() {
+        println!("item = {}", item);
+    }
+}
+
 
 fn main() {
     println!("Hello, world!");   // <X>! is a macro (will be expanded to code)
     use_variables();
     use_datatypes();
+    demonstrate_loops();
 }
