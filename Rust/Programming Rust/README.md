@@ -1,6 +1,7 @@
-# 🦀 Programming Rust (2nd Edition) — Learning Schedule
+# 🦀 Programming Rust (3rd Edition) — Learning Schedule
 
 **Book:** Programming Rust, 3rd Edition — Jim Blandy, Jason Orendorff, Leonora Tindall
+- https://learning.oreilly.com/library/view/programming-rust-3rd/9781098176228/
 
 **Duration:** ~8 weeks
 
@@ -109,10 +110,7 @@ Each session includes:
 ---
 
 ## 🧠 Tips for Success
-- Keep a local Cargo project open for quick testing.
-- After every 5 sessions, review and refactor your code.
 - Use [The Rust Book](https://doc.rust-lang.org/book/) alongside for extra examples.
 - Join [Rust Discord](https://discord.gg/rust-lang) or [r/learnrust](https://www.reddit.com/r/learnrust/) for help.
-- Don’t rush — consistency beats speed!
 
 ---
