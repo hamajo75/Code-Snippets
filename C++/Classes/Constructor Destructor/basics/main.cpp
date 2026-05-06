@@ -2,10 +2,10 @@
 #include <string.h>
 /********************************************************************************
  * Inheritance:
- * - construction: from base to derived
+ * - construction: from base to derived (order listed in the class declaration)
  * - destruction: from derived to base
  * Composition:
- * - construction: from parts to whole
+ * - construction: from parts to whole, order of members in declaration order (not initializer list!)
  * - destruction: from whole to parts
  * Stack: Destruction happens in reversed order of construction.
  *
