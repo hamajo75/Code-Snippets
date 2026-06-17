@@ -5,20 +5,46 @@ Collection of code snippets for various languages.
 
 ```mermaid
 mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
+  root((Code Snippets Repo))
+    Bash / Shell
+      scripts
+      control flow
+      process control
+      user input
+      data handling
+    C++
+      classes
+      data structures
+      concurrency
+      templates
+      STL
+      regular expressions
+      system programming
+    Python
+      getting started
+      applications
+      async and networking
+      files and directories
+      testing and threads
+      packages and modules
+    Rust
+      getting started
+      ownership
+      programming rust
+    Other languages
+      awk
+      Forth
+      Haskell
+      Lisp
+    DevOps and tooling
+      Docker
+      Jenkins
+      systemd playground
+    Documentation and diagrams
+      Markdown
+      PlantUML
+      README examples
+    Learning and experiments
+      sandbox material
+      reusable snippets
 ```
