@@ -4,7 +4,7 @@
 
 //-----------------------------------------------------------------------------
 std::string helloFunction(const std::string& s) {
-  std::this_thread::sleep_for(std::chrono::seconds(2));
+  std::this_thread::sleep_for(std::chrono::seconds(3));
   return "Hello C++11 from " + s + ".";
 }
 //-----------------------------------------------------------------------------
@@ -32,6 +32,8 @@ int main() {
 
   std::cout << "started function.\n";
 
+  std::cout << "do other work.\n";
+
   // future with function object
   HelloFunctionObject helloFunctionObject;
   auto futureFunctionObject =
@@ -39,14 +41,18 @@ int main() {
 
   std::cout << "started object.\n";
 
+  std::cout << "do more other work.\n";
+
   // future with lambda function
   auto futureLambda = std::async(
       [](const std::string& s) {
-        std::this_thread::sleep_for(std::chrono::seconds(2));
+        std::this_thread::sleep_for(std::chrono::seconds(1));
         return "Hello C++11 from " + s + "."; },
       "lambda function");
 
   std::cout << "started lambda.\n";
+
+  std::cout << "do ever more other work.\n";
 
   // here we wait until all functions are finished
   std::cout << futureFunction.get() << "\n"
