@@ -8,11 +8,11 @@ mindmap
   root((Code Snippets Repo))
     Bash / Shell
     C++
-      classes
-      data structures
-      concurrency
-      templates
+      Classes
+      Data Structures
+      Concurrency
       STL
+      ...
     Python
     Rust
     Other languages
